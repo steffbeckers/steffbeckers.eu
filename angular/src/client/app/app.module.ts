@@ -18,6 +18,5 @@ import { SharedModule } from './shared/shared.module';
     useValue: '<%= APP_BASE %>'
   }],
   bootstrap: [AppComponent]
-
 })
 export class AppModule { }
