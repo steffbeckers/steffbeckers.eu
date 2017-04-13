@@ -1,4 +1,4 @@
-### WebStorm ###
+### PhpStorm ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
@@ -46,7 +46,7 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-### WebStorm Patch ###
+### PhpStorm Patch ###
 # Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
 
 # *.iml
@@ -56,3 +56,6 @@ fabric.properties
 
 # Sonarlint plugin
 .idea/sonarlint
+.idea/blade.xml
+.idea/copyright/
+.idea/deployment.xml
