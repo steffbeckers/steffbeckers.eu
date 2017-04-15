@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="wide wow-animation smoothscroll scrollTo">
+<html class="wide wow-animation smoothscroll scrollTo" lang="en">
   <head>
     <!-- Site Title-->
     <title>Portfolio</title>
@@ -7,7 +7,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="keywords" content="intense web design multipurpose template">
+    <meta name="keywords" content="intense web design multipurpose template html">
     <meta name="date" content="Dec 26">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
@@ -25,31 +25,31 @@
       <header class="page-head">
         <!-- RD Navbar Transparent-->
         <div class="rd-navbar-wrap">
-          <nav data-lg-layout="rd-navbar-sidebar-fixed" data-md-layout="rd-navbar-sidebar-fixed" data-layout="rd-navbar-sidebar-fixed" data-lg-auto-height="false" data-lg-stick-up="false" data-lg-hover-on="false" data-body-class="body-inset-left" class="rd-navbar rd-navbar-sidebar-fixed rd-navbar-dark">
+          <nav class="rd-navbar-dark rd-navbar rd-navbar-sidebar-fixed" data-lg-layout="rd-navbar-sidebar-fixed" data-md-layout="rd-navbar-sidebar-fixed" data-layout="rd-navbar-sidebar-fixed" data-lg-auto-height="false" data-lg-stick-up="false" data-lg-hover-on="false" data-body-class="body-inset-left">
             <div class="rd-navbar-inner">
               <!-- RD Navbar Panel-->
               <div class="rd-navbar-panel">
                 <!-- RD Navbar Toggle-->
-                <button data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap" class="rd-navbar-toggle"><span></span></button>
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
                 <!--Navbar Brand Mobile-->
                 <div class="rd-navbar-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;' width='138' height='31' src='images/intense/logo-light.png' alt=''/></a></div>
                 <!--RD Navbar Search-->
-                <div class="rd-navbar-search"><a data-rd-navbar-toggle=".rd-navbar-inner, .rd-navbar-search, .rd-navbar-sidebar-fixed-search" href="#" class="rd-navbar-search-toggle"><span class="icon icon-xxs text-middle"></span></a></div>
+                <div class="rd-navbar-search"><a class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-inner, .rd-navbar-search, .rd-navbar-sidebar-fixed-search" href="#"><span class="icon icon-xxs text-middle"></span></a></div>
               </div>
               <div class="rd-navbar-menu-wrap">
                 <div class="rd-navbar-sidebar-fixed-search">
                   <div class="shell">
-                    <form action="search-results.html" method="GET" data-search-live="rd-search-results-live" data-search-template="&lt;div class=&quot;search-fullscreen-results-item unit unit-horizontal&quot;&gt;&lt;div class=&quot;unit-left search-fullscreen-results-item-date&quot;&gt;#{date}&lt;/div&gt;&lt;div class=&quot;unit-body&quot;&gt;&lt;h3 class=&quot;search-fullscreen-results-item-title&quot;&gt;&lt;a href=&quot;#{href}&quot;&gt;#{title}&lt;/a&gt;&lt;/h3&gt;&lt;p class=&quot;search-fullscreen-results-item-tags&quot; &gt;in #{keywords}&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;" class="rd-search form-search">
+                    <form class="rd-search form-search" action="search-results.html" method="GET" data-search-live="rd-search-results-live" data-search-template="&lt;div class=&quot;search-fullscreen-results-item unit unit-horizontal&quot;&gt;&lt;div class=&quot;unit-left search-fullscreen-results-item-date&quot;&gt;#{date}&lt;/div&gt;&lt;div class=&quot;unit-body&quot;&gt;&lt;h3 class=&quot;search-fullscreen-results-item-title&quot;&gt;&lt;a href=&quot;#{href}&quot;&gt;#{title}&lt;/a&gt;&lt;/h3&gt;&lt;p class=&quot;search-fullscreen-results-item-tags&quot; &gt;in #{keywords}&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;">
                       <div class="form-group">
-                        <label for="ss" class="form-label form-search-label">Type and hit enter...</label>
+                        <label class="form-label form-search-label" for="ss">Type and hit enter...</label>
                         <div class="input-group">
-                          <input id="ss" type="text" name="s" autocomplete="off" class="form-search-input form-control form-control-rect form-control-impressed custom-search-input"/>
+                          <input class="form-search-input form-control form-control-rect form-control-impressed custom-search-input" id="ss" type="text" name="s" autocomplete="off"/>
                           <div class="input-group-addon"><span class="icon fa fa-circle-o-notch fa-spin icon-sm"></span></div>
                         </div>
                       </div>
-                      <button type="submit" class="form-search-submit"><span class="mdi mdi-magnify"></span></button>
+                      <button class="form-search-submit" type="submit"><span class="mdi mdi-magnify"></span></button>
                     </form>
-                    <div id="rd-search-results-live" class="rd-search-results-live offset-top-66"></div>
+                    <div class="rd-search-results-live offset-top-66" id="rd-search-results-live"></div>
                   </div>
                 </div>
                 <div class="rd-navbar-nav-wrap">
@@ -95,7 +95,7 @@
           <div class="rd-material-tabs__container">
             <!-- Fashion-->
             <div>
-              <div data-photo-swipe-gallery="gallery" class="range range-condensed">
+              <div class="range range-condensed" data-photo-swipe-gallery="gallery">
                 <div class="cell-xs-6 cell-md-4">
                   <div class="image">
                             <!-- Thumbnail Rayen-->
@@ -172,7 +172,7 @@
             </div>
             <!-- Travel-->
             <div>
-              <div data-photo-swipe-gallery="gallery" class="range range-condensed">
+              <div class="range range-condensed" data-photo-swipe-gallery="gallery">
                 <div class="cell-xs-6 cell-md-4">
                   <div class="image">
                             <!-- Thumbnail Rayen-->
@@ -249,7 +249,7 @@
             </div>
             <!-- Business-->
             <div>
-              <div data-photo-swipe-gallery="gallery" class="range range-condensed">
+              <div class="range range-condensed" data-photo-swipe-gallery="gallery">
                 <div class="cell-xs-6 cell-md-4">
                   <div class="image">
                             <!-- Thumbnail Rayen-->
@@ -326,7 +326,7 @@
             </div>
             <!-- Wedding-->
             <div>
-              <div data-photo-swipe-gallery="gallery" class="range range-condensed">
+              <div class="range range-condensed" data-photo-swipe-gallery="gallery">
                 <div class="cell-xs-6 cell-md-4">
                   <div class="image">
                             <!-- Thumbnail Rayen-->
@@ -403,8 +403,8 @@
             </div>
             <!-- Animals-->
             <div>
-              <div data-photo-swipe-gallery="gallery" class="range range-condensed">
-                <div data-photo-swipe-gallery="gallery" class="range range-condensed">
+              <div class="range range-condensed" data-photo-swipe-gallery="gallery">
+                <div class="range range-condensed" data-photo-swipe-gallery="gallery">
                   <div class="cell-xs-6 cell-md-4">
                     <div class="image">
                               <!-- Thumbnail Rayen-->
@@ -482,8 +482,8 @@
             </div>
             <!-- Architecture-->
             <div>
-              <div data-photo-swipe-gallery="gallery" class="range range-condensed">
-                <div data-photo-swipe-gallery="gallery" class="range range-condensed">
+              <div class="range range-condensed" data-photo-swipe-gallery="gallery">
+                <div class="range range-condensed" data-photo-swipe-gallery="gallery">
                   <div class="cell-xs-6 cell-md-4">
                     <div class="image">
                               <!-- Thumbnail Rayen-->
@@ -563,10 +563,10 @@
         </section>
       </main>
     </div>
-    <!-- Global Mailform Output-->
-    <div id="form-output-global" class="snackbars"></div>
+    <!-- Global RD Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
     <!-- PhotoSwipe Gallery-->
-    <div tabindex="-1" role="dialog" aria-hidden="true" class="pswp">
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="pswp__bg"></div>
       <div class="pswp__scroll-wrap">
         <div class="pswp__container">
@@ -577,10 +577,10 @@
         <div class="pswp__ui pswp__ui--hidden">
           <div class="pswp__top-bar">
             <div class="pswp__counter"></div>
-            <button title="Close (Esc)" class="pswp__button pswp__button--close"></button>
-            <button title="Share" class="pswp__button pswp__button--share"></button>
-            <button title="Toggle fullscreen" class="pswp__button pswp__button--fs"></button>
-            <button title="Zoom in/out" class="pswp__button pswp__button--zoom"></button>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--share" title="Share"></button>
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
             <div class="pswp__preloader">
               <div class="pswp__preloader__icn">
                 <div class="pswp__preloader__cut">
@@ -592,15 +592,15 @@
           <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
             <div class="pswp__share-tooltip"></div>
           </div>
-          <button title="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button>
-          <button title="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button>
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
           <div class="pswp__caption">
             <div class="pswp__caption__center"></div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Java script-->
+    <!-- JavaScript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
   </body>

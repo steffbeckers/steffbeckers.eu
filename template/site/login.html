@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="wide wow-animation smoothscroll scrollTo">
+<html class="wide wow-animation smoothscroll scrollTo" lang="en">
   <head>
     <!-- Site Title-->
     <title>Login</title>
@@ -7,7 +7,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="keywords" content="intense web design multipurpose template">
+    <meta name="keywords" content="intense web design multipurpose template html">
     <meta name="date" content="Dec 26">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
@@ -41,21 +41,21 @@
                                   <p class="text-extra-small text-dark offset-top-4">Enter your credentials below</p>
                                 </div>
                       <!-- RD Mailform-->
-                      <form data-form-output="form-output-global" data-form-type="contact" method="post" class="text-left offset-top-30">
+                      <form class="text-left offset-top-30" data-form-output="form-output-global" data-form-type="contact" method="post">
                         <div class="form-group">
                           <div class="input-group input-group-sm"><span class="input-group-addon input-group-addon-inverse"><span class="input-group-icon mdi mdi-account-outline"></span></span>
-                            <input id="login-your-login" placeholder="Your Login" type="text" name="login" data-constraints="@Required" class="form-control">
+                            <input class="form-control" id="login-your-login" placeholder="Your Login" type="text" name="login" data-constraints="@Required">
                           </div>
                         </div>
                         <div class="form-group offset-top-20">
                           <div class="input-group input-group-sm"><span class="input-group-addon input-group-addon-inverse"><span class="input-group-icon mdi mdi-lock-open-outline"></span></span>
-                            <input id="login-your-password" placeholder="Your Password" type="password" name="password" data-constraints="@Required" class="form-control">
+                            <input class="form-control" id="login-your-password" placeholder="Your Password" type="password" name="password" data-constraints="@Required">
                           </div>
                         </div>
-                        <button type="submit" class="btn btn-sm btn-icon btn-block btn-primary offset-top-20">Sign In <span class="icon mdi mdi-arrow-right-bold-circle-outline"></span></button>
+                        <button class="btn btn-sm btn-icon btn-block btn-primary offset-top-20" type="submit">Sign In <span class="icon mdi mdi-arrow-right-bold-circle-outline"></span></button>
                       </form>
-                      <div class="offset-top-30 text-sm-left text-dark text-extra-small"><a href="#" class="text-picton-blue">Forgot your password?</a>
-                        <div class="offset-top-0">Haven’t an account? <a href="register.html" class="text-picton-blue">Sign up here</a>.</div>
+                      <div class="offset-top-30 text-sm-left text-dark text-extra-small"><a class="text-picton-blue" href="#">Forgot your password?</a>
+                        <div class="offset-top-0">Haven’t an account? <a class="text-picton-blue" href="#{cfg.nav.pages.submenu.register.href}">Sign up here</a>.</div>
                       </div>
                     </div>
                   </div>
@@ -64,15 +64,15 @@
             </div>
           </section>
           <div class="one-page-footer">
-            <p style="color: rgba(255,255,255, 0.3)" class="small">Intense &copy; <span id="copyright-year"></span> . <a href="privacy.html">Privacy Policy</a></p>
+            <p class="small" style="color: rgba(255,255,255, 0.3);">Intense &copy; <span id="copyright-year"></span> . <a href="privacy.html">Privacy Policy</a></p>
           </div>
         </div>
       </main>
     </div>
-    <!-- Global Mailform Output-->
-    <div id="form-output-global" class="snackbars"></div>
+    <!-- Global RD Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
     <!-- PhotoSwipe Gallery-->
-    <div tabindex="-1" role="dialog" aria-hidden="true" class="pswp">
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="pswp__bg"></div>
       <div class="pswp__scroll-wrap">
         <div class="pswp__container">
@@ -83,10 +83,10 @@
         <div class="pswp__ui pswp__ui--hidden">
           <div class="pswp__top-bar">
             <div class="pswp__counter"></div>
-            <button title="Close (Esc)" class="pswp__button pswp__button--close"></button>
-            <button title="Share" class="pswp__button pswp__button--share"></button>
-            <button title="Toggle fullscreen" class="pswp__button pswp__button--fs"></button>
-            <button title="Zoom in/out" class="pswp__button pswp__button--zoom"></button>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--share" title="Share"></button>
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
             <div class="pswp__preloader">
               <div class="pswp__preloader__icn">
                 <div class="pswp__preloader__cut">
@@ -98,15 +98,15 @@
           <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
             <div class="pswp__share-tooltip"></div>
           </div>
-          <button title="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button>
-          <button title="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button>
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
           <div class="pswp__caption">
             <div class="pswp__caption__center"></div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Java script-->
+    <!-- JavaScript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
   </body>

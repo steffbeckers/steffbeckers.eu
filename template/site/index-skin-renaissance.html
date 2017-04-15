@@ -1,6 +1,5 @@
-
-<!-- Classic Thumbnail--><!DOCTYPE html>
-<html lang="en" class="wide wow-animation smoothscroll scrollTo">
+<!DOCTYPE html>
+<html class="wide wow-animation smoothscroll scrollTo" lang="en">
   <head>
     <!-- Site Title-->
     <title>Renaissance</title>
@@ -33,7 +32,7 @@
       <header class="page-head">
         <!-- RD Navbar Transparent-->
         <div class="rd-navbar-wrap">
-          <nav data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-stick-up-offset="110px" class="rd-navbar rd-navbar-logo-center rd-navbar-light" data-lg-auto-height="true" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-stick-up="true">
+          <nav class="rd-navbar rd-navbar-logo-center rd-navbar-light" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-stick-up-offset="110px" data-lg-auto-height="true" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-stick-up="true">
             <div class="rd-navbar-inner">
               <div class="container">
                 <div class="rd-navbar-top-block range range-lg-center range-lg-middle">
@@ -47,12 +46,12 @@
                   <div class="cell-lg-3">
                     <div class="form-search-wrap">
                       <!-- RD Search Form-->
-                      <form action="search-results.html" method="GET" class="form-search rd-search">
+                      <form class="form-search rd-search" action="search-results.html" method="GET">
                         <div class="form-group">
-                          <label for="rd-navbar-form-search-widget" class="form-label form-search-label form-label-sm">Search</label>
-                          <input id="rd-navbar-form-search-widget" type="text" name="s" autocomplete="off" class="form-search-input input-sm form-control form-control-gray-lightest input-sm"/>
+                          <label class="form-label form-search-label form-label-sm" for="rd-navbar-form-search-widget">Search</label>
+                          <input class="form-search-input input-sm form-control #{inputClass}" id="rd-navbar-form-search-widget" type="text" name="s" autocomplete="off"/>
                         </div>
-                        <button type="submit" class="form-search-submit"><span class="mdi mdi-magnify"></span></button>
+                        <button class="form-search-submit" type="submit"><span class="mdi mdi-magnify"></span></button>
                       </form>
                     </div>
                   </div>
@@ -60,9 +59,9 @@
                 <!-- RD Navbar Panel-->
                 <div class="rd-navbar-panel">
                   <!-- RD Navbar Toggle-->
-                  <button data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap" class="rd-navbar-toggle"><span></span></button>
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
                   <!-- RD Navbar Top Panel Toggle-->
-                  <button data-rd-navbar-toggle=".rd-navbar, .form-search-wrap" class="rd-navbar-search-toggle"><span></span></button>
+                  <button class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar, .form-search-wrap"><span></span></button>
                 </div>
               </div>
               <div class="rd-navbar-menu-wrap">
@@ -75,7 +74,7 @@
                       <ul class="rd-navbar-nav">
                         <li class="active"><a href="index.html"><span>Home</span></a>
                           <ul class="rd-navbar-dropdown">
-                            <li><a href="#"><span class="text-middle">Child Themes</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                            <li><a href="#"><span class="text-middle">Child Themes</span></a>
                               <ul class="rd-navbar-dropdown">
                                 <li><a href="intense-photographer-portfolio"><span class="text-middle">Photographer</span></a>
                                 </li>
@@ -97,7 +96,13 @@
                                 </li>
                                 <li><a href="intense-job-board"><span class="text-middle">Job Board</span></a>
                                 </li>
-                                <li><a href="newsletter/responsive/index.html"><span class="text-middle">Newsletter</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                <li><a href="newsletter/responsive/index.html"><span class="text-middle">Newsletter</span></a>
+                                </li>
+                                <li><a href="intense-taxi"><span class="text-middle">Taxi</span></a>
+                                </li>
+                                <li><a href="intense-pet-shop"><span class="text-middle">Pet shop</span></a>
+                                </li>
+                                <li><a href="intense-barbershop"><span class="text-middle">Barbershop</span></a>
                                 </li>
                               </ul>
                             </li>
@@ -143,7 +148,23 @@
                                 </li>
                                 <li><a href="index-make-an-appointment.html"><span class="text-middle">Appointment</span></a>
                                 </li>
-                                <li><a href="maintenance.html"><span class="text-middle">Video Background</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">soon</span></a>
+                                <li><a href="maintenance.html"><span class="text-middle">Video Background</span></a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li><a href="#"><span class="text-middle">Landing pages</span></a>
+                              <ul class="rd-navbar-dropdown">
+                                <li><a href="intense-landings/intense-application"><span class="text-middle">Application</span></a>
+                                </li>
+                                <li><a href="intense-landings/intense-book"><span class="text-middle">Book</span></a>
+                                </li>
+                                <li><a href="intense-landings/intense-product"><span class="text-middle">Product</span></a>
+                                </li>
+                                <li><a href="intense-landings/intense-travel"><span class="text-middle">Travel</span></a>
+                                </li>
+                                <li><a href="intense-landings/intense-startup"><span class="text-middle">Startup</span></a>
+                                </li>
+                                <li><a href="intense-landings/intense-event"><span class="text-middle">Event</span></a>
                                 </li>
                               </ul>
                             </li>
@@ -151,6 +172,40 @@
                         </li>
                         <li><a href="#"><span>Features</span></a>
                           <ul class="rd-navbar-dropdown">
+                            <li><a href="#"><span class="text-middle">Revolution slider</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                              <ul class="rd-navbar-dropdown">
+                                <li><a href="revolution-crossfade.html"><span class="text-middle">Slider crossfade</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                                <li><a href="revolution-fadethrough.html"><span class="text-middle">Slider fade through</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                                <li><a href="revolution-slidehorizontal.html"><span class="text-middle">Slider slide 1</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                                <li><a href="revolution-slidevertical.html"><span class="text-middle">Slider slide 2</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                                <li><a href="revolution-slidingoverlayhorizontal.html"><span class="text-middle">Slider overlay 1</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                                <li><a href="revolution-slidingoverlayvertical.html"><span class="text-middle">Slider overlay 2</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                                <li><a href="revolution-boxslide.html"><span class="text-middle">Slider box slide</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                                <li><a href="revolution-slotslide.html"><span class="text-middle">Slider slot slide</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                                <li><a href="revolution-boxfade.html"><span class="text-middle">Slider box fade</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                                <li><a href="revolution-slotfade.html"><span class="text-middle">Slider slot fade</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                                <li><a href="revolution-parallaxhorizontal.html"><span class="text-middle">Slider parallax 1</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                                <li><a href="revolution-parallaxvertical.html"><span class="text-middle">Slider parallax 2</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                                <li><a href="revolution-slotzoom-horizontal.html"><span class="text-middle">Slider slot zoom 1</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                                <li><a href="revolution-slotzoom-vertical.html"><span class="text-middle">Slider slot zoom 2</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                                <li><a href="revolution-incube.html"><span class="text-middle">Slider incube</span><span class="rd-navbar-label label-custom label-danger label-xs-custom label-rounded-custom label">new</span></a>
+                                </li>
+                              </ul>
+                            </li>
                             <li><a href="#"><span class="text-middle">RD Plugins</span></a>
                               <ul class="rd-navbar-dropdown">
                                 <li><a href="rd-event-calendar.html"><span class="text-middle">RD Event Calendar</span></a>
@@ -298,7 +353,7 @@
                                 <li><a href="make-an-appointment-variant-2.html"><span class="rd-navbar-icon mdi mdi-calendar-clock"></span><span class="text-middle">Appointment v2</span></a></li>
                                 <li><a href="maintenance.html"><span class="rd-navbar-icon mdi mdi-wrench"></span><span class="text-middle">Maintenance</span></a></li>
                                 <li><a href="clients.html"><span class="rd-navbar-icon mdi mdi-wrench"></span><span class="text-middle">Clients</span></a></li>
-                                <li><a href="under-constraction.html"><span class="rd-navbar-icon mdi mdi-worker"></span><span class="text-middle">Under Construction</span></a></li>
+                                <li><a href="under-construction.html"><span class="rd-navbar-icon mdi mdi-worker"></span><span class="text-middle">Under Construction</span></a></li>
                                 <li><a href="privacy.html"><span class="rd-navbar-icon mdi mdi-file-outline"></span><span class="text-middle">Privacy Policy</span></a></li>
                               </ul>
                             </div>
@@ -543,12 +598,12 @@
                         <li><a href="ui-kit.html"><span>Components</span></a>
                           <div class="rd-navbar-megamenu">
                             <!-- Responsive-tabs-->
-                            <div data-type="horizontal" class="responsive-tabs responsive-tabs-classic">
-                              <ul data-group="tabs-group-default" class="resp-tabs-list tabs-1 text-center tabs-group-default">
+                            <div class="responsive-tabs responsive-tabs-classic" data-type="horizontal">
+                              <ul class="resp-tabs-list tabs-1 text-center tabs-group-default" data-group="tabs-group-default">
                                 <li>Toolkit Components</li>
                                 <li>Bootstrap Components</li>
                               </ul>
-                              <div data-group="tabs-group-default" class="resp-tabs-container text-left tabs-group-default">
+                              <div class="resp-tabs-container text-left tabs-group-default" data-group="tabs-group-default">
                                 <div class="row">
                                   <ul class="col-lg-3">
                                     <li><a href="accordions.html"><span class="rd-navbar-icon mdi mdi-playlist-plus"></span><span class="text-middle">Accordions</span></a></li>
@@ -640,20 +695,20 @@
                                   <div class="rd-navbar-product-caption">
                                     <h6 class="rd-navbar-product-title"><a href="#">Artist Paint Brush Set Nylon Hair Oil Painting Supplies</a></h6>
                                     <p class="rd-navbar-product-price">$124.00</p>
-                                  </div><a href="#" class="mdi mdi-window-close rd-navbar-product-remove"></a>
+                                  </div><a class="mdi mdi-window-close rd-navbar-product-remove" href="#"></a>
                                 </li>
                                 <li>
                                   <div class="rd-navbar-product-image"><img src="images/shop/product-07-60x60.png" alt=""/></div>
                                   <div class="rd-navbar-product-caption">
                                     <h6 class="rd-navbar-product-title"><a href="#">Marco 72 Colors Art Drawing Oil Base Pencils-Set</a></h6>
                                     <p class="rd-navbar-product-price">$189.00</p>
-                                  </div><a href="#" class="mdi mdi-window-close rd-navbar-product-remove"></a>
+                                  </div><a class="mdi mdi-window-close rd-navbar-product-remove" href="#"></a>
                                 </li>
                               </ul>
                               <div class="rd-navbar-cart-total">
                                 <h6 class="rd-navbar-cart-total-title">Cart subtotal</h6><span class="rd-navbar-cart-total-price">$313.00</span>
                               </div>
-                              <div class="text-center"><a href="shop-checkout.html" class="btn btn-rect btn-sm btn-primary btn-icon btn-icon-left"><span class="icon mdi mdi-lock"></span>Go to checkout</a></div>
+                              <div class="text-center"><a class="btn btn-rect btn-sm btn-primary btn-icon btn-icon-left" href="shop-checkout.html"><span class="icon mdi mdi-lock"></span>Go to checkout</a></div>
                             </div>
                           </div>
                         </li>
@@ -669,9 +724,9 @@
       <!-- Page Contents-->
       <main class="page-content">
         <!-- Welcome to Intense-->
-        <section data-on="false" data-md-on="true" class="rd-parallax">
-          <div data-speed="0.45" data-type="media" data-url="images/backgrounds/background-34-1920x1100.jpg" class="rd-parallax-layer"></div>
-          <div data-speed="0.3" data-type="html" data-md-fade="true" class="rd-parallax-layer">
+        <section class="rd-parallax" data-on="false" data-md-on="true">
+          <div class="rd-parallax-layer" data-speed="0.45" data-type="media" data-url="images/backgrounds/background-34-1920x1100.jpg"></div>
+          <div class="rd-parallax-layer" data-speed="0.3" data-type="html" data-md-fade="true">
             <div class="bg-overlay-gray-darkest">
               <div class="shell context-dark">
                 <div class="range">
@@ -680,8 +735,8 @@
                       <div class="text-extra-big font-accent">Welcome to Intense</div>
                       <h5 class="offset-top-20 text-regular offset-top-0 inset-md-left-80 inset-md-right-80 veil reveal-sm-block">The smartest and most flexible bootstrap template by TemplateMonster you've ever seen. Create exactly what you need with our powerful bootstrap toolkit.</h5>
                       <div class="range range-xs-center offset-top-66">
-                        <div class="cell-xs-7 cell-sm-4 cell-md-4 cell-lg-3 text-sm-right inset-sm-left-50"><a href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&amp;utm_medium=themebutton&amp;utm_campaign=intense" class="btn btn-block btn-ellipse btn-primary">buy intense now</a></div>
-                        <div class="cell-xs-7 cell-sm-4 cell-md-4 cell-lg-3 text-sm-left inset-sm-right-50 offset-top-20 offset-sm-top-0"><a href="#" data-waypoint-to="#about" class="btn btn-block btn-ellipse btn-default btn-anis-effect">start to journey</a></div>
+                        <div class="cell-xs-7 cell-sm-4 cell-md-4 cell-lg-3 text-sm-right inset-sm-left-50"><a class="btn btn-block btn-ellipse btn-primary" href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&amp;utm_medium=themebutton&amp;utm_campaign=intense">buy intense now</a></div>
+                        <div class="cell-xs-7 cell-sm-4 cell-md-4 cell-lg-3 text-sm-left inset-sm-right-50 offset-top-20 offset-sm-top-0"><a class="btn btn-block btn-ellipse btn-default btn-anis-effect" href="#" data-waypoint-to="#about">start to journey</a></div>
                       </div>
                     </div>
                   </div>
@@ -691,7 +746,7 @@
           </div>
         </section>
         <!-- Welcome to Intense. Multipurpose Theme-->
-        <section id="about" class="section-top-98 section-sm-top-110">
+        <section class="section-top-98 section-sm-top-110" id="about">
           <div class="shell">
             <div>
               <h1 class="text-between">Welcome to Intense. Multipurpose Theme</h1>
@@ -703,20 +758,20 @@
             </div>
           </div>
           <!-- Mock Up-->
-          <div style="overflow: hidden;" class="offset-top-66">
+          <div class="offset-top-66" style="overflow: hidden;">
             <div class="mock-up-wrapper veil reveal-sm-inline-block">
-              <div data-wow-duration="1s" data-wow-delay="0s" class="mock-up-desktop-wrapper wow fadeInUpBig"><img src="images/moqups/moqup-home-desktop.png" width="615" height="508" alt="" class="mock-up-desktop img-responsive"></div>
-              <div data-wow-delay="1.6s" class="mock-up-circle veil reveal-md-block wow zoomIn"><img src="images/moqups/moqup-home-ellipse.png" width="309" height="315" alt=""></div>
-              <div data-wow-delay="0.9s" class="mock-up-mobile-wrapper wow fadeInUp"><img src="images/moqups/moqup-home-mobile.png" width="247" height="470" alt="" class="mock-up-mobile"></div>
+              <div class="mock-up-desktop-wrapper wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0s"><img class="mock-up-desktop img-responsive" src="images/moqups/moqup-home-desktop.png" width="615" height="508" alt=""></div>
+              <div class="mock-up-circle veil reveal-md-block wow zoomIn" data-wow-delay="1.6s"><img src="images/moqups/moqup-home-ellipse.png" width="309" height="315" alt=""></div>
+              <div class="mock-up-mobile-wrapper wow fadeInUp" data-wow-delay="0.9s"><img class="mock-up-mobile" src="images/moqups/moqup-home-mobile.png" width="247" height="470" alt=""></div>
             </div>
           </div>
         </section>
         <!-- Take Full Control of Your Site-->
         <section class="context-dark">
           <!-- RD Parallax-->
-          <div data-on="false" data-md-on="true" class="rd-parallax">
-            <div data-speed="0.35" data-type="media" data-url="images/backgrounds/renaissance-35-1920x1250.jpg" class="rd-parallax-layer"></div>
-            <div data-speed="0" data-type="html" class="rd-parallax-layer">
+          <div class="rd-parallax" data-on="false" data-md-on="true">
+            <div class="rd-parallax-layer" data-speed="0.35" data-type="media" data-url="images/backgrounds/renaissance-35-1920x1250.jpg"></div>
+            <div class="rd-parallax-layer" data-speed="0" data-type="html">
               <div style="background: rgba(0, 0, 0, 0.63);">
                 <div class="shell section-top-124 section-bottom-110">
                   <div>
@@ -791,7 +846,7 @@
             </div>
             <div class="range range-xs-center">
               <div class="cell-xs-7 cell-sm-4 cell-md-4 cell-lg-3 text-sm-right">
-                <div class="inset-sm-left-20 inset-sm-right-20"><a href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&amp;utm_medium=themebutton&amp;utm_campaign=intense" class="btn btn-block btn-ellipse btn-default btn-anis-effect">buy intense now</a></div>
+                <div class="inset-sm-left-20 inset-sm-right-20"><a class="btn btn-block btn-ellipse btn-default btn-anis-effect" href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&amp;utm_medium=themebutton&amp;utm_campaign=intense">buy intense now</a></div>
               </div>
             </div>
           </div>
@@ -805,29 +860,29 @@
                 <div class="shadow-drop-xl">
                   <!-- Media Elements-->
                   <!-- RD Video-->
-                  <div data-rd-video-path="video/intense/intense" data-rd-video-title="What can we say about Intense ?" data-rd-video-muted="true" data-rd-video-preview="video/intense/intense-preview.jpg" data-rd-video-preload="false" class="rd-video-player play-on-scroll muted played state-playing">
+                  <div class="rd-video-player play-on-scroll muted played state-playing" data-rd-video-path="video/intense/intense" data-rd-video-title="What can we say about Intense ?" data-rd-video-muted="true" data-rd-video-preview="video/intense/intense-preview.jpg" data-rd-video-preload="false">
                     <div class="rd-video-wrap embed-responsive-16by9">
                       <div class="rd-video-preloader"></div>
                       <video preload="metadata">
                         <source type="video/mp4" src="video/intense/intense.mp4">
                       </video>
-                      <div style="background-image: url(&quot;video/intense/intense-preview.jpg&quot;);" class="rd-video-preview"></div>
+                      <div class="rd-video-preview" style="background-image: url(&quot;video/intense/intense-preview.jpg&quot;);"></div>
                       <div class="rd-video-top-controls">
-                        <!-- Title--><span class="rd-video-title">What can we say about Intense ?</span><a href="#" class="rd-video-fullscreen mdi mdi-fullscreen rd-video-icon"></a>
+                        <!-- Title--><span class="rd-video-title">What can we say about Intense ?</span><a class="rd-video-fullscreen mdi mdi-fullscreen rd-video-icon" href="#"></a>
                       </div>
                       <div class="rd-video-controls">
                         <div class="rd-video-controls-buttons">
-                          <!-- Play\Pause button--><a href="#" class="rd-video-play-pause mdi mdi-play"></a>
+                          <!-- Play\Pause button--><a class="rd-video-play-pause mdi mdi-play" href="#"></a>
                           <!-- Progress bar-->
                         </div>
                         <div class="rd-video-progress-bar"></div>
                         <div class="rd-video-time"><span class="rd-video-current-time">00:29</span><span class="rd-video-time-divider">:</span><span class="rd-video-duration">01:10</span></div>
                         <div class="rd-video-volume-wrap">
-                          <!-- Volume button--><a href="#" class="rd-video-volume mdi mdi-volume-high rd-video-icon"></a>
+                          <!-- Volume button--><a class="rd-video-volume mdi mdi-volume-high rd-video-icon" href="#"></a>
                           <div class="rd-video-volume-bar-wrap">
                             <!-- Volume bar-->
                             <div class="rd-video-volume-bar rd-video-volume-bar-vertical">
-                              <div style="width: 100%; height: 0px;" class="current"></div>
+                              <div class="current" style="width: 100%; height: 0px;"></div>
                             </div>
                           </div>
                         </div>
@@ -842,7 +897,7 @@
                 </div>
                 <div class="range range-xs-center range-lg-left offset-top-30">
                   <div class="cell-xs-7 cell-sm-5 text-sm-right">
-                    <div class="inset-lg-right-20"><a href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&amp;utm_medium=themebutton&amp;utm_campaign=intense" class="btn btn-block btn-ellipse btn-primary">learn more</a></div>
+                    <div class="inset-lg-right-20"><a class="btn btn-block btn-ellipse btn-primary" href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&amp;utm_medium=themebutton&amp;utm_campaign=intense">learn more</a></div>
                   </div>
                 </div>
               </div>
@@ -867,9 +922,9 @@
                           <div class="text-dark offset-top-0">Software Developer</div>
                         </div>
                         <ul class="list-inline offset-top-14 text-darker">
-                          <li><a href="#" class="fa fa-facebook"></a></li>
-                          <li><a href="#" class="fa fa-twitter"></a></li>
-                          <li><a href="#" class="fa fa-google-plus"></a></li>
+                          <li><a class="fa fa-facebook" href="#"></a></li>
+                          <li><a class="fa fa-twitter" href="#"></a></li>
+                          <li><a class="fa fa-google-plus" href="#"></a></li>
                         </ul>
                       </div>
                     </div>
@@ -885,9 +940,9 @@
                           <div class="text-dark offset-top-0">Support Operator</div>
                         </div>
                         <ul class="list-inline offset-top-14 text-darker">
-                          <li><a href="#" class="fa fa-facebook"></a></li>
-                          <li><a href="#" class="fa fa-twitter"></a></li>
-                          <li><a href="#" class="fa fa-google-plus"></a></li>
+                          <li><a class="fa fa-facebook" href="#"></a></li>
+                          <li><a class="fa fa-twitter" href="#"></a></li>
+                          <li><a class="fa fa-google-plus" href="#"></a></li>
                         </ul>
                       </div>
                     </div>
@@ -903,9 +958,9 @@
                           <div class="text-dark offset-top-0">Creative Director</div>
                         </div>
                         <ul class="list-inline offset-top-14 text-darker">
-                          <li><a href="#" class="fa fa-facebook"></a></li>
-                          <li><a href="#" class="fa fa-twitter"></a></li>
-                          <li><a href="#" class="fa fa-google-plus"></a></li>
+                          <li><a class="fa fa-facebook" href="#"></a></li>
+                          <li><a class="fa fa-twitter" href="#"></a></li>
+                          <li><a class="fa fa-google-plus" href="#"></a></li>
                         </ul>
                       </div>
                     </div>
@@ -923,9 +978,9 @@
                           <div class="text-dark offset-top-0">Founder, Sales</div>
                         </div>
                         <ul class="list-inline offset-top-14 text-darker">
-                          <li><a href="#" class="fa fa-facebook"></a></li>
-                          <li><a href="#" class="fa fa-twitter"></a></li>
-                          <li><a href="#" class="fa fa-google-plus"></a></li>
+                          <li><a class="fa fa-facebook" href="#"></a></li>
+                          <li><a class="fa fa-twitter" href="#"></a></li>
+                          <li><a class="fa fa-google-plus" href="#"></a></li>
                         </ul>
                       </div>
                     </div>
@@ -941,9 +996,9 @@
                           <div class="text-dark offset-top-0">Software Developer</div>
                         </div>
                         <ul class="list-inline offset-top-14 text-darker">
-                          <li><a href="#" class="fa fa-facebook"></a></li>
-                          <li><a href="#" class="fa fa-twitter"></a></li>
-                          <li><a href="#" class="fa fa-google-plus"></a></li>
+                          <li><a class="fa fa-facebook" href="#"></a></li>
+                          <li><a class="fa fa-twitter" href="#"></a></li>
+                          <li><a class="fa fa-google-plus" href="#"></a></li>
                         </ul>
                       </div>
                     </div>
@@ -959,9 +1014,9 @@
                           <div class="text-dark offset-top-0">Support Operator</div>
                         </div>
                         <ul class="list-inline offset-top-14 text-darker">
-                          <li><a href="#" class="fa fa-facebook"></a></li>
-                          <li><a href="#" class="fa fa-twitter"></a></li>
-                          <li><a href="#" class="fa fa-google-plus"></a></li>
+                          <li><a class="fa fa-facebook" href="#"></a></li>
+                          <li><a class="fa fa-twitter" href="#"></a></li>
+                          <li><a class="fa fa-google-plus" href="#"></a></li>
                         </ul>
                       </div>
                     </div>
@@ -970,7 +1025,7 @@
               </div>
             </div>
             <div class="range range-xs-center offset-top-66">
-              <div class="cell-xs-10 cell-sm-6 cell-md-5 cell-lg-4 inset-left-50 inset-xs-left-80 inset-right-50 inset-xs-right-80"><a href="member-boxes.html" class="btn btn-block btn-default btn-ellipse">view all members</a></div>
+              <div class="cell-xs-10 cell-sm-6 cell-md-5 cell-lg-4 inset-left-50 inset-xs-left-80 inset-right-50 inset-xs-right-80"><a class="btn btn-block btn-default btn-ellipse" href="member-boxes.html">view all members</a></div>
             </div>
           </div>
         </section>
@@ -990,14 +1045,14 @@
                           <p>Choose your category:</p>
                         </li>
                         <li class="section-relative">
-                          <button data-custom-toggle="isotope-1" data-custom-toggle-disable-on-blur="true" class="isotope-filters-toggle btn btn-sm btn-default">Filter<span class="caret"></span></button>
-                          <ul id="isotope-1" class="list-sm-inline isotope-filters-list">
-                            <li><a data-isotope-filter="*" data-isotope-group="gallery" href="#" class="text-bold active">All</a></li>
-                            <li><a data-isotope-filter="Infrastructure" data-isotope-group="gallery" href="#" class="text-bold">Infrastructure</a></li>
-                            <li><a data-isotope-filter="Portfolio" data-isotope-group="gallery" href="#" class="text-bold">Portfolio</a></li>
-                            <li><a data-isotope-filter="Blog" data-isotope-group="gallery" href="#" class="text-bold">Blog</a></li>
-                            <li><a data-isotope-filter="Agency" data-isotope-group="gallery" href="#" class="text-bold">Agency</a></li>
-                            <li><a data-isotope-filter="Creative" data-isotope-group="gallery" href="#" class="text-bold">Creative</a></li>
+                          <button class="isotope-filters-toggle btn btn-sm btn-default" data-custom-toggle="isotope-1" data-custom-toggle-disable-on-blur="true">Filter<span class="caret"></span></button>
+                          <ul class="list-sm-inline isotope-filters-list" id="isotope-1">
+                            <li><a class="text-bold active" data-isotope-filter="*" data-isotope-group="gallery" href="#">All</a></li>
+                            <li><a class="text-bold" data-isotope-filter="Infrastructure" data-isotope-group="gallery" href="#">Infrastructure</a></li>
+                            <li><a class="text-bold" data-isotope-filter="Portfolio" data-isotope-group="gallery" href="#">Portfolio</a></li>
+                            <li><a class="text-bold" data-isotope-filter="Blog" data-isotope-group="gallery" href="#">Blog</a></li>
+                            <li><a class="text-bold" data-isotope-filter="Agency" data-isotope-group="gallery" href="#">Agency</a></li>
+                            <li><a class="text-bold" data-isotope-filter="Creative" data-isotope-group="gallery" href="#">Creative</a></li>
                           </ul>
                         </li>
                       </ul>
@@ -1005,10 +1060,10 @@
                   </div>
                   <!-- Isotope Content-->
                   <div class="col-lg-12 offset-top-34">
-                    <div data-isotope-layout="fitRows" data-isotope-group="gallery" class="isotope">
+                    <div class="isotope" data-isotope-layout="fitRows" data-isotope-group="gallery">
                       <!-- Isotope-->
                       <div class="row">
-                        <div data-filter="Infrastructure" class="col-xs-12 col-sm-6 col-lg-4 isotope-item">
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Infrastructure">
                           <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-restaurant" target="_blank">
                               <figure><img width="570" height="428" src="images/childs/intense-restaurant-570x428.jpg" alt=""/>
                                 <figcaption class="thumbnail-classic-caption text-center">
@@ -1018,7 +1073,7 @@
                               </figure></a>
                           </div>
                         </div>
-                        <div data-filter="Portfolio" class="col-xs-12 col-sm-6 col-lg-4 isotope-item">
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Portfolio">
                           <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-photographer-portfolio" target="_blank">
                               <figure><img width="570" height="428" src="images/childs/intense-photographer-570x428.jpg" alt=""/>
                                 <figcaption class="thumbnail-classic-caption text-center">
@@ -1028,7 +1083,7 @@
                               </figure></a>
                           </div>
                         </div>
-                        <div data-filter="Blog" class="col-xs-12 col-sm-6 col-lg-4 isotope-item">
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Blog">
                           <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-personal-blog" target="_blank">
                               <figure><img width="570" height="428" src="images/childs/intense-personal-blog-570x428.jpg" alt=""/>
                                 <figcaption class="thumbnail-classic-caption text-center">
@@ -1038,7 +1093,7 @@
                               </figure></a>
                           </div>
                         </div>
-                        <div data-filter="Agency" class="col-xs-12 col-sm-6 col-lg-4 isotope-item">
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Agency">
                           <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-real-estate" target="_blank">
                               <figure><img width="570" height="428" src="images/childs/intense-real-estate-570x428.jpg" alt=""/>
                                 <figcaption class="thumbnail-classic-caption text-center">
@@ -1048,7 +1103,7 @@
                               </figure></a>
                           </div>
                         </div>
-                        <div data-filter="Creative" class="col-xs-12 col-sm-6 col-lg-4 isotope-item">
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Creative">
                           <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-handmade" target="_blank">
                               <figure><img width="570" height="428" src="images/childs/intense-handmade-570x428.jpg" alt=""/>
                                 <figcaption class="thumbnail-classic-caption text-center">
@@ -1058,7 +1113,7 @@
                               </figure></a>
                           </div>
                         </div>
-                        <div data-filter="Infrastructure" class="col-xs-12 col-sm-6 col-lg-4 isotope-item">
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Infrastructure">
                           <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-dental-clinic" target="_blank">
                               <figure><img width="570" height="428" src="images/childs/intense-dental-clinic-570x428.jpg" alt=""/>
                                 <figcaption class="thumbnail-classic-caption text-center">
@@ -1068,7 +1123,7 @@
                               </figure></a>
                           </div>
                         </div>
-                        <div data-filter="Agency" class="col-xs-12 col-sm-6 col-lg-4 isotope-item">
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Agency">
                           <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-financial-analytic" target="_blank">
                               <figure><img width="570" height="428" src="images/childs/intense-financial-advisor-570x428.jpg" alt=""/>
                                 <figcaption class="thumbnail-classic-caption text-center">
@@ -1078,7 +1133,7 @@
                               </figure></a>
                           </div>
                         </div>
-                        <div data-filter="Agency" class="col-xs-12 col-sm-6 col-lg-4 isotope-item">
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Agency">
                           <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-gym" target="_blank">
                               <figure><img width="570" height="428" src="images/childs/intense-gym-570x428.jpg" alt=""/>
                                 <figcaption class="thumbnail-classic-caption text-center">
@@ -1088,7 +1143,7 @@
                               </figure></a>
                           </div>
                         </div>
-                        <div data-filter="Infrastructure" class="col-xs-12 col-sm-6 col-lg-4 isotope-item">
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Infrastructure">
                           <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-child-care" target="_blank">
                               <figure><img width="570" height="428" src="images/childs/intense-child-care-570x428.jpg" alt=""/>
                                 <figcaption class="thumbnail-classic-caption text-center">
@@ -1098,12 +1153,102 @@
                               </figure></a>
                           </div>
                         </div>
-                        <div data-filter="Agency" class="col-xs-12 col-sm-6 col-lg-4 isotope-item">
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Agency">
                           <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-job-board" target="_blank">
                               <figure><img width="570" height="428" src="images/childs/intense-job-board-570x428.jpg" alt=""/>
                                 <figcaption class="thumbnail-classic-caption text-center">
                                   <h4 class="thumbnail-classic-title text-uppercase text-light">Intense Job Board</h4>
                                   <p class="thumbnail-classic-desc text-bold text-uppercase veil reveal-xs-block">Best for employment services</p>
+                                </figcaption>
+                              </figure></a>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Creative">
+                          <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-landings/intense-product/" target="_blank">
+                              <figure><img width="570" height="428" src="images/childs/intense-product-570x428.jpg" alt=""/>
+                                <figcaption class="thumbnail-classic-caption text-center">
+                                  <h4 class="thumbnail-classic-title text-uppercase text-light">Intense Product</h4>
+                                  <p class="thumbnail-classic-desc text-bold text-uppercase veil reveal-xs-block">Best for IT products</p>
+                                </figcaption>
+                              </figure></a>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Creative">
+                          <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-landings/intense-application/" target="_blank">
+                              <figure><img width="570" height="428" src="images/childs/intense-aplication-570x428.jpg" alt=""/>
+                                <figcaption class="thumbnail-classic-caption text-center">
+                                  <h4 class="thumbnail-classic-title text-uppercase text-light">Intense app</h4>
+                                  <p class="thumbnail-classic-desc text-bold text-uppercase veil reveal-xs-block">Best for applications</p>
+                                </figcaption>
+                              </figure></a>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Agency">
+                          <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-landings/intense-startup/" target="_blank">
+                              <figure><img width="570" height="428" src="images/childs/intense-startup-570x428.jpg" alt=""/>
+                                <figcaption class="thumbnail-classic-caption text-center">
+                                  <h4 class="thumbnail-classic-title text-uppercase text-light">Intense startup</h4>
+                                  <p class="thumbnail-classic-desc text-bold text-uppercase veil reveal-xs-block">Best for startups</p>
+                                </figcaption>
+                              </figure></a>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Creative">
+                          <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-landings/intense-book/" target="_blank">
+                              <figure><img width="570" height="428" src="images/childs/intense-book-570x428.jpg" alt=""/>
+                                <figcaption class="thumbnail-classic-caption text-center">
+                                  <h4 class="thumbnail-classic-title text-uppercase text-light">Intense book</h4>
+                                  <p class="thumbnail-classic-desc text-bold text-uppercase veil reveal-xs-block">Best for books</p>
+                                </figcaption>
+                              </figure></a>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Agency">
+                          <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-landings/intense-travel/" target="_blank">
+                              <figure><img width="570" height="428" src="images/childs/intense-travel-570x428.jpg" alt=""/>
+                                <figcaption class="thumbnail-classic-caption text-center">
+                                  <h4 class="thumbnail-classic-title text-uppercase text-light">Intense travel</h4>
+                                  <p class="thumbnail-classic-desc text-bold text-uppercase veil reveal-xs-block">Best for travel agencies</p>
+                                </figcaption>
+                              </figure></a>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Creative">
+                          <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-landings/intense-event/" target="_blank">
+                              <figure><img width="570" height="428" src="images/childs/intense-event-570x428.jpg" alt=""/>
+                                <figcaption class="thumbnail-classic-caption text-center">
+                                  <h4 class="thumbnail-classic-title text-uppercase text-light">Intense event</h4>
+                                  <p class="thumbnail-classic-desc text-bold text-uppercase veil reveal-xs-block">Best for meetup</p>
+                                </figcaption>
+                              </figure></a>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Agency">
+                          <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-taxi/" target="_blank">
+                              <figure><img width="570" height="428" src="images/childs/intense-taxi-570x428.jpg" alt=""/>
+                                <figcaption class="thumbnail-classic-caption text-center">
+                                  <h4 class="thumbnail-classic-title text-uppercase text-light">Intense taxi</h4>
+                                  <p class="thumbnail-classic-desc text-bold text-uppercase veil reveal-xs-block">Best for taxi</p>
+                                </figcaption>
+                              </figure></a>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Agency">
+                          <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-barbershop/" target="_blank">
+                              <figure><img width="570" height="428" src="images/childs/intense-barbershop-570x428.jpg" alt=""/>
+                                <figcaption class="thumbnail-classic-caption text-center">
+                                  <h4 class="thumbnail-classic-title text-uppercase text-light">Intense barbershop</h4>
+                                  <p class="thumbnail-classic-desc text-bold text-uppercase veil reveal-xs-block">Best for barbershop</p>
+                                </figcaption>
+                              </figure></a>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4 isotope-item" data-filter="Agency">
+                          <div class="shadow-variant-2"><a class="thumbnail-classic" href="intense-pet-shop/" target="_blank">
+                              <figure><img width="570" height="428" src="images/childs/intense-pet-shop-570x428.jpg" alt=""/>
+                                <figcaption class="thumbnail-classic-caption text-center">
+                                  <h4 class="thumbnail-classic-title text-uppercase text-light">Intense pet shop</h4>
+                                  <p class="thumbnail-classic-desc text-bold text-uppercase veil reveal-xs-block">Best for pet shop</p>
                                 </figcaption>
                               </figure></a>
                           </div>
@@ -1121,11 +1266,11 @@
             <h1 class="text-between">What Clients Say?</h1>
             <div class="range range-xs-center offset-top-66">
               <div class="cell-xs-10 cell-sm-8 cell-lg-12">
-                <div data-items="1" data-stage-padding="10" data-margin="25" data-lg-items="3" data-nav="false" data-dots="true" class="owl-carousel owl-carousel-classic owl-carousel-class-light owl-carousel-testimonials-3">
+                <div class="owl-carousel owl-carousel-classic owl-carousel-class-light owl-carousel-testimonials-3" data-items="1" data-stage-padding="10" data-margin="25" data-lg-items="3" data-nav="false" data-dots="true">
                   <div>
                     <!-- Boxed Testimonials v2-->
                     <blockquote class="quote quote-classic quote-classic-boxed-2">
-                      <div class="quote-meta"><img width="80" height="80" src="images/users/user-katherine-ferguson-80x80.jpg" alt="" class="img-circle quote-img"/></div>
+                      <div class="quote-meta"><img class="img-circle quote-img" width="80" height="80" src="images/users/user-katherine-ferguson-80x80.jpg" alt=""/></div>
                       <div class="quote-body">
                         <p>
                           <q>This website is a perfect place to get consumables for any handmade ideas, both for enthusiasts and professionals.</q>
@@ -1140,7 +1285,7 @@
                   <div>
                     <!-- Boxed Testimonials v2-->
                     <blockquote class="quote quote-classic quote-classic-boxed-2">
-                      <div class="quote-meta"><img width="80" height="80" src="images/users/user-alisa-milano-80x80.jpg" alt="" class="img-circle quote-img"/></div>
+                      <div class="quote-meta"><img class="img-circle quote-img" width="80" height="80" src="images/users/user-alisa-milano-80x80.jpg" alt=""/></div>
                       <div class="quote-body">
                         <p>
                           <q>Folore magna aliqua. Ut enim ad minim nisi veniam, quis nostrud exer citation ullamco laboris nisi ut</q>
@@ -1155,7 +1300,7 @@
                   <div>
                     <!-- Boxed Testimonials v2-->
                     <blockquote class="quote quote-classic quote-classic-boxed-2">
-                      <div class="quote-meta"><img width="80" height="80" src="images/users/user-betty-hunt-80x80.jpg" alt="" class="img-circle quote-img"/></div>
+                      <div class="quote-meta"><img class="img-circle quote-img" width="80" height="80" src="images/users/user-betty-hunt-80x80.jpg" alt=""/></div>
                       <div class="quote-body">
                         <p>
                           <q>Your articles are very informative – they help me introduce fresh ideas into my handmade decorations.</q>
@@ -1170,7 +1315,7 @@
                   <div>
                     <!-- Boxed Testimonials v2-->
                     <blockquote class="quote quote-classic quote-classic-boxed-2">
-                      <div class="quote-meta"><img width="80" height="80" src="images/users/user-betty-hunt-80x80.jpg" alt="" class="img-circle quote-img"/></div>
+                      <div class="quote-meta"><img class="img-circle quote-img" width="80" height="80" src="images/users/user-betty-hunt-80x80.jpg" alt=""/></div>
                       <div class="quote-body">
                         <p>
                           <q>The more I read your blog and browse your website, the better I become in creating handmade gifts.</q>
@@ -1185,7 +1330,7 @@
                   <div>
                     <!-- Boxed Testimonials v2-->
                     <blockquote class="quote quote-classic quote-classic-boxed-2">
-                      <div class="quote-meta"><img width="80" height="80" src="images/users/user-alisa-milano-80x80.jpg" alt="" class="img-circle quote-img"/></div>
+                      <div class="quote-meta"><img class="img-circle quote-img" width="80" height="80" src="images/users/user-alisa-milano-80x80.jpg" alt=""/></div>
                       <div class="quote-body">
                         <p>
                           <q>Folore magna aliqua. Ut enim ad minim nisi veniam, quis nostrud exer citation ullamco laboris nisi ut</q>
@@ -1200,7 +1345,7 @@
                   <div>
                     <!-- Boxed Testimonials v2-->
                     <blockquote class="quote quote-classic quote-classic-boxed-2">
-                      <div class="quote-meta"><img width="80" height="80" src="images/users/user-betty-hunt-80x80.jpg" alt="" class="img-circle quote-img"/></div>
+                      <div class="quote-meta"><img class="img-circle quote-img" width="80" height="80" src="images/users/user-betty-hunt-80x80.jpg" alt=""/></div>
                       <div class="quote-body">
                         <p>
                           <q>Lorem ipsum dolor sit amet conse ctetur adip isicing elit, sed do eiusmod tempor incididunt ut labore et dolore </q>
@@ -1215,7 +1360,7 @@
                   <div>
                     <!-- Boxed Testimonials v2-->
                     <blockquote class="quote quote-classic quote-classic-boxed-2">
-                      <div class="quote-meta"><img width="80" height="80" src="images/users/user-betty-hunt-80x80.jpg" alt="" class="img-circle quote-img"/></div>
+                      <div class="quote-meta"><img class="img-circle quote-img" width="80" height="80" src="images/users/user-betty-hunt-80x80.jpg" alt=""/></div>
                       <div class="quote-body">
                         <p>
                           <q>Lorem ipsum dolor sit amet conse ctetur adip isicing elit, sed do eiusmod tempor incididunt ut labore et dolore </q>
@@ -1230,7 +1375,7 @@
                   <div>
                     <!-- Boxed Testimonials v2-->
                     <blockquote class="quote quote-classic quote-classic-boxed-2">
-                      <div class="quote-meta"><img width="80" height="80" src="images/users/user-katherine-ferguson-80x80.jpg" alt="" class="img-circle quote-img"/></div>
+                      <div class="quote-meta"><img class="img-circle quote-img" width="80" height="80" src="images/users/user-katherine-ferguson-80x80.jpg" alt=""/></div>
                       <div class="quote-body">
                         <p>
                           <q>Lorem ipsum dolor sit amet conse ctetur adip isicing elit, sed do eiusmod tempor incididunt ut labore et dolore </q>
@@ -1245,7 +1390,7 @@
                   <div>
                     <!-- Boxed Testimonials v2-->
                     <blockquote class="quote quote-classic quote-classic-boxed-2">
-                      <div class="quote-meta"><img width="80" height="80" src="images/users/user-alisa-milano-80x80.jpg" alt="" class="img-circle quote-img"/></div>
+                      <div class="quote-meta"><img class="img-circle quote-img" width="80" height="80" src="images/users/user-alisa-milano-80x80.jpg" alt=""/></div>
                       <div class="quote-body">
                         <p>
                           <q>Folore magna aliqua. Ut enim ad minim nisi veniam, quis nostrud exer citation ullamco laboris nisi ut</q>
@@ -1280,15 +1425,15 @@
                     </ul>
                   </div>
                   <ul class="list-inline list-inline-white offset-top-10 text-darker">
-                    <li><a href="#" class="fa fa-facebook"></a></li>
-                    <li><a href="#" class="fa fa-twitter"></a></li>
-                    <li><a href="#" class="fa fa-google-plus"></a></li>
-                    <li><a href="#" class="fa fa-pinterest"></a></li>
-                    <li><a href="#" class="fa fa-vimeo"></a></li>
-                    <li><a href="#" class="fa fa-youtube"></a></li>
-                    <li><a href="#" class="fa fa-linkedin"></a></li>
-                    <li><a href="#" class="fa fa-github"></a></li>
-                    <li><a href="#" class="fa fa-yahoo"></a></li>
+                    <li><a class="fa fa-facebook" href="#"></a></li>
+                    <li><a class="fa fa-twitter" href="#"></a></li>
+                    <li><a class="fa fa-google-plus" href="#"></a></li>
+                    <li><a class="fa fa-pinterest" href="#"></a></li>
+                    <li><a class="fa fa-vimeo" href="#"></a></li>
+                    <li><a class="fa fa-youtube" href="#"></a></li>
+                    <li><a class="fa fa-linkedin" href="#"></a></li>
+                    <li><a class="fa fa-github" href="#"></a></li>
+                    <li><a class="fa fa-yahoo" href="#"></a></li>
                   </ul>
                 </div>
                 <div class="cell-xs-12 cell-md-4 cell-md-push-1 offset-top-34 offset-md-top-0">
@@ -1305,9 +1450,9 @@
       </footer>
     </div>
     <!-- Global Mailform Output-->
-    <div id="form-output-global" class="snackbars"></div>
+    <div class="snackbars" id="form-output-global"></div>
     <!-- PhotoSwipe Gallery-->
-    <div tabindex="-1" role="dialog" aria-hidden="true" class="pswp">
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="pswp__bg"></div>
       <div class="pswp__scroll-wrap">
         <div class="pswp__container">
@@ -1318,10 +1463,10 @@
         <div class="pswp__ui pswp__ui--hidden">
           <div class="pswp__top-bar">
             <div class="pswp__counter"></div>
-            <button title="Close (Esc)" class="pswp__button pswp__button--close"></button>
-            <button title="Share" class="pswp__button pswp__button--share"></button>
-            <button title="Toggle fullscreen" class="pswp__button pswp__button--fs"></button>
-            <button title="Zoom in/out" class="pswp__button pswp__button--zoom"></button>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--share" title="Share"></button>
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
             <div class="pswp__preloader">
               <div class="pswp__preloader__icn">
                 <div class="pswp__preloader__cut">
@@ -1333,8 +1478,8 @@
           <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
             <div class="pswp__share-tooltip"></div>
           </div>
-          <button title="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button>
-          <button title="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button>
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
           <div class="pswp__caption">
             <div class="pswp__caption__center"></div>
           </div>

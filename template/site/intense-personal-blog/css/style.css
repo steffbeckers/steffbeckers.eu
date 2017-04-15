@@ -32967,7 +32967,7 @@ fieldset[disabled] .swiper-slide-caption
   top: 100%;
   left: 0;
   z-index: 1;
-  width: 240px;
+ width: 270px;
   padding: 0;
   visibility: hidden;
   transition: .3s all ease;
@@ -33232,7 +33232,7 @@ fieldset[disabled] .swiper-slide-caption
   top: 100%;
   left: auto;
   right: 0;
-  width: 240px;
+ width: 270px;
   padding: 13px 15px 15px;
   text-align: left;
   border-top: 1px solid #4053b1;

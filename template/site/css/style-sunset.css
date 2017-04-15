@@ -32738,7 +32738,7 @@ fieldset[disabled] .swiper-slide-caption
   transition: .3s all ease;
   padding: 0;
   text-align: left;
-  width: 240px;
+ width: 270px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
@@ -32997,7 +32997,7 @@ fieldset[disabled] .swiper-slide-caption
   top: 100%;
   transition: .3s all ease;
   text-align: left;
-  width: 240px;
+ width: 270px;
   z-index: 1;
   left: auto;
   right: 0;

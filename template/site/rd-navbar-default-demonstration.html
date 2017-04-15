@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100%;" class="wide wow-animation smoothscroll scrollTo">
+<html class="#{html_class}" lang="en" style="height: 100%;">
   <head>
     <!-- Site Title-->
     <title>RD Navbar Default Demonstration</title>
@@ -20,16 +20,16 @@
   </head>
   <body style="background: #f7f7f7; height: 100%;">
     <!-- Page-->
-    <div style="height: 100%;" class="page text-center">
+    <div class="page text-center" style="height: 100%;">
       <!-- Page Head-->
       <header class="page-head">
         <div class="rd-navbar-wrap">
-          <nav data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-auto-height="true" data-xs-layout="rd-navbar-fixed" data-stick-up="false" class="rd-navbar rd-navbar-default rd-navbar-light">
+          <nav class="rd-navbar rd-navbar-default rd-navbar-light" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-auto-height="true" data-xs-layout="rd-navbar-fixed" data-stick-up="false">
             <div class="rd-navbar-inner">
               <!-- RD Navbar Panel-->
               <div class="rd-navbar-panel">
                 <!-- RD Navbar Toggle-->
-                <button data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap" class="rd-navbar-toggle"><span></span></button>
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
                 <!-- Navbar Brand-->
                 <div class="rd-navbar-brand"><a href="index.html"><img style="margin-top: -5px;margin-left: -15px;" width="138" height="31" src="images/intense/logo-dark.png" alt=""></a></div>
               </div>
@@ -42,10 +42,10 @@
                       <!-- RD Search Form-->
                       <form class="form-search rd-search">
                         <div class="form-group">
-                          <label for="rd-navbar-form-search-widget" class="form-label form-search-label form-label-sm">Search</label>
-                          <input id="rd-navbar-form-search-widget" type="text" name="s" autocomplete="off" class="form-search-input input-sm form-control form-control-gray-lightest input-sm">
+                          <label class="form-label form-search-label form-label-sm" for="rd-navbar-form-search-widget">Search</label>
+                          <input class="form-search-input input-sm form-control form-control-gray-lightest input-sm" id="rd-navbar-form-search-widget" type="text" name="s" autocomplete="off">
                         </div>
-                        <button type="submit" class="form-search-submit"><span class="mdi mdi-magnify"></span></button>
+                        <button class="form-search-submit" type="submit"><span class="mdi mdi-magnify"></span></button>
                       </form>
                     </div>
                     <!-- RD Navbar Nav-->
@@ -66,11 +66,11 @@
                   </div>
                 </div>
                 <!-- RD Navbar Search-->
-                <div class="rd-navbar-search"><a data-rd-navbar-toggle=".rd-navbar-inner,.rd-navbar-search" href="#" class="rd-navbar-search-toggle mdi"><span></span></a>
-                  <form onsubmit="" class="rd-navbar-search-form search-form-icon-right rd-search">
+                <div class="rd-navbar-search"><a class="rd-navbar-search-toggle mdi" data-rd-navbar-toggle=".rd-navbar-inner,.rd-navbar-search" href="#"><span></span></a>
+                  <form class="rd-navbar-search-form search-form-icon-right rd-search" onsubmit="">
                     <div class="form-group">
-                      <label for="rd-navbar-search-form-input" class="form-label">Type and hit enter...</label>
-                      <input id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off" class="rd-navbar-search-form-input form-control form-control-gray-lightest">
+                      <label class="form-label" for="rd-navbar-search-form-input">Type and hit enter...</label>
+                      <input class="rd-navbar-search-form-input form-control form-control-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
                     </div>
                   </form>
                 </div>
