@@ -1,0 +1,37 @@
+//
+// Custom Radio
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+input.mfRadio__input {
+  width: $radio-input-width;
+  height: $radio-input-height;
+  margin-top: ($line-height-computed - $radio-input-height)/2;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: $radio-input-background;
+  border-radius: $radio-input-border-radius;
+  padding: $radio-input-padding;
+  border: none;
+  outline: none;
+  background-clip: content-box;
+  box-shadow: $radio-input-shadow;
+
+  &:focus{
+    outline: none;
+  }
+
+  &:checked{
+    background-color: $radio-input-checked-background;
+  }
+
+  ::-moz-focus-inner{
+    border: none;
+  }
+ & + span{
+   margin-left: 10px;
+ }
+}

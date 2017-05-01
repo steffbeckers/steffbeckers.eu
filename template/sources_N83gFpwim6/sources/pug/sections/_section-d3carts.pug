@@ -1,0 +1,452 @@
+// D3 Charts
+section.section-98.section-sm-top-110.section-sm-bottom-124.bg-butterfly-bush.context-dark.section-graph-demonstration
+  .container
+    h1 D3 Charts
+    hr.divider.bg-white
+    .offset-top-50
+      div
+        dl
+          dt.text-lighter.reveal-xs-inline-block.text-regular
+            | Author:
+          dd.reveal-xs-inline-block.text-gray
+            | Masayuki Tanaka
+      div
+        dl
+          dt.text-lighter.reveal-xs-inline-block.text-regular
+            | License:
+          dd.reveal-xs-inline-block.text-gray
+            | MIT
+      div
+        dl
+          dt.text-lighter.reveal-xs-inline-block.text-regular
+            | Website:
+          dd.reveal-xs-inline-block
+            a(href="http://c3js.org/").text-neon-carrot http://c3js.org/
+    -
+      //-Define custom JSON stringify function
+      function JsonStringify(jsonObject) {
+        return JSON.stringify(jsonObject, function(key, value) {
+          if (typeof value === 'function') {
+            return value.toString();
+          } else {
+            return value;
+          }
+        });
+      }
+
+      //-Define Colors for higcharts graph
+      var d3ChartColors = ['#695999', '#79ccf2', '#42b574', '#f54b0f', '#f3a43d', '#79ccf2'];
+
+    .offset-top-66
+      +isotope(
+      ['Bar Chart', 'Area Chart', 'Step Chart', 'Line Chart',
+              'Spline Chart', 'Scatter Plot Chart', 'Sub Nav Chart', 'MouseWheel Zoom Chart',
+              'Donut Chart', 'Guage Chart', 'Combined Chart'],
+      {
+        "group": "d3Charts",
+        "layout": "fitRows",
+        "alignClass": "isotope-filters-vertical",
+        "title": ' '
+      }, "isotope-d3", '', "isotope-filter-collapse-lg isotope-has-d3-graphs")
+        .row
+          //Isotope item
+          .col-xs-12.isotope-item(data-filter="Bar Chart")
+            //- Define object for "Bar Chart"
+            -
+               var barChartObject = {
+                bindto: '#bar-chart',
+                color: {
+                  pattern: d3ChartColors
+                },
+                padding: {
+                  left: 30,
+                  right: 15,
+                  top: 0,
+                  bottom: 0,
+                },
+                data: {
+                  columns:
+                  [
+                    ['data1', 30, 200, 100, 400, 150, 250],
+                    ['data2', 130, 100, 140, 200, 150, 50],
+                    ['data3', 130, -150, 200, 300, -200, 100]
+                  ],
+                  type: 'bar'
+                },
+                bar: {
+                  width: {
+                    ratio: 0.5 //- this makes bar width 50% of length between ticks
+                  }
+                }
+               }
+
+            // Bar Chart
+            .bg-white.shadow-drop-sm.section-34.inset-left-10.inset-right-10.inset-md-left-30.inset-md-right-30.section-graph-demonstration
+              div
+                h3(class="text-left text-darker") Bar Chart
+              .offset-top-41.graph-content
+                .d3-chart#bar-chart(data-graph-object= JsonStringify(barChartObject), style='width: 100%; height: 370px; margin: 0 auto')
+
+          //Isotope item
+          .col-xs-12.isotope-item(data-filter="Area Chart")
+            //- Define object for "Area Chart"
+            -
+               var areaChartObject = {
+                 bindto: '#area-chart',
+                 color: {
+                   pattern: d3ChartColors,
+                 },
+                 padding: {
+                   left: 30,
+                   right: 15,
+                   top: 0,
+                   bottom: 0,
+                 },
+                 data: {
+                   columns: [
+                     ['data1', 300, 350, 300, 0, 0, 0],
+                     ['data2', 130, 100, 140, 200, 150, 50]
+                   ]
+                 }
+               }
+
+            // Area Chart
+            .bg-white.shadow-drop-sm.section-34.inset-left-10.inset-right-10.inset-md-left-30.inset-md-right-30.section-graph-demonstration
+              div
+                h3(class="text-left text-darker") Area Chart
+              .offset-top-41.graph-content
+                .d3-chart#area-chart(data-graph-object= JsonStringify(areaChartObject), style='width: 100%; height: 370px; margin: 0 auto')
+
+          //Isotope item
+          .col-xs-12.isotope-item(data-filter="Step Chart")
+            //- Define object for "Step Chart"
+            -
+               var areaChartObject = {
+                 bindto: '#step-chart',
+                 color: {
+                  pattern: ['#8668ad', '#42b574'],
+                 },
+                 padding: {
+                   left: 30,
+                   right: 15,
+                   top: 0,
+                   bottom: 0,
+                 },
+                 transition: {
+                  duration: 0
+                 },
+                 data: {
+                   columns: [
+                     ['data1', 300, 350, 300, 0, 0, 100],
+                     ['data2', 130, 100, 140, 200, 150, 50]
+                   ],
+                   types: {
+                     data1: 'step',
+                     data2: 'area-step'
+                   }
+                 }
+               }
+
+            // Step Chart
+            .bg-white.shadow-drop-sm.section-34.inset-left-10.inset-right-10.inset-md-left-30.inset-md-right-30.section-graph-demonstration
+              div
+                h3(class="text-left text-darker") Step Chart
+              .offset-top-41.graph-content
+                .d3-chart#step-chart(data-graph-object= JsonStringify(areaChartObject), style='width: 100%; height: 370px; margin: 0 auto')
+
+          //Isotope item
+          .col-xs-12.isotope-item(data-filter="Line Chart")
+            //- Define object for "Line Chart"
+            -
+               var lineChartObject = {
+                 bindto: '#line-chart',
+                 color: {
+                  pattern: ['#42b574', '#64aae1'],
+                 },
+                 point: {
+                  r: 3
+                 },
+                 padding: {
+                   left: 30,
+                   right: 30,
+                   top: 0,
+                   bottom: 0,
+                 },
+                 data: {
+                   columns: [
+                     ['data1', 30, 200, 100, 400, 150, 250],
+                     ['data2', 50, 20, 10, 40, 15, 25]
+                   ],
+                   axes: {
+                     data1: 'y',
+                     data2: 'y2',
+                   }
+                 },
+                 axis: {
+                   x: {
+                    label: 'X Label'
+                   },
+                   y: {
+                    label: {
+                      text: 'Y Axis Label',
+                      position: 'outer-middle'
+                    }
+                   },
+                   y2: {
+                     show: true,
+                     label: {
+                      text: 'Y2 Axis Label',
+                      position: 'outer-middle'
+                     }
+                   }
+                 }
+               }
+
+            // Line Chart
+            .bg-white.shadow-drop-sm.section-34.inset-left-10.inset-right-10.inset-md-left-30.inset-md-right-30.section-graph-demonstration
+              div
+                h3(class="text-left text-darker") Line Chart
+              .offset-top-41.graph-content
+                .d3-chart#line-chart(data-graph-object= JsonStringify(lineChartObject), style='width:100%;height: 370px; margin: 0 auto')
+
+          //Isotope item
+          .col-xs-12.isotope-item(data-filter="Spline Chart")
+            //- Define object for "Spline Chart"
+            -
+               var splineChartObject = {
+                 bindto: '#spline-chart',
+                 color: {
+                   pattern: d3ChartColors
+                 },
+                 padding: {
+                   left: 30,
+                   right: 15,
+                   top: 0,
+                   bottom: 0
+                 },
+                 data: {
+                   columns: [
+                     ['data1', 30, 200, 100, 400, 150, 250],
+                     ['data2', 130, 100, 140, 200, 150, 50]
+                   ],
+                   type: 'spline'
+                 }
+               }
+
+            // Spline Chart
+            .bg-white.shadow-drop-sm.section-34.inset-left-10.inset-right-10.inset-md-left-30.inset-md-right-30.section-graph-demonstration
+              div
+                h3(class="text-left text-darker") Spline Chart
+              .offset-top-41.graph-content
+                .d3-chart#spline-chart(data-graph-object= JsonStringify(splineChartObject), style='width:100%;height: 370px; margin: 0 auto')
+
+          //Isotope item
+          .col-xs-12.isotope-item(data-filter="Scatter Plot Chart")
+            //- Define object for " ScatterPlot Chart"
+            -
+               var scatterChartObject = {
+                 bindto: '#scatter-chart',
+                 color: {
+                  pattern: ['#695999', '#42b574'],
+                 },
+                 padding: {
+                   left: 30,
+                   right: 15,
+                   top: 0,
+                   bottom: 0,
+                 },
+                 data: {
+                   xs: {
+                     data1: 'data1_x',
+                     data2: 'data2_x',
+                   },
+                   // iris data from R
+                   columns: [
+                   ["data1_x", 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.4, 3.0, 3.0, 4.0, 4.4, 3.9, 3.5, 3.8, 3.8, 3.4, 3.7, 3.6, 3.3, 3.4, 3.0, 3.4, 3.5, 3.4, 3.2, 3.1, 3.4, 4.1, 4.2, 3.1, 3.2, 3.5, 3.6, 3.0, 3.4, 3.5, 2.3, 3.2, 3.5, 3.8, 3.0, 3.8, 3.2, 3.7, 3.3],
+                   ["data2_x", 3.2, 3.2, 3.1, 2.3, 2.8, 2.8, 3.3, 2.4, 2.9, 2.7, 2.0, 3.0, 2.2, 2.9, 2.9, 3.1, 3.0, 2.7, 2.2, 2.5, 3.2, 2.8, 2.5, 2.8, 2.9, 3.0, 2.8, 3.0, 2.9, 2.6, 2.4, 2.4, 2.7, 2.7, 3.0, 3.4, 3.1, 2.3, 3.0, 2.5, 2.6, 3.0, 2.6, 2.3, 2.7, 3.0, 2.9, 2.9, 2.5, 2.8],
+                   ["data1", 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1, 0.1, 0.2, 0.4, 0.4, 0.3, 0.3, 0.3, 0.2, 0.4, 0.2, 0.5, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.4, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.2, 0.6, 0.4, 0.3, 0.2, 0.2, 0.2, 0.2],
+                   ["data2", 1.4, 1.5, 1.5, 1.3, 1.5, 1.3, 1.6, 1.0, 1.3, 1.4, 1.0, 1.5, 1.0, 1.4, 1.3, 1.4, 1.5, 1.0, 1.5, 1.1, 1.8, 1.3, 1.5, 1.2, 1.3, 1.4, 1.4, 1.7, 1.5, 1.0, 1.1, 1.0, 1.2, 1.6, 1.5, 1.6, 1.5, 1.3, 1.3, 1.3, 1.2, 1.4, 1.2, 1.0, 1.3, 1.2, 1.3, 1.3, 1.1, 1.3],
+                   ],
+                   type: 'scatter'
+                 },
+                 axis: {
+                   x: {
+                     label: 'Sepal.Width'
+                   },
+                   y: {
+                    label: 'Petal.Width'
+                   }
+                 }
+               }
+
+            // Scatter Plot Chart
+            .bg-white.shadow-drop-sm.section-34.inset-left-10.inset-right-10.inset-md-left-30.inset-md-right-30.section-graph-demonstration
+              div
+                h3(class="text-left text-darker") Scatter Plot Chart
+              .offset-top-41.graph-content
+                .d3-chart#scatter-chart(data-graph-object= JsonStringify(scatterChartObject), style='width:100%;height: 370px; margin: 0 auto')
+
+          //Isotope item
+          .col-xs-12.isotope-item(data-filter="Sub Nav Chart")
+            //- Define object for "Sub Nav Chart"
+            -
+               var chartWithNavDetail = {
+                 bindto: '#subnav-chart',
+                 color: {
+                  pattern: ['#66abe1']
+                 },
+                 padding: {
+                   left: 25,
+                   right: 15,
+                   top: 0,
+                   bottom: 0
+                 },
+                 data: {
+                   columns: [
+                   ['data', 30, 200, 100, 400, 150, 250]
+                   ]
+                 },
+                 subchart: {
+                   show: true
+                 }
+               }
+
+            // Sub Nav Chart
+            .bg-white.shadow-drop-sm.section-34.inset-left-10.inset-right-10.inset-md-left-30.inset-md-right-30.section-graph-demonstration
+              div
+                h3(class="text-left text-darker") Sub Nav Chart
+              .offset-top-41.graph-content
+                .d3-chart#subnav-chart(data-graph-object= JsonStringify(chartWithNavDetail), style='width:100%;height: 370px; margin: 0 auto')
+
+          //Isotope item
+          .col-xs-12.isotope-item(data-filter="MouseWheel Zoom Chart")
+            //- Define object for "MouseWheel Zoom Chart"
+            -
+              var mouseWheelChartObject = {
+                bindto: '#zoom-chart',
+                color: {
+                  pattern: ['#66abe1']
+                },
+                padding: {
+                  left: 30,
+                  right: 15,
+                  top: 0,
+                  bottom: 0
+                },
+                data: {
+                  columns: [
+                  ['data', 30, 200, 100, 400, 150, 250, 150, 200, 170, 240, 350, 150, 100, 400, 150, 250, 150, 200, 170, 240, 100, 150, 250, 150, 200, 170, 240, 30, 200, 100, 400, 150, 250, 150, 200, 170, 240, 350, 150, 100, 400, 350, 220, 250, 300, 270, 140, 150, 90, 150, 50, 120, 70, 40]
+                  ]
+                },
+                zoom: {
+                  enabled: true
+                }
+              }
+
+            // MouseWheel Zoom Chart
+            .bg-white.shadow-drop-sm.section-34.inset-left-10.inset-right-10.inset-md-left-30.inset-md-right-30.section-graph-demonstration
+              div
+                h3(class="text-left text-darker") MouseWheel Zoom Chart
+              .offset-top-41.graph-content
+                .d3-chart#zoom-chart(data-graph-object= JsonStringify(mouseWheelChartObject), style='width:100%;height: 370px; margin: 0 auto')
+
+          //Isotope item
+          .col-xs-12.isotope-item(data-filter="Donut Chart")
+            //- Define object for "Donut Chart"
+            -
+              var donutChartObject = {
+                bindto: '#donut-chart',
+                color: {
+                  pattern: d3ChartColors
+                },
+                data: {
+                  columns: [
+                    ['data1', 25],
+                    ['data2', 75]
+                  ],
+                  type : 'donut'
+                },
+                donut: {
+                title: "Petal Width"
+                }
+              }
+
+            // Donut Chart
+            .bg-white.shadow-drop-sm.section-34.inset-left-10.inset-right-10.inset-md-left-30.inset-md-right-30
+              div
+                h3(class="text-left text-darker") Donut Chart
+              .offset-top-41
+                .d3-chart#donut-chart(data-graph-object= JsonStringify(donutChartObject), style='width:100%;height: 370px; margin: 0 auto')
+
+          //Isotope item
+          .col-xs-12.isotope-item(data-filter="Guage Chart")
+            //- Define object for "Guage Chart"
+            -
+              var gaugeChartObject = {
+                bindto: '#guage-chart',
+                color: {
+                  pattern: d3ChartColors,
+                  threshold: {
+                    values: [30, 60, 90, 100]
+                  }
+                },
+                data: {
+                  columns: [
+                    ['data', 75.6]
+                  ],
+                  type: 'gauge'
+                },
+                size: {
+                  height: 100
+                }
+              }
+
+            // Guage Chart
+            .bg-white.shadow-drop-sm.section-34.inset-left-10.inset-right-10.inset-md-left-30.inset-md-right-30.section-graph-demonstration
+              div
+                h3(class="text-left text-darker") Guage Chart
+              .offset-top-41.graph-content.section-top-34.section-bottom-66
+                .d3-chart#guage-chart(data-graph-object= JsonStringify(gaugeChartObject), style='width:100%;height: 230px; margin: 0 auto')
+
+          //Isotope item
+          .col-xs-12.isotope-item(data-filter="Combined Chart")
+            //- Define object for "Combined Chart"
+            -
+              var combinedChartObject = {
+                bindto: '#combo-chart',
+                color: {
+                  pattern: ['#79ccf2', '#64aae1',  '#f3a43d', '#f54b0f', '#695999', '#4bb97b',]
+                },
+                padding: {
+                  left: 30,
+                  right: 15,
+                  top: 0,
+                  bottom: 0
+                },
+                data: {
+                  columns: [
+                    ['data1', 30, 20, 50, 40, 60, 50],
+                    ['data2', 200, 130, 90, 240, 130, 220],
+                    ['data3', 300, 200, 160, 400, 250, 250],
+                    ['data4', 200, 130, 90, 240, 130, 220],
+                    ['data5', 130, 120, 150, 140, 160, 150],
+                    ['data6', 90, 70, 20, 50, 60, 120]
+                  ],
+                  type: 'bar',
+                  types: {
+                    data3: 'spline',
+                    data4: 'line',
+                    data6: 'area'
+                  },
+                  groups: [
+                    ['data1','data2']
+                  ]
+                }
+              }
+
+            // Combined Chart
+            .bg-white.shadow-drop-sm.section-34.inset-left-10.inset-right-10.inset-md-left-30.inset-md-right-30.section-graph-demonstration
+              div
+                h3(class="text-left text-darker") Combined Chart
+              .offset-top-41.graph-content
+                .d3-chart#combo-chart(data-graph-object= JsonStringify(combinedChartObject), style='width:100%;height: 370px; margin: 0 auto')

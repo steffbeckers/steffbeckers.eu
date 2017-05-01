@@ -1,0 +1,98 @@
+//- Includes
+include ../elements/_ui-quote-simple
+include ../elements/_widget-post
+include ../elements/_ui-box-comment
+include ../elements/_ui-post-event-date
+include ../elements/_ui-member-block
+
+// Blog Default Single
+section
+  +post-event-date("#", {"number": "8", "month": "Mar"}, "Making Money Online with Your Computer Only",
+  {
+    "type": "thumbnail",
+    "thumb": {"src": "images/blog/post-04-570x321.jpg", "width": 570, "height": 321, "alt": ""},
+    "target": {"src": "images/blog/post-04-1170x600.jpg", "width": 1170, "height": 600, "alt": ""}
+  },"", true)
+    p Making money online is a kind of everyone’s dream job. No investments are needed and you can do whatever you need to do when you are in the mood or have free time. Flexible work schedule is something you’ll hardly get working at the office. However, online business rarely starts to bring you money from the very first day. It takes some time as a rule. But once you understand the whole process (like what are your abilities, where to work, for whom to work and so on) you'll be earning money in no time
+    p So, what to begin with? Find your strong points. What are you good at? Are you good at designing? Even if you are able to design only simple logos, you'll be still making money online. And if you are a pro in logo/graphic design, then you'll be making more. There are people looking online for guys like you. We recommend you to take things seriously. Only if you are serious in making money online you'll find the way to make a steady income.
+    +quote-simple("I am really happy I’ve purchased a template from TemplateMonster. Congratulations!")
+    p What is the basic necessity to make money online? It’s just a computer and an internet connection. You don't need a tutor for learning to make money online. You'll learn how to do that online for free. Even if everything you can do is typing on your keyboard - there are tons of data entry jobs available online, where no technical skills are needed.
+
+    footer.offset-top-50.text-sm-left.clearfix
+      .group
+        a(href="#").btn.btn-danger.btn-icon.btn-icon-left
+          span.icon.icon-xs.mdi.mdi-heart
+          | like #[span.badge 521]
+        a(href="#").btn.btn-info.btn-icon.btn-icon-left
+          span.icon.icon-xs.mdi.mdi-facebook
+          | Share on facebook
+        a(href="#").btn.btn-sapphire.btn-icon.btn-icon-left
+          span.icon.icon-xs.mdi.mdi-twitter
+          | Share on Twitter
+
+  hr.offset-top-66
+
+  h4.offset-top-66.text-uppercase.text-spacing-120.text-left.text-bold 42 Comments
+
+  .offset-top-41
+    //- Comment 1
+    +box-comment(
+    "box-comment-outboxed",
+    {
+      "width": 60,
+      "height": 60,
+      "src": "images/users/user-alex-merphy-60x60.jpg",
+      "alt": "Alex Merphy"
+    },
+    "Feb 18, 9:14",
+    "Alex Merphy",
+    "Very smart people working on the project — they provided great insight and brought experience to it. Sales person was very prompt."
+    )
+      //- Reply 1
+      +box-comment(
+      "box-comment-outboxed",
+      {
+        "width": 60,
+        "height": 60,
+        "src": "images/users/user-kira-force-60x60.jpg",
+        "alt": "Kira Force"
+      },
+      "Feb 18, 10:13",
+      "Kira Force",
+      "They have outperformed every expectation we had. The company promised — and delivered with fewer steps and minimal paper."
+      )
+        //- Reply 2
+      +box-comment(
+      "box-comment-outboxed",
+      {
+        "width": 60,
+        "height": 60,
+        "src": "images/users/user-eugene-newman-60x60.jpg",
+        "alt": "Eugene Newman"
+      },
+      "Feb 18, 9:14",
+      "Eugene Newman",
+      "The service is excellent and the personnel I worked with are great. Very responsive team and easy company to work with. I enjoy our partnership."
+      )
+        //- Comment 2
+    +box-comment(
+    "box-comment-outboxed",
+    {
+      "width": 60,
+      "height": 60,
+      "src": "images/users/user-diana-russo-60x60.jpg",
+      "alt": "Diana Russo"
+    },
+    "Feb 17, 7:34",
+    "Diana Russo",
+    "An efficient and reliable resource. They always remain flexible, cost effective, and lightning fast. Keep up the good work!"
+    )
+
+  h4.offset-top-34.text-uppercase.text-spacing-120.text-left.text-bold Leave a comment
+
+  form.rd-mailform.offset-top-10.text-left(data-form-output="form-contact-me", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+    .form-group
+      label.form-label.form-label-outside(for="comment-message") Message:
+      textarea#comment-message.form-control(data-constraints="@Required" style="height: 170px")
+    .group-sm.text-left.offset-top-30
+      button(type="submit").btn.btn-md.btn-primary comment

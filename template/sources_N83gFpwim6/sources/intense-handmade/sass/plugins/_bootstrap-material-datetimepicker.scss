@@ -1,0 +1,249 @@
+//
+// Bootstrap material datetimepicker
+// --------------------------------------------------
+
+.dtp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba($gray-base, 0.4);
+  z-index: 2000;
+
+  > .dtp-content {
+    background: $white;
+    max-width: 300px;
+    box-shadow: $shadow-area-md;
+    position: relative;
+    left: 50%;
+    margin: 0 auto;
+    .mobille &{
+      max-height: 500px;
+      overflow-y: auto;
+    }
+  }
+  &-header {
+    background: $brand-primary;
+    color: $white;
+    text-align: center;
+    padding: 0.3rem;
+    position: relative;
+  }
+  &-date, &-time {
+    background: lighten($brand-primary, 10%);
+    text-align: center;
+    color: $white;
+    padding: 10px;
+  }
+  &-date > div {
+    padding: 0;
+    margin: 0;
+  }
+  &-actual-month {
+    font-size: 1.5em;
+  }
+  &-actual-num, &-actual-maxtime {
+    font-size: 3em;
+    line-height: 0.9;
+  }
+  &-actual-year {
+    font-size: 1.5em;
+    color: $white;
+  }
+  &-picker {
+    padding: 1rem;
+    text-align: center;
+  }
+  &-picker-month, &-actual-time {
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &-close {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 1rem;
+    > a {
+      display: inline-block;
+      vertical-align: middle;
+      color: $white;
+    }
+  }
+  table.dtp-picker-days {
+    margin: 0;
+    border: none;
+    tr {
+      border: none;
+      > td {
+        border: none;
+        font-weight: 700;
+        font-size: 14px;
+        text-align: center;
+        padding: 1rem 0.3rem;
+        > {
+          span.dtp-select-day {
+            color: #BDBDBD !important;
+          }
+          a {
+            color: $gray-base;
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            text-align: center;
+            line-height: 24px;
+            border-radius: 50%;
+            transition: .3s all ease;
+          }
+        }
+      }
+    }
+  }
+  .dtp-picker-time > a {
+    color: $gray-base;
+    padding: 0.4rem 0.5rem 0.5rem 0.6rem;
+    border-radius: 50% !important;
+  }
+  table.dtp-picker-days tr > {
+    td > a.selected {
+      background: $brand-primary;
+      color: $white;
+    }
+    th {
+      color: $gray-base;
+      text-align: center;
+      font-weight: 700;
+      padding: 0.4rem 0.3rem;
+      border-bottom: none;
+    }
+  }
+  .p10, .p20, .p60,.p80{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .p10 {
+    > a {
+      color: $gray-lighter;
+      transition: .3s all ease;
+      &:hover{
+        color: $white;
+      }
+    }
+    width: 10%;
+  }
+  .p20 {
+    width: 20%;
+  }
+  .p60 {
+    width: 60%;
+  }
+  .p80 {
+    width: 80%;
+  }
+
+  &-picker-month{
+    display: none!important;
+  }
+
+ &-meridien-am, &-meridien-pm {
+      position: relative;
+      top: 10px;
+      color: $gray-base;
+      font-weight: 500;
+      padding: 0.7rem 0.5rem;
+      border-radius: 50% !important;
+      text-decoration: none;
+      background: #eee;
+      font-size: 1rem;
+    }
+
+  &-actual-meridien a.selected {
+    background: $brand-primary;
+    color: $white;
+  }
+  &-picker-time {
+    > a {
+      display: block;
+      line-height: 23px;
+      padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+      &.dtp-select-hour {
+        &.selected {
+          background: $brand-primary;
+          color: $white;
+        }
+        &.disabled {
+          color: $gray-dark;
+        }
+      }
+      &.dtp-select-minute {
+        &.disabled {
+          color: $gray-dark;
+        }
+        &.selected {
+          background: $brand-primary;
+          color: $white;
+        }
+      }
+    }
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center !important;
+  }
+  &-picker-clock {
+    margin: 1rem 2rem 0 2rem;
+    padding: 1rem;
+    border-radius: 50% !important;
+    background: $gray-light;
+  }
+  &-clock-center {
+    width: 15px;
+    height: 15px;
+    background: $gray-dark;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 50;
+    html[class*="ie"] &{
+      display: none;
+    }
+  }
+  &-hand, &-hour-hand {
+    position: absolute;
+    width: 4px;
+    margin-left: -2px;
+    background: $gray-dark;
+    @include transform(rotate(0deg));
+    @include transform-origin(bottom);
+    z-index: 1;
+    html[class*="ie"] &{
+      display: none;
+    }
+  }
+
+  &-minute-hand {
+    width: 2px;
+    margin-left: -1px;
+  }
+  &-hand.on {
+    background: $brand-primary;
+  }
+  &-buttons {
+    padding: 0 1rem 1rem 1rem;
+    text-align: right;
+  }
+  .invisible {
+    visibility: hidden;
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+
+}

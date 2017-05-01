@@ -1,0 +1,47 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-navbar-sidebar-toggle
+include ../elements/_ui-page-loader-variant-1
+
+//-Title
+block title
+  title= cfg.nav.features.submenu.rdPlugins.submenu.rdNavbar.title
+
+//- Page
+block page
+
+  +page-loader-1(cfg.brand.logoBig)
+
+  // Page Head
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-sidebar-toggle(
+    'rd-navbar-sidebar-toggle rd-navbar-dark',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-fixed',
+      "data-md-device-layout": 'rd-navbar-fixed',
+      "data-lg-device-layout": 'rd-navbar-fixed',
+      "data-lg-stick-up": 'false',
+      "data-lg-hover-on": "false"
+    },
+    cfg.brand.logoInverse,
+    cfg.nav.features,
+    cfg.nav,
+    false
+    )
+  // Page Content
+  main.page-content
+
+    include ../sections/_section-rd-navbar
+    include ../sections/_section-layout-based
+    include ../sections/_section-various-menu-types
+    include ../sections/_section-rd-navbar-features
+    include ../sections/_section-rd-navbar-cross-browser-support
+    include ../sections/_section-rd-navbar-gpl
+    include ../sections/_section-rd-navbar-see-it-in-action
+
+  // Page Footer
+  include ../sections/_section-footer-default

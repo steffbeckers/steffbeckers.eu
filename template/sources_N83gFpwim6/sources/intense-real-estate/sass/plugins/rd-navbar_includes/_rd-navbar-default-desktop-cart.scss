@@ -1,0 +1,39 @@
+//
+// RD Navbar Default Cart
+// --------------------------------------------------
+%rd-navbar-default-desktop-cart {
+  .rd-navbar-cart {
+    @include toggle-icons-via-rotation($rd-navbar-desktop-cart-icon-open-size, $rd-navbar-desktop-cart-icon-close-size, $rd-navbar-desktop-cart-icon-color, $rd-navbar-desktop-cart-icon-open, $rd-navbar-desktop-cart-icon-close);
+  }
+  .rd-navbar-cart-dropdown {
+    position: absolute;
+    top: 100%;
+    left: auto;
+    right: 0;
+    width: $rd-navbar-desktop-cart-width;
+    padding: $rd-navbar-desktop-cart-padding;
+    text-align: left;
+    border-top: $rd-navbar-desktop-cart-border;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s all ease;
+    z-index: 1;
+    box-shadow: $rd-navbar-desktop-cart-shadow;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+//
+// Dark Theme
+// --------------------------------------------------
+%rd-navbar-default-desktop-cart-dark {
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+%rd-navbar-default-desktop-light {
+}

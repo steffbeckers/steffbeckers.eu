@@ -1,0 +1,14 @@
+// Element-groups
+
+@mixin element-groups-custom($offset, $translate-offset) {
+  -webkit-transform: translateY(-$translate-offset);
+  transform: translateY(-$translate-offset);
+  margin-bottom: -$translate-offset;
+  margin-left: -$offset;
+
+  > *, > *:first-child {
+    display: inline-block;
+    margin-top: $translate-offset;
+    margin-left: $offset;
+  }
+}

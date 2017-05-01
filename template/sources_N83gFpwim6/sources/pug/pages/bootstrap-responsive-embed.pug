@@ -1,0 +1,95 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-navbar-default-transparent
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-video-embed
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.bootstrapcomponents.submenu.responsiveEmbed.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.bootstrapcomponents.submenu.responsiveEmbed.title,
+  "icon-lg " + cfg.nav.components.submenu.bootstrapcomponents.submenu.responsiveEmbed.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.bootstrapcomponents.submenu.responsiveEmbed.title,
+      "href": cfg.nav.components.submenu.bootstrapcomponents.submenu.responsiveEmbed.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    // Responsive embed
+    section
+      .shell
+        h1 Responsive embed
+        hr.divider.bg-mantis
+
+        .range.range-xs-center.offset-top-41.text-left
+          .cell-md-6
+            p Allow browsers to determine video or slideshow dimensions based on the width of their containing block by creating an intrinsic ratio that will properly scale on any device.
+            p Rules are directly applied to
+              = ' '
+              code &lt;iframe&gt;
+              = ' , '
+              code &lt;embed&gt;
+              = ' , '
+              code &lt;video&gt;
+              = ' , and'
+              code &lt;object&gt;
+              = ' '
+              | elements; optionally use an explicit descendant class
+              = ' '
+              code .embed-responsive-item
+              = ' '
+              | when you want to match the styling for other attributes.
+            p
+              span.text-bold Pro-Tip!
+              = ' '
+              | You don't need to include
+              = ' '
+              code .frameborder="0"
+              = ' '
+              | in your
+              = ' '
+              code &lt;iframe&gt;
+              = ' '
+              | s as we override that for you.
+
+            .offset-top-30
+              +video-embed({
+                "type": "video",
+                "href": "//www.youtube.com/embed/1DF4QpXf-7M",
+                "ratio": "16by9"
+              })
+
+  // Page Footers
+  include ../sections/_section-footer-default

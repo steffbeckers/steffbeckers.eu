@@ -1,0 +1,252 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-box-icon
+include ../elements/_ui-lists
+
+block title
+  title=cfg.nav.pages.submenu.typography.title
+
+block page
+  // Page Header
+  header.page-header.slider-menu-position
+    +rd-navbar-default({
+      "style": "",
+      "logo": cfg.brand.logo,
+      "logoFixed": cfg.brand.logoSmall,
+      "activeLink": 8,
+      "attr": {
+        "data-layout": "rd-navbar-fixed",
+        "data-sm-layout": "rd-navbar-fixed",
+        "data-md-layout": "rd-navbar-fullwidth",
+        "data-lg-layout": "rd-navbar-static"
+      }
+    })
+
+    +breadcrumb(cfg.nav.pages.submenu.typography.title, {
+      0: {
+        "type": "link",
+        "title": cfg.nav.home.title,
+        "href": cfg.nav.home.href
+      },
+      1: {
+        "type": "link",
+        "title": cfg.nav.pages.title,
+        "href": cfg.nav.pages.href
+      },
+      2: {
+        "type": "link",
+        "title": cfg.nav.pages.submenu.typography.title,
+        "href": cfg.nav.pages.submenu.typography.href
+      }
+    }, "images/backgrounds/background-02-1920x900.jpg")
+
+  // Page Content
+  main.page-content.section-75.section-md-90
+
+    // Typography
+    section
+      .shell.section-aside-xl
+        .section-aside-xl-right.text-xl-left
+          h1 H1 heading
+          .offset-top-4
+            h2 H2 heading
+          .offset-top-15
+            h3 H3 heading
+          .offset-top-15
+            h4 H4 heading
+          .offset-top-20
+            h5 H5 heading
+          .offset-top-23
+            h6 H6 heading
+
+        .range.range-xs-center.offset-top-85.offset-xl-top-0
+          .cell-sm-10.cell-lg-8
+            h1 H1 heading
+
+            .offset-top-20.offset-md-top-44
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            .offset-top-64.offset-md-top-85
+              h2 H2 heading
+
+              .offset-top-20.offset-md-top-44
+                p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            .offset-top-64.offset-md-top-90
+              h3 H3 heading
+
+              .offset-top-23
+                p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            .offset-top-64.offset-md-top-90
+              h4 H4 heading
+
+              .offset-top-23
+                p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            .offset-top-64.offset-md-top-95
+              h5 H5 heading
+
+              .offset-top-25
+                p.text-extra-small Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            .offset-top-64.offset-md-top-95
+              h6 H6 heading
+
+              .offset-top-25
+                p.text-extra-small Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            // blockquote
+            .offset-top-64.offset-md-top-95
+              h5 blockquote
+
+              .offset-top-30
+                // Quote Classic
+                blockquote.quote-classic.context-dark
+                  span.icon.material-icons-ico.material-icons-format_quote.icon-white
+                  .offset-top-15
+                    p
+                      q Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+                  .offset-top-25
+                    div
+                      p
+                        cite.font-accent.text-bold.text-spacing-inverse-25
+                          a(href="single-member.html") Richard Nelson
+                    p.font-accent.text-bold.text-spacing-inverse-25 (client)
+
+            // HTML text elements
+            .offset-top-64.offset-md-top-100
+              h5 HTML text elements
+
+              .offset-top-25.text-left
+                .text-extra-small.text-spacing-0 Welcome to our wonderful world. This is a bold text. #[code This is a highlighted text.] We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login #[span.text-mine-shaft.tooltip-custom(data-toggle='tooltip', data-placement='top', title='Default Text') Tooltips] widgets, you will definitely have a great experience of using our web page. #[span.text-strike This is a strickethrough text.] #[span.text-underline This is an underlined text.] #[a.text-primary(href="#") Link] #[a.text-mine-shaft(href="#") Hover link] #[a.text-mine-shaft(href="#") Press link]
+
+        // unordered list
+        .range.range-xs-center.offset-top-64.offset-md-top-95
+          .cell-sm-10.cell-md-7.cell-lg-5
+            h5 unordered list
+
+            .inset-lg-left-40.offset-top-25.text-left
+              p.text-extra-small We specialize in a variety of services. Our aim is to deliver the top level of customer service based on your requests
+
+              .offset-top-10
+                +list({
+                  "type": "list-marker",
+                  "style": "list-marked font-accent text-bold p text-left"
+                },[
+                  {"style": "text-primary", "text": "Consulting"},
+                  {"style": "text-primary", "text": "Customer Service"},
+                  {"style": "text-primary", "text": "Innovation"},
+                  {"style": "text-primary", "text": "Management"},
+                  {"style": "text-primary", "text": "Ethics"}
+                ])
+
+              .offset-top-15
+                p.text-extra-small We hope that with our services you will receive the most personalized help in purchasing any kind of products you are looking for.
+
+            .offset-top-64.offset-md-top-95
+              h5 ordered list
+
+              .inset-lg-left-40.offset-top-25.text-left
+                p.text-extra-small We specialize in a variety of services. Our aim is to deliver the top level of customer service based on your requests
+
+                .offset-top-10
+                  +list({
+                    "type": "list-index",
+                    "style": "list-index list-index-extra-small font-accent text-bold p text-left"
+                  },[
+                    {"style": "inset-left-15 text-primary", "countStyle": "text-extra-small", "text": "Consulting"},
+                    {"style": "inset-left-12 text-primary", "countStyle": "text-extra-small", "text": "Customer Service"},
+                    {"style": "inset-left-12 text-primary", "countStyle": "text-extra-small", "text": "Innovation"},
+                    {"style": "inset-left-12 text-primary", "countStyle": "text-extra-small", "text": "Management"},
+                    {"style": "inset-left-12 text-primary", "countStyle": "text-extra-small", "text": "Ethics"}
+                  ])
+
+                .offset-top-15
+                  p.text-extra-small We hope that with our services you will receive the most personalized help in purchasing any kind of products you are looking for.
+
+        // icon list
+        .offset-top-64.offset-md-top-100
+          h5 icon list
+
+          .range.range-xs-center.offset-top-25
+            .cell-sm-10.cell-md-4
+              +box-icon({
+                "iconStyle": "icon-lg thin-ico thin-icon-user text-primary",
+                "titleOffset": "offset-top-20",
+                "titleStyle": "font-accent text-uppercase text-bold text-spacing-50 text-primary",
+                "titleText": "best service",
+                "descOffset": "offset-top-28 inset-lg-left-30 inset-lg-right-30",
+                "descStyle": "text-extra-small",
+                "descText": "Our mission is to attract and retain customers by providing Best in Class solutions and fostering a profitable, disciplined culture of safety, service, and trust."
+              })
+
+            .cell-sm-10.cell-md-4.offset-top-44.offset-md-top-0
+              +box-icon({
+                "iconStyle": "icon-lg thin-ico thin-icon-love text-primary",
+                "titleOffset": "offset-top-20",
+                "titleStyle": "font-accent text-uppercase text-bold text-spacing-50 text-primary",
+                "titleText": "reputation",
+                "descOffset": "offset-top-28 inset-lg-left-30 inset-lg-right-30",
+                "descStyle": "text-extra-small",
+                "descText": "We have established a strong presence in the industry.Our award-winning services earn a reputation for quality and excellence that few can rival."
+              })
+
+            .cell-sm-10.cell-md-4.offset-top-44.offset-md-top-0
+              +box-icon({
+                "iconStyle": "icon-lg thin-ico thin-icon-briefcase-2 text-primary",
+                "titleOffset": "offset-top-20",
+                "titleStyle": "font-accent text-uppercase text-bold text-spacing-50 text-primary",
+                "titleText": "safety & security",
+                "descOffset": "offset-top-28 inset-lg-left-30 inset-lg-right-30",
+                "descStyle": "text-extra-small",
+                "descText": "Safety for our employees, customers and the community we work with will always remain our primary focus in all the policies, procedures and programs."
+              })
+
+        // image centered
+        .range.range-xs-center.offset-top-64.offset-md-top-95
+          .cell-sm-10.cell-lg-8
+            h5 image centered
+
+            .offset-top-30
+              img.img-responsive.center-block(src="images/pages/typography-01-770x422.jpg" width="770" height="422" alt="")
+
+            .offset-top-30
+              h5.text-silver-chalice fast. cheap. reliable
+
+            .offset-top-25
+              p.text-extra-small Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+        // image left
+        .range.range-xs-center.offset-top-64.offset-md-top-95
+          .cell-md-10
+            h5 image left
+
+            .range.range-xs-center.text-left.offset-top-30
+              .cell-sm-6
+                img.img-responsive.center-block(src="images/pages/typography-02-470x305.jpg" width="470" height="305" alt="")
+
+              .cell-sm-6.offset-top-44.offset-sm-top-0
+                p.text-extra-small Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+                .offset-top-10
+                  p.text-extra-small Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            // image right
+            .offset-top-64.offset-md-top-95
+              h5 image right
+              .range.range-xs-center.text-left.offset-top-30
+                .cell-sm-6.cell-sm-push-1
+                  img.img-responsive.center-block(src="images/pages/typography-02-470x305.jpg" width="470" height="305" alt="")
+
+                .cell-sm-6.offset-top-44.offset-sm-top-0
+                  p.text-extra-small Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+                  .offset-top-10
+                    p.text-extra-small Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+
+  // Page Footer
+  include ../sections/_footer-default

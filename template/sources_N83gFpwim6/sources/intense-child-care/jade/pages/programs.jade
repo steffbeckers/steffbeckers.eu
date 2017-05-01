@@ -1,0 +1,153 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-rd-parallax
+include  ../elements/_ui-box-icon-type-4
+include  ../elements/_ui-rd-map
+include ../elements/_ui-vacation
+include ../elements/_ui-thumbnail-terry
+//-Title
+block title
+  title= cfg.nav.programs.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.programs,
+    cfg.nav
+    )
+  // Page Content
+  main.page-content
+    // Breadcrumbs
+    section.context-dark
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/bg-01-1920x718.jpg",
+        "htmlSpeed": "0"
+      })
+        .bg-overlay-info
+          .shell.section-34.section-sm-66.text-md-left
+            div.veil.reveal-sm-block.reveal-md-inline-block
+              h1.text-bold
+                span.big Programs
+            div.pull-md-right.offset-sm-top-10.offset-md-top-41
+              ul.p.list-inline.list-inline-dashed
+                li.text-safety-orange
+                  a(href= cfg.nav.home.href) Home
+                li Programs
+
+    // Programs
+    section.section-98.section-md-124
+      .shell
+        h1.text-primary.text-bold Early Childhood Education Programs
+        +svg-divider("bg-primary", "71", "13")
+        .range.range-xs-center
+          .cell-xs-10.cell-sm-8
+            p The educational child care programs in Intense were designed to offer a comprehensive path to prepare your child for elementary school. Our education center features developmentally appropriate programs with specialized curriculum for a variety of ages. Find the right path for your child here.
+        .range.range-xs-center.offset-top-66
+          .cell-xs-10.cell-sm-6.cell-md-3
+            +thumbnail-terry({
+              "type": "thumbnail",
+              "title": "Infants",
+              "description": "",
+              "thumb": {"src": "images/home-03-270x360.jpg", "width": 270, "height": 360, "alt": ""},
+              "target": {"href": "#"},
+              "btnLink": "single-program.html",
+              "btnClass": "btn-safety-orange",
+              "btnText": "learn more"
+            })
+          .cell-xs-10.cell-sm-6.cell-md-3.offset-top-50.offset-sm-top-0
+            +thumbnail-terry({
+              "type": "thumbnail",
+              "title": "Toddlers",
+              "description": "",
+              "thumb": {"src": "images/home-04-270x360.jpg", "width": 270, "height": 360, "alt": ""},
+              "target": {"href": "#"},
+              "btnLink": "single-program.html",
+              "btnClass": "btn-safety-orange",
+              "btnText": "learn more"
+            })
+          .cell-xs-10.cell-sm-6.cell-md-3.offset-top-50.offset-md-top-0
+            +thumbnail-terry({
+              "type": "thumbnail",
+              "title": "Early Preschool",
+              "description": "",
+              "thumb": {"src": "images/home-05-270x360.jpg", "width": 270, "height": 360, "alt": ""},
+              "target": {"href": "#"},
+              "btnLink": "single-program.html",
+              "btnClass": "btn-safety-orange",
+              "btnText": "learn more"
+            })
+          .cell-xs-10.cell-sm-6.cell-md-3.offset-top-50.offset-md-top-0
+            +thumbnail-terry({
+              "type": "thumbnail",
+              "title": "Preschool",
+              "description": "",
+              "thumb": {"src": "images/home-06-270x360.jpg", "width": 270, "height": 360, "alt": ""},
+              "target": {"href": "#"},
+              "btnLink": "single-program.html",
+              "btnClass": "btn-safety-orange",
+              "btnText": "learn more"
+            })
+
+    // You might also be interested in
+    section.section-98.section-md-124.bg-lightest
+      .shell
+        h1.text-primary.text-bold Additional activities
+        +svg-divider("bg-primary", "71", "13")
+        .range.range-xs-center
+          .cell-xs-10.cell-sm-8
+            p Some of our programs feature really exciting activities that are designed to engage your child in the learning process. However, they can also be very beneficial to his/her cultural and emotional development, and have a positive impact on the kid.
+        .range.range-xs-center.offset-top-66
+          .cell-xs-10.cell-md-4
+            +box-icon-type-4("mdi-emoticon mdi icon-orange-filled icon-outlined")
+              .offset-top-30
+                h4.text-uppercase.font-default.text-bold Enrichment Programs
+                p Our enrichment programs are designed to develop talents as well as creative and technical skills of gifted children. It is a perfect way to encourage your child to discover the surrounding world.
+          .cell-xs-10.cell-md-4.offset-top-66.offset-md-top-0
+            +box-icon-type-4("mdi-pine-tree mdi icon-orange-filled icon-outlined")
+              .offset-top-30
+                h4.text-uppercase.font-default.text-bold Summer Camp
+                p We have a summer camp for all our pupils. Here they can enjoy benefits of our learning center, have fun playing with friends while also preparing for school and learning something new.
+          .cell-xs-10.cell-md-4.offset-top-66.offset-md-top-0
+            +box-icon-type-4("mdi-book-open-variant mdi icon-orange-filled icon-outlined")
+              .offset-top-30
+                h4.text-uppercase.font-default.text-bold Before School
+                p If your child needs more preparation for his/her first school lesson, our teachers can help your kid form the strength of will to learn and assist him/her in mastering new subjects and material.
+
+    // First Lesson - Free
+    section.context-dark
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/bg-02-1920x748.jpg",
+        "htmlSpeed": "0"
+      })
+        .shell.section-66.context-dark
+          h1.text-bold Share your suggestions
+          .range.range-xs-center.offset-top-20
+            .cell-xs-10.cell-xs-8
+              div
+                p Our team will be happy to hear from you about any possible improvements in our programs and learning activities.
+              .offset-top-30
+                a(href=cfg.nav.contacts.href).btn.btn-icon.btn-icon-left.btn-default
+                  span.icon.mdi-email-outline.mdi
+                  span Send us a letter
+
+  // Page Footer
+  include ../sections/_section-footer-default
+
+

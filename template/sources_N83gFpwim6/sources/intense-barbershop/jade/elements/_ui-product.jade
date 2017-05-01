@@ -1,0 +1,13 @@
+mixin product(obj)
+  article.product
+    a.product-image(href='single-product.html')
+      +png(obj.img)
+
+    p.product-title: a(href='single-product.html')=obj.title
+    p.product-price
+      | $
+      =obj.price
+
+    a.btn-shop(href='cart.html')
+      span.btn-shop-icon.fa.fa-shopping-cart
+      span.btn-shop-text ADD TO CART

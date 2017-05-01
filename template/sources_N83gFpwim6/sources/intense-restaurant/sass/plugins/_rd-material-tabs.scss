@@ -1,0 +1,320 @@
+/*
+* @subsection   RD Material Tabs
+*
+* @description  Describes style declarations for RD Material Tabs extension
+*
+* @author       Rafael Shayvolodyan
+* @version      1.0.2
+*/
+
+.rd-material-tabs {
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  position: relative;
+
+  &__list {
+    white-space: nowrap;
+    z-index: 9;
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .rd-material-tab {
+      position: relative;
+      width: auto;
+
+      a {
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 13px 17px;
+        color: $gray-darker;
+        background: $gray-light;
+        position: relative;
+        width: 100%;
+      }
+
+      &.rd-material-tab-active a {
+        background: transparent;
+      }
+
+      .desktop & a:hover {
+        background: darken($gray-light, 10%);
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+
+      .rd-material-tab {
+        display: inline-block;
+        a {
+          width: auto;
+        }
+
+        &.rd-material-tab-active a,
+        .desktop & a:hover {
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  &__stage-outer {
+    position: relative;
+    overflow: hidden;
+
+    .rd-material-tabs__stage {
+      ul {
+        padding-left: 0;
+      }
+    }
+
+  }
+}
+
+.rd-material-tabs-gorizontal {
+  .rd-material-tabs__list {
+
+    @media (min-width: $screen-md-min) {
+
+      .rd-material-tab {
+        a {
+          font-size: 16px;
+          font-weight: 700;
+          text-transform: uppercase;
+          padding: 13px 17px;
+          color: $gray-darker;
+          background: $gray-light;
+          border-top: 1px solid $gray;
+          margin-left: -4px;
+          position: relative;
+
+          &:after {
+            content: '';
+            border-bottom: 1px solid $gray;
+            position: absolute;
+            bottom: 0;
+            left: 0%;
+            width: 100%;
+            transition: 0.3s ease-in;
+          }
+        }
+
+        &:nth-child(1) {
+          &:after {
+            content: '';
+            border-bottom: 1px solid $gray;
+            position: absolute;
+            bottom: 0;
+            left: -101%;
+            width: 100%;
+          }
+
+          a {
+            border-left: 1px solid $gray;
+          }
+        }
+
+        &:last-of-type {
+          &:after {
+            content: '';
+            border-bottom: 1px solid $gray;
+            position: absolute;
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+          }
+          border-right: 1px solid $gray;
+        }
+
+        &.rd-material-tab-active a {
+          background: transparent;
+
+          &:after {
+            width: 0%;
+          }
+        }
+      }
+      .rd-material-tab + .rd-material-tab {
+        a {
+          border-left: 1px solid $gray;
+        }
+      }
+      .rd-material-tabs__container {
+        border-left: 1px solid $gray;
+      }
+    }
+
+  }
+}
+
+.rd-material-tabs-stacked {
+  overflow: hidden;
+
+  @media (min-width: $screen-md-min) {
+
+    .rd-material-tabs__list {
+      position: relative;
+
+      &:after {
+        content: '';
+        border-right: 1px solid $gray;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 1px;
+        height: 100vh;
+      }
+
+      .rd-material-tab {
+        display: block;
+        margin: 0;
+
+        a {
+          width: 100%;
+          border-bottom: 1px solid $gray;
+          border-left: 1px solid $gray;
+
+          &:after {
+            content: '';
+            border-right: 1px solid $gray;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            transition: 0.3s ease-in;
+          }
+        }
+
+        &:nth-child(1) {
+          a {
+            border-top: 1px solid $gray;
+          }
+        }
+
+        &.rd-material-tab-active {
+          a {
+            &:after {
+              height: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    .rd-material-tabs__list {
+      margin-right: -23px;
+    }
+
+    .rd-material-tabs__container {
+      border-top: 1px solid $gray;
+      margin-left: -8px;
+    }
+  }
+}
+
+.rd-material-tabs__container {
+  .rd-material-tab {
+    float: left;
+    width: 100%;
+    padding: 15px 0;
+    height: 0;
+    transition: height 0.3s ease-in;
+
+    &.rd-material-tab-active {
+      height: auto;
+    }
+  }
+
+  .thumb {
+    margin-top: 10px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    .rd-material-tab {
+      padding: 45px 61px 25px;
+    }
+  }
+}
+
+.rd-material-tabs-canMove {
+  cursor: w-resize;
+}
+
+.rd-material-tabs-grab, .rd-material-tabs-grab a {
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+// Material tabs in navbar
+// --------------------------------------------------
+
+.rd-navbar-wrap {
+
+  .rd-navbar-fixed.light-theme{
+    .rd-material-tabs {
+      &__list {
+        border-bottom: 1px solid #D6D6D6;
+      }
+    }
+  }
+
+  .rd-material-tabs {
+    -webkit-tap-highlight-color: transparent;
+    width: 100%;
+    position: relative;
+
+    &__list {
+      white-space: nowrap;
+      padding-left: 2px;
+      border-bottom: 1px solid $gray-darker;
+
+      z-index: 9;
+
+      .rd-material-tab {
+        display: inline-block;
+        width: auto;
+
+        a {
+          padding: 20px 20px 14px 20px;
+          font-size: 13px;
+          font-weight: 900;
+          letter-spacing: 0.06em;
+          text-align: center;
+          text-transform: uppercase;
+          transition: .3s all ease;
+          background: transparent;
+        }
+
+        &.rd-material-tab-active a, .desktop & a:hover {
+          color: #42b574;
+          background: -webkit-linear-gradient(0deg, #42b574 0%, #84c450 100%); /* safari5.1+,chrome10+ */
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+
+    .rd-material-tab {
+      padding: 0;
+    }
+  }
+
+  .rd-material-tabs__container {
+    .rd-material-tab {
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+//
+// Counter style
+// --------------------------------------------------
+
+.counter {
+  margin-bottom: 0;
+
+  &-plus{
+    .counter{
+      &:after{
+        content: '+';
+      }
+    }
+  }
+}

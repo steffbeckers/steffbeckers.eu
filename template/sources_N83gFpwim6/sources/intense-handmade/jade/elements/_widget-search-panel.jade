@@ -1,0 +1,16 @@
+mixin widget-panel-shop(gridViewLink, listViewLink, active)
+  .toolbar-shop
+    .toolbar-shop-sorter
+      a.toolbar-shop-icon(href= gridViewLink class= (active == 'grid') ? 'active' : '')
+        span.icon-xxs.mdi.mdi-view-module
+      a.toolbar-shop-icon(href= listViewLink class= (active == 'list') ? 'active' : '')
+        span.icon-xxs.mdi.mdi-view-list
+    .toolbar-shop-pager
+      span.toolbar-shop-current.text-mantis 1-6 of 15
+      .form-group
+        label Show:
+        select.form-control.select-filter.toolbar-shop-pager-select(data-placeholder="Select an option", data-minimum-results-for-search="Infinity")
+            option 6
+            option 12
+            option 18
+            option 24

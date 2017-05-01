@@ -1,0 +1,131 @@
+//
+// RD Navbar Default Cart
+// --------------------------------------------------
+
+%rd-navbar-default-cart{
+  .rd-navbar-list-products {
+    padding-left: 0;
+    max-height: calc(100% - 120px);
+    overflow-y: auto;
+    padding-bottom: 10px;
+    li {
+      position: relative;
+      padding: $rd-navbar-cart-list-products-padding;
+      @include clearfix;
+    }
+  }
+
+  .rd-navbar-product-image {
+    float: left;
+    margin-right: 10px;
+    border-radius: $border-radius-small;
+  }
+
+  .rd-navbar-product-caption {
+    overflow: hidden;
+  }
+
+  .rd-navbar-product-remove {
+    position: absolute;
+    right: 0;
+    top: 3px;
+    font-size: $rd-navbar-cart-product-remove-size;
+  }
+
+  .rd-navbar-product-title {
+    font-size: $rd-navbar-cart-product-title-size;
+    text-transform: uppercase;
+    margin-bottom: $rd-navbar-cart-product-title-offset-bottom;
+  }
+
+  .rd-navbar-product-price {
+    font-size: $rd-navbar-cart-product-price-size;
+    margin-top: 5px;
+  }
+
+  .rd-navbar-cart-total {
+    position: relative;
+    margin-top: $rd-navbar-cart-total-offset-top;
+  }
+
+  .rd-navbar-cart-total-title {
+    font-size: $rd-navbar-cart-total-title-size;
+    text-transform: uppercase;
+    padding-right: 75px;
+    margin-bottom: 24px;
+  }
+
+  .rd-navbar-cart-total-price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: $rd-navbar-cart-total-price-size;
+  }
+}
+
+//
+// Dark Theme
+// --------------------------------------------------
+
+%rd-navbar-default-cart-dark{
+  .rd-navbar-product-remove {
+    color: $rd-navbar-dark-cart-product-remove-color;
+    &:hover {
+      color: $rd-navbar-dark-cart-product-remove-hover-color;
+    }
+  }
+
+  .rd-navbar-list-products {
+    border-bottom: $rd-navbar-dark-cart-product-border-bottom;
+  }
+
+  .rd-navbar-product-image {
+    background: $rd-navbar-dark-cart-product-image-background;
+  }
+
+  .rd-navbar-product-price {
+    color: $rd-navbar-dark-cart-product-price-color;
+  }
+
+  .rd-navbar-cart-total-title, .rd-navbar-cart-total-price, .rd-navbar-product-title {
+    color: $rd-navbar-dark-cart-total-price-product-color;
+  }
+
+  .rd-navbar-cart-dropdown {
+    background: $rd-navbar-dark-cart-dropdown-background;
+  }
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+
+%rd-navbar-default-cart-light{
+
+  .rd-navbar-product-remove {
+    color: $rd-navbar-light-cart-product-remove-color;
+    &:hover {
+      color: $rd-navbar-light-cart-product-remove-hover-color;
+    }
+  }
+
+  .rd-navbar-list-products {
+    border-bottom: $rd-navbar-light-cart-product-border-bottom;
+  }
+
+  .rd-navbar-product-image {
+    background: $rd-navbar-light-cart-product-image-background;
+  }
+
+  .rd-navbar-product-price {
+    color: $rd-navbar-light-cart-product-price-color;
+  }
+
+  .rd-navbar-cart-total-title, .rd-navbar-cart-total-price, .rd-navbar-product-title {
+    color: $rd-navbar-light-cart-total-price-product-color;
+  }
+
+  .rd-navbar-cart-dropdown {
+    background: $rd-navbar-light-cart-dropdown-background;
+  }
+}

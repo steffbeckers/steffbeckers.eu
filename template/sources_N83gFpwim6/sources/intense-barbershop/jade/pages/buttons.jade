@@ -1,0 +1,87 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-page-title
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Buttons'
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  //- Page Content
+  +page-title(pageName)
+
+  //- Button Sizes
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      h3 Button Sizes
+      p 4 different sizes: large, default, small and very small.
+      .group-xl.group-middle
+        .btn.btn-lg.btn-primary Large size
+        .btn.btn-primary Default size
+        .btn.btn-sm.btn-primary Small size
+        .btn.btn-xs.btn-primary VERY Small size
+  ='\n'
+
+  .divider.divider-conch
+
+  //- Button Shapes
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      h3 Button Shapes
+      p 4 different shapes: default, round, square, and circle.
+      .group-xl.group-middle
+        .btn.btn-default-size.btn-primary default
+        .btn.btn-default-size.btn-primary.btn-round Round
+        .btn.btn-default-size.btn-primary.btn-rect square
+        .btn.btn-default-size.btn-primary.btn-circle Circle
+  ='\n'
+
+  .divider.divider-conch
+
+  //- Buttons with Icons
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      h3 Buttons with Icons
+      p Buttons are fully integrated with 900+ icons.
+      .group-xl.group-middle
+        .btn.btn-default-size.btn-icon.btn-icon-right.btn-primary
+          span.icon.material-icons-person_outline
+          | Icon right
+        .btn.btn-default-size.btn-icon.btn-icon-left.btn-primary
+          span.icon.material-icons-info_outline
+          | Icon left
+        .btn.btn-default-size.btn-icon.btn-icon-right.btn-kangaroo-outline
+          span.icon.material-icons-favorite_border
+          | Icon right
+        .btn.btn-default-size.btn-icon.btn-icon-left.btn-kangaroo-outline
+          span.icon.material-icons-info_outline
+          | Icon left
+  ='\n'
+
+  .divider.divider-conch
+
+  //- Buttons with Shadow
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      h3 Buttons with Shadow
+      p Enhance your buttons with a shadow effect.
+      .group-xl.group-middle
+        .btn.btn-default-size.btn-primary.btn-circle.btn-shadow Shadow
+        .btn.btn-default-size.btn-white-pickled-bluewood.btn-circle.btn-shadow Shadow
+  ='\n'
+
+
+  //- Page Footer
+  include ../sections/_footer-default
+

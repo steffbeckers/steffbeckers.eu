@@ -1,0 +1,66 @@
+//- Include
+include ../elements/_ui-rd-facebook
+// See It In Action
++rd-parallax({
+  "backgroundSpeed": "0.35",
+  "attrType": "media",
+  "src": "images/backgrounds/background-05-1920x960.jpg",
+  "htmlSpeed": "0"
+})
+  .bg-overlay-white(id="facebook-feed-demo")
+    .shell-wide.section-98.section-sm-110
+      h1 See It In Action
+      hr.divider.bg-mantis
+      .facebook(data-fb-id='TemplateMonster', data-fb-date-format='%d %B %Y' data-fb-access='402518649933453|EvW-aO2Fmq3JWev0DS6okm3bPo0')
+        .range.range-xs-center.offset-top-66
+          .cell-xs-10.cell-sm-6.cell-xl-3
+            +rd-facebook({
+              "showTime": true,
+              "showLike": true,
+              "showComments": true
+            })
+            .offset-top-30
+                +rd-facebook({
+                  "showTime": true,
+                  "showLike": true,
+                  "showComments": true
+                })
+
+          .cell-xs-10.cell-sm-6.cell-xl-3.offset-top-30.offset-sm-top-0
+            +rd-facebook({
+              "showTime": true,
+              "showLike": true,
+              "showComments": true
+            })
+            .offset-top-30
+              +rd-facebook({
+                "showTime": true,
+                "showLike": true,
+                "showComments": true
+              })
+
+          .cell-xs-10.cell-sm-6.cell-xl-3.offset-top-30.offset-xl-top-0
+            +rd-facebook({
+              "showTime": true,
+              "showLike": true,
+              "showComments": true
+            })
+            .offset-top-30
+              +rd-facebook({
+                "showTime": true,
+                "showLike": true,
+                "showComments": true
+              })
+
+          .cell-xs-10.cell-sm-6.cell-xl-3.offset-top-30.offset-xl-top-0
+            +rd-facebook({
+              "showTime": true,
+              "showLike": true,
+              "showComments": true
+            })
+            .offset-top-30
+              +rd-facebook({
+                "showTime": true,
+                "showLike": true,
+                "showComments": true
+              })

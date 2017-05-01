@@ -1,0 +1,17 @@
+//- submenuObj - submennu object
+//- defaultIcon - icon use if icon in config didn`t exist
+//- additionalLiClass - additonal class for LI element
+
+mixin sitemap(submenuObj, defaultIcon, additionalLiClass)
+  - if (submenuObj.label !== 'soon') {
+    li.post-meta(class= additionalLiClass ? additionalLiClass : 'inset-left-20')
+      - if (typeof(submenuObj.icon) !== 'undefined' && submenuObj.icon !== '') {
+        span.icon.icon-xxs.text-middle(class=submenuObj.icon)
+      -} else {
+        span.icon.icon-xxs.text-middle(class=defaultIcon)
+      -}
+      =" "
+      span.text-middle
+        a(href=submenuObj.href)
+          = submenuObj.title
+  -}

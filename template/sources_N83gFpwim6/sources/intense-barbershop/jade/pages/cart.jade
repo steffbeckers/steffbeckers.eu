@@ -1,0 +1,88 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-section-header
+include ../elements/_ui-quote-review
+include ../elements/_ui-product
+
+block variables
+  - var activeIndex = 4
+  - var menuIncludeButton = true
+  - var pageName = 'Cart'
+
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  section.section-xl.bg-periglacial-blue
+    .shell
+      a.link.link-primary.link-return(href='shop.html') Back
+
+      .table-custom-responsive.table-cart-wrap
+        table.table-cart
+          thead
+            tr
+              th
+              th Item
+              th Price
+              th Quantity
+              th SUBTOTAL
+              th
+
+          tbody
+            tr
+              td
+                +png('cart-1-80x82', 'cart-image')
+              td
+                p.cart-title: a(href='single-product.html') Uppercut Deluxe Pomade
+              td
+                p.cart-price $34.99
+              td
+                input(type="number" data-zeros="false" value="2" min="1" max="40")
+              td
+                p.cart-price $69.98
+              td
+                a.cart-control(href='#')
+
+            tr
+              td
+                +png('cart-1-80x82', 'cart-image')
+              td
+                p.cart-title: a(href='single-product.html') Uppercut Deluxe Extra
+              td
+                p.cart-price $44.99
+              td
+                input(type="number" data-zeros="false" value="1" min="1" max="40")
+              td
+                p.cart-price $44.99
+              td
+                a.cart-control(href='#')
+
+      .table-cart-footer
+        .table-cart-footer-left
+          label.checkbox-inline.checkbox-modern
+            input.checkbox-custom(type='checkbox')
+            | I have a coupon
+
+        .table-cart-footer-right
+          dl.terms-list-bold
+            dt Total
+            dd $114.97
+
+      .table-cart-action-panel
+        a.btn.btn-circle.btn-primary(href='checkout.html') PROCEED TO CHECKOUT
+
+  ='\n'
+
+
+  //- Page Footer
+  include ../sections/_footer-default
+

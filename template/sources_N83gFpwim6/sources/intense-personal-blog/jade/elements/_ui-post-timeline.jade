@@ -1,0 +1,74 @@
+//- Post Timeline
+//- url - expanded post link
+//- year - publish year
+//- date - publish date
+//- title - post title
+//- author - authors name
+//- tags - array of {link}
+//- media - {media} object
+
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-carousel-gallery-classic
+include ../elements/_ui-video-embed
+include ../elements/_ui-soundcloud-player-classic
+
+mixin post-timeline(url, year, date, title, author, tags, media)
+  // Post Timeline
+  article.post.post-timeline
+    .range
+      .cell-sm-3
+        time(datetime="2016-01-01").unit.unit-spacing-lg.unit-bottom.unit-horizontal.unit-sm.unit-sm-horizontal.unit-sm-inverse.range-sm-center.offset-sm-top-4
+          if (year == null)
+            span.inset-sm-left-93
+              span.unit-left
+                span.h6.text-light
+                  span.text-regular.big.text-nowrap= date
+          else
+            span.unit-left
+              span.h6.text-light
+                span.text-regular.big= date
+            span.unit-body.veil.reveal-sm-flex
+              span.h5
+                span.text-bold.big= year
+
+      .cell-sm-9.offset-top-14.offset-sm-top-0
+        // Post media
+        if media
+          header.post-media
+            case media.type
+              when "gallery"
+                +carousel-gallery-classic(media.images)
+              when "soundcloud"
+                +soundcloud-player-classic(media)
+              when "video"
+                +video-embed(media)
+              when "thumbnail"
+                //- TODO: Remove this wrap on photoswipe init fix
+                div(data-photo-swipe="gallery")
+                  +thumbnail-classic(media)
+              default
+                = ""
+
+        // Post content
+        section.post-content.text-left(class= media? "offset-top-30": "")
+          // Post Title
+          .post-title
+            h3.text-bold
+              a(href=url)= title
+
+          .post-meta.text-uppercase.text-spacing-60.text-primary.small
+            p.big
+              span.big
+                if tags
+                  | In&nbsp;
+                  each tag, i in tags
+                    a(href= tag.href)= tag.title
+                    - if (i !== (tags.length - 1))
+                      = ", "
+                if (author == null)
+                else
+                  | &nbsp;by #{author}
+
+          // Post Body
+          .post-body.offset-top-20
+            block

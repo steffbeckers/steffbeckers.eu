@@ -1,0 +1,325 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-media-elements
+include  ../elements/_ui-box-icon-type-5
+include ../elements/_ui-box-member
+include ../elements/_widget-list-social
+include ../elements/_ui-rd-parallax
+include ../elements/_ui-testimonials-slider-3
+
+//-Title
+block title
+  title= cfg.nav.coaches.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-floated(
+    'rd-navbar-dark',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.coaches,
+    cfg.nav
+    )
+    .context-dark
+      +breadcrumb-modern("Coaches", {
+        0: {
+          "type": "link",
+          "title": cfg.nav.home.title,
+          "href": cfg.nav.home.href
+        },
+        1: {
+          "type": "link",
+          "title": cfg.nav.coaches.title,
+          "href": cfg.nav.coaches.href
+        }
+      }, "images/background-04-1920x750.jpg")
+
+
+  // Page Contents
+  main.page-content
+
+    // Welcome to Intense
+    section.section-98.section-sm-110
+      .shell
+        .range.range-xs-center.range-xs-middle
+          // Simple quote Slider
+          .cell-sm-9.cell-lg-6.cell-lg-push-6
+            .owl-carousel.owl-carousel-classic.owl-carousel-class-light.shadow-drop-md(data-items="1" data-nav="false" data-dots="false" data-nav-custom=".owl-custom-navigation")
+              div
+                +media-elements({
+                  "type": "video",
+                  "href": "//www.youtube.com/embed/MrV4vCotio0",
+                  "ratio": "16by9"
+                })
+
+              div
+                img.img-responsive.element-fullwidth(src="images/post-01-570x321.jpg" width=570 height=321 alt="")
+
+              div
+                img.img-responsive.element-fullwidth(src="images/post-04-570x321.jpg" width=525 height=321 alt="")
+          .cell-sm-9.cell-lg-6.cell-lg-pull-6.text-lg-left.offset-top-66.offset-lg-top-0.inset-lg-right-30
+            h1 The team of professionals
+            hr.divider.bg-red.hr-lg-left-0
+
+            p.offset-top-50.text-sm-left Our coaches represent years of experience in bodybuilding, yoga, CrossFit, fitness and other disciplines. As a team of professionals practicing for years, Intense provides high-quality training service to local residents and guests of the area.
+
+            div.offset-top-20
+              p.text-sm-left The work of our team has been numerously awarded by American sports committees for our contribution to the development of sport in America.
+
+            .owl-custom-navigation.owl-customer-navigation.offset-top-20
+              .owl-nav
+                .owl-prev.mdi.mdi-chevron-left(data-owl-prev)
+                .owl-next.mdi.mdi-chevron-right(data-owl-next)
+
+    // Why Choose Us
+    section.section-98.section-sm-110.bg-lilac
+      .shell
+        h1 Why Choose Us
+        hr.divider.bg-red
+        .range.offset-top-98
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0
+            +box-icon-type-5("icon-sm icon-dark-filled mdi mdi-account-multiple", "Qualified Coaches", "Our professional coaches can provide you with high - quality training services.")
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-98.offset-md-top-0
+            +box-icon-type-5("icon-xs icon-dark-filled mdi mdi-thumb-up", "Individual Approach", "Intense has a variety of services for everyone offered at affordable prices.")
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-98.offset-md-top-0
+            +box-icon-type-5("icon-sm icon-dark-filled mdi mdi-dumbbell", "Modern Fitness Equipment", "We use latest techniques suggested by the world’s leading coaches and physicians.")
+
+    // Our Dream Team
+    section.section-98.section-sm-110
+      .shell
+        h1 Our Dream Team
+        hr.divider.bg-danger
+        .range.range-xs-center.offset-top-50.offset-lg-top-66
+          .cell-sm-10.cell-lg-8
+            p We are proud to have a friendly and solid team of award-winning coaches working at Intense. They are not just professionals, they also deeply understand the needs of our clients.
+        .range.range-xs-center.offset-sm-top-50.offset-lg-top-66
+          .cell-sm-10.cell-lg-12
+            .range
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-xs-top-0
+                +box-member("images/user-ryan-jackson-270x270.jpg", "Ryan Jackson", "CrossFit", "about-coach.html")
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darkest-filled", "list-inline-xs")
+                p.offset-lg-top-0.text-muted He has more than 10 years of experience in CrossFit and professional athletics.
+                h4.offset-top-20.text-danger $80,00
+                  span.p.small
+                    span.small.text-darker /hour
+                a.btn.btn-danger(href="#") get in touch
+
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-sm-top-0.offset-lg-top-0
+                +box-member("images/user-emily-perkins-270x270.jpg", "Emily Perkins", "Fitness", "about-coach.html")
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darkest-filled", "list-inline-xs")
+                p.offset-lg-top-0.text-muted Emily can teach you all peculiarities of fitness and aerobics in a group or individually.
+                h4.offset-top-20.text-danger $20,00
+                  span.p.small
+                    span.small.text-darker /hour
+                a.btn.btn-danger(href="#") get in touch
+
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-lg-top-0
+                +box-member("images/user-samantha-ruiz-270x270.jpg", "Samantha Ruiz", "Yoga", "about-coach.html")
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darkest-filled", "list-inline-xs")
+                p.offset-lg-top-0.text-muted Our leading yoga coach, Samantha will help you reach full harmony with your body.
+                h4.offset-top-20.text-danger $35,00
+                  span.p.small
+                    span.small.text-darker /hour
+                a.btn.btn-danger(href="#") get in touch
+
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-lg-top-0
+                +box-member("images/user-austin-ortiz-270x270.jpg", "Austin Ortiz", "Bodybuilding", "about-coach.html")
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darkest-filled", "list-inline-xs")
+                p.offset-lg-top-0.text-muted Austin is not only our most called-for coach, but also a winner of many championships.
+                h4.offset-top-20.text-danger $50,00
+                  span.p.small
+                    span.small.text-darker /hour
+                a.btn.btn-danger(href="#") get in touch
+
+              .range-spacer.offset-top-66
+
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-xs-top-0
+                +box-member("images/user-alisa-milano-270x270.jpg", "Alisa Milano", "Fitness", "about-coach.html")
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darkest-filled", "list-inline-xs")
+                p.offset-lg-top-0.text-muted She is one of our youngest trainers who, however, has a lot of experience in fitness.
+                h4.offset-top-20.text-danger $20,00
+                  span.p.small
+                    span.small.text-darker /hour
+                a.btn.btn-danger(href="#") get in touch
+
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-sm-top-0.offset-lg-top-0
+                +box-member("images/user-roy-jons--270x270.jpg", "Roy Jons", "CrossFit", "about-coach.html")
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darkest-filled", "list-inline-xs")
+                p.offset-lg-top-0.text-muted He is known for his unique methods of CrossFit training that give amazing results.
+                h4.offset-top-20.text-danger $70,00
+                  span.p.small
+                    span.small.text-darker /hour
+                a.btn.btn-danger(href="#") get in touch
+
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-lg-top-0
+                +box-member("images/user-emily-blunt-270x270.jpg", "Emily Blunt", "Fitness", "about-coach.html")
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darkest-filled", "list-inline-xs")
+                p.offset-lg-top-0.text-muted Fitness workouts with Emily will help you acquire the perfect shape of your body.
+                h4.offset-top-20.text-danger $40,00
+                  span.p.small
+                    span.small.text-darker /hour
+                a.btn.btn-danger(href="#") get in touch
+
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-lg-top-0
+                +box-member("images/user-flen-johnson-270x270.jpg", "Glen Johnson", "Bodybuliding", "about-coach.html")
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darkest-filled", "list-inline-xs")
+                p.offset-lg-top-0.text-muted Glenn is the real professional when it comes to effective bodybuilding training.
+                h4.offset-top-20.text-danger $55,00
+                  span.p.small
+                    span.small.text-darker /hour
+                a.btn.btn-danger(href="#") get in touch
+
+    // Testimonials
+    section
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/background-05-1920x850.jpg",
+        "htmlSpeed": "0"
+      })
+        .bg-overlay-gray-darkest.context-dark
+          .shell.section-98.section-sm-110
+            h1 Testimonials
+            hr.divider.bg-white
+            .range.range-xs-center
+              .cell-sm-8
+                +testimonials-slider-3([{
+                  "image": {
+                    "width": 80,
+                    "height": 80,
+                    "src": "images/user-alisa-milano-80x80.jpg",
+                    "alt": "Alisa Milano"
+                  },
+                  "title": "Alisa Milano",
+                  "desc": "Designer at Viper Ltd.",
+                  "q": "I came here to acquire the shape of my body I had half a year ago. I was quite surprised with a range of services they offered me.Moreover, you can benefit from their group training."
+                },
+                  {
+                    "image": {
+                      "width": 80,
+                      "height": 80,
+                      "src": "images/user-july-mao-80x80.jpg",
+                      "alt": "July Mao"
+                    },
+                    "title": "July Mao",
+                    "desc": "Designer at Viper Ltd.",
+                    "q": "I am glad I’ve purchased a template from TemplateMonster. Extraordinary customer service, always available, perfect care and knowledge of the technicians. Essential if you are not an expert programmer. In any case highly recommended. Congratulations!"
+                  }])
+
+
+  // Page Footer
+  include ../sections/_section-footer

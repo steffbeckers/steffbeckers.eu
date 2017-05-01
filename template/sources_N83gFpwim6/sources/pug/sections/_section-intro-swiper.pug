@@ -1,0 +1,105 @@
+//- Includes
+include ../elements/_ui-rd-video
+
+//Swiper
+.rd-parallax.rd-parallax-swiper
+  .rd-parallax-layer(data-speed="0.3" data-sm-speed="1" data-type="html")
+
+    .swiper-container.swiper-slider(data-loop="true" data-height="100vh" data-dragable="false" data-min-height="480px")
+      .swiper-wrapper.text-center
+        #page-loader.swiper-slide(data-slide-bg="images/intros/intro-04-1920x955.jpg" data-preview-bg="images/intros/intro-04-1920x955.jpg")
+          .swiper-caption.swiper-parallax(data-speed="0.5" data-fade="true")
+            .swiper-slide-caption
+              .shell
+                .range.range-lg-center
+                  .cell-lg-12
+                    h1
+                      span.big.text-uppercase(data-caption-animate="fadeInUp" data-caption-delay="700") Welcome to Intense
+                  .cell-lg-10.offset-top-30
+                    h4.hidden.reveal-sm-block.text-light(data-caption-animate="fadeInUp" data-caption-delay="900")
+                      | The smartest and most flexible bootstrap template by TemplateMonster you've ever seen.
+                      | Create exactly what you need with our powerful bootstrap toolkit.
+
+                    .group.group-xl.offset-top-20.offset-xs-top-50
+                      a(href=cfg.buyLink).btn.btn-primary.btn-lg.btn-anis-effect(data-caption-animate="fadeInUp" data-caption-delay="1200")
+                        span.btn-text Buy intense now
+
+                      a(href="#" data-waypoint-to="#section-childs").btn.btn-default.btn-lg.btn-anis-effect(data-caption-animate="fadeInUp" data-caption-delay="1200")
+                        span.btn-text Start a journey
+
+        .swiper-slide(data-preview-bg="video/intro-video/intro-video-lg.jpg")
+          +rd-video({
+            "src": "video/intro-video/intro-video",
+            "imageXS": "16",
+            "imageSM": "16",
+            "imageMD": "22",
+            "imageLG": "41",
+            "imageXLG": "41",
+            "autoplay": "false",
+            "preload": "metadata"
+          })
+            .swiper-caption.swiper-parallax(data-speed="0.5" data-fade="true")
+              .swiper-slide-caption
+                .shell
+                  .range.range-lg-center
+                    .cell-lg-12
+                      h1
+                        span.big.text-uppercase(data-caption-animate="fadeInUp" data-caption-delay="700") Built as a framework
+                    .cell-lg-10.offset-top-30
+                      h4.hidden.reveal-sm-block.text-light(data-caption-animate="fadeInUp" data-caption-delay="900")
+                        | Intense was designed as extended version of bootstrap, built as a complex
+                        | and flexible solution with a dozen of completely new
+                        | utilities, components and plugins.
+
+                      .group.group-xl.offset-top-20.offset-xs-top-50
+                        a(href=cfg.nav.features.submenu.uiKit.href).btn.btn-icon.btn-icon-left.btn-default.btn-lg.btn-anis-effect(data-caption-animate="fadeInUp" data-caption-delay="1200")
+                          span.btn-text See it in action
+
+        .swiper-slide(data-slide-bg="images/intros/intro-05-1920x955.jpg" data-preview-bg="images/intros/intro-05-1920x955.jpg")
+          .swiper-caption.swiper-parallax(data-speed="0.5" data-fade="true")
+            .swiper-slide-caption
+              .shell
+                .range.range-lg-center
+                  .cell-lg-12
+                    h1
+                      span.big.text-uppercase(data-caption-animate="fadeInUp" data-caption-delay="700") Unlimited opportunities
+                  .cell-lg-10.offset-top-30
+                    h4.hidden.reveal-sm-block.text-light(data-caption-animate="fadeInUp" data-caption-delay="900")
+                      | Intense is the easiest way for you to build different sites
+                      | without using many  themes.
+
+                    .group.group-xl.offset-top-20.offset-xs-top-50
+                      a(href="#" data-waypoint-to="#section-childs").btn.btn-icon.btn-icon-left.btn-default.btn-lg.btn-anis-effect(data-caption-animate="fadeInUp" data-caption-delay="1200")
+                        span.btn-text Discover child themes
+
+        .swiper-slide(data-slide-bg="images/intros/intro-06-1920x955.jpg" data-preview-bg="images/intros/intro-06-1920x955.jpg")
+          .swiper-caption.swiper-parallax(data-speed="0.5" data-fade="true")
+            .swiper-slide-caption
+              .shell
+                .range.range-lg-center
+                  .cell-lg-12
+                    h1
+                      span.big.text-uppercase(data-caption-animate="fadeInUp" data-caption-delay="700") ULTRA sharp & RESPONSIVE
+                  .cell-lg-10.offset-top-30
+                    h4.hidden.reveal-sm-block.text-light.offset-bottom-0(data-caption-animate="fadeInUp" data-caption-delay="900")
+                      | Beautiful and clean designs are optimized for all screen sizes
+                      | and types. Taste a new meaning of Retina Ready.
+
+                    .group.group-xl.offset-top-20.offset-xs-top-50
+                      a(href=cfg.buyLink).btn.btn-icon.btn-icon-left.btn-primary.btn-lg.btn-anis-effect(data-caption-animate="fadeInUp" data-caption-delay="1200")
+                        span.icon.mdi.mdi-cart-outline
+                        span.btn-text Buy intense now
+
+      .swiper-button.swiper-button-prev.swiper-parallax(data-speed="0.5")
+        .preview
+          .preview__img.preview__img-3
+          .preview__img.preview__img-2
+          .preview__img.preview__img-1
+
+      .swiper-button.swiper-button-next.swiper-parallax(data-speed="0.5")
+        .preview
+          .preview__img.preview__img-1
+          .preview__img.preview__img-2
+          .preview__img.preview__img-3
+
+      .swiper-pagination

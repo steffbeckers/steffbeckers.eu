@@ -1,0 +1,171 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-tabs-boxed
+
+block title
+	title Tabs & Accordions
+
+block page
+	// Page Header
+	header.page-header.slider-menu-position
+		+rd-navbar-default({
+			"style": "",
+			"logo": cfg.brand.logo,
+			"logoFixed": cfg.brand.logoSmall,
+			"activeLink": 8,
+			"attr": {
+				"data-layout": "rd-navbar-fixed",
+				"data-sm-layout": "rd-navbar-fixed",
+				"data-md-layout": "rd-navbar-fullwidth",
+				"data-lg-layout": "rd-navbar-static"
+			}
+		})
+
+		+breadcrumb("Tabs & Accordions", {
+			0: {
+				"type": "link",
+				"title": cfg.nav.home.title,
+				"href": cfg.nav.home.href
+			},
+			1: {
+				"type": "link",
+				"title": cfg.nav.pages.title,
+				"href": cfg.nav.pages.href
+			},
+			2: {
+				"type": "link",
+				"title": "Tabs & Accordions",
+				"href": "tabs-accordions.html"
+			}
+		}, "images/backgrounds/background-02-1920x900.jpg")
+
+	// Page Content
+	main.page-content.section-75.section-md-top-90.section-md-bottom-103
+
+		// Tabs & Accordions
+		section
+			.shell
+				div
+					h1 Tabs & Accordions
+
+				.range.range-xs-center.offset-top-44
+					.cell-sm-10
+						p With modern and intuitive interface of tabs and accordions, you can #[br.veil.reveal-lg-inline-block] control contents to be organised within a single frame.
+
+						.offset-top-30
+							h5 Horizontal tabs
+
+						.offset-top-30
+							+tabs-boxed(["all", "type1", "type2", "type3"], "horizontal")
+								div
+									p.text-nobel Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers. Our site design and navigation has been thoroughly thought out. The layout is aesthetically appealing, contains concise texts in order not to take your precious time. Text styling allows scanning the pages quickly.
+
+									.offset-top-20
+										p.text-nobel Site navigation is extremely intuitive and user-friendly. You will always know where you are now and will be able to skip from one page to another with a single mouse click. We use only trusted, verified content, so you can believe every word we are saying. We are always happy to greet the new visitors on our site.
+								div
+									p.text-nobel Site navigation is extremely intuitive and user-friendly. You will always know where you are now and will be able to skip from one page to another with a single mouse click. We use only trusted, verified content, so you can believe every word we are saying. We are always happy to greet the new visitors on our site.
+
+								div
+									p.text-nobel Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers. Our site design and navigation has been thoroughly thought out. The layout is aesthetically appealing, contains concise texts in order not to take your precious time. Text styling allows scanning the pages quickly.
+
+								div
+									p.text-nobel Site navigation is extremely intuitive and user-friendly. You will always know where you are now and will be able to skip from one page to another with a single mouse click. We use only trusted, verified content, so you can believe every word we are saying. We are always happy to greet the new visitors on our site.
+
+						.offset-top-20
+							!{cfg.brand.svgDivider}
+
+						.offset-top-30
+							h5 vertical tabs
+
+						.offset-top-30
+							+tabs-boxed(["tab0", "tab1", "tab2", "tab3", "tab4"], "vertical")
+								div
+									p.text-nobel Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers. Our site design and navigation has been thoroughly thought out. The layout is aesthetically appealing, contains concise texts in order not to take your precious time. Text styling allows scanning the pages quickly.
+
+									.offset-top-20
+										p.text-nobel Site navigation is extremely intuitive and user-friendly. You will always know where you are now and will be able to skip from one page to another with a single mouse click. We use only trusted, verified content, so you can believe every word we are saying. We are always happy to greet the new visitors on our site.
+								div
+									p.text-nobel Site navigation is extremely intuitive and user-friendly. You will always know where you are now and will be able to skip from one page to another with a single mouse click. We use only trusted, verified content, so you can believe every word we are saying. We are always happy to greet the new visitors on our site.
+
+								div
+									p.text-nobel Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers. Our site design and navigation has been thoroughly thought out. The layout is aesthetically appealing, contains concise texts in order not to take your precious time. Text styling allows scanning the pages quickly.
+
+								div
+									p.text-nobel Site navigation is extremely intuitive and user-friendly. You will always know where you are now and will be able to skip from one page to another with a single mouse click. We use only trusted, verified content, so you can believe every word we are saying. We are always happy to greet the new visitors on our site.
+								div
+									p.text-nobel Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers. Our site design and navigation has been thoroughly thought out. The layout is aesthetically appealing, contains concise texts in order not to take your precious time. Text styling allows scanning the pages quickly.
+
+						.offset-top-20
+							!{cfg.brand.svgDivider}
+
+						.offset-top-50
+							h5 accordion
+
+
+						.offset-top-30
+							// Accordion
+							#accordion.bootstrap-accordion-alternative.panel-group(role='tablist', aria-multiselectable='true')
+								.panel
+									#headingOne(role='tab')
+										p.font-accent.text-bold.text-spacing-inverse-25
+											a.text-mine-shaft(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseOne', aria-expanded='true', aria-controls='collapseOne')
+												| Can I track my order?
+									#collapseOne.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingOne')
+										.text-extra-small.text-nobel
+											| Yes, you can! After placing your order you will receive an order confirmation via email. Each order starts production 24 hours after your order is placed. Within 72 hours of you placing your order, you will receive an expected delivery date. When the order ships, you will receive another email with the tracking number and a link to trace the order online with the carrier.
+								.offset-top-10
+									a.icon-collapse.text-turquoise(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseOne', aria-expanded='true', aria-controls='collapseOne')
+								.offset-top-0
+									!{cfg.brand.svgDivider}
+								.panel.offset-top-30
+									#headingTwo(role='tab')
+										p.font-accent.text-bold.text-spacing-inverse-25
+											a.text-mine-shaft.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo')
+												| How can I change something in my order?
+									#collapseTwo.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo')
+										.text-extra-small.text-nobel
+											| If you need to change something in your order, please contact us immediately. We usually process orders within 2-4 hours, and once we have processed your order, we will be unable to make any changes.
+								.offset-top-20
+									a.icon-collapse.text-turquoise(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo')
+								.offset-top-15
+									!{cfg.brand.svgDivider}
+								.panel.offset-top-30
+									#headingThree(role='tab')
+										p.font-accent.text-bold.text-spacing-inverse-25
+											a.text-mine-shaft.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseThree', aria-expanded='false', aria-controls='collapseThree')
+												| How can I pay for my order?
+									#collapseThree.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingThree')
+										.text-extra-small.text-nobel
+											| We accept Visa, MasterCard, and American Express credit and debit cards for your convenience.
+											| How can I change something in my order?
+								.offset-top-20
+									a.icon-collapse.text-turquoise(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseThree', aria-expanded='false', aria-controls='collapseThree')
+								.offset-top-15
+									!{cfg.brand.svgDivider}
+								.panel.offset-top-30
+									#headingFour(role='tab')
+										p.font-accent.text-bold.text-spacing-inverse-25
+											a.text-mine-shaft.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseFour', aria-expanded='false', aria-controls='collapseFour')
+												| How long will my order take to be delivered?
+									#collapseFour.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFour')
+										.text-extra-small.text-nobel
+											| Delivery times will depend on your location. Once payment is confirmed your order will be packaged. Delivery can be expected within 10 business days.
+								.offset-top-20
+									a.icon-collapse.text-turquoise(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseFour', aria-expanded='false', aria-controls='collapseFour')
+								.offset-top-15
+									!{cfg.brand.svgDivider}
+								.panel.offset-top-30
+									#headingFive(role='tab')
+										p.font-accent.text-bold.text-spacing-inverse-25
+											a.text-mine-shaft.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseFive', aria-expanded='false', aria-controls='collapseFive')
+												| Can I return an item?
+									#collapseFive.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFive')
+										.text-extra-small.text-nobel
+											| Please visit our Returns & Exchanges page for more information.
+								.offset-top-20
+									a.icon-collapse.text-turquoise(role='button', data-toggle='collapse', data-parent='#accordion', href='#collapseFive', aria-expanded='false', aria-controls='collapseFive')
+
+
+	// Page Footer
+	include ../sections/_footer-default

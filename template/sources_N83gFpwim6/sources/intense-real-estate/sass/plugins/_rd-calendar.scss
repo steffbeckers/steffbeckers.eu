@@ -1,0 +1,413 @@
+//
+// RD Calendar
+// --------------------------------------------------
+
+.rd-calendar {
+  position: relative;
+  max-width: $rd-calendar-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  background: $rd-calendar-background;
+  box-shadow: $shadow-area-md;
+}
+
+.rdc-today_month, .rdc-fullyear {
+  display: inline-block;
+  font-size: $rd-calendar-head-text-size;
+  font-weight: $rd-calendar-head-text-weight;
+  text-transform: uppercase;
+  color: $rd-calendar-head-text-color;
+}
+
+// Panel
+.rdc-panel {
+  position: relative;
+  padding: $rd-calendar-head-padding;
+  text-align: center;
+  background: $brand-primary;
+}
+
+// Controls
+.rdc-next, .rdc-prev, .rdc-events_close {
+  font: $rd-calendar-controls-font;
+  cursor: pointer;
+  transition: .3s all ease;
+  opacity: .8;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.rdc-next, .rdc-prev {
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+  color: $rd-calendar-controls-color;
+}
+
+.rdc-next {
+  right: $rd-calendar-controls-next-position-right;
+  &:before {
+    content: $rd-calendar-controls-next-content;
+  }
+}
+
+.rdc-prev {
+  left: $rd-calendar-controls-prev-position-left;
+  &:before {
+    content: $rd-calendar-controls-prev-content;
+  }
+}
+
+.rdc-events_close {
+  position: absolute;
+  top: $rd-calendar-controls-close-position-top;
+  right: $rd-calendar-controls-close-position-right;
+  font-size: $rd-calendar-controls-close-size;
+  line-height: $rd-calendar-controls-close-line-height;
+  &:before {
+    content: $rd-calendar-controls-close-content;
+  }
+}
+
+// Events
+.rdc-events {
+  position: absolute;
+  top: $rd-calendar-events-position-top;
+  right: 15px;
+  left: 15px;
+  padding: $rd-calendar-events-padding;
+  transition: .3s;
+  visibility: hidden;
+  opacity: 0;
+  @include transform(translateY(30px));
+  background: $rd-calendar-events-background;
+  border-radius: $border-radius-small;
+  box-shadow: $rd-calendar-events-shadow;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: $rd-calendar-events-border;
+  z-index: 1;
+
+  > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    > li + li {
+      margin-top: $rd-calendar-events-between-offset;
+    }
+  }
+
+  .rd-calendar.show-events & {
+    opacity: 1;
+    @include transform(translateY(0));
+    visibility: visible;
+  }
+}
+
+.rdc-event {
+  & + .rdc-event {
+    border-top: $rd-calendar-events-between-border;
+    padding-top: $rd-calendar-events-between-offset;
+  }
+}
+
+// Table
+.rdc-table {
+  position: relative;
+  width: 100%;
+  table {
+    border-spacing: $rd-calendar-table-border-spacing;
+    border-collapse: separate;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  td {
+    position: relative;
+  }
+}
+
+.rdc-table_day {
+  padding: $rd-calendar-table-th-padding;
+  font-size: $rd-calendar-table-th-size;
+  font-weight: $rd-calendar-table-th-weight;
+  text-transform: uppercase;
+  text-align: center;
+  color: $rd-calendar-table-th-color;
+}
+
+.rdc-month {
+  display: inline-block;
+  font-size: $rd-calendar-month-size;
+  font-weight: $rd-calendar-month-weight;
+  text-transform: uppercase;
+  color: $rd-calendar-month-color;
+}
+
+.rdc-table_events,
+.rdc-table_events-count {
+  display: none;
+}
+
+.rdc-table_date {
+  transition: .3s;
+  position: relative;
+  width: $rd-calendar-table-td-width;
+  height: $rd-calendar-table-td-height;
+  font-size: $rd-calendar-table-td-size;
+  line-height: $rd-calendar-table-td-height;
+  font-weight: $rd-calendar-table-td-weight;
+  text-align: center;
+  color: $rd-calendar-table-td-color;
+  box-sizing: border-box;
+  border-radius: $rd-calendar-table-border-radius;
+  z-index: 1;
+}
+
+.rdc-table_today {
+  background-color: $rd-calendar-table-td-today-background;
+  color: $rd-calendar-table-td-today-color;
+}
+
+.rdc-table_has-events {
+  cursor: pointer;
+  transition: .3s all ease;
+
+  .rdc-table_date {
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+      width: 4px;
+      height: 4px;
+      line-height: 4px;
+      border-radius: 50%;
+      background: $rd-calendar-table-td-has-event-after-background;
+      @include transition( 0.35s all ease);
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $rd-calendar-table-td-has-event-hover-color;
+
+      &:after {
+        width: 100%;
+        height: 100%;
+        margin-left: -12px;
+      }
+    }
+
+    .rdc-table_today {
+      background: $rd-calendar-table-td-has-event-today-hover-background;
+    }
+  }
+}
+
+.rdc-table_event {
+  display: none;
+
+  &:hover {
+    color: $white;
+    background-color: $brand-picton-blue;
+  }
+}
+
+.rdc-events {
+  .rdc-event-wrap {
+    background: transparent;
+    .post-title {
+      h6 {
+        color: $rd-calendar-events-title-color;
+      }
+    }
+  }
+}
+
+// RD Event Calendar Fullwidth
+// --------------------------------------------------
+
+.rd-calendar-fullwidth {
+  .rd-calendar {
+    // Panel
+    .rdc-panel {
+      max-width: $rd-calendar-fullwidth-max-width;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .rdc-events{
+      max-height: 90%;
+      overflow-y: auto;
+    }
+    @media (min-width: $screen-lg-min) {
+
+      background: transparent;
+      max-width: none;
+
+      box-shadow: none;
+      .rdc-month, .rdc-fullyear, .rdc-next, .rdc-prev {
+        color: $rd-calendar-fullwidth-controls-color;
+      }
+
+      .rdc-panel {
+        background: transparent;
+      }
+
+      // Table
+      .rdc-table {
+        table {
+          width: 100%;
+        }
+        td {
+          border-radius: $rd-calendar-fullwidth-table-td-border-radius;
+          padding-bottom: $rd-calendar-fullwidth-table-td-padding-bottom;
+          background: $rd-calendar-fullwidth-table-td-background;
+          box-shadow: $rd-calendar-fullwidth-table-td-box-shadow;
+        }
+      }
+
+      .rdc-table_day {
+        color: $rd-calendar-fullwidth-table-th-color;
+        font-size: $rd-calendar-fullwidth-table-th-size;
+        padding-left: $rd-calendar-fullwidth-table-th-padding-left;
+        text-align: left;
+      }
+
+      .rdc-table_today {
+        border-radius: 50%;
+        border: $rd-calendar-fullwidth-table-td-today-border;
+        background-color: $rd-calendar-fullwidth-table-td-today-background;
+        color: $rd-calendar-fullwidth-table-td-today-color;
+      }
+
+      .rdc-table_date {
+        top: $rd-calendar-fullwidth-table-date-position-top;
+        left: $rd-calendar-fullwidth-table-date-position-left;
+        width: $rd-calendar-fullwidth-table-date-width;
+        height: $rd-calendar-fullwidth-table-date-height;
+        font-size: $rd-calendar-fullwidth-table-date-size;
+        line-height: $rd-calendar-fullwidth-table-date-line-height;
+        font-weight: $rd-calendar-fullwidth-table-date-weight;
+      }
+
+      .rdc-table_events,
+      .rdc-table_event {
+        display: block;
+      }
+      .rdc-events {
+        max-width: 320px;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%))
+      }
+      .rdc-events_close {
+        top: $rd-calendar-fullwidth-controls-close-position-top;
+        right: $rd-calendar-fullwidth-controls-close-position-right;
+      }
+      .widget-event {
+        padding: 5px;
+        text-align: left;
+      }
+
+      .rdc-table_has-events {
+
+        .rdc-table_today {
+          border-color: $rd-calendar-fullwidth-table-td-has-event-today-border-color;
+        }
+        .widget-event {
+          bottom: 10px;
+          position: absolute;
+          left: 15px;
+          .post-title {
+            h6 {
+              font-size: 16px;
+              a:hover {
+                color: $white;
+              }
+            }
+          }
+          time,
+          .icon {
+            color: $white;
+          }
+        }
+
+        .rdc-event-wrap {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+        }
+
+        .rdc-table_date {
+          color: $white;
+          &:after {
+            display: none;
+          }
+        }
+
+        &:hover {
+          box-shadow: none;
+        }
+      }
+    }
+    @media (min-width: $screen-xl-min) {
+      // Table
+      .rdc-table {
+        table {
+          border-spacing: $rd-calendar-fullwidth-xl-border-spacing;
+        }
+        td {
+          padding-bottom: 7%;
+        }
+      }
+
+      .rdc-table_has-events {
+        .widget-event {
+          bottom: 20px;
+          left: 20px;
+        }
+      }
+    }
+  }
+}
+//fix for ie > 9
+.ie-11,
+.ie-10,
+.ie-edge {
+  .rd-calendar-fullwidth {
+    .rd-calendar {
+      @media (min-width: $screen-lg-min) {
+        // Table
+        .rdc-table {
+          td {
+            height: 145px;
+          }
+        }
+        .rdc-table_has-events {
+          .rdc-event-wrap {
+            height: 146px;
+          }
+        }
+      }
+      @media (min-width: $screen-xl-min) {
+        // Table
+        .rdc-table {
+          td {
+            height: 163px;
+          }
+        }
+        .rdc-table_has-events {
+          .rdc-event-wrap {
+            height: 164px;
+          }
+        }
+      }
+    }
+  }
+}

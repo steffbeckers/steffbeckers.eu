@@ -1,0 +1,946 @@
+//
+// Custom Buttons Effects
+// --------------------------------------------------
+
+//Anis
+.btn-anis-effect {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: transparent;
+  transition: .2s;
+  transition-delay: .1s;
+  &:hover{
+    transition-delay: .45s;
+  }
+  &:before, &:after {
+    position: absolute;
+    top: 50%;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: $gray-darker;
+    border-radius: 50%;
+    transition: 0.5s;
+    z-index: -1;
+  }
+
+  &:before {
+    left: -20px;
+    @include transform(translate(-50%, -50%));
+  }
+
+  &:after {
+    right: -20px;
+    @include transform(translate(50%, -50%));
+  }
+
+  &:hover {
+    &:before {
+      -webkit-animation: criss-cross-left 0.8s;
+      animation: criss-cross-left 0.8s;
+    }
+
+    &:after {
+      -webkit-animation: criss-cross-right 0.8s;
+      animation: criss-cross-right 0.8s;
+    }
+  }
+  &.btn-primary{
+    color: $white;
+    background-color: $brand-primary;
+    &:before, &:after {
+      background: $brand-info;
+    }
+    &:hover{
+      color: $white;
+      border-color: $brand-info;
+      background: $brand-info;
+    }
+  }
+  &.btn-default{
+    color: $gray-darker;
+    background-color: transparent;
+    border-color: $gray;
+    &:hover{
+      color: $white;
+      border-color: $gray-darker;
+      background: $gray-darker;
+    }
+  }
+  &.btn-deluge{
+    color: $brand-deluge;
+    &:before, &:after {
+      background: $brand-deluge;
+    }
+    &:hover{
+      color: $white;
+      border-color: $brand-deluge;
+      background: $brand-deluge;
+    }
+  }
+  &.btn-success{
+    color: $brand-success;
+    &:before, &:after {
+      background: $brand-success;
+    }
+    &:hover{
+      color: $white;
+      border-color: $brand-success;
+      background: $brand-success;
+    }
+  }
+  &.btn-warning{
+    color: $brand-warning;
+    &:before, &:after {
+      background: $brand-warning;
+    }
+    &:hover{
+      color: $white;
+      border-color: $brand-warning;
+      background: $brand-warning;
+    }
+  }
+  &.btn-danger{
+    color: $brand-danger;
+    &:before, &:after {
+      background: $brand-danger;
+    }
+    &:hover{
+      color: $white;
+      border-color: $brand-danger;
+      background: $brand-danger;
+    }
+  }
+  &.btn-info{
+    color: $brand-info;
+    &:before, &:after {
+      background: $brand-info;
+    }
+    &:hover{
+      color: $white;
+      border-color: $brand-info;
+      background: $brand-info;
+    }
+  }
+}
+
+
+//Aqil
+.btn.btn-aqil-effect {
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+
+  border-color: $gray-darker;
+  color: $gray-darker;
+  background-color: transparent;
+
+  &:hover{
+    background-color: transparent;
+    color: $white;
+  }
+
+  &:before,
+  &:after,
+  span:before,
+  span:after {
+    content: '';
+    background: rgba(68, 68, 68, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    z-index: -1;
+  }
+
+  span:before,
+  span:after {
+    -webkit-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+  }
+
+  &-mod-1 {
+    &:before,
+    &:after,
+    span:before,
+    span:after {
+      width: 100%;
+      height: 0;
+    }
+
+    &:after,
+    span:before {
+      top: auto;
+      bottom: 0;
+    }
+
+    &:hover {
+      span:before,
+      span:after,
+      &:before,
+      &:after {
+        height: 100%;
+      }
+    }
+  }
+
+  &-mod-2 {
+    &:before,
+    &:after,
+    span:before,
+    span:after {
+      width: 0;
+      height: 100%;
+    }
+
+    &:after,
+    & span:before {
+      left: auto;
+      right: 0;
+    }
+
+    &:hover {
+      &:before,
+      &:after,
+      span:before,
+      span:after {
+        width: 100%;
+      }
+    }
+  }
+
+  &.btn-primary{
+    color: $brand-primary;
+    border-color: $brand-primary;
+    transition-delay: .4s;
+
+    &:hover{
+      color: $white;
+      transition-delay: .1s;
+    }
+
+    &:before,
+    &:after,
+    span:before,
+    span:after {
+      background: rgba($brand-primary, 0.5);
+    }
+  }
+  &.btn-deluge{
+    color: $brand-deluge;
+    border-color: $brand-deluge;
+    transition-delay: .4s;
+
+    &:hover{
+      color: $white;
+      transition-delay: .1s;
+    }
+
+    &:before,
+    &:after,
+    span:before,
+    span:after {
+      background: rgba($brand-deluge, 0.5);
+    }
+  }
+  &.btn-success{
+    color: $brand-success;
+    border-color: $brand-success;
+    transition-delay: .4s;
+
+    &:hover{
+      color: $white;
+      transition-delay: .1s;
+    }
+
+    &:before,
+    &:after,
+    span:before,
+    span:after {
+      background: rgba($brand-success, 0.5);
+    }
+  }
+  &.btn-warning{
+    color: $brand-warning;
+    border-color: $brand-warning;
+    transition-delay: .4s;
+
+    &:hover{
+      color: $white;
+      transition-delay: .1s;
+    }
+
+    &:before,
+    &:after,
+    span:before,
+    span:after {
+      background: rgba($brand-warning, 0.5);
+    }
+  }
+  &.btn-info{
+    color: $brand-info;
+    border-color: $brand-info;
+    transition-delay: .4s;
+
+    &:hover{
+      color: $white;
+      transition-delay: .1s;
+    }
+
+    &:before,
+    &:after,
+    span:before,
+    span:after {
+      background: rgba($brand-info, 0.5);
+    }
+  }
+  &.btn-danger{
+    color: $brand-danger;
+    border-color: $brand-danger;
+    transition-delay: .4s;
+
+    &:hover{
+      color: $white;
+      transition-delay: .1s;
+    }
+
+    &:before,
+    &:after,
+    span:before,
+    span:after {
+      background: rgba($brand-danger, 0.5);
+    }
+  }
+}
+
+//Rayen
+.btn.btn-rayen-effect {
+  border-radius: 0;
+  overflow: hidden;
+  background-color: transparent;
+
+  &:before {
+    content: attr(data-text);
+    position: absolute;
+    top: -2px;
+    left: 0;
+    bottom: -2px;
+    right: 0;
+    z-index: 1;
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content(center);
+    @include transform(translateX(-100%));
+  }
+  & > span {
+    display: block;
+    z-index: -1;
+  }
+  &:hover {
+    background-color: transparent;
+    color: $white;
+  }
+  &:before,
+  & > span {
+    transition: transform 0.3s;
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+  }
+  &:hover:before {
+    @include transform(translateY(0));
+  }
+  &:hover > span {
+    @include transform(translateY(100%));
+  }
+
+  &.btn-default{
+    color: $gray-darker;
+    border-color: $gray-darker;
+    &:hover {
+      color: $white;
+    }
+    &:before {
+      background-color: $gray-darker;
+      color: $white;
+    }
+  }
+  &.btn-primary{
+    color: $brand-primary;
+    border-color: $brand-primary;
+
+    &:hover{
+      color: $white;
+    }
+    &:before {
+      background-color: $brand-primary;
+    }
+  }
+  &.btn-deluge{
+    color: $brand-deluge;
+    border-color: $brand-deluge;
+
+    &:hover{
+      color: $white;
+    }
+    &:before {
+      background-color: $brand-deluge;
+    }
+  }
+  &.btn-success{
+    color: $brand-success;
+    border-color: $brand-success;
+
+    &:hover{
+      color: $white;
+    }
+    &:before {
+      background-color: $brand-success;
+    }
+  }
+  &.btn-warning{
+    color: $brand-warning;
+    border-color: $brand-warning;
+
+    &:hover{
+      color: $white;
+    }
+    &:before {
+      background-color: $brand-warning;
+    }
+  }
+  &.btn-info{
+    color: $brand-info;
+    border-color: $brand-info;
+
+    &:hover{
+      color: $white;
+    }
+    &:before {
+      background-color: $brand-info;
+    }
+  }
+  &.btn-danger{
+    color: $brand-danger;
+    border-color: $brand-danger;
+
+    &:hover{
+      color: $white;
+    }
+    &:before {
+      background-color: $brand-danger;
+    }
+  }
+}
+
+.lt-ie10 {
+  .btn-rayen-effect {
+    &::before {
+      display: none;
+    }
+    &:hover {
+      color: #20325d;
+      background-color: $white;
+      > span {
+        @include transform(translateY(0%));
+      }
+    }
+  }
+}
+
+// Btn nuka
+.btn.btn-nuka-effect {
+  transition: color 0.3s;
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  border: none;
+  color: $white;
+  background-color: transparent;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    background: #453866;
+    z-index: -1;
+  }
+  &::before {
+    top: -4px;
+    bottom: -4px;
+    left: -4px;
+    right: -4px;
+    opacity: 0.2;
+    @include transform(scale3d(0.7, 1, 1));
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  &::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include transform(scale3d(1.1, 1, 1));
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  &::before,
+  &::after {
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+  &:hover {
+    background-color: transparent;
+    color: #453866;
+  }
+  &:hover::before {
+    opacity: 1;
+    top: -3px;
+    bottom: -3px;
+    left: -3px;
+    right: -3px;
+  }
+  &:hover::after {
+    background-color: $white;
+  }
+  &:hover::after,
+  &:hover::before {
+    @include transform(scale3d(1, 1, 1));
+  }
+
+  &.btn-default{
+    &::before,
+    &::after {
+      background-color: $gray-darker;
+    }
+    &:hover{
+      &:after{
+        background-color: $white;
+      }
+    }
+  }
+  &.btn-primary{
+    &::before,
+    &::after {
+      background-color: $brand-primary;
+    }
+    &:hover{
+      color: darken($brand-primary, 10%);
+      &:after{
+        background-color: $white;
+      }
+    }
+  }
+  &.btn-deluge{
+    &::before,
+    &::after {
+      background-color: $brand-deluge;
+    }
+    &:hover{
+      color: darken($brand-deluge, 10%);
+      &:after{
+        background-color: $white;
+      }
+    }
+  }
+  &.btn-success{
+    &::before,
+    &::after {
+      background-color: $brand-success;
+    }
+    &:hover{
+      color: darken($brand-success, 10%);
+      &:after{
+        background-color: $white;
+      }
+    }
+  }
+  &.btn-warning{
+    &::before,
+    &::after {
+      background-color: $brand-warning;
+    }
+    &:hover{
+      color: darken($brand-warning, 10%);
+      &:after{
+        background-color: $white;
+      }
+    }
+  }
+  &.btn-info{
+    &::before,
+    &::after {
+      background-color: $brand-info;
+    }
+    &:hover{
+      color: darken($brand-info, 10%);
+      &:after{
+        background-color: $white;
+      }
+    }
+  }
+  &.btn-danger{
+    &::before,
+    &::after {
+      background-color: $brand-danger;
+    }
+    &:hover{
+      color: darken($brand-danger, 10%);
+      &:after{
+        background-color: $white;
+      }
+    }
+  }
+}
+
+.btn.btn-naira-effect {
+  overflow: hidden;
+  transition: background-color 0.3s, box-shadow 0.2s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    @include transform(translateY(-100%) rotate3d(0, 0, 1, -10deg));
+    background: $white;
+    transition: .3s;
+  }
+
+
+  &.btn-naira-effect-up::before {
+    @include transform(translateY(100%) rotate3d(0, 0, 1, 10deg));
+  }
+  .btn-text {
+    display: block;
+    margin: 0;
+  }
+  .btn-text,
+  .icon {
+    transition: 0.3s;
+  }
+  .icon {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    @include transform(translate(-50%, -200%));
+    pointer-events: none;
+    color: #444;
+  }
+  .icon-xs{
+    font-size: 24px;
+  }
+  &.btn-naira-effect-up .icon {
+    @include transform(translate(-50%, 300%));
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 0 2px $white;
+
+    .icon {
+      @include transform(translate(-50%, 50%));
+    }
+    .btn-text {
+      opacity: 0;
+      @include transform(translateY(200%));
+    }
+    &::before {
+      animation: anim-naira-1 0.3s forwards ease-in;
+    }
+  }
+
+  &.btn-naira-effect-up:hover {
+    &::before {
+      animation: anim-naira-2 0.3s forwards ease-in;
+    }
+    .btn-text {
+      @include transform(translateY(-200%));
+    }
+  }
+  &.btn-primary{
+    &:hover{
+      background-color: transparent;
+      border-color: $brand-primary;
+    }
+    .icon{
+      color: darken($brand-primary, 7%);
+    }
+  }
+  &.btn-deluge{
+    &:hover{
+      background-color: transparent;
+      border-color: $brand-deluge;
+    }
+    .icon{
+      color: darken($brand-deluge, 7%);
+    }
+  }
+  &.btn-success{
+    &:hover{
+      background-color: transparent;
+      border-color: $brand-success;
+    }
+    .icon{
+      color: darken($brand-success, 7%);
+    }
+  }
+  &.btn-warning{
+    &:hover{
+      background-color: transparent;
+      border-color: $brand-warning;
+    }
+    .icon{
+      color: darken($brand-warning, 7%);
+    }
+  }
+  &.btn-info{
+    &:hover{
+      background-color: transparent;
+      border-color: $brand-info;
+    }
+    .icon{
+      color: darken($brand-info, 7%);
+    }
+  }
+  &.btn-danger{
+    &:hover{
+      background-color: transparent;
+      border-color: $brand-danger;
+    }
+    .icon{
+      color: darken($brand-danger, 7%);
+    }
+  }
+}
+.tablet{
+  .btn-naira-effect {
+    &:hover{
+      background-color: $white;
+    }
+  }
+}
+
+.lt-ie10 {
+  .btn-naira-effect {
+    &:before {
+      display: none;
+    }
+    &:hover {
+      background-color: $white;
+    }
+  }
+}
+
+
+.btn.btn-polat-effect {
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  .btn-text {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    transition: all 0.3s;
+    @include backface-visibility(hidden);
+    margin-top: 0;
+  }
+
+  .icon {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size: 180%;
+    transition: all 0.3s;
+    &:before{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &-up {
+    .icon {
+      left: 0;
+      top: -100%;
+    }
+
+    &:hover {
+      .icon {
+        top: 0;
+      }
+
+      .btn-text {
+        @include transform (translateY(300%));
+      }
+    }
+  }
+
+  &-left {
+    .icon {
+      left: -100%;
+      top: 0;
+    }
+
+    &:hover {
+      .icon {
+        left: 0;
+      }
+
+      .btn-text {
+        @include transform (translateX(200%));
+      }
+    }
+  }
+  &.btn-default{
+    .btn-text{
+      color: $gray-darker;
+    }
+  }
+}
+
+//btn-santos-svg
+.btn.btn-santos-svg-effect {
+  border: none;
+  position: relative;
+  transition: color 0.9s;
+  background-color: transparent;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &:active,
+    &:focus{
+      outline: none;
+    }
+  }
+
+  .shape {
+    stroke-width: 6px;
+    fill: transparent;
+    stroke: $gray-darker;
+    stroke-dasharray: 50 400;
+    stroke-dashoffset: -233;
+    transition: 1s all ease;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:active,
+  &:focus{
+    background-color: transparent;
+  }
+
+  &:hover {
+    background-color: transparent;
+
+    .shape {
+      stroke-dasharray: 50 0;
+      stroke-width: 3px;
+      stroke-dashoffset: 0;
+      stroke: #009FFD;
+    }
+  }
+  &.btn-delault{
+    color: $gray-darker;
+    .shape{
+      stroke: darken($gray-darker, 17%);
+    }
+    &:hover{
+      color: $gray-darker;
+      .shape{
+        stroke: $gray-darker;
+      }
+    }
+  }
+  &.btn-primary{
+    color: $brand-primary;
+    .shape{
+      stroke: darken($brand-primary, 17%);
+    }
+    &:hover{
+      color: $brand-primary;
+      .shape{
+        stroke: $brand-primary;
+      }
+    }
+  }
+  &.btn-deluge{
+    color: $brand-deluge;
+    .shape{
+      stroke: darken($brand-deluge, 17%);
+    }
+    &:hover {
+      color: $brand-deluge;
+      .shape{
+        stroke: $brand-deluge;
+      }
+    }
+  }
+  &.btn-success{
+    color: $brand-success;
+    .shape{
+      stroke: darken($brand-success, 17%);
+    }
+    &:hover {
+      color: $brand-success;
+      .shape{
+        stroke: $brand-success;
+      }
+    }
+  }
+  &.btn-warning{
+    color: $brand-warning;
+    .shape{
+      stroke: darken($brand-warning, 17%);
+    }
+    &:hover {
+      color: $brand-warning;
+      .shape{
+        stroke: $brand-warning;
+      }
+    }
+  }
+  &.btn-info{
+    color: $brand-info;
+    .shape{
+      stroke: darken($brand-info, 17%);
+    }
+    &:hover {
+      color: $brand-info;
+      .shape{
+        stroke: $brand-info;
+      }
+    }
+  }
+  &.btn-danger{
+    color: $brand-danger;
+    .shape{
+      stroke: darken($brand-danger, 17%);
+    }
+    &:hover {
+      color: $brand-danger;
+      .shape{
+        stroke: $brand-danger;
+      }
+    }
+  }
+}
+
+html.ie-edge,
+html.ie-11,
+html.lt-ie11 {
+  .btn-santos-svg {
+    transition: 0.4s;
+    padding: 10px 15px;
+    border: 2px solid transparent;
+
+    &:hover{
+      border-color: #009FFD;
+    }
+  }
+}

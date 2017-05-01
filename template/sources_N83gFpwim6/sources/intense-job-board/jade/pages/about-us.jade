@@ -1,0 +1,210 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-parallax
+include ../elements/_ui-box-icon-type-3
+include ../elements/_ui-box-member
+include ../elements/_widget-list-social
+include ../elements/_ui-counter-type-2
+
+block title
+  title= cfg.nav.allPages.submenu.aboutUs.title
+
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    // - RD Navbar
+    +rd-navbar-floated(
+    'rd-navbar-dark rd-navbar-dark-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.allPages,
+    cfg.nav
+    )
+    .context-dark
+      +breadcrumb-modern("About Us", {
+        0: {
+          "type": "link",
+          "title": cfg.nav.home.title,
+          "href": cfg.nav.home.href
+        },
+        1: {
+          "type": "link",
+          "title": cfg.nav.allPages.submenu.aboutUs.title,
+          "href": cfg.nav.allPages.submenu.aboutUs.href
+        }
+      }, "images/background-02-1920x870.jpg")
+
+  // Page Contents
+  main.page-content
+
+    // Who We Are
+    section.section-98.section-sm-110
+      .shell
+        .range.range-xs-center
+          .cell-sm-9.cell-lg-6.cell-lg-push-6
+            img.img-responsive.center-block(src="images/about-01-570x380.jpg" width="570" height="380" alt="")
+          .cell-sm-9.cell-lg-6.cell-lg-pull-6.text-left.offset-top-66.offset-lg-top-0.inset-lg-right-30
+            h1.text-center.text-lg-left Who We Are
+            hr.divider.bg-darkers.hr-lg-left-0
+            p Intense is a professional recruitment agency with a rich history. It started as a small business in Oakville and has grown enough to successfully occupy two large buildings in two different cities offering people hot vacancies.
+            p The range of our services includes not only free access to the list of America’s featured and popular jobs but also additional support in the job search. Start building your career with us today!
+
+            .text-center.text-lg-left.offset-top-30
+              a.btn.btn-primary(href="#") Learn More
+
+    // Our advantages
+    section.section-98.section-sm-110.bg-gray-light
+      .shell
+        h1 Our advantages
+        hr.divider.divider-sm.bg-darkers
+        .range.range-xs-center.text-md-left.offset-top-50.offset-lg-top-66
+          .cell-sm-9.cell-md-4.cell-md-preffix-0
+            +box-icon-type-3("icon-sm text-primary mdi mdi-account-check", "Extensive database", "text-uppercase text-bold", "We dispose a vast database of various vacancies available for applying all over the USA. Our consultants will take all your wishes concerning the job of your dream into consideration to find a proper vacancy.")
+          .cell-sm-9.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+            +box-icon-type-3("icon-sm text-primary mdi mdi-chart-bar", "Dedicated team", "text-uppercase text-bold", "Intense team is known for dedication to its customers. We will not only give you a list of recommended vacancies based on your personal profile but support you with some professional advice as well.")
+          .cell-sm-9.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+            +box-icon-type-3("icon-sm text-primary mdi mdi-newspaper", "Additional support", "text-uppercase text-bold", "Consultants of Intense will be glad to offer you additional support and even pick suitable refresher courses for increasing your skill level. We also offer vocational guidance services for the unemployed.")
+
+    // Our Team
+    section.section-98.section-sm-110
+      .shell
+        h1 Our Team
+        hr.divider.bg-darkers
+        .range.range-xs-center.offset-sm-top-66
+          .cell-sm-10.cell-lg-12
+            .range
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-xs-top-0
+                +box-member("images/user-john-doe-270x270.jpg", "John Doe", "Founder", "text-primary", cfg.nav.allPages.submenu.resumePage.href)
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-sm-top-0.offset-lg-top-0
+                +box-member("images/user-july-mao-270x270.jpg", "July Mao", "Consultant", "text-primary", cfg.nav.allPages.submenu.resumePage.href)
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-lg-top-0
+                +box-member("images/user-bernard-show-270x270.jpg", "Bernard Show", "Co-Founder", "text-primary", cfg.nav.allPages.submenu.resumePage.href)
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-lg-top-0
+                +box-member("images/user-ronald-oswald-270x270.jpg", "Ronald Oswald", "Recruiter", "text-primary", cfg.nav.allPages.submenu.resumePage.href)
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+
+    // Skills
+    section.section-98.section-sm-110.context-dark.bg-gray-darkest
+      .shell-fluid
+        .range
+          .cell-sm-8.cell-sm-preffix-2.cell-md-12.cell-md-preffix-0
+            .range.range-sm-bottom
+              .cell-md-3.cell-sm-6
+                +counter-type-2("job vacancies", "icon-lg mdi mdi-pencil-box-outline text-mantis", {
+                  "dataTo": "58249",
+                  "dataSpeed": "3000"
+                }, "bg-white")
+              .cell-md-3.cell-sm-6.offset-top-66.offset-sm-top-0
+                +counter-type-2("Happy Clients", "icon-lg mdi mdi-emoticon-happy text-malibu", {
+                  "dataTo": "246",
+                  "dataSpeed": "2500",
+                  "preffix": "K"
+                }, "bg-white")
+              .cell-md-3.cell-sm-6.offset-top-66.offset-md-top-0
+                +counter-type-2("employers", "icon-lg mdi mdi-account-multiple-outline text-neon-carrot", {
+                  "dataTo": "1200",
+                  "dataSpeed": "1500"
+                }, "bg-white")
+              .cell-md-3.cell-sm-6.offset-top-66.offset-md-top-0
+                +counter-type-2("Resumes", "icon-lg mdi mdi-note-outline text-ku-crimson", {
+                  "dataTo": "320",
+                  "dataSpeed": "1300",
+                  "preffix": "K"
+                }, "bg-white")
+
+    // Contact Us
+    section.section-98.section-sm-110
+      .shell
+        h1 Contact Us
+        hr.divider.bg-darkers
+        .range.range-sm-center
+          .cell-sm-9.cell-md-8
+            // RD Mailform
+            form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+              .range
+                .cell-lg-6
+                  .form-group
+                    label.form-label.form-label-outside(for="about-us-first-name") First Name
+                    input#about-us-first-name.form-control(type="text" name="name" data-constraints="@Required")
+                .cell-lg-6.offset-top-20.offset-lg-top-0
+                  .form-group
+                    label.form-label.form-label-outside(for="about-us-last-name") Last Name
+                    input#about-us-last-name.form-control(type="text" name="name" data-constraints="@Required")
+                .cell-lg-12.offset-top-20
+                  .form-group
+                    label.form-label.form-label-outside(for="about-us-email") E-Mail
+                    input#about-us-email.form-control(type="email" name="email" data-constraints="@Required @Email")
+                .cell-lg-12.offset-top-20
+                  .form-group
+                    label.form-label.form-label-outside(for="about-us-message") Message
+                    textarea#about-us-message.form-control(name="message" data-constraints="@Required" style="height: 150px;")
+              .range.range-xs-center.offset-top-30.text-center
+                .cell-xs-8.cell-md-6.cell-lg-4
+                  .inset-left-20.inset-right-20
+                    button(type="submit").btn.btn-block.btn-primary Send
+
+  // Page Footer
+  include ../sections/_section-footer

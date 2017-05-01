@@ -1,0 +1,338 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-pagination-classic
+include  ../elements/_ui-rd-map
+
+//-Title
+block title
+  title= cfg.nav.catalog.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head
+
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.catalog,
+    cfg.nav
+    )
+
+    //- Section header
+    section.rd-parallax.context-dark
+      div.rd-parallax-layer(data-speed="0.2" data-type="media" data-url="images/bg-header-1920x362.jpg")
+      div.rd-parallax-layer(data-speed="0" data-type="html")
+        .shell.section-top-34.section-sm-top-98.section-bottom-34
+          div
+            h1.text-bold Property Catalog
+          ul.list-inline.list-inline-dashed.p.text-light.breadcrumb-modern.offset-top-10.offset-sm-top-66
+            li.active
+              a(href="./") Home
+            li  Catalog
+
+
+  // Page Contents
+  main.page-content
+
+    //Section Property Filter
+    section.section-50.bg-lighter
+      .shell
+        // RD Mailform
+        form.rd-mailform.text-left.bg-lighter(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+          h5.text-bold Property Filter
+          .range.range-xs-center.offset-top-0
+            .cell-sm-6.cell-md-4
+              .form-group
+                label.form-label.form-label-outside(for="form-filter-location") Location:
+                select.form-control(id="form-filter-location" name="location" data-minimum-results-for-search="Infinity")
+                  option(value="1") any
+                  option(value="2") San Francisco
+                  option(value="3") New York
+                  option(value="4") Las Vegas
+            .cell-sm-6.cell-md-4.offset-top-20.offset-sm-top-0
+              .form-group
+                label.form-label.form-label-outside(for="form-filter-property-status") Property Status:
+                select.form-control(id="form-filter-property-status" name="property-status" data-minimum-results-for-search="Infinity")
+                  option(value="1") any
+                  option(value="2") Sale
+                  option(value="3") Rent
+                  option(value="4") Commercial
+            .cell-sm-6.cell-md-4.offset-top-20.offset-md-top-0
+              .form-group
+                label.form-label.form-label-outside(for="form-filter-property-type") Property Type:
+                select.form-control(id="form-filter-property-type" name="property-type" data-minimum-results-for-search="Infinity")
+                  option(value="1") any
+                  option(value="2") Apartment
+                  option(value="3") Office
+                  option(value="4") Hotel
+
+            .range-spacer.offset-top-20.veil.reveal-md-flex
+
+            .cell-sm-6.cell-md-3.offset-top-20.offset-md-top-0
+              .range
+                .cell-sm-6
+                  .form-group
+                    label.form-label.form-label-outside(for="form-filter-min-beds") Min Beds:
+                    select.form-control(id="form-filter-min-beds" name="min-beds" data-minimum-results-for-search="Infinity")
+                      option(value="1") any
+                      option(value="2") 1
+                      option(value="3") 2
+                      option(value="4") 3
+                      option(value="5") 4
+
+                .cell-sm-6.offset-top-20.offset-sm-top-0
+                  .form-group
+                    label.form-label.form-label-outside(for="form-filter-min-bath") Min Baths:
+                    select.form-control(id="form-filter-min-bath" name="min-bath" data-minimum-results-for-search="Infinity")
+                      option(value="1") any
+                      option(value="2") 1
+                      option(value="3") 2
+                      option(value="4") 3
+            .cell-sm-6.cell-md-3.offset-top-20.offset-md-top-0
+              .form-group-multiple
+                .form-group
+                  label.form-label.form-label-outside(for="form-filter-price-from")
+                    span.veil.reveal-sm-block Price (USD):
+                    span.veil-sm Price from (USD):
+                  input#form-filter-price-from.form-control.bg-white(type="text" name="price-from" data-constraints="@Required @IsNumeric")
+                .form-group
+                  label.form-label.form-label-outside(for="form-filter-price-to")  &nbsp;
+                    span.veil-sm Price to (USD):
+                  input#form-filter-price-to.form-control.bg-white(type="text" name="price-to" data-constraints="@Required @IsNumeric")
+            .cell-sm-6.cell-md-3.offset-top-20.offset-md-top-0
+              .form-group-multiple
+                .form-group
+                  label.form-label.form-label-outside(for="form-filter-area-from")
+                    span.veil.reveal-sm-block Area (Sq Ft):
+                    span.veil-sm Area from (Sq Ft):
+                  input#form-filter-area-from.form-control.bg-white(type="text" name="area-from" data-constraints="@Required @IsNumeric")
+                .form-group
+                  label.form-label.form-label-outside(for="form-filter-area-to")  &nbsp;
+                    span.veil-sm Area to (Sq Ft):
+                  input#form-filter-area-to.form-control.bg-white(type="text" name="area-to" data-constraints="@Required @IsNumeric")
+            .cell-md-3.offset-top-20.offset-md-top-0
+              .range.range-xs-bottom
+                .cell-sm-6
+                  .form-group
+                    label.form-label.form-label-outside(for="form-filter-sorting") Sorting
+                    select.form-control(id="form-filter-sorting" name="sorting" data-minimum-results-for-search="Infinity")
+                      option(value="1") By Price
+                      option(value="2") By Date
+                .cell-sm-6
+                  button(type="submit").btn.btn-primary.btn-block search
+
+
+    //Section Properties
+    section.section-66.section-sm-bottom-110
+      .shell
+        .range.range-xs-center
+            .cell-md-8
+              .range
+                .cell-sm-6
+                  img.img-responsive.reveal-inline-block(src="images/home-img-05-370x250.jpg" width=370 height=250 alt="")
+                  .text-sm-left.offset-top-24
+                    div
+                      h5.text-bold.text-primary
+                        a(href="single-property-page.html") AVA Nob Hill
+                    h6.offset-top-10  $1199.00/mon
+                    ul.list-inline.list-inline-dotted.text-dark
+                      li 1200 sq ft
+                      li 4 bedrooms
+                      li 2 bathrooms
+                    div
+                      p AVA Nob Hill includes studios and 1 and 2 bedroom apartments that feature an urban-inspired design that extends beyond your walls and throughout the entire community.
+
+                .cell-sm-6.offset-top-66.offset-sm-top-0
+                  img.img-responsive.reveal-inline-block(src="images/home-img-06-370x250.jpg" width=370 height=250 alt="")
+                  .text-sm-left.offset-top-24
+                    div
+                      h5.text-bold.text-primary
+                        a(href="single-property-page.html") Ashton San Francisco
+                    h6.offset-top-10  $1595.00/mon
+                    ul.list-inline.list-inline-dotted.text-dark
+                      li 1200 sq ft
+                      li 2 bedrooms
+                      li 2 bathrooms
+                    div
+                      p Ashton San Francisco offers luxury apartments, eco-friendly features, and remarkable on-site resident amenities. Enjoy premier services and access to our state-of-the-art fitness center, clubhouse, business center, and outdoor fire pit lounge.
+
+                .cell-sm-6.offset-top-66
+                  img.img-responsive.reveal-inline-block(src="images/home-img-07-370x250.jpg" width=370 height=250 alt="")
+                  .text-sm-left.offset-top-24
+                    div
+                      h5.text-bold.text-primary
+                        a(href="single-property-page.html") The Presidio Residences
+                    h6.offset-top-10  $2699.00/mon
+                    ul.list-inline.list-inline-dotted.text-dark
+                      li 2200 sq ft
+                      li 4 bedrooms
+                      li 3 bathrooms
+                    div
+                      p The Presidio Residences offer a unique opportunity to live in a national park setting and enjoy quiet neighborhoods, convenient location, beautiful open spaces, and outstanding recreational amenities.
+
+                .cell-sm-6.offset-top-66
+                  img.img-responsive.reveal-inline-block(src="images/home-img-08-370x250.jpg" width=370 height=250 alt="")
+                  .text-sm-left.offset-top-24
+                    div
+                      h5.text-bold.text-primary
+                        a(href="single-property-page.html") Alchemy by Alta
+                    h6.offset-top-10  $1199.00/mon
+                    ul.list-inline.list-inline-dotted.text-dark
+                      li 1200 sq ft
+                      li 4 bedrooms
+                      li 2 bathrooms
+                    div
+                      p One month FREE on select apartment homes for a limited time.
+
+                .cell-sm-6.offset-top-66
+                  img.img-responsive.reveal-inline-block(src="images/home-img-09-370x250.jpg" width=370 height=250 alt="")
+                  .text-sm-left.offset-top-24
+                    div
+                      h5.text-bold.text-primary
+                        a(href="single-property-page.html") Avalon at Mission Bay
+                    h6.offset-top-10  $1595.00/mon
+                    ul.list-inline.list-inline-dotted.text-dark
+                      li 1200 sq ft
+                      li 2 bedrooms
+                      li 2 bathrooms
+                    div
+                      p Avalon at Mission Bay located in San Francisco near the San Francisco Caltrain Station offers thoughtfully designed studio, 1, 2 and 3 bedroom apartments and town homes.
+
+                .cell-sm-6.offset-top-66
+                  img.img-responsive.reveal-inline-block(src="images/home-img-10-370x250.jpg" width=370 height=250 alt="")
+                  .text-sm-left.offset-top-24
+                    div
+                      h5.text-bold.text-primary
+                        a(href="single-property-page.html") Bayside Village Apartments
+                    h6.offset-top-10  $2699.00/mon
+                    ul.list-inline.list-inline-dotted.text-dark
+                      li 2200 sq ft
+                      li 4 bedrooms
+                      li 3 bathrooms
+                    div
+                      p Pick your pleasure from a vantage point that puts all the best of the city's lively South Beach neighborhood within easy reach.
+
+              .offset-top-66.text-center
+                +pagination-classic(1, [{"href": "#"}, {"href": "#"}, {"href": "#"}, {"href": "#"}], {
+                  "title": "Prev",
+                  "href": "#"
+                }, {"title": "Next", "href": "#"})
+
+
+            .cell-md-4.offset-top-66.offset-md-top-0
+
+              +rd-map({
+                "zoom": "14",
+                "dataX": "-73.9874068",
+                "dataY": "40.643180",
+                "dataStyles": [{
+                  "featureType": "administrative",
+                  "elementType": "labels.text.fill",
+                  "stylers": [{"color": "#444444"}]
+                }, {
+                  "featureType": "administrative.locality",
+                  "elementType": "labels",
+                  "stylers": [{"visibility": "on"}]
+                }, {
+                  "featureType": "landscape",
+                  "elementType": "all",
+                  "stylers": [{"color": "#f2f2f2"}, {"visibility": "simplified"}]
+                }, {
+                  "featureType": "poi",
+                  "elementType": "all",
+                  "stylers": [{"visibility": "on"}]
+                }, {
+                  "featureType": "poi",
+                  "elementType": "geometry",
+                  "stylers": [{"visibility": "simplified"}, {"saturation": "-65"}, {"lightness": "45"}, {"gamma": "1.78"}]
+                }, {
+                  "featureType": "poi",
+                  "elementType": "labels",
+                  "stylers": [{"visibility": "off"}]
+                }, {
+                  "featureType": "poi",
+                  "elementType": "labels.icon",
+                  "stylers": [{"visibility": "off"}]
+                }, {
+                  "featureType": "road",
+                  "elementType": "all",
+                  "stylers": [{"saturation": -100}, {"lightness": 45}]
+                }, {
+                  "featureType": "road",
+                  "elementType": "labels",
+                  "stylers": [{"visibility": "on"}]
+                }, {
+                  "featureType": "road",
+                  "elementType": "labels.icon",
+                  "stylers": [{"visibility": "off"}]
+                }, {
+                  "featureType": "road.highway",
+                  "elementType": "all",
+                  "stylers": [{"visibility": "simplified"}]
+                }, {
+                  "featureType": "road.highway",
+                  "elementType": "labels.icon",
+                  "stylers": [{"visibility": "off"}]
+                }, {
+                  "featureType": "road.arterial",
+                  "elementType": "labels.icon",
+                  "stylers": [{"visibility": "off"}]
+                }, {
+                  "featureType": "transit.line",
+                  "elementType": "geometry",
+                  "stylers": [{"saturation": "-33"}, {"lightness": "22"}, {"gamma": "2.08"}]
+                }, {
+                  "featureType": "transit.station.airport",
+                  "elementType": "geometry",
+                  "stylers": [{"gamma": "2.08"}, {"hue": "#ffa200"}]
+                }, {
+                  "featureType": "transit.station.airport",
+                  "elementType": "labels",
+                  "stylers": [{"visibility": "off"}]
+                }, {
+                  "featureType": "transit.station.rail",
+                  "elementType": "labels.text",
+                  "stylers": [{"visibility": "off"}]
+                }, {
+                  "featureType": "transit.station.rail",
+                  "elementType": "labels.icon",
+                  "stylers": [{"visibility": "simplified"}, {"saturation": "-55"}, {"lightness": "-2"}, {"gamma": "1.88"}, {"hue": "#ffab00"}]
+                }, {
+                  "featureType": "water",
+                  "elementType": "all",
+                  "stylers": [{"color": "#bbd9e5"}, {"visibility": "simplified"}]
+                }]
+              },[{
+                "dataX": "-73.9874068",
+                "dataY": "40.643180",
+                "markerDesc": "9870 St Vincent Place, Glasgow, DC 45 Fr 45"
+              },
+              {
+                "dataX": "-73.9964168",
+                "dataY": "40.643180",
+                "markerDesc": "9870 St Vincent Place, Glasgow, DC 45 Fr 45"
+              },
+              {
+                "dataX": "-73.9764168",
+                "dataY": "40.653180",
+                "markerDesc": "9870 St Vincent Place, Glasgow, DC 45 Fr 45"
+              },
+              {
+                "dataX": "-73.9864168",
+                "dataY": "40.633180",
+                "markerDesc": "9870 St Vincent Place, Glasgow, DC 45 Fr 45"
+              }
+              ])
+
+  // Page Footer
+  include ../sections/_section-footer-default

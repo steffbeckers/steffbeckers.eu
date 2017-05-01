@@ -1,0 +1,42 @@
+//
+// Page Loaders
+// --------------------------------------------------
+
+// Base styles
+// -------------------------
+
+.page-loader-variant-1 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  @include display-flex();
+  @include justify-content(center);
+  @include align-items(center);
+  padding: $page-loader-v-1-padding;
+  z-index: 9999999;
+  background: $page-loader-v-1-bg;
+  transition: .3s all ease;
+
+  .spinner {
+    width: $page-loader-v-1-spinner-width;
+    height: $page-loader-v-1-spinner-height;
+    background: url("../images/633328.png") no-repeat transparent;
+    background-position: -2240px 0;
+    animation: 1.5s sprite-animation steps(40) infinite;
+    display: inline-block;
+  }
+
+  &.show-loader {
+  }
+
+  &.loaded {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  &.ending {
+  }
+}

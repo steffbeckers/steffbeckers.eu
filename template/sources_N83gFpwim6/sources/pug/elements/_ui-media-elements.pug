@@ -1,0 +1,17 @@
+//- media - object of Media Elements
+include ../elements/_ui-video-embed
+include ../elements/_ui-soundcloud-player-classic
+include ../elements/_ui-rd-video-player
+include ../elements/_ui-rd-audio-player
+
+mixin media-elements(media)
+  // Media Elements
+  case media.type
+    when "soundcloud"
+      +soundcloud-player-classic(media)
+    when "video"
+      +video-embed(media)
+    when "rd-video-player"
+      +rd-video-player(media)
+    when "rd-audio-player"
+      +rd-audio-player(media)

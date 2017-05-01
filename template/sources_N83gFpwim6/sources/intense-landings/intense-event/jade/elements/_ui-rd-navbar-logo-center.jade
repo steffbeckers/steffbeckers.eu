@@ -1,0 +1,147 @@
+include ../elements/_ui-tabs-classic
+include ../elements/_widget-form-search
+include ../mixins/_rd-navbar-submenu-simple
+
+//- RD Navbar Transparent
+//- skin - rd navbar skin (transparent, inverse, default)
+//- attrs - additional HTML attributes of rd navbar
+//- logo - logo markup (<img/> or text)
+//- links - nav links object
+mixin rd-navbar-logo-center(skin, attrs, logo, activeLink, links)
+    // RD Navbar Transparent
+    .rd-navbar-wrap
+      nav&attributes(attrs).rd-navbar.rd-navbar-logo-center(class="#{skin}" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-stick-up-offset="110px")
+          .rd-navbar-inner
+            .container
+
+              .rd-navbar-top-block.range.range-lg-center.range-lg-middle
+                .cell-lg-3
+                  p.veil.reveal-lg-block Get in touch: #[span.mdi.mdi-phone] #[a(href="callto:#") 1-800-1234-567]
+
+                .cell-lg-6.text-center
+                  //Navbar Brand
+                  .rd-navbar-brand
+                    a(href="index.html") !{logo}
+
+                .cell-lg-3
+                  .form-search-wrap
+                    +widget-form-search('form-control-gray-lightest input-sm', "form-label-sm", "rd-navbar-form-search-widget")
+
+
+              // RD Navbar Panel
+              .rd-navbar-panel
+                // RD Navbar Toggle
+                button.rd-navbar-toggle(data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap")
+                  span
+                // RD Navbar Top Panel Toggle
+                button.rd-navbar-search-toggle(data-rd-navbar-toggle=".rd-navbar, .form-search-wrap")
+                  span
+
+            .rd-navbar-menu-wrap
+              .container
+                .rd-navbar-nav-wrap
+                  -var tabs = [cfg.nav.components]
+                  -var megamenus = [cfg.nav.pages]
+                  -var type = 'simple'
+
+                  .rd-navbar-mobile-scroll
+                    //Navbar Brand Mobile
+                    .rd-navbar-mobile-brand
+                      a(href="index.html") !{logo}
+
+                    // RD Navbar Nav
+                    ul.rd-navbar-nav
+                      each link, title in links
+                        -type = 'simple'
+                        li(class=(activeLink.title == link.title) ? 'active' : '')
+                          a(href=link.href class=link.icon)
+                            span= link.title
+                          each tab in tabs
+                            - if (JSON.stringify(tab) === JSON.stringify(link) ) type = 'tabs'
+
+                          each megamenu in megamenus
+                            -if (JSON.stringify(megamenu) === JSON.stringify(link) ) type = 'megamenu'
+
+                          case type
+                            when 'tabs'
+                              .rd-navbar-megamenu
+                                -var tabList = []
+                                each title in link.submenu
+                                  -tabList.push(title.title)
+                                if tabList.length > 0
+                                  +tabs-classic(tabList)
+                                    each tab in link.submenu
+                                      .row
+                                        -var megamenuColumns = 4
+                                        -var columnLength = Object.keys(tab.submenu).length / megamenuColumns
+
+                                        - for (var i = 1; i <= megamenuColumns; i++){
+                                          -var j = 0
+                                            ul(class='col-lg-' + 12 / megamenuColumns)
+                                              each dropdown in tab.submenu
+                                                -j++
+                                                -if (j <= (i - 1) * columnLength) continue
+                                                -if (j > i*columnLength) break
+                                                li
+                                                  a(href=dropdown.href)
+                                                    span.rd-navbar-icon(class=dropdown.icon)
+                                                    span.text-middle= dropdown.title
+                                                    - if (typeof(dropdown.label) !== 'undefined')
+                                                      span.rd-navbar-label.label-custom.label-danger.label-xs-custom.label-rounded-custom.label #{dropdown.label}
+                                        -}
+                            when 'megamenu'
+                              .rd-navbar-megamenu
+                                .row
+                                  -var megamenuColumns = 4
+                                  -var columnLength = Object.keys(link.submenu).length / megamenuColumns
+                                  - for (var i = 1; i <= megamenuColumns; i++){
+                                    -var j = 0
+                                      ul(class='col-lg-' + 12 / megamenuColumns)
+                                        each dropdown in link.submenu
+                                          -j++
+                                          -if (j <= (i - 1) * columnLength) continue
+                                          -if (j > i*columnLength) break
+                                          li
+                                            a(href=dropdown.href)
+                                              span.rd-navbar-icon(class=dropdown.icon)
+                                              span.text-middle= dropdown.title
+                                              - if (typeof(dropdown.label) !== 'undefined')
+                                                span.rd-navbar-label.label-custom.label-danger.label-xs-custom.label-rounded-custom.label #{dropdown.label}
+
+                                  -}
+
+                            default
+                              +rd-navbar-simple-submenu(link)
+
+                      li.cart
+                        a(href=cfg.nav.shop.submenu.cart.href)
+                          span.icon.mdi.mdi-cart.text-middle
+                          span.cart-text Cart
+                          span.cart-count.big.text-middle.text-regular 2
+                        .rd-navbar-dropdown.rd-navbar-cart-dropdown
+                          //RD Navbar shop
+                          .rd-navbar-cart-wrap
+                            ul.rd-navbar-list-products
+                              li
+                                div.rd-navbar-product-image
+                                  img(src="images/shop/product-02-60x60.png", alt="")
+                                div.rd-navbar-product-caption
+                                  h6.rd-navbar-product-title
+                                    a(href=cfg.nav.shop.submenu.singleProduct.href) Artist Paint Brush Set Nylon Hair Oil Painting Supplies
+                                  p.rd-navbar-product-price $124.00
+                                a.mdi.mdi-window-close.rd-navbar-product-remove(href="#")
+                              li
+                                div.rd-navbar-product-image
+                                  img(src="images/shop/product-07-60x60.png", alt="")
+                                div.rd-navbar-product-caption
+                                  h6.rd-navbar-product-title
+                                    a(href=cfg.nav.shop.submenu.singleProduct.href) Marco 72 Colors Art Drawing Oil Base Pencils-Set
+                                  p.rd-navbar-product-price $189.00
+                                a.mdi.mdi-window-close.rd-navbar-product-remove(href="#")
+                            div.rd-navbar-cart-total
+                              h6.rd-navbar-cart-total-title Cart subtotal
+                              span.rd-navbar-cart-total-price $313.00
+                            .text-center
+                              a.btn.btn-rect.btn-sm.btn-primary.btn-icon.btn-icon-left(href=cfg.nav.shop.submenu.checkout.href)
+                                span.icon.mdi.mdi-lock
+                                = "Go to checkout"

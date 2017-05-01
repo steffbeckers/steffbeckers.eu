@@ -1,0 +1,19 @@
+//- thumbnail - {thumbnail} object
+mixin thumbnail-josip(options)
+  -var photoswipe = (typeof(options.target.href) !== 'undefined') ? {"href": options.target.href} : {"data-photo-swipe-item": "", "data-size": ""+options.target.width+"x"+options.target.height, "href": options.target.src}
+
+  // Thumbnail Josip
+  figure.thumbnail-josip
+    a&attributes(photoswipe)
+      img(width=options.thumb.width, height=options.thumb.height, src=options.thumb.src, alt=options.thumb.alt)
+    figcaption
+      a(href= options.btnLink).btn.btn-xs(class= options.btnClass).offset-top-10.pull-right= options.btnText
+      div.offset-top-14.offset-md-top-0
+        h6.thumbnail-josip-title= options.title
+
+      p.veil.reveal-md-block.offset-top-0= options.description
+
+
+
+
+

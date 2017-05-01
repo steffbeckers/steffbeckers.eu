@@ -1,0 +1,240 @@
+extends ../_skeleton
+
+//- Page includes
+include ../elements/_ui-breadcrumb-classic
+  //- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.icons.title
+  //- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.icons.title,
+  "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.icons.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.icons.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.icons.href
+    }
+  })
+  // Page Content
+  main.page-content.section-98.section-sm-110
+
+    //Icon Shapes
+    section
+      .shell
+        h1 Icon Shapes
+        hr.divider.divider-md.bg-mantis
+        .offset-top-66
+          .group-lg.group-middle
+            span.icon.mdi.mdi-nodejs.text-darker
+            span.icon.icon-lg.icon-circle.icon-darker-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.icon-darker-filled.mdi.mdi-behance
+            span.icon.icon-lg.icon-rounded.icon-darker-filled.mdi.mdi-play-box-outline
+            span.icon.icon-sm.icon-outlined.icon-darker-filled.mdi.mdi-emoticon-happy
+
+    //Default Icon Sizes
+    section.offset-top-98.offset-md-top-110
+      .container
+        h1 Default Icon Sizes
+        hr.divider.divider-md.bg-mantis
+        .offset-top-41
+          .group-lg
+            span.text-middle.icon.icon-xxs.mdi.mdi-emoticon-happy
+            span.text-middle.icon.icon-xs.mdi.mdi-emoticon-happy
+            span.text-middle.icon.icon-sm.mdi.mdi-emoticon-happy
+            span.text-middle.icon.mdi.mdi-emoticon-happy
+            span.text-middle.icon.icon-lg.mdi.mdi-emoticon-happy
+            span.text-middle.icon.icon-xlg.mdi.mdi-emoticon-happy
+
+    //Ellipse Icon Sizes
+    section.offset-top-98
+      .container
+        h1 Ellipse Icon Sizes
+        hr.divider.divider-md.bg-mantis
+        .offset-top-66
+          .group-lg.group-middle
+            span.icon.icon-xxs.icon-circle.icon-darker-filled.fa-facebook-f
+            span.icon.icon-xs.icon-circle.icon-darker-filled.fa-google-plus
+            span.icon.icon-sm.icon-circle.icon-darker-filled.mdi.mdi-behance
+            span.icon.icon-circle.icon-darker-filled.mdi.mdi-cast
+            span.icon.icon-lg.icon-circle.icon-darker-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-xlg.icon-circle.icon-darker-filled.mdi.mdi-calendar
+
+    //Rect Icon Sizes
+    section.offset-top-98.offset-md-top-110
+      .container
+        h1 Rect Icon Sizes
+        hr.divider.divider-md.bg-mantis
+        .offset-top-66
+          .group-lg.group-middle
+            span.icon.icon-xxs.icon-rect.icon-darker-filled.fa-facebook-f
+            span.icon.icon-xs.icon-rect.icon-darker-filled.fa-google-plus
+            span.icon.icon-sm.icon-rect.icon-darker-filled.mdi.mdi-behance
+            span.icon.icon-rect.icon-darker-filled.mdi.mdi-cast
+            span.icon.icon-lg.icon-rect.icon-darker-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-xlg.icon-rect.icon-darker-filled.mdi.mdi-calendar
+
+    //Round Icon Sizes
+    section.offset-top-98.offset-md-top-110
+      .container
+        h1 Round Icon Sizes
+        hr.divider.divider-md.bg-mantis
+        .offset-top-66
+          .group.group-middle
+            span.icon.icon-xxs.icon-rounded.icon-darker-filled.fa-facebook-f
+            span.icon.icon-xs.icon-rounded.icon-darker-filled.fa-google-plus
+            span.icon.icon-sm.icon-rounded.icon-darker-filled.mdi.mdi-behance
+            span.icon.icon-rounded.icon-darker-filled.mdi.mdi-cast
+            span.icon.icon-lg.icon-rounded.icon-darker-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-xlg.icon-rounded.icon-darker-filled.mdi.mdi-calendar
+
+    //Outline Icon Sizes
+    section.offset-top-98.offset-md-top-110
+      .container
+        h1 Outline Icon Sizes
+        hr.divider.divider-md.bg-mantis
+        .offset-top-66
+          .group-xl.group-middle
+            span.icon.icon-sm.icon-outlined.icon-darker-filled.mdi.mdi-behance
+            span.icon.icon-outlined.icon-darker-filled.mdi.mdi-cast
+            span.icon.icon-lg.icon-outlined.icon-darker-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-xlg.icon-outlined.icon-darker-filled.mdi.mdi-calendar
+
+    //Default Icon Styles
+    section.offset-top-98.offset-md-top-110
+      .container
+        h1 Default Icon Styles
+        hr.divider.divider-md.bg-mantis
+        .offset-top-66
+          .group-sm
+            span.icon.mdi.mdi-bulletin-board.text-gray
+            span.icon.mdi.mdi-emoticon-happy
+            span.icon.mdi.mdi-rocket.text-primary
+            span.icon.mdi.mdi-headset.text-deluge
+            span.icon.mdi.mdi-xml.text-picton-blue
+            span.icon.icon-sm.mdi.mdi-vector-arrange-below.text-mantis
+            span.icon.mdi.mdi-account-multiple-outline.text-malibu
+            span.icon.icon-sm.mdi.mdi-clock.text-carrot
+            span.icon.icon-sm.mdi.mdi-code-brackets.text-red
+            span.icon.mdi.mdi-codepen.text-blue-gray
+            span.icon.mdi.mdi-git.text-pink
+
+    //Ellipse Icon Styles
+    section.offset-top-98.offset-md-top-110
+      .container
+        h1 Ellipse Icon Styles
+        hr.divider.divider-md.bg-mantis
+        .offset-top-66
+          .group
+            span.icon.icon-lg.icon-circle.icon-default.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-circle.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-circle.icon-primary.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-circle.icon-deluge.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-circle.icon-picton-blue.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-circle.icon-success.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-circle.icon-waring.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-circle.icon-danger.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-circle.icon-info.mdi.mdi-emoticon-happy
+          .group.offset-top-20
+            span.icon.icon-lg.icon-circle.icon-shark-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-circle.icon-mantis-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-circle.icon-pink-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-circle.icon-malibu-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-circle.icon-carrot-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-circle.icon-red-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-circle.icon-blue-gray-filled.mdi.mdi-emoticon-happy
+
+    //Rect Icon Styles
+    section.offset-top-98.offset-md-top-110
+      .container
+        h1 Rect Icon Styles
+        hr.divider.divider-md.bg-mantis
+        .offset-top-66
+          .group
+            span.icon.icon-lg.icon-rect.icon-default.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.icon-primary.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.icon-deluge.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.icon-picton-blue.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.icon-success.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.icon-waring.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.icon-danger.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.icon-info.mdi.mdi-emoticon-happy
+          .group.offset-top-20
+            span.icon.icon-lg.icon-rect.icon-shark-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.icon-mantis-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.icon-pink-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.icon-malibu-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.icon-carrot-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.icon-red-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rect.icon-blue-gray-filled.mdi.mdi-emoticon-happy
+
+    //Round Icon Styles
+    section.offset-top-98.offset-md-top-110
+      .container
+        h1 Round Icon Styles
+        hr.divider.divider-md.bg-mantis
+        .offset-top-66
+          .group
+            span.icon.icon-lg.icon-rounded.icon-default.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rounded.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rounded.icon-primary.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rounded.icon-deluge.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rounded.icon-picton-blue.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rounded.icon-success.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rounded.icon-waring.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rounded.icon-danger.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rounded.icon-info.mdi.mdi-emoticon-happy
+          .group.offset-top-20
+            span.icon.icon-lg.icon-rounded.icon-shark-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rounded.icon-mantis-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rounded.icon-pink-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rounded.icon-malibu-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rounded.icon-carrot-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rounded.icon-red-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-lg.icon-rounded.icon-blue-gray-filled.mdi.mdi-emoticon-happy
+
+    //Outline Icon Styles
+    section.offset-top-98.offset-md-top-110
+      .container
+        h1 Outline Icon Styles
+        hr.divider.divider-md.bg-mantis
+        .offset-top-66
+          .group-xl
+            span.icon.icon-outlined.icon-darker-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-outlined.icon-shark-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-outlined.icon-mantis-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-outlined.icon-pink-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-outlined.icon-malibu-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-outlined.icon-carrot-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-outlined.icon-red-filled.mdi.mdi-emoticon-happy
+            span.icon.icon-outlined.icon-blue-gray-filled.mdi.mdi-emoticon-happy
+
+    include ../sections/_section-icons-all
+  // Page Footer
+  include ../sections/_section-footer-default

@@ -1,0 +1,28 @@
+// Custom CSS Vendors
+
+@mixin transform($trfm) {
+  -webkit-transform: $trfm;
+  transform: $trfm;
+}
+
+@mixin animation($anim) {
+  -webkit-animation: $anim;
+  animation: $anim;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin sprite-animation() {
+  @include keyframes(sprite-animation) {
+    from {
+      background-position: 0 0;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+mixin quote-centered(obj)
+  blockquote.quote-centered
+    .quote-centered-avatar
+      case obj.avatar.type
+        when "image"
+          +jpg(obj.avatar.data)
+        when "letter"
+          span=obj.avatar.data 
+
+    cite=obj.cite
+
+    p.quote-centered-text: q=obj.text
+
+    ul.inline-list.inline-list-md
+      li: a.icon.icon-xs.link-gray-base.fa-facebook(href='#')
+      li: a.icon.icon-xs.link-gray-base.fa-twitter(href='#')
+      li: a.icon.icon-xs.link-gray-base.fa-linkedin(href='#')

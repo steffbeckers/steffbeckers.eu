@@ -1,0 +1,13 @@
+mixin thumbnail-option(obj)
+  - var week = ['mo', 'tu', 'we', 'th', 'fr', 'st', 'sn']
+  .thumbnail-option
+    .thumbnail-option-left
+      +jpg(obj.img)
+
+    .thumbnail-option-body
+      .thumbnail-option-title=obj.title
+      ul.thumbnail-option-list
+        - for(var i = 0; i < 7; i++)
+          li(class={active: obj.week[i] == true})=week[i]
+      .thumbnail-option-panel
+        a.btn.btn-xs.btn-primary.btn-circle(href='step-3.html') Choose

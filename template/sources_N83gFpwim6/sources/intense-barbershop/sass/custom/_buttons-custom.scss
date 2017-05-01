@@ -1,0 +1,364 @@
+//
+// Custom Buttons Styles
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  padding: 12px $padding-base-horizontal 10px;
+  font-family: $font-family-sec;
+  font-size: 12px;
+  font-weight: $btn-font-weight;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  border: 2px solid;
+  border-radius: 4px;
+  transition: .3s ease-out;
+  will-change: transform;
+
+  &:active,
+  &.active {
+    @include box-shadow(none);
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .btn {
+    padding: $padding-base-vertical + 2px $padding-base-horizontal $padding-base-vertical - 2px;
+    font-size: $btn-font-size * 1px;
+  }
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+}
+
+.btn-primary {
+  &,
+  &:active,
+  &:focus {
+    color: $btn-primary-color;
+    background: $btn-primary-bg;
+    border-color: $btn-primary-border;
+  }
+
+  &:hover {
+    color: $white;
+    background: $gray-base;
+    border-color: $gray-base;
+  }
+}
+
+.btn-kangaroo-outline {
+  &,
+  &:active,
+  &:focus {
+    color: $pickled-bluewood;
+    background: transparent;
+    border-color: $kangaroo;
+  }
+
+  &:hover {
+    color: $white;
+    background: $pickled-bluewood;
+    border-color: $pickled-bluewood;
+  }
+}
+
+.btn-white-pickled-bluewood {
+  &,
+  &:active,
+  &:focus {
+    color: $pickled-bluewood;
+    background: $white;
+    border-color: $white;
+  }
+
+  &:hover {
+    color: $white;
+    background: $pickled-bluewood;
+    border-color: $pickled-bluewood;
+  }
+}
+
+.btn-facebook {
+  &,
+  &:active,
+  &:focus {
+    color: $white;
+    background: $steel-blue;
+    border-color: $steel-blue;
+  }
+
+  &:hover {
+    color: $white;
+    background: darken($steel-blue, 8%);
+    border-color: darken($steel-blue, 8%);
+  }
+}
+
+.btn-twitter {
+  &,
+  &:active,
+  &:focus {
+    color: $white;
+    background: $picton-blue;
+    border-color: $picton-blue;
+  }
+
+  &:hover {
+    color: $white;
+    background: darken($picton-blue, 8%);
+    border-color: darken($picton-blue, 8%);
+  }
+}
+
+.btn-google {
+  &,
+  &:active,
+  &:focus {
+    color: $white;
+    background: $mandy;
+    border-color: $mandy;
+  }
+
+  &:hover {
+    color: $white;
+    background: darken($mandy, 8%);
+    border-color: darken($mandy, 8%);
+  }
+}
+
+// Success appears as green
+.btn-success {
+}
+
+// Info appears as blue-green
+.btn-info {
+}
+
+// Warning appears as orange
+.btn-warning {
+}
+
+// Danger and error appear as red
+.btn-danger {
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-xs {
+  font-size: 10px;
+  padding: $padding-xs-vertical + 2px $padding-xs-horizontal $padding-xs-vertical - 2px;
+  min-width: 120px;
+}
+
+.btn-sm {
+  font-size: 12px;
+  padding: $padding-small-vertical + 2px $padding-small-horizontal $padding-small-vertical - 2px;
+}
+
+.btn-lg {
+  font-size: 16px;
+  padding: $padding-large-vertical + 2px $padding-large-horizontal $padding-large-vertical - 2px;
+}
+
+.btn-default-size {
+  min-width: 177px;
+}
+
+.btn-style-1 {
+  border-radius: 35px;
+  min-width: 200px;
+}
+
+// Button Shapes
+// --------------------------------------------------
+
+.btn-rect {
+  border-radius: 0;
+}
+
+.btn-circle {
+  border-radius: 35px;
+}
+
+.btn-round {
+  border-radius: 8px;
+}
+
+// Button Additional styles
+// --------------------------------------------------
+.btn-shadow {
+  @include box-shadow(0px 9px 21px 0px rgba($gray-darker, 0.15));
+}
+
+// Button Icon styles
+// --------------------------------------------------
+
+.page .btn {
+  &.btn-icon {
+    @include display-inline-flex;
+    @include flex-wrap(nowrap);
+    @include align-items(center);
+    @include justify-content(center);
+    vertical-align: middle;
+
+    .icon {
+      position: relative;
+      top: 0;
+      display: inline-block;
+      vertical-align: middle;
+      color: inherit;
+      font-size: 1.5em;
+      line-height: 0;
+    }
+
+    &-left {
+      @include flex-direction(row);
+      .icon {
+        padding-right: 11px;
+      }
+    }
+
+    &-right {
+      @include flex-direction(row-reverse);
+      .icon {
+        padding-left: 11px;
+      }
+    }
+
+  }
+}
+
+// Custom
+.btn-shop {
+  position: relative;
+  @include display-inline-flex;
+  white-space: nowrap;
+
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  > * {
+    display: block;
+    padding: 7px 19px;
+    transition: color .3s ease, background .3s ease;
+  }
+
+  &,
+  &:active,
+  &:focus {
+    color: $white;
+
+    .btn-shop-icon {
+      background: $gray-dark;
+    }
+
+    .btn-shop-text {
+      background: $brand-primary;
+    }
+  }
+
+  &:hover {
+    color: $white;
+    .btn-shop-icon {
+      background: $brand-primary;
+    }
+
+    .btn-shop-text {
+      background: $gray-dark;
+    }
+  }
+}
+
+.btn-shop-icon {
+  position: relative;
+  @include flex-shrink(0);
+  width: 50px;
+  background: $gray-dark;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 35px 0 0 35px;
+
+  &:before {
+    position: relative;
+    right: -4px;
+  }
+
+  &:after {
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%));
+    left: 14px;
+    content: '+';
+    font-size: 10px;
+  }
+}
+
+.btn-shop-text {
+  @include flex-grow(1);
+  font: 400 10px/14px $font-family-sec;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-align: left;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  border-radius: 0 35px 35px 0;
+}
+
+.btn-shop-sm {
+  .btn-shop-icon {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    &:before {
+      right: -6px;
+    }
+
+    &:after {
+      left: 16px;
+    }
+  }
+
+  .btn-shop-text {
+    padding: 16px 30px 14px;
+    font-size: 12px;
+  }
+}
+
+.rd-navbar-fixed-linked {
+  .booking-control {
+    position: fixed;
+    top: 14px;
+    right: 15px;
+    z-index: 1050;
+  }
+
+  .booking-control .btn {
+    width: auto;
+    min-width: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    background-color: transparent;
+    border: 0;
+    color: $brand-primary;
+
+    &:after {
+      content: '\f271';
+      font: 400 26px $fa;
+    }
+
+    &:hover {
+      color: $gray-base;
+    }
+  }
+}

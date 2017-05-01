@@ -1,0 +1,62 @@
+extends  ../_skeleton
+
+block title
+  title 404
+
+block page
+  // Page Header
+  header.page-header.slider-menu-position
+    +rd-navbar-default({
+      "style": "",
+      "logo": cfg.brand.logo,
+      "logoFixed": cfg.brand.logoSmall,
+      "activeLink": 8,
+      "attr": {
+        "data-layout": "rd-navbar-fixed",
+        "data-sm-layout": "rd-navbar-fixed",
+        "data-md-layout": "rd-navbar-fullwidth",
+        "data-lg-layout": "rd-navbar-static"
+      }
+    })
+
+    +breadcrumb("404", {
+      0: {
+        "type": "link",
+        "title": cfg.nav.home.title,
+        "href": cfg.nav.home.href
+      },
+      1: {
+        "type": "link",
+        "title": cfg.nav.pages.title,
+        "href": cfg.nav.pages.href
+      },
+      2: {
+        "type": "link",
+        "title": "404",
+        "href": "404.html"
+      }
+    }, "images/backgrounds/background-02-1920x900.jpg")
+
+  // Page Content
+  main.page-content.section-75.section-md-top-90.section-md-bottom-110
+
+    // 404
+    section
+      .shell
+        div
+          h1 404
+        h5.text-spacing-75 page not found
+
+
+        .offset-top-25
+          p The page requested couldn't be found - this could be due to a spelling error in the URL or a removed page.
+
+        .offset-top-30
+          a.btn.btn-primary(href="index.html" style="min-width: 210px;") back to homepage
+
+        .offset-top-20
+          !{cfg.brand.svgDivider}
+
+
+  // Page Footer
+  include ../sections/_footer-default

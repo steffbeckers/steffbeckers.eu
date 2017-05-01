@@ -1,0 +1,25 @@
+//- Bootstrap Pagination
+//- size - pagination sizing class
+//- active - active index of pagination
+//- index - an array of {link} for indexes
+//- prev - prev button {link}
+//- next - next button {link}
+
+mixin pagination-bootstrap(size, active, indexes, prev, next)
+  // Bootstrap Pagination
+  nav
+    ul.pagination(class=size)
+      //- Previous
+      li(class= prev ? "" : "disabled")
+        a(href= prev ? prev.href : "#", aria-label="Previous")
+          span.mdi.mdi-chevron-double-left(aria-hidden='true')
+
+      //- Indexes
+      each index, i in indexes
+        li(class= i === active - 1 ? "active" : "")
+          a(href=index.href)= i + 1
+
+      //- Next
+      li(class= next ? "" : "disabled")
+        a(href= next ? next.href : "#", aria-label="Next")
+          span.mdi.mdi-chevron-double-right(aria-hidden='true')

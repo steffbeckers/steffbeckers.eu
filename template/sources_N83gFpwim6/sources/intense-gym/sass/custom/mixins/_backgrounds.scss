@@ -1,0 +1,22 @@
+//
+// Gradient background
+// --------------------------------------------------
+
+@mixin bg-variant-custom($color, $fallback: null) {
+  & {
+    @if (str_index($color, linear-gradient) == null){
+      background: $color;
+      fill: $color;
+    }
+    @else{
+      fill: $fallback;
+      background: $fallback;
+      background: -moz-#{$color};
+      background: -webkit-#{$color};
+      background: -o-#{$color};
+      background: -ms-#{$color};
+      background: #{$color};
+    }
+    @content;
+  }
+}

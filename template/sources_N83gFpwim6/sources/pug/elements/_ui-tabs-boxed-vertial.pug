@@ -1,0 +1,9 @@
+//- nameList - array of tabs list
+mixin tabs-boxed-vertical(nameList, tabsGroup)
+  // Responsive-tabs
+  .responsive-tabs.responsive-tabs-boxed(data-type="vertical")
+    ul.resp-tabs-list.text-center(data-group= tabsGroup || "tabs-group-default", class= tabsGroup || "tabs-group-default")
+      each item in nameList
+        li= item
+    .resp-tabs-container.text-left(data-group= tabsGroup || "tabs-group-default", class= tabsGroup || "tabs-group-default")
+      block

@@ -1,0 +1,76 @@
+//
+// RD Navbar Default First level of Menu
+// --------------------------------------------------
+
+%rd-navbar-default-menu-first-lvl{
+  .rd-navbar-nav {
+    @include clearfix;
+    > li {
+      float: left;
+      position: relative;
+      > a {
+        @extend %rd-navbar-default-link-font;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        padding: $rd-navbar-top-panel-list-item-padding;
+        border-radius: $rd-navbar-top-panel-list-item-border-radius;
+        > .rd-navbar-label {
+          position: absolute;
+          margin: -10px 0 0 -15px;
+        }
+      }
+
+      &.active > a, &.focus > a, > a:hover {
+
+      }
+
+      &.rd-navbar--has-megamenu {
+        position: static;
+      }
+
+      + li {
+        margin-left: 37px;
+      }
+    }
+
+    li.focus {
+      > .rd-navbar-dropdown, > .rd-navbar-megamenu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+//
+// Dark Theme
+// --------------------------------------------------
+
+%rd-navbar-default-menu-first-lvl-dark {
+  .rd-navbar-nav {
+    > li {
+      a {
+        color: $rd-navbar-dark-menu-first-lvl-list-item-link-color;
+      }
+    }
+  }
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+
+%rd-navbar-default-menu-first-lvl-light {
+  .rd-navbar-nav {
+    > li {
+      a {
+        color: $rd-navbar-light-menu-first-lvl-list-item-link-color;
+      }
+      &.active > a, &.focus > a, > a:hover {
+        color: $rd-navbar-dark-menu-first-lvl-list-item-link-hover-color;
+        background: $rd-navbar-dark-menu-first-lvl-list-item-link-hover-bg;
+      }
+    }
+  }
+}

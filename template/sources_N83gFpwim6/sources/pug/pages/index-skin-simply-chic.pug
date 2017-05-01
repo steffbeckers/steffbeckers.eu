@@ -1,0 +1,166 @@
+- var fonts = "//fonts.googleapis.com/css?family=Questrial%7CPlayfair+Display:400,700%7CLato:400,300"
+- var html_class = "wide wow-animation smoothscroll scrollTo"
+
+include ../_config
+include ../_mixins
+include ../elements/_ui-rd-navbar-sidebar-toggle
+include ../mixins/_gallery-photoswipe
+include ../elements/_ui-page-loader-variant-1
+include ../elements/_ui-box-icon-type-1
+include ../elements/_ui-box-icon-type-3
+include ../elements/_ui-rd-parallax
+include ../elements/_widget-post
+include ../elements/_widget-form-subscribe
+include ../elements/_widget-list-social
+include ../elements/_ui-media-elements
+include ../elements/_ui-counter-type-1
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-isotope
+include ../elements/_ui-box-member
+include ../elements/_ui-partners-carousel
+
+doctype html
+
+html(lang="en" class=html_class)
+  head
+    // Site Title
+    title= cfg.nav.home.submenu.skins.submenu.simplyChic.title
+
+    meta(charset="utf-8")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+    block search-meta
+      meta(name="keywords" content="intense web design multipurpose template")
+      meta(name="date" content="Dec 26")
+
+    link(rel="icon" href="images/favicon.ico" type="image/x-icon")
+
+    // Stylesheets
+    link(rel="stylesheet" type="text/css" href=fonts)
+    link(rel="stylesheet" href="intense-photographer-portfolio/css/style.css")
+
+    = "\n\t\t"
+    <!--[if lt IE 10]>
+    div(style='background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;')
+      a(href="http://windows.microsoft.com/en-US/internet-explorer/")
+        img(src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.")
+    script(src="js/html5shiv.min.js")
+    = "\n\t\t"
+    <![endif]-->
+
+  body
+    // Page
+    div(class="page text-center")
+      +page-loader-1("<img class='img-responsive' style='margin-top: -20px;margin-left: -18px;' width='330' height='67' src='images/childs/photographer-logo-big.png' alt=''/>")
+
+      // Page Head
+      header.page-head.slider-menu-position
+        //- RD Navbar
+        +rd-navbar-sidebar-toggle(
+        'rd-navbar-sidebar-toggle rd-navbar-dark',
+        {
+          "data-auto-height": "true",
+          "data-md-layout": 'rd-navbar-fixed',
+          "data-lg-layout": 'rd-navbar-fixed',
+          "data-lg-stick-up": 'false',
+          "data-lg-hover-on": "false"
+        },
+        "<img style='margin-top: -5px;margin-left: -15px;' width='138' height='31' src='images/childs/photographer-logo-light.png' alt=''/>",
+        cfg.nav.home,
+        cfg.nav
+        )
+
+        .bg-gray-base.context-dark.rd-parallax(data-on="false" data-md-on="true")
+          .rd-parallax-layer(data-speed="0.45", data-type="media", data-url="images/backgrounds/background-26-1920x1295.jpg" style="background-position: center top; ")
+          .rd-parallax-layer(data-speed="0.3", data-type='html' data-md-fade="true")
+            .bg-overlay-gray-darkest
+              .shell
+                .range
+                  .section-124.section-xs-110.section-cover.range.range-center.range-xs-bottom
+                    .cell-lg-12
+                      .group.group-xl.offset-top-124.offset-xs-top-0
+                        a.btn.btn-default.btn-lg.btn-anis-effect(data-caption-animate="fadeInUp" data-caption-delay="1200" href="#" data-custom-scroll-to="home-section-welcome").offset-top-0
+                          span.btn-text Start a journey
+
+      // Page Contents
+      main.page-content
+
+        section.section-66.section-sm-0(id="home-section-welcome")
+          .shell
+            .range.range-xs-center.range-sm-left
+              .cell-xs-10.cell-sm-6.section-image-aside.section-image-aside-right.text-left
+                .section-image-aside-img.veil.reveal-sm-block(style="background-image: url(images/backgrounds/background-27-1920x1080.jpg)")
+                .section-image-aside-body.section-sm-66.inset-sm-right-30
+                  div
+                    h3.text-picton-blue 01
+                  div.offset-top-10
+                    h2  Welcome to Intense. Multipurpose Theme.
+                  .offset-top-20
+                    p Join the 205,000+ Satified Customers Today at TemplateMonster.com. Created by the industry leaders Intense is a comprehensive set of tools which are super easy to pick up and run. It gives you a huge leg up to create your own beautiful site. Powerful options & tools, unlimited designs, responsive framework and amazing support are the reasons for our customers to fall in love.
+
+            .range.range-xs-center.range-sm-right.offset-top-0
+              .cell-xs-10.cell-sm-6.section-image-aside.section-image-aside-left.text-left
+                .section-image-aside-img.veil.reveal-sm-block(style="background-image: url(images/backgrounds/background-25-1920x1080.jpg)")
+                .section-image-aside-body.offset-top-41.offset-sm-top-0.section-sm-66.inset-sm-left-50
+                  div
+                    h3.text-picton-blue 02
+                  div.offset-top-10
+                    h2  About us
+                  .offset-top-20
+                    p Intense is an independent web design studio with a rich history. It started as a small family-owned business in Oakville, and has grown enough to successfully occupy two large buildings in two different cities.
+
+                    p Today Intense offers a full range of web design, app development and content marketing services, including building full-featured ecommerce websites and web startups with custom functionality.
+
+            .range.range-xs-center.range-sm-left.offset-top-0
+              .cell-xs-10.cell-sm-6.section-image-aside.section-image-aside-right.text-left
+                .section-image-aside-img.veil.reveal-sm-block(style="background-image: url(images/backgrounds/background-28-1387x925.jpg)")
+                .section-image-aside-body.offset-top-41.offset-sm-top-0.section-sm-66.inset-sm-right-30
+                  div
+                    h3.text-picton-blue 03
+                  div.offset-top-10
+                    h2  Why Choose Us
+
+                  .offset-top-20
+                    h6 We use cutting-edge technologies
+                    p Our team of professional analysts is constantly roaming the web in search of promising techniques, which will make your business better.
+
+                    h6 We value your time
+                    p We know how important it is for you to maintain your schedule, that’s why we do everything to fit it. Our team works on your project in multiple threads.
+
+                    h6 We provide qualified support
+                    p Our support team is online 24/7, and is ready to help you with any design - related issue.
+
+
+            .range.range-xs-center.range-sm-right.offset-top-0
+              .cell-xs-10.cell-sm-6.section-image-aside.section-image-aside-left.text-left
+                .section-image-aside-img.veil.reveal-sm-block(style="background-image: url(images/backgrounds/background-29-1920x1080.jpg)")
+                .section-image-aside-body.offset-top-41.offset-sm-top-0.section-sm-66.inset-sm-left-50
+                  div
+                    h3.text-picton-blue 04
+                  div.offset-top-10
+                    h2  Join Our Team
+                  .offset-top-20
+                    p Take a job opportunity of a lifetime – join the team of Intense. We cherish active tech savvies willing to work on projects of any type and complexity. If you are enthusiastic about tech innovations and ready to make impactful decisions, feel free to send us your CV. We are interested in hiring professionals for a long term and also provide an opportunity of remote work.
+
+                    .offset-top-34
+                      a(href="#" data-custom-scroll-to="careers-start").btn.btn-primary.btn-icon.btn-icon-left
+                        span.icon.mdi.mdi-check-all
+                        | Get Started now
+
+
+      // Page Footer
+      footer.section-relative.section-top-34.section-bottom-34.page-footer.bg-gray-base.context-dark
+        .shell  
+          p.small.text-darker
+            | #{cfg.brand.name} &copy; #[span(id="copyright-year")] . #[a(href="privacy.html") Privacy Policy]
+            // {%FOOTER_LINK}
+
+    // Global Mailform Output
+    #form-output-global.snackbars
+
+    +gallery-photoswipe()
+
+    // Java script
+    script(src="js/core.min.js")
+    script(src="js/script.js")

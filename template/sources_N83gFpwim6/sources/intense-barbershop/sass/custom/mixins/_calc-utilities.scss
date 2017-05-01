@@ -1,0 +1,14 @@
+//
+// Calculation utilities
+// --------------------------------------------------
+
+// Grid related values
+@mixin make-grid-parameter($parameter, $offset, $container, $col) {
+  @if $offset > 0 {
+    #{$parameter}: calc(50vw - #{$container} / 2 + #{$offset} + (#{$container} / #{$grid-columns}) * #{$col});
+  } @else if ($offset < 0) {
+    #{$parameter}: calc(50vw - #{$container} / 2 - #{-$offset} + (#{$container} / #{$grid-columns}) * #{$col});
+  } @else {
+    #{$parameter}: calc(50vw - #{$container} / 2 + (#{$container} / #{$grid-columns}) * #{$col});
+  }
+}

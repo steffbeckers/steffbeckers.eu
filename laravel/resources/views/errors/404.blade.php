@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html class="wide wow-animation smoothscroll scrollTo" lang="en">
 <head>
-    <title>404 Page</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'Steff Beckers') }} - 404</title>
     <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="keywords" content="intense web design multipurpose template html">
-    <meta name="date" content="Dec 26">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="Steff Beckers, Blog, CV, Portfolio">
+    <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/png">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css"
           href="//fonts.googleapis.com/css?family=Montserrat:400,700%7CLato:300,300italic,400,700,900%7CYesteryear">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;">
         <a href="http://windows.microsoft.com/en-US/internet-explorer/"><img
@@ -21,6 +21,12 @@
     </div>
     <script src="js/html5shiv.min.js"></script>
     <![endif]-->
+    <!-- Scripts -->
+    <script>
+        window.Laravel = {!! json_encode([
+            'csrfToken' => csrf_token(),
+        ]) !!};
+    </script>
 </head>
 <body>
 <!-- Page-->
@@ -31,10 +37,7 @@
         <div class="one-page">
             <div class="one-page-header">
                 <!--Navbar Brand-->
-                <div class="rd-navbar-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;'
-                                                                       width='138' height='31'
-                                                                       src='images/intense/logo-light.png' alt=''/></a>
-                </div>
+                <div class="rd-navbar-brand"><a href="index.html"><img style='margin-top: -5px; margin-left: -15px;' width='200' src='images/steff/Logo_SteffBeckers_LongName_White.png' alt='Steff Beckers'/></a></div>
             </div>
             <!-- 404-->
             <section class="context-dark">
@@ -42,24 +45,21 @@
                     <div class="range">
                         <div class="section-110 section-cover range range-xs-center range-xs-middle">
                             <div class="cell-lg-6">
-                                <h3>Sorry, but page was not found</h3>
+                                <h3>Sorry, but this page was not found</h3>
                                 <hr class="divider bg-mantis">
                                 <div class="text-extra-big text-light">404</div>
-                                <p class="offset-top-50">You may have mistyped the address or the page may have
-                                    moved.</p>
-                                <div class="group offset-top-30"><a class="btn btn-icon btn-icon-left btn-primary"
-                                                                    href="index.html"><span
-                                                class="icon mdi mdi-arrow-left"></span>back to home</a><a
-                                            class="btn btn-icon btn-icon-left btn-default" href="contact-us.html"><span
-                                                class="icon mdi mdi-email-outline"></span>Contact us</a></div>
+                                <p class="offset-top-50">You may have mistyped the address or the page may have moved.</p>
+                                <div class="group offset-top-30">
+                                    <a class="btn btn-icon btn-icon-left btn-primary" href="/">
+                                    <span class="icon mdi mdi-arrow-left"></span>back to home</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             <div class="one-page-footer">
-                <p class="small" style="color: rgba(255,255,255, 0.3);">Intense &copy; <span id="copyright-year"></span>
-                    . <a href="privacy.html">Privacy Policy</a></p>
+                <p class="small" style="color: #FFF">&copy; <span id="copyright-year"></span> – <img class="sb-footer-icon" src="{{ asset('images/steff/icon_16px_w.png') }}" alt="SB" />Steff Beckers</p>
             </div>
         </div>
     </main>

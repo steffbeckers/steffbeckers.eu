@@ -1,0 +1,302 @@
+//
+// Utilities custom
+// --------------------------------------------------
+
+// Helpers
+//
+.height-fill {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(stretch);
+
+  > * {
+    @include flex-grow(1);
+  }
+}
+
+.block-centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block-right {
+  @media (min-width: $screen-sm-min) {
+    margin-left: auto;
+  }
+}
+
+.tooltip-inner {
+  @include box-shadow($shadow-area-sm);
+}
+
+.text-width-medium,
+.text-width-small,
+.text-width-smaller,
+.text-width-smallest {
+  pointer-events: none;
+
+  p {
+    display: inline-block;
+    width: 100%;
+    pointer-events: auto;
+  }
+}
+
+.text-width-medium p {
+  max-width: 780px;
+}
+
+.text-width-small p {
+  max-width: 570px;
+}
+
+.text-width-smaller p {
+  max-width: 470px;
+}
+
+@media (min-width: $screen-md-min) {
+  .text-width-smallest p {
+    max-width: 370px;
+  }
+}
+
+// Decorations
+//
+
+.text-decoration-lines {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  &-content {
+    position: relative;
+    display: inline-block;
+    min-width: 170px;
+    font: 400 12px/18px $font-family-sec;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    color: $gray-light;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      background: $conch;
+      top: 50%;
+      width: 100vw;
+    }
+
+    &:before {
+      left: 0;
+      @include transform(translate(-100%, -50%));
+    }
+
+    &:after {
+      right: 0;
+      @include transform(translate(100%, -50%));
+    }
+  }
+}
+
+// Custom modal
+//
+.custom-modal-dialog {
+  width: 100vw;
+  height: 100vh;
+  background: $white;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: auto;
+  margin: 0;
+  padding: 80px 15px 30px;
+
+  button.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    z-index: 10000;
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include align-items(center);
+    @include justify-content(center);
+    border: 1px solid $gray-light;
+    border-radius: 50%;
+    transition: .33s all ease;
+    cursor: pointer;
+
+    &:before {
+      position: relative;
+      content: '\f00d';
+      font: 400 12px/12px $fa;
+      line-height: inherit;
+      color: $gray-light;
+      pointer-events: none;
+    }
+  }
+}
+
+.ie-10,
+.ie-11 {
+  .custom-modal-dialog {
+    button.close {
+      &:before {
+        top: -2px;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .custom-modal-dialog {
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(center);
+    padding: 100px 15px 30px;
+
+    button.close {
+      top: 40px;
+      right: 40px;
+    }
+  }
+}
+
+[data-toggle='modal'] {
+  cursor: pointer;
+}
+
+// Custom progress
+//
+.custom-progress {
+  width: 100%;
+  height: 6px;
+  background: $gray-dark;
+}
+
+.custom-progress-body {
+  height: 100%;
+  width: 0;
+  background: $brand-primary;
+}
+
+.rd-navbar-sidebar-linked {
+  .custom-progress {
+    position: absolute;
+    z-index: 1000;
+    top: 73px;
+    left: 0;
+    right: 0;
+  }
+}
+
+.rd-navbar-fixed-linked {
+  .custom-progress {
+    position: fixed;
+    z-index: 1000;
+    top: 56px;
+    left: 0;
+    right: 0;
+  }
+}
+
+// Step progress
+//
+.step-progress {
+  @include display-flex;
+  @include flex-direction(column);
+  @include flex-wrap(wrap);
+  @include align-items(center);
+  @include justify-content(center);
+  height: 45px;
+  font-family: $font-family-sec;
+  font-weight: 400;
+  color: $gray-dark;
+  text-align: center;
+  white-space: normal;
+}
+
+.step-progress-top {
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: .1em;
+}
+
+.step-progress-bottom {
+  letter-spacing: .45em;
+  text-transform: uppercase;
+}
+
+.step-progress-number {
+  font-size: 14px;
+  padding: 0 9px;
+
+  &:first-child {
+    padding-left: 5px;
+  }
+}
+
+.step-progress-caption {
+  max-width: 85px;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+
+  @media (min-width: $screen-xs-min) {
+    white-space: nowrap;
+    max-width: 150px;
+  }
+
+  > * {
+    display: inline-block;
+    vertical-align: baseline;
+  }
+
+  > * + * {
+    margin-left: 5px;
+  }
+
+  img {
+    position: relative;
+    top: 1px;
+  }
+}
+
+@media (min-width: $screen-xs-min) {
+  .step-progress-top {
+    font-size: 14px;
+    letter-spacing: .2em;
+  }
+
+  .step-progress-number {
+    font-size: 18px;
+  }
+
+  .step-progress-bottom {
+    letter-spacing: .9em;
+  }
+
+  .step-progress-caption {
+    font-size: 14px;
+  }
+}
+
+.rd-navbar-fixed-linked {
+  .step-progress {
+    position: fixed;
+    right: 8px;
+    top: 8px;
+    z-index: 10001;
+    padding-bottom: 2px;
+  }
+
+  @media (min-width: $screen-xs-min) {
+    .step-progress {
+      top: 7px;
+    }
+  }
+}

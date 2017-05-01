@@ -1,0 +1,9 @@
+//
+// Text Responsive
+// --------------------------------------------------
+
+@each $resolution, $alias in ($screen-xs-min : xs, $screen-sm-min : sm, $screen-md-min : md, $screen-lg-min : lg, $screen-xl-min : xl){
+  @media (min-width: $resolution) {
+    @include make-text-alignment($alias);
+  }
+}

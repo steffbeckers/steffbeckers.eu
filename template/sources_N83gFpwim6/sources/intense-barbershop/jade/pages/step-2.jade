@@ -1,0 +1,95 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-thumbnail-option
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Step 2'
+  - var bodyClass = 'one-screen-page'
+
+block title
+  title=pageName
+
+block menu
+  .page-header.page-header-perspective
+    .page-header-left
+      a.brand(href='index.html')
+        +png('logo-default-199x36')
+
+    .page-header-center
+      .step-progress
+        .step-progress-top
+          span.step-progress-number 2
+          span of
+          span.step-progress-number 3
+        .step-progress-bottom
+          p.step-progress-text STEPs
+
+    .page-header-right
+      if (menuIncludeButton)
+        .booking-control
+          a.btn.btn-xs.btn-circle.btn-primary(href=appointLink) BOOK NOW
+
+      #perspective-open-menu(data-custom-toggle='.perspective-menu-toggle', data-custom-toggle-hide-on-blur='true')
+        span.perspective-menu-text Menu
+        button.perspective-menu-toggle
+          span
+
+  .custom-progress
+    .custom-progress-body(style='width: 33.33%;')
+
+block header
+  include ../sections/_header-default
+
+block page
+  //- Page Content
+  section.section-xs.bg-periglacial-blue.one-screen-page-content.text-center
+    .shell
+      a.link.link-primary.link-return(href='step-1.html') Back
+    .shell
+      h2 CHOOSE a BARBER
+      .p.text-width-medium
+        p.big Barbershop offers professional services of certified barbers with years of experience. On this page you can choose a preferred barber in a few clicks.
+
+      .range.range-lg-center
+        .cell-lg-10
+          .range.range-sm-center.range-md-left.range-30
+            .cell-sm-8.cell-md-6
+              +thumbnail-option({
+                img: 'team-1-170x180',
+                title: 'Simon wilson',
+                week: [false, true, true, false, true, false, false]
+              })
+
+            .cell-sm-8.cell-md-6
+              +thumbnail-option({
+                img: 'team-2-170x180',
+                title: 'Matthew Phillips',
+                week: [false, true, true, false, true, false, false]
+              })
+
+            .cell-sm-8.cell-md-6
+              +thumbnail-option({
+                img: 'team-3-170x180',
+                title: 'harry anderson',
+                week: [false, true, true, false, true, false, false]
+              })
+
+            .cell-sm-8.cell-md-6
+              +thumbnail-option({
+                img: 'team-1-170x180',
+                title: 'James Young',
+                week: [false, true, true, false, true, false, false]
+              })
+
+            .cell-sm-8.cell-md-6
+              +thumbnail-option({
+                img: 'team-2-170x180',
+                title: 'Scott Russell',
+                week: [false, true, true, false, true, false, false]
+              })
+  ='\n'
+
+  // Page Footer
+  include ../sections/_footer-default

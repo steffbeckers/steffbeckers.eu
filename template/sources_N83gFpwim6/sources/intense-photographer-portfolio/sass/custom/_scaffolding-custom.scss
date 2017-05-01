@@ -1,0 +1,56 @@
+//
+// Custom scaffolding
+// --------------------------------------------------
+
+// Page styles
+// -------------------------
+
+.page {
+  overflow: hidden;
+  background-color: $main-bg;
+}
+
+// Element with border radius
+.img-rounded {
+  border-radius: $border-radius-base;
+}
+
+.img-cover {
+  width: 100%;
+  height: auto;
+}
+
+.img-bordered-white {
+  border: 2px solid $white;
+}
+
+
+// Element with 50% opacity
+.img-semi-transparent {
+  opacity: .5;
+  @include transition(.35s all ease);
+  will-change: transform;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.element-fullwidth {
+  width: 100%;
+}
+
+.embed-item-center {
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+}
+
+// TODO QA
+.bg-image {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+

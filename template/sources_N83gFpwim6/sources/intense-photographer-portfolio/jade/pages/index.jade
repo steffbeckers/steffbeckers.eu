@@ -1,0 +1,44 @@
+extends  ../_skeleton
+
+//-Title
+block title
+  title= cfg.brand.name
+
+//- Page
+block page
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-sidebar-toggle(
+    'rd-navbar-sidebar-toggle rd-navbar-light',
+    {
+      "data-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-fixed',
+      "data-lg-stick-up": 'false',
+      "data-lg-hover-on": "false"
+    },
+    "<img style='margin-top: -5px;margin-left: -15px;' width='138' height='31' src='images/logo-dark.png' alt=''/>",
+    cfg.nav.home,
+    cfg.nav
+    )
+
+  // Page Content
+  main.page-content
+    .section-relative.section-cover
+      // Swiper
+      .swiper-container.swiper-slider(data-height='100vh', data-min-height='400px', data-dots="true")
+        .swiper-wrapper
+          .swiper-slide.swiper-slide-overlay-disable.swiper-slide-center(data-slide-bg='images/image-01-1920x1080.jpg')
+          .swiper-slide.swiper-slide-overlay-disable.swiper-slide-center(data-slide-bg='images/image-02-1920x1080.jpg')
+          .swiper-slide.swiper-slide-overlay-disable.swiper-slide-center(data-slide-bg='images/image-03-1920x1080.jpg')
+        // Swiper Pagination
+        .swiper-pagination.swiper-pagination-type-1
+      .section-center-absolute.offset-top-20.offset-md-top-0
+        img.img-responsive.center-block.element-fullwidth(src="images/brand.png" width="984" height="91" alt="")
+        .offset-top-20.offset-md-top-41
+          h5.text-uppercase.font-default.text-spacing-120 photographer, new york
+        .shell.offset-top-30.offset-md-top-50
+          .range.range-xs-center
+            .cell-sm-9.cell-md-8.cell-lg-6.cell-xl-4
+              a(href=cfg.nav.portfolio.href).btn.btn-lg.btn-block.btn-primary.btn-rect.text-spacing-120.text-regular view all gallery

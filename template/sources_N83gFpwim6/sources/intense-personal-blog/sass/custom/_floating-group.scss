@@ -1,0 +1,15 @@
+//
+// Floating Group
+// --------------------------------------------------
+
+.floating-group{
+  @include clearfix;
+  margin-top: -5px;
+  margin-left: -5px;
+
+  > *, > *:first-child{
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+}

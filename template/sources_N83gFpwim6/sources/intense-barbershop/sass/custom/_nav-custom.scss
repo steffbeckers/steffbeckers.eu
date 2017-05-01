@@ -1,0 +1,247 @@
+//
+// Nav custom
+// --------------------------------------------------
+
+// Tabs
+//--------------------------------------
+// Corporate style
+$tabs-corporate-color: $gray-light;
+$tabs-corporate-background: transparent;
+$tabs-corporate-active-color: $white;
+$tabs-corporate-active-background: $brand-primary;
+$tabs-corporate-border: $gray-light;
+
+$vertical-tab-offset: 10px;
+
+// Base styles
+.tabs-custom {
+  text-align: left;
+  .nav-tabs {
+    word-spacing: 0;
+    border: 0;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    li {
+      float: none;
+      border: 0;
+      cursor: pointer;
+      transition: .33s all ease;
+    }
+
+    li.active {
+      cursor: default;
+
+      a {
+        border: 0;
+      }
+    }
+
+    a {
+      margin: 0;
+      border: 0;
+    }
+  }
+}
+
+// Offsets
+* + .tabs-custom {
+  margin-top: 35px;
+
+  @media (min-width: $screen-md-min) {
+    margin-top: 50px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    margin-top: 70px;
+  }
+}
+
+.tabs-custom {
+  .nav-tabs {
+    font-size: 0;
+    line-height: 0;
+  }
+
+  // Tabs corporate style
+  &.tabs-corporate {
+    .nav-tabs {
+      position: relative;
+      border: 1px solid $kangaroo;
+
+      li {
+        margin: -1px;
+      }
+
+      li a {
+        padding: 7px 10px;
+        font: 400 13px $font-family-sec;
+        line-height: 1.4;
+        text-transform: uppercase;
+        color: $tabs-corporate-color;
+        background: $tabs-corporate-background;
+        border-bottom: 1px solid $kangaroo;
+        text-align: center;
+        vertical-align: middle;
+
+        &:first-child {
+          border-top: 1px solid $kangaroo;
+        }
+      }
+
+      li a:hover,
+      li.active a {
+        color: $tabs-corporate-active-color;
+        background: $tabs-corporate-active-background;
+        border-color: $tabs-corporate-active-background;
+      }
+    }
+
+    .tab-content {
+      padding: 30px 0 0;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .tabs-custom {
+    .nav-tabs {
+      li a {
+        font-size: 15px;
+      }
+    }
+  }
+
+  // Horizontal tabs
+  // ----------------------
+  .tabs-custom.tabs-horizontal {
+    &.tabs-corporate {
+      .nav-tabs {
+        position: relative;
+        width: 100%;
+        @include justify-content(center);
+        text-align: center;
+        @include spacing(10px);
+        border: 0;
+        will-change: transform;
+
+        li {
+          display: inline-block;
+          will-change: transform;
+          @include flex-grow(1);
+          @include flex-shrink(0);
+
+          a {
+            display: block;
+            position: relative;
+            z-index: 1;
+            min-width: 130px;
+            padding: 13px 20px 9px;
+            border-radius: 35px;
+            border: 2px solid;
+          }
+
+          &.active a,
+          a:hover {
+            border-color: $tabs-corporate-active-background;
+          }
+        }
+      }
+
+      .tab-content {
+        padding: 30px 0 0;
+      }
+    }
+  }
+
+  // Vertical tabs
+  // ----------------------
+  .tabs-custom.tabs-vertical {
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include align-items(flex-start);
+
+    .nav-tabs {
+      @include display-flex;
+      @include flex-direction(column);
+      @include flex-wrap(nowrap);
+      @include align-items(stretch);
+      @include flex-shrink(0);
+      max-width: 50%;
+
+      li {
+        border: 0;
+        width: 100%;
+        text-align: left;
+
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .tab-content {
+      @include flex-grow(1);
+    }
+
+    &.tabs-corporate {
+      .nav-tabs {
+        width: auto;
+        min-width: 260px;
+        border: 0;
+
+        li {
+          margin: 0;
+        }
+
+        li a {
+          position: relative;
+          padding: 12px 30px 8px;
+          border: 0;
+          border-radius: 35px;
+          overflow: hidden;
+          text-align: left;
+        }
+
+        > li + li {
+          margin-top: 2px;
+        }
+      }
+
+      .tab-content {
+        padding: 0 0 0 30px;
+        margin-top: -5px;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .tabs-custom {
+    // Horizontal tabs
+    // ----------------------
+    &.tabs-horizontal {
+      &.tabs-corporate {
+        .tab-content {
+          padding-top: 45px;
+        }
+      }
+    }
+
+    // Vertical tabs
+    // ----------------------
+    &.tabs-vertical {
+
+      // Tabs corporate style
+      &.tabs-corporate {
+        .tab-content {
+          padding: 0 0 0 45px;
+        }
+      }
+    }
+  }
+}

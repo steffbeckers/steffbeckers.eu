@@ -1,0 +1,26 @@
+//- type - alerts skin (snackbars-undo, snackbars-icon, snackbars-retry)
+//- title - alerts header
+//- linkRight - right button or link
+//- icon - alerts links object
+//- iconSize - alerts links object
+mixin alerts-snackbars(type, title, linkRight, icon, iconSize)
+  // Snackbars Alerts
+  case type
+    when "snackbars-undo"
+      .snackbars
+        span.snackbars-left= title
+        a(href="#").snackbars-right= linkRight
+    when "snackbars-icon"
+      .snackbars
+        p
+          span.icon.text-middle(class= '#{icon} #{iconSize}')
+          span= title
+    when "snackbars-retry"
+      .snackbars
+        p.snackbars-left
+          span.icon.icon-xxs.mdi.mdi-alert-outline.text-middle
+          span= title
+        a(href="#").snackbars-right= linkRight
+    default
+      .snackbars
+        p= title

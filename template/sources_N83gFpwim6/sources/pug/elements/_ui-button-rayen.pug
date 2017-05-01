@@ -1,0 +1,6 @@
+//- Rayen button
+//- btnClass - class to set size, style, etc. (btn-lg, btn-primary)
+//- btnText - button text
+mixin button-rayen(btnClass, btnText)
+  button(class=btnClass type="button" data-text=btnText).btn.btn-rayen-effect
+    span= btnText

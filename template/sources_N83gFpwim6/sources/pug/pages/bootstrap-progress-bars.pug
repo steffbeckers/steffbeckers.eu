@@ -1,0 +1,183 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-progress-bar-bootstrap
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.bootstrapcomponents.submenu.progressBars.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.bootstrapcomponents.submenu.progressBars.title,
+  "icon-lg " + cfg.nav.components.submenu.bootstrapcomponents.submenu.progressBars.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.bootstrapcomponents.submenu.progressBars.title,
+      "href": cfg.nav.components.submenu.bootstrapcomponents.submenu.progressBars.href
+    }
+  })
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    // Basic example
+    section
+      .shell
+        h1 Progress bars
+        p Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible progress bars.
+        hr.divider.bg-mantis
+        .offset-top-66
+          h3 Basic example
+          p Default progress bar.
+          .offset-top-41
+            .range.range-xs-center
+              .cell-md-7
+                +progress-bar-bootstrap({
+                  "apClass": "",
+                  "valueTo": "60",
+                  "numberHide": true
+                })
+
+        .offset-top-66
+          h3 With label
+          p Remove the #[code &lt;span&gt;] with #[code .sr-only] class from within the progress bar to show a visible percentage.
+          .offset-top-30
+            .range.range-xs-center
+              .cell-md-7
+                +progress-bar-bootstrap({
+                  "apClass": "",
+                  "valueTo": "60"
+                })
+        .offset-top-41
+          .range.range-xs-center
+            .cell-md-7
+              p To ensure that the label text remains legible even for low percentages, consider adding a #[code min-width] to the progress bar.
+              .offset-top-30
+                +progress-bar-bootstrap({
+                  "apClass": "",
+                  "valueTo": "0"
+                })
+                +progress-bar-bootstrap({
+                  "apClass": "",
+                  "valueTo": "2"
+                })
+        .offset-top-66
+          h3 Contextual alternatives
+          p Progress bars use some of the same button and alert classes for consistent styles.
+          .offset-top-41
+            .range.range-xs-center
+              .cell-md-7
+                +progress-bar-bootstrap({
+                  "apClass": "progress-bar-success",
+                  "valueTo": "40",
+                  "numberHide": true
+
+                })
+                +progress-bar-bootstrap({
+                  "apClass": "progress-bar-info",
+                  "valueTo": "20",
+                  "numberHide": true
+
+                })
+                +progress-bar-bootstrap({
+                  "apClass": "progress-bar-warning",
+                  "valueTo": "60",
+                  "numberHide": true
+                })
+                +progress-bar-bootstrap({
+                  "apClass": "progress-bar-danger",
+                  "valueTo": "80",
+                  "numberHide": true
+                })
+
+        .offset-top-66
+          h3 Striped
+          p Uses a gradient to create a striped effect. Not available in IE9 and below.
+          .offset-top-41
+            .range.range-xs-center
+              .cell-md-7
+                +progress-bar-bootstrap({
+                  "apClass": "progress-bar-success progress-bar-striped",
+                  "valueTo": "40",
+                  "numberHide": true
+
+                })
+                +progress-bar-bootstrap({
+                  "apClass": "progress-bar-info progress-bar-striped",
+                  "valueTo": "20",
+                  "numberHide": true
+
+                })
+                +progress-bar-bootstrap({
+                  "apClass": "progress-bar-warning progress-bar-striped",
+                  "valueTo": "60",
+                  "numberHide": true
+                })
+                +progress-bar-bootstrap({
+                  "apClass": "progress-bar-danger progress-bar-striped",
+                  "valueTo": "80",
+                  "numberHide": true
+                })
+
+        .offset-top-66
+          h3 Animated
+          p Add #[code .active] to #[code .progress-bar-striped] to animate the stripes right to left. Not available in IE9 and below.
+          .offset-top-41
+            .range.range-xs-center
+              .cell-md-7
+                +progress-bar-bootstrap({
+                  "apClass": "progress-bar-striped active",
+                  "valueTo": "40",
+                  "numberHide": true
+                })
+
+        .offset-top-66
+          h3 Stacked
+          p Place multiple bars into the same #[code .progress] to stack them.
+          .offset-top-41
+            .range.range-xs-center
+              .cell-md-7
+                +progress-bar-bootstrap([
+                  {
+                    "apClass": "progress-bar-success",
+                    "valueTo": "47",
+                    "numberHide": true
+                  },
+                  {
+                    "apClass": "progress-bar-warning progress-bar-striped",
+                    "valueTo": "18",
+                    "numberHide": true
+                  },
+                  {
+                    "apClass": "progress-bar-danger",
+                    "valueTo": "7",
+                    "numberHide": true
+                  }])
+
+
+  // Page Footer
+  include ../sections/_section-footer-default

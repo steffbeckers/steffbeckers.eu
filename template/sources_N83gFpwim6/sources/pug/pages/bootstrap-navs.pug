@@ -1,0 +1,191 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include  ../elements/_ui_tabs-bootstrap
+include  ../elements/_ui_tabs-bootstrap-pills
+include  ../elements/_ui_tabs-bootstrap-pills-stacked
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.bootstrapcomponents.submenu.navs.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.bootstrapcomponents.submenu.navs.title,
+  "icon-lg " + cfg.nav.components.submenu.bootstrapcomponents.submenu.navs.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.bootstrapcomponents.submenu.navs.title,
+      "href": cfg.nav.components.submenu.bootstrapcomponents.submenu.navs.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    // Navs
+    section
+      .shell
+        h1 Navs
+        p Navs available in Bootstrap have shared markup, starting with the base #[code .nav] class, as well as shared states. Swap modifier classes to switch between each style.
+        hr.divider.bg-mantis
+
+        // Tabs
+        .range.range-xs-center.offset-top-66
+          .cell-md-6
+            h3 Tabs
+            p Note the #[code .nav-tabs] class requires the #[code .nav] base class.
+
+            .offset-top-41
+              +tabs-bootstrap('tabs-1',
+              [{
+                'tabId': 'tab11',
+                'title': 'Tab 1',
+                'description': '<p><span class="text-bold">Our professional services are the keys to your success</span><p>Nowadays, almost everyone has a website.Basically, this is a business card that you present every visitor or partner with. So, the better it is designed the more likely you can expect your further cooperation. The content on your website is important as well.    </p> <p> The information should be not only well-organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey. Adorn posts with bold imagery, and users will get more interested and involved.</p>'
+              },
+                {
+                  'tabId': 'tab22',
+                  'title': 'Tab 2',
+                  'description': '<p>Nowadays, almost everyone has a website.Basically, this is a business card that you present every visitor or partner with. So, the better it is designed the more likely you can expect your further cooperation. The content on your website is important as well. </p> <p> The information should be not only well-organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey. Adorn posts with bold imagery, and users will get more interested and involved.</p>'
+                },
+                {
+                  'tabId': 'tab33',
+                  'title': 'Tab 3',
+                  'description': '<p> The information should be not only well-organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey. Adorn posts with bold imagery, and users will get more interested and involved.</p>'
+                }])
+
+        // Pills
+        h3.offset-top-66 Pills
+        p Take that same HTML, but use #[code .nav-pills] instead:
+        .range.range-xs-center.offset-top-41
+          .cell-md-6
+            +tabs-bootstrap-pills('tabs-2',
+            [{
+              'tabId': 'tab1',
+              'title': 'Tab 1',
+              'description': '<p><span class="text-bold big">Our professional services are the keys to your success</span><p>Nowadays, almost everyone has a website.Basically, this is a business card that you present every visitor or partner with. So, the better it is designed the more likely you can expect your further cooperation. The content on your website is important as well.    </p> <p> The information should be not only well-organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey. Adorn posts with bold imagery, and users will get more interested and involved.</p>'
+            },
+              {
+                'tabId': 'tab2',
+                'title': 'Tab 2',
+                'description': '<p>Nowadays, almost everyone has a website.Basically, this is a business card that you present every visitor or partner with. So, the better it is designed the more likely you can expect your further cooperation. The content on your website is important as well. </p> <p> The information should be not only well-organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey. Adorn posts with bold imagery, and users will get more interested and involved.</p>'
+              },
+              {
+                'tabId': 'tab3',
+                'title': 'Tab 3',
+                'description': '<p> The information should be not only well-organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey. Adorn posts with bold imagery, and users will get more interested and involved.</p>'
+              }])
+
+            p.offset-top-41 Pills are also vertically stackable. Just add #[code .nav-stacked].
+
+        .offset-top-41
+          +tabs-bootstrap-pills-stacked('tabs-3',
+          [{
+            'tabId': 'tab001',
+            'title': 'Tab 1',
+            'description': '<p><span class="text-bold big">Our professional services are the keys to your success</span><p>Nowadays, almost everyone has a website.Basically, this is a business card that you present every visitor or partner with. So, the better it is designed the more likely you can expect your further cooperation. The content on your website is important as well.    </p> <p> The information should be not only well-organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey. Adorn posts with bold imagery, and users will get more interested and involved.</p>'
+          },
+            {
+              'tabId': 'tab002',
+              'title': 'Tab 2',
+              'description': '<p>Nowadays, almost everyone has a website.Basically, this is a business card that you present every visitor or partner with. So, the better it is designed the more likely you can expect your further cooperation. The content on your website is important as well. </p> <p> The information should be not only well-organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey. Adorn posts with bold imagery, and users will get more interested and involved.</p>'
+            },
+            {
+              'tabId': 'tab003',
+              'title': 'Tab 3',
+              'description': '<p> The information should be not only well-organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey. Adorn posts with bold imagery, and users will get more interested and involved.</p>'
+            }])
+
+        // Justified
+        .range.range-xs-center.offset-top-66
+          .cell-md-6
+            h3 Justified
+            p Easily make tabs or pills equal widths of their parent at screens wider than 768px with #[code .nav-justified] On smaller screens, the nav links are stacked.
+
+            .offset-top-41
+              ul.nav.nav-tabs.tabs.nav-justified
+                li.active(role='presentation')
+                  a(href='#') Home
+                li(role='presentation')
+                  a(href='#') Profile
+                li(role='presentation')
+                  a(href='#') Messages
+
+              ul.nav.nav-pills.nav-tabs.tabs.nav-justified.offset-top-30
+                li.active(role='presentation')
+                  a(href='#') Home
+                li(role='presentation')
+                  a(href='#') Profile
+                li(role='presentation')
+                  a(href='#') Messages
+
+        // Disabled links
+        .range.range-xs-center.offset-top-66
+          .cell-md-6
+            h3 Disabled links
+            p For any nav component (tabs or pills), add
+              code .disabled
+              | for
+              span.text-bold gray links and no hover effects.
+
+            ul.nav.nav-pills.nav-tabs.tabs.group.offset-top-41
+              li(role='presentation')
+                a(href='#') Clickable link
+              li(role='presentation')
+                a(href='#') Clickable link
+              li.disabled(role='presentation')
+                a(href='#') Disabled link
+
+        // Using dropdowns
+        .range.range-xs-center.offset-top-66
+          .cell-md-6
+            h3 Using dropdowns
+            p Add dropdown menus with a little extra HTML and the dropdowns JavaScript plugin.
+
+            ul.nav.nav-tabs.tabs.offset-top-41
+              li.active(role='presentation')
+                a(href='#') Home
+              li(role='presentation')
+                a(href='#') Help
+              li.dropdown.veil.reveal-xs-inline-block(role='presentation')
+                a.dropdown-toggle(data-toggle='dropdown', href='#', role='button', aria-haspopup='true', aria-expanded='false')
+                  | Dropdown
+                  span.caret
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider(role='separator')
+                  li
+                    a(href='#') Separated link
+
+  // Page Footers
+  include ../sections/_section-footer-default

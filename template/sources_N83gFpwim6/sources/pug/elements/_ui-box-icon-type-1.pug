@@ -1,0 +1,13 @@
+//- icon - icon class
+//- title - box title
+//- iconDesc - small heading after icon
+//- desc - description of box
+mixin box-icon-type-1(icon, title, iconDesc, desc)
+  // Icon Box Type 1
+  span.icon(class= icon)
+  if iconDesc != null
+    .text-italic.text-gray-dark.small= iconDesc
+  div.offset-top-10
+    h4.text-uppercase.text-bold= title
+    p= desc
+

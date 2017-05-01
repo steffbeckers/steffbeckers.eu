@@ -1,0 +1,34 @@
+//- Page Footer
+footer.page-footer.page-footer-variant-3
+  .shell
+    .range.range-50
+      .cell-sm-6.cell-md-4
+        h3 Pages
+        .divider.divider-conch
+        ul.footer-navigation.row.footer-navigation-vertical(style='max-width: 390px;')
+          li.col-xs-6(class={active: footerActiveIndex == 0}): a(href='index.html') Home
+          li.col-xs-6(class={active: footerActiveIndex == 3}): a(href='blog.html') Blog
+          li.col-xs-6(class={active: footerActiveIndex == 1}): a(href='about.html') About
+          li.col-xs-6(class={active: footerActiveIndex == 4}): a(href='shop.html') Shop
+          li.col-xs-6(class={active: footerActiveIndex == 2}): a(href='services.html') Services
+          li.col-xs-6(class={active: footerActiveIndex == 5}): a(href='contacts-1.html') Contacts
+
+      .cell-sm-6.cell-md-5
+        h3 Description
+        .divider.divider-conch
+        .text-highlighted-wrap
+          p.text-highlighted Barbershop is a No.1 place to have a men’s haircut in San Francisco. Here you can get luxury barber experience at a reasonable price.
+
+      .cell-sm-6.cell-md-3
+        h3 Follow Us
+        .divider.divider-conch
+
+        ul.inline-list.inline-list-xs
+          li: a.icon.icon-xs-outline.icon-wild-sand-filled.icon-circle.fa-facebook(href='#')
+          li: a.icon.icon-xs-outline.icon-wild-sand-filled.icon-circle.fa-twitter(href='#')
+          li: a.icon.icon-xs-outline.icon-wild-sand-filled.icon-circle.fa-youtube(href='#')
+          li: a.icon.icon-xs-outline.icon-wild-sand-filled.icon-circle.fa-linkedin(href='#')
+
+        if footerLink === true
+          // {%FOOTER_LINK}
+='\n'

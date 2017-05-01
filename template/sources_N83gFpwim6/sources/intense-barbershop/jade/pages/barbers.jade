@@ -1,0 +1,128 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-page-title
+include ../elements/_ui-section-header
+include ../elements/_ui-thumbnail-card
+include ../elements/_ui-thumbnail-fullwidth
+
+block variables
+  - var activeIndex = 1
+  - var menuIncludeButton = true
+  - var pageName = 'Barbers'
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  //- Page Content
+  +page-title('Our Barbers')
+
+  //- OUR BARBERS 1
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      +section-header("OUR BARBERS 1", "We employ only highly qualified barbers who are not just professionals, but also enjoy maintaining the atmosphere of a classic barbershop.")
+
+    .shell
+      .range.range-30
+        .cell-sm-6.cell-md-4.height-fill
+          +thumbnail-card({
+            img: 'barbers-1-370x310',
+            header: 'simon Wilson',
+            text: 'Mr. Wilson is the founder and owner of our barbershop.'
+          })
+
+        .cell-sm-6.cell-md-4.height-fill
+          +thumbnail-card({
+            img: 'barbers-2-370x310',
+            header: 'Harry Anderson',
+            text: 'Harry brings a detailed, meticulous approach to styling.'
+          })
+
+        .cell-sm-6.cell-md-4.height-fill
+          +thumbnail-card({
+            img: 'barbers-3-370x310',
+            header: 'Matthew phillips',
+            text: 'Matthew has several years of experience in the barber industry.'
+          })
+
+        .cell-sm-6.cell-md-4.height-fill
+          +thumbnail-card({
+            img: 'barbers-4-370x310',
+            header: 'Edward Allen',
+            text: 'Edward is a trained barber with more than 10 years of experience'
+          })
+
+        .cell-sm-6.cell-md-4.height-fill
+          +thumbnail-card({
+            img: 'barbers-5-370x310',
+            header: 'Scott Russell',
+            text: 'Scott is an internationally acknowledged barber.'
+          })
+
+        .cell-sm-6.cell-md-4.height-fill
+          +thumbnail-card({
+            img: 'barbers-6-370x310',
+            header: 'James Young',
+            text: 'James is one of our barbers who takes walk-ins every day.'
+          })
+
+  ='\n'
+
+  //- OUR BARBERS 2
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-75
+        .cell-xs-12
+          +section-header("OUR BARBERS 2", "We employ only highly qualified barbers who are not just professionals, but also enjoy maintaining the atmosphere of a classic barbershop.")
+
+        .cell-xs-12
+          +thumbnail-fullwidth({
+            img: 'barbers-7-400x480',
+            header: 'Simon Wilson',
+            text: 'Simon Wilson founded Barbershop in 2003 at the age of 23. He decided to establish a place where the long standing traditions of American barbering could be saved. He kept Barbershop a true place for men, their fathers, and sons, rather than converting it to a unisex salon.',
+            data: [
+                {header: 'haircut & shave', value: '70'},
+                {header: 'Hair styling', value: '70'},
+                {header: 'hot shaving', value: '70'},
+                {header: 'straight razor shave', value: '70'}
+            ]
+          })
+
+          +thumbnail-fullwidth({
+            img: 'barbers-8-400x480',
+            header: 'Harry Anderson',
+            text: "Last March, we welcomed Harry Anderson to the team. Harry came to us as a graduate of Academy DiCapelli where he recently graduated as a barber. When he's not cutting hair, Harry enjoys playing the drums, driving his VW, and reading sci-fi novels. We are glad that Harry is one of us now!",
+            data: [
+              {header: 'HairCut', value: '70'},
+              {header: 'Clipper cut', value: '70'},
+              {header: 'hot towel shaving', value: '70'},
+              {header: 'Beard services', value: '70'}
+            ]
+          })
+
+          +thumbnail-fullwidth({
+            img: 'barbers-9-400x480',
+            header: 'Matthew Phillips',
+            text: "With several years of experience in the industry, Matthew brings professionalism, dedication, and love to what he does. He is an important part of our team, just because his mustache trim skills are prominent. He is also a skilled barber, who often takes walk-ins.",
+            data: [
+              {header: 'mustache trim', value: '70'},
+              {header: 'traditional haircut', value: '70'},
+              {header: 'shaving', value: '70'},
+              {header: 'beard shaving', value: '70'}
+            ]
+          })
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_footer-default
+
+block modal
+  include ../includes/_modal-single-barber

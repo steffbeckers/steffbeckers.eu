@@ -1,0 +1,193 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-thumbnail-zoe
+include ../elements/_ui-thumbnail-winston
+include ../elements/_ui-thumbnail-josip
+include ../elements/_ui-thumbnail-janes
+include ../elements/_ui-thumbnail-apollo
+include ../elements/_ui-thumbnail-terry
+include  ../elements/_ui-thumbnail-rayen
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.thumbnails.title
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+  +breadcrumb-classic(
+    cfg.nav.components.submenu.toolkitComponents.submenu.thumbnails.title,
+    "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.thumbnails.icon,
+    {
+      0: {
+        "title": cfg.nav.home.title,
+        "href": cfg.nav.home.href
+      },
+      1: {
+        "title": cfg.nav.components.title,
+        "href": cfg.nav.components.href
+      },
+      2: {
+        "title": cfg.nav.components.submenu.toolkitComponents.submenu.thumbnails.title,
+        "href": cfg.nav.components.submenu.toolkitComponents.submenu.thumbnails.href
+      }
+  })
+  // Page Content
+  main.page-content.section-98.section-sm-110
+
+    // Section thumbnail classic
+    section
+      .shell
+        h1 Classic Thumbnail
+        hr.divider.bg-mantis
+        .range.range-sm-center.text-left
+          .cell-sm-8.cell-md-6
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "title": "Good stuff",
+              "description": "Your dedicated description goes here",
+              "thumb": {"src": "images/portfolio/portfolio-08-570x420.jpg", "width": 570, "height": 420, "alt": ""},
+              "target": {"href": cfg.nav.portfolio.submenu.singleProject.href}
+            })
+
+    // Section thumbnail zoe
+    section.offset-top-98.offset-sm-top-110
+      .shell
+        h1 Zoe Effect
+        hr.divider.bg-mantis
+        .range.range-sm-center
+          .cell-sm-8.cell-md-6
+            +thumbnail-zoe({
+              "type": "thumbnail",
+              "title": "Your Title",
+              "thumb": {"src": "images/portfolio/portfolio-01-570x420.jpg", "width": 570, "height": 420, "alt": ""},
+              "target": {"href": cfg.nav.portfolio.submenu.singleProject.href}
+            },
+            [{
+              "iconClass": "mdi mdi-heart-outline",
+              "iconHref": "#"
+            }, {
+              "iconClass": "mdi mdi-comment-multiple-outline",
+              "iconHref": "#"
+            }, {
+              "iconClass": "mdi mdi-open-in-new",
+              "iconHref": cfg.nav.portfolio.submenu.singleProject.href
+            }
+            ])
+
+    // Section thumbnail winston
+    section.offset-top-98.offset-sm-top-110
+      .shell
+        h1 Winston Effect
+        hr.divider.bg-mantis
+        .range.range-sm-center
+          .cell-sm-8.cell-md-6
+            +thumbnail-winston({
+              "type": "thumbnail",
+              "title": "Perfect Solution",
+              "description": ["Best Ideas", "Complex Solution", "Meaningful Design"],
+              "thumb": {"src": "images/portfolio/portfolio-02-570x420.jpg", "width": 570, "height": 420, "alt": ""},
+              "target": {"href": cfg.nav.portfolio.submenu.singleProject.href}
+            })
+    // Section thumbnail josip
+    section.offset-top-98.offset-sm-top-110
+      .shell
+        h1 Josip Effect
+        hr.divider.bg-mantis
+        .range.range-sm-center
+          .cell-sm-8.cell-md-6
+            +thumbnail-josip({
+              "type": "thumbnail",
+              "title": "New Opportunities",
+              "description": "UX, Design, Web developoment",
+              "thumb": {"src": "images/portfolio/portfolio-02-570x420.jpg", "width": 570, "height": 420, "alt": ""},
+              "target": {"href": cfg.nav.portfolio.submenu.singleProject.href},
+              "btnLink": cfg.nav.portfolio.submenu.singleProject.href,
+              "btnClass": "btn-primary",
+              "btnText": "detail"
+            })
+
+    // Section thumbnail janes
+    section.offset-top-98.offset-sm-top-110
+      .shell
+        h1 Janes Effect
+        hr.divider.bg-mantis
+        .range.range-sm-center
+          .cell-sm-8.cell-md-6
+            +thumbnail-janes({
+              "type": "thumbnail",
+              "title": "Perfect Solution",
+              "description": "Crafting unique experiences by enhancing usability, accessibility and pleasure of the user interaction with the product.",
+              "thumb": {"src": "images/portfolio/portfolio-02-570x420.jpg", "width": 570, "height": 420, "alt": ""},
+              "target": {"href": cfg.nav.portfolio.submenu.singleProject.href},
+              "btnClass": "btn-deluge",
+              "btnLink": "#",
+              "btnText": "learn more"
+            })
+
+    // Section thumbnail apollo
+    section.offset-top-98.offset-sm-top-110
+      .shell
+        h1 Apollo Effect
+        hr.divider.bg-mantis
+        .range.range-sm-center
+          .cell-sm-8.cell-md-6
+            +thumbnail-apollo({
+              "type": "thumbnail",
+              "title": "Perfect Solution",
+              "titleStyle": "h3",
+              "description": "An sincerity so extremity he additions. Her yet there truth merit. Mrs all projecting favourable now unpleasing.",
+              "thumb": {"src": "images/portfolio/portfolio-06-570x420.jpg", "width": 570, "height": 420, "alt": ""},
+              "target": {"href": cfg.nav.portfolio.submenu.singleProject.href},
+              "iconClass": "icon icon-xxs fa-arrow-right veil reveal-sm-inline-block"
+            })
+
+    // Section thumbnail terry
+    section.offset-top-98.offset-sm-top-110
+      .shell
+        h1 Terry Effect
+        hr.divider.bg-mantis
+        .range.range-sm-center
+          .cell-sm-8.cell-md-6
+            +thumbnail-terry({
+              "type": "thumbnail",
+              "title": "Perfect Solution",
+              "description": "Crafting unique experiences by enhancing usability.",
+              "thumb": {"src": "images/portfolio/portfolio-02-570x420.jpg", "width": 570, "height": 420, "alt": ""},
+              "target": {"href": cfg.nav.portfolio.submenu.singleProject.href},
+              "btnClass": "btn-primary",
+              "btnLink": "#",
+              "btnText": "learn more"
+            })
+
+    // Section thumbnail rayen
+    section.offset-top-98.offset-sm-top-110
+      .shell
+        h1 Rayen Effect
+        hr.divider.bg-mantis
+        .range.range-sm-center
+          .cell-sm-8.cell-md-6
+            +thumbnail-rayen({
+              "type": "thumbnail",
+              "thumb": {"src": "images/portfolio/portfolio-03-570x420.jpg", "width": 570, "height": 420, "alt": ""},
+              "target": {"src": "images/portfolio/portfolio-03-1170x600.jpg", "width": 1170, "height": 600, "alt": ""}
+            }, "icon-md fa-search-plus")
+
+  // Page Footer
+  include ../sections/_section-footer-default

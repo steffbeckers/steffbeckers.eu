@@ -1,0 +1,45 @@
+//- Includes
+include ../elements/_ui-post-event-date
+include ../elements/_ui-post-event
+include ../elements/_ui-pagination-classic
+// Blog Events
+section
+  +post-event-date(cfg.nav.events.submenu.singleEvent.href, {"number": "14", "month": "Feb"}, "St. Valentine's Day Dinner",
+  {
+    "type": "thumbnail",
+    "title": "",
+    "description": "",
+    "thumb": {"src": "images/post-01-670x388.jpg", "width": 670, "height": 388, "alt": ""},
+    "target": {"href": cfg.nav.events.submenu.singleEvent.href}
+  },
+  {
+    "key": "button",
+    "btnClass": "btn-sm btn-primary",
+    "btnText": "Read More"
+  })
+    .inset-md-right-115
+      p Celebrate this year's Lovers Day by visiting our cozy, romantic Restaurant! Each year we are introducing some themed party for this occasion... This time the Valentine's Day will be set amid Parisian decor.
+
+  hr.hr.bg-lighter.offset-top-41.offset-sm-top-66
+  .offset-top-41.offset-sm-top-66
+    +post-event-date(cfg.nav.events.submenu.singleEvent.href, {"number": "31", "month": "Oct"}, "Halloween Dinner",
+    {
+      "type": "thumbnail",
+      "title": "",
+      "description": "",
+      "thumb": {"src": "images/post-02-670x389.jpg", "width": 670, "height": 389, "alt": ""},
+      "target": {"href": cfg.nav.events.submenu.singleEvent.href}
+    },
+    {
+      "key": "button",
+      "btnClass": "btn-sm btn-primary",
+      "btnText": "Read More"
+    })
+      .inset-md-right-115
+        p This year's Halloween celebrations saw a big menu change. We decided to make each and every dish and beverage color orange. Also we've chosen our main course for that event to be a veal steak with a spicy pumpkin sauce...
+
+  .offset-top-41.offset-sm-top-66
+    +pagination-classic(1, [{"href": "#"}, {"href": "#"}, {"href": "#"}, {"href": "#"}], {
+      "title": "Prev",
+      "href": "#"
+    }, {"title": "Next", "href": "#"})

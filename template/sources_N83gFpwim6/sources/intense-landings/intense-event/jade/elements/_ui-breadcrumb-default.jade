@@ -1,0 +1,11 @@
+//- breacrumbs - an array of {link} object
+mixin breadcrumb-default(breadcrumbs)
+  // Default breadcrumbs
+  ol.breadcrumb-default
+    each link, index in breadcrumbs
+      if breadcrumbs[parseInt(index) + 1]
+        li
+          a(href=link.href)= link.title
+      else
+        li.active
+          = link.title

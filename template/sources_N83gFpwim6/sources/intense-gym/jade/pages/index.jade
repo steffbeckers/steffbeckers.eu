@@ -1,0 +1,285 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-page-loader-variant-1
+include  ../elements/_ui-box-icon-type-5
+include ../elements/_ui-thumbnail-terry
+include ../elements/_ui-box-member
+include ../elements/_widget-list-social
+include ../elements/_ui-post-boxed
+include ../elements/_ui-rd-parallax
+include ../elements/_ui-testimonials-slider-3
+
+//-Title
+block title
+  title= cfg.brand.name
+
+//- Page
+block page
+
+  +page-loader-1(cfg.brand.logoBig)
+
+  // Page Head
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-floated(
+    'rd-navbar-dark',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.home,
+    cfg.nav
+    )
+    include ../sections/_section-swiper
+
+
+  // Page Contents
+  main.page-content
+
+    //Welcome
+    section.section-98.section-sm-110#welcome
+      .shell
+        h1 Welcome
+        hr.divider.bg-red
+        .range.range-xs-center.offset-top-66
+          .cell-lg-8
+            p Welcome to the website Intense Gym! We hope that you will appreciate our services and opportunities we offer our loyal and potential customers. Here are some of them:
+        .range.offset-top-98
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0
+            +box-icon-type-5("icon-sm icon-dark-filled mdi mdi-account-multiple", "Qualified Coaches", "Our coaches have years of experience in various types of fitness and sports.")
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-98.offset-md-top-0
+            +box-icon-type-5("icon-xs icon-dark-filled mdi mdi-thumb-up", "Individual Approach", "Every client of Intense has a personalized program of training and nutrition.")
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-98.offset-md-top-0
+            +box-icon-type-5("icon-sm icon-dark-filled mdi mdi-dumbbell", "Modern Fitness Equipment", "We cooperate with leading fitness equipment suppliers to give you the superior results.")
+
+    // Offers
+    section
+      .owl-carousel.owl-carousel-default.veil-md-owl-dots.veil-owl-nav.reveal-md-owl-nav(data-items="1" data-xs-items="2" data-md-items="3" data-lg-items="4" data-nav="true" data-dots="true" data-nav-class='["owl-prev mdi mdi-chevron-left", "owl-next mdi mdi-chevron-right"]')
+        div
+          +thumbnail-terry({
+            "type": "thumbnail",
+            "figcaption": true,
+            "title": "Bodybuilding",
+            "description": null,
+            "thumb": {"src": "images/home-01-480x480.jpg", "width": 480, "height": 480, "alt": ""},
+            "target": {"href": cfg.nav.schedule.href},
+            "btnClass": "btn-danger",
+            "btnLink": cfg.nav.schedule.href,
+            "btnText": "free first lesson"
+          })
+        div
+          +thumbnail-terry({
+            "type": "thumbnail",
+            "figcaption": true,
+            "title": "fitness",
+            "description": null,
+            "thumb": {"src": "images/home-02-480x480.jpg", "width": 480, "height": 480, "alt": ""},
+            "target": {"href": cfg.nav.schedule.href},
+            "btnClass": "btn-danger",
+            "btnLink": cfg.nav.schedule.href,
+            "btnText": "free first lesson"
+          })
+        div
+          +thumbnail-terry({
+            "type": "thumbnail",
+            "figcaption": true,
+            "title": "crossfit",
+            "description": null,
+            "thumb": {"src": "images/home-03-480x480.jpg", "width": 480, "height": 480, "alt": ""},
+            "target": {"href": cfg.nav.schedule.href},
+            "btnClass": "btn-danger",
+            "btnLink": cfg.nav.schedule.href,
+            "btnText": "free first lesson"
+          })
+        div
+          +thumbnail-terry({
+            "type": "thumbnail",
+            "figcaption": true,
+            "title": "circle studio",
+            "description": null,
+            "thumb": {"src": "images/home-04-480x480.jpg", "width": 480, "height": 480, "alt": ""},
+            "target": {"href": cfg.nav.schedule.href},
+            "btnClass": "btn-danger",
+            "btnLink": cfg.nav.schedule.href,
+            "btnText": "free first lesson"
+          })
+        div
+          +thumbnail-terry({
+            "type": "thumbnail",
+            "figcaption": true,
+            "title": "Bodybuilding",
+            "description": null,
+            "thumb": {"src": "images/about-01-480x480.jpg", "width": 480, "height": 480, "alt": ""},
+            "target": {"href": cfg.nav.schedule.href},
+            "btnClass": "btn-danger",
+            "btnLink": cfg.nav.schedule.href,
+            "btnText": "free first lesson"
+          })
+        div
+          +thumbnail-terry({
+            "type": "thumbnail",
+            "figcaption": true,
+            "title": "crossfit",
+            "description": null,
+            "thumb": {"src": "images/about-02-480x480.jpg", "width": 480, "height": 480, "alt": ""},
+            "target": {"href": cfg.nav.schedule.href},
+            "btnClass": "btn-danger",
+            "btnLink": cfg.nav.schedule.href,
+            "btnText": "free first lesson"
+          })
+
+    // Coaches
+    section.section-98.section-sm-110
+      .shell
+        h1 Coaches
+        hr.divider.bg-danger
+        .range.range-xs-center.offset-sm-top-66
+          .cell-sm-10.cell-lg-12
+            .range
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-xs-top-0
+                +box-member("images/user-ryan-jackson-270x270.jpg", "Ryan Jackson", "CrossFit", "about-coach.html")
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darkest-filled", "list-inline-xs")
+                p.offset-lg-top-0.text-muted He has more than 10 years of experience in CrossFit and professional athletics.
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-sm-top-0.offset-lg-top-0
+                +box-member("images/user-emily-perkins-270x270.jpg", "Emily Perkins", "Fitness", "about-coach.html")
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darkest-filled", "list-inline-xs")
+                p.offset-lg-top-0.text-muted Emily can teach you all peculiarities of fitness and aerobics in a group or individually.
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-lg-top-0
+                +box-member("images/user-samantha-ruiz-270x270.jpg", "Samantha Ruiz", "Yoga", "about-coach.html")
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darkest-filled", "list-inline-xs")
+                p.offset-lg-top-0.text-muted Our leading yoga coach, Samantha will help you reach full harmony with your body.
+              .cell-sm-6.cell-lg-3.offset-top-66.offset-lg-top-0
+                +box-member("images/user-austin-ortiz-270x270.jpg", "Austin Ortiz", "Bodybuilding", "about-coach.html")
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    }
+                  ], "icon-xs icon-circle icon-darkest-filled", "list-inline-xs")
+                p.offset-lg-top-0.text-muted Austin is not only our most called-for coach, but also a winner of many championships.
+            a.offset-top-50.btn.btn-danger(href=cfg.nav.coaches.href) view all coaches
+
+    // Latest Blog Posts
+    section.section-98.section-110.bg-lilac
+      .shell
+        h1 Latest Blog Posts
+        hr.divider.bg-danger
+        .range.range-xs-center
+          .cell-sm-10.cell-md-6
+            +post-boxed("blog-post.html", "2 days ago", "The Dead Deadlift", "John Doe", [
+              {"title": "Fitness", "href": "#"},
+              {"title": "Bodybuilding", "href": "#"}],
+            {"src": "images/post-01-570x321.jpg", "width": 570, "height": 321, "alt": ""})
+          .cell-sm-10.cell-md-6.offset-top-66.offset-sm-top-30.offset-md-top-0
+            +post-boxed("blog-post.html", "2 days ago", "Beyond GPP: The New Model of Performance Training", "John Doe", [
+              {"title": "Fitness", "href": "#"},
+              {"title": "Bodybuilding", "href": "#"}],
+            {"src": "images/post-02-570x321.jpg", "width": 570, "height": 321, "alt": ""})
+
+          .range-spacer.veil.reveal-md-block.offset-top-30
+
+          .cell-sm-10.cell-md-6.offset-top-66.offset-sm-top-30.offset-md-top-0
+            +post-boxed("blog-post.html", "2 days ago", "5 Elements That Belong to Every Athlete’s Training Program", "John Doe", [
+              {"title": "Fitness", "href": "#"},
+              {"title": "Bodybuilding", "href": "#"}],
+            {"src": "images/post-03-570x321.jpg", "width": 570, "height": 321, "alt": ""})
+          .cell-sm-10.cell-md-6.offset-top-66.offset-sm-top-30.offset-md-top-0
+            +post-boxed("blog-post.html", "2 days ago", "How to Maintain a Perfect Muscular Body After Working Such Out", "John Doe", [
+              {"title": "Fitness", "href": "#"},
+              {"title": "Bodybuilding", "href": "#"}],
+            {"src": "images/post-04-570x321.jpg", "width": 570, "height": 321, "alt": ""})
+
+          a.offset-top-66.btn.btn-danger(href=cfg.nav.blog.href) view all blog posts
+
+    // Testimonials
+    section
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/background-05-1920x850.jpg",
+        "htmlSpeed": "0"
+      })
+        .bg-overlay-gray-darkest.context-dark
+          .shell.section-98.section-sm-110
+            h1 Testimonials
+            hr.divider.bg-white
+            .range.range-xs-center
+              .cell-sm-8
+                +testimonials-slider-3([{
+                  "image": {
+                    "width": 80,
+                    "height": 80,
+                    "src": "images/user-alisa-milano-80x80.jpg",
+                    "alt": "Alisa Milano"
+                  },
+                  "title": "Alisa Milano",
+                  "desc": "Designer at Viper Ltd.",
+                  "q": "I came here to acquire the shape of my body I had half a year ago. I was quite surprised with a range of services they offered me.Moreover, you can benefit from their group training."
+                },
+                  {
+                    "image": {
+                      "width": 80,
+                      "height": 80,
+                      "src": "images/user-july-mao-80x80.jpg",
+                      "alt": "July Mao"
+                    },
+                    "title": "July Mao",
+                    "desc": "Designer at Viper Ltd.",
+                    "q": "I am glad I’ve purchased a template from TemplateMonster. Extraordinary customer service, always available, perfect care and knowledge of the technicians. Essential if you are not an expert programmer. In any case highly recommended. Congratulations!"
+                  }])
+
+
+
+  // Page Footer
+  include ../sections/_section-footer

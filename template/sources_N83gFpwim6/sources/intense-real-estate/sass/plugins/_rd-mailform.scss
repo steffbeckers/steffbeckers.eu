@@ -1,0 +1,38 @@
+//
+// RD Mail Form
+// --------------------------------------------------
+
+.rd-mailform {
+  position: relative;
+  display: block;
+  width: $rd-mailform-width;
+  margin-top: $rd-mailform-offset-top;
+
+  fieldset {
+    border: none;
+
+    > .row + .row {
+      margin-top: $rd-mailform-input-offset-top;
+    }
+  }
+
+  &.input-group {
+    display: table;
+
+    .form-control {
+      height: $rd-mailform-form-control-height;
+    }
+  }
+  .mfInput {
+    position: relative;
+  }
+
+  textarea {
+    resize: vertical;
+    overflow: auto;
+    height: $rd-mailform-textarea-height;
+  }
+
+}
+
+

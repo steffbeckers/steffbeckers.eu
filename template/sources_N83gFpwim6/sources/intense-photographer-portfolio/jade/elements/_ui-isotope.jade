@@ -1,0 +1,38 @@
+//- isotope - Isotope object
+//- amountList - array of Isotope
+mixin isotope(amountList, isotope, filterID, shell)
+  - var title = isotope.title? isotope.title : "Categories"
+  - var gridF = isotope.alignClass === "isotope-filters-vertical"? shell === "shell-wide" ? "col-lg-2" : "col-lg-3": "col-lg-12"
+  - var gridC = isotope.alignClass === "isotope-filters-vertical"? shell === "shell-wide" ? "col-lg-10 offset-lg-top-0" : "col-lg-9 offset-lg-top-0": "col-lg-12"
+  - gridF = isotope.reverse? gridF + " pull-lg-right": gridF
+
+  .isotope-wrap
+    .row
+      if amountList
+        // Isotope Filters
+        div(class= gridF)
+          .isotope-filters(class= isotope.alignClass)
+            if (isotope.alignClass === "isotope-filters-vertical")
+              h4.text-uppercase.text-bold.isotope-filters-title.offset-top-34= title
+
+            ul.list-inline.list-inline-sm
+              li.veil-md
+                p Choose your category:
+              li.section-relative
+                button.isotope-filters-toggle.btn.btn-sm.btn-primary(data-custom-toggle=filterID data-custom-toggle-disable-on-blur="true") Filter
+                  span.caret
+
+                ul.list-sm-inline.isotope-filters-list(id=filterID)
+                  each item, index in amountList
+                    li
+                      a.text-bold(class= index === 0 ? "active" : "")(data-isotope-filter= item.toLocaleLowerCase() === "all galleries" ? "*" : item, data-isotope-group= isotope.group, href="#")= item
+
+      // Isotope Content
+      if amountList
+        div(class=gridC).offset-top-34
+          .isotope(data-isotope-layout= isotope.layout, data-isotope-group= isotope.group)
+            block
+      else
+        .col-xs-12
+          .isotope(data-isotope-layout= isotope.layout, data-isotope-group= isotope.group)
+            block

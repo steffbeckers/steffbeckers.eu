@@ -1,0 +1,20 @@
+//- img - set path to image
+//- name - set block author name
+//- position - set block author position
+//- btn - object {btn}
+//- btnText - button text
+mixin member-block-type-3(img, name, position, btn, btnText)
+  // Member block type 3
+  .member-block-type-3.shadow-drop-lg
+    .member-block-body
+      img.img-circle(src= img alt="")
+      .offset-top-24
+        div
+          h6.text-ubold.text-uppercase= name
+        p.small.offset-top-10.text-primary= position
+    .btn-group.btn-group-sm.offset-top-34(role='group', aria-label='button')
+      each item in btn
+        a.btn.btn-default.btn-icon.btn-rect(href="#")
+          span.icon(class= item.iconClass)
+    .member-block-footer
+      a.btn.btn-sm.btn-default.btn-block.btn-rect(href="#")= btnText

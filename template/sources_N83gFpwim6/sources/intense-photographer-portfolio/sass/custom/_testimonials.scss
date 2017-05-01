@@ -1,0 +1,260 @@
+// Blockquote
+// -------------------------
+
+.quote {
+  border-left: none;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+
+  .small {
+    font-size: 15px;
+  }
+
+  q {
+    position: relative;
+
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+
+  p {
+    margin-bottom: 40px;
+  }
+
+  cite {
+    font-size: 24px;
+
+    a {
+      color: $gray-darker;
+
+      &:hover {
+        color: $brand-primary;
+      }
+    }
+
+    & + * {
+      margin-top: 3px;
+    }
+  }
+
+  small,
+  .small {
+    &:before {
+      content: '';
+    }
+  }
+
+  &.quote-sm {
+    p {
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    // TODO: заюзать класс биг
+    cite {
+      font-size: 17px;
+    }
+  }
+}
+
+.quote-icon-1 {
+
+  .quote-content {
+    position: relative;
+    padding: 14px 20px 20px 20px;
+
+    &:before {
+      position: absolute;
+      display: inline-block;
+      top: -16px;
+      left: -9px;
+      font-family: 'Material Design Icons';
+      color: $gray-light;
+      font-size: 53px;
+      line-height: 53px;
+      transform: rotateX(-180deg) rotateZ(180deg);
+    }
+  }
+}
+
+.quote-icon-2 {
+  .quote-content {
+    padding: 20px 20px 20px 20px;
+  }
+
+  &:before {
+    display: inline-block;
+    content: '\f373';
+    font-family: 'Material Design Icons';
+    color: $brand-picton-blue;
+    font-size: 53px;
+    line-height: 53px;
+  }
+}
+
+.quote-classic {
+  small,
+  .small {
+    font-size: 13px;
+  }
+
+  .media {
+    margin-top: 0;
+  }
+}
+
+.quote-boxed-variant-1 {
+  box-shadow: 2px 3px 11px 0px rgba(0, 0, 0, 0.15);
+
+  .small, div {
+    padding-left: 0;
+  }
+
+  p + div {
+    margin-top: 21px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    margin-top: 25px;
+
+    img {
+      margin: 0;
+      position: absolute;
+      top: -11px;
+      left: 39px;
+    }
+
+    .quote-content {
+      padding: 62px 27px 18px;
+
+      &:before {
+        color: $brand-danger;
+        top: 38px;
+        right: 31px;
+      }
+    }
+  }
+}
+
+.quote-variant-1 {
+  img {
+    border: 2px solid $white;
+  }
+
+  img + p {
+    margin-top: 34px;
+  }
+}
+
+.quote-variant-3 {
+  margin-top: 37px;
+
+  hr.divider.divider-xs {
+    margin-bottom: 18px;
+  }
+
+  img + p {
+    margin-top: 23px;
+  }
+
+  cite + p {
+    margin-top: 0;
+  }
+}
+
+.quote-variant-4 {
+  margin-top: 12px;
+
+  p {
+    margin-top: 15px;
+  }
+
+  img + p {
+    margin-top: 17px;
+    margin-bottom: 0px !important;
+  }
+
+  p + p {
+    margin-top: 0;
+  }
+
+  cite + p {
+    margin-top: 0;
+  }
+}
+
+.quote-simple {
+  q {
+    font-size: 20px;
+    line-height: 34px;
+
+    &:before {
+      content: '“ ';
+    }
+    &:after {
+      content: ' ”';
+    }
+  }
+
+  div + .divider-gradient {
+    margin-top: 20px;
+  }
+}
+
+.quote-outboxed {
+  .quote-content {
+    padding: 25px 20px 24px 29px;
+
+    q {
+      position: relative;
+      z-index: 2;
+    }
+
+    &:before {
+      left: 10px;
+      top: 1px;
+      z-index: 1;
+      color: $gray;
+    }
+
+    &:after {
+      position: absolute;
+      bottom: -10px;
+      left: 33px;
+      display: inline-block;
+      content: '';
+      @include triangle(bottom, 20px, 10px, $gray-light);
+    }
+  }
+
+  .media {
+    margin-top: 24px;
+  }
+}
+
+small:before,
+.small:before {
+  content: none;
+}
+
+@media (min-width: $screen-md-min) {
+  blockquote {
+    &.quote-simple {
+      q {
+        font-size: 30px;
+        line-height: 48px;
+      }
+    }
+    &.quote {
+      cite {
+        font-size: 30px;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,130 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Step 3'
+  - var bodyClass = 'one-screen-page'
+
+block title
+  title=pageName
+
+block menu
+  .page-header.page-header-perspective
+    .page-header-left
+      a.brand(href='index.html')
+        +png('logo-default-199x36')
+
+    .page-header-center
+      .step-progress
+        .step-progress-top
+          span.step-progress-number 3
+          span of
+          span.step-progress-number 3
+        .step-progress-bottom
+          p.step-progress-text STEPs
+
+    .page-header-right
+      if (menuIncludeButton)
+        .booking-control
+          a.btn.btn-xs.btn-circle.btn-primary(href=appointLink) BOOK NOW
+
+      #perspective-open-menu(data-custom-toggle='.perspective-menu-toggle', data-custom-toggle-hide-on-blur='true')
+        span.perspective-menu-text Menu
+        button.perspective-menu-toggle
+          span
+
+  .custom-progress
+    .custom-progress-body(style='width: 66.66%;')
+
+
+block header
+  include ../sections/_header-default
+
+block page
+  //- Page Content
+  section.section-xs.bg-periglacial-blue.one-screen-page-content.text-center
+    .shell
+      a.link.link-primary.link-return(href='step-2.html') Back
+    .shell
+      h2 Choose a Date
+      .p.text-width-medium
+        p.big To complete your booking, please choose the date and time that fit you best. We will be glad to offer you top-notch barber services on the selected day.
+
+      h3 September
+
+      .rd-material-tabs.date-picker(data-items='2', data-xs-items='3', data-sm-items='4', data-md-items='5', data-margin='15', data-stage-padding='0', data-sm-stage-padding='30')
+        .rd-material-tabs__list
+          ul
+            li
+              a.date-picker-date.disabled(href='#')
+                .date-picker-date-number 9
+                .date-picker-date-text Friday
+            li
+              a.date-picker-date.disabled(href='#')
+                .date-picker-date-number 10
+                .date-picker-date-text saturday
+
+            li
+              a.date-picker-date(href='#')
+                .date-picker-date-number 11
+                .date-picker-date-text Sunday
+
+            li
+              a.date-picker-date(href='#')
+                .date-picker-date-number 12
+                .date-picker-date-text monday
+
+            li
+              a.date-picker-date(href='#')
+                .date-picker-date-number 13
+                .date-picker-date-text tuesday
+
+            li
+              a.date-picker-date(href='#')
+                .date-picker-date-number 14
+                .date-picker-date-text  Wednesday
+
+            li
+              a.date-picker-date(href='#')
+                .date-picker-date-number 15
+                .date-picker-date-text  Thursday
+
+
+        .rd-material-tabs__container
+          div
+            ul.date-picker-list.animated.fadeIn
+              li.disabled: a(href='step-4.html') 10:00 - 11:00
+              li.disabled: a(href='step-4.html') 11:00 - 12:00
+              li.disabled: a(href='step-4.html') 12:00 - 13:00
+              li.disabled: a(href='step-4.html') 13:00 - 14:00
+              li.disabled: a(href='step-4.html') 14:00 - 15:00
+              li.disabled: a(href='step-4.html') 15:00 - 16:00
+              li.disabled: a(href='step-4.html') 16:00 - 17:00
+              li.disabled: a(href='step-4.html') 17:00 - 18:00
+
+          div
+            ul.date-picker-list.animated.fadeIn
+              li.disabled: a(href='step-4.html') 10:00 - 11:00
+              li.disabled: a(href='step-4.html') 11:00 - 12:00
+              li.disabled: a(href='step-4.html') 12:00 - 13:00
+              li.disabled: a(href='step-4.html') 13:00 - 14:00
+              li.disabled: a(href='step-4.html') 14:00 - 15:00
+              li.disabled: a(href='step-4.html') 15:00 - 16:00
+              li.disabled: a(href='step-4.html') 16:00 - 17:00
+              li.disabled: a(href='step-4.html') 17:00 - 18:00
+
+          -for (var i = 0; i < 5; i++)
+            div
+              ul.date-picker-list.animated.fadeIn
+                li: a(href='step-4.html') 10:00 - 11:00
+                li.disabled: a(href='step-4.html') 11:00 - 12:00
+                li: a(href='step-4.html') 12:00 - 13:00
+                li.disabled: a(href='step-4.html') 13:00 - 14:00
+                li.disabled: a(href='step-4.html') 14:00 - 15:00
+                li: a(href='step-4.html') 15:00 - 16:00
+                li: a(href='step-4.html') 16:00 - 17:00
+                li.disabled: a(href='step-4.html') 17:00 - 18:00
+  ='\n'
+
+  // Page Footer
+  include ../sections/_footer-default

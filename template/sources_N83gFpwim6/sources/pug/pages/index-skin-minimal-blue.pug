@@ -1,0 +1,705 @@
+- var fonts = "https://fonts.googleapis.com/css?family=Libre+Baskerville:700%7CQuestrial"
+- var html_class = "wide wow-animation smoothscroll scrollTo"
+
+//- Includes
+include ../_config
+include ../_mixins
+include ../elements/_ui-rd-navbar-sidebar-fixed
+include ../mixins/_gallery-photoswipe
+include ../elements/_ui-box-icon-type-3
+include ../elements/_ui-rd-parallax
+include ../elements/_widget-post
+include ../elements/_widget-form-subscribe
+include ../elements/_widget-list-social
+include ../elements/_ui-media-elements
+include ../elements/_ui-counter-type-1
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-isotope
+include ../elements/_ui-box-member
+include ../elements/_ui-partners-carousel
+include ../elements/_widget-twitter
+include ../elements/_widget-form-contact
+include ../elements/_widget-list-social
+include ../elements/_widget-form-subscribe-type-2
+include ../elements/_ui-page-loader-variant-1
+include ../elements/_widget-flickrfeed
+
+doctype html
+html(lang="en" class=html_class)
+  head
+    // Site Title
+    title= cfg.nav.home.submenu.skins.submenu.minimalBlue.title
+
+    meta(charset="utf-8")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+    block search-meta
+      meta(name="keywords" content="intense web design multipurpose template")
+      meta(name="date" content="Dec 26")
+
+    link(rel="icon" href="images/favicon.ico" type="image/x-icon")
+    // Stylesheets
+    link(rel="stylesheet" type="text/css" href=fonts)
+    link(rel="stylesheet" href="intense-personal-blog/css/style.css")
+    = "\n\t\t"
+    <!--[if lt IE 10]>
+    div(style='background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;')
+      a(href="http://windows.microsoft.com/en-US/internet-explorer/")
+        img(src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.")
+    script(src="js/html5shiv.min.js")
+    = "\n\t\t"
+    <![endif]-->
+  body
+    // Page
+    div(class="page text-center")
+      +page-loader-1("<img class='img-responsive' style='margin-top: -20px;margin-left: -18px;' width='329' height='67' src='images/childs/personal-blog-logo-big-330x67.png' alt=''/>")
+      // Page Head
+      header.page-head.slider-menu-position
+        //- RD Navbar
+        +rd-navbar-sidebar-fixed(
+        'rd-navbar-light',
+        {
+          "data-auto-height": "true",
+          "data-lg-stick-up": 'false',
+          "data-lg-hover-on": "false",
+          "data-body-class": "body-inset-left"
+        },
+        "<img class='img-responsive' width='285' height='23' src='images/childs/personal-blog-logo-dark-23x286.png' alt=''/>",
+        cfg.nav.home,
+        cfg.nav
+        )
+        // Complete integration with Facebook
+        .bg-gray-base.rd-parallax(data-on="false" data-md-on="true")
+          .rd-parallax-layer(data-speed="0.45", data-type="media", data-url="images/backgrounds/background-30-1920x1078.jpg")
+          .rd-parallax-layer(data-speed="0.3", data-type='html' data-md-fade="true")
+            section.bg-overlay-white
+              .shell
+                .range
+                  .range.range-xs-middle.range-xs-center.section-cover.section-110
+                    .cell-xs-10
+                      h1.text-uppercase
+                        span.big Welcome to Intense
+                      h4.text-dark.font-default.
+                        The smartest and most flexible bootstrap template by TemplateMonster you’ve ever seen.
+                        Create exactly what you need with our powerful bootstrap toolkit.
+      // Page Contents
+      main.page-content
+
+        section.section-98.section-md-124
+          .shell
+            .range.range-xs-center.range-sm-left
+              .cell-md-6.text-center
+                img(src="images/moqups/moqup-home-desktop.png" width="615" height="508" alt="").mock-up-desktop.img-responsive.reveal-inline-block
+              .cell-md-5.cell-md-preffix-1.text-md-left
+                div
+                  h6.text-uppercase.text-thin.text-spacing-120.text-primary.font-default about
+                h2.offset-top-0.
+                  Welcome to Intense.
+                  Multipurpose Theme.
+                .offset-top-41
+                  p Join the 205,000+ Satified Customers Today at TemplateMonster.com. Created by the industry leaders Intense is a comprehensive set of tools which are super easy to pick up and run. It gives you a huge leg up to create your own beautiful site. Powerful options & tools, unlimited designs, responsive framework and amazing support are the reasons for our customers to fall in love.
+                  a.offset-top-10(href=cfg.buyLink).btn.btn-default buy intense now
+        .shell
+          hr.bg-gray
+
+        section.section-98.section-md-124
+          .shell
+            div
+              h6.text-uppercase.text-thin.text-spacing-120.text-primary.font-default Manage yourself
+            h2.offset-top-0.
+              Take Full Control of Your Site
+            .range.range-xs-center.offset-top-41
+              .cell-xs-10
+                p Check out an incredible set of features provided by Intense. We collected all common required features in one theme. That makes Intense one of the most awesome themes on the market. Intense allows you to take control of almost every element and section of the site.
+            .range.text-md-left.offset-top-50
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0
+                +box-icon-type-3("icon-sm text-primary mdi mdi-monitor", "Responsive & Retina", "", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+                +box-icon-type-3("icon-sm text-primary mdi mdi-rocket", "Optimized for speed", "", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+                +box-icon-type-3("icon-sm text-primary mdi mdi-xml", "Truly Multi-Purpose", "", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+
+        section.section-98.section-md-124.bg-primary.context-dark
+          .shell
+            div
+              h6.text-uppercase.text-thin.text-spacing-120.font-default buy theme
+            h2.offset-top-0.
+              Intense Is Exactly What You Need
+            .offset-top-66
+              a(href=cfg.buyLink).btn.btn-default buy intense now
+
+        section.section-98.section-md-124
+          .shell-wide
+            .range
+              .cell-sm-6.cell-md-3.cell-md-preffix-0
+                +counter-type-1("Templates", "text-bold", {
+                  "dataTo": "58249",
+                  "dataSpeed": "3000",
+                  "attr": "text-uppercase text-thin text-spacing-120 text-dark font-default"
+                }, "divider bg-primary", "h1")
+              .cell-sm-6.cell-md-3.offset-top-66.offset-sm-top-0
+                +counter-type-1("Happy Clients", "text-bold", {
+                  "dataTo": "246",
+                  "dataSpeed": "2500",
+                  "preffix": "K",
+                  "attr": "text-uppercase text-thin text-spacing-120 text-dark font-default"
+                }, "divider bg-primary", "h1")
+              .cell-sm-6.cell-md-3.offset-top-66.offset-md-top-0
+                +counter-type-1("Hours of Coding", "text-bold", {
+                  "dataTo": "1200",
+                  "dataSpeed": "1500",
+                  "attr": "text-uppercase text-thin text-spacing-120 text-dark font-default"
+                }, "divider bg-primary", "h1")
+              .cell-sm-6.cell-md-3.offset-top-66.offset-md-top-0
+                +counter-type-1("Lines of Code", "text-bold", {
+                  "dataTo": "834",
+                  "dataSpeed": "1300",
+                  "preffix": "K",
+                  "attr": "text-uppercase text-thin text-spacing-120 text-dark font-default"
+                }, "divider bg-primary", "h1")
+        hr.bg-gray
+
+        section.section-98.section-md-124
+          .shell-wide
+            div
+              h6.text-uppercase.text-thin.text-spacing-120.text-primary.font-default VIDEO WALKTHROUGH
+            h2.offset-top-0.
+              A Few Words About Intense
+            .range.range-xs-center.offset-top-41
+              .cell-sm-6
+                +media-elements({
+                  "type": "video",
+                  "href": "//www.youtube.com/embed/-AhmuMqZB0s",
+                  "ratio": "16by9"
+                })
+        .shell
+          hr.bg-gray
+
+        section.section-98.section-md-124
+          .shell
+            div
+              h6.text-uppercase.text-thin.text-spacing-120.text-primary.font-default Do you want to know more?
+            h2.offset-top-0.
+              Even More Features Available
+            .range.range-md-middle.offset-top-98
+              .cell-md-4.cell-md-push-1
+                img.center-block.img-responsive(src="images/moqups/moqup-home-mobile.png" alt="" width=247 height=470)
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.text-md-right.offset-top-34.offset-md-top-0
+                //.source-code(data-output="code-icon-box-6v1")
+                .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal
+                  .unit-body
+                    h4.offset-md-top-20 Social Integration
+                    p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                  .unit-right
+                    span.icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-message-text-outline
+                .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                  .unit-body
+                    h4.offset-md-top-20 All images Included
+                    p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                  .unit-right
+                    span.icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-image-filter
+                .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                  .unit-body
+                    h4.offset-md-top-20 2000+ <br class="veil reveal-md-inline veil-lg"> icons
+                    p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                  .unit-right
+                    span.icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-emoticon-happy
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.text-md-left.cell-md-push-1.offset-top-50.offset-md-top-0
+                //.source-code(data-output="code-icon-box-6v2")
+                .unit.unit-spacing-sm.unit-md.unit-md-horizontal
+                  .unit-left
+                    span.icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-cellphone-link
+                  .unit-body
+                    h4.offset-md-top-20 Responsive & Retina
+                    p.
+                      The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit.unit-spacing-sm.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                  .unit-left
+                    span.icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-television-guide
+                  .unit-body
+                    h4.offset-md-top-20 Extensive docs
+                    p.
+                      The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit.unit-spacing-sm.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                  .unit-left
+                    span.icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-play-box-outline
+                  .unit-body
+                    h4.offset-md-top-20 Video backgrounds
+                    p.
+                      The information should be not only well-organized and easy to read. thus making the process enjoyable.
+        .shell
+          hr.bg-gray
+
+        section.section-98.section-md-124
+          .shell-wide
+            div
+              h6.text-uppercase.text-thin.text-spacing-120.text-primary.font-default Still Not Sure?
+            h2.offset-top-0.
+              Check Out Other Themes Based On Intense
+            .offset-top-41
+              +isotope(['All', 'Infrastructure', 'Portfolio', 'Blog', 'Agency', 'Creative'],{
+                "group": "gallery",
+                "layout": "fitRows",
+                "alignClass": "isotope-filters-horizontal"
+              }, "isotope-1")
+                // Isotope
+                .row
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.restaurant.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.restaurant.desc,
+                        "thumb": cfg.themes.restaurant.image,
+                        "target": {"href": cfg.themes.restaurant.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Portfolio')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.photographer.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.photographer.desc,
+                        "thumb": cfg.themes.photographer.image,
+                        "target": {"href": cfg.themes.photographer.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Blog')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.personalBlog.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.personalBlog.desc,
+                        "thumb": cfg.themes.personalBlog.image,
+                        "target": {"href": cfg.themes.personalBlog.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.realEstate.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.realEstate.desc,
+                        "thumb": cfg.themes.realEstate.image,
+                        "target": {"href": cfg.themes.realEstate.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.handmade.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.handmade.desc,
+                        "thumb": cfg.themes.handmade.image,
+                        "target": {"href": cfg.themes.handmade.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.dentalClinic.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.dentalClinic.desc,
+                        "thumb": cfg.themes.dentalClinic.image,
+                        "target": {"href": cfg.themes.dentalClinic.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.financialAdvisor.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.financialAdvisor.desc,
+                        "thumb": cfg.themes.financialAdvisor.image,
+                        "target": {"href": cfg.themes.financialAdvisor.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.gym.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.gym.desc,
+                        "thumb": cfg.themes.gym.image,
+                        "target": {"href": cfg.themes.gym.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.childCare.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.childCare.desc,
+                        "thumb": cfg.themes.childCare.image,
+                        "target": {"href": cfg.themes.childCare.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.jobBoard.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.jobBoard.desc,
+                        "thumb": cfg.themes.jobBoard.image,
+                        "target": {"href": cfg.themes.jobBoard.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.product.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.product.desc,
+                        "thumb": cfg.themes.product.image,
+                        "target": {"href": cfg.themes.product.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.app.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.app.desc,
+                        "thumb": cfg.themes.app.image,
+                        "target": {"href": cfg.themes.app.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.startup.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.startup.desc,
+                        "thumb": cfg.themes.startup.image,
+                        "target": {"href": cfg.themes.startup.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.book.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.book.desc,
+                        "thumb": cfg.themes.book.image,
+                        "target": {"href": cfg.themes.book.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.travel.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.travel.desc,
+                        "thumb": cfg.themes.travel.image,
+                        "target": {"href": cfg.themes.travel.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.event.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.event.desc,
+                        "thumb": cfg.themes.event.image,
+                        "target": {"href": cfg.themes.event.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.taxi.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.taxi.desc,
+                        "thumb": cfg.themes.taxi.image,
+                        "target": {"href": cfg.themes.taxi.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.barbershop.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.barbershop.desc,
+                        "thumb": cfg.themes.barbershop.image,
+                        "target": {"href": cfg.themes.barbershop.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.petshop.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.petshop.desc,
+                        "thumb": cfg.themes.petshop.image,
+                        "target": {"href": cfg.themes.petshop.href},
+                        "targetBlank": true
+                      })
+
+        hr.bg-gray
+
+        section.section-98.section-md-124
+          .shell
+            div
+              h6.text-uppercase.text-thin.text-spacing-120.text-primary.font-default Still Not Sure?
+            h2.offset-top-0.
+              Meet Our Team
+            .offset-top-41
+              .range.range-xs-center.offset-sm-top-66
+                .cell-sm-10.cell-lg-12
+                  .range
+                    .cell-sm-6.cell-lg-3.offset-top-66.offset-xs-top-0
+                      +box-member("images/users/user-john-doe-270x270.jpg", "John Doe", "Founder", "text-primary", cfg.nav.pages.submenu.teamMember.href)
+                        +widget-list-social([
+                          {
+                            "icon": "fa fa-facebook",
+                            "href": "#"
+                          },
+                          {
+                            "icon": "fa fa-twitter",
+                            "href": "#"
+                          },
+                          {
+                            "icon": "fa fa-google-plus",
+                            "href": "#"
+                          }
+                        ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+                    .cell-sm-6.cell-lg-3.offset-top-66.offset-sm-top-0.offset-lg-top-0
+                      +box-member("images/users/user-july-mao-270x270.jpg", "July Mao", "Web Designer", "text-primary", cfg.nav.pages.submenu.teamMember.href)
+                        +widget-list-social([
+                          {
+                            "icon": "fa fa-facebook",
+                            "href": "#"
+                          },
+                          {
+                            "icon": "fa fa-twitter",
+                            "href": "#"
+                          },
+                          {
+                            "icon": "fa fa-google-plus",
+                            "href": "#"
+                          }
+                        ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+                    .cell-sm-6.cell-lg-3.offset-top-66.offset-sm-top-30.offset-lg-top-0
+                      +box-member("images/users/user-bernard-show-270x270.jpg", "Bernard Show", "Co-Founder", "text-primary", cfg.nav.pages.submenu.teamMember.href)
+                        +widget-list-social([
+                          {
+                            "icon": "fa fa-facebook",
+                            "href": "#"
+                          },
+                          {
+                            "icon": "fa fa-twitter",
+                            "href": "#"
+                          },
+                          {
+                            "icon": "fa fa-google-plus",
+                            "href": "#"
+                          }
+                        ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+                    .cell-sm-6.cell-lg-3.offset-top-66.offset-sm-top-30.offset-lg-top-0
+                      +box-member("images/users/user-ronald-oswald-270x270.jpg", "Ronald Oswald", "Developer", "text-primary", cfg.nav.pages.submenu.teamMember.href)
+                        +widget-list-social([
+                          {
+                            "icon": "fa fa-facebook",
+                            "href": "#"
+                          },
+                          {
+                            "icon": "fa fa-twitter",
+                            "href": "#"
+                          },
+                          {
+                            "icon": "fa fa-google-plus",
+                            "href": "#"
+                          }
+                        ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+
+        section.section-top-124.section-bottom-98.bg-primary.context-dark
+          .shell
+            div
+              h2
+                span.big Our Partners
+              .range.range-xs-center.offset-top-24
+                .cell-xs-10
+                  p.
+                    Join TemplateMonster Affiliate Program. Earn up to 50% commissions with TemplateMonster affiliate program. Anyone Can Become an Affiliate. We want you to earn more!
+                .cell-xs-12
+                  .offset-top-66
+                    +partners-carousel([
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-01-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-02-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-03-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-04-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-01-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-02-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-03-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-04-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      }
+                    ])
+
+      // Page Footer
+      footer.section-relative.section-top-66.section-bottom-34.page-footer.bg-gray-base.context-dark
+        .shell
+          .range.range-sm-center.text-lg-left
+            .cell-sm-12
+              .range.range-xs-center
+
+                .cell-xs-10.cell-sm-3.text-left.cell-sm-push-4.cell-sm-10.cell-lg-3.offset-sm-top-50.offset-lg-top-0.cell-lg-push-2
+                  // Twitter Feed
+                  p.text-uppercase.text-spacing-60.text-bold.text-center.text-lg-left Latest tweets
+                  .offset-top-20
+                    +widget-twitter({
+                      "dataTwitterUsername": "templatemonster"
+                    }, true)
+
+                .cell-xs-10.cell-sm-3.offset-top-66.cell-sm-push-3.cell-sm-10.cell-lg-2.offset-lg-top-0.cell-lg-push-3
+                  // Flickr Feed
+                  p.text-uppercase.text-spacing-60.text-bold Instagram
+                  .offset-top-24
+                    +widget-flickrfeed("tm58888_landscapes", {"data-image_q": "src"}, 4)
+
+                .cell-xs-10.cell-sm-3.offset-top-66.cell-sm-push-2.offset-sm-top-0.cell-sm-6.cell-lg-4.cell-lg-push-4
+                  p.text-uppercase.text-spacing-60.text-bold Subscribe
+                  p.offset-top-20.text-left.
+                    Keep up with our always upcoming  product
+                    features and technologies. Enter your e-mail and
+                    subscribe to our newsletter.
+                  .offset-top-30
+                    +widget-form-subscribe-type-2("Type your E-Mail", "form-output-global","icon", true)
+
+                .cell-xs-10.cell-sm-3.offset-top-66.cell-sm-push-1.offset-sm-top-0.cell-sm-6.cell-lg-3.cell-lg-push-1
+                  // Footer brand
+                  .footer-brand
+                    a(href=cfg.nav.home.href)
+                      | !{"<img width='138' height='31' src='images/childs/personal-blog-logo-light-138x31.png' alt=''/>"}
+                  p.offset-top-20.text-sm-left.
+                    Intense is exactly what you need.
+                    Create your own unique site with Intense.
+                  .offset-top-20.text-xs-center.text-lg-left
+                    +widget-list-social([
+                      {
+                        "icon": "fa fa-facebook",
+                        "href": "#"
+                      },
+                      {
+                        "icon": "fa fa-twitter",
+                        "href": "#"
+                      },
+                      {
+                        "icon": "fa fa-google-plus",
+                        "href": "#"
+                      },
+                      {
+                        "icon": "fa fa-linkedin",
+                        "href": "#"
+                      }
+                    ])
+                  p.small.text-darker.offset-top-20
+                    | #{cfg.brand.name} &copy; #[span(id="copyright-year")] . #[a(href="privacy.html") Privacy Policy]
+                    // {%FOOTER_LINK}
+
+    // Global Mailform Output
+    #form-output-global.snackbars
+    +gallery-photoswipe()
+    // Java script
+    script(src="js/core.min.js")
+    script(src="js/script.js")

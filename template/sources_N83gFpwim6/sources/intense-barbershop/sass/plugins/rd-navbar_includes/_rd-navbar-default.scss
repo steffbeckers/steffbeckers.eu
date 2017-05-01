@@ -1,0 +1,29 @@
+/*
+* Default Layout styles
+*/
+.rd-navbar-default {
+
+  // RD Navbar Toggle
+  .rd-navbar-toggle {
+    @include make-toggle(
+                    $rd-navbar-default-toggle-preset,
+                    $rd-navbar-default-toggle-line-height,
+                    $rd-navbar-default-toggle-min-font-size,
+                    $rd-navbar-default-toggle-color,
+                    $rd-navbar-default-toggle-lines-height
+    );
+
+    background-color: transparent;
+    border: none;
+  }
+
+  // Mobile styles
+  &.rd-navbar-fixed {
+
+  }
+
+  // Desktop styles
+  &.rd-navbar-sidebar {
+
+  }
+}

@@ -1,0 +1,714 @@
+- var fonts = "//fonts.googleapis.com/css?family=PT+Sans:400,700%7CAmatic+SC:400,700"
+- var html_class = "wide wow-animation smoothscroll scrollTo"
+
+//- Includes
+include ../_config
+include ../_mixins
+include ../elements/_ui-rd-navbar-top-panel-fullwidth
+include ../mixins/_gallery-photoswipe
+include ../elements/_ui-box-icon-type-2
+include ../elements/_ui-rd-parallax
+include ../elements/_widget-post
+include ../elements/_widget-form-subscribe
+include ../elements/_widget-list-social
+include ../elements/_ui-media-elements
+include ../elements/_ui-counter-type-1
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-isotope
+include ../elements/_ui-box-member
+include ../elements/_ui-partners-carousel
+include ../elements/_widget-twitter
+include ../elements/_widget-form-contact
+include ../elements/_widget-list-social
+include ../elements/_widget-form-subscribe-type-2
+include ../elements/_ui-page-loader-variant-1
+include ../elements/_ui-testimonials-type-2
+include ../elements/_ui-rd-map
+
+
+doctype html
+html(lang="en" class=html_class)
+  head
+    title= cfg.nav.home.submenu.skins.submenu.eternalJoy.title
+    meta(charset="utf-8")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+    block search-meta
+      meta(name="keywords" content="intense web design multipurpose template")
+      meta(name="date" content="Dec 26")
+
+    link(rel="icon" href="images/favicon.ico" type="image/x-icon")
+    // Stylesheets
+    link(rel="stylesheet" type="text/css" href=fonts)
+    link(rel="stylesheet" href="intense-child-care/css/style.css")
+    = "\n\t\t"
+    <!--[if lt IE 10]>
+    div(style='background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;')
+      a(href="http://windows.microsoft.com/en-US/internet-explorer/")
+        img(src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.")
+    script(src="js/html5shiv.min.js")
+    = "\n\t\t"
+    <![endif]-->
+  body
+    div(class="page text-center")
+      +page-loader-1("<img class='img-responsive' width='329' height='67' src='images/childs/child-care-logo-big-330x67.png' alt=''/>")
+      // Page Head
+      header.page-head
+        //- RD Navbar
+        +rd-navbar-top-panel-fullwidth(
+        'rd-navbar-light',
+        {
+          "data-lg-auto-height": "true",
+          "data-md-layout": 'rd-navbar-fixed',
+          "data-lg-layout": 'rd-navbar-static',
+          "data-lg-stick-up": 'true'
+        },
+        "<img class='img-responsive' width='135' height='55' src='images/childs/intense-child-care-logo-dark.png' alt=''/>",
+        "<img class='img-responsive' width='243' height='32' src='images/childs/intense-child-care-logo-dark-horizontal.png' alt=''/>",
+        cfg.nav.home,
+        cfg.nav
+        )
+      main.page-content
+        // Welcome To Intense
+        +rd-parallax({
+          "backgroundSpeed": "0.35",
+          "attrType": "media",
+          "src": "images/skins/skin-eternal-joy-01-1920x718.jpg",
+          "htmlSpeed": "0"
+        })
+          section.section-66.section-md-0.section-xl-top-85.context-dark
+            .shell
+              .range.offset-top-0.range-xs-center
+                .cell-md-6.text-center.offset-md-top-24.offset-xl-top-0
+                  img.img-responsive.veil.reveal-md-inline-block(src="images/skins/skin-eternal-joy-03-494x506.png" width=494 height=506 alt="")
+                .cell-xs-10.cell-md-6.text-md-left.offset-top-0.offset-lg-top-98
+                  h1.text-bold
+                    span.big Welcome To Intense
+                  .offset-top-34.offset-md-top-50
+                    +svg-divider("bg-white", "71", "13")
+                  p The smartest and most flexible bootstrap template by TemplateMonster you've ever seen. Create exactly what you need with our powerful bootstrap toolkit.
+                  a(href=cfg.buyLink).btn.btn-safety-orange buy intense now
+
+        // Intense is the most
+        section.section-66.section-sm-85.section-md-bottom-124
+          .shell
+            .range.range-xs-center.offset-md-top-41
+              .cell-xs-10.cell-md-6.offset-sm-top-10.cell-md-push-2
+                +media-elements({
+                  "type": "video",
+                  "href": "//www.youtube.com/embed/-AhmuMqZB0s",
+                  "ratio": "16by9"
+                })
+              .cell-xs-10.cell-md-6.cell-md-push-1.offset-top-50.offset-md-top-0
+                .text-sm-left.inset-sm-right-30
+                  h1.text-bold.text-uppercase.text-primary Intense is the most flexible Bootstrap theme on TemplateMonster
+                  .offset-top-20.offset-md-top-50
+                    p Join the 205,000+ Satified Customers Today at TemplateMonster.com. Created by the industry leaders Intense is a comprehensive set of tools which are super easy to pick up and run. It gives you a huge leg up to create your own beautiful site. Powerful options & tools, unlimited designs, responsive framework and amazing support are the reasons for our customers to fall in love.
+                  .offset-top-30.offset-md-top-30
+                    a(href=cfg.nav.pages.submenu.contactUs.href).btn.btn-safety-orange contact us
+
+        // Take Full Control of Your Site
+        section.section-98.section-md-124.bg-lightest
+          .shell
+            h1.text-primary.text-bold.
+              Take Full Control of Your Site
+            +svg-divider("bg-primary", "71", "13")
+            .range.text-md-left.offset-top-50
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0
+                +box-icon-type-2("icon-lg icon-circle icon-bordered text-safety-orange mdi mdi-brush", "ADVANCED UI KIT", "font-default text-uppercaase offset-md-top-20", "Intense has dozens of new components and elements built on the same level of quality as Bootstrap elements and highlighted with several example pages.")
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-66.offset-md-top-0
+                +box-icon-type-2("icon-lg icon-circle icon-bordered text-safety-orange mdi mdi-cube-outline", "EXTENDED TOOLKIT", "font-default text-uppercaase offset-md-top-20", "Intense provides a poweful and flexible exntended toolkit in addition to basic Bootsrap. If you’ve used Bootstrap itself, you’ll find this all super familiar and easy-to-use.")
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-66.offset-md-top-0
+                +box-icon-type-2("icon-lg icon-circle icon-bordered text-safety-orange mdi mdi-palette", "UNLIMITED SKINS & COLORS", "font-default text-uppercaase offset-md-top-20", "Theme components inherit much of their style from variables, exactly like Bootstrap. Change a few values and the theme adapts.")
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-66
+                +box-icon-type-2("icon-lg icon-circle icon-bordered text-safety-orange mdi mdi-vector-arrange-above", "PARALLAX EFFECTS", "font-default text-uppercaase offset-md-top-20", "Everyone loves parallax scrolling effects, they are simply beautiful. Intense has advanced parallax options & controls based on flexible and easy-to-use RD Parallax plugin.")
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-66
+                +box-icon-type-2("icon-lg icon-circle icon-bordered text-safety-orange mdi mdi-share-variant", "SOCIAL INTEGRATION", "font-default text-uppercaase offset-md-top-20", "Intense has full set of social icons and styling options which allow you to share any content the way you wish.")
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-66
+                +box-icon-type-2("icon-lg icon-circle icon-bordered text-safety-orange mdi mdi-spellcheck", "MADE FOR SPEED", "font-default text-uppercaase offset-md-top-20", "We know how embarassing and time-consuming can be content loading, so we took care of pages optimization for your smooth expirience.")
+            .offset-top-50
+              a(href=cfg.buyLink).btn.btn-primary buy intense now
+
+        // Counters
+        +rd-parallax({
+          "backgroundSpeed": "0.35",
+          "attrType": "media",
+          "src": "images/skins/skin-eternal-joy-02-1920x748.jpg",
+          "htmlSpeed": "0"
+        })
+          section.section-98.context-dark
+            .shell-wide
+              .range
+                .cell-sm-6.cell-md-3.cell-md-preffix-0
+                  +counter-type-1("Templates", "text-bold font-default", {
+                    "dataTo": "58249",
+                    "dataSpeed": "3000",
+                    "attr": "text-uppercase text-spacing-60 font-default"
+                  }, "divider bg-gray-darker", "h2")
+                .cell-sm-6.cell-md-3.offset-top-66.offset-sm-top-0
+                  +counter-type-1("Happy Clients", "text-bold font-default", {
+                    "dataTo": "246",
+                    "dataSpeed": "2500",
+                    "preffix": "K",
+                    "attr": "text-uppercase text-spacing-60 font-default"
+                  }, "divider bg-gray-darker", "h2")
+                .cell-sm-6.cell-md-3.offset-top-66.offset-md-top-0
+                  +counter-type-1("Hours of Coding", "text-bold font-default", {
+                    "dataTo": "1200",
+                    "dataSpeed": "1500",
+                    "attr": "text-uppercase text-spacing-60 font-default"
+                  }, "divider bg-gray-darker", "h2")
+                .cell-sm-6.cell-md-3.offset-top-66.offset-md-top-0
+                  +counter-type-1("Lines of Code", "text-bold font-default", {
+                    "dataTo": "834",
+                    "dataSpeed": "1300",
+                    "preffix": "K",
+                    "attr": "text-uppercase text-spacing-60 font-default"
+                  }, "divider bg-gray-darker", "h2")
+
+        // Our Advantages
+        section.section-98.section-md-124
+          .shell
+            h1.text-primary.text-bold.
+              Our Advantages
+            +svg-divider("bg-primary", "71", "13")
+            .range.range-md-middle.offset-top-98
+              .cell-md-4.cell-md-push-1
+                img.center-block.img-responsive(src="images/moqups/moqup-home-mobile.png" alt="" width=247 height=470)
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.text-md-right.offset-top-34.offset-md-top-0
+                .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal
+                  .unit-body
+                    h4.offset-md-top-24.font-default.text-uppercase.text-bold Social Integration
+                    p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                  .unit-right
+                    span.icon.icon-circle.icon-lg.icon-bordered.text-safety-orange.mdi.mdi-message-text-outline
+                .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                  .unit-body
+                    h4.offset-md-top-24.font-default.text-uppercase.text-bold All images Included
+                    p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                  .unit-right
+                    span.icon.icon-circle.icon-lg.icon-bordered.text-safety-orange.mdi.mdi-image-filter
+                .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                  .unit-body
+                    h4.offset-md-top-24.font-default.text-uppercase.text-bold 2000+ <br class="veil reveal-md-inline veil-lg"> icons
+                    p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                  .unit-right
+                    span.icon.icon-circle.icon-lg.icon-bordered.text-safety-orange.mdi.mdi-emoticon-happy
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.text-md-left.cell-md-push-1.offset-top-50.offset-md-top-0
+                .unit.unit-spacing-sm.unit-md.unit-md-horizontal
+                  .unit-left
+                    span.icon.icon-circle.icon-lg.icon-bordered.text-safety-orange.mdi.mdi-cellphone-link
+                  .unit-body
+                    h4.offset-md-top-24.font-default.text-uppercase.text-bold Responsive & Retina
+                    p.
+                      The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit.unit-spacing-sm.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                  .unit-left
+                    span.icon.icon-circle.icon-lg.icon-bordered.text-safety-orange.mdi.mdi-television-guide
+                  .unit-body
+                    h4.offset-md-top-24.font-default.text-uppercase.text-bold Extensive docs
+                    p.
+                      The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit.unit-spacing-sm.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                  .unit-left
+                    span.icon.icon-circle.icon-lg.icon-bordered.text-safety-orange.mdi.mdi-play-box-outline
+                  .unit-body
+                    h4.offset-md-top-24.font-default.text-uppercase.text-bold Video backgrounds
+                    p.
+                      The information should be not only well-organized and easy to read. thus making the process enjoyable.
+
+        +rd-parallax({
+          "backgroundSpeed": "0.35",
+          "attrType": "media",
+          "src": "images/skins/skin-eternal-joy-01-1920x718.jpg",
+          "htmlSpeed": "0"
+        })
+          section.section-66.context-dark
+            .shell
+              .range.range-xs-center
+                .cell-xs-8
+                  .range.range-sm-middle
+                    .cell-lg-8
+                      h2.text-bold
+                        span.big Intense Is Exactly What You Need
+                    .cell-lg-4
+                      a(href=cfg.buyLink).btn.btn-safety-orange buy intense now
+
+        section.section-98.section-md-124
+          .shell-wide
+            h1.text-bold.text-uppercase.text-primary.
+              Child Themes
+            +svg-divider("bg-primary", "71", "13")
+            .range.range-xs-center
+              .cell-xs-10
+                p Check out other themes based on INTENSE
+
+            .offset-top-41
+              +isotope(['All', 'Infrastructure', 'Portfolio', 'Blog', 'Agency', 'Creative'],{
+                "group": "gallery",
+                "layout": "fitRows",
+                "alignClass": "isotope-filters-horizontal"
+              }, "isotope-1")
+                // Isotope
+                .row
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.restaurant.title,
+                        "description": cfg.themes.restaurant.desc,
+                        "thumb": cfg.themes.restaurant.image,
+                        "target": {"href": cfg.themes.restaurant.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Portfolio')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.photographer.title,
+                        "description": cfg.themes.photographer.desc,
+                        "thumb": cfg.themes.photographer.image,
+                        "target": {"href": cfg.themes.photographer.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Blog')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.personalBlog.title,
+                        "description": cfg.themes.personalBlog.desc,
+                        "thumb": cfg.themes.personalBlog.image,
+                        "target": {"href": cfg.themes.personalBlog.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.realEstate.title,
+                        "description": cfg.themes.realEstate.desc,
+                        "thumb": cfg.themes.realEstate.image,
+                        "target": {"href": cfg.themes.realEstate.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.handmade.title,
+                        "description": cfg.themes.handmade.desc,
+                        "thumb": cfg.themes.handmade.image,
+                        "target": {"href": cfg.themes.handmade.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.dentalClinic.title,
+                        "description": cfg.themes.dentalClinic.desc,
+                        "thumb": cfg.themes.dentalClinic.image,
+                        "target": {"href": cfg.themes.dentalClinic.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.financialAdvisor.title,
+                        "description": cfg.themes.financialAdvisor.desc,
+                        "thumb": cfg.themes.financialAdvisor.image,
+                        "target": {"href": cfg.themes.financialAdvisor.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.gym.title,
+                        "description": cfg.themes.gym.desc,
+                        "thumb": cfg.themes.gym.image,
+                        "target": {"href": cfg.themes.gym.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.childCare.title,
+                        "description": cfg.themes.childCare.desc,
+                        "thumb": cfg.themes.childCare.image,
+                        "target": {"href": cfg.themes.childCare.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.jobBoard.title,
+                        "description": cfg.themes.jobBoard.desc,
+                        "thumb": cfg.themes.jobBoard.image,
+                        "target": {"href": cfg.themes.jobBoard.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.product.title,
+                        "description": cfg.themes.product.desc,
+                        "thumb": cfg.themes.product.image,
+                        "target": {"href": cfg.themes.product.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.app.title,
+                        "description": cfg.themes.app.desc,
+                        "thumb": cfg.themes.app.image,
+                        "target": {"href": cfg.themes.app.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.startup.title,
+                        "description": cfg.themes.startup.desc,
+                        "thumb": cfg.themes.startup.image,
+                        "target": {"href": cfg.themes.startup.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.book.title,
+                        "description": cfg.themes.book.desc,
+                        "thumb": cfg.themes.book.image,
+                        "target": {"href": cfg.themes.book.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.travel.title,
+                        "description": cfg.themes.travel.desc,
+                        "thumb": cfg.themes.travel.image,
+                        "target": {"href": cfg.themes.travel.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                      .shadow-variant-2
+                        +thumbnail-classic({
+                          "type": "thumbnail",
+                          "title": cfg.themes.event.title,
+                          "description": cfg.themes.event.desc,
+                          "thumb": cfg.themes.event.image,
+                          "target": {"href": cfg.themes.event.href},
+                          "targetBlank": true
+                        })
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.taxi.title,
+                        "description": cfg.themes.taxi.desc,
+                        "thumb": cfg.themes.taxi.image,
+                        "target": {"href": cfg.themes.taxi.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.barbershop.title,
+                        "description": cfg.themes.barbershop.desc,
+                        "thumb": cfg.themes.barbershop.image,
+                        "target": {"href": cfg.themes.barbershop.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.petshop.title,
+                        "description": cfg.themes.petshop.desc,
+                        "thumb": cfg.themes.petshop.image,
+                        "target": {"href": cfg.themes.petshop.href},
+                        "targetBlank": true
+                      })
+
+        // Meet our team
+        section.section-98.section-sm-110.section-bottom-66.bg-lightest
+          .shell
+            h1.text-bold.text-primary Meet Our Team
+            +svg-divider("bg-primary", "71", "13")
+            .offset-sm-top-34.text-center.text-md-left
+              .range.range-xs-center.section-34
+                .cell-sm-6.cell-md-3
+                  img.img-responsive.reveal-inline-block(src="images/users/user-ashley-masson-270x270.jpg" width=270 height=270 alt="")
+                  .text-md-left.offset-top-14
+                    div
+                      h5.text-bold.text-safety-orange.font-default
+                        a(href=cfg.nav.pages.submenu.teamMember.href) Ashley Mason
+                  address.contact-info.text-md-left.post-meta.offset-top-10
+                    ul.list-unstyled.p
+                      li.reveal-block
+                        span.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                        a.reveal-inline-block.text-middle.inset-left-10(href="callto:1-800-7650-986") 1-800-7650-986
+                      li.reveal-block
+                        span.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                        a.reveal-inline-block.text-middle.inset-left-10(href="mailto:ashley@demolink.org") ashley@demolink.org
+
+                .cell-sm-6.cell-md-3.offset-top-50.offset-sm-top-0
+                  img.img-responsive.reveal-inline-block(src="images/users/user-alisa-myers-270x270.jpg" width=270 height=270 alt="")
+                  .text-md-left.offset-top-14
+                    div
+                      h5.text-bold.text-safety-orange.font-default
+                        a(href=cfg.nav.pages.submenu.teamMember.href) Alisa Myers
+                  address.contact-info.text-md-left.post-meta.offset-top-10
+                    ul.list-unstyled.p
+                      li.reveal-block
+                        span.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                        a.reveal-inline-block.text-middle.inset-left-10(href="callto:1-800-7650-986") 1-800-7650-986
+                      li.reveal-block
+                        span.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                        a.reveal-inline-block.text-middle.inset-left-10(href="mailto:alisa@demolink.org") alisa@demolink.org
+
+                .cell-sm-6.cell-md-3.offset-top-50.offset-md-top-0
+                  img.img-responsive.reveal-inline-block(src="images/users/user-shirley-vasques-270x270.jpg" width=270 height=270 alt="")
+                  .text-md-left.offset-top-14
+                    div
+                      h5.text-bold.text-safety-orange.font-default
+                        a(href=cfg.nav.pages.submenu.teamMember.href) Shirley Vasquez
+                  address.contact-info.text-md-left.post-meta.offset-top-10
+                    ul.list-unstyled.p
+                      li.reveal-block
+                        span.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                        a.reveal-inline-block.text-middle.inset-left-10(href="callto:1-800-7650-986") 1-800-7650-986
+                      li.reveal-block
+                        span.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                        a.reveal-inline-block.text-middle.inset-left-10(href="mailto:shirley@demolink.org") shirley@demolink.org
+
+                .cell-sm-6.cell-md-3.offset-top-50.offset-md-top-0
+                  img.img-responsive.reveal-inline-block(src="images/users/user-terry-sandoval-270x270.jpg" width=270 height=270 alt="")
+                  .text-md-left.offset-top-14
+                    div
+                      h5.text-bold.text-safety-orange.font-default
+                        a(href=cfg.nav.pages.submenu.teamMember.href) Terry Sandoval
+                  address.contact-info.text-md-left.post-meta.offset-top-10
+                    ul.list-unstyled.p
+                      li.reveal-block
+                        span.icon.icon-xxs.mdi.mdi-phone.text-middle.text-dark
+                        a.reveal-inline-block.text-middle.inset-left-10(href="callto:1-800-7650-986") 1-800-7650-986
+                      li.reveal-block
+                        span.icon.icon-xxs.mdi.mdi-email-open.text-middle.text-dark
+                        a.reveal-inline-block.text-middle.inset-left-10(href="mailto:terry@demolink.org") terry@demolink.org
+
+        // Testimonials
+        +rd-parallax({
+          "backgroundSpeed": "0.35",
+          "attrType": "media",
+          "src": "images/skins/skin-eternal-joy-02-1920x748.jpg",
+          "htmlSpeed": "0"
+        })
+          section.section-98.section-md-124.context-dark
+            .shell
+              h1.text-bold Testimonials
+              +svg-divider("bg-white", "71", "13")
+              .range.range-xs-center.offset-top-66
+                .cell-xs-10.cell-sm-7.cell-md-4
+                  +testimonials-type-2(
+                  {
+                    "width": 80,
+                    "height": 80,
+                    "src": "images/users/user-alex-ross-80x80.jpg",
+                    "alt": ""
+                  },
+                  "Alex Ross",
+                  "Ceo/Founder at demolink.com",
+                  "Lorem ipsum dolor sit amet conse ctetur adip isicing elit, sed do eiusmod tempor incididunt ut labore et dolore ",
+                  "bg-white text-darker",
+                  "text-bold font-default",
+                  ""
+                  )
+                .cell-xs-10.cell-sm-7.cell-md-4.offset-top-50.offset-md-top-0
+                  +testimonials-type-2(
+                  {
+                    "width": 80,
+                    "height": 80,
+                    "src": "images/users/user-alisa-milano-80x80.jpg",
+                    "alt": ""
+                  },
+                  "Alisa Milano",
+                  "Sales at demolink.com",
+                  "Lorem ipsum dolor sit amet conse ctetur adip isicing elit, sed do eiusmod tempor incididunt ut labore et dolore ",
+                  "bg-white text-darker",
+                  "text-bold font-default",
+                  ""
+                  )
+                .cell-xs-10.cell-sm-7.cell-md-4.offset-top-50.offset-md-top-0
+                  +testimonials-type-2(
+                  {
+                    "width": 80,
+                    "height": 80,
+                    "src": "images/users/user-john-more-80x80.jpg",
+                    "alt": ""
+                  },
+                  "john More",
+                  "Support at demolink.com",
+                  "Lorem ipsum dolor sit amet conse ctetur adip isicing elit, sed do eiusmod tempor incididunt ut labore et dolore ",
+                  "bg-white text-darker",
+                  "text-bold font-default",
+                  ""
+                  )
+
+        // Map
+        +rd-map({
+          "zoom": "14",
+          "dataX": "-73.9874068",
+          "dataY": "40.643180",
+          "dataStyles": [{
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [{"color": "#e9e9e9"}, {"lightness": 17}]
+          }, {
+            "featureType": "landscape",
+            "elementType": "geometry",
+            "stylers": [{"color": "#f5f5f5"}, {"lightness": 20}]
+          }, {
+            "featureType": "road.highway",
+            "elementType": "geometry.fill",
+            "stylers": [{"color": "#ffffff"}, {"lightness": 17}]
+          }, {
+            "featureType": "road.highway",
+            "elementType": "geometry.stroke",
+            "stylers": [{"color": "#ffffff"}, {"lightness": 29}, {"weight": 0.2}]
+          }, {
+            "featureType": "road.arterial",
+            "elementType": "geometry",
+            "stylers": [{"color": "#ffffff"}, {"lightness": 18}]
+          }, {
+            "featureType": "road.local",
+            "elementType": "geometry",
+            "stylers": [{"color": "#ffffff"}, {"lightness": 16}]
+          }, {
+            "featureType": "poi",
+            "elementType": "geometry",
+            "stylers": [{"color": "#f5f5f5"}, {"lightness": 21}]
+          }, {
+            "featureType": "poi.park",
+            "elementType": "geometry",
+            "stylers": [{"color": "#dedede"}, {"lightness": 21}]
+          }, {
+            "elementType": "labels.text.stroke",
+            "stylers": [{"visibility": "on"}, {"color": "#ffffff"}, {"lightness": 16}]
+          }, {
+            "elementType": "labels.text.fill",
+            "stylers": [{"saturation": 36}, {"color": "#333333"}, {"lightness": 40}]
+          }, {"elementType": "labels.icon", "stylers": [{"visibility": "off"}]}, {
+            "featureType": "transit",
+            "elementType": "geometry",
+            "stylers": [{"color": "#f2f2f2"}, {"lightness": 19}]
+          }, {
+            "featureType": "administrative",
+            "elementType": "geometry.fill",
+            "stylers": [{"color": "#fefefe"}, {"lightness": 20}]
+          }, {
+            "featureType": "administrative",
+            "elementType": "geometry.stroke",
+            "stylers": [{"color": "#fefefe"}, {"lightness": 17}, {"weight": 1.2}]
+          }]
+        },[])
+
+
+
+      // Default footer
+      footer.section-relative.section-top-66.section-bottom-34.page-footer
+        .shell
+          .range.range-sm-center.text-md-left
+            .cell-sm-8.cell-md-12
+              .range.range-xs-center
+                .cell-md-5.cell-md-push-2
+                  h6.text-uppercase.text-spacing-60.font-default Newsletter
+                  p Keep up with our always upcoming  product features  and technologies. Enter your e-mail and subscribe to  our newsletter.
+                  .offset-top-30
+                    +widget-form-subscribe("Type your E-Mail", "form-subscribe-footer")
+
+                .cell-md-4.offset-top-50.offset-md-top-0.cell-md-push-3.cell-lg-3.cell-lg-preffix-1
+                  ul.list.list-unstyled.address.contact-info.text-left
+                    li
+                      .unit.unit-spacing-xxs.unit-horizontal
+                        .unit-left
+                          span.icon.icon-xxs.mdi.mdi-phone.text-primary.text-middle
+                        .unit-body
+                          a.text-middle(href="callto:#") 1-800-1234-567
+                    li
+                      .unit.unit-spacing-xxs.unit-horizontal
+                        .unit-left
+                          span.icon.icon-xxs.mdi.mdi-map-marker-radius.text-primary.text-middle
+                        .unit-body
+                          span.text-middle 2130 Fulton Street, San Francisco, CA 94117-1080 USA
+                    li
+                      .unit.unit-spacing-xxs.unit-horizontal
+                        .unit-left
+                          span.icon.icon-xxs.mdi.mdi-clock.text-primary.text-middle
+                        .unit-body
+                          span.text-middle Mon–Sat: 7:00am–8:00pm
+
+                .cell-md-3.offset-top-50.offset-md-top-0.cell-md-push-1
+                  // Footer brand
+                  .footer-brand.text-center.text-md-left
+                    a(href=cfg.nav.home.href).reveal-inline-block
+                      img.img-responsive(width='135' height='55' src='images/childs/intense-child-care-logo-dark.png' alt='')
+                  ul.list-inline.list-inline-xxs.reveal-inline-block.offset-top-34.post-meta.text-dark.list-inline-primary
+                    li
+                      a(href="#")
+                        span.icon.icon-xxs.fa-facebook
+                    li
+                      a(href="#")
+                        span.icon.icon-xxs.fa-twitter
+                    li
+                      a(href="#")
+                        span.icon.icon-xxs.fa-google-plus
+                    li
+                      a(href="#")
+                        span.icon.icon-xxs.fa-youtube-play
+                    li
+                      a(href="#")
+                        span.icon.icon-xxs.fa-instagram
+
+
+        .shell.offset-top-50
+          p.small.text-dark
+            | #{cfg.brand.name} &copy; #[span(id="copyright-year")] . #[a(href="privacy.html") Privacy Policy]
+            // {%FOOTER_LINK}
+
+    // Global Mailform Output
+    #form-output-global.snackbars
+    +gallery-photoswipe()
+    // Java script
+    script(src="js/core.min.js")
+    script(src="js/script.js")

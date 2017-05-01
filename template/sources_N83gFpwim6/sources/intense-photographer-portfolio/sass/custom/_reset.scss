@@ -1,0 +1,27 @@
+//
+// Reset Styles
+// --------------------------------------------------
+
+
+// Remove leading spacing of element
+html {
+  *:first-child {
+    margin-top: 0;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Remove default link decoration
+a:hover,
+a:focus{
+  text-decoration: none;
+  outline: none;
+}
+
+// Reset Iframe Appearance
+iframe{
+  display: block;
+}

@@ -1,0 +1,19 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Header transparent'
+
+block title
+  title=pageName
+
+
+block page
+  //- Page Header
+  include ../sections/_header-transparent
+
+  include ../sections/_section-jumbotron-2
+  include ../sections/_section-placeholder
+
+  //- Page Footer
+  include ../sections/_footer-default

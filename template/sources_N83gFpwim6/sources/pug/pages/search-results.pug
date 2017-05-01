@@ -1,0 +1,56 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-pagination-bootstrap
+
+//- Title
+block title
+  title= cfg.nav.pages.submenu.searchResults.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.pages,
+    cfg.nav
+    )
+    +breadcrumb-classic(
+    cfg.nav.pages.submenu.searchResults.title,
+    cfg.nav.pages.submenu.searchResults.icon,
+    {
+      0: {
+        "title": cfg.nav.home.title,
+        "href": cfg.nav.home.href
+      },
+      1: {
+        "title": cfg.nav.pages.title,
+        "href": cfg.nav.pages.href
+      },
+      2: {
+        "title":cfg.nav.pages.submenu.searchResults.title,
+        "href": cfg.nav.pages.submenu.searchResults.href
+      }
+    })
+      // Page Content
+  main.page-content.section-98.section-sm-124
+    .shell
+
+      +widget-form-search("input-sm", "form-label-sm", "search-results")
+
+      .rd-search-results.offset-top-66
+
+
+
+        // Page Footers
+  include ../sections/_section-footer-default

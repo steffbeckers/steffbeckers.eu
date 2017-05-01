@@ -1,0 +1,9 @@
+//- thumbnail - {thumbnail} object
+mixin thumbnail-rayen(thumbnail, iconAttr)
+  -var photoswipe = (typeof(thumbnail.target.href) !== 'undefined') ? {"href": thumbnail.target.href} : {"data-photo-swipe-item": "", "data-size": ""+thumbnail.target.width+"x"+thumbnail.target.height, "href": thumbnail.target.src}
+  // Thumbnail Rayen
+  figure.thumbnail-rayen
+    img(width=thumbnail.thumb.width, height=thumbnail.thumb.height, src=thumbnail.thumb.src, alt=thumbnail.thumb.alt)
+    figcaption
+      a&attributes(photoswipe)
+        span.icon(class=iconAttr)

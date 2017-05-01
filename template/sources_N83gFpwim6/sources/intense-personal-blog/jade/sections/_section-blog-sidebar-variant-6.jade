@@ -1,0 +1,61 @@
+//- Includes
+include ../elements/_widget-form-search
+include ../elements/_widget-tags
+
+// Section Blog Modern
+aside.text-left
+  // Search Form
+  h6.text-uppercase.text-spacing-60.font-default.text-regular Blog
+  div.text-subline
+
+  .offset-top-34
+    +widget-form-search("input-sm", "form-label-sm", "blog-sidebar-2-form-search-widget")
+
+  .range.offset-top-41
+    .cell-xs-6.cell-md-12
+      // Category
+      h6.text-uppercase.text-spacing-60.font-default.text-regular Categories
+      div.text-subline
+
+      ul.list.list-marked.offset-top-30
+        li
+          a.text-darker(href="#") Lifestyle #[span.text-light (37)]
+        li
+          a.text-darker(href="#") Music #[span.text-light (211)]
+        li
+          a.text-darker(href="#") Beauty #[span.text-light (12)]
+        li
+          a.text-darker(href="#") Videos #[span.text-light (7)]
+        li
+          a.text-darker(href="#") News #[span.text-light (15)]
+
+    .cell-xs-6.cell-md-12.offset-top-41.offset-xs-top-0.offset-md-top-41
+      // Archive
+      h6.text-uppercase.text-spacing-60.font-default.text-regular Archive
+      div.text-subline
+
+      ul.list.list-marked.offset-top-30
+        li
+          a.text-darker(href="#") January 2016 #[span.text-light (17)]
+        li
+          a.text-darker(href="#") December 2015 #[span.text-light (121)]
+        li
+          a.text-darker(href="#") November 2015 #[span.text-light (19)]
+        li
+          a.text-darker(href="#") October 2015 #[span.text-light (9)]
+        li
+          a.text-darker(href="#") September 2015 #[span.text-light (25)]
+
+  // Tags
+  h6.offset-top-41.text-uppercase.text-spacing-60.font-default.text-regular Tags
+  div.text-subline
+
+  .offset-top-34
+    +widget-tags("btn btn-xs btn-default", [
+      {"title": "Web", "href": "#"},
+      {"title": "UX", "href": "#"},
+      {"title": "Marketing", "href": "#"},
+      {"title": "News", "href": "#"},
+      {"title": "Design", "href": "#"},
+      {"title": "Events", "href": "#"}
+    ])

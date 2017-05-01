@@ -1,0 +1,213 @@
+extends  ../_skeleton
+
+block title
+	title Gallery
+
+block page
+	// Page Header
+	header.page-header.slider-menu-position
+		+rd-navbar-default({
+			"style": "",
+			"logo": cfg.brand.logo,
+			"logoFixed": cfg.brand.logoSmall,
+			"activeLink": 8,
+			"attr": {
+				"data-layout": "rd-navbar-fixed",
+				"data-sm-layout": "rd-navbar-fixed",
+				"data-md-layout": "rd-navbar-fullwidth",
+				"data-lg-layout": "rd-navbar-static"
+			}
+		})
+
+		+breadcrumb("Gallery", {
+			0: {
+				"type": "link",
+				"title": cfg.nav.home.title,
+				"href": cfg.nav.home.href
+			},
+			1: {
+				"type": "link",
+				"title": cfg.nav.pages.title,
+				"href": cfg.nav.pages.href
+			},
+			2: {
+				"type": "link",
+				"title": "Gallery",
+				"href": "coming-soon.html"
+			}
+		}, "images/backgrounds/background-02-1920x900.jpg")
+
+	// Page Content
+	main.page-content.section-top-75.section-md-top-90
+
+		// Gallery
+		section
+			.shell
+				h1 Gallery
+
+			.range.range-condensed.offset-top-30.offset-md-top-50
+				.cell-sm-6
+					// Post Inspiration
+					.post-inspiration
+						.post-inspiration-img-wrap
+							img(src="images/blog/post-01-962x491.jpg" width="962" height="491" alt="")
+						.post-inspiration-body
+							.veil.reveal-sm-inline-block.text-bottom(style="margin-bottom: 20px;")
+								img.img-responsive.center-block(src="images/divider-01-67x4.png" width="67" height="4" alt="")
+
+
+							.veil.reveal-sm-inline-block
+								span.icon.icon-lg.thin-ico.thin-icon-car.text-white
+
+							.veil.reveal-sm-inline-block.text-bottom(style="margin-bottom: 20px;")
+								img.img-responsive.center-block(src="images/divider-01-67x4.png" width="67" height="4" alt="")
+
+							.offset-top-20
+								h5 Regular taxis
+
+							.offset-top-30
+								p Our regular taxi services make us the most
+									br.veil.reveal-sm-block
+									| popular among other taxi service providers.
+
+							.btn-both-lines.offset-top-30.center-block(style="max-width:400px;")
+								a.btn.btn-primary(href="#" style="min-width: 130px;") read more
+
+
+				.cell-sm-6
+					// Post Inspiration
+					.post-inspiration
+						.post-inspiration-img-wrap
+							img(src="images/blog/post-02-962x491.jpg" width="962" height="491" alt="")
+						.post-inspiration-body
+							.veil.reveal-sm-inline-block.text-bottom(style="margin-bottom: 20px;")
+								img.img-responsive.center-block(src="images/divider-01-67x4.png" width="67" height="4" alt="")
+
+
+							.veil.reveal-sm-inline-block
+								span.icon.icon-lg.thin-ico.thin-icon-car.text-white
+
+							.veil.reveal-sm-inline-block.text-bottom(style="margin-bottom: 20px;")
+								img.img-responsive.center-block(src="images/divider-01-67x4.png" width="67" height="4" alt="")
+
+							.offset-top-20
+								h5 Regular taxis
+
+							.offset-top-30
+								p Our regular taxi services make us the most
+									br.veil.reveal-sm-block
+									| popular among other taxi service providers.
+
+							.btn-both-lines.offset-top-30.center-block(style="max-width:400px;")
+								a.btn.btn-primary(href="#" style="min-width: 130px;") read more
+
+				.cell-sm-6
+					// Post Inspiration
+					.post-inspiration
+						.post-inspiration-img-wrap
+							img(src="images/blog/post-03-962x491.jpg" width="962" height="491" alt="")
+						.post-inspiration-body
+							.veil.reveal-sm-inline-block.text-bottom(style="margin-bottom: 20px;")
+								img.img-responsive.center-block(src="images/divider-01-67x4.png" width="67" height="4" alt="")
+
+
+							.veil.reveal-sm-inline-block
+								span.icon.icon-lg.thin-ico.thin-icon-car.text-white
+
+							.veil.reveal-sm-inline-block.text-bottom(style="margin-bottom: 20px;")
+								img.img-responsive.center-block(src="images/divider-01-67x4.png" width="67" height="4" alt="")
+
+							.offset-top-20
+								h5 Regular taxis
+
+							.offset-top-30
+								p Our regular taxi services make us the most
+									br.veil.reveal-sm-block
+									| popular among other taxi service providers.
+
+							.btn-both-lines.offset-top-30.center-block(style="max-width:400px;")
+								a.btn.btn-primary(href="#" style="min-width: 130px;") read more
+
+				.cell-sm-6
+					// Post Inspiration
+					.post-inspiration
+						.post-inspiration-img-wrap
+							img(src="images/blog/post-04-962x491.jpg" width="962" height="491" alt="")
+						.post-inspiration-body
+							.veil.reveal-sm-inline-block.text-bottom(style="margin-bottom: 20px;")
+								img.img-responsive.center-block(src="images/divider-01-67x4.png" width="67" height="4" alt="")
+
+
+							.veil.reveal-sm-inline-block
+								span.icon.icon-lg.thin-ico.thin-icon-car.text-white
+
+							.veil.reveal-sm-inline-block.text-bottom(style="margin-bottom: 20px;")
+								img.img-responsive.center-block(src="images/divider-01-67x4.png" width="67" height="4" alt="")
+
+							.offset-top-20
+								h5 Regular taxis
+
+							.offset-top-30
+								p Our regular taxi services make us the most
+									br.veil.reveal-sm-block
+									| popular among other taxi service providers.
+
+							.btn-both-lines.offset-top-30.center-block(style="max-width:400px;")
+								a.btn.btn-primary(href="#" style="min-width: 130px;") read more
+
+				.cell-sm-6
+					// Post Inspiration
+					.post-inspiration
+						.post-inspiration-img-wrap
+							img(src="images/blog/post-05-962x491.jpg" width="962" height="491" alt="")
+						.post-inspiration-body
+							.veil.reveal-sm-inline-block.text-bottom(style="margin-bottom: 20px;")
+								img.img-responsive.center-block(src="images/divider-01-67x4.png" width="67" height="4" alt="")
+
+
+							.veil.reveal-sm-inline-block
+								span.icon.icon-lg.thin-ico.thin-icon-car.text-white
+
+							.veil.reveal-sm-inline-block.text-bottom(style="margin-bottom: 20px;")
+								img.img-responsive.center-block(src="images/divider-01-67x4.png" width="67" height="4" alt="")
+
+							.offset-top-20
+								h5 Regular taxis
+
+							.offset-top-30
+								p Our regular taxi services make us the most
+									br.veil.reveal-sm-block
+									| popular among other taxi service providers.
+
+							.btn-both-lines.offset-top-30.center-block(style="max-width:400px;")
+								a.btn.btn-primary(href="#" style="min-width: 130px;") read more
+
+				.cell-sm-6
+					// Post Inspiration
+					.post-inspiration
+						.post-inspiration-img-wrap
+							img(src="images/blog/post-06-962x491.jpg" width="962" height="491" alt="")
+						.post-inspiration-body
+							.veil.reveal-sm-inline-block.text-bottom(style="margin-bottom: 20px;")
+								img.img-responsive.center-block(src="images/divider-01-67x4.png" width="67" height="4" alt="")
+
+
+							.veil.reveal-sm-inline-block
+								span.icon.icon-lg.thin-ico.thin-icon-car.text-white
+
+							.veil.reveal-sm-inline-block.text-bottom(style="margin-bottom: 20px;")
+								img.img-responsive.center-block(src="images/divider-01-67x4.png" width="67" height="4" alt="")
+
+							.offset-top-20
+								h5 Regular taxis
+
+							.offset-top-30
+								p Our regular taxi services make us the most
+									br.veil.reveal-sm-block
+									| popular among other taxi service providers.
+
+							.btn-both-lines.offset-top-30.center-block(style="max-width:400px;")
+								a.btn.btn-primary(href="#" style="min-width: 130px;") read more
+
+	// Page Footer
+	include ../sections/_footer-default

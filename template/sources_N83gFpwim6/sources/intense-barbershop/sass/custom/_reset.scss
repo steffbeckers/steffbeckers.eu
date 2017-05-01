@@ -1,0 +1,62 @@
+//
+// Reset Styles
+// --------------------------------------------------
+a,
+button {
+  &:focus {
+    outline: none !important;
+  }
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+:focus { outline: none; }
+
+input, select, textarea {
+  outline: 0;
+}
+
+p {
+  margin: 0;
+}
+
+dl {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: $font-weight-base;
+}
+
+address {
+  margin: 0;
+}
+
+html p a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+form {
+  margin-bottom: 0;
+}
+
+// Reset Button
+@mixin reset-button() {
+  background: none;
+  border: none;
+  display: inline-block;
+  padding: 0;
+  outline: none;
+  outline-offset: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+
+  &::-moz-focus-inner {
+    border: none;
+    padding: 0;
+  }
+}

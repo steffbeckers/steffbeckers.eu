@@ -1,0 +1,162 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-section-header
+include ../elements/_ui-quote-review
+include ../elements/_ui-product
+
+block variables
+  - var activeIndex = 4
+  - var menuIncludeButton = true
+  - var pageName = 'Single product'
+
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  section.section-xl.bg-periglacial-blue
+    .shell
+      a.link.link-primary.link-return(href='shop.html') Back
+
+      article.product-single
+        .product-single-left
+          .slick-carousel-product
+            // Slick Carousel
+            .slick-slider.carousel-parent(data-arrows="false", data-dots="false", data-loop="true", data-swipe="true", data-items="1" data-child="#child-carousel", data-for="#child-carousel")
+              .item
+                +png('product-single-1-274x280')
+
+              .item
+                +png('product-single-2-274x280')
+
+              .item
+                +png('product-single-3-274x280')
+
+              .item
+                +png('product-single-4-274x280')
+
+            .slick-slider.carousel-child#child-carousel(data-for=".carousel-parent", data-arrows="false", data-loop="true", data-dots="false", data-swipe="true", data-items="3", data-xs-items="4", data-sm-items="3", data-md-items="4", data-lg-items="4", data-slide-to-scroll="1")
+              .item
+                +png('product-single-1-274x280')
+
+              .item
+                +png('product-single-2-274x280')
+
+              .item
+                +png('product-single-3-274x280')
+
+              .item
+                +png('product-single-4-274x280')
+
+
+        .product-single-body
+          p.product-single-title Uppercut Deluxe
+          .product-single-price-wrap
+            p.price $34.99
+            small (In Stock)
+          .product-single-text
+            p With strong hold and just the right amount of shine that doesn’t dry out, this Pomade provided by Uppercut has it all. The best bit – it washes out easily and is safe for your hair. Deluxe Pomade has been designed for discerning men who have a particular style in mind. It is perfect for timeless, classic looks.
+
+          a.btn-shop.btn-shop-sm(href='cart.html')
+            span.btn-shop-icon.fa.fa-shopping-cart
+            span.btn-shop-text ADD TO CART
+  ='\n'
+
+  //- Reviews
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-75
+        .cell-xs-12
+          h2 Reviews
+          .unit.unit-spacimg-md.unit-xs-horizontal.unit-align-center.unit-middle
+            .unit-left.text-sm-right
+              ul.list-rating
+                li.icon.icon-xxs.icon-primary.fa.fa-star
+                li.icon.icon-xxs.icon-primary.fa.fa-star
+                li.icon.icon-xxs.icon-primary.fa.fa-star
+                li.icon.icon-xxs.icon-primary.fa.fa-star
+                li.icon.icon-xxs.icon-primary.fa.fa-star
+              p.small 4.66 average from 169 reviews
+            .unit-body
+              a.btn.btn-xs.btn-circle.btn-primary(href='#') Write a review
+
+        .cell-lg-10
+          +quote-review({
+            avatar: {
+              type: 'image',
+              data: 'testimonials-1-100x100'
+            },
+            title: 'Best Thing Ever!',
+            cite: 'Matt Parker',
+            text: "I have very thick/curly hair. I've used other salon brand pomades in the past, but ended with lots of fly aways. Finally, there is a product for my hair. If you have hair that's thick, curly, or just hard to manage this pomade will be the right choice for you. Although the smell may not be the one you prefer, this product is perfect for me.",
+            time: ['2016-06-08', 'June 8, 2016'],
+            rating: 5
+          })
+
+          +quote-review({
+            avatar: {
+              type: 'letter',
+              data: 'J'
+            },
+            title: 'Quite a Good Product',
+            cite: 'John Miller',
+            text: "In my opinion, the price for this product is a bit too high. I would use this every day if it wasn't for the price. I like the way it goes on and is water soluble so it washes off straightaway in the shower. I save my pomade for special occasions because it keeps my hair exactly the way I want it. However, it is perfect if you need high-quality hair care.",
+            time: ['2016-03-21', 'May 21, 2016'],
+            rating: 4
+          })
+
+          +quote-review({
+            avatar: {
+              type: 'image',
+              data: 'testimonials-3-100x100'
+            },
+            title: 'Definitely a Good Choice',
+            cite: 'Anthony Smith',
+            text: "I've been using this product for nearly 2 months and I really like it. I tried a couple of other popular brands that weren't as good by far. After initially applying it, I use a tiny amount of water on my hands to help work it throughout my hair, then comb. I find it combs easier with a little water.",
+            time: ['2016-04-15', 'April 15, 2016'],
+            rating: 5
+          })
+  ='\n'
+
+  //- Similar products
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-50
+        .cell-xs-12
+          h2 Similar products
+
+        .cell-xs-12
+          .range.range-30
+            .cell-sm-6.cell-md-4.height-fill
+              +product({
+                img: 'product-1-164x168',
+                title: 'Uppercut deluxe',
+                price: '34.99'
+              })
+
+            .cell-sm-6.cell-md-4.height-fill
+              +product({
+                img: 'product-2-210x168',
+                title: 'Thiers Issard SING-6/8-188-OL',
+                price: '25.99'
+              })
+
+            .cell-sm-6.cell-md-4.height-fill
+              +product({
+                img: 'product-3-175x168',
+                title: 'Ducky Matte Pomade',
+                price: '27.99'
+              })
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_footer-default
+

@@ -1,0 +1,313 @@
+extends  ../_skeleton
+
+//- Includes
+include ../mixins/_grid-col
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-member-block
+include ../elements/_ui-box-icon-type-1
+include ../elements/_ui-call-to-action-type-2
+
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.gridSystem.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.gridSystem.title,
+  "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.gridSystem.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.gridSystem.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.gridSystem.href
+    }
+  })
+
+  // Page Content
+  main.page-content
+
+    // Section Flex Grid
+    section.section-bottom-66.section-top-98.section-md-top-110
+      .shell
+        h1 Flex Grid System
+        p Check out the powerful features of custom flex grid system included in our toolkit for bootstrap.
+          br
+          | It is really flexible, well documentated and easy to use.
+        hr.divider.divider-md.bg-mantis
+        .range.offset-top-66
+          each col in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+            .cell-md-1
+              +grid-col('.cell-md-1')
+        .range.range-sm
+          each col in [1, 2, 3, 4, 5, 6]
+            .cell-md-2
+              +grid-col('.cell-md-2')
+        .range.range-sm
+          each col in [1, 2, 3, 4, 5]
+            .cell-md-1-5
+              +grid-col('.cell-md-1-5')
+        .range.range-sm
+          each col in [1, 2, 3, 4]
+            .cell-md-3
+              +grid-col('.cell-md-3')
+        .range.range-sm
+          each col in [1, 2, 3]
+            .cell-md-4
+              +grid-col('.cell-md-4')
+        .range.range-sm
+          each col in [1, 2]
+            .cell-md-6
+              +grid-col('.cell-md-6')
+        .range.range-sm
+          .cell-md-7
+            +grid-col('.cell-md-7')
+          .cell-md-5
+            +grid-col('.cell-md-5')
+        .range.range-sm
+          .cell-md-8
+            +grid-col('.cell-md-8')
+          .cell-md-4
+            +grid-col('.cell-md-4')
+        .range.range-sm
+          .cell-md-9
+            +grid-col('.cell-md-9')
+          .cell-md-3
+            +grid-col('.cell-md-3')
+        .range.range-sm
+          .cell-md-10
+            +grid-col('.cell-md-10')
+          .cell-md-2
+            +grid-col('.cell-md-2')
+        .range.range-sm
+          .cell-md-11
+            +grid-col('.cell-md-11')
+          .cell-md-1
+            +grid-col('.cell-md-1')
+        p.offset-top-20 Take a look to some tasty features of our flex grid described below.
+
+      // Section Default Layout
+      section.offset-top-98
+        .shell
+          h2 Default Layout
+          p See an responsive example of default 1170px layout in action
+          .range.range-xs-center.offset-top-50
+            .cell-xs-10.cell-sm-5.cell-lg-3
+              +member-block(
+                {"title": "John Doe", "href": cfg.nav.pages.submenu.teamMember.href},
+                {"src": "images/users/user-john-doe-140x140.jpg", "width": 140, "height": 140, "alt": ""},
+                "Software Developer",
+                [
+                  {"icon": "fa fa-facebook", "href": "#"},
+                  {"icon": "fa fa-twitter", "href": "#"},
+                  {"icon": "fa fa-google-plus", "href": "#"}
+                ]
+              )
+            .cell-xs-10.cell-sm-5.cell-lg-3.offset-top-66.offset-sm-top-0
+              +member-block(
+                {"title": "July Mao", "href": cfg.nav.pages.submenu.teamMember.href},
+                {"src": "images/users/user-july-mao-140x140.jpg", "width": 140, "height": 140, "alt": ""},
+                "Support Operator",
+                [
+                  {"icon": "fa fa-facebook", "href": "#"},
+                  {"icon": "fa fa-twitter", "href": "#"},
+                  {"icon": "fa fa-google-plus", "href": "#"}
+                ]
+              )
+            .cell-xs-10.cell-sm-5.cell-lg-3.offset-top-66.offset-lg-top-0
+              +member-block(
+                {"title": "Bernard Show", "href": cfg.nav.pages.submenu.teamMember.href},
+                {"src": "images/users/user-bernard-show-140x140.jpg", "width": 140, "height": 140, "alt": ""},
+                "Creative Director",
+                [
+                  {"icon": "fa fa-facebook", "href": "#"},
+                  {"icon": "fa fa-twitter", "href": "#"},
+                  {"icon": "fa fa-google-plus", "href": "#"}
+                ]
+              )
+            .cell-xs-10.cell-sm-5.cell-lg-3.offset-top-66.offset-lg-top-0
+              +member-block(
+                {"title": "Ronald Oswald", "href": cfg.nav.pages.submenu.teamMember.href},
+                {"src": "images/users/user-ronald-oswald-140x140.jpg", "width": 140, "height": 140, "alt": ""},
+                "Founder, Sales",
+                [
+                  {"icon": "fa fa-facebook", "href": "#"},
+                  {"icon": "fa fa-twitter", "href": "#"},
+                  {"icon": "fa fa-google-plus", "href": "#"}
+                ]
+              )
+
+
+      // Section Fullwidth Layout
+      section.offset-top-98.offset-md-top-110
+        .shell-fuild
+          .shell
+            h2 Condensed Fullwidth Layout
+            p Take a look to responsive image grids created with our condensed fullwidth layout
+          .range.range-condensed.offset-top-66
+            .cell-xs-6.cell-md-1-5
+              img.img-cover(src="images/portfolio/portfolio-01-570x420.jpg" alt=" " width="570" height="420")
+            .cell-xs-6.cell-md-1-5
+              img.img-cover(src="images/portfolio/portfolio-02-570x420.jpg" alt=" " width="570" height="420")
+            .cell-xs-6.cell-md-1-5
+              img.img-cover(src="images/portfolio/portfolio-03-570x420.jpg" alt=" " width="570" height="420")
+            .cell-xs-6.cell-md-1-5
+              img.img-cover(src="images/portfolio/portfolio-04-570x420.jpg" alt=" " width="570" height="420")
+            .cell-xs-6.cell-md-1-5
+              img.img-cover(src="images/portfolio/portfolio-05-570x420.jpg" alt=" " width="570" height="420")
+
+      // Section Wide Layout
+      section.offset-top-98.offset-md-top-110
+        .shell.shell-wide
+          h2 Wide Layout
+          p Test our additional wide 1770px grid layout
+          .range.range-xs-center.text-sm-left
+            .cell-xs-10.cell-md-12
+              .range
+                .cell-sm-6.cell-md-3
+                  +box-icon-type-1("icon-sm icon-picton-blue mdi mdi-monitor", "Responsive & Retina", "Adapts to any device", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+                .cell-sm-6.cell-md-3.offset-top-41.offset-sm-top-0
+                  +box-icon-type-1("icon-sm icon-picton-blue mdi mdi-rocket", "Optimized for speed", "Smartly Coded & Maintained", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+                .cell-sm-6.cell-md-3.offset-top-41.offset-md-top-0
+                  +box-icon-type-1("icon-sm icon-picton-blue mdi mdi-xml", "Truly Multi-Purpose", "Easy to Use and Customize", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+                .cell-sm-6.cell-md-3.offset-top-41.offset-md-top-0
+                  +box-icon-type-1("icon-sm icon-picton-blue mdi mdi-magnify", "Seo optimized", "Higher Seearch Engines Rankings", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+
+
+      // Section Mixed Layout
+      section.offset-top-98.offset-bottom-41
+        .container
+          h2 Mixed Layout
+          p Mix a lot of predefined helper classes to create exact layout that you need
+        .offset-top-50
+          +call-to-action-type-2("Intense is exactly what you need", cfg.nav.home.href, "btn-lg btn-default", "", "", "Read more", "bg-blue-gray", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+
+      // Section Responsive Order Layout
+      section.offset-top-98.offset-md-top-124
+        .shell
+          h2 Responsive Order Layout
+          p Change display order of your content depending on screen resolution. Resize the page to see the action.
+          .range.range-md-middle.offset-top-34
+            .cell-md-4.cell-md-push-1
+              img.center-block.img-responsive(src="images/moqups/moqup-home-mobile.png" alt="" width=247 height=470)
+            .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.text-md-right
+              .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal
+                .unit-body
+                  h4.text-uppercase.text-bold.offset-md-top-20 Social Integration
+                  p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit-right
+                  span.icon.icon-circle.icon-lg.icon-bordered.icon-picton-blue.mdi.mdi-message-text-outline
+              .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                .unit-body
+                  h4.text-uppercase.text-bold.offset-md-top-20 All images Included
+                  p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit-right
+                  span.icon.icon-circle.icon-lg.icon-bordered.icon-picton-blue.mdi.mdi-image-filter
+              .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                .unit-body
+                  h4.text-uppercase.text-bold.offset-md-top-20 2000+ <br class="veil reveal-md-inline veil-lg"> icons
+                  p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit-right
+                  span.icon.icon-circle.icon-lg.icon-bordered.icon-picton-blue.mdi.mdi-emoticon-happy
+            .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.text-md-left.cell-md-push-1.offset-top-50.offset-md-top-0
+              .unit.unit-spacing-sm.unit-md.unit-md-horizontal
+                .unit-left
+                  span.icon.icon-circle.icon-lg.icon-bordered.icon-picton-blue.mdi.mdi-cellphone-link
+                .unit-body
+                  h4.text-uppercase.text-bold.offset-md-top-20 Responsive & Retina
+                  p.
+                    The information should be not only well-organized and easy to read. thus making the process enjoyable.
+              .unit.unit-spacing-sm.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                .unit-left
+                  span.icon.icon-circle.icon-lg.icon-bordered.icon-picton-blue.mdi.mdi-television-guide
+                .unit-body
+                  h4.text-uppercase.text-bold.offset-md-top-20 Extensive docs
+                  p.
+                    The information should be not only well-organized and easy to read. thus making the process enjoyable.
+              .unit.unit-spacing-sm.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                .unit-left
+                  span.icon.icon-circle.icon-lg.icon-bordered.icon-picton-blue.mdi.mdi-play-box-outline
+                .unit-body
+                  h4.text-uppercase.text-bold.offset-md-top-20 Video backgrounds
+                  p.
+                    The information should be not only well-organized and easy to read. thus making the process enjoyable.
+
+    // Section Bootstrap Grid
+    section.section-bottom-98.section-md-bottom-124
+      .container.grid-demo
+        h1 Bootstrap Grid
+        p Default Bootstrap Grid is also included. Its fully compatible with Flex Grid from our Bootstrap Toolkit.
+        hr.divider.divider-md.bg-mantis
+        .row.offset-top-30
+          each col in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+            .col-md-1.offset-top-30
+              +grid-col('.col-md-1')
+        .row
+          each col in [1, 2, 3, 4, 5, 6]
+            .col-md-2.offset-top-30
+              +grid-col('.col-md-2')
+        .row
+          each col in [1, 2, 3, 4]
+            .col-md-3.offset-top-30
+              +grid-col('.col-md-3')
+        .row
+          each col in [1, 2, 3]
+            .col-md-4.offset-top-30
+              +grid-col('.col-md-4')
+        .row
+          each col in [1, 2]
+            .col-md-6.offset-top-30
+              +grid-col('.col-md-6')
+        .row
+          .col-md-7.offset-top-30
+            +grid-col('.col-md-7')
+          .col-md-5.offset-top-30
+            +grid-col('.col-md-5')
+        .row
+          .col-md-8.offset-top-30
+            +grid-col('.col-md-8')
+          .col-md-4.offset-top-30
+            +grid-col('.col-md-4')
+        .row
+          .col-md-9.offset-top-30
+            +grid-col('.col-md-9')
+          .col-md-3.offset-top-30
+            +grid-col('.col-md-3')
+        .row
+          .col-md-10.offset-top-30
+            +grid-col('.col-md-10')
+          .col-md-2.offset-top-30
+            +grid-col('.col-md-2')
+        .row
+          .col-md-11.offset-top-30
+            +grid-col('.col-md-11')
+          .col-md-1.offset-top-30
+            +grid-col('.col-md-1')
+  // Page Footer
+  include ../sections/_section-footer-default
+
+

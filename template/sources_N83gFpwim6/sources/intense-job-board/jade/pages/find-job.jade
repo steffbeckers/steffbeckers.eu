@@ -1,0 +1,221 @@
+extends  ../_skeleton
+
+block title
+  title= cfg.nav.findJob.title
+
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    // - RD Navbar
+    +rd-navbar-floated(
+    'rd-navbar-dark rd-navbar-dark-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.findJob,
+    cfg.nav
+    )
+    .context-dark
+      +breadcrumb-modern("Find a Job", {
+        0: {
+          "type": "link",
+          "title": cfg.nav.home.title,
+          "href": cfg.nav.home.href
+        },
+        1: {
+          "type": "link",
+          "title": cfg.nav.findJob.title,
+          "href": cfg.nav.findJob.href
+        }
+      }, "images/background-02-1920x870.jpg")
+
+  // Page Contents
+  main.page-content
+
+    // Search Engine
+    section.section-top-34.section-bottom-66.bg-primary
+      .shell
+        form.range.offset-top-10.offset-sm-top-30
+          .cell-lg-10
+            .group-sm.group-top
+              .group-item.element-fullwidth(style="max-width: 324px;")
+                .form-group
+                  label.form-label.rd-input-label(for="keywords-search-form-input") Keywords
+                  input.form-control#keywords-search-form-input(type="text" name="s" autocomplete="off")
+
+              .group-item.element-fullwidth(style="max-width: 324px;")
+                .form-group
+                  label.form-label.rd-input-label(for="location-search-form-input") Location
+                  input.form-control#location-search-form-input(type="text" name="s" autocomplete="off")
+
+              .group-item.element-fullwidth(style="max-width: 324px;")
+                .form-group
+                  select.form-control(id="form-filter-location" name="location" data-minimum-results-for-search="Infinity")
+                    option(value="1") Any Category
+                    option(value="2") New York
+                    option(value="3") Missouri
+                    option(value="4") Los Angeles
+
+              .group-item.element-fullwidth
+                .form-group.offset-top-20.text-lg-left
+                  label.checkbox-inline
+                    input(name="input-group-radio", value="checkbox-1", type="checkbox" checked)
+                    | Freelance
+                  label.checkbox-inline
+                    input(name="input-group-radio", value="checkbox-2", type="checkbox" checked)
+                    | Full Time
+                  label.checkbox-inline
+                    input(name="input-group-radio", value="checkbox-2", type="checkbox" checked)
+                    | Internship
+                  label.checkbox-inline
+                    input(name="input-group-radio", value="checkbox-2", type="checkbox" checked)
+                    | Part Time
+                  label.checkbox-inline
+                    input(name="input-group-radio", value="checkbox-2", type="checkbox" checked)
+                    | Temporary
+
+          .cell-lg-2
+            .reveal-block.reveal-lg-inline-block
+              button(type="button").btn.btn-warning.element-fullwidth(style="max-width: 170px; min-width: 170px; min-height: 50px;") Find Job
+
+    // Table
+    section.section-top-50.section-bottom-124
+      .shell
+        // Bootstrap Table
+        .table-responsive.clearfix
+          table.table.table-striped
+            tr
+              th
+              th.text-regular.text-dark.big Date
+              th.text-regular.text-dark.big Company
+              th.text-regular.text-dark.big Job Vacancy
+              th.text-regular.text-dark.big City
+              th.text-regular.text-dark.big Salary
+              th.text-regular.text-dark.big Employment
+            tr
+              th
+                span.icon.icon-xxs.mdi.mdi-fire.text-danger
+              td 11.05.2016, 4:16pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-01-45x40.png" width="45" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) Head Manager
+              td New York
+              td $6000
+              td Full time
+            tr
+              th
+                span.icon.icon-xxs.mdi.mdi-fire.text-danger
+              td 06.02.2016, 2:54pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-02-50x40.png" width="50" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) Head Manager
+              td San Diego
+              td $4000
+              td Full time
+            tr
+              th
+                span.icon.icon-xxs.mdi.mdi-airplane.text-neon-carrot
+              td 18.01.2016, 2:42pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-03-40x40.png" width="40" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) Front End Developer
+              td Seattle
+              td $6000
+              td Part time
+            tr
+              th
+              td 13.04.2016, 2:54pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-04-76x40.png" width="76" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) JS Developer
+              td Miami
+              td $7000
+              td Part time
+            tr
+              th
+              td 18.05.2016, 4:32pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-01-45x40.png" width="45" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) Web Designer
+              td Philadelphia
+              td $4000
+              td Full time
+            tr
+              th
+                span.icon.icon-xxs.mdi.mdi-fire.text-danger
+              td 18.05.2016, 4:32pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-02-50x40.png" width="45" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) Journalist
+              td Dallas
+              td $2000
+              td Full time
+            tr
+              th
+                span.icon.icon-xxs.mdi.mdi-fire.text-danger
+              td 18.05.2016, 4:32pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-03-40x40.png" width="45" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) Director of Photography
+              td Chicago
+              td $2500
+              td Full time
+            tr
+              th
+                span.icon.icon-xxs.mdi.mdi-airplane.text-neon-carrot
+              td 18.05.2016, 4:32pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-04-76x40.png" width="45" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) Bus Driver
+              td Washington
+              td $3500
+              td Full time
+            tr
+              th
+              td 18.05.2016, 4:32pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-01-45x40.png" width="45" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) Coach
+              td Boston
+              td $3000
+              td Part time
+            tr
+              th
+              td 18.05.2016, 4:32pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-02-50x40.png" width="45" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) Writer
+              td New Orleans
+              td $2000
+              td Part time
+
+        .offset-top-66
+          a.btn.btn-block.btn-primary.center-block(href="#" style="max-width: 188px;") view more
+
+  // Page Footer
+  include ../sections/_section-footer

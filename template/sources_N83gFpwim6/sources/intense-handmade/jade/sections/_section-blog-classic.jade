@@ -1,0 +1,69 @@
+//- Includes
+include ../elements/_ui-post-classic
+include ../elements/_ui-pagination-classic
+
+// Blog Classic
+section
+  +post-classic(cfg.nav.blog.submenu.blogPost.href, "05/14/2015", "Simple Handmade Techniques", "July Mao", "images/user-july-mao-70x70.jpg", [
+    {"title": "Handmade", "href": "#"},
+    {"title": "Scrapbooking", "href": "#"},],
+  {
+    "type": "thumbnail",
+    "thumb": {"src": "images/post-01-770x434.jpg", "width": 770, "height": 434, "alt": ""},
+    "target": {"href": cfg.nav.blog.submenu.blogPost.href}
+  })
+    p Today I would like to talk about some interesting art forms connected with handmade craft. They represent various handmade ideas that you will certainly find beneficial for your handmade craft skills as well as for your free time.
+    p Handmade has always been a field where anyone who has manual skills and desire to develop them can achieve great results. Though handmade craft was not very popular…
+
+  hr.hr.bg-lighter.offset-top-41.offset-sm-top-66
+  .offset-top-41.offset-sm-top-66
+    +post-classic(cfg.nav.blog.submenu.blogPost.href, "05/14/2015", "Handmade Interior Decoration", "John Doe", "images/user-john-doe-70x70.jpg", [
+      {"title": "Handmade", "href": "#"},
+      {"title": "News", "href": "#"}])
+      p In this article you will learn how to decorate your house without spending a single dollar. As handmade decorations become popular, many people think about trying to create something that would add a new element to their house’s interior without being expensive.
+      p If you are looking for a cheap but eye-catching change for your interior, these simple solutions may give your room the additional effect and attract the attention of…
+  hr.hr.bg-lighter.offset-top-41.offset-sm-top-66
+  .offset-top-41.offset-sm-top-66
+    +post-classic(cfg.nav.blog.submenu.blogPost.href, "05/14/2015", "Interesting Handmade Ideas", "Alex Ross", "images/user-alex-ross-70x70.jpg", [
+      {"title": "Handmade", "href": "#"},
+      {"title": "News", "href": "#"},],
+    {
+      "type": "video",
+      "href": "//www.youtube.com/embed/-AhmuMqZB0s",
+      "ratio": "16by9"
+    })
+      p Recently I was browsing the Web looking for interesting handmade ideas. I saw the following video in a blog of a young handmader who showed her latest handmade masterpieces on her own blog. The items she showed were truly amazing and yet incredibly simple.
+      p In this post, I am glad to share this video with you. If you have something to show us and you think our readers will benefit from it, feel free to send us your videos…
+  hr.hr.bg-lighter.offset-top-41.offset-sm-top-66
+  .offset-top-41.offset-sm-top-66.owl-carousel-height-auto
+    +post-classic(cfg.nav.blog.submenu.blogPost.href, "05/14/2015", "10 Reasons to Buy Handmade Gifts", "Andy Cole", "images/user-andy-cole-70x70.jpg", [
+      {"title": "Handmade", "href": "#"},
+      {"title": "Woodwork", "href": "#"},],
+    {
+      "type": "gallery",
+      "images": [
+        {
+          "type": "thumbnail",
+          "thumb": {"src": "images/blog-01-770x434.jpg", "width": 770, "height": 434, "alt": ""},
+          "target": {"src": "images/blog-01-1170x777.jpg", "width": 1170, "height": 777, "alt": ""}
+        },
+        {
+          "type": "thumbnail",
+          "thumb": {"src": "images/blog-02-770x434.jpg", "width": 770, "height": 434, "alt": ""},
+          "target": {"src": "images/blog-02-1170x878.jpg", "width": 1170, "height": 878, "alt": ""}
+        },
+        {
+          "type": "thumbnail",
+          "thumb": {"src": "images/blog-03-770x434.jpg", "width": 770, "height": 434, "alt": ""},
+          "target": {"src": "images/blog-03-1170x774.jpg", "width": 1170, "height": 774, "alt": ""}
+        }
+      ]
+    })
+      p Homemade gifts can be an easy, fun, and affordable way to make a special present for those who you love or respect. Of course, it depends on how much you can spend on such a gift, but it is also possible to make a handmade present with your own hands.
+      p However, today we will speak about 10 reasons to buy a handmade gift, and how to select a proper one for your friend or loved one. First, handmade is an extensive…
+
+  .offset-top-66
+    +pagination-classic(1, [{"href": "#"}, {"href": "#"}, {"href": "#"}], {
+      "title": "Prev",
+      "href": "#"
+    }, {"title": "Next", "href": "#"})

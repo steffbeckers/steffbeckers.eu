@@ -1,0 +1,34 @@
+//- Includes
+include ../elements/_ui-rd-parallax
+
+// Contact Me
+section.context-dark
+  +rd-parallax({
+    "backgroundSpeed": "0.35",
+    "attrType": "media",
+    "src": "images/backgrounds/background-15-1920x1172.jpg",
+    "htmlSpeed": "0"
+  })
+    .shell.section-98.section-sm-110
+      h1 Contact Me
+      hr.divider.bg-mantis
+      .range.range-sm-center.offset-top-0
+        .cell-sm-8
+          // RD Mailform
+          form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+            .range
+              .cell-lg-6
+                .form-group
+                  label.form-label.form-label-outside(for="contact-me-name") Name:
+                  input#contact-me-name.form-control(type="text" name="name" data-constraints="@Required")
+              .cell-lg-6.offset-top-20.offset-lg-top-0
+                .form-group
+                  label.form-label.form-label-outside(for="contact-me-email") E-Mail:
+                  input#contact-me-email.form-control(type="email" name="email" data-constraints="@Required @Email")
+              .cell-lg-12.offset-top-20
+                .form-group
+                  label.form-label.form-label-outside(for="contact-me-message") Message:
+                  textarea#contact-me-message.form-control(name="message" data-constraints="@Required")
+            .group-sm.text-center.text-lg-left.offset-top-30
+              button(type="submit").btn.btn-primary Send
+              button(type="reset").btn.btn-default Reset

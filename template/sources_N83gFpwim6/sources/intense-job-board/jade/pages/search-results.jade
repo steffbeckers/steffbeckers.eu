@@ -1,0 +1,53 @@
+extends  ../_skeleton
+ 
+//- Includes
+include ../elements/_widget-form-search
+
+//- Title
+block title
+  title Search Results
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    // - RD Navbar
+    +rd-navbar-floated(
+    'rd-navbar-dark rd-navbar-dark-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.allPages.submenu.aboutUs,
+    cfg.nav
+    )
+    .context-dark
+      +breadcrumb-modern("Search Results", {
+        0: {
+          "type": "link",
+          "title": cfg.nav.home.title,
+          "href": cfg.nav.home.href
+        },
+        1: {
+          "type": "link",
+          "title": "Search Results",
+          "href": "#"
+        }
+      }, "images/background-02-1920x870.jpg")
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    .shell
+
+      +widget-form-search("input-sm", "form-label-sm", "search-results")
+
+      .rd-search-results.offset-top-66
+
+
+
+  // Page Footers
+  include ../sections/_section-footer

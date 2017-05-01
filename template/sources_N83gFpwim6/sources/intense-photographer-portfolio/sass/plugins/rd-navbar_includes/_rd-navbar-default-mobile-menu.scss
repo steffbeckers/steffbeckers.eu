@@ -1,0 +1,287 @@
+//
+// RD Navbar Default Aside Left
+// --------------------------------------------------
+
+%rd-navbar-default-mobile-menu {
+  .rd-navbar-nav {
+    padding: 0;
+    margin-top: 15px;
+    > li:last-child {
+      margin-bottom: 10px;
+    }
+    li {
+      float: none;
+      + li {
+        margin-top: 5px;
+      }
+      a {
+        @extend %rd-navbar-default-link-font;
+        cursor: pointer;
+        display: block;
+        padding: 8px 30px 8px 15px;
+        span {
+          vertical-align: middle;
+        }
+      }
+      .rd-navbar-label {
+        margin-left: 5px;
+      }
+      .rd-navbar-icon {
+        margin-right: 5px;
+        vertical-align: middle;
+        font-size: 20px;
+      }
+      &.opened {
+        > .rd-navbar-submenu-toggle:before {
+          content: '\f239';
+        }
+      }
+
+      .resp-tab-active {
+        > .resp-arrow:before {
+          content: '\f239';
+        }
+      }
+    }
+  }
+
+  .rd-navbar-submenu {
+    position: relative;
+  }
+
+  .rd-navbar-submenu-toggle, .responsive-tabs .resp-accordion .resp-arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px;
+    font-size: 24px;
+    line-height: 40px;
+    font-family: 'Material Design Icons';
+    transition: .3s all ease;
+    &:before {
+      content: '\f236';
+      display: block;
+      vertical-align: middle;
+    }
+  }
+
+  .rd-navbar-dropdown, .rd-navbar-megamenu {
+    display: none;
+    padding: 5px 0;
+    > li {
+      > a {
+        position: relative;
+        padding-left: 60px;
+        &:before {
+          @extend %rd-navbar-transition;
+          cursor: pointer;
+          position: absolute;
+          color: $gray-dark;
+          top: 0;
+          left: 30px;
+          width: 35px;
+          font-size: 20px;
+          line-height: 40px;
+          font-family: 'Material Design Icons';
+          content: '\f238';
+          display: block;
+          vertical-align: middle;
+        }
+      }
+      .rd-navbar-dropdown > li {
+        > a {
+          padding-left: 65px;
+          &:before {
+            @extend %rd-navbar-transition;
+            cursor: pointer;
+            position: absolute;
+            color: $gray-dark;
+            top: 0;
+            left: 40px;
+            width: 35px;
+            font-size: 20px;
+            line-height: 40px;
+            font-family: 'Material Design Icons';
+            content: '\f238';
+            display: block;
+            vertical-align: middle;
+          }
+        }
+        .rd-navbar-dropdown > li > a {
+          padding-left: 45px;
+        }
+      }
+    }
+  }
+
+  .rd-navbar-megamenu {
+    .responsive-tabs .resp-accordion {
+      padding-left: 25px;
+    }
+    .resp-tab-content ul > li > a {
+      padding-left: 35px;
+    }
+    .resp-tab-content {
+      padding: 0 10px;
+    }
+  }
+
+  .rd-navbar-submenu.opened {
+    > .rd-navbar-dropdown, > .rd-navbar-megamenu {
+      display: block;
+    }
+  }
+
+  .responsive-tabs {
+    .resp-tabs-list{
+      display: none;
+    }
+    ul {
+      padding: 0;
+    }
+    .resp-accordion {
+      padding: 10px 30px 10px 15px;
+      line-height: 20px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .responsive-tabs .resp-accordion {
+    cursor: pointer;
+    display: block;
+    @extend %rd-navbar-default-link-font;
+    span {
+      margin-right: 5px;
+      vertical-align: middle;
+      font-size: 20px;
+    }
+  }
+}
+
+//
+// Dark Theme
+// --------------------------------------------------
+%rd-navbar-default-mobile-menu-dark {
+
+  .rd-navbar-nav {
+    li {
+      a, .responsive-tabs .resp-accordion {
+        color: $white;
+      }
+
+      &:hover {
+        > a {
+          background: $gray-darkest;
+        }
+        > .rd-navbar-submenu-toggle {
+          color: $white;
+        }
+      }
+
+      .responsive-tabs .resp-accordion {
+        .resp-arrow {
+          color: $gray-darker;
+        }
+
+        &.resp-tab-active, &:hover {
+          background: $gray-darkest !important;
+          .resp-arrow {
+            color: $white;
+          }
+        }
+      }
+
+      &.opened, &.active {
+        > a {
+          background: $gray-darkest;
+        }
+        > .rd-navbar-submenu-toggle {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .rd-navbar-dropdown, .rd-navbar-megamenu {
+    > li > a {
+      color: $white;
+    }
+  }
+
+  .rd-navbar-submenu-toggle {
+    color: $gray-darker;
+  }
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+%rd-navbar-default-mobile-menu-light {
+
+  .rd-navbar-nav {
+    li {
+      a, .responsive-tabs .resp-accordion {
+        color: $gray-darker;
+      }
+
+      &:hover {
+        > a {
+          color: $white;
+          background: $brand-primary;
+        }
+        > .rd-navbar-submenu-toggle {
+          color: $white;
+        }
+      }
+
+      .responsive-tabs .resp-accordion {
+        .resp-arrow {
+          color: $gray-darker;
+        }
+
+        &.resp-tab-active, &:hover {
+          background: $gray-darkest !important;
+          color: $white;
+          .resp-arrow {
+            color: $white;
+          }
+        }
+      }
+      .rd-navbar-dropdown, .rd-navbar-megamenu {
+        > li {
+          > a:hover {
+            color: $brand-primary;
+            background: transparent;
+            &:before {
+              @include transform(translateX(4px));
+            }
+          }
+        }
+      }
+      &.opened, &.active {
+        > a {
+          color: $white;
+          background: $brand-primary;
+        }
+        > .rd-navbar-submenu-toggle {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .rd-navbar-dropdown, .rd-navbar-megamenu {
+    > li > a {
+      color: $gray-darkest;
+    }
+    li > a > .rd-navbar-icon {
+      color: $gray;
+    }
+  }
+
+  .rd-navbar-submenu-toggle {
+    color: $gray-dark;
+  }
+
+}

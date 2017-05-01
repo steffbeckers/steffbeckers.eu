@@ -1,0 +1,12 @@
+//- boxIcon - object of Box Icon
+
+mixin box-icon(boxIcon)
+  // Box Icon
+  .box-icon
+    span.icon(class= boxIcon.iconStyle)
+
+    div(class= boxIcon.titleOffset)
+      div(class= boxIcon.titleStyle)= boxIcon.titleText
+
+    div(class= boxIcon.descOffset)
+      p(class= boxIcon.descStyle)= boxIcon.descText

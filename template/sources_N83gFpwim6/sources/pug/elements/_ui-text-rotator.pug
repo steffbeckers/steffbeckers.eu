@@ -1,0 +1,6 @@
+//- amountList - array of Text Rotator list
+//- textRotator - Text Rotator object
+mixin text-rotator(list, textRotator)
+  // Text Rotator
+  span.text-rotator(data-text-class= textRotator.dataTextClass data-enable= textRotator.dataEnable data-words= list  data-rotate-interval= textRotator.dataRotateInterval data-rotate-animation= textRotator.dataRotateAnimation)
+    span.rotate-area

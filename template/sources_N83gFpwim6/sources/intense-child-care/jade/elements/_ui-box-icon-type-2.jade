@@ -1,0 +1,12 @@
+//- icon - icon class
+//- offsetTop - margin-top in heading
+//- title - box title
+//- desc - description of box
+mixin box-icon-type-2(icon, title, clTitle, desc)
+  // Icon Box Type 2
+  .unit.unit-md.unit-md-horizontal.text-md-left
+    .unit-left
+      span.icon(class= icon)
+    .unit-body
+      h4.text-bold(class= clTitle)= title
+      p= desc

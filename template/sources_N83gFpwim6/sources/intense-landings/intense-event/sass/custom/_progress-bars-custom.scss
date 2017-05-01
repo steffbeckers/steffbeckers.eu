@@ -1,0 +1,91 @@
+//
+// Custom Progress Bars
+// --------------------------------------------------
+
+
+// Linear Progress Bars
+// --------------------------------------------------
+
+.progress-linear {
+  position: relative;
+  height: $progress-linear-height;
+
+  .progress-bar-linear-wrap, .progress-bar-linear {
+    height: 100%;
+    border-radius: $progress-bar-linear-border-radius;
+  }
+
+  .progress-bar-linear-wrap {
+    background: $progress-bar-linear-empty-background;
+  }
+
+  .progress-bar-linear {
+    width: 0;
+    @include transition(.5s all ease);
+  }
+
+  .progress-value{
+    &:after{
+      content:"%";
+    }
+  }
+}
+
+// Circle Progress Bars
+// --------------------------------------------------
+
+.progress-bar-circle {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  line-height: 1.2;
+
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $progress-bar-circle-width;
+    height: $progress-bar-circle-height;
+    content: '';
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid $gray-light;
+  }
+
+  canvas {
+    vertical-align: middle;
+  }
+
+  span {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    font-weight: $progress-bar-circle-weight;
+    font-size: $progress-bar-circle-size;
+    line-height: $progress-bar-circle-line-height;
+    transform: translate(-50%, -50%);
+
+    &:after {
+      content: $progress-bar-circle-icon;
+    }
+  }
+}
+
+// Change bootstrap progress
+// --------------------------------------------------
+
+.progress {
+  height: $progess-height;
+}
+
+.progress-bar {
+  font-weight: $progress-font-weight;
+  font-size: $progress-font-size;
+  line-height: $progess-height;
+  @include box-shadow(none);
+}
+
+// Add one more variation
+.progress-bar-dark {
+  @include progress-bar-variant($progress-bar-dark-bg);
+}

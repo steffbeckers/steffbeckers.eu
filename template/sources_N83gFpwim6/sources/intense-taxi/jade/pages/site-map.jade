@@ -1,0 +1,132 @@
+extends  ../_skeleton
+
+block title
+  title Site Map
+
+block page
+  // Page Header
+  header.page-header.slider-menu-position
+    +rd-navbar-default({
+      "style": "",
+      "logo": cfg.brand.logo,
+      "logoFixed": cfg.brand.logoSmall,
+      "activeLink": 8,
+      "attr": {
+        "data-layout": "rd-navbar-fixed",
+        "data-sm-layout": "rd-navbar-fixed",
+        "data-md-layout": "rd-navbar-fullwidth",
+        "data-lg-layout": "rd-navbar-static"
+      }
+    })
+
+    +breadcrumb("Site Map", {
+      0: {
+        "type": "link",
+        "title": cfg.nav.home.title,
+        "href": cfg.nav.home.href
+      },
+      1: {
+        "type": "link",
+        "title": cfg.nav.pages.title,
+        "href": cfg.nav.pages.href
+      },
+      2: {
+        "type": "link",
+        "title": "Site Map",
+        "href": "site-map.html"
+      }
+    }, "images/backgrounds/background-02-1920x900.jpg")
+
+  // Page Content
+  main.page-content.section-75.section-md-top-90.section-md-bottom-110
+
+    // Site Map
+    section
+      .shell
+        h1.text-spacing-inverse-50 Site Map
+
+        .range.range-xs-center.text-left.offset-top-47
+          .cell-xs-5.cell-sm-3.cell-lg-2.cell-md-preffix-1
+            // List Marked
+            ul.list-marked.list-marked-mine-shaft.text-spacing-inverce-25.font-accent.text-bold.p
+              li
+                a.text-mine-shaft(href="index.html") Home
+              li.offset-top-15
+                a.text-mine-shaft(href="about.html") About
+
+                ul.list-marked.list-marked-silver-chalice.font-accent.text-bold.text-extra-small.offset-top-10
+                  li
+                    a.text-silver-chalice(href="history.html") History
+                  li.offset-top-10
+                    a.text-silver-chalice(href="team.html") Team
+                  li.offset-top-10
+                    a.text-silver-chalice(href="single-member.html") Team member
+                  li.offset-top-10
+                    a.text-silver-chalice(href="testimonials.html") Testimonials
+                  li.offset-top-10
+                    a.text-silver-chalice(href="faq.html") FAQ
+
+              li.offset-top-15
+                a.text-mine-shaft(href="rates.html") Rates
+
+              li.offset-top-15
+                a.text-mine-shaft(href="reservations.html") Reservation
+
+              li.offset-top-15
+                a.text-mine-shaft(href="fleet.html") Fleet
+
+              li.offset-top-15
+                a.text-mine-shaft(href="blog-classic-left-sidebar.html") News
+
+                ul.list-marked.list-marked-silver-chalice.font-accent.text-bold.text-extra-small.offset-top-10
+                  li
+                    a.text-silver-chalice(href="blog-classic-left-sidebar.html") Classic blog
+                  li.offset-top-10
+                    a.text-silver-chalice(href="blog-grid-3-columns.html") Grid blog
+                  li.offset-top-10
+                    a.text-silver-chalice(href="blog-masonry-3-columns.html") Masonry blog
+                  li.offset-top-10
+                    a.text-silver-chalice(href="blog-modern-left-side.html") Modern blog
+                  li.offset-top-10
+                    a.text-silver-chalice(href="blog-single-post.html") Single post
+
+          .cell-xs-5.cell-sm-3.cell-lg-2.cell-lg-preffix-1.offset-top-15.offset-xs-top-0
+            // List Marked
+            ul.list-marked.list-marked-mine-shaft.text-spacing-inverce-25.font-accent.text-bold.p
+              li
+                a.text-mine-shaft(href="contacts.html") Contacts
+              li.offset-top-15
+                a.text-mine-shaft(href="#.html") Pages
+
+                ul.list-marked.list-marked-silver-chalice.font-accent.text-bold.text-extra-small.offset-top-10
+                  li
+                    a.text-silver-chalice(href="Gallery.html") Gallery
+                  li.offset-top-10
+                    a.text-silver-chalice(href="services.html") Services
+                  li.offset-top-10
+                    a.text-silver-chalice(href="careers.html") Careers
+                  li.offset-top-10
+                    a.text-silver-chalice(href="404.html") 404
+                  li.offset-top-10
+                    a.text-silver-chalice(href="503.html") 503
+                  li.offset-top-10
+                    a.text-silver-chalice(href="maintenance.html") Maintenance
+                  li.offset-top-10
+                    a.text-silver-chalice(href="coming-soon.html") Coming soon
+                  li.offset-top-10
+                    a.text-silver-chalice(href="login.html") Login page
+                  li.offset-top-10
+                    a.text-silver-chalice(href="register.html") Register page
+                  li.offset-top-10
+                    a.text-silver-chalice(href="search-results.html") Search results
+                  li.offset-top-10
+                    a.text-silver-chalice(href="site-map.html") Site map
+                  li.offset-top-10
+                    a.text-silver-chalice(href="privacy.html") Privacy policy
+
+        .offset-top-44
+          !{cfg.brand.svgDivider}
+
+
+  // Page Footer
+  include ../sections/_footer-default

@@ -1,0 +1,365 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-carousel-gallery-classic
+include ../elements/_ui-rd-map
+include ../elements/_ui-table-bootstrap
+
+//-Title
+block title
+  title Single property
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head
+
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.catalog,
+    cfg.nav
+    )
+
+    //- Section header
+    section.rd-parallax.context-dark
+      div.rd-parallax-layer(data-speed="0.2" data-type="media" data-url="images/bg-header-1920x362.jpg")
+      div.rd-parallax-layer(data-speed="0" data-type="html")
+        .shell.section-top-34.section-sm-top-98.section-bottom-34
+          div
+            h1.text-bold Single Property Page
+          ul.list-inline.list-inline-dashed.p.text-light.breadcrumb-modern.offset-top-10.offset-sm-top-66
+            li.active
+              a(href="./") Home
+            li
+              a(href="catalog.html") Catalog
+            li  Single Property Page
+
+  // Page Contents
+  main.page-content
+
+    //Section The Presidio Residences
+    section.section-98.section-sm-110
+      .shell
+        h2.text-bold The Presidio Residences
+        hr.divider.bg-saffron
+        .offset-sm-top-66
+          .range
+            .cell-md-7.cell-lg-8
+              +carousel-gallery-classic([
+                {
+                  "type": "thumbnail",
+                  "thumb": {
+                    "src": "images/single-property-page-01-770x510.jpg",
+                    "width": 770,
+                    "height": 510,
+                    "alt": ""
+                  },
+                  "target": {
+                    "src": "images/single-property-page-01-770x510.jpg",
+                    "width": 770,
+                    "height": 510,
+                    "alt": ""
+                  }
+                },
+                {
+                  "type": "thumbnail",
+                  "thumb": {
+                    "src": "images/single-property-page-02-770x510.jpg",
+                    "width": 770,
+                    "height": 510,
+                    "alt": ""
+                  },
+                  "target": {
+                    "src": "images/single-property-page-02-770x510.jpg",
+                    "width": 770,
+                    "height": 510,
+                    "alt": ""
+                  }
+                },
+                {
+                  "type": "thumbnail",
+                  "thumb": {
+                    "src": "images/single-property-page-03-770x510.jpg",
+                    "width": 770,
+                    "height": 510,
+                    "alt": ""
+                  },
+                  "target": {
+                    "src": "images/single-property-page-03-770x510.jpg",
+                    "width": 770,
+                    "height": 510,
+                    "alt": ""
+                  }
+                },
+                {
+                  "type": "thumbnail",
+                  "thumb": {
+                    "src": "images/single-property-page-05-770x510.jpg",
+                    "width": 770,
+                    "height": 510,
+                    "alt": ""
+                  },
+                  "target": {
+                    "src": "images/single-property-page-05-770x510.jpg",
+                    "width": 770,
+                    "height": 510,
+                    "alt": ""
+                  }
+                },
+                {
+                  "type": "thumbnail",
+                  "thumb": {
+                    "src": "images/single-property-page-06-770x510.jpg",
+                    "width": 770,
+                    "height": 510,
+                    "alt": ""
+                  },
+                  "target": {
+                    "src": "images/single-property-page-06-770x510.jpg",
+                    "width": 770,
+                    "height": 510,
+                    "alt": ""
+                  }
+                },
+                {
+                  "type": "thumbnail",
+                  "thumb": {
+                    "src": "images/single-property-page-07-770x510.jpg",
+                    "width": 770,
+                    "height": 510,
+                    "alt": ""
+                  },
+                  "target": {
+                    "src": "images/single-property-page-07-770x510.jpg",
+                    "width": 770,
+                    "height": 510,
+                    "alt": ""
+                  }
+                },
+                {
+                  "type": "thumbnail",
+                  "thumb": {
+                    "src": "images/single-property-page-08-770x510.jpg",
+                    "width": 770,
+                    "height": 510,
+                    "alt": ""
+                  },
+                  "target": {
+                    "src": "images/single-property-page-08-770x510.jpg",
+                    "width": 770,
+                    "height": 510,
+                    "alt": ""
+                  }
+                }
+              ])
+
+              .text-sm-left.offset-top-50
+                h5.text-bold Description
+                p The Presidio Residences offer a unique opportunity to live in a national park setting and enjoy quiet neighborhoods, convenient location, beautiful open spaces, and outstanding recreational amenities that you won’t find anywhere else in the area.
+                p This property includes a wide variety of facilities that can make your dwelling in the picturesque area of Southern Los Angeles very comfortable. There is everything modern citizen may need, even the most up-to-date technologies that are organically integrated with all the communications of the house. If you are looking for a calm place to live, the Presidential Residences have something to offer you. With effective planning and additional amenities available as a part of the property, these apartments can give you an unprecedented level of comfort with a quick access to the airport, train station, and the city center.
+              .offset-top-30
+                +table-bootstrap([
+                  ['Property details', ''],
+                  ['Features', 'Lawn, Sprinkler System, Marble Floors'],
+                  ['MLS Listing ID','12345678'],
+                  ['Year Built','1868' ],
+                  ['Lot Size', '5.45'],
+                  ['Parking Type','Garage - Attached'],
+                  ['Room Count', '6'],
+                  ['Roof Type','Tile' ],
+                  ['View Type','Mountain' ],
+                  ['Exterior Type','Stucco' ]
+                ], 'table-striped')
+
+            .cell-md-5.cell-lg-4.text-md-left.inset-md-left-30.offset-top-66.offset-sm-top-0
+              .range
+                .cell-xs-12.offset-top-50.cell-md-push-4
+                  .unit.unit-md.unit-md-horizontal
+                    .unit-left
+                      img.img-responsive.reveal-inline-block(src="images/users/user-shirley-vasquez-120x120.jpg" width=120 height=120 alt="")
+                    .unit-body
+                      div
+                        h5.text-primary.text-bold Shirley Vasquez
+                      .offset-top-10
+                        address.contact-info.text-md-left
+                          ul.list-unstyled.p
+                            li.reveal-block
+                              span.icon.icon-xxs.mdi.mdi-phone.text-middle
+                              = " "
+                              a.reveal-inline-block.text-middle(href="callto:1-800-7650-986") 1-800-7650-986
+                            li.reveal-block
+                              span.icon.icon-xxs.mdi.mdi-email-open.text-middle
+                              = " "
+                              a.reveal-inline-block.text-middle(href="mailto:russell@demolink.org") shirley@demolink.org
+
+                .cell-xs-12.cell-md-push-1.offset-top-41.offset-md-top-0
+                  p
+                    span.text-middle.mdi-calendar-today.mdi.text-light.icon.icon-xxs
+                    = " "
+                    span April 12, 2016
+                  .offset-top-20.offset-md-top-50
+                    ul.list-inline.list-inline-dotted.text-dark
+                      li 2200 sq ft
+                      li 4 bedrooms
+                      li 3 bathrooms
+                  .offset-top-20.offset-md-top-50
+                    h5.text-bold  $2699.00/mon
+
+                .cell-xs-12.cell-md-push-2.offset-top-41.offset-md-top-20
+                  a(href="#").btn.btn-primary contact an agent
+                  .offset-top-10
+                    a(href="#").btn.btn-info request a visit
+
+                .cell-xs-12.offset-top-66.cell-md-push-3
+                  +rd-map({
+                  "zoom": "14",
+                  "dataX": "-73.9874068",
+                  "dataY": "40.643180",
+                  "dataStyles": [{
+                    "featureType": "administrative",
+                    "elementType": "labels.text.fill",
+                    "stylers": [{"color": "#444444"}]
+                  }, {
+                    "featureType": "administrative.locality",
+                    "elementType": "labels",
+                    "stylers": [{"visibility": "on"}]
+                  }, {
+                    "featureType": "landscape",
+                    "elementType": "all",
+                    "stylers": [{"color": "#f2f2f2"}, {"visibility": "simplified"}]
+                  }, {
+                    "featureType": "poi",
+                    "elementType": "all",
+                    "stylers": [{"visibility": "on"}]
+                  }, {
+                    "featureType": "poi",
+                    "elementType": "geometry",
+                    "stylers": [{"visibility": "simplified"}, {"saturation": "-65"}, {"lightness": "45"}, {"gamma": "1.78"}]
+                  }, {
+                    "featureType": "poi",
+                    "elementType": "labels",
+                    "stylers": [{"visibility": "off"}]
+                  }, {
+                    "featureType": "poi",
+                    "elementType": "labels.icon",
+                    "stylers": [{"visibility": "off"}]
+                  }, {
+                    "featureType": "road",
+                    "elementType": "all",
+                    "stylers": [{"saturation": -100}, {"lightness": 45}]
+                  }, {
+                    "featureType": "road",
+                    "elementType": "labels",
+                    "stylers": [{"visibility": "on"}]
+                  }, {
+                    "featureType": "road",
+                    "elementType": "labels.icon",
+                    "stylers": [{"visibility": "off"}]
+                  }, {
+                    "featureType": "road.highway",
+                    "elementType": "all",
+                    "stylers": [{"visibility": "simplified"}]
+                  }, {
+                    "featureType": "road.highway",
+                    "elementType": "labels.icon",
+                    "stylers": [{"visibility": "off"}]
+                  }, {
+                    "featureType": "road.arterial",
+                    "elementType": "labels.icon",
+                    "stylers": [{"visibility": "off"}]
+                  }, {
+                    "featureType": "transit.line",
+                    "elementType": "geometry",
+                    "stylers": [{"saturation": "-33"}, {"lightness": "22"}, {"gamma": "2.08"}]
+                  }, {
+                    "featureType": "transit.station.airport",
+                    "elementType": "geometry",
+                    "stylers": [{"gamma": "2.08"}, {"hue": "#ffa200"}]
+                  }, {
+                    "featureType": "transit.station.airport",
+                    "elementType": "labels",
+                    "stylers": [{"visibility": "off"}]
+                  }, {
+                    "featureType": "transit.station.rail",
+                    "elementType": "labels.text",
+                    "stylers": [{"visibility": "off"}]
+                  }, {
+                    "featureType": "transit.station.rail",
+                    "elementType": "labels.icon",
+                    "stylers": [{"visibility": "simplified"}, {"saturation": "-55"}, {"lightness": "-2"}, {"gamma": "1.88"}, {"hue": "#ffab00"}]
+                  }, {
+                    "featureType": "water",
+                    "elementType": "all",
+                    "stylers": [{"color": "#bbd9e5"}, {"visibility": "simplified"}]
+                  }]
+                },[{
+                  "dataX": "-73.9874068",
+                  "dataY": "40.643180",
+                  "markerDesc": "9870 St Vincent Place, Glasgow, DC 45 Fr 45"
+                }])
+
+
+
+
+
+    //Section Similar Properties
+    section.section-bottom-98.section-sm-bottom-110
+      .shell
+        h2.text-bold Similar Properties
+        hr.divider.bg-saffron
+        .offset-sm-top-66
+          .range.range-xs-center
+            .cell-sm-4
+              img.img-responsive.reveal-inline-block(src="images/home-img-11-370x250.jpg" width=370 height=250 alt="")
+              .text-sm-left.offset-top-24
+                div
+                  h5.text-bold.text-primary
+                    a(href="#") Scandia Vista Apartments
+                h6.offset-top-10  $1199.00/mon
+                ul.list-inline.list-inline-dotted.text-dark
+                  li 1200 sq ft
+                  li 4 bedrooms
+                  li 2 bathrooms
+                div
+                  p Experience the ultimate comfort in one of our most renowned apartments with well thought-out planning, perfect furniture and cozy atmosphere.
+
+            .cell-sm-4.offset-top-66.offset-sm-top-0
+              img.img-responsive.reveal-inline-block(src="images/home-img-08-370x250.jpg" width=370 height=250 alt="")
+              .text-sm-left.offset-top-24
+                div
+                  h5.text-bold.text-primary
+                    a(href="#") Alchemy by Alta
+                h6.offset-top-10  $1199.00/mon
+                ul.list-inline.list-inline-dotted.text-dark
+                  li 1200 sq ft
+                  li 4 bedrooms
+                  li 2 bathrooms
+                div
+                  p One month FREE on select apartment homes for a limited time.
+
+            .cell-sm-4.offset-top-66.offset-sm-top-0
+              img.img-responsive.reveal-inline-block(src="images/home-img-09-370x250.jpg" width=370 height=250 alt="")
+              .text-sm-left.offset-top-24
+                div
+                  h5.text-bold.text-primary
+                    a(href="#") Avalon at Mission Bay
+                h6.offset-top-10  $1595.00/mon
+                ul.list-inline.list-inline-dotted.text-dark
+                  li 1200 sq ft
+                  li 2 bedrooms
+                  li 2 bathrooms
+                div
+                  p Avalon at Mission Bay located in San Francisco near the San Francisco Caltrain Station offers thoughtfully designed studio, 1, 2 and 3 bedroom apartments and town homes.
+
+
+  // Page Footer
+  include ../sections/_section-footer-default

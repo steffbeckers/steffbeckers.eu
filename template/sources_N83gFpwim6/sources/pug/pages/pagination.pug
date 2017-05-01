@@ -1,0 +1,92 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-pagination-classic
+include ../elements/_ui-pagination-bootstrap
+include ../elements/_ui-pager-bootstrap
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.pagination.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.pagination.title,
+  "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.pagination.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.pagination.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.pagination.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-110
+
+    // Section Classic Pagination
+    section
+      .shell
+        h1 Classic Pagination
+        hr.divider.bg-mantis
+        .offset-sm-top-66
+          +pagination-classic(1, [{"href": "#"}, {"href": "#"}, {"href": "#"}, {"href": "#"}], {"title": "Prev", "href": "#"}, {"title": "Next", "href": "#"})
+
+    // Section Bootstrap Pagination
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h1 Bootstrap Pagination
+        hr.divider.bg-mantis
+        .offset-sm-top-66
+          +pagination-bootstrap('pagination-sm', 1, [{"href": "#"}, {"href": "#"}, {"href": "#"}, {"href": "#"}], {"href": "#"}, {"href": "#"})
+        .offset-top-20.offset-sm-top-34
+          +pagination-bootstrap(null, 1, [{"href": "#"}, {"href": "#"}, {"href": "#"}, {"href": "#"}], {"href": "#"}, {"href": "#"})
+        .offset-top-20.offset-sm-top-34
+          +pagination-bootstrap('pagination-lg', 1, [{"href": "#"}, {"href": "#"}, {"href": "#"}, {"href": "#"}], {"href": "#"}, {"href": "#"})
+
+    // Section Bootstrap Pager
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h1 Bootstrap Pager
+        hr.divider.bg-mantis
+        .offset-sm-top-66
+          +pager-bootstrap('pager-sm',
+          {"title": "Older", "href": "#", "icon": "mdi mdi-arrow-left"},
+          {"title": "Newer", "href": "#", "icon": "mdi mdi-arrow-right"})
+        .offset-top-20.offset-sm-top-34
+          +pager-bootstrap(null,
+          {"title": "Older", "href": "#", "icon": "mdi mdi-arrow-left"},
+          {"title": "Newer", "href": "#", "icon": "mdi mdi-arrow-right"})
+        .offset-top-20.offset-sm-top-34
+          +pager-bootstrap('pager-lg',
+          {"title": "Older", "href": "#", "icon": "mdi mdi-arrow-left"},
+          {"title": "Newer", "href": "#", "icon": "mdi mdi-arrow-right"})
+
+
+  // Page Footers
+  include ../sections/_section-footer-default

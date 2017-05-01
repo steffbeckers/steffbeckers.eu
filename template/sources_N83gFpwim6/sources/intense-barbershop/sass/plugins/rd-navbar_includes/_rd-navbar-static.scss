@@ -1,0 +1,108 @@
+/*
+* Static Layout
+*/
+
+.rd-navbar-static {
+  display: block;
+  background-color: transparent;
+
+  // RD Navbar inner
+  .rd-navbar-inner {
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(space-between);
+    max-width: 1200px;
+    padding: 25px 15px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .33s all ease;
+  }
+
+  // RD Navbar brand
+  .rd-navbar-brand {
+    img {
+      width: 154px;
+      height: auto;
+    }
+  }
+
+  // RD Navbar nav wrap
+  .rd-navbar-nav-wrap {
+    width: 100%;
+    text-align: center;
+  }
+
+  // RD Navbar Nav
+  .rd-navbar-nav {
+    font-size: 0;
+    line-height: 0;
+
+    > li {
+      > a {
+        @include link($white, $brand-primary);
+      }
+
+      &.focus > a,
+      &.opened > a,
+      &.active > a {
+        color: $brand-primary;
+      }
+    }
+
+    > li + li {
+      margin-left: 40px;
+    }
+
+    > li > .rd-navbar-dropdown {
+      margin-top: 25px;
+      background: $rd-navbar-dropdown-background;
+    }
+  }
+
+  .rd-navbar-nav {
+    .rd-navbar-submenu {
+      > .rd-navbar-dropdown,
+      > .rd-navbar-megamenu {
+        font-size: $font-size-base;
+        border: 1px solid darken($white, 5%);
+        border-top: 0;
+      }
+    }
+  }
+
+  .booking-control {
+    .btn:hover {
+      color: $gray-base;
+      background: $white;
+      border-color: $white;
+    }
+  }
+
+  // States
+  &.rd-navbar--is-stuck,
+  &.rd-navbar--is-clone {
+    background: $gray-dark;
+    @include box-shadow(0 2px 10px 1px rgba($gray-base, .2));
+
+    .rd-navbar-inner {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    .rd-navbar-nav > li .rd-navbar-dropdown,
+    .rd-navbar-nav > li .rd-navbar-megamenu {
+      margin-top: 22px;
+    }
+  }
+}
+
+.rd-navbar-static-linked {
+  .rd-navbar-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+}

@@ -1,0 +1,8 @@
+//- parallax - object of RD Parallax
+
+mixin rd-parallax(parallax)
+  // RD Parallax
+  .rd-parallax(data-on= parallax.on data-md-on= parallax.MdOn)
+    .rd-parallax-layer(data-speed= parallax.firstLayerSpeed data-type= parallax.firstLayerType data-url= parallax.src)
+    .rd-parallax-layer(data-speed= parallax.secondLayerSpeed data-type= parallax.secondLayerType data-md-fade= parallax.fade)
+      block

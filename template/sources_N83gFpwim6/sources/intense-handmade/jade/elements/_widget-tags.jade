@@ -1,0 +1,9 @@
+//- Tags Widget
+//- aClass - Tag element class name
+//- tags - array of {link} object
+
+mixin widget-tags(aClass, tags)
+  if tags
+    .group-xs
+      each tag in tags
+        a.btn-ellipse.text-ubold(class=aClass, href=tag.href)= tag.title

@@ -1,0 +1,68 @@
+extends  ../_skeleton
+
+block title
+  title Search results
+
+block page
+  // Page Header
+  header.page-header.slider-menu-position
+    +rd-navbar-default({
+      "style": "",
+      "logo": cfg.brand.logo,
+      "logoFixed": cfg.brand.logoSmall,
+      "activeLink": 8,
+      "attr": {
+        "data-layout": "rd-navbar-fixed",
+        "data-sm-layout": "rd-navbar-fixed",
+        "data-md-layout": "rd-navbar-fullwidth",
+        "data-lg-layout": "rd-navbar-static"
+      }
+    })
+
+    +breadcrumb("Search Results", {
+      0: {
+        "type": "link",
+        "title": cfg.nav.home.title,
+        "href": cfg.nav.home.href
+      },
+      1: {
+        "type": "link",
+        "title": cfg.nav.pages.title,
+        "href": cfg.nav.pages.href
+      },
+      2: {
+        "type": "link",
+        "title": "Search Results",
+        "href": "Search Results.html"
+      }
+    }, "images/backgrounds/background-02-1920x900.jpg")
+
+  // Page Content
+  main.page-contentt.section-75.section-md-top-90.section-md-bottom-55
+
+    // Search Results
+    section
+      .shell
+        .range.range-xs-center
+          .cell-sm-10.cell-lg-8
+            h1 Search Results
+
+
+            .offset-top-50
+              // RD Search Form
+              form.form-search.rd-search.rd-mailform-inline(action='search-results.html', method='GET')
+                .group
+                  .form-group.text-middle
+                    input#search-results.form-search-input.form-control(type='text', name='s', autocomplete='off')
+                  .reveal-block.reveal-xs-inline-block.offset-top-0
+                    .form-search-submit
+                      button.btn.btn-primary(type='submit') search
+
+        .offset-top-35
+          !{cfg.brand.svgDivider}
+
+
+        .rd-search-results.offset-top-50
+
+  // Page Footer
+  include ../sections/_footer-default

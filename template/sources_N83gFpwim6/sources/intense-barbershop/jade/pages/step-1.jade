@@ -1,0 +1,86 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-card-service-option
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Step 1'
+  - var bodyClass = 'one-screen-page'
+
+block title
+  title Step 1
+
+block menu
+  .page-header.page-header-perspective
+    .page-header-left
+      a.brand(href='index.html')
+        +png('logo-default-199x36')
+
+    .page-header-center
+      .step-progress
+        .step-progress-top
+          span.step-progress-number 1
+          span of
+          span.step-progress-number 3
+        .step-progress-bottom
+          p.step-progress-text STEPs
+
+    .page-header-right
+      if (menuIncludeButton)
+        .booking-control
+          a.btn.btn-xs.btn-circle.btn-primary(href=appointLink) BOOK NOW
+
+      #perspective-open-menu(data-custom-toggle='.perspective-menu-toggle', data-custom-toggle-hide-on-blur='true')
+        span.perspective-menu-text Menu
+        button.perspective-menu-toggle
+          span
+
+  .custom-progress
+    .custom-progress-body(style='width: 0;')
+
+
+block header
+  include ../sections/_header-default
+
+block page
+  //- Page Content
+  section.section-xl.bg-periglacial-blue.one-screen-page-content.text-center
+    .shell
+      h2 CHOOSE a SERVICE
+      .p.text-width-medium
+        p.big On this page you can select a service that you need. Here are presented only the most popular barbering services we provide. If you require a personalized barbering service, please contact us.
+
+      .range.range-50
+        .cell-xs-6.cell-md-3
+          +card-service-option({
+            img: 'icon-service-1-70x62',
+            title: 'TRADITIONAL HAIRCUTS',
+            text: 'One of the most popular services our barbers provide'
+          })
+
+        .cell-xs-6.cell-md-3
+          +card-service-option({
+            img: 'icon-service-2-70x62',
+            title: 'SHAVES',
+            text: 'Our shaving services will make you look really handsome'
+          })
+
+        .cell-xs-6.cell-md-3
+          +card-service-option({
+            img: 'icon-service-3-70x62',
+            title: 'beard trim',
+            text: 'Well-trimmed beard is a must-have element of every men’s image'
+          })
+
+        .cell-xs-6.cell-md-3
+          +card-service-option({
+            img: 'icon-service-4-70x62',
+            title: 'Mustache trim',
+            text: 'Mustaches also need to be trimmed regularly'
+          })
+  ='\n'
+
+
+  // Page Footer
+  include ../sections/_footer-default

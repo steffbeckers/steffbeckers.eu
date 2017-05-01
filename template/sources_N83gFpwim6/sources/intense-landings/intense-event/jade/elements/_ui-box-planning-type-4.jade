@@ -1,0 +1,22 @@
+//- title - box title
+//- price - box-price
+//- period - box period
+//- state - active/not
+//- bgBoxHeader - box header background
+//- btnText - button text
+mixin box-planning-4(title, price, period, btnText, bgBoxHeader, state)
+  // Planning Box type 4
+  .box-planning.box-planning-type-4(class=(state != null ? 'active' : ''))
+    .box-planning-header(class= bgBoxHeader)
+      div.box-planning-label
+        p.big.text-bold Most Popular
+      h3= title
+      p.h2.plan-price
+        sup.big $
+        = price
+        sub.text-white
+          = "/"
+          = period
+    .box-planning-body
+      block
+      a.btn.btn-block.btn-default.btn-rect(href= cfg.nav.pages.submenu.register.href)= btnText

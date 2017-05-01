@@ -1,0 +1,28 @@
+//
+// Offsets
+// --------------------------------------------------
+
+
+// Insets
+// -------------------------
+
+$insets: (0, 15px, 30px, 70px);
+
+html .page{
+  @include indent-responsive(inset, left, padding-left, $medias, $insets);
+  @include indent-responsive(inset, right, padding-right, $medias, $insets);
+}
+
+// Responsive
+// -------------------------
+
+$offsets: (-35px, 0, 6px, 10px, 15px, 20px, 30px, 35px, 40px, 45px, 50px, 60px, 140px, 165px);
+
+html .page{
+  @include indent-responsive(offset, top, margin-top, $medias, $offsets);
+}
+
+html .page{
+  @include indent-responsive(offset-m, left, margin-left, $medias, $offsets);
+  @include indent-responsive(offset-m, right, margin-right, $medias, $offsets);
+}

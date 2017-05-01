@@ -1,0 +1,128 @@
+//
+// RD Navbar Default Cart
+// --------------------------------------------------
+%rd-navbar-default-cart{
+  .rd-navbar-list-products {
+    padding-left: 0;
+    max-height: calc(100% - 120px);
+    overflow-y: auto;
+    padding-bottom: 10px;
+    li {
+      position: relative;
+      padding: 0 15px 15px 0;
+      @include clearfix;
+    }
+  }
+
+  .rd-navbar-product-image {
+    float: left;
+    margin-right: 10px;
+    border-radius: $border-radius-small;
+  }
+
+  .rd-navbar-product-caption {
+    overflow: hidden;
+  }
+
+  .rd-navbar-product-remove {
+    position: absolute;
+    right: 0;
+    top: 3px;
+    font-size: 12px;
+  }
+
+  .rd-navbar-product-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .rd-navbar-product-price {
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .rd-navbar-cart-total {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .rd-navbar-cart-total-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-right: 75px;
+    margin-bottom: 24px;
+  }
+
+  .rd-navbar-cart-total-price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+  }
+}
+
+//
+// Dark Theme
+// --------------------------------------------------
+%rd-navbar-default-cart-dark{
+  .rd-navbar-product-remove {
+    color: $gray-dark;
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .rd-navbar-list-products {
+    border-bottom: 1px solid $gray-darkest;
+  }
+
+  .rd-navbar-product-image {
+    background: #F5F5F5;
+  }
+
+  .rd-navbar-product-price {
+    color: $gray-dark;
+  }
+
+  .rd-navbar-cart-total-title, .rd-navbar-cart-total-price, .rd-navbar-product-title {
+    color: $white;
+  }
+
+  .rd-navbar-cart-dropdown {
+    background: darken(saturate(adjust_hue($gray-base, 0), 0%), 1.5686274509803937%);
+  }
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+%rd-navbar-default-cart-light{
+
+  .rd-navbar-product-remove {
+    color: $gray-dark;
+    &:hover {
+      color: $gray-darkest;
+    }
+  }
+
+  .rd-navbar-list-products {
+    border-bottom: 1px solid $gray-lighter;
+  }
+
+  .rd-navbar-product-image {
+    background: #F5F5F5;
+  }
+
+  .rd-navbar-product-price {
+    color: $gray-dark;
+  }
+
+  .rd-navbar-cart-total-title, .rd-navbar-cart-total-price, .rd-navbar-product-title {
+    color: $gray-darkest;
+  }
+
+  .rd-navbar-cart-dropdown {
+    background: $white;
+  }
+}

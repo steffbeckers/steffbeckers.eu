@@ -1,0 +1,55 @@
+//
+// RD Navbar Default Mobile Search
+// --------------------------------------------------
+
+%rd-navbar-default-mobile-search{
+  .form-search-input {
+    border: none;
+  }
+}
+
+//
+// Dark Theme
+// --------------------------------------------------
+
+%rd-navbar-default-mobile-search-dark{
+  .form-search-wrap {
+    .form-group {
+      .form-label, .form-lable.focus {
+        color: $rd-navbar-dark-mobile-search-form-lable-focus-color;
+      }
+    }
+  }
+
+  .form-search-submit {
+    color: $rd-navbar-dark-mobile-search-form-search-submit-color;
+  }
+
+  .form-search-input {
+    color: $rd-navbar-dark-mobile-search-form-search-input-color;
+    background: $rd-navbar-dark-mobile-search-form-search-input-background;
+  }
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+
+%rd-navbar-default-mobile-search-light{
+  .form-search-wrap {
+    .form-group {
+      .form-label, .form-lable.focus {
+        color: $rd-navbar-light-mobile-search-form-lable-focus-color;
+      }
+    }
+  }
+
+  .form-search-submit {
+    color: $rd-navbar-light-mobile-search-form-search-submit-color;
+  }
+
+  .form-search-input {
+    color: $rd-navbar-light-mobile-search-form-search-input-color;
+    background: $rd-navbar-light-mobile-search-form-search-input-background;
+  }
+}

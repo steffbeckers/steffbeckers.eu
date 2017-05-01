@@ -1,0 +1,21 @@
+mixin quote-card(obj)
+  blockquote.quote-card
+    .quote-card-avatar
+      case obj.avatar.type
+        when "image"
+          +jpg(obj.avatar.data, 'quote-card-image')
+        when "letter"
+          span=obj.avatar.data
+
+    .quote-card-header
+      cite=obj.cite
+    ul.quote-card-rating
+      - for (var i = 0; i < obj.rating; i++)
+        li.icon.icon-xs.icon-primary.fa.fa-star
+
+    p.quote-card-text: q=obj.text
+
+    ul.inline-list.inline-list-md
+      li: a.icon.icon-xs.link-gray-base.fa-facebook(href='#')
+      li: a.icon.icon-xs.link-gray-base.fa-twitter(href='#')
+      li: a.icon.icon-xs.link-gray-base.fa-linkedin(href='#')

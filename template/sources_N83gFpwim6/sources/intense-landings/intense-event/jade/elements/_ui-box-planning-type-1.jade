@@ -1,0 +1,18 @@
+//-title - box title
+//-price - box-price
+//-period - box period
+//-state - active/not
+//- btnText - button text
+mixin box-planning-1(title, price, period, btnText, state)
+  // Planning Box type 1
+  .box-planning.box-planning-type-1(class=(state != null ? 'active' : ''))
+    .box-planning-label
+      svg.box-planning-svg(x='0px', y='0px', viewbox='0 0 76.5 76.5', enable-background='new 0 0 76.5 76.5', xml:space='preserve')
+        path(fill-rule='evenodd', clip-rule='evenodd', d='M11.4-11.4l76.5,76.5L76.4,76.5L0,0.1L11.4-11.4z')
+      span Popular
+    h2= title
+    p.h1= price
+    p.text-spacing-120.small.text-uppercase= period
+    hr.hr-gradient
+    block
+    a.btn.btn-block(href='#' class=(state != null ? 'btn-primary' : 'btn-primary-bordered-dark'))= btnText

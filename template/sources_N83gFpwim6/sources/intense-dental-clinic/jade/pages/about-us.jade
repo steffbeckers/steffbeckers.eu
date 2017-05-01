@@ -1,0 +1,160 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-box-icon-type-3
+include ../elements/_ui-rd-parallax
+
+//-Title
+block title
+  title= cfg.nav.aboutUs.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logoInverse,
+    cfg.nav.aboutUs,
+    cfg.nav
+    )
+
+  // Page Contents
+  main.page-content
+    // Breadcrumbs
+    section.context-dark
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/background-03-1920x640.jpg",
+        "htmlSpeed": "0"
+      })
+        .bg-overlay-info
+          .shell.section-34.section-sm-85.text-md-left
+            div.veil.reveal-sm-block.reveal-md-inline-block
+              h1 About Us
+            div.pull-md-right.offset-sm-top-10.offset-md-top-20
+              ul.p.list-inline.list-inline-dashed
+                li
+                  a(href= cfg.nav.home.href) Home
+                li About Us
+
+    // Who We Are
+    section.section-98.section-sm-110
+      .shell
+        .range.range-xs-center
+          .cell-sm-9.cell-lg-6.cell-lg-push-6
+            img.img-responsive.center-block(src="images/about-01-570x380.jpg" width="570" height="380" alt="")
+          .cell-sm-9.cell-lg-6.cell-lg-pull-6.text-left.offset-top-66.offset-lg-top-0.inset-lg-right-30
+            h1.text-center.text-lg-left Who We Are
+            hr.divider.bg-mantis.hr-lg-left-0
+            p We are a fully private dental clinic offering high-quality teeth straightening, cosmetic, and general dental treatments. Our team of more than 20 professionals is highly trained to serve our patients’ needs.
+            p We use the latest technologies to offer you the best possible dental solutions, including  3D computer imaging with low-radiation X-rays and soft-tissue lasers.  In addition, we offer advanced pain-free techniques to ensure your comfort.
+
+    // Medical Team
+    section.section-98.section-sm-110.bg-polar
+      .shell
+        h1 Medical Team
+        hr.divider.bg-mantis
+        .range.range-xs-center.text-lg-left
+          .cell-sm-5.cell-lg-3
+            img(src="images/user-mark-hoffman-269x270.jpg" width="269" height="270" alt="")
+            div.offset-top-24
+              h5.text-info
+                a(href="team-member.html") Dr. Mark Hoffman
+            div.offset-top-4
+              p.text-dark Dentist
+            div.offset-top-20
+              p Our clinic's Chief Medical, Dr. Mark Hoffman has been working in this field of medical specialization since 2002. He has been obtaining his chief position at our clinic since 2010.
+
+          .cell-sm-5.cell-lg-3.offset-top-41.offset-sm-top-0
+            img(src="images/user-leslie-gross-270x270.jpg" width="270" height="270" alt="")
+            div.offset-top-24
+              h5.text-info
+                a(href="team-member.html") Leslie Peterson
+            div.offset-top-4
+              p.text-dark Dental Hygienist
+            div.offset-top-20
+              p Ms. Peterson is an experienced specialist with many years of expertise in dental hygiene. Her work is concentrated on helping Dr. Hoffman with the treatment of their clients.
+
+          .cell-sm-5.cell-lg-3.offset-top-41.offset-lg-top-0
+            img(src="images/user-dana-sims-270x270.jpg" width="270" height="270" alt="")
+            div.offset-top-24
+              h5.text-info
+                a(href="team-member.html") Dana Sims
+            div.offset-top-4
+              p.text-dark Practice Nurse
+            div.offset-top-20
+              p As our Practice Nurse, Dana works within the community, planning and providing nursing care, treatment, and health education for clients of all ages.
+
+          .cell-sm-5.cell-lg-3.offset-top-41.offset-lg-top-0
+            img(src="images/user-kimberly-barker-270x270.jpg" width="270" height="270" alt="")
+            div.offset-top-24
+              h5.text-info
+                a(href="team-member.html") Kimberly Barker
+            div.offset-top-4
+              p.text-dark Patient Services Manager
+            div.offset-top-20
+              p Kimberly coordinates, plans, and manages patient service activities complying with the standards of our dental clinic, while introducing new trends of patient care.
+
+    // Why choose Intense?
+    section.section-98.section-sm-110
+      .shell
+        h1 Why choose Intense?
+        hr.divider.bg-mantis
+        .range.text-md-left.offset-top-50.offset-lg-top-66
+          .cell-sm-9.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0
+            +box-icon-type-3("icon-xs text-info mdi mdi-eye", "Our vision", "text-uppercase text-bold", "We see modern dentistry in creating and developing a community where everyone has access to dental care services.")
+          .cell-sm-9.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+            +box-icon-type-3("icon-xs text-info mdi mdi-star", "Our mission ", "text-uppercase text-bold", "To improve the overall health of local residents and guests of the area by providing free preventative dental care.")
+          .cell-sm-9.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+            +box-icon-type-3("icon-xs text-info mdi mdi-hospital", "Our approach", "text-uppercase text-bold", "The approach of Intense dental clinic is based on a reasonable treatment plan created together by the dentist and patient.")
+
+    // Contact Us
+    section.context-dark
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/background-02-1920x955.jpg",
+        "htmlSpeed": "0"
+      })
+        .bg-overlay-info
+          .shell.section-98.section-sm-110
+            h1 Contact Us
+            hr.divider.bg-white
+            .range.range-sm-center
+              .cell-sm-9.cell-md-8
+                // RD Mailform
+                form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                  .range
+                    .cell-lg-6
+                      .form-group
+                        label.form-label.form-label-outside(for="about-me-first-name") First Name
+                        input#about-me-first-name.form-control(type="text" name="name" data-constraints="@Required")
+                    .cell-lg-6.offset-top-20.offset-lg-top-0
+                      .form-group
+                        label.form-label.form-label-outside(for="about-me-last-name") Last Name
+                        input#about-me-last-name.form-control(type="text" name="name" data-constraints="@Required")
+                    .cell-lg-12.offset-top-20
+                      .form-group
+                        label.form-label.form-label-outside(for="about-me-email") E-Mail
+                        input#about-me-email.form-control(type="email" name="email" data-constraints="@Required @Email")
+                    .cell-lg-12.offset-top-20
+                      .form-group
+                        label.form-label.form-label-outside(for="about-me-message") Message
+                        textarea#about-me-message.form-control(name="message" data-constraints="@Required" style="height: 150px;")
+                  .range.range-xs-center.offset-top-30.text-center
+                    .cell-xs-8.cell-md-6.cell-lg-4
+                      .inset-left-20.inset-right-20
+                        button(type="submit").btn.btn-block.btn-primary Send
+
+  // Page Footer
+  include ../sections/_section-footer

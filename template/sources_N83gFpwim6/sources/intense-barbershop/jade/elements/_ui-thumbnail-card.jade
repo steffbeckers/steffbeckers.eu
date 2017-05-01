@@ -1,0 +1,11 @@
+mixin thumbnail-card(obj)
+  .thumbnail-card
+    +jpg(obj.img, 'thumbnail-card-image')
+    .thumbnail-card-body
+      p.thumbnail-card-header(data-toggle='modal', data-target='#modalWindow')=obj.header
+      .thumbnail-card-text
+        p=obj.text
+      ul.inline-list.inline-list-md
+        li: a.icon.icon-xs.link-gray-base.fa-facebook(href='#')
+        li: a.icon.icon-xs.link-gray-base.fa-twitter(href='#')
+        li: a.icon.icon-xs.link-gray-base.fa-linkedin(href='#')

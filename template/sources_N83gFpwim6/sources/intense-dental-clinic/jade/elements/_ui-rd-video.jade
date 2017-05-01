@@ -1,0 +1,7 @@
+//- video - RD Video object
+
+mixin rd-video(video)
+  // RD Video
+  .rd-video(data-rd-video-path= video.src data-rd-video-image-xs= video.imageXS data-rd-video-image-sm= video.imageSM
+  data-rd-video-image-md= video.imageMD data-rd-video-image-lg= video.imageLG data-rd-video-image-xlg= video.imageXLG data-rd-video-autoplay= video.autoplay data-rd-video-preload= video.preload)
+    block

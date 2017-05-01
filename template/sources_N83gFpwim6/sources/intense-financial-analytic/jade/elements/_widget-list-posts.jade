@@ -1,0 +1,33 @@
+mixin list-posts(type, data)
+  if ( type !== "img" )
+    each obj, index  in data
+      if index == 0
+        .text-left
+          a(href=obj.href).reveal-inline-block.post.post-heading
+            .post-date=obj.date
+            .post-title=obj.title
+      else
+        .text-left.offset-top-20
+          a(href=obj.href).reveal-inline-block.post.post-heading
+            .post-date=obj.date
+            .post-title=obj.title
+  else
+    each obj, index  in data
+      if index == 0
+        .text-left
+          a(href=obj.href).reveal-inline-block.post.post-heading
+            .media
+              .media-left
+                img.img-circle(src=obj.img)
+              .media-body
+                .post-date=obj.date
+                .post-title=obj.title
+      else
+        .text-left.offset-top-20
+          a(href=obj.href).reveal-inline-block.post.post-heading
+            .media
+              .media-left
+                img.img-circle(src=obj.img)
+              .media-body
+                .post-date=obj.date
+                .post-title=obj.title

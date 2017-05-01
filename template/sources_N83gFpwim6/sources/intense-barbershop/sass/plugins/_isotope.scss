@@ -1,0 +1,116 @@
+//
+// Isotope
+// --------------------------------------------------
+
+$isotope-masonry-item-offset: 30px;
+
+[data-isotope-layout]{
+  position: relative;
+  @include transform(translateY(-$isotope-masonry-item-offset));
+  display: block;
+  margin-bottom: -$isotope-masonry-item-offset;
+  transition: .4s all ease;
+  min-height: 160px;
+
+  &:after{
+    content: '';
+    position: absolute;
+    margin-top: $isotope-masonry-item-offset / 2;
+    width: 64px;
+    height: 64px;
+    top: 50%;
+    left: 50%;
+    background-image: url("../images/isotope-loader.png");
+    background-position: -1152px 0;
+    animation: 0.7s sprite-animation steps(18) infinite;
+    transition: .4s all ease;
+    @include transform(translate(-50%, -50%));
+  }
+
+  [class*="col-"]{
+    display: block;
+    margin-top: $isotope-masonry-item-offset;
+    opacity: 0;
+    transition: .4s opacity ease;
+    /*
+     * @bugfix item position after filtering
+     * @affected iOS
+    */
+    //width: 100%;
+  }
+
+  &.isotope--loaded{
+    [class*="col-"]{
+      opacity: 1;
+    }
+
+    &:after{
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.isotope-filters{
+  margin-bottom: 41px;
+  margin-top: 57px;
+  > * {
+    margin-top: 0;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .inline-list{
+    margin-bottom: 0;
+    padding: 0 0 12px;
+    border-bottom: 1px solid $gray;
+    li{
+      display: inline-block;
+      text-transform: uppercase;
+      margin-top: 20px;
+      a{
+        color: $gray-dark;
+        cursor: pointer;
+        padding: 3px 6px 16px;
+        position: relative;
+        transition: .3s;
+        &:after{
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 1px;
+          transition: .3s;
+        }
+        &.active,
+        &:hover{
+          &:after {
+            left: 0;
+            width: 100%;
+          }
+          color: $gray-darker;
+        }
+      }
+    }
+    li + li{
+      margin-left: 2px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .inline-list {
+      li{
+        margin-top: 0;
+      }
+      li + li{
+        margin-left: 22px;
+      }
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    .isotope-filters-trigger{
+      display: none;
+    }
+  }
+}

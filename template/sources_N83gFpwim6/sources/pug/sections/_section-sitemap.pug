@@ -1,0 +1,50 @@
+include ../elements/_ui-sitemap
+
+section.section-98.section-md-110
+  .shell
+    .range.range-xs-center.text-left
+      .cell-xs-7.cell-sm-4
+        h3 Home
+        hr
+        each submenuObj in cfg.nav.home.submenu
+          +sitemapElement(submenuObj, 'mdi mdi-file-document')
+        .offset-top-41
+          // Features
+          h3 Features
+          hr
+          each submenuObj in cfg.nav.features.submenu
+            +sitemapElement(submenuObj, 'mdi mdi-file-document')
+
+        .offset-top-41
+          // Pages
+          h3 Pages
+          hr
+          each submenuObj in cfg.nav.pages.submenu
+            +sitemapElement(submenuObj, 'mdi mdi-file-document')
+      .cell-xs-7.cell-sm-4.offset-top-66.offset-sm-top-0
+        // Portfolio
+        h3 Portfolio
+        hr
+        each submenuObj in cfg.nav.portfolio.submenu
+          +sitemapElement(submenuObj, 'mdi mdi-file-document')
+
+        .offset-top-41
+          // Blog
+          h3 Blog
+          hr
+          each submenuObj in cfg.nav.blog.submenu
+            +sitemapElement(submenuObj, 'mdi mdi-file-document')
+
+      .cell-xs-7.cell-sm-4.offset-top-66.offset-sm-top-0
+        // Shop
+        h3 Shop
+        hr
+        each submenuObj in cfg.nav.shop.submenu
+          +sitemapElement(submenuObj, 'mdi mdi-cart-outline')
+
+        .offset-top-41
+          // Components
+          h3 Components
+          hr
+          each submenuObj in cfg.nav.components.submenu
+            +sitemapElement(submenuObj, 'mdi mdi-star')

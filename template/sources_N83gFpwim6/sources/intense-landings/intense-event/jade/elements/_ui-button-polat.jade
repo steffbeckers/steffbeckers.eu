@@ -1,0 +1,8 @@
+// Polat button
+//- btnClass - class to set size, style, etc. (btn-lg, btn-primary)
+//- btnText - button text
+//- iconClass - class for icon inside buttons
+mixin button-polat(btnClass, btnText, iconClass)
+  button(class=btnClass type="button").btn.btn-polat-effect
+    span.icon.icon-xs.mdi(class=iconClass)
+    span.btn-text= btnText

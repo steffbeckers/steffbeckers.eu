@@ -1,0 +1,14 @@
+//- Boxed Testimonials v2
+
+mixin testimonials-type-3(image, title, desc, q, styling)
+  // Boxed Testimonials v2
+  blockquote.quote.quote-classic.quote-classic-boxed-2
+    .quote-meta
+      img.img-circle.quote-img(width= image.width, height= image.height, src= image.src, alt= image.alt)
+    .quote-body
+
+      p
+        q= q
+      .quote-author(class= styling.title)
+        cite(class= styling.cite)= title
+      p.quote-desc(class= styling.desc)= desc

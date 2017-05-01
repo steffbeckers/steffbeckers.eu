@@ -1,0 +1,20 @@
+include ../elements/_ui-tabs-classic
+
+// RD Navbar Megamenu
+mixin rd-navbar-megamenu(link)
+  p 1
+  -if (typeof(link.megamenu) !== 'undefined'){
+    div.rd-navbar-megamenu
+      -var tabList = []
+      each title in link.megamenu
+
+        -tabList.push(title.title)
+      if tabList.length > 0
+      +tabs-classic(tabList)
+        each tab in link.megamenu
+          ul
+            each dropdown in tab.dropdown
+              li
+                a(href=dropdown.href class=dropdown.icon)= dropdown.title
+
+  -}

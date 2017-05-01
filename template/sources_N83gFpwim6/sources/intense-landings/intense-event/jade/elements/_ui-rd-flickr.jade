@@ -1,0 +1,14 @@
+//- Flickrfeed Widget
+//- flickrId - flickr id
+//- imageSizeSuffix - flickr size suffix (data-image_s, data-image_q, data-image_t, data-image_m, data-image_n,
+//-                   data-image_-, data-image_z, data-image_c, data-image_b, data-image_h, data-image_k, data-image_o)
+//- imageCount - count of images to show in
+
+mixin rd-flickr(flickrTag, flickrAttributes, imageCount)
+  .flickr.flikr-fullwidth(data-flickr-tags=flickrTag)
+    .row.row-condensed
+      - for (var i = 0; i < imageCount; i++)
+        .col-sm-6.col-md-3
+          .embed-responsive.embed-responsive-16by9
+            .embed-responsive-item(data-type='flickr-item')
+              img.img-responsive.element-fullwidth(width="640" height="430" data-title='alt', src='images/_blank.png', alt='')&attributes(flickrAttributes)

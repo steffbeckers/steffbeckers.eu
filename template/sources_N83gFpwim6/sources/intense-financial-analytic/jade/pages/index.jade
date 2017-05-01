@@ -1,0 +1,187 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-parallax
+include ../elements/_ui-box-icon-type-2
+include ../elements/_ui-testimonials-type-3
+include ../elements/_ui-media-elements
+
+//-Title
+block title
+  title= cfg.brand.name
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-transparent',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logoLite,
+      cfg.nav.home,
+      cfg.nav
+    )
+
+    // Welcome
+    section
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/background-01-1920x1118.jpg",
+        "htmlSpeed": "0.25",
+        "fade": "true"
+      })
+
+        .shell
+          .range
+            .range.range-xs-middle.range-xs-center.section-cover.section-66.text-md-left.context-dark
+              .cell-xs-12
+                div.offset-top-34.offset-xs-top-0
+                  p.text-italic
+                    | Call us
+                div
+                  .p
+                    a(href="callto:#").h3
+                      | 1-800-1234-567
+                div.offset-top-4.offset-xl-top-24
+                  h1.text-capitalize
+                    span.big
+                      | Because Money
+                div.offset-top-4.offset-xl-top-20
+                  h2.font-default.text-italic.text-regular
+                    | Doesn’t come with instructions
+                .offset-top-41.offset-xl-top-66
+                  a(href="make-an-appointment.html").btn.btn-lg.btn-warning
+                    | Free Consultation
+
+  // Page Contents
+  main.page-content
+    // Welcome
+    section.section-98.section-sm-110
+      .shell
+        h1 Welcome
+        hr.divider.divider-lg.bg-mantis
+        .range.range-xs-center
+          .cell-xs-11.cell-md-8
+            p
+              | Dealing with your finances can be intimidating. That's why we take the time to listen to you, learn your goals and then create your plan using John Doe’s philosophies that reflect the latest academic research.
+        .range.range-xs-center.offset-top-66
+          .cell-sm-7.cell-md-4
+            +box-icon-type-2('icon mdi mdi-cash-multiple icon-mantis-filled icon-circle', 'Saving Solutions', 'offset-top-20', 'There is a variety of saving plans which can be tailored to your needs, including:')
+              .inset-sm-left-20
+                ul.list.list-marked
+                  li Tax Exempt Savings
+                  li Regular Savings.
+          .cell-sm-7.cell-md-4.offset-top-66.offset-md-top-0
+            +box-icon-type-2('icon mdi mdi-presentation icon-mantis-filled icon-circle', 'Tax Planning', 'offset-top-20', 'Inheritance tax planning is an important element of your wealth management strategy, as it allows you to continue to help your loved ones after you’re gone.')
+          .cell-sm-7.cell-md-4.offset-top-66.offset-md-top-0
+            +box-icon-type-2('icon mdi mdi-poll icon-mantis-filled icon-circle', 'University Fee Planning', 'offset-top-20', 'We all want our children to have good prospects, which is why education fees planning is a vital wealth management matter that shouldn’t be overlooked.')
+
+    // About
+    section.section-top-85.section-md-top-50.bg-white-lilac
+      .shell-wide
+        .range.range-md-reverse.range-xs-center.range-xs-middle.text-md-left
+          .cell-xs-10.cell-md-6.cell-lg-5.cell-lg-preffix-1.cell-xl-4.cell-xl-preffix-1.section-md-bottom-50
+            div
+              h1 About
+            div
+              hr.divider.divider-lg.bg-mantis.reveal-inline-block
+            .offset-top-30.offset-md-top-50
+              p
+                | Intense is an International Financial Planning company with offices in multiple jurisdictions over the world. Working with Intense gives me the ability to advise international expatriates living in the middle east from where I live in USA.
+            blockquote.quote.quote-variant-2.offset-top-20
+              .h3.text-italic.font-default
+                q I am John Doe, a senior advisor for an independently owned financial planning company called Intense.
+            .offset-top-30
+              a(href="#").btn.btn-primary.btn-lg explore more
+          .cell-xs-10.cell-sm-8.cell-md-6.cell-xl-4.cell-xs-bottom.offset-top-66.offset-md-top-0.text-md-left
+            img.img-responsive.reveal-inline-block(src="images/user-john-doe-598x624.png", width="598", height="624", alt="")
+    // Testimonials
+    section.section-98.section-sm-110
+      .shell
+        h1 Testimonials
+        hr.divider.divider-lg.bg-mantis
+        .range.range-xs-center.offset-top-41.offset-md-top-66
+          .cell-sm-8.cell-md-4
+            +testimonials-type-3(
+            {
+              "width": 80,
+              "height": 80,
+              "src": "images/user-steven-carpenter-80x80.jpg",
+              "alt": ""
+            },
+            "Johnson.M.J.",
+            'Director of "Financial Times"',
+            "It is not every day that you come across a passionate and trustworthy financial advisor. John Doe is true professional who does his work really well. Thanks John!"
+            )
+          .cell-sm-8.cell-md-4.offset-top-41.offset-md-top-0
+            +testimonials-type-3(
+            {
+              "width": 80,
+              "height": 80,
+              "src": "images/user-carol-harper-80x80.jpg",
+              "alt": ""
+            },
+            "Carol Harper",
+            "Director at Risktec Solutions Ltd",
+            "In just 2 very short meetings with John he managed to find the solution personally catered to my situation and expectations. Punctual, well informed and very reliable."
+            )
+          .cell-sm-8.cell-md-4.offset-top-41.offset-md-top-0
+            +testimonials-type-3(
+            {
+              "width": 80,
+              "height": 80,
+              "src": "images/user-andrew-wilson-80x80.jpg",
+              "alt": ""
+            },
+            "Snow.J.R.",
+            "Managing Director of BPW Global",
+            "A very professional financial advisor, who is true to his word. John has demonstrated a high amount of integrity in the time I have known him, and he is fast to respond to my concerns."
+            )
+    //One Philosophy
+    section
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/background-02-1920x809.jpg",
+        "htmlSpeed": "0",
+        "fade": "false"
+      })
+        .section-98.section-sm-110.context-dark
+          .shell.text-md-left
+            .range.range-xs-center.range-md-reverse.range-md-justify
+              .cell-xs-10.cell-md-6
+                +media-elements({
+                  "type": "rd-video-player",
+                  "ratio": "16by9",
+                  "href": "video/video-1",
+                  "title": "",
+                  "preview": "video/video-1.jpg",
+                  "classes": "",
+                  "muted": "true",
+                  "preload": "false"
+                })
+              .cell-xs-10.cell-md-5.offset-top-50.offset-md-top-0
+                div
+                  h3.font-default.text-italic.text-regular More Than 100 Financial Planners,
+                div
+                  h1 One Philosophy
+                div
+                  hr.divider.divider-lg.reveal-inline-block
+                .offset-top-14
+                  p
+                    | Every single one of our financial advisors receives rigorous training according to John Doe’s philosophy based on academic research (including that of a Nobel laureate in Economics) and Behavioral Finance.
+                .offset-top-30
+                  a(href='make-an-appointment.html').btn.btn-lg.btn-block.btn-warning.reveal-inline-block(style="max-width:470px;")
+                    | Get Your Free Financial Analysis
+
+
+  // Page Footer
+  include ../sections/_section-footer-default

@@ -1,0 +1,26 @@
+//- Includes
+include ../elements/_ui-rd-parallax
+
+// Easy Integration of mailform with Template Pages
+section.context-dark
+  +rd-parallax({
+    "backgroundSpeed": "0.35",
+    "attrType": "media",
+    "src": "images/backgrounds/background-04-1920x657.jpg",
+    "htmlSpeed": "0"
+  })
+    .bg-overlay-gray-darkest
+      .shell.section-98.section-lg-0
+        .range.range-xs-center.range-lg-bottom
+          .cell-sm-9.cell-lg-4.text-lg-left.section-lg-98
+            h1.text-bold Cross-Browser Support
+            p RD Mailform is compatible with all the modern-day browsers. In such a way, all visitors can use your forms regardless of their browser preferences.
+            .range.range-xs-center.range-lg-left.text-center.text-lg-left.offset-top-41
+              .cell-xs-6.cell-md-5.cell-lg-9
+                a(href=cfg.buyLink).btn.btn-block.btn-default buy intense now
+
+          .cell-sm-9.cell-lg-8.offset-sm-top-66.offset-lg-top-0.text-lg-right
+            .mock-up-wrapper.veil.reveal-sm-block
+              .mock-up-desktop-wrapper
+                img(src="images/features/rd-mailform-02-619x439.png" width="619" height="439" alt="").mock-up-desktop.img-responsive.center-block.hr-xl-right-0
+              span.veil

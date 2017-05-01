@@ -1,0 +1,24 @@
+//- timer Timer object
+//- type types of Timers (countdown-modern, countdown-inline, countdown-ellipse)
+mixin post-vacation(vacationLink, title, vacationMeta)
+  // Vacation
+  a(href= vacationLink).post-vacation.text-left
+    div
+      h3= title
+    .post-meta.offset-top-10
+      ul.list-inline.list-inline-sm.p
+        each vacation in vacationMeta
+          li
+            case vacation.type
+              when "location"
+                span.text-middle.icon-xxs.mdi.mdi-map-marker.text-picton-blue
+                = ' '
+                span.text-middle.small.text-dark= vacation.text
+              when "work-time"
+                span.text-middle.icon-xxs.mdi.mdi-clock.text-picton-blue
+                = ' '
+                span.text-middle.small.text-dark= vacation.text
+              when "date"
+                span.text-middle.icon-xxs.mdi.mdi-calendar.text-picton-blue
+                = ' '
+                time.text-middle.small.text-dark(datetime='2016-01-01')= vacation.text

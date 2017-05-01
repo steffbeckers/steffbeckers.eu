@@ -1,0 +1,116 @@
+//
+// RD Navbar Sidebar Toggle
+// --------------------------------------------------
+
+.rd-navbar-sidebar-toggle {
+
+  &.rd-navbar-fixed {
+    @extend %rd-navbar-default-mobile-menu;
+    @extend %rd-navbar-default-cart-aside-right;
+    @extend %rd-navbar-default-aside-left;
+    @extend %rd-navbar-default-mobile-search;
+    @extend %rd-navbar-sidebar-toggle-panel;
+    @extend %rd-navbar-sidebar-toggle-footer;
+
+    .rd-navbar-nav-wrap{
+      height: 100%;
+      overflow: auto;
+      bottom: auto;
+    }
+
+    .rd-navbar-mobile-scroll-holder {
+      @include display-flex;
+      @include flex-direction(row);
+    }
+
+    .rd-navbar-mobile-scroll {
+      min-height: 100vh;
+      @include display-flex;
+      @include flex-direction(column);
+      @include flex-basis(100%);
+      @include justify-content(space-between);
+    }
+    .rd-navbar-nav {
+      @include flex(2 1 auto);
+    }
+
+    @media (min-width: $screen-lg) {
+      .rd-navbar-nav-wrap {
+        width: 315px;
+        padding: 0;
+      }
+
+      .rd-navbar-mobile-brand {
+        margin-top: 30px;
+        margin-left: 14px;
+        text-align: left;
+      }
+
+      .form-search-wrap {
+        margin-top: 50px;
+      }
+
+      .rd-navbar-mobile-scroll{
+        padding: 0 20px;
+        overflow-y: hidden;
+        max-height: inherit;
+      }
+
+      .rd-navbar-nav {
+        margin-top: 90px;
+      }
+      .rd-navbar-megamenu {
+        padding-left: 0;
+      }
+      .resp-tab-item{
+        display: none;
+      }
+    }
+  }
+
+  // Themes
+
+  //  Dark Theme
+  // -------------------
+
+  &.rd-navbar-dark {
+
+    // Mobile Fixed Layout Colors
+    &.rd-navbar-fixed {
+      @extend %rd-navbar-sidebar-toggle-panel-dark;
+      @extend %rd-navbar-default-mobile-menu-dark;
+      @extend %rd-navbar-default-cart-aside-right-dark;
+      @extend %rd-navbar-default-aside-left-dark;
+      @extend %rd-navbar-default-mobile-search-dark;
+      @extend %rd-navbar-sidebar-toggle-footer-dark;
+      @media (min-width: $screen-lg) {
+      }
+    }
+  }
+
+  // Light Theme
+  // -------------------
+
+  &.rd-navbar-light {
+
+    .rd-navbar-search-toggle, .rd-navbar-cart {
+      span {
+        color: $gray-darkest;
+      }
+    }
+
+    // Mobile Fixed Layout Colors
+    &.rd-navbar-fixed {
+      @extend %rd-navbar-sidebar-toggle-panel-light;
+      @extend %rd-navbar-default-mobile-menu-light;
+      @extend %rd-navbar-default-cart-aside-right-light;
+      @extend %rd-navbar-default-aside-left-light;
+      @extend %rd-navbar-default-mobile-search-light;
+      @extend %rd-navbar-sidebar-toggle-footer-light;
+
+      @media (min-width: $screen-lg) {
+      }
+    }
+  }
+
+}

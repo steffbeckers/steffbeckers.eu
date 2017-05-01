@@ -1,0 +1,16 @@
+//- Testimonials Type 1
+
+mixin testimonials-type-1(image, title, cite, q)
+  //- Classic Testimonials
+  blockquote.quote.quote-classic
+    .quote-body
+      p
+        q= q
+      .quote-meta.unit.unit-horizontal.unit-spacing-sm.unit-middle
+        .unit-left.unit-item-narrow
+          img.img-circle.quote-img(width= image.width, height= image.height, src= image.src, alt= image.alt)
+        .unit-body.unit-item-wide
+          h6.quote-author.text-uppercase
+            cite.text-normal= title
+          p.quote-desc.text-uppercase.text-info= cite
+

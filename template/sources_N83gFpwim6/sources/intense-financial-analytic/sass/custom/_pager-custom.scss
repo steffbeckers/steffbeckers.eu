@@ -1,0 +1,89 @@
+//
+// Pager pagination
+// --------------------------------------------------
+
+.pager {
+  li {
+    > a,
+    > span {
+      transition: .3s;
+      padding: $padding-small-vertical $padding-small-horizontal;
+      font-weight: $btn-font-weight-small;
+      font-size: $btn-font-size-small;
+      line-height: $btn-lh-size-small;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    > a:hover,
+    > a:focus,
+    > a:active,
+    > a:active:focus{
+      color: $pager-hover-color;
+      background-color: $pager-hover-bg;
+      border-color: $pager-hover-border;
+    }
+  }
+
+  .icon-left,
+  .icon-right{
+    font-size: 16px;
+    line-height: $btn-lh-size-small;
+  }
+
+  .icon-left{
+    float: left;
+    padding-right: 10px;
+  }
+
+  .icon-right{
+    float: right;
+    padding-left: 10px;
+  }
+
+  .disabled {
+    > a,
+    > a:hover,
+    > a:focus,
+    > span {
+      color: $pager-disabled-color;
+      background-color: $pager-disabled-bg;
+      border-color: $pager-disabled-border;
+    }
+  }
+}
+
+.pager-sm{
+  li {
+    > a,
+    > span {
+      padding: $padding-xs-vertical $padding-xs-horizontal/2;
+      font-weight: $btn-font-weight-xs;
+      font-size: $btn-font-size-xs;
+      line-height: $btn-lh-size-xs;
+    }
+  }
+
+  .icon-left,
+  .icon-right{
+    line-height: $btn-lh-size-xs;
+  }
+}
+
+.pager-lg{
+  li {
+    > a,
+    > span {
+      padding: $padding-base-vertical $padding-base-horizontal;
+      font-weight: $btn-font-weight;
+      font-size: $btn-font-size;
+      line-height: $btn-lh-size;
+    }
+  }
+
+  .icon-left,
+  .icon-right{
+    font-size: $btn-font-size;
+    line-height: $btn-lh-size;
+  }
+}

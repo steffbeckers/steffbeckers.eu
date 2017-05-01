@@ -1,0 +1,198 @@
+//
+// RD Navbar Sidebar Toggle Panel
+// --------------------------------------------------
+
+%rd-navbar-top-panel-top {
+  &.rd-navbar-static {
+    .right-side {
+      float: right;
+    }
+    .left-side {
+      float: left;
+    }
+    .rd-navbar-top-panel {
+      border-bottom: 1px solid transparent;
+    }
+
+    .rd-navbar-top-links {
+      > li {
+        display: inline-block;
+        + li {
+          margin-left: $rd-navbar-top-panel-top-links-offset;
+        }
+      }
+    }
+
+    .contact-info > span + span {
+      margin-left: $rd-navbar-top-panel-contact-info-offset;
+    }
+
+    .rd-navbar-top-panel-toggle {
+      display: none;
+    }
+  }
+
+  &.rd-navbar-fixed {
+
+    .rd-navbar-top-panel-toggle {
+      position: fixed;
+      z-index: 17;
+      top: 4px;
+      right: 4px;
+      background: none;
+      border: none;
+      outline: none;
+      @include toggle-icons-via-rotation(48px, 28px, $rd-navbar-light-top-panel-toggle-icon-color, $rd-navbar-top-panel-toggle-icon-state-before, $rd-navbar-top-panel-toggle-icon-state-after);
+      &:focus, &:active {
+        outline: none;
+      }
+    }
+
+    .rd-navbar-top-panel {
+      position: fixed;
+      right: 4px;
+      top: 50px;
+      width: $rd-navbar-top-panel-mobile-width;
+      padding: $rd-navbar-top-panel-mobile-padding;
+      z-index: 17;
+      overflow: hidden;
+      transition: box-shadow .3s ease;
+      opacity: 0;
+      visibility: hidden;
+      > * {
+        opacity: 0;
+        visibility: hidden;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: -22%;
+        right: -22%;
+        width: 0;
+        height: 0;
+        transition: all .3s ease;
+        border-radius: 50%;
+        z-index: -1;
+      }
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        box-shadow: $shadow-area-md;
+        > * {
+          opacity: 1;
+          visibility: visible;
+          transition: opacity .3s ease .2s;
+        }
+
+        &:before {
+          height: 150%;
+          width: 150%;
+        }
+
+      }
+    }
+
+    .rd-navbar-top-links {
+      margin-bottom: $rd-navbar-top-panel-mobile-margin-bottom;
+    }
+
+    .contact-info {
+      > span {
+        display: block;
+        margin-bottom: $rd-navbar-top-panel-mobile-address-item-margin-bottom;
+      }
+      span + span {
+        margin: 0;
+      }
+    }
+  }
+  .list-inline {
+    .icon {
+      font-size: $rd-navbar-top-panel-socials-icon-size;
+      line-height: $rd-navbar-top-panel-socials-icon-size;
+    }
+  }
+  .contact-info {
+    .icon {
+      font-size: $rd-navbar-top-panel-contact-info-icon-size;
+      margin-right: 11px;
+      line-height: 1;
+      vertical-align: middle;
+    }
+  }
+}
+
+//
+// Dark Theme
+// ------------------------------------
+
+%rd-navbar-top-panel-top-dark {
+  &.rd-navbar-static {
+    .rd-navbar-top-panel {
+      border-bottom-color: $rd-navbar-dark-top-panel-border-bottom-color;
+    }
+  }
+
+  &.rd-navbar-fixed {
+    .rd-navbar-top-panel {
+      &:before {
+        background: $rd-navbar-dark-top-panel-mobile-background;
+      }
+    }
+    .rd-navbar-top-panel-toggle span {
+      color: $rd-navbar-dark-top-panel-toggle-icon-color;
+    }
+  }
+
+  .rd-navbar-top-links a {
+    color: $rd-navbar-dark-top-panel-top-links-color;
+    &:hover {
+      color: $rd-navbar-dark-top-panel-top-links-color-hover;
+    }
+  }
+
+  .contact-info {
+    color: $rd-navbar-dark-top-panel-contact-info-color;
+    .icon {
+      color: $rd-navbar-dark-top-panel-contact-info-icon-color;
+    }
+  }
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+
+%rd-navbar-top-panel-top-light {
+  &.rd-navbar-static {
+    .rd-navbar-top-panel {
+      border-bottom-color: $rd-navbar-light-top-panel-border-bottom-color;
+    }
+  }
+
+  &.rd-navbar-fixed {
+    .rd-navbar-top-panel {
+      &:before {
+        background: $rd-navbar-light-top-panel-mobile-background;
+      }
+    }
+  }
+
+  .rd-navbar-top-links a {
+    color: $rd-navbar-light-top-panel-top-links-color;
+    &:hover {
+      color: $rd-navbar-light-top-panel-top-links-color-hover;
+    }
+  }
+  .list-inline{
+    .icon{
+      color: $rd-navbar-light-top-panel-socials-icon-color;
+      &:hover{
+        color: $rd-navbar-light-top-panel-socials-icon-hover-color;
+      }
+    }
+  }
+  .contact-info {
+    color: $rd-navbar-light-top-panel-contact-info-color;
+  }
+}

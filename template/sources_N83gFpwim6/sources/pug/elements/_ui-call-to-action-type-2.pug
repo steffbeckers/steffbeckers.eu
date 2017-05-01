@@ -1,0 +1,25 @@
+//- title - title of element
+//- btnClass - button class
+//- iconClass - class of icon inside button
+//- btnText - button text
+//- bgElement - background of element
+mixin call-to-action-type-2(title, btnHref, btnClass, iconClass, iconAlign, btnText, bgElement, desc)
+  // Call to action type 2
+  - var bgElement = bgElement || "bg-blue-gray"
+  - var btnText = btnText || "By intense now"
+
+  section.section-66(class= bgElement).context-dark
+    .shell
+      .range.range-xs-middle.range-condensed
+        .cell-md-8.cell-lg-9.text-center.text-md-left
+          h2
+            span.big= title
+          if desc != null
+            p= desc
+        .cell-md-4.cell-lg-3.offset-top-41.offset-md-top-0
+          if iconClass != null
+            a.btn.btn-icon(href=btnHref, class= btnClass + " "+"btn-icon-"+ iconAlign)
+              span.icon(class= iconClass)
+              = btnText
+          else
+            a.btn(href=btnHref, class=btnClass)=btnText

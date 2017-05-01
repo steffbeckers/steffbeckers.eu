@@ -1,0 +1,9 @@
+//- type - alerts skin (alert-success, alert-info, alert-warning, alert-danger)
+//- title - alerts header
+//- icon - alerts links object
+mixin alerts-bootstrap(type, title, icon)
+  // Bootstrap Alerts
+  .alert.alert-dismissible(role="alert" class= type)
+    button.close(type='button', data-dismiss='alert', aria-label='Close')
+      span(aria-hidden='true' class= icon)
+    p.offset-top-0= title

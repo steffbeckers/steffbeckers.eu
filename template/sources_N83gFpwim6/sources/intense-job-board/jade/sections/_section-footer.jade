@@ -1,0 +1,79 @@
+//- Includes
+include ../elements/_widget-form-subscribe
+
+// Default footer
+footer.section-relative.section-top-66.section-bottom-34.page-footer.bg-gray-darkest
+  .shell
+    .range.range-sm-center.text-md-left
+      .cell-sm-8.cell-md-12
+        .range.range-xs-center
+          .cell-xs-10.cell-md-5.cell-md-push-2
+            h6.text-uppercase.text-spacing-60.font-default.text-white Newsletter
+            .inset-lg-right-80
+              p.text-muted Keep up with our always upcoming  news and updates. Enter your e-mail and subscribe to our newsletter.
+            .offset-top-30
+              .inset-lg-right-93
+                +widget-form-subscribe("Type your E-Mail", "form-subscribe-footer")
+
+          .cell-xs-4.cell-md-2.offset-top-50.offset-md-top-0.cell-md-push-3.text-xs-left
+            h6.text-uppercase.text-spacing-60.font-default.text-white Cities
+            .reveal-block
+              .reveal-inline-block
+                ul.list.list-unstyled.list-inline-primary
+                  li.text-primary
+                    a(href="#") New York
+                  li.text-primary
+                    a(href="#") San Diego
+                  li.text-primary
+                    a(href="#") Los Angeles
+                  li.text-primary
+                    a(href="#") Boston
+                  li.text-primary
+                    a(href="#") Washington
+                  li.text-primary
+                    a(href="#") Chicago
+
+          .cell-xs-4.cell-md-2.offset-top-50.offset-md-top-0.cell-md-push-3.text-xs-left
+            h6.text-uppercase.text-spacing-60.font-default.text-white Categories
+            .reveal-block
+              .reveal-inline-block
+                ul.list.list-unstyled.list-inline-primary
+                  li.text-primary
+                    a(href="#") Healthcare
+                  li.text-primary
+                    a(href="#") Automobile Jobs
+                  li.text-primary
+                    a(href="#") Food Services
+                  li.text-primary
+                    a(href="#") Construction
+                  li.text-primary
+                    a(href="#") Logistics
+                  li.text-primary
+                    a(href="#") Finance
+
+
+          .cell-md-3.offset-top-50.offset-md-top-0.cell-md-push-1
+            // Footer brand
+            .footer-brand
+              a(href="index.html")
+                | !{cfg.brand.logo}
+            ul.list-inline.list-inline-sm.reveal-inline-block.offset-top-34.post-meta.text-dark.list-inline-primary
+              li
+                a(href="#")
+                  span.icon.icon-xxs.fa-facebook
+              li
+                a(href="#")
+                  span.icon.icon-xxs.fa-twitter
+              li
+                a(href="#")
+                  span.icon.icon-xxs.fa-google-plus
+              li
+                a(href="#")
+                  span.icon.icon-xxs.fa-youtube-play
+              li
+                a(href="#")
+                  span.icon.icon-xxs.fa-instagram
+
+            p.text-dark.offset-top-50
+              | Intense JB &copy; #[span(id="copyright-year")] . #[a(href="#") Privacy Policy]
+              // {%FOOTER_LINK}

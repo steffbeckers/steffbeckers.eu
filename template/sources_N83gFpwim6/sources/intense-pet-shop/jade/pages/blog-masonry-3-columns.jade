@@ -1,0 +1,280 @@
+extends  ../_skeleton
+
+block title
+  title Masonry Blog 3 Column
+
+block page
+  // Page Header
+  header.page-header.slider-menu-position
+    +rd-navbar-default({
+      "style": "",
+      "logo": cfg.brand.logo,
+      "logoFixed": cfg.brand.logoSmall,
+      "activeLink": 6,
+      "attr": {
+        "data-layout": "rd-navbar-fixed",
+        "data-sm-layout": "rd-navbar-fixed",
+        "data-md-layout": "rd-navbar-fullwidth",
+        "data-lg-layout": "rd-navbar-static"
+      }
+    })
+
+    +breadcrumb("Masonry Blog", {
+      0: {
+        "type": "link",
+        "title": cfg.nav.home.title,
+        "href": cfg.nav.home.href
+      },
+      1: {
+        "type": "link",
+        "title": cfg.nav.news.title,
+        "href": cfg.nav.news.href
+      },
+      2: {
+        "type": "link",
+        "title": "Masonry Blog",
+        "href": "blog-masonry-1-column.html"
+      }
+    }, "images/backgrounds/background-02-1920x900.jpg")
+
+  // Page Content
+  main.page-content.section-75.section-md-top-90.section-md-bottom-95
+
+    // Blog
+    section
+      .shell-wide
+        h1.text-spacing-inverse-50 Blog
+
+        .range.range-xs-center.offset-top-50
+          .cell-sm-10.cell-md-6.cell-lg-4
+            // Post Modern
+            article.post.post-modern
+              // Post media
+              header.post-media
+                .embed-responsive.embed-responsive-16by9
+                  iframe.embed-responsive-item(src='//www.youtube.com/embed/-AhmuMqZB0s?wmode=transparent')
+              // Post content
+              section.post-content.text-left
+                .post-meta.small.pull-sm-right
+                  span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-turquoise.text-middle
+                  time.text-extra-small.text-middle.inset-left-4.text-bold(datetime='2016-01-01') 2 days ago
+                .post-meta-list.reveal-inline-block.text-middle.inset-left-6.inset-sm-left-0
+                  // List inline marked
+                  ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-silver-chalice.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-sm-left-4
+                    li
+                      a.text-malibu(href="#") Customer service
+                    li
+                      a.text-malibu(href="#") Tips
+                    li
+                      a.text-malibu(href="#") Drivers
+                    li
+                      span.veil.reveal-xs-inline-block.text-middle.inset-xs-left-4
+                        span.icon.icon-sm.material-icons-ico.material-icons-videocam
+                // Post Title
+                .post-title.offset-top-20
+                  p.font-accent.text-bold.text-spacing-50.text-uppercase
+                    a.text-mine-shaft(href='blog-single-post.html') ten customer service tips for drivers
+                // Post Body
+                .post-body.offset-top-25
+                  p.text-spacing-0.text-extra-small These simple but important practices will ensure you’re best placed to have an enjoyable shift and, in most cases, achieve generous tips from your customers. Tip #1: ALWAYS greet your customers with a friendly welcome. Tip #2: Be clean and well presented at all times with a priority on uniform and personal hygiene. Tip #3:  Ensure your vehicle is clean inside and out and that you leave enough time for...
+
+            .offset-top-30
+              // Post Modern
+              article.post.post-modern
+                // Post media
+                header.post-media
+                  img.img-responsive.img-cover(width='570', height='381', src='images/blog/post-34-570x381.jpg', alt='')
+                // Post content
+                section.post-content.text-left
+                  .post-meta.small.pull-sm-right
+                    span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-turquoise.text-middle
+                    time.text-extra-small.text-middle.inset-left-4.text-bold(datetime='2016-01-01') 2 days ago
+                  .post-meta-list.reveal-inline-block.text-middle.inset-left-6.inset-sm-left-0
+                    // List inline marked
+                    ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-silver-chalice.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-sm-left-4
+                      li
+                        a.text-malibu(href="#") How to
+                      li
+                        a.text-malibu(href="#") Lost property
+                      li
+                        a.text-malibu(href="#") Taxi
+                      li
+                        span.veil.reveal-xs-inline-block.text-middle.inset-xs-left-4
+                          span.icon.icon-sm.material-icons-ico.material-icons-image
+                  // Post Title
+                  .post-title.offset-top-20
+                    p.font-accent.text-bold.text-spacing-50.text-uppercase
+                      a.text-mine-shaft(href='blog-single-post.html') finding lost property
+                  // Post Body
+                  .post-body.offset-top-25
+                    p.text-spacing-0.text-extra-small After an outing, you decide to catch a cab. You get home only to discover that you lost something really important in your taxi.  Most people won’t bother to try to find the item. We recommend using this little guide of recovering lost property to make your...
+
+          .cell-sm-10.cell-md-6.cell-lg-4.offset-top-30.offset-md-top-0
+            // Post Modern
+            article.post.post-modern
+              // Post content
+              section.post-content.text-left
+                .post-meta.small.pull-sm-right
+                  span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-turquoise.text-middle
+                  time.text-extra-small.text-middle.inset-left-4.text-bold(datetime='2016-01-01') 4 days ago
+                .post-meta-list.reveal-inline-block.text-middle.inset-left-6.inset-sm-left-0
+                  // List inline marked
+                  ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-silver-chalice.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-sm-left-4
+                    li
+                      a.text-malibu(href="#") How to
+                    li
+                      a.text-malibu(href="#") Taxi
+                    li
+                      a.text-malibu(href="#") Services
+                    li
+                      .veil.reveal-xs-inline-block.text-middle.inset-xs-left-4
+                        span.icon.icon-sm.material-icons-ico.material-icons-create
+                // Post Title
+                .post-title.offset-top-20
+                  p.font-accent.text-bold.text-spacing-50.text-uppercase
+                    a.text-mine-shaft(href='blog-single-post.html') how to select a taxi service
+                // Post Body
+                .post-body.offset-top-25
+                  p.text-spacing-0.text-extra-small A taxi is an essential component of the public transportation system. Whether you are calling a taxi to your home or office on a regular basis, or are visiting a strange city and need a cab to move around, you can benefit from using a taxi. First, not all taxis are the same. They may all look similar on the surface, but there is a range of factors that are not easily apparent that can affect the nature of your trip...
+
+            .offset-top-30
+              // Post Modern
+              article.post.post-modern
+                // Post media
+                header.post-media
+                  img.img-responsive.img-cover(width='570', height='352', src='images/blog/post-13-570x352.jpg', alt='')
+                // Post content
+                section.post-content.text-left
+                  .post-meta.small.pull-sm-right
+                    span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-turquoise.text-middle
+                    time.text-extra-small.text-middle.inset-left-4.text-bold(datetime='2016-01-01') 5 days ago
+                  .post-meta-list.reveal-inline-block.text-middle.inset-left-6.inset-sm-left-0
+                    // List inline marked
+                    ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-silver-chalice.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-sm-left-4
+                      li
+                        a.text-malibu(href="#") Sightseeing
+                      li
+                        a.text-malibu(href="#") New York
+                      li
+                        a.text-malibu(href="#") Taxi
+                      li
+                        .veil.reveal-xs-inline-block.text-middle.inset-xs-left-4
+                          span.icon.icon-sm.mdi.mdi-instagram
+                  // Post Title
+                  .post-title.offset-top-20
+                    p.font-accent.text-bold.text-spacing-50.text-uppercase
+                      a.text-mine-shaft(href='blog-single-post.html') city-taxi NY sightseeing tour
+
+
+            .offset-top-30
+              // Post Modern
+              article.post.post-modern
+                // Post media
+                header.post-media
+                  .post-inset.section-top-34.section-bottom-0
+                    .soundcloud-player-classic
+                      iframe(height='166', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/149065581&color=ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false')
+                // Post content
+                section.post-content.text-left
+                  .post-meta.small.pull-sm-right
+                    span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-turquoise.text-middle
+                    time.text-extra-small.text-middle.inset-left-4.text-bold(datetime='2016-01-01') 6 days ago
+                  .post-meta-list.reveal-inline-block.text-middle.inset-left-6.inset-sm-left-0
+                    // List inline marked
+                    ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-silver-chalice.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-sm-left-4
+                      li
+                        a.text-malibu(href="#") Taxi
+                      li
+                        a.text-malibu(href="#") Review
+                      li
+                        a.text-malibu(href="#") Services
+                      li
+                        .veil.reveal-xs-inline-block.text-middle.inset-xs-left-4
+                          span.icon.icon-sm.mdi.mdi-soundcloud
+                  // Post Title
+                  .post-title.offset-top-20
+                    p.font-accent.text-bold.text-spacing-50.text-uppercase
+                      a.text-mine-shaft(href='blog-single-post.html') testing new taxis: opinions and impressions
+
+          .cell-sm-10.cell-md-12.cell-lg-4.offset-top-30.offset-lg-top-0
+            .range.range-xs-center
+              .cell-md-6.cell-lg-12
+                // Post Modern
+                article.post.post-modern
+                  // Post media
+                  header.post-media
+                    img.img-responsive.img-cover(width='570', height='352', src='images/blog/post-33-570x381.jpg', alt='')
+                  // Post content
+                  section.post-content.text-left
+                    .post-meta.small.pull-sm-right
+                      span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-turquoise.text-middle
+                      time.text-extra-small.text-middle.inset-left-4.text-bold(datetime='2016-01-01') 8 days ago
+                    .post-meta-list.reveal-inline-block.text-middle.inset-left-6.inset-sm-left-0
+                      // List inline marked
+                      ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-silver-chalice.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-sm-left-4
+                        li
+                          a.text-malibu(href="#") News
+                        li
+                          a.text-malibu(href="#") Ridesharing
+                        li
+                          a.text-malibu(href="#") Taxi
+                        li
+                          .veil.reveal-xs-inline-block.text-middle.inset-xs-left-4
+                            span.icon.icon-sm.mdi.mdi-instagram
+                    // Post Title
+                    .post-title.offset-top-20
+                      p.font-accent.text-bold.text-spacing-50.text-uppercase
+                        a.text-mine-shaft(href='blog-single-post.html') ridesharing is not worth the risk
+                    // Post Body
+                    .post-body.offset-top-25
+                      p.text-spacing-0.text-extra-small It’s illegal and there’s plenty of reasons why. Find out what City-Taxi and the taxi industry as a whole is doing to fight ridesharing. Authorities all over the world are banning ridesharing in major cities, but the companies involved repeatedly ignore local laws and continue operating illegally. The Tourism Advisory Council has released a new report calling for a balanced approach to regulating services such as...
+
+              .cell-md-6.cell-lg-12.offset-top-30.offset-md-top-0.offset-lg-top-30
+                // Post Modern
+                article.post.post-modern
+                  // Post content
+                  section.post-content.text-left
+                    .post-meta.small.pull-sm-right
+                      span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-turquoise.text-middle
+                      time.text-extra-small.text-middle.inset-left-4.text-bold(datetime='2016-01-01') 4 days ago
+                    .post-meta-list.reveal-inline-block.text-middle.inset-left-6.inset-sm-left-0
+                      // List inline marked
+                      ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-silver-chalice.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-sm-left-4
+                        li
+                          a.text-malibu(href="#") Innovations
+                        li
+                          a.text-malibu(href="#") Taxi
+                        li
+                          a.text-malibu(href="#") Industry news
+                        li
+                          .veil.reveal-xs-inline-block.text-middle.inset-xs-left-4
+                            span.icon.icon-sm.material-icons-ico.material-icons-create
+                    // Post Title
+                    .post-title.offset-top-20
+                      p.font-accent.text-bold.text-spacing-50.text-uppercase
+                        a.text-mine-shaft(href='blog-single-post.html') City-Taxi update: new Gadgets
+                    // Post Body
+                    .post-body.offset-top-25
+                      p.text-spacing-0.text-extra-small We are glad to introduce an update to all our taxis. Because technologies develop as time goes by, our  taxis also deserve something new. We decided that installing tablets for our clients’ convenience will be the best option, and here’s why and what they will include. The newly proposed tablets would have a credit card reader to collect the fare and would also be filled with apps, which would allow the rider to do things...
+
+        .offset-top-50
+          // Classic Pagination
+          nav
+            ul.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-marked-silver-chalice.pagination-classic
+              li.text-regular
+                a.icon.icon-sm.icon-primary.material-icons-ico.material-icons-chevron_left(href='#')
+              li.active
+                a(href='#') 01
+              li
+                a(href='#') 02
+              li
+                a(href='#') 03
+              li
+                a(href='#') 04
+              li
+                a(href='#') 05
+              li.text-regular
+                a.icon.icon-sm.icon-primary.material-icons-ico.material-icons-chevron_right(href='#')
+
+  // Page Footer
+  include ../sections/_footer-default

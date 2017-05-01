@@ -1,0 +1,58 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-pagination-bootstrap
+
+//- Title
+block title
+  title= cfg.nav.shop.submenu.list.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.shop,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.shop.submenu.list.title,
+  cfg.nav.shop.submenu.list.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.shop.title,
+      "href": cfg.nav.shop.href
+    },
+    2: {
+      "title": cfg.nav.shop.submenu.list.title,
+      "href": cfg.nav.shop.submenu.list.href
+    },
+    3: {
+      "title": cfg.nav.shop.submenu.list.submenu.noSidebar.title,
+      "href": cfg.nav.shop.submenu.list.submenu.noSidebar.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    .shell
+      include ../sections/_section-shop-list-wide-no-sidebar
+
+
+  // Page Footers
+  include ../sections/_section-footer-default

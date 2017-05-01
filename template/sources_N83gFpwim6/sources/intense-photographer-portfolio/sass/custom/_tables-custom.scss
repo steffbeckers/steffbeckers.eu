@@ -1,0 +1,150 @@
+//
+// Custom Tables Custom
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.table-custom {
+  text-align: left;
+
+  tr {
+    &:nth-child(odd) {
+      background-color: $gray-lightest;
+    }
+
+    td:first-child {
+      font-weight: 700;
+    }
+  }
+
+  // Table from 768
+  &.large-only {
+    tr {
+      &:first-child {
+        border: 1px solid $gray;
+        background: -moz-linear-gradient(top, $white 0%, $gray-lighter 100%);
+        background: -webkit-linear-gradient(top, $white 0%, $gray-lighter 100%);
+        background: -o-linear-gradient(top, $white 0%, $gray-lighter 100%);
+        background: -ms-linear-gradient(top, $white 0%, $gray-lighter 100%);
+        background: linear-gradient(to bottom, $white 0%, $gray-lighter 100%);
+      }
+    }
+
+    th, td {
+      padding: 8px 18px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      th, td {
+        &:nth-child(n+2) {
+          padding-left: 56px;
+        }
+      }
+    }
+  }
+
+  // Table to 767
+  &.small-only {
+    tr {
+      &:first-child {
+        display: none;
+      }
+
+      th {
+        margin-top: 10px;
+        text-align: center;
+        border: 1px solid $gray;
+        background: -moz-linear-gradient(top, $white 0%, $gray-lighter 100%);
+        background: -webkit-linear-gradient(top, $white 0%, $gray-lighter 100%);
+        background: -o-linear-gradient(top, $white 0%, $gray-lighter 100%);
+        background: -ms-linear-gradient(top, $white 0%, $gray-lighter 100%);
+        background: linear-gradient(to bottom, $white 0%, $gray-lighter 100%);
+      }
+    }
+
+    th, td {
+      padding: 6px;
+      text-align: left;
+    }
+  }
+}
+
+
+// Bootstrap
+// --------------------------------------------------
+
+.table {
+  text-align: left;
+
+  tr {
+    td:first-child {
+      font-weight: 700;
+    }
+  }
+
+  th tbody, td tbody {
+    padding: 8px 18px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    th, td {
+      &:nth-child(n+2) {
+        padding-left: 56px;
+      }
+    }
+  }
+}
+
+
+// Table Striped
+// --------------------------------------------------
+
+.table-striped {
+  tbody tr {
+    &:nth-of-type(odd) {
+      background-color: $gray-lightest;
+    }
+
+    &:first-child {
+      background-color: transparent;
+
+      th {
+        border-top: none;
+        border-bottom: 2px solid $gray;
+      }
+    }
+  }
+}
+
+
+// Shopping Cart Table
+// --------------------------------------------------
+
+.table.table-shopping-cart {
+
+  > thead > tr > td{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-color: $gray-lighter;
+  }
+
+  tr {
+    td:first-child {
+      font-weight: 700;
+    }
+  }
+
+  th tbody, td tbody {
+    padding: 8px 18px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    th, td {
+      &:nth-child(n+2) {
+        padding-left: 0;
+      }
+    }
+  }
+}

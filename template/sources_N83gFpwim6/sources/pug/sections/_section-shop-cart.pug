@@ -1,0 +1,73 @@
+//- Includes
+include ../elements/_ui-table-bootstrap
+
+// Shop Cart
+section.section-98.section-sm-110
+
+    .shell
+      h3.text-left 2 Items in your cart
+      .table-responsive.offset-top-66
+        table.table.table-shopping-cart
+          thead
+            tr
+              td.text-middle(style="width: 1px")
+                .form-group.stepper-type-2
+                  input.form-control(type="number" data-zeros="true" value="1" min="1" max="20")
+              td(style="width: 1px")
+                .inset-left-20
+                  .product-image
+                    img(src="images/shop/product-01-110x110.png" width="110" height="110" alt="")
+              td.text-middle(style="min-width: 340px;")
+                .inset-left-30
+                  span.product-brand.text-dark Armani Brand
+                  h4.text-bold.offset-top-0
+                   a(href= cfg.nav.shop.submenu.singleProduct.submenu.noSidebar.href) Engineered Rib Cashmere
+              td.text-middle
+                .inset-left-20
+                  h6.product-radio-title Color
+                  span.product-radio(style="background-color: #1d2f61")
+              td.text-middle
+                .inset-left-20
+                  h6.product-radio-title Size
+                  span.small.product-radio M
+              td.text-middle
+                .inset-left-20
+                  span.text-bold.h4 $34
+              td.text-middle
+                .inset-left-20
+                  a(href="#").icon.icon-xxs.mdi.mdi-window-close.text-dark
+
+            tr
+              td.text-middle(style="width: 1px")
+                .form-group.stepper-type-2
+                  input.form-control(type="number" data-zeros="true" value="2" min="1" max="20")
+              td(style="width: 1px")
+                .inset-left-20
+                  .product-image
+                    img(src="images/shop/product-02-110x110.png" width="110" height="110" alt="")
+              td.text-middle(style="min-width: 340px;")
+                .inset-left-30
+                  span.product-brand.text-dark Step Brand
+                  h4.text-bold.offset-top-0
+                    a(href= cfg.nav.shop.submenu.singleProduct.submenu.noSidebar.href) Ruched Bandage Miniskirt
+              td.text-middle
+                .inset-left-20
+                  h6.product-radio-title Color
+                  span.product-radio(style="background-color: #1d2f61")
+              td.text-middle
+                .inset-left-20
+                  h6.product-radio-title Size
+                  span.small.product-radio XS
+              td.text-middle
+                .inset-left-20
+                  span.text-bold.h4 $119
+              td.text-middle
+                .inset-left-20
+                  a(href="#").icon.icon-xxs.mdi.mdi-window-close.text-dark
+
+      hr.bg-gray-lighter.offset-top-0.veil.reveal-sm-block
+      .offset-top-34.text-right
+        h3.text-bold #[small.text-dark Total: ] $1345
+        a(href= cfg.nav.shop.submenu.checkout.href).btn.btn-icon.btn-icon-left.btn-picton-blue.offset-top-14
+          span.icon.mdi.mdi-lock
+          | Proceed to checkout

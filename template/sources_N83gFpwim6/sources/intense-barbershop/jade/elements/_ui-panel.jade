@@ -1,0 +1,26 @@
+mixin panel(obj)
+  - var headingId = id=obj.parentId + 'Heading' + obj.number
+  - var bodyId = id=obj.parentId + 'Collapse' + obj.number
+
+  //- Bootstrap panel
+  .panel.panel-custom(class=obj.panelClass)
+    .panel-heading(id=headingId, role='tab')
+      .panel-title
+        if(obj.first)
+          a(role='button', data-toggle='collapse', data-parent='#' + obj.parentId, href='#' + bodyId, aria-controls=bodyId, aria-expanded='true')
+            =obj.header
+            if(obj.arrow !== false)
+              .panel-arrow
+        else
+          a.collapsed(role='button', data-toggle='collapse', data-parent='#'+ obj.parentId, href='#' + bodyId, aria-controls=bodyId)
+            =obj.header
+            if(obj.arrow !== false)
+              .panel-arrow
+
+    .panel-collapse.collapse(id=bodyId, class={'in' : obj.first}, role='tabpanel', aria-labelledby=headingId)
+      .panel-body
+        if (typeof(obj.text) === 'undefined')
+          !=obj.content
+        else
+          p=obj.text
+

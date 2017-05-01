@@ -1,0 +1,67 @@
+//- Includes
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-isotope
+// Portfolio Grid 3 columns
+section.section-98.section-sm-110
+  .shell
+    .offset-top-34
+      +isotope(['All', 'Clients', 'Business', 'Marketing'],{
+        "group": "gallery",
+        "layout": "fitRows",
+        "alignClass": "isotope-filters-horizontal"
+      }, "isotope-1")
+        .row(data-photo-swipe-gallery="gallery")
+          .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter="*")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/portfolio/portfolio-02-370x280.jpg", "width": 370,  "height": 280, "alt": "" },
+              "target": {"src": "images/portfolio/portfolio-02-1170x600.jpg", "width": 1170,  "height":600, "alt": "" }
+            })
+          .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter="Marketing")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/portfolio/portfolio-03-370x280.jpg", "width": 370, "height": 280, "alt": "" },
+              "target": {"src": "images/portfolio/portfolio-03-1170x600.jpg", "width": 1170, "height": 600, "alt": "" }
+            })
+          .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter="Marketing")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/portfolio/portfolio-04-370x280.jpg", "width": 370, "height": 280, "alt": "" },
+              "target": {"src": "images/portfolio/portfolio-04-1170x600.jpg", "width": 1170, "height": 600, "alt": "" }
+            })
+          .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter="Marketing")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/portfolio/portfolio-05-370x280.jpg", "width": 370, "height": 280, "alt": "" },
+              "target": {"src": "images/portfolio/portfolio-05-1170x600.jpg", "width": 1170, "height": 600, "alt": "" }
+            })
+          .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter="Business")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/portfolio/portfolio-10-370x280.jpg", "width": 370, "height": 280, "alt": "" },
+              "target": {"src": "images/portfolio/portfolio-10-1170x600.jpg", "width": 1170, "height": 600, "alt": "" }
+            })
+          .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter="Business")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/portfolio/portfolio-15-370x280.jpg", "width": 370, "height": 280, "alt": "" },
+              "target": {"src": "images/portfolio/portfolio-15-1170x600.jpg", "width": 1170, "height": 600, "alt": "" }
+            })
+          .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter="Clients")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/portfolio/portfolio-16-370x280.jpg", "width": 370, "height": 280, "alt": "" },
+              "target": {"src": "images/portfolio/portfolio-16-1170x600.jpg", "width": 1170, "height": 600, "alt": "" }
+            })
+          .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter="Clients")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/portfolio/portfolio-18-370x280.jpg", "width": 370, "height": 280, "alt": "" },
+              "target": {"src": "images/portfolio/portfolio-18-1170x600.jpg", "width": 1170, "height": 600, "alt": "" }
+            })
+          .col-xs-12.col-sm-6.col-md-4.isotope-item(data-filter="Clients")
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/portfolio/portfolio-20-370x280.jpg", "width": 370, "height": 280, "alt": "" },
+              "target": {"src": "images/portfolio/portfolio-20-1170x600.jpg", "width": 1170, "height": 600, "alt": "" }
+            })

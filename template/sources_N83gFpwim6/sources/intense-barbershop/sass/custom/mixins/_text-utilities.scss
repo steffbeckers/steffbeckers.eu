@@ -1,0 +1,32 @@
+// Text Utilities
+
+@mixin make-text-alignment($resolution: null) {
+  @if ($resolution == null) {
+    $resolution: ''
+  } @else {
+    $resolution: str_insert($resolution, '-', str_length($resolution) + 1);
+  }
+  .text-#{$resolution}left {
+    text-align: left;
+  }
+
+  .text-#{$resolution}center {
+    text-align: center;
+  }
+
+  .text-#{$resolution}right {
+    text-align: right;
+  }
+
+  .text-#{$resolution}justify {
+    text-align: justify;
+  }
+
+  .text-#{$resolution}nowrap {
+    white-space: nowrap;
+  }
+
+  .text-#{$resolution}normal {
+    white-space: normal;
+  }
+}

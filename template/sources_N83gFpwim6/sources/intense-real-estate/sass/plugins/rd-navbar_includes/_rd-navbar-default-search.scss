@@ -1,0 +1,118 @@
+//
+// RD Navbar Default Search
+// --------------------------------------------------
+
+%rd-navbar-default-search{
+  .rd-navbar-search {
+    display: inline-block;
+    &.active .rd-navbar-search-form {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .rd-navbar-search-form {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    bottom: 0;
+    transition: .3s all ease;
+    .form-group, input {
+      height: 100%;
+    }
+
+    .form-label {
+      left: 0;
+      top: 50%;
+      padding-left: $rd-navbar-search-form-label-padding-left;
+      font-size: $rd-navbar-search-form-label-size;
+      font-weight: $rd-navbar-search-form-label-weight;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      &.focus {
+        left: 16px;
+        font-size: $rd-navbar-search-form-label-focus-size;
+        top: 25px;
+      }
+    }
+
+    .rd-navbar-search-form-input {
+      height: 100%;
+      font-size: $rd-navbar-search-form-input-size;
+      padding: $rd-navbar-search-form-input-padding;
+      border: none;
+      text-transform: uppercase;
+      font-weight: $rd-navbar-search-form-input-weight;
+    }
+  }
+
+  .rd-navbar-search-toggle {
+    margin-left: $rd-navbar-search-toggle-offset-left;
+    @include toggle-icons-via-rotation($rd-navbar-search-toggle-icon-size, $rd-navbar-search-toggle-icon-size, $rd-navbar-search-toggle-icon-color, $rd-navbar-search-toggle-open-icon, $rd-navbar-search-toggle-close-icon);
+    position: relative;
+    z-index: 3;
+  }
+
+  .rd-navbar-inner.active{
+    .rd-navbar-nav-wrap, .rd-navbar-cart-wrap{
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &.rd-navbar--is-stuck {
+    .rd-navbar-search-form {
+      .form-label {
+        &.focus {
+          top: 9px;
+        }
+      }
+    }
+  }
+
+}
+
+//
+// Dark Theme
+// --------------------------------------------------
+%rd-navbar-default-search-dark{
+  .rd-navbar-search-form {
+    border-bottom: $rd-navbar-dark-search-form-border;
+    .form-label {
+      color: $rd-navbar-dark-search-form-label-color;
+      &.focus {
+        color: $rd-navbar-dark-search-form-label-focus-color;
+      }
+    }
+  }
+
+  .rd-navbar-search-form-input {
+    color: $rd-navbar-dark-search-form-input-color;
+  }
+
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+%rd-navbar-default-search-light{
+  .rd-navbar-search-form {
+    border-bottom: $rd-navbar-light-search-form-border;
+    .form-label {
+      color: $rd-navbar-light-search-form-label-color;
+      &.focus {
+        color: $rd-navbar-light-search-form-label-focus-color;
+      }
+    }
+  }
+
+  .rd-navbar-search-form-input {
+    color: $rd-navbar-light-search-form-input-color;
+  }
+
+
+}

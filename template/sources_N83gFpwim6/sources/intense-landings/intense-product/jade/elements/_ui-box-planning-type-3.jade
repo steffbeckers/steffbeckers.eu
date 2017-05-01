@@ -1,0 +1,21 @@
+//-title - box title
+//-price - box-price
+//-period - box period
+//-state - active/not
+//- btnText - button text
+mixin box-planning-3(title, price, period, btnText, state)
+  // Planning Box type 3
+  .box-planning.box-planning-type-3(class=(state != null ? 'active' : ''))
+    .box-planning-header(class=(state != null ? 'bg-primary context-dark' : 'bg-shark context-dark'))
+      div.box-planning-label
+        p.big Most Popular
+      h3= title
+      p.h2.plan-price
+        sup.big $
+        = price
+        sub.text-white
+          = "/"
+          = period
+    .box-planning-body
+      block
+      a.btn.btn-block.btn-default.btn-sm(href="#")= btnText

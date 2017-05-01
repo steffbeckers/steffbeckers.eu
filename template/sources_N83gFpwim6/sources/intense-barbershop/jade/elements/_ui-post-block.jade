@@ -1,0 +1,22 @@
+mixin post-block(obj)
+  article.post-block
+    +jpg(obj.img, 'post-block-image')
+
+    .post-block-body
+      p.post-block-title: a(href='single-post.html')=obj.title
+      .post-block-text
+        p=obj.text
+          a(href='single-post.html')
+
+      ul.post-block-meta
+        li
+          span.icon.icon-xxs.icon-primary.fa.fa-heart
+          span=obj.meta[0]
+
+        li
+          span.icon.icon-xxs.icon-primary.fa.fa-eye
+          span=obj.meta[1]
+
+        li
+          span.icon.icon-xxs.icon-primary.fa.fa-calendar-plus-o
+          time(datetime=obj.meta[2][0])=obj.meta[2][1]

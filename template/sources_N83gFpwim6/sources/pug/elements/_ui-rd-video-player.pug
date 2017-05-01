@@ -1,0 +1,44 @@
+//- RD Video Player
+//- video - {video} Object
+mixin rd-video-player(video)
+  - var playlist = typeof(video.playlist) !== 'undefined'
+  // RD Video
+  .rd-video-player(data-rd-video-path= video.href data-rd-video-title= video.title data-rd-video-muted= video.muted data-rd-video-preview= video.preview data-rd-video-preload= video.preload class= video.classes )
+    .rd-video-wrap(class="embed-responsive-" + video.ratio)
+      .rd-video-preloader
+      video(preload="metadata")
+      .rd-video-preview
+      .rd-video-top-controls
+        // Title
+        span.rd-video-title
+        a.rd-video-fullscreen.mdi.mdi-fullscreen.rd-video-icon(href='#')
+      .rd-video-controls
+        .rd-video-controls-buttons
+          if playlist
+            // Prev Button
+            a.rd-video-prev.mdi.mdi-fast-forward.rd-video-icon(href='#')
+          // Play\Pause button
+          a.rd-video-play-pause.mdi.mdi-play(href='#' class=(playlist) ? 'has-controls' : '')
+          if playlist
+            // Next Button
+            a.rd-video-next.mdi.mdi-fast-forward.rd-video-icon(href='#')
+          // Progress bar
+        .rd-video-progress-bar
+        .rd-video-time #[span.rd-video-current-time] #[span.rd-video-time-divider :]  #[span.rd-video-duration]
+        .rd-video-volume-wrap
+
+          // Volume button
+          a.rd-video-volume.mdi.mdi-volume-high.rd-video-icon(href='#')
+          .rd-video-volume-bar-wrap
+            // Volume bar
+            .rd-video-volume-bar
+
+      if playlist
+        ul.rd-video-playlist.owl-carousel(data-rd-video-play-on="li" data-mouse-drag="true" data-loop="false" data-margin="20" data-items="1" data-md-items="2"  data-stage-padding="80" data-xs-stage-padding="100" data-nav="true")
+          each track in video.playlist
+            li(data-rd-video-src= track.href data-rd-video-title= track.title)
+              img.img-responsive(src=track.preview alt= track.title)
+              p= track.title
+
+
+

@@ -1,0 +1,111 @@
+//
+// Custom scaffolding
+// --------------------------------------------------
+
+// Page styles
+// --------------------------------------------------
+
+.page {
+  overflow: hidden;
+  background-color: $main-bg;
+}
+
+// Element with border radius
+.img-rounded {
+  border-radius: $border-radius-base;
+}
+
+.img-cover {
+  width: 100%;
+  height: auto;
+}
+
+.img-bordered-white {
+  border: 2px solid $white;
+}
+
+// Element with 50% opacity
+.img-semi-transparent {
+  opacity: .5;
+  @include transition(.35s all ease);
+  will-change: transform;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.element-fullwidth {
+  width: 100%;
+}
+
+.bg-image {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img-mobile-half-width {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: $screen-xs-min) {
+    max-width: none;
+  }
+}
+
+//WOW
+//
+.wow {
+  //visibility: hidden;
+}
+
+// To Front
+//
+.to-front {
+  position: relative;
+  z-index: 9;
+}
+
+// Max - width
+//
+.max-width-75p {
+  max-width: 60%;
+  @media (min-width: 1600px) {
+    max-width: 100%;
+  }
+}
+
+
+// Scroll setion
+//
+.desktop .animateItem {
+  opacity: 0;
+}
+
+.animate {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@media only screen and (min-width: $screen-md-min) {
+  .section-animate.start {
+    min-height: 100vh;
+  }
+
+  .section-animate.start > div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Force Hardware Acceleration */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+

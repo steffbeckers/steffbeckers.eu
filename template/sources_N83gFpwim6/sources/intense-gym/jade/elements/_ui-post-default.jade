@@ -1,0 +1,58 @@
+//- Default Post
+
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-carousel-gallery-classic
+include ../elements/_ui-video-embed
+include ../elements/_ui-soundcloud-player-classic
+
+mixin post-default(date, title, author, tags, comments, media)
+  // Post Wide
+  article.post.post-default.text-left
+    // Post Header
+    .header.post-header
+      // Post Meta
+      ul.post-controls.list-inline.list-inline-sm.p.text-dark
+        li
+          span.text-middle.icon-xxs.text-danger.mdi.mdi-clock
+          time(datetime="2016-01-01").text-middle= date
+        li
+          span.text-middle.icon-xxs.text-danger.mdi.mdi-account-outline &nbsp;
+          span.text-middle= author
+
+        if tags
+          li
+            span.text-middle.icon-xxs.text-danger.mdi.mdi-folder-outline &nbsp;
+            each tag, i in tags
+              a.text-middle(href= tag.href)= tag.title
+              - if (i !== (tags.length - 1))
+                = ", "
+        li
+          span.text-middle.icon-xxs.text-danger.mdi.mdi-comment-multiple-outline &nbsp;
+          a(href="#comments").text-middle= comments
+            span &nbsp;Comments
+
+      // Post Meta
+      h3.text-regular.text-darker.post-title= title
+
+
+      // Post Media
+      if media
+        .post-media.offset-top-34
+          header.post-media
+            case media.type
+              when "gallery"
+                +carousel-gallery-classic(media.images)
+              when "soundcloud"
+                +soundcloud-player-classic(media)
+              when "video"
+                +video-embed(media)
+              when "thumbnail"
+                //- TODO: Remove this wrap on photoswipe init fix
+                div(data-photo-swipe="gallery")
+                  +thumbnail-classic(media)
+              default
+                = ""
+
+     // PostContent
+    section.post-content.offset-top-41
+      block

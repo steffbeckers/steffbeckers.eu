@@ -1,0 +1,36 @@
+extends  ../_skeleton
+
+//-Title
+block title
+  title= cfg.nav.aboutMe.title
+
+//- Page
+block page
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-sidebar-fixed(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "false",
+      "data-lg-stick-up": 'false',
+      "data-lg-hover-on": "false",
+      "data-body-class": "body-inset-left"
+    },
+    cfg.brand.logo,
+    cfg.nav.aboutMe,
+    cfg.nav
+    )
+
+  // Page Content
+  main
+    // Header Logo
+    include ../sections/_section-header-logo
+
+    // Page Content
+    .page-content.section-top-124.section-bottom-98.section-xs-top-0.section-lg-bottom-124.offset-xs-top-41
+
+      include ../sections/_section-about-me-variant-3
+
+  // Page Footers
+  include ../sections/_section-footer-variant-3

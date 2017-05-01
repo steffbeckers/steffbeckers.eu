@@ -1,0 +1,117 @@
+include ../elements/_ui-tabs-classic
+include ../elements/_widget-form-search
+include ../mixins/_rd-navbar-submenu-simple
+
+//- RD Navbar Transparent
+//- skin - rd navbar skin (transparent, inverse, default)
+//- attrs - additional HTML attributes of rd navbar
+//- logo - logo markup (<img/> or text)
+//- links - nav links object
+mixin rd-navbar-floated(skin, attrs, logo, activeLink, links)
+    // RD Navbar Transparent
+    .rd-navbar-wrap
+      nav&attributes(attrs).rd-navbar.container.rd-navbar-floated(class="#{skin}" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static")
+        .rd-navbar-inner
+          // RD Navbar Panel 
+          .rd-navbar-panel
+            // RD Navbar Toggle
+            button.rd-navbar-toggle(data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap")
+              span
+            // RD Navbar Top Panel Toggle
+            button.rd-navbar-right-buttons-toggle(data-rd-navbar-toggle=".rd-navbar, .rd-navbar-right-buttons")
+              span
+
+            //Navbar Brand
+            .rd-navbar-brand
+              a(href="../index.html") !{logo}
+
+          .rd-navbar-menu-wrap
+            .rd-navbar-nav-wrap
+              -var tabs = [{obj: cfg.nav.components, columns: 4}]
+              -var megamenus = [{obj: cfg.nav.pages, columns: 4}]
+              -var type = 'simple'
+              -var megamenuColumns = 4
+
+              .rd-navbar-mobile-scroll
+                //Navbar Brand Mobile
+                .rd-navbar-mobile-brand
+                  a(href="../index.html") !{logo}
+
+                // RD Navbar Nav
+                ul.rd-navbar-nav
+                  each link, title in links
+                    -type = 'simple'
+                    li(class=(activeLink.title == link.title) ? 'active' : '')
+                      a(href=link.href class=link.icon)
+                        span= link.title
+                        - if (typeof(link.label) !== 'undefined')
+                          span.rd-navbar-label.text-middle.label-custom.label-danger.label-xs-custom.label-rounded-custom.label #{link.label}
+                      each tab in tabs
+                        -
+                          if (JSON.stringify(tab.obj) === JSON.stringify(link)){
+                            type = 'tabs'
+                            if (tab.columns !== 'undefined') megamenuColumns = tab.columns
+                          }
+
+                      each megamenu in megamenus
+                        -
+                          if (JSON.stringify(megamenu.obj) === JSON.stringify(link)){
+                            type = 'megamenu'
+                            if (megamenu.columns !== 'undefined') megamenuColumns = megamenu.columns
+                          }
+                      case type
+                        when 'tabs'
+                          .rd-navbar-megamenu
+                            -var tabList = []
+                            each title in link.submenu
+                              -tabList.push(title.title)
+                            if tabList.length > 0
+                              +tabs-classic(tabList)
+                                each tab in link.submenu
+                                  .row
+                                    -var columnLength = Object.keys(tab.submenu).length / megamenuColumns
+
+                                    - for (var i = 1; i <= megamenuColumns; i++){
+                                      -var j = 0
+                                        ul(class='col-lg-' + 12 / megamenuColumns)
+                                          each dropdown in tab.submenu
+                                            -j++
+                                            -if (j <= (i - 1) * columnLength) continue
+                                            -if (j > i*columnLength) break
+                                            li
+                                              a(href=dropdown.href)
+                                                span.rd-navbar-icon(class=dropdown.icon)
+                                                span.text-middle= dropdown.title
+                                                - if (typeof(dropdown.label) !== 'undefined')
+                                                  span.rd-navbar-label.label-custom.label-danger.label-xs-custom.label-rounded-custom.label #{dropdown.label}
+                                    -}
+                        when 'megamenu'
+                          .rd-navbar-megamenu
+                            .row
+                              -var columnLength = Object.keys(link.submenu).length / megamenuColumns
+                              - for (var i = 1; i <= megamenuColumns; i++){
+                                -var j = 0
+                                  ul(class='col-lg-' + 12 / megamenuColumns)
+                                    each dropdown in link.submenu
+                                      -j++
+                                      -if (j <= (i - 1) * columnLength) continue
+                                      -if (j > i*columnLength) break
+                                      li
+                                        a(href=dropdown.href)
+                                          span.rd-navbar-icon(class=dropdown.icon)
+                                          span.text-middle= dropdown.title
+                                          - if (typeof(dropdown.label) !== 'undefined')
+                                            span.rd-navbar-label.label-custom.label-danger.label-xs-custom.label-rounded-custom.label #{dropdown.label}
+
+                              -}
+
+                        default
+                          +rd-navbar-simple-submenu(link)
+            //RD Navbar Search
+            .rd-navbar-right-buttons.group.reveal-inline-block
+              a.btn.btn-primary(href="register-login.html#undefined1" style="max-height: 40px; line-height: 22px;" target="_blank")
+                span.big Login
+              div.text-middle.reveal-lg-inline-block
+                p.big.text-muted.text-bold or
+              a.btn.btn-primary.text-middle(href="register-login.html#undefined2" style="max-height: 40px; line-height: 22px;" target="_blank")
+                span.big Register

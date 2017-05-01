@@ -1,0 +1,123 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-member-block-type-2
+include ../elements/_ui-post-timeline
+include ../elements/_ui-pager-bootstrap
+
+//-Title
+block title
+  title= cfg.brand.name
+
+//- Page
+block page
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-sidebar-fixed(
+    'rd-navbar-light rd-navbar-sidebar-fixed',
+    {
+      "data-lg-auto-height": "false",
+      "data-lg-stick-up": 'false',
+      "data-lg-hover-on": "false",
+      "data-body-class": "body-inset-left"
+    },
+    cfg.brand.logo,
+    cfg.nav.home,
+    cfg.nav
+    )
+
+  // Page Content
+  main
+    // Header Logo
+    include ../sections/_section-header-logo
+
+    // Page Content
+    .page-content.section-top-124.section-bottom-98.section-xs-top-0.section-lg-bottom-124.offset-xs-top-41
+      //Who I Am
+      section
+        .shell
+          .range.range-xs-center
+            .cell-sm-9.cell-md-6
+              +member-block-type-2("#", "images/users/user-john-doel-130x130.jpg", "Hi, I'm John Doe, a Personal, <br/> Blogger from Canada.", "My entire life is connected with blogging about things and people that surround me. Thus, my topics vary from music and beauty to lifestyle and news. In my blog posts I describe my personal experiences and more!")
+              ul.list-inline.list-inline-lg.list-inline-dashed.list-inline-picton-blue
+                li.big.reveal-block.reveal-sm-inline-block
+                  a.text-uppercase.text-spacing-120.text-darker(href='#') #[span.reveal-md-inline-block Facebook]
+                li.big.reveal-block.reveal-sm-inline-block.offset-top-10.offset-sm-top-0
+                  a.text-uppercase.text-spacing-120.text-darker(href='#') #[span.reveal-md-inline-block Twitter]
+                li.big.reveal-block.reveal-sm-inline-block.offset-top-10.offset-sm-top-0
+                  a.text-uppercase.text-spacing-120.text-darker(href='#') #[span.reveal-md-inline-block Instagram]
+
+          .range.range-xs-center
+            .cell-md-8
+              hr.hr.bg-lighter
+
+        .shell.offset-top-66.text-left
+          .range.range-xs-center
+            .cell-md-8
+              h2.text-bold
+                span.h6.reveal-block.text-uppercase.text-regular.font-default.text-spacing-120.text-primary Latest from the blog
+                | Blog Timeline
+              .offset-top-50
+                .blog-archive-year
+                  +post-timeline(cfg.nav.blogArchive.submenu.singlePost.href, "2016", "Feb 18", "The story of sports jersey, the most popular youth wear.", null, [
+                    {"title": "lifestyle", "href": "#"},
+                    {"title": "Beauty", "href": "#"}])
+                      p If you ask any teenager what’s the most appropriate dress code for the summer, almost all boys and girls will probably answer: “It’s jersey and jeans!” And it’s not a coincidence. Because of the wide spread of jersey in modern sports, it has already become a standard in casual clothing.
+
+                  +post-timeline(cfg.nav.blogArchive.submenu.singlePost.href, null, "Feb 17", "Top 10 events to visit in the USA this spring.", null, [
+                    {"title": "News", "href": "#"},
+                    {"title": "Events", "href": "#"}],
+                  {
+                    "type": "thumbnail",
+                    "thumb": {"src": "images/home-01-570x321.jpg", "width": 570, "height": 321, "alt": ""},
+                    "target": {"href": cfg.nav.blogArchive.submenu.singlePost.href}
+                  })
+                    p In this post I will share my own rating of forthcoming spring events including art exhibitions, concerts, theatrical plays, and other types of interesting events to visit. If you have something to add to my rating, feel free to leave your suggestions in the comment section [...]
+
+                  +post-timeline(cfg.nav.blogArchive.submenu.singlePost.href, null, "Jan 8", "The best love story you've ever read.", null, [
+                    {"title": "Moments", "href": "#"},
+                    {"title": "Music", "href": "#"}],
+                    {
+                      "type": "thumbnail",
+                      "thumb": {"src": "images/home-02-570x321.png", "width": 570, "height": 321, "alt": ""},
+                      "target": {"href": cfg.nav.blogArchive.submenu.singlePost.href}
+                    })
+                      p Scientists at McDuncan University in Seattle, WA, have recently discovered that appropriate music favors your good mood and the way your beloved one feels. That’s why I decided to introduce new series of posts dedicated to music that perfectly fits various situations, be it a date with your boyfriend/girlfriend or a dinner with your family.
+
+                  +post-timeline(cfg.nav.blogArchive.submenu.singlePost.href, null, "Jan 2", 'The best music for your precious moments.', null, [
+                    {"title": "Moments", "href": "#"},
+                    {"title": "Music", "href": "#"}],
+                    {
+                      "type": "soundcloud",
+                      "embed": '<iframe height="166" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/149065581&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>'
+                    })
+                      p Today I would like to talk about a young but very talented producer from Milwaukee, WI. His name is John Marshall, but he is better known as Mono/Poly. I was completely captivated with his track “Ra Rise”, released by Brainfeeder record label.
+
+                .blog-archive-year.offset-top-66.offset-sm-top-50
+                  +post-timeline(cfg.nav.blogArchive.submenu.singlePost.href, "2015", "Dec 25", "Wandering about the streets of Seattle in the evening.", null, [
+                    {"title": "lifestyle", "href": "#"},
+                    {"title": "Beauty", "href": "#"}])
+                      p It may seem strange, but I like to wander about the streets of different cities that I happen to visit. Last week I was lucky to present my new series of publications in Seattle, the city that always attracted me with its atmosphere. In this post I’ll tell you what interesting I found out about this city.
+
+                  +post-timeline(cfg.nav.blogArchive.submenu.singlePost.href, null, "Dec 20", "How gadgets can benefit your lifestyle.", null, [
+                    {"title": "Lifestyle", "href": "#"},
+                    {"title": "story", "href": "#"}],
+                  {
+                    "type": "thumbnail",
+                    "thumb": {"src": "images/home-03-570x321.jpg", "width": 570, "height": 321, "alt": ""},
+                    "target": {"href": cfg.nav.blogArchive.submenu.singlePost.href}
+                  })
+                    p Modern technologies have developed significantly and they offer unique possibilities for both geeks and people not bothered by the modern tech trends. I personally belong to the second group, but there’s something in modern technology that fascinates me.
+
+          .range.offset-top-66.range-sm-right.range-md-center.offset-top-0
+            .cell-sm-9
+              .range.range-md-right
+                .cell-xs-12.cell-md-9.inset-md-left-30.inset-md-right-30.inset-lg-left-40.inset-lg-right-40
+                  +pager-bootstrap('pager-lg',
+                      {"title": "Older", "href": "#", "icon": "mdi mdi-arrow-left"},
+                      {"title": "Newer", "href": "#", "icon": "mdi mdi-arrow-right"},
+                      true)
+
+  // Page Footers
+  include ../sections/_section-footer-variant-3

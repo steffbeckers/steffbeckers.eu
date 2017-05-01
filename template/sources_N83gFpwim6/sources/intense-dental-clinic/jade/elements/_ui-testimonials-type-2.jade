@@ -1,0 +1,15 @@
+//- Testimonials Type 2
+
+mixin testimonials-type-2(image, title, cite, q)
+  // Boxed Testimonials
+  blockquote.quote.quote-classic.quote-classic-boxed
+    .quote-body
+      p
+        q= q
+      .quote-meta
+        img.img-circle.quote-img(width= image.width, height= image.height, src= image.src, alt= image.alt)
+
+    h6.quote-author.text-uppercase
+      cite.text-normal= title
+    p.quote-desc.text-uppercase.text-picton-blue= cite
+

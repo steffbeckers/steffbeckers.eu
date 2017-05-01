@@ -1,0 +1,134 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.bootstrapcomponents.submenu.buttonDropdowns.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.bootstrapcomponents.submenu.buttonDropdowns.title,
+  "icon-lg " + cfg.nav.components.submenu.bootstrapcomponents.submenu.buttonDropdowns.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.bootstrapcomponents.submenu.buttonDropdowns.title,
+      "href": cfg.nav.components.submenu.bootstrapcomponents.submenu.buttonDropdowns.href
+    }
+  })
+
+
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    .shell
+      h1 Button dropdowns
+      p Use any button to trigger a dropdown menu by placing it within a #[code .btn-group] and providing the proper menu markup.
+      hr.divider.bg-mantis
+
+      // Single button
+      h3.offset-top-66 Single button dropdowns
+      p Turn a button into a dropdown toggle with some basic markup changes.
+
+      .btn-group.btn-group-sm.offset-top-41
+        button.btn.btn-sm.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+          | Action
+          span.caret
+        ul.dropdown-menu
+          li
+            a(href='#') Action
+          li
+            a(href='#') Another action
+          li
+            a(href='#') Something else here
+          li.divider(role='separator')
+          li
+            a(href='#') Separated link
+
+      // Split button dropdowns
+      h3.offset-top-66 Split button dropdowns
+      p Similarly, create split button dropdowns with the same markup changes, only with a separate button.
+
+      .btn-group.btn-group-sm.offset-top-41
+        button.btn.btn-default(type='button') Action
+        button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+          span.caret
+          span.sr-only Toggle Dropdown
+        ul.dropdown-menu
+          li
+            a(href='#') Action
+          li
+            a(href='#') Another action
+          li
+            a(href='#') Something else here
+          li.divider(role='separator')
+          li
+            a(href='#') Separated link
+
+      // Sizing
+      h3.offset-top-66 Sizing
+      p Button dropdowns work with buttons of all sizes.
+
+      .offset-top-41.text-middle
+        .btn-group
+          button.btn.btn-sm.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            | Action
+            span.caret
+          ul.dropdown-menu
+            li
+              a(href='#') Action
+            li
+              a(href='#') Another action
+            li
+              a(href='#') Something else here
+            li.divider(role='separator')
+            li
+              a(href='#') Separated link
+
+        .btn-group
+          button.btn.btn-xs.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            | Action
+            span.caret
+          ul.dropdown-menu
+            li
+              a(href='#') Action
+            li
+              a(href='#') Another action
+            li
+              a(href='#') Something else here
+            li.divider(role='separator')
+            li
+              a(href='#') Separated link
+
+
+
+
+
+  // Page Footer
+  include ../sections/_section-footer-default

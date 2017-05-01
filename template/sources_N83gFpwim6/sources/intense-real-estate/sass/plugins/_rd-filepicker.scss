@@ -1,0 +1,147 @@
+//
+// RD Filepicker
+// --------------------------------------------------
+
+.rd-file-picker{
+  position: relative;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: $rd-filepicker-size;
+  border: $rd-filepicker-border;
+  background-color: $rd-filepicker-background;
+  border-radius: $rd-filepicker-border-radius;
+
+  &-btn{
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    width: 50%;
+    padding: $rd-filepicker-btn-padding;
+    background: $rd-filepicker-btn-background;
+    border-radius: $rd-filepicker-btn-border-radius;
+    color: $rd-filepicker-btn-color;
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover{
+      background: $rd-filepicker-btn-hover-background;
+    }
+
+    svg{
+      fill: $rd-filepicker-svg-fill;
+      padding-right: $rd-filepicker-svg-padding-right;
+    }
+  }
+
+  &-meta{
+    width: $rd-filepicker-meta-width;
+    color: $rd-filepicker-meta-color;
+    cursor: default;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  input[type="file"]{
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+    transform: translate(-3px, -3px);
+
+    overflow: hidden;
+    background-color: red;
+    transition: none;
+    visibility: hidden;
+  }
+}
+
+.rd-file-drop{
+  padding: $rd-filepicker-filedrop-padding;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: $rd-filepicker-filedrop-size;
+  background-color: $rd-filepicker-filedrop-background;
+  outline: $rd-filepicker-filedrop-outline;
+  outline-offset: -10px;
+  transition: .2s;
+
+  &-logo{
+    width: $rd-filepicker-filedrop-logo-width;
+    fill: $rd-filepicker-filedrop-logo-background;
+    stroke: $rd-filepicker-filedrop-logo-stroke;
+    stroke-width: $rd-filepicker-filedrop-logo-stroke-width;
+  }
+  &-wrap{
+    margin-top: $rd-filepicker-filedrop-wrap-offset-top;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    -webkit-align-items: baseline;
+    -moz-align-items: baseline;
+    align-items: baseline;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    p{
+      margin-left: $rd-filepicker-filedrop-wrap-offset-left;
+      margin-top: 0;
+    }
+  }
+  &-meta{
+    margin-top: $rd-filepicker-filedrop-meta-offset-top;
+  }
+  &-btn{
+    cursor: pointer;
+    svg{
+      fill: $rd-filepicker-filedrop-btn-svg-background;
+    }
+  }
+
+  input[type="file"]{
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    transform: translate(-3px, -3px);
+    overflow: hidden;
+    background-color: $rd-filepicker-filedrop-input-background;
+    transition: none;
+    visibility: hidden;
+  }
+}
+
+.file-grabbing{
+  background-color: $rd-filepicker-filegrabbing-background;
+  outline-color: $rd-filepicker-filegrabbing-outline;
+}
+

@@ -1,0 +1,270 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_widget-list-social
+include ../elements/_ui-thumbnail-classic
+
+block title
+  title= cfg.nav.allPages.submenu.resumePage.title
+
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    // - RD Navbar
+    +rd-navbar-floated(
+    'rd-navbar-dark rd-navbar-dark-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.allPages,
+    cfg.nav
+    )
+    .context-dark
+      +breadcrumb-modern("Resume Page", {
+        0: {
+          "type": "link",
+          "title": cfg.nav.home.title,
+          "href": cfg.nav.home.href
+        },
+        1: {
+          "type": "link",
+          "title": cfg.nav.allPages.submenu.resumePage.title,
+          "href": cfg.nav.allPages.submenu.resumePage.href
+        }
+      }, "images/background-02-1920x870.jpg")
+
+  // Page Contents
+  main.page-content
+
+    // My Works
+    section.section-98.section-sm-110
+      .shell
+        .range.range-xs-center
+          .cell-xs-10.cell-sm-5.cell-lg-4
+            // Member block type 5
+            .member-block-type-5.inset-md-right-20
+              img.img-responsive.center-block(src="images/user-john-doe-344x344.jpg" width="344" height="344" alt="")
+              .member-block-body
+
+                button.btn.btn-block.btn-primary(type='button', data-toggle='modal', data-target='#myModal') get in touch
+                // Modal Custom Window
+                #myModal.modal.modal-custom.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+                  .modal-dialog(role='document')
+                    .modal-content
+                      .modal-header
+                        button.close(type='button', data-dismiss='modal', aria-label='Close')
+                          //span(aria-hidden='true') ×
+                          span.icon.icon-xs.fa.fa-close.text-primary(aria-hidden='true')
+                        h1#myModalLabel.modal-title.offset-top-30 Get In Touch
+                        hr.divider.bg-darkers
+                      .modal-body
+                        p.offset-top-30.offset-lg-top-50 You can contact me any way that is convenient for you. I am available 24/7 via fax, email or telephone. You can also usea quick contact form located on this page to ask a question about my services and projects I work on. I would be happy to answer your questions or offer any help.
+
+                        // RD Mailform
+                        form.rd-mailform.text-left.offset-top-50(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                          .range
+                            .cell-lg-6
+                              .form-group
+                                label.form-label.form-label-outside(for="resume-first-name") First Name
+                                input#resume-first-name.form-control(type="text" name="first-name" data-constraints="@Required")
+
+                            .cell-lg-6.offset-top-20.offset-lg-top-0
+                              .form-group
+                                label.form-label.form-label-outside(for="resume-last-name") Last Name
+                                input#resume-last-name.form-control(type="text" name="last-name" data-constraints="@Required")
+
+                            .cell-lg-12.offset-top-20
+                              .form-group
+                                label.form-label.form-label-outside(for="resume-email") E-mail
+                                input#resume-email.form-control(type="email" name="email" data-constraints="@Required @Email")
+
+                            .cell-lg-12.offset-top-20
+                              .form-group
+                                label.form-label.form-label-outside(for="resume-me-message") Message
+                                textarea#resume-me-message.form-control(name="message" data-constraints="@Required" style="height: 160px;")
+
+                          .range.range-xs-center.offset-top-30
+                            button(type="submit" style="max-width: 168px;").btn.btn-block.btn-primary.center-block Send
+
+
+                .offset-top-34
+                  +widget-list-social([
+                    {
+                      "icon": "fa fa-facebook",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-twitter",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-google-plus",
+                      "href": "#"
+                    },
+                    {
+                      "icon": "fa fa-linkedin",
+                      "href": "#"
+                    }
+                  ])
+                // Contact Info
+                address.contact-info.offset-top-20.offset-sm-top-34
+                  ul.list-unstyled.p
+                    li
+                      span.icon.icon-xxs.text-middle.mdi.mdi-cellphone-android
+                      a.text-middle.reveal-inline-block.text-dark(href='callto:1-800-1234-56') 1-800-1234-56
+                    li
+                      span.icon.icon-xxs.text-middle.mdi.mdi-email-open
+                      a.text-middle.reveal-inline-block.text-dark(href='mailto:johndoe@demolink.org') johndoe@demolink.org
+
+          .cell-xs-10.cell-sm-7.cell-lg-8.text-sm-left
+            div
+              h1 John Doe
+            h4.text-regular.text-italic.offset-top-20 Senior advisor for an independently owned financial planning company Intense
+            hr.divider.bg-darkers.hr-sm-left-0
+            p.text-left.offset-top-50 John is a senior advisor for a number of financial planning companies. He has previously owned a financial consulting company in the USA with offices in multiple jurisdictions over the world. According to his own words, working as a financial advisor gives him the ability to advise international business clients living worldwide while also increasing his experience.
+            .offset-top-30.text-center
+              .unit.unit-horizontal.unit-spacing-xs
+                .unit-left
+                  hr.divider.bg-primary.hr-sm-left-0.offset-top-14
+                .unit-body.text-left
+                  h4.text-italic My job is to help professionals achieve their financial goals whilst having adequate protection along the way. I do this by tailor making financial solutions that suit my clients' individual needs.
+
+            .range.range-xs-center.offset-top-66
+              .cell-xs-5.cell-sm-3
+                +thumbnail-classic({
+                  "type": "thumbnail",
+                  "title": "",
+                  "description": "",
+                  "thumb": {
+                    "src": "images/resume-01-170x242.jpg",
+                    "width": 170,
+                    "height": 242,
+                    "alt": ""
+                  },
+                  "target": {
+                    "src": "images/resume-01-700x970.jpg",
+                    "width": 700,
+                    "height": 900,
+                    "alt": ""
+                  }
+                })
+              .cell-xs-5.cell-sm-3
+                +thumbnail-classic({
+                  "type": "thumbnail",
+                  "title": "",
+                  "description": "",
+                  "thumb": {
+                    "src": "images/resume-01-170x242.jpg",
+                    "width": 170,
+                    "height": 242,
+                    "alt": ""
+                  },
+                  "target": {
+                    "src": "images/resume-01-700x970.jpg",
+                    "width": 700,
+                    "height": 900,
+                    "alt": ""
+                  }
+                })
+              .cell-xs-5.cell-sm-3.offset-top-30.offset-sm-top-0
+                +thumbnail-classic({
+                  "type": "thumbnail",
+                  "title": "",
+                  "description": "",
+                  "thumb": {
+                    "src": "images/resume-01-170x242.jpg",
+                    "width": 170,
+                    "height": 242,
+                    "alt": ""
+                  },
+                  "target": {
+                    "src": "images/resume-01-700x970.jpg",
+                    "width": 700,
+                    "height": 900,
+                    "alt": ""
+                  }
+                })
+              .cell-xs-5.cell-sm-3.offset-top-30.offset-sm-top-0
+                +thumbnail-classic({
+                  "type": "thumbnail",
+                  "title": "",
+                  "description": "",
+                  "thumb": {
+                    "src": "images/resume-01-170x242.jpg",
+                    "width": 170,
+                    "height": 242,
+                    "alt": ""
+                  },
+                  "target": {
+                    "src": "images/resume-01-700x970.jpg",
+                    "width": 700,
+                    "height": 900,
+                    "alt": ""
+                  }
+                })
+
+    // Posts
+    section.section-98.section-sm-110.bg-lilac.text-xs-left
+      .shell
+        .range.range-xs-center
+          .cell-lg-8
+            // News Post
+            article.news-post
+              .unit.unit-xs.unit-xs-horizontal.unit-spacing-lg
+                .unit-left
+                  .post-meta
+                    h6.text-italic.text-primary 2009
+                .unit-body
+                  .inset-lg-left-20
+                    h5 Bestselling Author
+                    p.text-dark John is a #1 New York Times bestselling author. With more than 1 million copies collectively in print, his seven books on personal finance have been translated into several languages and educated countless people worldwide. The Truth About Money was recognized with an Excellence in Financial Literacy Education (EIFLE) Book of the Year Award from the Institute for Financial Literacy (March 2007), a Gold Medal Axiom Award (March 2008).
+
+            // News Post
+            article.news-post.offset-top-50
+              .unit.unit-xs.unit-xs-horizontal.unit-spacing-lg
+                .unit-left
+                  .post-meta
+                    h6.text-italic.text-primary 2012
+                .unit-body
+                  .inset-lg-left-20
+                    h5 Award-Winning Host of Radio and Television Shows
+                    p.text-dark John's radio show has been on the air for more than 20 years and is heard throughout the country, enjoying more than 1 million listeners every week. In 2011, John was named among the "Heavy Hundred" in the radio industry by TALKERS magazine.
+
+            // News Post
+            article.news-post.offset-top-50
+              .unit.unit-xs.unit-xs-horizontal.unit-spacing-lg
+                .unit-left
+                  .post-meta
+                    h6.text-italic.text-primary 2014
+                .unit-body
+                  .inset-lg-left-20
+                    h5 Award-Winning Educator
+                    p.text-dark John appears on stage frequently, talking to thousands of people every year, and is widely acknowledged as an entertaining and informative speaker. He has testified before Congress three times, participated in an SEC Roundtable and appointed by Presidents Bill Clinton and George W. Bush as a delegate to all three National Summits on Retirement Savings.
+
+            // News Post
+            article.news-post.offset-top-50
+              .unit.unit-xs.unit-xs-horizontal.unit-spacing-lg
+                .unit-left
+                  .post-meta
+                    h6.text-italic.text-primary 2015
+                .unit-body
+                  .inset-lg-left-20
+                    h5 Philanthropic Activities
+                    p.text-dark John is active in community service. He served five years on the board of the United Way of the National Capital Area, including two years as Chairman. He serves on the Southeast Board of The Boys and Girls Clubs of America, is a member of The Boys and Girls Clubs of Greater Washington Foundation Board and served on the BGCGW Metropolitan Board of Directors for seven years and serves on the BGCGW Leadership Council.
+
+    // Hire a professional financial advisor in a couple of clicks!
+    section.section-66.bg-primary.context-dark
+      .shell
+        .range.range-xs-middle.range-condensed
+          .cell-md-8.cell-lg-10.text-center.text-md-left
+            h3 Hire a professional financial advisor in a couple of clicks!
+          .cell-md-4.cell-lg-2.offset-top-41.offset-md-top-0
+            a.btn.btn-warning.btn-block.center-block(href=cfg.nav.allPages.submenu.contactUs.href style="max-width: 210px;") Get in touch
+
+  // Page Footer
+  include ../sections/_section-footer

@@ -1,0 +1,109 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.bootstrapcomponents.submenu.thumbnails.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.bootstrapcomponents.submenu.thumbnails.title,
+  "icon-lg " + cfg.nav.components.submenu.bootstrapcomponents.submenu.thumbnails.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.bootstrapcomponents.submenu.thumbnails.title,
+      "href": cfg.nav.components.submenu.bootstrapcomponents.submenu.thumbnails.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    // Thumbnails
+    section
+      .shell
+        h1 Thumbnails
+        p Extend Bootstrap's grid system with the thumbnail component to easily display grids of images, videos, text, and more.
+        hr.divider.bg-mantis
+
+        // Default example
+        h3.offset-top-66 Default example
+        p By default, Bootstrap's thumbnails are designed to showcase linked images with minimal required markup.
+
+        .range.offset-top-41.text-left
+          .cell-sm-6.cell-md-4
+            a.thumbnail.bg-white(href='#')
+              img(src='images/portfolio/portfolio-02-370x280.jpg', width=370, height=280 alt='')
+          .cell-sm-6.cell-md-4
+            a.thumbnail.bg-white(href='#')
+              img(src='images/portfolio/portfolio-03-370x280.jpg', width=370, height=280 alt='')
+          .cell-sm-6.cell-md-4.offset-sm-top-30.offset-md-top-0
+            a.thumbnail.bg-white(href='#')
+              img(src='images/portfolio/portfolio-04-370x280.jpg', width=370, height=280 alt='')
+
+        // Custom content
+        h3.offset-top-66 Custom content
+        p With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.
+
+        .range.offset-top-41.text-left
+          .cell-sm-6.cell-md-4
+            .thumbnail.bg-white
+              img(src='images/portfolio/portfolio-02-370x280.jpg', width=370, height=280 alt='')
+              .caption
+                h3 Thumbnail label
+                p
+                  | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                p.group-sm
+                  a.btn.btn-sm.btn-primary(href='#', role='button') Button
+                  a.btn.btn-sm.btn-default(href='#', role='button') Button
+          .cell-sm-6.cell-md-4
+            .thumbnail.bg-white
+              img(src='images/portfolio/portfolio-03-370x280.jpg', width=370, height=280 alt='')
+              .caption
+                h3 Thumbnail label
+                p
+                  | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                p.group-sm
+                  a.btn.btn-sm.btn-primary(href='#', role='button') Button
+                  a.btn.btn-sm.btn-default(href='#', role='button') Button
+          .cell-sm-6.cell-md-4.offset-sm-top-30.offset-md-top-0
+            .thumbnail.bg-white
+              img(src='images/portfolio/portfolio-04-370x280.jpg', width=370, height=280 alt='')
+              .caption
+                h3 Thumbnail label
+                p
+                  | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                p.group-sm
+                  a.btn.btn-sm.btn-primary(href='#', role='button') Button
+                  a.btn.btn-sm.btn-default(href='#', role='button') Button
+
+
+
+  // Page Footers
+  include ../sections/_section-footer-default

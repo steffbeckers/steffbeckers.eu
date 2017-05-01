@@ -1,0 +1,52 @@
+//
+// Custom Alert
+// --------------------------------------------------
+
+
+// Snackbars
+// -------------------------
+
+.snackbars {
+  max-width: 280px;
+  padding:  9px 16px;
+  margin-left: auto;
+  margin-right: auto;
+  color: $white;
+  text-align: left;
+  background-color: $gray-dark;
+  border-radius: $border-radius-base;
+  box-shadow: $shadow-area-xs;
+
+  .icon-xxs {
+    position: relative;
+    top: -1px;
+    font-size: 18px;
+  }
+
+  // padding on text
+  p span:last-child {
+    padding-left: 14px;
+  }
+
+  // snackbar icon on the left side
+  &-left {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  // snackbar link or button on the right side
+  &-right {
+    display: inline-block;
+    float: right;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (min-width: $screen-xs) {
+    max-width: 380px;
+    padding:  14px 17px;
+  }
+}

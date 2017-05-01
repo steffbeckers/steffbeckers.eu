@@ -1,0 +1,219 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.typography.title
+
+//- Page
+block page
+
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+    cfg.nav.components.submenu.toolkitComponents.submenu.typography.title,
+    "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.typography.icon,
+    {0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.typography.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.typography.href
+    }
+   })
+
+  // Page Content
+  main.page-content.section-98.section-sm-110
+
+    // Heading Style
+    section
+      .shell
+        h2 Heading Style
+        hr.divider.divider-md.bg-mantis
+        .range.text-left.offset-top-66
+          .cell-md-4.cell-md-push-1
+            h1 Heading 1
+            h2 Heading 2
+            h3 Heading 3
+            h4 Heading 4
+            h5 Heading 5
+            h6 Heading 6
+            p.big Big paragraph
+            p Default paragraph
+            p.small Small paragraph
+          .cell-md-8.offset-top-50.offset-md-top-0
+            div
+              h1= "Heading 1 "
+                small.reveal-block.reveal-xs-inline.text-dark Secondary text
+
+              p.
+                Our company starts to research new technology trends before they even go public and become widespread. Our team of professional analysts is constantly roaming the web in search of promising techniques, which will make your business better. Thus, we are always ahead of time.
+
+              p.
+                We know how important it is for you to maintain your schedule, that’s why we do everything to fit it. Our team works on your project in multiple threads. It allows us to solve any issue without stopping the development process.
+
+            div.offset-top-50
+              h2= "Heading 2 "
+                small.reveal-block.reveal-xs-inline.text-dark Secondary text
+              p.
+                Great service and reasonable prices. The one thing I am sure about right now is that my next web startup will be developed by Intense.
+
+              p.
+                The highest level of service I’ve ever encountered. They’ve developed a large multipage website with lots of additional functions in just two weeks. I would put five stars again if I could.
+
+            div.offset-top-50
+              h3= "Heading 3 "
+                small.reveal-block.reveal-xs-inline.text-dark Secondary text
+              p.
+                I’m extremely satisfied with their work. My new website looks great and runs smoothly. The support is excellent too. Keep it up Intense!
+
+              p.
+                Don’t hesitate to reach me out day and night. I answer all the emails within the time limit not longer than two working days. If your business is very urgent, feel free to contact me by Skype.
+
+            div.offset-top-50
+              h4= "Heading 4 "
+                small.reveal-block.reveal-xs-inline.text-dark Secondary text
+
+              p.
+                If you have any questions about our company, just fill in the contact form, and our representative will answer you shortly. If you are living near, come visit Intense in one of our comfortable offices: we love to receive guests.
+
+            div.offset-top-50
+              h5= "Heading 5 "
+                small.reveal-block.reveal-xs-inline.text-dark Secondary text
+
+              p.
+                Today John Doe will tell you about the hottest web- and graphic design trends of the next year. John is a professional designer with an impressive portfolio. He is always aware of the latest technologies, so be sure: his advice are worth listening to.
+
+            div.offset-top-50
+              h6= "Heading 6 "
+                small.reveal-block.reveal-xs-inline.text-dark Secondary text
+
+              p.
+                Intense is pleased to host the next Web Design Conference, which will take place this year here, in Oakville. Learn about the topics that will be covered at the upcoming event, and how to save on the tickets in our spotlight.
+
+    // Text Alignment
+    section.offset-top-98.offset-md-top-110
+      .container
+        h2 Text Alignment
+        hr.divider.divider-md.bg-mantis
+        h3.text-center.offset-sm-top-66 Centered Text
+        p.text-center.
+          We will take care of your web design project regardless of its level of complexity. We are not afraid of difficult tasks – hundreds of our satisfied clients can prove that.
+        h3.offset-top-50.text-left Left aligned text
+        p.text-left.
+          Intense looks perfect on any modern device, be it a laptop, a smartphone, or a tablet.
+        h3.offset-top-50.text-right Right aligned text
+        p.text-right.
+          Intense is integrated with such popular social networks as Facebook, Twitter, Instagram and Flickr.
+
+    // Text Formatting
+    section.offset-top-98.offset-md-top-110
+      .container
+        h2 Text Formatting
+        hr.divider.divider-md.bg-mantis
+        p.offset-top-66 This is normal text
+        p.text-light This is light text
+        p.txt-bold This is bold text
+        p
+          em This is emphasized text
+        p.text-italic This is italic text
+        p.big This is big text
+        p
+          small This is small text
+        p
+          strong This is strong text
+        p This is
+          sub= " subscript "
+          | and
+          sup= " superscript "
+          |  text
+        p
+          ins This is text inserted to the document
+        p
+          del This is text deleted from the document
+        p
+          code This is code text
+        p
+          mark This is hightlighted text
+
+    // Text Helper Classes
+    section.offset-top-98.offset-md-top-110
+      .container
+        h2 Text Helper Classes
+        hr.divider.divider-md.bg-mantis
+        p.text-muted.offset-top-66 This is muted text
+        p.text-success This is success text
+        p.text-warning This is warning text
+        p.text-danger This is danger text
+        p.text-info This is info text
+        p.text-primary This is primary text
+        p.text-deluge This is deluge text
+        p.text-picton This is picton text
+        p
+          span.text-mantis This is primary empasized text
+        p
+          span.text-blue-gray This is deluge empasized text
+        p
+          span.text-malibu-2 This is picton empasized text
+        p.text-uppercase This text is uppercased
+        p.text-capitalize This text is capitalized
+        p.text-lowercase This text is lowercased
+
+    // Image Floating
+    section.offset-top-98.offset-md-top-110
+      .container
+        h2 Image Floating
+        hr.divider.divider-md.bg-mantis
+        .row.offset-top-66
+          .col-xs-12.text-left
+            img.img-responsive.pull-sm-left(src="images/portfolio/portfolio-16-370x280.jpg" alt="")
+            h3.offset-top-34.offset-sm-top-0 This image is left floated
+            p.
+              We're dedicated to giving you the best service possible by keeping our solutions friendly, simple and effective. If you don’t trust our word for it, just ask the people who have successfully launched their websites designed by us.
+            p.
+              Our core principle is absolute transparency in everything. Come any time to check how your project is doing – our specialists will inform you about the progress.
+            p.
+              Among our clients there are many world-renowned industry leaders. Their websites are modern looking and reliable – thanks to us.
+        .row.offset-top-50
+          .col-xs-12.text-left.text-xs-right
+            img.reveal-inline-block.img-responsive.pull-sm-right(src="images/portfolio/portfolio-15-370x280.jpg" alt="")
+            h3.offset-top-34.offset-sm-top-0 This image is right floated
+            p.
+              We're dedicated to giving you the best service possible by keeping our solutions friendly, simple and effective. If you don’t trust our word for it, just ask the people who have successfully launched their websites designed by us.
+            p.
+              Our core principle is absolute transparency in everything. Come any time to check how your project is doing – our specialists will inform you about the progress.
+            p.
+              Among our clients there are many world-renowned industry leaders. Their websites are modern looking and reliable – thanks to us.
+
+    // Text Dropcaps
+    section.offset-top-98.offset-md-top-110
+      .container
+        h2 Text Dropcaps
+        hr.divider.divider-md.bg-mantis
+        p.offset-top-50.dropcap.dropcap-dark.text-left.
+          Making money online is a kind of everyone’s dream job. No investments are needed and you can do whatever you need to do when you are in the mood or have free time. Flexible work schedule is something you’ll hardly get working at the office. However, online business rarely starts to bring you money from the very first day. It takes some time as a rule. But once you understand the whole process (like what are your abilities, where to work, for whom to work and so on) you'll be earning money in no time.
+
+
+  // Page Footer
+  include ../sections/_section-footer-default

@@ -1,0 +1,80 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui_accordion-bootstrap
+
+block title
+  title= cfg.nav.allPages.submenu.faq.title
+
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    // - RD Navbar
+    +rd-navbar-floated(
+    'rd-navbar-dark rd-navbar-dark-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.allPages,
+    cfg.nav
+    )
+    .context-dark
+      +breadcrumb-modern("FAQ", {
+        0: {
+          "type": "link",
+          "title": cfg.nav.home.title,
+          "href": cfg.nav.home.href
+        },
+        1: {
+          "type": "link",
+          "title": cfg.nav.allPages.submenu.faq.title,
+          "href": cfg.nav.allPages.submenu.faq.href
+        }
+      }, "images/background-02-1920x870.jpg")
+
+  // Page Contents
+  main.page-content
+
+    section.section-66.section-sm-top-110.section-lg-bottom-0
+      .shell
+        .range.range-xs-center
+          .cell-sm-9.cell-lg-6
+            h1.text-darker.text-lg-left General Questions
+            hr.divider.bg-darkers.hr-lg-left-0
+            .offset-top-41.offset-lg-top-66.text-left
+              +accordion-bootstrap('accordion-1',
+              [{
+                'headerId': 'headingOne',
+                'contentId': 'collapseOne',
+                'title': 'How can I learn about open positions using your website?',
+                'description': 'The fastest way to acquire information about our current positions is to use our vacancy catalog located on our website. It is updated daily and contains only the most called-for positions submitted by industry leading companies and international corporations. You can find out more information about them in our database.'
+              },
+                {
+                  'headerId': 'headingTwo',
+                  'contentId': 'collapseTwo',
+                  'title': 'Can I send my resume via e-mail to the employer?',
+                  'description': 'If you have your resume as a text file, you can attach it to the employer contact form without being registered as a client on our website. This is the fastest way to apply for a job you select on Intense job board. If you would like to receive additional benefits, please consider registering and uploading your resume to our database.'
+                },
+                {
+                  'headerId': 'headingThree',
+                  'contentId': 'collapseThree',
+                  'title': 'What should I do if I cannot access your vacancy database?',
+                  'description': 'In case our website is unavailable and you cannot access our database of employers and vacancies, contact our managers using our phone number. You can also visit our central office to fill out the registration form and publish your resume via our terminals. Our administrators will be glad to help you with any issue you may have.'
+                },
+                {
+                  'headerId': 'headingFour',
+                  'contentId': 'collapseFour',
+                  'title': 'How can I apply for a chosen position?',
+                  'description': 'To apply for any vacancy listed on Intense website, you must have a resume in a Microsoft Word format with a valid e-mail address and mobile phone number. If you use any of the modern social networks, you can become our registered user in a few moments and easily contact the chosen employer or read vacancy details.'
+                }])
+
+          .cell-lg-6.offset-top-0
+            img.veil.reveal-lg-inline-block(src="images/faq-01-531x699.png" width="531" height="699" alt="")
+
+  // Page Footer
+  include ../sections/_section-footer

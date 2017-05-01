@@ -1,0 +1,25 @@
+mixin thumbnail-fullwidth(obj)
+  .thumbnail-fullwidth(data-toggle='modal', data-target='#modalWindow')
+    .thumbnail-fullwidth-left
+      +jpg(obj.img)
+
+    .thumbnail-fullwidth-body
+      p.thumbnail-fullwidth-header=obj.header
+
+      .thumbnail-fullwidth-text
+        p=obj.text
+
+      ul.range.thumbnail-fullwidth-list-bars
+        each bar in obj.data
+          li.thumbnail-fullwidth-list-bars-item.cell-md-6
+            // Progress Bar
+            .progress-variant-1
+              p.thumbnail-fullwidth-list-bars-item-header=bar.header
+              .progress
+                .progress-bar(role='progressbar', aria-valuenow=bar.value, aria-valuemin='0', aria-valuemax='100', style='width: ' + bar.value + '%;')
+            //.progress-bar-js.progress-bar-horizontal.progress-bar-primary(data-value=bar.value, data-stroke='10', data-counter='false' data-duration='1000', data-trail='100')
+
+      ul.inline-list.inline-list-md
+        li: a.icon.icon-xs.link-gray-base.fa-facebook(href='#')
+        li: a.icon.icon-xs.link-gray-base.fa-twitter(href='#')
+        li: a.icon.icon-xs.link-gray-base.fa-linkedin(href='#')

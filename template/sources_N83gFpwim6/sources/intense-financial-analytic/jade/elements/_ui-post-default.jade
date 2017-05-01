@@ -1,0 +1,59 @@
+//- Default Post
+
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-carousel-gallery-classic
+include ../elements/_ui-video-embed
+include ../elements/_ui-soundcloud-player-classic
+
+mixin post-default(url, date, title, author, category, tags, comments, media)
+  // Post Wide
+  article.post.post-default.text-left
+    // Post Header
+    .header.post-header
+      // Post Meta
+      h1.post-title
+        = title
+
+      // Post Meta
+      p.offset-top-0
+        | Post by:
+        = ' John Doe'
+
+        ='on '
+        time(datetime="2016-01-01")= date
+        br.veil-sm
+        =' in '
+        = category
+
+        if tags
+          span.text-middle.icon-xxs.text-picton-blue.mdi.mdi-folder-outline &nbsp;
+          each tag, i in tags
+            a.text-middle(href= tag.href)= tag.title
+            - if (i !== (tags.length - 1))
+            = ", "
+        if comments
+          span.text-middle.icon-xxs.text-picton-blue.mdi.mdi-comment-multiple-outline &nbsp;
+          a(href= url + "comments").text-middle.small= comments
+          span &nbsp;Comments
+
+      // Post Media
+      if media
+        .post-media.offset-top-34
+          header.post-media
+            case media.type
+              when "gallery"
+                +carousel-gallery-classic(media.images)
+              when "soundcloud"
+                +soundcloud-player-classic(media)
+              when "video"
+                +video-embed(media)
+              when "thumbnail"
+                //- TODO: Remove this wrap on photoswipe init fix
+                div(data-photo-swipe="gallery")
+                  +thumbnail-classic(media)
+              default
+                = ""
+
+    // PostContent
+    section.post-content.offset-top-41
+      block

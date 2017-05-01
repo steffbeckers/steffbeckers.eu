@@ -1,0 +1,75 @@
+//
+// Input group custom
+// --------------------------------------------------
+
+// Base styles
+// -------------------------
+.input-group-addon {
+  transition: .3s;
+  color: $input-group-addon-color;
+
+  > .input-group-icon {
+    position: relative;
+    display: inline-block;
+  }
+}
+
+.input-group-addon-inverse{
+  background: $white;
+  border-color: $gray;
+  color: $gray-darker;
+}
+
+.input-group {
+  .form-control{
+    color: $input-color;
+    background: $white;
+  }
+
+  > .input-group-addon > .input-group-icon {
+    font-size: 28px;
+  }
+}
+
+.input-group.input-group-sm {
+  > .input-group-addon > .input-group-icon {
+    font-size: 19px;
+    line-height: 1;
+
+    &.mdi {
+      top: 2px;
+    }
+
+
+  }
+
+  > .input-group-btn > .btn {
+    font-size: $btn-font-size-small;
+  }
+}
+
+.input-group-lg {
+  > .input-group-addon > .input-group-icon {
+    font-size: 32px;
+  }
+}
+
+.input-group .form-control:not(:first-child):not(:last-child){
+  &.form-control-last-child{
+    border-top-right-radius: $border-radius-small;
+    border-bottom-right-radius: $border-radius-small;
+  }
+}
+
+// Button input groups
+// -------------------------
+.input-group-btn {
+
+  // Negative margin for spacing, position for bringing hovered/focused/actived
+  // element above the siblings.
+  > .btn {
+    + .btn {
+      margin-left: 0;
+    }
+  }
+}

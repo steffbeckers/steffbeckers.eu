@@ -1,0 +1,364 @@
+//
+// Custom form styles
+// --------------------------------------------------
+
+.rd-mailform {
+  position: relative;
+}
+
+// Normalize non-controls
+// --------------------------------------------------
+
+label {
+  margin-bottom: 0;
+}
+
+// Common form styles
+// --------------------------------------------------
+.form-label,
+.form-label-outside,
+.form-control {
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+// Common form controls
+// --------------------------------------------------
+
+.input-sm,
+.input-lg,
+.form-control {
+  font-size: $input-font-size;
+
+  &, &:focus {
+    box-shadow: none;
+  }
+}
+
+textarea.form-control {
+  height: $textarea-default-height;
+  min-height: $textarea-default-min-height;
+  max-height: $textarea-default-max-height;
+  resize: vertical;
+}
+
+.form-control {
+  padding: $input-padding;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  line-height: $input-line-height;
+  background: $wild-sand;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+// Form groups
+// -------------------------
+
+.form-group {
+  position: relative;
+  margin-bottom: 0;
+
+  & + .form-group {
+    margin-top: 10px;
+  }
+}
+
+// Form labels
+// -------------------------
+
+.form-label {
+  position: absolute;
+  top: $input-height-base / 2;
+  left: $input-padding-horizontal;
+  font-size: $input-font-size;
+  color: $input-color-placeholder;
+  pointer-events: none;
+  z-index: 9;
+  transition: .3s;
+  @include transform(translateY(-50%));
+  will-change: transform;
+
+  &.focus {
+    opacity: 0;
+  }
+
+  &.auto-fill {
+    color: $input-color;
+  }
+}
+
+.form-label-outside {
+  margin-bottom: 8px;
+  font: 400 12px/18px $font-family-sec;
+  color: $brand-primary;
+  @media (min-width: $screen-sm-min) {
+    position: static;
+    &, &.focus, &.auto-fill {
+      @include transform(none);
+      font-size: $input-font-size;
+    }
+  }
+}
+
+// Form validation
+// -------------------------
+.form-validation {
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  font-size: 9px;
+  line-height: 12px;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: rgba($brand-danger, .9);
+  transition: .3s;
+}
+
+.form-label-outside ~ .form-validation {
+  top: 31px;
+  right: 4px;
+}
+
+// Error Styling
+//
+.has-error {
+  @include form-control-validation-custom($state-danger-text, $state-danger-bg, $state-danger-bg);
+}
+
+// Success Styling
+//
+.has-success {
+  @include form-control-validation-custom($state-success-text, $state-success-bg, $state-success-bg);
+}
+
+// Warning Styling
+//
+.has-warning {
+  @include form-control-validation-custom($state-warning-text, $state-warning-bg, $state-warning-bg);
+}
+
+// Info Styling
+//
+.has-info {
+  @include form-control-validation-custom($state-info-text, $state-info-bg, $state-info-bg);
+}
+
+// Form output
+// -------------------------
+
+#form-output-global {
+  position: fixed;
+  bottom: 30px;
+  left: 15px;
+  visibility: hidden;
+  @include transform(translateX(-500px));
+  transition: .3s all ease;
+  z-index: 9999999;
+
+  &.active {
+    @include transform(translateX(0));
+    visibility: visible;
+  }
+
+  @media (min-width: $screen-xs) {
+    left: 30px;
+  }
+}
+
+.form-output {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 2px;
+  transition: .3s;
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  &.error {
+    color: $brand-danger;
+  }
+  &.success {
+    color: $brand-success;
+  }
+}
+
+// Radio and Checkbox Custom
+// -------------------------
+
+// Base Styles
+//
+.radio .radio-custom,
+.radio-inline .radio-custom,
+.checkbox .checkbox-custom,
+.checkbox-inline .checkbox-custom {
+  opacity: 0;
+
+  &, &-dummy {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    margin-left: -20px;
+    margin-top: -1px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &-dummy {
+    pointer-events: none;
+    background: $gray-lighter;
+    border: 1px solid $conch;
+    border-radius: 1px;
+    background: $wild-sand;
+
+    &:after {
+      position: absolute;
+      opacity: 0;
+      transition: .15s;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.radio-custom:checked + .radio-custom-dummy:after,
+.checkbox-custom:checked + .checkbox-custom-dummy:after {
+  opacity: 1;
+}
+
+// Custom Radio Styles
+//
+.radio,
+.radio-inline {
+  .radio-custom-dummy {
+    border-radius: 50%;
+
+    &:after {
+      content: '';
+      top: 3px;
+      right: 3px;
+      bottom: 3px;
+      left: 3px;
+      background: $gray-darker;
+      border-radius: 50%;
+    }
+  }
+}
+
+.radio-bold {
+  font: 400 16px/24px $font-family-sec;
+  color: $gray-base;
+  padding-left: 26px;
+  text-align: left;
+
+  .radio-custom-dummy {
+    height: 18px;
+    width: 18px;
+    margin-left: -25px;
+    margin-top: 1px;
+    background: $white;
+
+    &:after {
+      background: $brand-primary;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 16px;
+  }
+}
+
+// Custom Checkbox Styles
+//
+.checkbox,
+.checkbox-inline {
+  padding-left: 24px;
+  color: $gray-base;
+
+  .checkbox-custom-dummy {
+    pointer-events: none;
+    border-radius: 3px;
+    margin-left: 0;
+    left: 0;
+
+    &:after {
+      content: '\e5ca';
+      font-family: 'Material Icons';
+      font-size: 20px;
+      line-height: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: $gray-darker;
+    }
+  }
+}
+
+.checkbox-modern {
+  color: $gray-light;
+  text-transform: uppercase;
+  font: 400 12px $font-family-sec;
+}
+
+.checkbox-primary {
+  .checkbox-custom-dummy {
+    margin-top: 1px;
+    &:after {
+      content: '\f00c';
+      font-family: $fa;
+      font-size: 12px;
+      line-height: 15px;
+      left: 2px;
+      margin-top: 1px;
+      color: $brand-primary;
+    }
+  }
+}
+
+// Custom styles
+.rd-mailform {
+  text-align: left;
+
+  > * + * {
+    margin-top: 30px;
+  }
+}
+
+.rd-mailform.rd-mailform-inline {
+  > * + * {
+    margin-top: 20px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    width: 100%;
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include align-items(stretch);
+    @include justify-content(center);
+
+    > * + * {
+      margin-top: 0;
+      margin-left: 30px;
+    }
+
+    .form-group {
+      @include flex-grow(1);
+    }
+
+    button {
+      @include flex-shrink(0);
+      //padding: 10px 43px;
+    }
+  }
+}

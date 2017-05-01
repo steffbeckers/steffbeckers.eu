@@ -1,0 +1,14 @@
+//- accordionId - id of accordion 
+//- tabObject - object of accordions
+mixin accordion-bootstrap(accordionId, tabObject)
+  // Bootstrap Accordion
+  .panel-group.accordion.offset-top-0(role='tablist', aria-multiselectable='true' id="#{accordionId}")
+    - for (var i = 0; i < tabObject.length; i++)
+      .panel.panel-default
+        .panel-heading(role='tab' id="#{tabObject[i].headerId}")
+          .panel-title
+            a(class="collapsed" role='button', data-toggle='collapse', data-parent='##{accordionId}', href='##{tabObject[i].contentId}', aria-expanded='true')
+              = tabObject[i].title
+        .panel-collapse.collapse(role='tabpanel', aria-labelledby='#{tabObject[i].headerId}', id='#{tabObject[i].contentId}', class= openClass)
+          .panel-body
+            = tabObject[i].description

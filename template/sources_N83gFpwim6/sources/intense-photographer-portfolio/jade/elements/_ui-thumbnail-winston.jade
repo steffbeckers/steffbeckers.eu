@@ -1,0 +1,14 @@
+//- thumbnail - {thumbnail} object
+mixin thumbnail-winston(thumbnail)
+  // Thumbnail Winston
+  a.thumbnail-winston(href=thumbnail.large, data-size="#{thumbnail.width}x#{thumbnail.height}", data-photo-swipe-item="")
+    figure
+      img(width=thumbnail.width, height=thumbnail.height, src=thumbnail.small, alt=thumbnail.title)
+      figcaption.text-left
+        h3.thumbnail-winston-title= thumbnail.title
+        .offset-top-50.veil.reveal-lg-inline-block
+          p= thumbnail.desc1
+          br
+          p= thumbnail.desc2
+          br
+          p= thumbnail.desc3

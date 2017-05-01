@@ -1,0 +1,118 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-tabs-classic
+include ../elements/_widget-list-social
+
+block title
+  title Login or Registration
+
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    // - RD Navbar
+    +rd-navbar-floated(
+    'rd-navbar-dark rd-navbar-dark-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.allPages.submenu.aboutUs,
+    cfg.nav
+    )
+    .context-dark
+      +breadcrumb-modern("Login or Registration", {
+        0: {
+          "type": "link",
+          "title": cfg.nav.home.title,
+          "href": cfg.nav.home.href
+        },
+        1: {
+          "type": "link",
+          "title": "Login or Registration",
+          "href": cfg.nav.findJob.href
+        }
+      }, "images/background-02-1920x870.jpg")
+
+  // Page Contents
+  main.page-content
+
+    // Search Engine
+    section.section-98.section-sm-110
+      .shell
+        h1 Sign In
+        hr.divider.bg-darkers
+        .offset-sm-top-66
+          +tabs-classic(['Login', 'Registration'])
+            div
+              .range.range-xs-center.section-34
+                .cell-xs-8.cell-sm-6.cell-md-4
+                  // RD Mailform
+                  form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                    .form-group
+                      label.form-label.form-label-outside(for="form-login-username") Username or e-mail:
+                      input#form-login-username.form-control.bg-white(type="text" name="username" data-constraints="@Required")
+                    .form-group.offset-top-24
+                      label.form-label.form-label-outside(for="form-login-password") Password:
+                      input#form-login-password.form-control.bg-white(type="text" name="pass" data-constraints="@Required")
+                    .offset-top-24
+                      button(type="submit").btn.btn-primary.btn-block sign in
+                  .offset-top-30.text-center
+                    p or enter with
+                    +widget-list-social([
+                      {
+                        "icon": "fa fa-facebook",
+                        "href": "#"
+                      },
+                      {
+                        "icon": "fa fa-twitter",
+                        "href": "#"
+                      },
+                      {
+                        "icon": "fa fa-google-plus",
+                        "href": "#"
+                      }
+                    ])
+
+            div
+              .range.range-xs-center.section-34
+                .cell-xs-8.cell-sm-6.cell-md-4
+                  // RD Mailform
+                  form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                    .form-group
+                      label.form-label.form-label-outside(for="form-register-username") Name:
+                      input#form-register-username.form-control.bg-white(type="text" name="name" data-constraints="@Required")
+                    .form-group.offset-top-24
+                      label.form-label.form-label-outside(for="form-register-email") Email:
+                      input#form-register-email.form-control.bg-white(type="text" name="email" data-constraints="@Required @Email")
+                    .form-group.offset-top-24
+                      label.form-label.form-label-outside(for="form-register-password") Password:
+                      input#form-register-password.form-control.bg-white(type="text" name="pass" data-constraints="@Required")
+                    .form-group.offset-top-24
+                      label.form-label.form-label-outside(for="form-register-confirm-password") Confirm Password:
+                      input#form-register-confirm-password.form-control.bg-white(type="text" name="confirmpass" data-constraints="@Required")
+                    .offset-top-24
+                      button(type="submit").btn.btn-primary.btn-block create an account
+                  .offset-top-30.text-center
+                    p or enter with
+                    +widget-list-social([
+                      {
+                        "icon": "fa fa-facebook",
+                        "href": "#"
+                      },
+                      {
+                        "icon": "fa fa-twitter",
+                        "href": "#"
+                      },
+                      {
+                        "icon": "fa fa-google-plus",
+                        "href": "#"
+                      }
+                    ])
+
+  // Page Footer
+  include ../sections/_section-footer

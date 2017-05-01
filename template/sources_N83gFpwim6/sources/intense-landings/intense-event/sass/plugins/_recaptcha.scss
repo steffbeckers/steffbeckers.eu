@@ -1,0 +1,15 @@
+//
+// Google reCaptcha
+// --------------------------------------------------
+
+@media(max-width: 350px) {
+  .recaptcha iframe {
+    max-width: 100%;
+    transform:scale(0.77);
+    -webkit-transform:scale(0.77);
+    transform-origin: -5px;
+    -webkit-transform-origin: -5px;
+  }
+}
+
+.recaptcha div div { display: inline-block; }

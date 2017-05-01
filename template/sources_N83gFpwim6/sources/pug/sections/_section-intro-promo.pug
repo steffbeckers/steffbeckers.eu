@@ -1,0 +1,32 @@
+//Swiper
+.bg-gray-base.context-dark.rd-parallax(data-on="false" data-md-on="true")
+  .rd-parallax-layer(data-speed="0.45", data-type="media", data-url="images/intros/intro-02-1920x955.jpg" style="background-position: 72% center")
+  .rd-parallax-layer(data-speed="0.3", data-type='html' data-md-fade="true")
+    .shell
+      .range
+        .section-110.section-cover.range.range-xs-center.range-xs-middle
+          .cell-md-preffix-5.cell-md-7.cell-xl-preffix-6.cell-lg-6
+            h1.text-uppercase.text-ubold.text-spacing-60
+              span.big join intense
+
+            h4.veil.reveal-xl-block.offset-sm-top-20.text-light The smartest and most flexible bootstrap template by TemplateMonster you’ve ever seen.
+
+            .range.range-sm-center.offset-top-34.offset-xl-top-50
+              .cell-sm-6.cell-md-8
+                // RD Mailform
+                form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                  .form-group.text-left
+                    label.form-label.form-label-outside(for="form-reg-name") Name
+                    input#form-reg-name.form-control(type="text" data-constraints="@Required" name="name")
+
+                  .form-group.offset-top-20.offset-lg-top-10.offset-xl-top-20.text-left
+                    label.form-label.form-label-outside(for="form-reg-username") Phone
+                    input#form-reg-username.form-control(type="text" data-constraints="@Required" name="username")
+
+                  .form-group.offset-top-20.offset-lg-top-10.offset-xl-top-20.text-left
+                    label.form-label.form-label-outside(for="form-reg-email") E-mail
+                    input#form-reg-email.form-control(type="email" data-constraints="@Required @Email" name="email")
+
+                  .group.offset-top-30.text-md-left
+                    .group-item
+                      button(type="submit", style="padding-left: 50px; padding-right: 50px;").btn.btn-primary join us

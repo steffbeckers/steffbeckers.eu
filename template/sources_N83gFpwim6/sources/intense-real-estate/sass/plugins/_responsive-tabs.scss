@@ -1,0 +1,472 @@
+//
+// Easy Responsive Tabs
+// --------------------------------------------------
+
+// Classic Tabs
+// --------------------------------------------------
+
+.responsive-tabs {
+  // Collapse Tab
+  .resp-accordion {
+    position: $accordion-arrow-icon-position;
+    padding: $accordion-accordion-inset;
+    overflow: hidden;
+    font-size: $accordion-size;
+    font-weight: $accordion-weight;
+    color: $accordion-color;
+    text-align: left;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    transition: color .2s ease-in;
+
+    &:hover {
+      cursor: pointer;
+      color: $accordion-color-hover;
+    }
+
+    .resp-arrow {
+      position: absolute;
+      top: $accordion-arrow-icon-position-top;
+      right: $accordion-arrow-icon-position-right;
+      bottom: $accordion-arrow-icon-position-bottom;
+      width: $accordion-arrow-icon-width;
+      font-family: $accordion-arrow-icon-family;
+      font-size: $accordion-arrow-icon-size;
+      font-weight: $accordion-arrow-icon-weight;
+      text-align: center;
+      transition: .2s;
+
+      &:before {
+        content: $accordion-arrow-icon;
+      }
+    }
+
+    // Active tab accordion
+    &.resp-tab-active {
+      color: $accordion-active-color;
+
+      .resp-arrow:before {
+        content: $accordion-arrow-icon-active;
+      }
+    }
+  }
+
+  // Accordion Content
+  .resp-tab-content {
+    padding: $accordion-content-inset;
+  }
+
+  // Tabs List
+  .resp-tabs-list {
+    display: none;
+    padding: 0;
+    margin-bottom: 0;
+
+    li {
+      position: relative;
+      display: inline-block;
+      padding: $accordion-list-inset;
+      font-size: $accordion-list-size;
+      font-weight: $accordion-list-weight;
+      color: $accordion-list-color;
+      text-transform: uppercase;
+      list-style-type: none;
+      cursor: pointer;
+      transition: color .2s ease-in;
+
+      &.resp-tab-active,
+      &:hover {
+        color: $accordion-list-active-color;
+      }
+    }
+  }
+
+  // Tab Content
+  .resp-tab-content {
+    display: none;
+  }
+
+  // Turn accordion to Horizontal Tabs
+  @media (min-width: $screen-md-min) {
+    &[data-type="horizontal"],
+    &[data-type="vertical"] {
+      border-bottom: $accordion-md-border-bottom;
+
+      .resp-tab-content + .resp-accordion {
+        border-top: $accordion-md-border-top;
+      }
+
+      .resp-accordion {
+        display: none;
+      }
+
+      .resp-tabs-list {
+        display: block;
+      }
+    }
+  }
+
+  // Style for vertical tabs
+  @media (min-width: $screen-lg-min) {
+    &[data-type="vertical"] {
+      @include display-flex();
+      @include flex(0 1 auto);
+      @include align-items(flex-start);
+
+      .resp-tabs-list {
+        text-align: left;
+        @include flex-basis(25%);
+
+        li {
+          display: block;
+        }
+
+        li + li {
+          margin-left: 0;
+        }
+      }
+
+      .resp-tabs-container {
+        @include flex-basis(75%);
+      }
+    }
+  }
+}
+
+// Classic Tabs
+// --------------------------------------------------
+
+.responsive-tabs-classic {
+  border-bottom: $accordion-border;
+
+  .resp-tab-content + .resp-accordion {
+    border-top: $accordion-border;
+  }
+
+  @media (min-width: $screen-md-min) {
+    &[data-type="vertical"],
+    &[data-type="horizontal"] {
+      border-bottom: $accordion-tabs-list-border-bottom;
+
+      .resp-tab-content + .resp-accordion {
+        border-top: $accordion-tabs-list-border-top;
+      }
+
+      .resp-tabs-list {
+        li {
+          &:before {
+            position: $accordion-tabs-border-position;
+            left: $accordion-tabs-border-position-left;
+            bottom: $accordion-tabs-list-border-position-bottom;
+            width: $accordion-tabs-list-border-width;
+            height: $accordion-tabs-list-border-height;
+            background-color: $accordion-tabs-list-border-background;
+            content: '';
+            transform: translateX(-50%);
+            transition: .4s;
+          }
+
+          &.resp-tab-active {
+            &:before {
+              width: $accordion-tabs-list-border-active-width;
+            }
+          }
+        }
+
+        li + li {
+          margin-left: $accordion-tabs-list-offset-left;
+        }
+      }
+
+      // Tab Content
+      .resp-tab-content {
+        padding-top: $accordion-tabs-content-inset-top;
+      }
+    }
+  }
+
+  // Turn Horizontal Tabs to Vertical Tabs
+  @media (min-width: $screen-lg-min) {
+    // Style for horizontal tabs
+    &[data-type="horizontal"] {
+      .resp-tabs-list {
+        li + li {
+          margin-left: $accordion-horizontal-tabs-list-lg-left-offset;
+        }
+      }
+    }
+
+    // Style for vertical tabs
+    &[data-type="vertical"] {
+      .resp-tabs-list {
+        border-left: $accordion-vertical-tabs-list-lg-border-left;
+
+        li {
+          padding: $accordion-vertical-tabs-list-lg-inset;
+
+          &:before {
+            position: $accordion-vertical-tabs-list-lg-border-position;
+            top: $accordion-vertical-tabs-list-lg-border-position-top;
+            left: $accordion-vertical-tabs-list-lg-border-position-left;
+            height: $accordion-vertical-tabs-list-lg-border-height;
+            content: '';
+            transform: translateY(-50%);
+          }
+
+          &.resp-tab-active {
+            &:before {
+              height: $accordion-vertical-tabs-list-lg-active-height;
+              width: $accordion-vertical-tabs-list-lg-active-width;
+            }
+          }
+        }
+
+        li + li {
+          margin-left: $accordion-vertical-tabs-list-lg-offset-left;
+          margin-top: $accordion-vertical-tabs-list-lg-offset-top;
+        }
+
+      }
+      .resp-tab-content {
+        padding-top: $accordion-vertical-tabs-content-lg-inset-top;
+      }
+    }
+  }
+}
+
+// Boxed Tabs
+// --------------------------------------------------
+
+.responsive-tabs-boxed {
+  // Collapse Tab
+  .resp-accordion {
+    border-radius: $border-radius-small;
+    border: $accordion-tabs-boxed-border;
+    padding-left: $accordion-tabs-boxed-inset-left;
+    padding-right: $accordion-tabs-boxed-inset-right;
+
+    .resp-arrow {
+      right: $accordion-tabs-boxed-arrow-position-right;
+    }
+  }
+
+  // Tab Content
+  .resp-tab-content {
+    padding-left: $accordion-tabs-boxed-content-inset-left-and-right;
+    padding-right: $accordion-tabs-boxed-content-inset-left-and-right;
+    border-bottom: $accordion-tabs-boxed-content-border;
+    border-right: $accordion-tabs-boxed-content-border;
+    border-left: $accordion-tabs-boxed-content-border;
+    border-bottom-left-radius: $border-radius-small;
+    border-bottom-right-radius: $border-radius-small;
+  }
+
+  .resp-tab-content + .resp-accordion {
+    margin-top: $accordion-tabs-boxed-content-offset-top;
+  }
+
+  // Active tab
+  .resp-tab-active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: $accordion-tabs-boxed-active-border-bottom;
+  }
+
+  // Turn accordion to Horizontal Tabs
+  @media (min-width: $screen-md-min) {
+    &[data-type="horizontal"],
+    &[data-type="vertical"] {
+      .resp-tabs-list {
+        font-size: 0;
+        border-bottom: $accordion-tabs-boxed-list-md-border-bottom;
+
+        li {
+          position: relative;
+          padding: $accordion-tabs-boxed-list-inset;
+          margin-bottom: -1px;
+          font-size: $accordion-tabs-boxed-list-size;
+          font-weight: $accordion-tabs-boxed-list-weight;
+          letter-spacing: $accordion-tabs-boxed-list-letter-spacing;
+          color: $accordion-tabs-boxed-list-letter-color;
+          text-transform: uppercase;
+          background: $gray-light;
+          border-top: $accordion-tabs-boxed-list-md-li-border-top;
+          border-bottom: $accordion-tabs-boxed-list-md-li-border-bottom;
+          border-left: $accordion-tabs-boxed-list-md-li-border-left;
+
+          &:last-child {
+            border-right: $accordion-tabs-boxed-list-md-border-bottom;
+          }
+
+          &:after {
+            position: $accordion-tabs-boxed-list-md-li-after-position;
+            bottom: $accordion-tabs-boxed-list-md-li-after-position-bottom;
+            left: $accordion-tabs-boxed-list-md-li-after-position-left;
+            width: $accordion-tabs-boxed-list-md-li-after-position-width;
+            border-bottom: $accordion-tabs-boxed-list-md-li-after-border-bottom;
+            content: '';
+          }
+
+          &.resp-tab-active {
+            border-bottom-color: $accordion-tabs-boxed-list-md-active-border-bottom-color;
+          }
+
+          &.resp-tab-active {
+            background: $accordion-tabs-boxed-list-md-active-background-color;
+            &:after {
+              width: $accordion-tabs-boxed-list-md-active-after-width;
+            }
+          }
+        }
+      }
+
+      .resp-tab-content + .resp-accordion {
+        margin-top: $accordion-tabs-boxed-list-md-offset-top;
+      }
+
+      .resp-tab-content {
+        border-bottom: $accordion-tabs-boxed-content-md-border-bottom;
+        border-right: $accordion-tabs-boxed-content-md-border-right;
+      }
+
+      .resp-tab-content {
+        padding: $accordion-tabs-boxed-content-md-inset;
+      }
+    }
+
+    // Turn Horizontal Tabs to Vertical Tabs
+    @media (min-width: $screen-lg-min) {
+      &[data-type="vertical"] {
+        border-top: $accordion-tabs-boxed-lg-border-top;
+
+        .resp-tabs-list {
+          margin: $accordion-tabs-boxed-list-lg-offsets;
+          border-top: $accordion-tabs-boxed-list-lg-border-top;
+          border-bottom: $accordion-tabs-boxed-list-lg-border-bottom;
+          border-right: $accordion-tabs-boxed-list-md-border-bottom;
+
+          li {
+            border-top: $accordion-tabs-boxed-list-lg-li-border-top;
+            border-right: $accordion-tabs-boxed-list-lg-li-border-right;
+
+            &:first-child {
+              border-top: $accordion-tabs-boxed-list-lg-li-first-item-border-top;
+            }
+
+            &:last-child {
+              border-bottom: $accordion-tabs-boxed-list-lg-li-last-item-border-bottom;
+              border-right: none;
+            }
+
+            &:after {
+              position: absolute;
+              top: $accordion-tabs-boxed-list-lg-li-after-position-top;
+              bottom: $accordion-tabs-boxed-list-lg-li-after-position-bottom;
+              left: $accordion-tabs-boxed-list-lg-li-after-position-left;
+              right: $accordion-tabs-boxed-list-lg-li-after-position-right;
+              width: $accordion-tabs-boxed-list-lg-li-after-width;
+              border-right: $accordion-tabs-boxed-list-lg-li-after-border-right;
+              content: '';
+            }
+
+            &.resp-tab-active {
+              &:after {
+                height: $accordion-tabs-boxed-list-lg-active-after-height;
+              }
+            }
+          }
+        }
+
+        .resp-tab-content {
+          padding: $accordion-tabs-boxed-list-lg-inset;
+          border-left: none;
+        }
+      }
+    }
+  }
+}
+
+// Horizontal dashed tabs
+// --------------------------------------------------
+
+.responsive-tabs-dashed {
+  // Collapse Tab
+  .resp-accordion {
+    border-radius: $border-radius-small;
+    border: $accordion-tabs-boxed-border;
+    padding: 10px 40px 10px 20px;
+    background: $white !important;
+    .resp-arrow {
+      top: 7px;
+      right: 15px;
+    }
+  }
+
+  // Tab Content
+  .resp-tab-content {
+    padding: 15px;
+    border-bottom: $accordion-tabs-boxed-content-border;
+    border-right: $accordion-tabs-boxed-content-border;
+    border-left: $accordion-tabs-boxed-content-border;
+    border-bottom-left-radius: $border-radius-small;
+    border-bottom-right-radius: $border-radius-small;
+    background: $white;
+    .form-control {
+      background: $white;
+    }
+    .form-label {
+      color: $gray-darkest;
+      &.focus {
+        color: $brand-primary;
+      }
+    }
+  }
+
+  .resp-tabs-list {
+    > li {
+      position: relative;
+      padding: 0;
+      font-size: $accordion-tabs-boxed-list-size;
+      font-weight: $accordion-tabs-boxed-list-weight;
+      letter-spacing: $accordion-tabs-boxed-list-letter-spacing;
+      color: $gray-dark;
+      text-transform: uppercase;
+
+      &.resp-tab-active,
+      &:hover {
+        color: $gray-darkest;
+      }
+      & + li {
+        padding: 0;
+        margin-left: 39px;
+        &:before {
+          position: absolute;
+          left: -20px;
+          content: '';
+          height: 100%;
+          width: 1px;
+          background: $gray-dark;
+        }
+      }
+    }
+  }
+
+  .resp-tab-content + .resp-accordion {
+    margin-top: $accordion-tabs-boxed-content-offset-top;
+  }
+
+  // Active tab
+  .resp-tab-active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  // Turn accordion to Horizontal Tabs
+  @media (min-width: $screen-md-min) {
+    .resp-tab-content {
+      background: transparent;
+      padding: 0;
+      border: none;
+    }
+  }
+}

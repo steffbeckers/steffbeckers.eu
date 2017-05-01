@@ -1,0 +1,49 @@
+// Text Utilities
+
+@mixin make-text-alignment($resolution: null) {
+  @if ($resolution == null) {
+    $resolution: ''
+  } @else {
+    $resolution: str_insert($resolution, '-', str_length($resolution) + 1);
+  }
+  .text-#{$resolution}left {
+    text-align: left;
+  }
+
+  .text-#{$resolution}center {
+    text-align: center;
+  }
+
+  .text-#{$resolution}right {
+    text-align: right;
+  }
+
+  .text-#{$resolution}justify {
+    text-align: justify;
+  }
+
+  .text-#{$resolution}nowrap {
+    white-space: nowrap;
+  }
+
+  .text-#{$resolution}normal {
+    white-space: normal;
+  }
+}
+
+// Center-align a inline-block level element
+
+@mixin center-inline-block() {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Text Gradient
+
+@mixin text-linear-gradient($from, $to) {
+  color: $from; // Fallback
+  background: -webkit-linear-gradient(0deg, $from 0%, $to 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

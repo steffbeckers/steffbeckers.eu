@@ -1,0 +1,24 @@
+mixin post-classic(obj)
+  article.post-classic
+    +jpg(obj.img, 'post-classic-image')
+    .post-classic-body
+      p.post-classic-title: a(href='single-post.html')=obj.title
+      .post-classic-text
+        p=obj.text
+
+      .post-classic-footer
+        .post-classic-footer-left
+          a.btn.btn-xs.btn-primary.btn-circle(href='single-post.html') READ MORE
+        .post-classic-footer-right
+          ul.post-classic-meta
+            li
+              span.icon.icon-xxs.icon-primary.fa.fa-heart
+              span=obj.meta[0]
+
+            li
+              span.icon.icon-xxs.icon-primary.fa.fa-eye
+              span=obj.meta[1]
+
+            li
+              span.icon.icon-xxs.icon-primary.fa.fa-calendar-plus-o
+              time(datetime=obj.meta[2][0])=obj.meta[2][1]

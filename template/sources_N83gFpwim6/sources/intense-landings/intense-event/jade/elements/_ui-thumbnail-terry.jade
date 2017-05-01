@@ -1,0 +1,18 @@
+//- thumbnail - {thumbnail} object
+mixin thumbnail-terry(options)
+  -var photoswipe = (typeof(options.target.href) !== 'undefined') ? {"href": options.target.href} : {"data-photo-swipe-item": "", "data-size": ""+options.target.width+"x"+options.target.height, "href": options.target.src}
+
+  // Thumbnail Terry
+  figure.thumbnail-terry(class= options.thumbnailStyle)
+    a&attributes(photoswipe)
+      img(width=options.thumb.width, height=options.thumb.height, src=options.thumb.src, alt=options.thumb.alt)
+    figcaption
+      div
+        h4.thumbnail-terry-title= options.title
+      p.thumbnail-terry-desc.offset-top-0= options.description
+      a(href= options.btnLink).btn.offset-top-10.offset-md-top-0(class= options.btnClass)= options.btnText
+
+
+
+
+

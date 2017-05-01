@@ -1,0 +1,23 @@
+//- Includes
+include ../elements/_ui-rd-parallax
+
+// Complete integration with Facebook
+.bg-gray-base.context-dark.rd-parallax(data-on="false" data-md-on="true")
+  .rd-parallax-layer(data-speed="0.45", data-type="media", data-url="images/backgrounds/background-36-1920x1281.jpg")
+  .rd-parallax-layer(data-speed="0.3", data-type='html' data-md-fade="true")
+    .bg-overlay-gray-darkest
+      section.context-dark
+        .shell
+          .range
+            .range.range-xs-middle.range-xs-center.section-cover.section-110
+              .cell-xs-12
+                h1.text-uppercase.text-bold
+                  span.big RD Navbar
+                .range.range-xs-center
+                  .cell-xs-10
+                    h4.text-light Your reliable assistant to create any kind of navigation
+                .range.range-xs-center.offset-top-66
+                  .cell-xs-5.cell-sm-4.cell-md-4.cell-lg-3.text-sm-right.inset-sm-left-50
+                    a.btn.btn-block.btn-primary(href=cfg.buyLink) buy intense now
+                  .cell-xs-5.cell-sm-4.cell-md-4.cell-lg-3.text-sm-left.inset-sm-right-50
+                    a.btn.btn-block.btn-default(href='#' data-custom-scroll-to="rdnavbar") view widget

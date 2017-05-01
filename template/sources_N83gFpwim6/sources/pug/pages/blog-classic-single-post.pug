@@ -1,0 +1,30 @@
+extends  ../_skeleton
+
+//- Title
+block title
+  title= cfg.nav.blog.submenu.classic.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-transparent',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logoInverse,
+      cfg.nav.blog,
+      cfg.nav
+      )
+  // Page Content
+  main.page-content
+
+    include ../sections/_section-blog-classic-single
+
+  // Page Footer
+  include ../sections/_section-footer-default

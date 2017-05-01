@@ -1,0 +1,221 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-page-title
+include ../elements/_ui-section-header
+include ../elements/_ui-panel
+
+block variables
+  - var activeIndex = 1
+  - var pageName = 'FAQ'
+  - var menuIncludeButton = true
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  //- Page Content
+  +page-title(pageName)
+
+  //- Faq 1
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-50
+        .cell-xs-12
+          +section-header("FAQ 1", "If you have any questions regarding the services our barbershop offers, feel free to browse this section of frequently asked questions.")
+
+        .cell-lg-10
+          article.box-spacer
+            dl.terms-list
+              dt Is it OK if I am a few minutes late for my appointment?
+              dd We schedule clients on the half-hour and we make full use of those 30 minutes with each client. If someone is 5 minutes late for their appointment, it affects every client after them, as well as the barber who is trying to stay on schedule. For example, if the client after you has a 12:30 appointment (expecting to be out by 1:00 so that he can be back to work on time), and his appointment doesn't end up starting until 12:35-12:40, he could end up being late for work and possibly suffer the consequences of this.  Beyond practical factors such as this, it is simply common courtesy to arrive a couple of minutes ahead of your appointment. If this doesn't work for you and your schedule, then we encourage you to stop in as a walk-in.
+
+              dt What is your appointment policy?
+              dd If you need to cancel your appointment, please do so as far in advance as possible, preferably at least one hour.  Our appointment policy is listed on the appointment page.
+
+              dt When do you take your last walk-in?
+              dd Our walk-in list closes when there are as many customers waiting as we can serve before closing time.  It may reopen if customers leave the line.  Sometimes we continue accepting clients until a bit past advertised closing time, and sometimes the list gets full and closes an hour early (or more).
+  ='\n'
+
+  //- FAQ 2
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-50
+        .cell-xs-12
+          +section-header("FAQ 2", "If you have any questions regarding the services our barbershop offers, feel free to browse this section of frequently asked questions.")
+
+        .cell-xs-12
+          //- Bootstrap collapse & isotope
+          #accordionOne.panel-group.panel-group-custom.panel-group-light(role='tablist', aria-multiselectable='true')
+            .range.range-30
+              .cell-xs-12.cell-sm-6.cell-md-4
+                +panel({
+                  first: true,
+                  panelClass: 'panel-contrast',
+                  parentId: 'accordionOne',
+                  number: '1',
+                  header: 'What if I need a little more off the top (or bottom or otherwise)?',
+                  text: "Please feel free to call our administrator and let either the stylist that did the initial service or the store manager know that you would like to come back in and they will make the necessary adjustment within 7 days."
+                })
+
+                +panel({
+                  panelClass: 'panel-contrast',
+                  parentId: 'accordionOne',
+                  number: '2',
+                  header: 'If I show up one minute before you close, can I still get a haircut?',
+                  text: "Technically, yes. Our posted hours are our hours and we'll take clients until the closed sign is on. But we would ask that you respect our time as we respect yours. Our staff members have families, responsibilities, and lives of their own and it can be extremely frustrating (and damaging to a family/relationship) when someone isn't home at the expected time. Remember, we are open every day of the week with multiple late nights and early mornings, so rather than stopping in a moment before we close, perhaps there is another day or time that would work for you as well."
+                })
+
+              .cell-xs-12.cell-sm-6.cell-md-4
+                +panel({
+                  panelClass: 'panel-contrast',
+                  parentId: 'accordionOne',
+                  number: '3',
+                  header: 'Do I have to have an appointment?',
+                  text: "No. Sign in on the list at the front desk and if there is a wait, you can take advantage of our free Wi-Fi to surf the web or catch up on your email. As soon as your name gets to the top of the list, we’ll get you on your way to that great haircut you’ve been looking forward to."
+                })
+
+                +panel({
+                  panelClass: 'panel-contrast',
+                  parentId: 'accordionOne',
+                  number: '4',
+                  header: 'Does it matter if I schedule on-line or by phone and how can it possibly affect my appointment or the work of the selected barber?',
+                  text: "We think it’s more convenient if you schedule online. You can see all the available times, you’ll get an email confirmation, and you can cancel or reschedule your appointment online up to 1 hour before your scheduled time. In this case, our barbers will also be aware of various circumstances of your appointment in case you decide to cancel it. However, if you prefer to book by the old fashioned way, phone us or stop by."
+                })
+
+                +panel({
+                  panelClass: 'panel-contrast',
+                  parentId: 'accordionOne',
+                  number: '5',
+                  header: 'What is your appointment policy?',
+                  text: "If you need to cancel your appointment, please do so as far in advance as possible, preferably at least one hour. Our appointment policy is listed on the appointment page."
+                })
+
+              .cell-xs-12.cell-sm-6.cell-md-4
+                +panel({
+                  panelClass: 'panel-contrast',
+                  parentId: 'accordionOne',
+                  number: '6',
+                  header: 'Do you accept walk-ins?',
+                  text: "Yes, we accept walk-ins! We have at least one barber dedicated to serving walk-ins nearly every day! We keep track of who’s waiting for walk-in service with our online sign-in list. You can get on the list online or you can sign up at our computer."
+                })
+
+                +panel({
+                  panelClass: 'panel-contrast',
+                  parentId: 'accordionOne',
+                  number: '7',
+                  header: 'What if I have a problem with my color? ',
+                  text: "If you don’t like the color of your haircut, call us or schedule an appointment and one of our barbers will consult with you to make any necessary changes to your haircut including its color."
+                })
+
+                +panel({
+                  panelClass: 'panel-contrast',
+                  parentId: 'accordionOne',
+                  number: '8',
+                  header: 'How can I keep my color vibrant?',
+                  text: "We cannot guarantee a vibrant color if you’re not using professional products meant to help you color last and keep your hair healthy. Feel free to browse the professional products we offer."
+                })
+  ='\n'
+
+  //- FAQ 3
+  section.section-md.bg-periglacial-blue.text-center
+    .shell
+      +section-header("FAQ 3", "If you have any questions regarding the services our barbershop offers, feel free to browse this section of frequently asked questions.")
+
+      //- Terms block
+      article.terms-block
+        .terms-block-left
+          p.terms-block-header Common Questions
+
+        .terms-block-body
+          #accordionTwo.panel-group.panel-group-custom.panel-group-minimal(role='tablist', aria-multiselectable='true')
+            +panel({
+              arrow: false,
+              panelClass: 'panel-minimal',
+              parentId: 'accordionTwo',
+              number: '1',
+              header: 'What if I need a little more off the top (or bottom or otherwise)?',
+              text: "Please feel free to call our administrator and let either the stylist that did the initial service or the store manager know that you would like to come back in and they will make the necessary adjustment within 7 days."
+            })
+
+            +panel({
+              arrow: false,
+              panelClass: 'panel-minimal',
+              parentId: 'accordionTwo',
+              number: '2',
+              header: 'When do you take your last walk-in?',
+              text: "Our walk-in list closes when there are as many customers waiting as we can serve before closing time.  It may reopen if customers leave the line.  Sometimes we continue accepting clients until a bit past advertised closing time, and sometimes the list gets full and closes an hour early (or more)."
+            })
+
+            +panel({
+              arrow: false,
+              panelClass: 'panel-minimal',
+              parentId: 'accordionTwo',
+              number: '3',
+              header: "What's the best time to come to Barbershop?",
+              text: "We're very grateful for the fact that we stay busy all day, every day. For that reason, there is generally a significant waiting line. Some options are to make an appointment or to come on a day when we have the most barbers taking walk-ins. Thursdays after 1 PM and Saturdays all day are the times when we have the most barbers taking walk-ins and for that reason, despite the length of the line, we move through crowds fairly quickly."
+            })
+
+            +panel({
+              arrow: false,
+              panelClass: 'panel-minimal',
+              parentId: 'accordionTwo',
+              number: '4',
+              header: 'Do I have to have an appointment?',
+              text: "No. Sign in on the list at the front desk and if there is a wait, you can take advantage of our free Wi-Fi to surf the web or catch up on your email. As soon as your name gets to the top of the list, we’ll get you on your way to that great haircut you’ve been looking forward to."
+            })
+
+            +panel({
+              arrow: false,
+              panelClass: 'panel-minimal',
+              parentId: 'accordionTwo',
+              number: '5',
+              header: 'What is your appointment policy?',
+              text: "If you need to cancel your appointment, please do so as far in advance as possible, preferably at least one hour. Our appointment policy is listed on the appointment page."
+            })
+
+      //- Terms block
+      article.terms-block.terms-block-light
+        .terms-block-left
+          p.terms-block-header Latest Questions
+
+        .terms-block-body
+          #accordionThree.panel-group.panel-group-custom.panel-group-minimal(role='tablist', aria-multiselectable='true')
+            +panel({
+              arrow: false,
+              panelClass: 'panel-minimal',
+              parentId: 'accordionThree',
+              number: '1',
+              header: 'Do you accept walk-ins?',
+              text: "Yes, we accept walk-ins! We have at least one barber dedicated to serving walk-ins nearly every day! We keep track of who’s waiting for walk-in service with our online sign-in list. You can get on the list online or you can sign up at our computer."
+            })
+
+            +panel({
+              arrow: false,
+              panelClass: 'panel-minimal',
+              parentId: 'accordionThree',
+              number: '2',
+              header: 'What if I have a problem with my color? ',
+              text: "If you don’t like the color of your haircut, call us or schedule an appointment and one of our barbers will consult with you to make any necessary changes to your haircut including its color."
+            })
+
+            +panel({
+              arrow: false,
+              panelClass: 'panel-minimal',
+              parentId: 'accordionThree',
+              number: '3',
+              header: "How can I keep my color vibrant?",
+              text: "We cannot guarantee a vibrant color if you’re not using professional products meant to help you color last and keep your hair healthy. Feel free to browse the professional products we offer."
+            })
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_footer-default
+

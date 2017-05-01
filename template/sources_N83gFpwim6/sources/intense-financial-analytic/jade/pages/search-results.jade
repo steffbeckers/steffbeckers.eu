@@ -1,0 +1,65 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-pagination-bootstrap
+include ../elements/_ui-rd-parallax
+
+//- Title
+block title
+  title Search Results
+
+//- Page
+block page
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logoInverse,
+    '',
+    cfg.nav
+    )
+
+    // Breadcrumbs
+    section
+      +rd-parallax({
+        "backgroundSpeed": "0.25",
+        "attrType": "media",
+        "src": "images/background-03-1920x447.jpg",
+        "htmlSpeed": "0",
+        "fade": "false"
+      })
+        .shell
+          .range
+            .range.range-xs-middle.range-xs-center.section-41.section-sm-50.section-md-66.context-dark
+              .cell-xs-12
+                div
+                  h1.text-capitalize
+                    span.big
+                      | Search Results
+                .offset-top-10
+                  ul.list-inline.list-inline-dashed.text-italic.p
+                    li
+                      a(href="index.html") Home
+                    li
+                      | Search Results
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    .shell
+
+      +widget-form-search("input-sm", "form-label-sm", "search-results")
+
+      .rd-search-results.offset-top-66
+
+
+
+        // Page Footers
+  include ../sections/_section-footer-default

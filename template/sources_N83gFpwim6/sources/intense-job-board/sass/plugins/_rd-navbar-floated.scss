@@ -1,0 +1,330 @@
+//
+// RD Navbar Default
+// --------------------------------------------------
+
+.rd-navbar-floated {
+  @extend %rd-navbar-default-cart;
+  &.rd-navbar-fixed {
+    @extend %rd-navbar-default-panel;
+    @extend %rd-navbar-default-mobile-menu;
+    @extend %rd-navbar-default-cart-aside-right;
+    @extend %rd-navbar-default-aside-left;
+    @extend %rd-navbar-default-mobile-search;
+
+    .rd-navbar-right-buttons-toggle {
+      position: fixed;
+      z-index: 17;
+      top: 4px;
+      right: 0;
+      background: none;
+      border: none;
+      outline: none;
+      @include toggle-icons-via-rotation(48px, 28px, $rd-navbar-dark-top-panel-toggle-icon-color,$rd-navbar-top-panel-toggle-icon-state-before, $rd-navbar-top-panel-toggle-icon-state-after);
+      &:focus, &:active{
+        outline: none;
+      }
+    }
+
+    .rd-navbar-right-buttons {
+      position: fixed;
+      right: 4px;
+      top: 55px;
+      width: $rd-navbar-top-panel-mobile-width;
+      padding: $rd-navbar-top-panel-mobile-padding;
+      z-index: 17;
+      overflow: hidden;
+      transition: box-shadow .3s ease;
+      opacity: 0;
+      visibility: hidden;
+      text-align: center;
+      background: $gray-base;
+      color: $white;
+      &.group {
+        a {
+          margin: 0;
+        }
+
+        a + div {
+          display: block;
+          margin-top: 10px;
+          margin-left: 0;
+        }
+
+        div + a {
+          margin-top: 5px;
+        }
+      }
+      >*{
+        opacity: 0;
+        visibility: hidden;
+      }
+      &:before{
+        content: '';
+        position: absolute;
+        top: -22%;
+        right: -22%;
+        width: 0;
+        height: 0;
+        transition: all .3s ease;
+        border-radius: 50%;
+        z-index: -1;
+      }
+      &.active{
+        opacity: 1;
+        visibility: visible;
+        box-shadow: $shadow-area-md;
+        >*{
+          opacity: 1;
+          visibility: visible;
+          transition: opacity .3s ease .2s;
+        }
+
+        &:before{
+          height: 150%;
+          width: 150%;
+        }
+
+      }
+    }
+
+    .rd-navbar-brand{
+      display: none;
+    }
+
+    .rd-navbar-search {
+      display: none;
+    }
+
+    @media (min-width: $screen-xs) {
+      .rd-navbar-mobile-brand{
+        display: none;
+      }
+      .rd-navbar-brand{
+        display: block;
+        @include transform(translateX(-50%));
+      }
+    }
+  }
+
+  .rd-navbar-right-buttons {
+    .btn {
+      text-transform: none;
+    }
+
+    .btn-primary {
+      background: transparent;
+      border-color: transparent;
+      box-shadow: none;
+
+      &:focus, &:hover {
+        color: $white;
+        background: $brand-primary;
+        box-shadow: $shadow-area-md;
+      }
+    }
+
+    a + div {
+      margin-left: 10px;
+    }
+  }
+
+  &.rd-navbar-static {
+    margin-top: $rd-navbar-floated-offset-top;
+    @extend %rd-navbar-transition;
+    .rd-navbar-mobile-brand{
+      display: none;
+    }
+
+    .rd-navbar-right-buttons {
+      margin-left: 40px;
+
+      @media (min-width: $screen-xl-min) {
+        margin-left: 50px;
+      }
+    }
+
+    @extend %rd-navbar-default-menu-first-lvl;
+    @extend %rd-navbar-default-menu-dropdown;
+    @extend %rd-navbar-default-search;
+    @extend %rd-navbar-default-desktop-cart;
+
+    .rd-navbar-dropdown{
+      margin-top: $rd-navbar-floated-dropdown-offset-top;
+    }
+
+
+    .rd-navbar-brand {
+      float: left;
+    }
+
+    .rd-navbar-menu-wrap {
+      float: right;
+    }
+
+    .rd-navbar-panel .rd-navbar-toggle, .rd-navbar-panel .rd-navbar-right-buttons-toggle, .form-search-wrap {
+      display: none;
+    }
+
+    .rd-navbar-inner {
+      @include clearfix;
+      transition: .3s all ease;
+      position: relative;
+      text-align: left;
+      padding: 23px 25px;
+      border-radius: $rd-navbar-floated-inner-border-radius;
+      box-shadow: $rd-navbar-floated-inner-shadow;
+      &.active {
+        .rd-navbar-panel {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      @media (min-width: $screen-xl-min) {
+        padding: 23px 0;
+      }
+    }
+
+    .rd-navbar-megamenu{
+      left: 0;
+      right: 0;
+    }
+
+    .rd-navbar-nav-wrap, .rd-navbar-panel, .rd-navbar-cart-wrap {
+      transition: .3s all ease;
+    }
+
+    .rd-navbar-nav-wrap {
+      @include clearfix;
+      margin-top: 6px;
+      display: inline-block;
+    }
+
+    // Cart
+    .rd-navbar-cart-wrap {
+      display: inline-block;
+      position: relative;
+      margin-left: $rd-navbar-floated-cart-offset-left;
+    }
+
+    .rd-navbar-search-toggle, .rd-navbar-cart {
+      margin-top: 5px;
+    }
+
+    .rd-navbar-search-form {
+
+      .form-label {
+        padding-left: $rd-navbar-floated-search-padding-left;
+        &.focus {
+          left: 16px;
+          top: 12px;
+        }
+      }
+
+      .rd-navbar-search-form-input {
+        padding-left: $rd-navbar-floated-search-padding-left;
+      }
+    }
+
+    &.rd-navbar--is-stuck {
+      box-shadow: $rd-navbar-floated-stuck-shadow;
+      margin-top: 0;
+      width: 100%;
+      padding: 0;
+
+      .rd-navbar-inner {
+        padding: $rd-navbar-floated-inner-padding;
+      }
+
+      .rd-navbar-nav > li > .rd-navbar-dropdown {
+        margin-top: $rd-navbar-floated-stuck-dropdown-offset-top;
+      }
+    }
+
+  }
+
+  // Themes
+
+  // Dark Theme
+  // -------------------
+
+  &.rd-navbar-dark {
+    .rd-navbar-inner{
+    background: $rd-navbar-floated-dark-inner-background;
+    }
+    @extend %rd-navbar-default-cart-dark;
+
+    &.rd-navbar-dark-transparent {
+      .rd-navbar-inner {
+        background: transparent;
+        box-shadow: none;
+      }
+    }
+
+
+    // Mobile Fixed Layout Colors
+    &.rd-navbar-fixed {
+      @extend %rd-navbar-default-panel-dark;
+      @extend %rd-navbar-default-mobile-menu-dark;
+      @extend %rd-navbar-default-cart-aside-right-dark;
+      @extend %rd-navbar-default-aside-left-dark;
+      @extend %rd-navbar-default-mobile-search-dark;
+    }
+
+    // Desktop Static Layout Colors
+    &.rd-navbar-static {
+      @extend %rd-navbar-default-menu-first-lvl-dark;
+      @extend %rd-navbar-default-menu-dropdown-dark;
+      @extend %rd-navbar-default-search-dark;
+
+      .rd-navbar-search-form-input, .rd-navbar-search-toggle, .rd-navbar-cart {
+        color: $rd-navbar-floated-dark-inputs-color;
+      }
+
+      &.rd-navbar--is-stuck {
+        background: $rd-navbar-floated-dark-stuck-background;
+      }
+
+    }
+  }
+
+  // Light Theme
+  // -------------------
+
+  &.rd-navbar-light {
+    .rd-navbar-inner{
+      background: $rd-navbar-floated-light-inner-background;
+    }
+
+    @extend %rd-navbar-default-cart-light;
+
+    .rd-navbar-search-toggle, .rd-navbar-cart {
+      span {
+        color: $rd-navbar-floated-light-inputs-color;
+      }
+    }
+
+    // Mobile Fixed Layout Colors
+    &.rd-navbar-fixed {
+      @extend %rd-navbar-default-panel-light;
+      @extend %rd-navbar-default-mobile-menu-light;
+      @extend %rd-navbar-default-cart-aside-right-light;
+      @extend %rd-navbar-default-aside-left-light;
+      @extend %rd-navbar-default-mobile-search-light;
+    }
+
+    // Desktop Static Layout Colors
+    &.rd-navbar-static {
+      @extend %rd-navbar-default-menu-first-lvl-light;
+      @extend %rd-navbar-default-menu-dropdown-light;
+      @extend %rd-navbar-default-search-light;
+
+      .rd-navbar-search-form-input, .rd-navbar-search-toggle, .rd-navbar-cart {
+        color: $rd-navbar-floated-light-inputs-color;
+      }
+      &.rd-navbar--is-stuck {
+        background: $rd-navbar-floated-light-stuck-background;
+      }
+    }
+  }
+}

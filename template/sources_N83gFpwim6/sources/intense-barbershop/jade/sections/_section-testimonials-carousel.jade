@@ -1,0 +1,43 @@
+//- Includes
+include ../elements/_ui-quote-fullwidth
+
+//- TESTIMONIALS
+section.section-xl.bg-periglacial-blue.text-center
+  .shell
+    .range.range-sm-center.range-75
+      .cell-xs-12
+        +section-header("TESTIMONIALS", "These reviews that our clients have recently submitted are the best way to learn more about our barbershop’s level of service and customer support.")
+
+      .cell-xs-12
+        // Owl Carousel
+        .owl-carousel.owl-carousel-modern.owl-spacing-1(data-items='1', data-stage-padding='0', data-loop='true', data-margin='20', data-xs-margin='30', data-mouse-drag="false", data-nav='true', data-dots='true', data-animation-in='fadeIn', data-animation-out='fadeOut')
+          .item
+            +quote-fullwidth({
+              avatar: {
+                type: 'image',
+                data: 'testimonials-1-100x100'
+              },
+              cite: 'Matt Parker',
+              text: 'I have taken my 3 yr old son for his first men’s haircut and now I’m glad he has such a fantastic look. I recommend any of the barbers at Barbershop for service and pride in their work. I believe my son would never be allowed to leave the chair without a really handsome cut.',
+            })
+
+          .item
+            +quote-fullwidth({
+              avatar: {
+                type: 'image',
+                data: 'testimonials-2-100x100'
+              },
+              cite: 'John Miller',
+              text: "I wouldn't go anywhere else in San Francisco. I've been coming here for the last year and I've never felt better about paying good money for a haircut. The guys know what they are doing, give solid advice, and cut like pros. I wasn't used to this before but I’ll visit Barbershop again.",
+            })
+
+          .item
+            +quote-fullwidth({
+              avatar: {
+                type: 'image',
+                data: 'testimonials-3-100x100'
+              },
+              cite: 'Anthony Smith',
+              text: 'Polite, professional, charming and courteous team. The best haircut I have ever had! Simon was full of crack, was more than happy to suggest the best cut for me and he even offered a free beverage - what more could you want?! This barbershop is indeed my favorite one.',
+            })
+='\n'

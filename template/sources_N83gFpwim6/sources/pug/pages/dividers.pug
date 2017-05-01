@@ -1,0 +1,79 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.dividers.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.dividers.title,
+  "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.dividers.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.dividers.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.dividers.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-110
+    // Dividers styles
+    section
+      .shell
+        h1 Dividers styles
+        hr.divider.bg-mantis
+        .range
+          .cell-sm-preffix-1.cell-sm-6.text-sm-left
+              h3 Layouts
+              hr.text-subline.offset-top-10.offset-sm-top-30
+              hr.hr.bg-gray
+              hr.hr.hr-gradient
+              hr.hr.hr-dashed
+              hr.divider.divider-xs-right.hr-sm-left-0
+              hr.divider.divider-vertical.hr-sm-left-0
+          .cell-sm-preffix-1.cell-sm-4.offset-top-50.offset-sm-top-0.text-sm-left
+            .range
+              .cell-sm-6
+                  h3 Colors
+                  hr.divider.bg-mantis.offset-top-10.hr-sm-left-0.offset-sm-top-30
+                  hr.divider.bg-blue-gray.hr-sm-left-0
+                  hr.divider.bg-red.hr-sm-left-0
+                  hr.divider.bg-acapulco.hr-sm-left-0
+                  hr.divider.bg-gray-darker.hr-sm-left-0
+                  hr.divider.bg-gray.hr-sm-left-0
+              .cell-sm-6.offset-top-41.offset-sm-top-0
+                  h3 Sizes
+                  hr.divider.divider-sm.bg-mantis.offset-top-10.hr-sm-left-0.offset-sm-top-30
+                  hr.divider.bg-mantis.hr-sm-left-0
+                  hr.divider.divider-lg.bg-mantis.hr-sm-left-0
+
+  // Page Footers
+  include ../sections/_section-footer-default

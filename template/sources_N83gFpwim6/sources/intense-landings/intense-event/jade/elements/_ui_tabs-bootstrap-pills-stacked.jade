@@ -1,0 +1,18 @@
+//- tabId - id of tab
+//- tabObject - object of tabs
+mixin tabs-bootstrap-pills-stacked(tabId, tabObject)
+  // Bootstrap Tabs
+  .nav-stacked-container
+    ul.tabs.nav.nav-pills.nav-stacked.text-center.text-md-left(role="tablist", id="#{tabId}")
+      - var openClass = '';
+      - for (var i = 0; i < tabObject.length; i++)
+        - openClass = ''
+        - if(i == 0)
+          - openClass = 'active';
+        li(role="presentation" class=openClass): a(href="##{tabObject[i].tabId}" role="tab")= tabObject[i].title
+    div.tab-content.tab-conten-vert.offset-top-30.text-md-left
+      - for (var i = 0; i < tabObject.length; i++)
+        - openClass = ''
+        - if(i == 0)
+          - openClass = 'active in';
+        .tab-pane.fade(role="tabpanel" id="#{tabObject[i].tabId}" class=openClass) !{tabObject[i].description}

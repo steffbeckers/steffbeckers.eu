@@ -1,0 +1,292 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_widget-flickrfeed
+
+block title
+	title Modern Blog Left Sidebar
+
+block page
+	// Page Header
+	header.page-header.slider-menu-position
+		+rd-navbar-default({
+			"style": "",
+			"logo": cfg.brand.logo,
+			"logoFixed": cfg.brand.logoSmall,
+			"activeLink": 6,
+			"attr": {
+				"data-layout": "rd-navbar-fixed",
+				"data-sm-layout": "rd-navbar-fixed",
+				"data-md-layout": "rd-navbar-fullwidth",
+				"data-lg-layout": "rd-navbar-static"
+			}
+		})
+
+		+breadcrumb("Modern Blog", {
+			0: {
+				"type": "link",
+				"title": cfg.nav.home.title,
+				"href": cfg.nav.home.href
+			},
+			1: {
+				"type": "link",
+				"title": cfg.nav.news.title,
+				"href": cfg.nav.news.href
+			},
+			2: {
+				"type": "link",
+				"title": "Modern Blog",
+				"href": "blog-modern-right-side.html"
+			}
+		}, "images/backgrounds/background-02-1920x900.jpg")
+
+	// Page Content
+	main.page-content.section-75.section-md-top-90.section-md-bottom-110
+
+		// Modern Blog
+		section
+			.shell
+				h1.text-spacing-inverse-50 Blog
+				.range.range-xs-center.range-lg-left.offset-top-15
+					.cell-sm-10.cell-md-8.cell-lg-7.cell-lg-push-1
+						.post-modern-timeline-date.text-sm-right
+							time.text-extra-small(datetime='2016-01-01') July 25
+						// Post Modern
+						article.post.post-modern.post-modern-timeline.post-modern-timeline-right
+							// Post media
+							header.post-media
+								.embed-responsive.embed-responsive-16by9
+									iframe.embed-responsive-item(src='//www.youtube.com/embed/-AhmuMqZB0s?wmode=transparent')
+							// Post content
+							section.post-content.text-left
+								.post-meta.small.pull-sm-right
+									span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-turquoise.text-middle
+									time.text-extra-small.text-middle.inset-left-4.text-bold(datetime='2016-01-01') 2 days ago
+								.reveal-inline-block.text-middle
+									// List inline marked
+									ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-silver-chalice.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-left-6.inset-sm-left-4
+										li
+											a.text-malibu(href="#") Customer service
+										li
+											a.text-malibu(href="#") Tips
+										li
+											a.text-malibu(href="#") Drivers
+								.veil.reveal-xs-inline-block.text-middle.inset-xs-left-8
+									span.icon.icon-sm.material-icons-ico.material-icons-videocam
+								// Post Title
+								.post-title.offset-top-20
+									p.font-accent.text-bold.text-spacing-50.text-uppercase
+										a.text-mine-shaft(href='blog-single-post.html') ten customer service tips for drivers
+								// Post Body
+								.post-body.offset-top-25
+									p.text-spacing-0.text-extra-small These simple but important practices will ensure you’re best placed to have an enjoyable shift and, in most cases, achieve generous tips from your customers. Tip #1: ALWAYS greet your customers with a friendly welcome. Tip #2: Be clean and well presented at all times with a priority on uniform and personal hygiene. Tip #3:  Ensure your vehicle is clean inside and out and that you leave enough time for...
+								.post-author
+									.post-author-img
+										img.img-circle(width='70', height='70', src='images/users/user-sandra-green-70x70.jpg', alt='')
+									.post-author-name.text-middle Sandra Green
+						.post-modern-timeline-date.text-sm-right
+							time.text-extra-small(datetime='2016-01-01') July 20
+						// Post Modern
+						article.post.post-modern.post-modern-timeline.post-modern-timeline-right
+							// Post media
+							header.post-media
+								img.img-responsive.img-cover(width='570', height='381', src='images/blog/post-30-570x381.jpg', alt='')
+							// Post content
+							section.post-content.text-left
+								.post-meta.small.pull-sm-right
+									span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-turquoise.text-middle
+									time.text-extra-small.text-middle.inset-left-4.text-bold(datetime='2016-01-01') 2 days ago
+								.reveal-inline-block.text-middle
+									// List inline marked
+									ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-silver-chalice.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-left-6.inset-sm-left-4
+										li
+											a.text-malibu(href="#") How to
+										li
+											a.text-malibu(href="#") Lost property
+										li
+											a.text-malibu(href="#") Taxi
+								.veil.reveal-xs-inline-block.text-middle.inset-xs-left-8
+									span.icon.icon-sm.material-icons-ico.material-icons-image
+								// Post Title
+								.post-title.offset-top-20
+									p.font-accent.text-bold.text-spacing-50.text-uppercase
+										a.text-mine-shaft(href='blog-single-post.html') Finding lost property
+								// Post Body
+								.post-body.offset-top-25
+									p.text-spacing-0.text-extra-small After an outing, you decide to catch a cab. You get home only to discover that you lost something really important in your taxi.  Most people won’t bother to try to find the item. We recommend using this little guide of recovering lost property to make your...
+								.post-author
+									.post-author-img
+										img.img-circle(width='70', height='70', src='images/users/user-john-smith-70x70.jpg', alt='')
+									.post-author-name.text-middle Tom Jefferson
+						.post-modern-timeline-date.text-sm-right
+							time.text-extra-small(datetime='2016-01-01') July 15
+						// Post Modern
+						article.post.post-modern.post-modern-timeline.post-modern-timeline-right
+							// Post content
+							section.post-content.text-left
+								.post-meta.small.pull-sm-right
+									span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-turquoise.text-middle
+									time.text-extra-small.text-middle.inset-left-4.text-bold(datetime='2016-01-01') July 15
+								.reveal-inline-block.text-middle
+									// List inline marked
+									ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-silver-chalice.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-left-6.inset-sm-left-4
+										li
+											a.text-malibu(href="#") How to
+										li
+											a.text-malibu(href="#") Taxi
+										li
+											a.text-malibu(href="#") Services
+								.veil.reveal-xs-inline-block.text-middle.inset-xs-left-8
+									span.icon.icon-sm.material-icons-ico.material-icons-create
+								// Post Title
+								.post-title.offset-top-20
+									p.font-accent.text-bold.text-spacing-50.text-uppercase
+										a.text-mine-shaft(href='blog-single-post.html') how to select a taxi service
+								// Post Body
+								.post-body.offset-top-25
+									p.text-spacing-0.text-extra-small A taxi is an essential component of the public transportation system. Whether you are calling a taxi to your home or office on a regular basis, or are visiting a strange city and need a cab to move around, you can benefit from using a taxi. First, not all taxis are the same. They may all look similar on the surface, but there is a range of factors that are not easily apparent that can affect the nature of your trip...
+								.post-author
+									.post-author-img
+										img.img-circle(width='70', height='70', src='images/users/user-jane-sanders-70x70.jpg', alt='')
+									.post-author-name.text-middle Jane Sanders
+						.post-modern-timeline-date.text-sm-right
+							time.text-extra-small(datetime='2016-01-01') July 10
+						// Post Modern
+						article.post.post-modern.post-modern-timeline.post-modern-timeline-right.post-modern-botder-top
+							// Post media
+							header.post-media
+								.post-inset.section-top-34.section-bottom-0
+									.soundcloud-player-classic
+										iframe(height='166', src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/149065581&color=ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false')
+							// Post content
+							section.post-content.text-left
+								.post-meta.small.pull-sm-right
+									span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-turquoise.text-middle
+									time.text-extra-small.text-middle.inset-left-4.text-bold(datetime='2016-01-01') July 10
+								.reveal-inline-block.text-middle
+									// List inline marked
+									ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-silver-chalice.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-left-6.inset-sm-left-4
+										li
+											a.text-malibu(href="#") Taxi
+										li
+											a.text-malibu(href="#") Review
+										li
+											a.text-malibu(href="#") Services
+								.veil.reveal-xs-inline-block.text-middle.inset-xs-left-8
+									span.icon.icon-sm.mdi.mdi-soundcloud
+								// Post Title
+								.post-title.offset-top-20
+									p.font-accent.text-bold.text-spacing-50.text-uppercase
+										a.text-mine-shaft(href='blog-single-post.html') testing new taxis: opinions and impressions
+
+						.post-modern-timeline-left.offset-top-30.offset-md-top-64
+							nav
+								ul.pager.pager-custom
+									li.previous
+										a(href='#')
+											span.icon.icon-sm.text-middle.icon-left.material-icons-ico.material-icons-keyboard_arrow_left(aria-hidden='true')
+											span.text-middle prev
+									li.next
+										a(href='#')
+											span.text-middle next
+											span.icon.icon-sm.text-middle.icon-right.material-icons-ico.material-icons-keyboard_arrow_right(aria-hidden='true')
+
+					.cell-sm-10.cell-md-9.cell-lg-3.text-sm-left.offset-top-64.offset-lg-top-25
+						p.font-accent.text-bold.text-spacing-50.text-mine-shaft.text-uppercase search
+
+						.offset-top-30
+							// RD Search Form
+							form.form-search.blog-form-search.rd-search(action='search-results.html', method='GET')
+								.form-group
+									input.form-search-input.form-control.null(type='text', name='s', autocomplete='off')
+								button.form-search-submit(type='submit')
+									span.icon.icon-sm.material-icons-ico.material-icons-search
+
+
+						.offset-top-35
+							.hr.bg-gray-lighter
+
+
+						.offset-top-55
+							p.font-accent.text-bold.text-spacing-50.text-mine-shaft.text-uppercase flickr
+
+						.offset-top-30
+							+widget-flickrfeed("tm61233", {"data-image_q": "src"}, {
+								"style": "group group-xs widget-flickrfeed-lg",
+								"dataSize": "1050x700",
+								"img": {
+									"width": 85,
+									"height": 85
+								}
+							}, 6)
+
+						.offset-top-35
+							.hr.bg-gray-lighter
+
+						.range.range-xs-center.offset-top-55
+							.cell-sm-3.cell-lg-12
+								p.font-accent.text-bold.text-spacing-50.text-mine-shaft.text-uppercase categories
+								.offset-top-25
+									ul.list-marked.text-extra-small.text-bold.p.text-left.font-accent
+										li
+											a.text-primary(href='#') Taxi
+										li.offset-top-10
+											a.text-primary(href='#') News
+										li.offset-top-10
+											a.text-primary(href='#') Innovations
+										li.offset-top-10
+											a.text-primary(href='#') Luxury
+										li.offset-top-10
+											a.text-primary(href='#') Business
+										li.offset-top-10
+											a.text-primary(href='#') Lost Property
+
+								.veil-sm.reveal-lg-block.offset-top-30.offset-sm-top-0.offset-lg-top-30
+									.hr.bg-gray-lighter
+
+							.cell-sm-3.cell-lg-12.offset-lg-top-55
+								p.font-accent.text-bold.text-spacing-50.text-mine-shaft.text-uppercase archive
+								.offset-top-25
+									ul.list-marked.text-extra-small.text-bold.p.text-left.font-accent
+										li
+											a.text-primary(href='#') July 2016
+										li.offset-top-10
+											a.text-primary(href='#') June 2016
+										li.offset-top-10
+											a.text-primary(href='#') May 2016
+										li.offset-top-10
+											a.text-primary(href='#') April 2016
+										li.offset-top-10
+											a.text-primary(href='#') March 2016
+										li.offset-top-10
+											a.text-primary(href='#') February 2016
+
+								.veil-sm.reveal-lg-block.offset-top-30.offset-sm-top-0.offset-lg-top-30
+									.hr.bg-gray-lighter
+
+							.cell-sm-6.cell-lg-12.offset-lg-top-55
+								p.font-accent.text-bold.text-spacing-50.text-mine-shaft.text-uppercase tags
+								.offset-top-20
+									// List inline marked
+									ul.list-inline.list-tags.font-accent.text-bold.text-spacing-inverse-25.text-left
+										li
+											a.text-turquoise(href="#") Lost property
+										li
+											a.text-turquoise(href="#") Taxi
+										li
+											a.text-turquoise(href="#") Private driver
+										li
+											a.text-turquoise(href="#") Shuttle
+										li
+											a.text-turquoise(href="#") Services
+										li
+											a.text-turquoise(href="#") Sightseeing
+										li
+											a.text-turquoise(href="#") How To
+										li
+											a.text-turquoise(href="#") Industry news
+										li
+											a.text-turquoise(href="#") Innovations
+
+	// Page Footer
+	include ../sections/_footer-default

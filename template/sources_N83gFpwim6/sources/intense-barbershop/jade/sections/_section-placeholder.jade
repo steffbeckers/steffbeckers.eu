@@ -1,0 +1,31 @@
+//- Includes
+include ../elements/_ui-section-header
+include ../elements/_ui-thumbnail-card
+
+//- WHO WE ARE
+section.section-xl.bg-periglacial-blue.text-center.text-md-left
+  .shell-fluid.shell-condensed
+    .range.range-md-reverse.range-xs-middle.range-md-right.range-50
+      .cell-md-5.cell-lg-4
+        .inset-1
+          h2 WHO WE ARE
+          .p.text-width-smallest
+            p.big.
+              Barbershop is a team of highly qualified barbers dedicated to offering the best value. We do this by providing high quality salon services for men and boys, in a warm, friendly atmosphere.
+          a.btn.btn-sm.btn-style-1.btn-primary(href='about.html') Read more
+      .cell-md-7.cell-lg-6
+        .row.row-gutter-custom.range-15
+          .col-xs-4
+            figure.figure-fullwidth
+              +jpg('about-1-300x460')
+
+          .col-xs-4
+            figure.figure-fullwidth
+              +jpg('about-2-300x460')
+
+          .col-xs-4
+            figure.figure-fullwidth
+              +jpg('about-3-300x460')
+='\n'
+
+include ../sections/_section-testimonials-carousel

@@ -1,0 +1,64 @@
+/*
+* @subsection   RD Material Tabs
+*
+* @description  Describes style declarations for RD Material Tabs extension
+*
+* @author       Rafael Shayvolodyan
+* @version      1.0.3
+*/
+
+.rd-material-tabs {
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+  position: relative;
+  //opacity: 0;
+  //visibility: hidden;
+
+  //&.loaded {
+  //  opacity: 1;
+  //  visibility: visible;
+  //}
+
+  &__list {
+    white-space: nowrap;
+
+    .rd-material-tab {
+      display: inline-block;
+    }
+  }
+
+  img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  &__stage-outer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__stage {
+    @include clearfix;
+  }
+}
+
+.rd-material-tabs__container {
+  padding: 0 5px;
+  margin-top: 20px;
+
+  .rd-material-tab {
+    float: left;
+    width: 100%;
+  }
+}
+
+.rd-material-tabs-canMove {
+  cursor: w-resize;
+}
+
+.rd-material-tabs-grab, .rd-material-tabs-grab a {
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}

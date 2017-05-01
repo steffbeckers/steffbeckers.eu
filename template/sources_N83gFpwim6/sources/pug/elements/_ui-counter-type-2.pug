@@ -1,0 +1,21 @@
+//- title - counter title
+//- icon - icon class
+//- counter - {counter} Object
+
+mixin counter-type-2(title, icon, counter)
+  // Counter type 2
+  .counter-type-2
+    span.icon(class= icon)
+    if counter.preffix != null
+      div.offset-top-10
+        span.h1.text-bold.counter(data-speed= counter.dataSpeed data-from="0" data-to= counter.dataTo)
+        span.h1.text-bold= counter.preffix
+    else
+      div.offset-top-10
+        .h1.text-bold.counter(data-speed= counter.dataSpeed data-from="0" data-to= counter.dataTo)
+    if counter.divider != null
+      div
+        hr(class= counter.divider)
+      div(class= title.titleStyle)= title.description
+    else
+      div(class= title.titleStyle)= title.description

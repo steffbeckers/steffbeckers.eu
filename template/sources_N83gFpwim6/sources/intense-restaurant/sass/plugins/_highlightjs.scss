@@ -1,0 +1,162 @@
+//Highlight styles
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  min-width: 1140px;
+  width: 1140px;
+}
+
+.hljs, .hljs-subst {
+  color: #212121
+}
+
+.hljs-keyword, .hljs-attribute, .hljs-selector-tag, .hljs-meta-keyword, .hljs-doctag, .hljs-name {
+  font-weight: bold
+}
+
+.hljs-built_in, .hljs-literal, .hljs-bullet, .hljs-code, .hljs-addition {
+  color: #239E23
+}
+
+.hljs-regexp, .hljs-symbol, .hljs-variable, .hljs-template-variable, .hljs-link, .hljs-selector-attr, .hljs-selector-pseudo {
+  color: #BC6060
+}
+
+.hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+  color: #e50a0a;
+}
+
+.hljs-title, .hljs-section {
+  color: #880000;
+  font-weight: bold
+}
+
+.hljs-comment {
+  color: #888888
+}
+
+.hljs-meta {
+  color: #2B6EA1
+}
+
+.hljs-emphasis {
+  font-style: italic
+}
+
+.hljs-strong {
+  font-weight: bold
+}
+
+pre {
+  line-height: 18px;
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.highlight {
+  position: relative;
+  width: 100%;
+  background-color: #F5FAFC;
+  & + .highlight {
+    margin-top: 20px;
+  }
+}
+
+code.def {
+  padding: 0;
+  background: #FFF;
+  border: 0;
+  display: block;
+  margin-bottom: 8px;
+  margin-top: -10px;
+  color: #A3A3A3
+}
+
+.hljs-tag {
+  color: $brand-iceberg;
+}
+
+.hljs-name{
+  color: $brand-iceberg;
+}
+
+.hljs-attr{
+  color: $brand-deluge;
+}
+
+pre .comment, pre .diff .header, pre .javadoc, pre .template_comment {
+  color: #998;
+  font-style: italic
+}
+
+pre .css .rule .keyword, pre .javascript .title, pre .keyword, pre .nginx .title, pre .request, pre .status, pre .subst, pre .winutils {
+  color: #333;
+  font-weight: 700
+}
+
+pre .hexcolor, pre .number, pre .ruby .constant {
+  color: #099
+}
+
+pre .phpdoc, pre .string, pre .tag .value, pre .tex .formula {
+  color: #D01040
+}
+
+pre .id, pre .title {
+  color: #900;
+  font-weight: 700
+}
+
+pre .clojure .title, pre .javascript .title, pre .lisp .title, pre .subst {
+  font-weight: 400
+}
+
+pre .class .title, pre .haskell .type, pre .tex .command, pre .vhdl .literal {
+  color: #458;
+  font-weight: 700
+}
+
+pre .django .tag .keyword, pre .rules .property, pre .tag, pre .tag .title {
+  color: navy;
+  font-weight: 400
+}
+
+pre .attribute, pre .lisp .body, pre .variable {
+  color: teal
+}
+
+pre .regexp {
+  color: #009926
+}
+
+pre .class {
+  color: #458;
+  font-weight: 700
+}
+
+pre .built_in, pre .clojure .built_in, pre .lisp .title {
+  color: #0086b3
+}
+
+pre .cdata, pre .doctype, pre .pi, pre .preprocessor, pre .shebang {
+  color: #999;
+  font-weight: 700
+}
+
+pre .deletion {
+  background: #fdd
+}
+
+pre .addition {
+  background: #dfd
+}
+
+pre .diff .change {
+  background: #0086b3
+}
+
+pre .chunk {
+  color: #aaa
+}

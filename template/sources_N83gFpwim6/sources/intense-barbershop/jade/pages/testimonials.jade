@@ -1,0 +1,204 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-section-header
+include ../elements/_ui-quote-fullwidth
+include ../elements/_ui-quote-card
+include ../elements/_ui-quote-review
+
+block variables
+  - var activeIndex = 1
+  - var menuIncludeButton = true
+  - var pageName = 'Testimonials'
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  //- Page Content
+  .page-title
+    .page-title-content
+      .shell
+        p.page-title-header=pageName
+        .unit.unit-spacimg-md.unit-xs-horizontal.unit-align-center.unit-middle
+          .unit-left.text-sm-right
+            ul.list-rating
+              li.icon.icon-xs.icon-primary.fa.fa-star
+              li.icon.icon-xs.icon-primary.fa.fa-star
+              li.icon.icon-xs.icon-primary.fa.fa-star
+              li.icon.icon-xs.icon-primary.fa.fa-star
+              li.icon.icon-xs.icon-primary.fa.fa-star
+            p 4.66 average from 169 reviews
+          .unit-body
+            a.btn.btn-sm.btn-circle.btn-primary(href='#') Write a review
+
+  //- TESTIMONIALS 1
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-75
+        .cell-xs-12
+          +section-header("TESTIMONIALS 1", "These reviews that our clients have recently submitted are the best way to learn more about our barbershop’s level of service and customer support.")
+
+        .cell-lg-10
+          +quote-fullwidth({
+            avatar: {
+              type: 'image',
+              data: 'testimonials-1-100x100'
+            },
+            cite: 'Matt Parker',
+            text: 'I have taken my 3 yr old son for his first men’s haircut and now I’m glad he has such a fantastic look. I recommend any of the barbers at Barbershop for service and pride in their work. I believe my son would never be allowed to leave the chair without a really handsome cut.',
+            rating: 5
+          })
+
+          +quote-fullwidth({
+            avatar: {
+              type: 'image',
+              data: 'testimonials-2-100x100'
+            },
+            cite: 'John Miller',
+            text: "I wouldn't go anywhere else in San Francisco. I've been coming here for the last year and I've never felt better about paying good money for a haircut. The guys know what they are doing, give solid advice, and cut like pros. I wasn't used to this before but I’ll visit Barbershop again.",
+            rating: 4
+          })
+
+          +quote-fullwidth({
+            avatar: {
+              type: 'image',
+              data: 'testimonials-3-100x100'
+            },
+            cite: 'Anthony Smith',
+            text: 'Polite, professional, charming and courteous team. The best haircut I have ever had! Simon was full of crack, was more than happy to suggest the best cut for me and he even offered a free beverage - what more could you want?! This barbershop is indeed my favorite one.',
+            rating: 5
+          })
+  ='\n'
+
+  //- TESTIMONIALS 2
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-75
+        .cell-xs-12
+          +section-header("TESTIMONIALS 2", "These reviews that our clients have recently submitted are the best way to learn more about our barbershop’s level of service and customer support.")
+
+        .cell-xs-12
+          .row.isotope(data-isotope-layout='moduloColumns')
+            .col-xs-12.col-sm-6.col-md-4.isotope-item
+              +quote-card({
+                avatar: {
+                  type: 'image',
+                  data: 'testimonials-1-100x100'
+                },
+                cite: 'Matt Parker',
+                text: 'I have taken my 3 yr old son for his first men’s haircut and now I’m glad he has such a fantastic look. I recommend any of the barbers at Barbershop for service and pride in their work. I believe my son would never be allowed to leave the chair without a really handsome cut.',
+                rating: 5
+              })
+
+            .col-xs-12.col-sm-6.col-md-4.isotope-item
+              +quote-card({
+                avatar: {
+                  type: 'letter',
+                  data: 'J'
+                },
+                cite: 'John Miller',
+                text: 'These guys know what they are doing, give solid advice, and cut like pros. I’ll surely visit Barbershop again.',
+                rating: 4
+              })
+
+            .col-xs-12.col-sm-6.col-md-4.isotope-item
+              +quote-card({
+                avatar: {
+                  type: 'image',
+                  data: 'testimonials-3-100x100'
+                },
+                cite: 'Anthony Smith',
+                text: 'Polite, professional, charming and courteous team. The best haircut I have ever had! Simon was full of crack, was more than happy to suggest the best cut for me.',
+                rating: 5
+              })
+
+            .col-xs-12.col-sm-6.col-md-4.isotope-item
+              +quote-card({
+                avatar: {
+                  type: 'image',
+                  data: 'testimonials-4-100x100'
+                },
+                cite: 'Jim McMillan',
+                text: 'Down to earth friendly professional service with no pretentious nonsense which you would expect from a barber in this area. Barbers are well trained and experienced and always give a first class haircut according to your requirements and are always happy to give advice for a style that suits you.',
+                rating: 5
+              })
+
+            .col-xs-12.col-sm-6.col-md-4.isotope-item
+              +quote-card({
+                avatar: {
+                  type: 'image',
+                  data: 'testimonials-5-100x100'
+                },
+                cite: 'David Flores',
+                text: 'This is without doubt the finest and best value barber shop in the city. I started going here in response to a series of really bad haircuts at shops local to where I live.',
+                rating: 5
+              })
+
+            .col-xs-12.col-sm-6.col-md-4.isotope-item
+              +quote-card({
+                avatar: {
+                  type: 'letter',
+                  data: 'P'
+                },
+                cite: 'Patrick Perez',
+                text: 'I’ve recently had my haircut with Harry, and it’s by far the best haircut I’ve ever had! It feels good knowing that I’ve found a barber who can make me look and feel my best.',
+                rating: 5
+              })
+  ='\n'
+
+  //- TESTIMONIALS 3
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-75
+        .cell-xs-12
+          +section-header("TESTIMONIALS 3", "These reviews that our clients have recently submitted are the best way to learn more about our barbershop’s level of service and customer support.")
+
+        .cell-lg-10
+          +quote-review({
+            avatar: {
+              type: 'image',
+              data: 'testimonials-1-100x100'
+            },
+            title: 'My Son is Very Happy! ',
+            cite: 'Matt Parker',
+            text: "I have taken my 3 yr old son for his first men’s haircut and now I’m glad he has such a fantastic look. I recommend any of the barbers at Barbershop for service and pride in their work. I believe my son would never be allowed to leave the chair without a really handsome cut.",
+            time: ['2016-06-08', 'June 8, 2016'],
+            rating: 5
+          })
+
+          +quote-review({
+            avatar: {
+              type: 'letter',
+              data: 'J'
+            },
+            title: 'The Best Place in the City',
+            cite: 'John Miller',
+            text: "I wouldn't go anywhere else in San Francisco. I've been coming here for the last year and I've never felt better about paying good money for a haircut. The guys know what they are doing, give solid advice, and cut like pros. I wasn't used to this before but I’ll visit Barbershop again.",
+            time: ['2016-03-21', 'May 21, 2016'],
+            rating: 4
+          })
+
+          +quote-review({
+            avatar: {
+              type: 'image',
+              data: 'testimonials-3-100x100'
+            },
+            title: 'Professional Barber Service',
+            cite: 'Anthony Smith',
+            text: "Polite, professional, charming and courteous team. The best haircut I have ever had! Simon was full of crack, was more than happy to suggest the best cut for me and he even offered a free beverage - what more could you want?! This barbershop is indeed my favorite one.",
+            time: ['2016-04-15', 'April 15, 2016'],
+            rating: 5
+          })
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_footer-default
+

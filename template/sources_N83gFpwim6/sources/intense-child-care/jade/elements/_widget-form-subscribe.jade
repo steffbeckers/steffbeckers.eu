@@ -1,0 +1,16 @@
+//- Subscribe Form Widget
+//- holder - input placeholder
+//- id - id of form output element
+//- external - true if form output element is an external element
+mixin widget-form-subscribe(holder, id, external)
+  form.rd-mailform(data-form-output=id, data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+    .form-group
+      .input-group.input-group-sm
+        span.input-group-addon
+          span.input-group-icon.mdi.mdi-email
+        input.form-control(placeholder=holder, type="email", name="email" data-constraints="@Required @Email")
+        span.input-group-btn
+          button(type="submit").btn.btn-sm.btn-primary Subscribe
+
+    if !external
+      .form-output(id=id)

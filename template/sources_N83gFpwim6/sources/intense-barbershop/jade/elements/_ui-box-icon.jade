@@ -1,0 +1,7 @@
+mixin box-icon(obj)
+  article.box-icon
+    figure.box-icon-image
+      +png(obj.img)
+
+    p.box-icon-header: a(href='services.html')=obj.header
+    p.box-icon-text=obj.text

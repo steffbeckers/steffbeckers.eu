@@ -1,0 +1,29 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 0
+  - var pageName = '404 page'
+  - var bodyClass = 'one-screen-page'
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+  //- Page Content
+  section.section-sm.bg-periglacial-blue.one-screen-page-content.text-center
+    .shell
+      h2 404
+      .p.text-width-small
+        p.big The page requested couldn't be found - this could be  due to a spelling error in the URL or a removed page.
+      a.btn.btn-sm.btn-style-1.btn-primary(href='index.html') Back to homepage
+
+  ='\n'
+
+  // Page Footer
+  include ../sections/_footer-default

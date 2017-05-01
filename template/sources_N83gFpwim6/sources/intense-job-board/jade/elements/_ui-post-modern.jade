@@ -1,0 +1,55 @@
+//- Post Modern
+//- url - expanded post link
+//- date - date of publishment
+//- title - post title
+//- tags - array of {link}
+//- image - {image} object
+
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-carousel-gallery-classic
+include ../elements/_ui-video-embed
+include ../elements/_ui-soundcloud-player-classic
+
+mixin post-modern(url, type, date, title, tags, media)
+  // Post Modern
+  article.post.post-modern
+    // Post media
+    if media
+      header.post-media
+        case media.type
+          when "gallery"
+            +carousel-gallery-classic(media.images)
+          when "soundcloud"
+            .post-inset
+              +soundcloud-player-classic(media)
+          when "video"
+            +video-embed(media)
+          when "thumbnail"
+            img.img-responsive.img-cover(width=media.thumb.width, height=media.thumb.height, src=media.thumb.src, alt=media.thumb.alt)
+          default
+            = ""
+
+    // Post content
+    section.post-content.text-left
+      .post-meta.small.pull-sm-right
+        span.text-middle.icon-xxs.mdi.mdi-clock.text-primary
+        time.text-italic.text-middle.text-dark(datetime="2016-01-01")= date
+
+      ul.list-inline.offset-top-14.offset-sm-top-0
+        if tags
+          li.text-middle
+            .post-tags.group-xs
+              each tag in tags
+                a.label-custom.label-lg-custom.label-rounded-custom.label-primary(href= tag.href)= tag.title
+        li.text-middle
+          .icon.icon-xxs.text-dark(class=type)
+
+      // Post Title
+      .post-title
+        h6.offset-top-24
+          a(href=url)= title
+
+      // Post Body
+      .post-body.offset-top-20
+        block
+

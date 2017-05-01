@@ -1,0 +1,175 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-post-modern
+include ../elements/_widget-flickrfeed
+include ../elements/_widget-form-search
+include ../elements/_widget-tags
+include ../elements/_widget-twitter
+
+block title
+  title= cfg.nav.blog.title
+
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    // - RD Navbar
+    +rd-navbar-floated(
+    'rd-navbar-dark rd-navbar-dark-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.blog,
+    cfg.nav
+    )
+    .context-dark
+      +breadcrumb-modern("Blog", {
+        0: {
+          "type": "link",
+          "title": cfg.nav.home.title,
+          "href": cfg.nav.home.href
+        },
+        1: {
+          "type": "link",
+          "title": cfg.nav.blog.title,
+          "href": cfg.nav.blog.href
+        }
+      }, "images/background-02-1920x870.jpg")
+
+  // Page Contents
+  main.page-content
+
+    section.section-98.section-sm-124
+      .shell-wide
+        .range.range-xs-center
+          .cell-lg-8
+            .range.range-xs-center
+              .cell-sm-9.cell-md-6
+                //- Post with Video
+                +post-modern("#", "mdi mdi-video", "2 days ago", "Intense tutorial: Writing a proper resume and autobiography for young specialists", [
+                  {"title": "Business", "href": "#"}],
+                {
+                  "type": "video",
+                  "href": "//www.youtube.com/embed/-AhmuMqZB0s",
+                  "ratio": "16by9"
+                })
+                  p Nowadays many companies are looking for young specialists that have some professional potential. Young graduates can easily attract employer’s attention by writing a proper resume.
+
+                //- Post with Gallery
+                .offset-top-30
+                  +post-modern("#", "mdi mdi-instagram", "7 days ago", "How to impress your future employer", [
+                    {"title": "Lifestyle", "href": "#"}],
+                  {
+                    "type": "thumbnail",
+                    "thumb": {"src": "images/home-01-570x321.jpg", "width": 570, "height": 321, "alt": ""}
+                  })
+
+              .cell-sm-9.cell-md-6
+                //- Post with Text
+                +post-modern("#", "mdi mdi-pen", "3 days ago", "Top 50 international companies to consider your potential employer.", [
+                  {"title": "News", "href": "#"}])
+                  p There are thousands of possibilities that can help you find the job of your dream. But how many of them will really lead you to the success of working at the well-known international company? Let’s find it out.
+
+                //- Post with Audio
+                .offset-top-30
+                  +post-modern("#", "mdi mdi-soundcloud", "5 days ago", "Top 5 tracks to enhance your working process: from rock to electronic music.", [
+                    {"title": "Music", "href": "#"}],
+                  {
+                    "type": "soundcloud",
+                    "embed": '<iframe height="166" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/149065581&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>'
+                  })
+
+                //- Post with Image
+                .offset-top-30
+                  +post-modern("#", "mdi mdi-image", "2 days ago", "Teamwork as a vital element of your own success and career promotion.", [
+                    {"title": "Business", "href": "#"}],
+                  {
+                    "type": "thumbnail",
+                    "thumb": {"src": "images/home-02-570x321.jpg", "width": 571, "height": 321, "alt": ""}
+                  })
+                    p It is widely known that teamwork is very important to successful completion of any idea. Nevertheless, some projects based on the principle of cooperation often lack some simple but effective features.
+
+              .range.range-xs-center.offset-top-66
+                .cell-xs-7.cell-sm-5.cell-md-4.cell-lg-5.cell-xl-3
+                  .inset-lg-left-20.inset-lg-right-20
+                    a.btn.btn-primary.reveal-xs-block(href="#") view all blog posts
+
+          .cell-sm-9.cell-lg-3.offset-top-66.offset-lg-top-0
+            .inset-xl-left-100
+              // Sidebar
+              aside.text-left
+                // Search Form
+                h6.text-uppercase.text-spacing-60 Search
+                div.text-subline
+
+                .offset-top-34
+                  +widget-form-search("input-sm", "form-label-sm", "blog-sidebar-2-form-search-widget")
+
+                // Twitter Feed
+                h6.offset-top-41.text-uppercase.text-spacing-60 Twitter Feed
+                div.text-subline
+
+                .offset-top-34
+                  +widget-twitter({
+                    "dataTwitterUsername": "templatemonster"
+                  })
+
+
+                .range.offset-top-41
+                  .cell-xs-6.cell-md-12
+                    // Category
+                    h6.text-uppercase.text-spacing-60 Categories
+                    div.text-subline
+
+                    ul.list.list-marked.offset-top-30
+                      li
+                        a(href="#") Job #[span.text-dark (37)]
+                      li
+                        a(href="#") Employers #[span.text-dark (211)]
+                      li
+                        a(href="#") Resume #[span.text-dark (12)]
+                      li
+                        a(href="#") Finance #[span.text-dark (7)]
+                      li
+                        a(href="#") Vacancy #[span.text-dark (15)]
+
+                  .cell-xs-6.cell-md-12.offset-top-41.offset-xs-top-0.offset-md-top-41
+                    // Archive
+                    h6.text-uppercase.text-spacing-60 Archive
+                    div.text-subline
+
+                    ul.list.list-marked.offset-top-30
+                      li
+                        a(href="#") January 2016 #[span.text-dark (17)]
+                      li
+                        a(href="#") December 2015 #[span.text-dark (121)]
+                      li
+                        a(href="#") November 2015 #[span.text-dark (19)]
+                      li
+                        a(href="#") October 2015 #[span.text-dark (9)]
+                      li
+                        a(href="#") September 2015 #[span.text-dark (25)]
+
+                // Tags
+                h6.offset-top-41.text-uppercase.text-spacing-60 Tags
+                div.text-subline
+
+                .offset-top-34
+                  +widget-tags("btn btn-xs btn-default", [
+                    {"title": "resume", "href": "#"},
+                    {"title": "employers", "href": "#"},
+                    {"title": "Job", "href": "#"},
+                    {"title": "Vacancy", "href": "#"},
+                    {"title": "Finance", "href": "#"}
+                  ])
+
+
+
+
+  // Page Footer
+  include ../sections/_section-footer

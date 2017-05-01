@@ -1,0 +1,13 @@
+mixin card-service(obj)
+  - var price = obj.price.split('.')
+
+  article.card-service
+    +png(obj.img, 'card-service-image')
+    p.card-service-title=obj.title
+    p.card-service-price
+      small $
+      =price[0]
+      | .
+      small=price[1]
+
+    a.btn.btn-sm.card-service-control(href=appointLink) Book Now

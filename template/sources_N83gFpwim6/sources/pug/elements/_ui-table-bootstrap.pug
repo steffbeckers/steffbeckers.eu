@@ -1,0 +1,13 @@
+//- table - Bootstrap Table object
+//- tClass - Bootstrap Table styling
+mixin table-bootstrap(table, tClass)
+  // Bootstrap Table
+  .table-responsive.clearfix
+    table.table(class= tClass)
+      each row, i in table
+        tr
+          each col, j in row
+            - if (i == 0 || j == 0)
+              th= col
+            - else
+              td= col

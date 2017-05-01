@@ -1,0 +1,106 @@
+//- Includes
+include ../elements/_ui-quote-simple
+include ../elements/_widget-post
+include ../elements/_ui-box-comment
+
+// Blog Wide Single post
+section.bg-fixed(style="background-image: url(images/single-post-01-1920x1280.jpg); background-position: -350px center;")
+  .section-split.bg-white
+    .inset-left-11p.inset-right-11p.section-98.section-sm-110
+      article
+        h3.text-bold
+          span.h6.reveal-block.text-uppercase.text-regular.font-default.text-spacing-120.text-primary lifestyle, Beauty
+          | Inspirational stories told by real people around the world
+
+        time(datetime="2016-01-01").small.text-light February 18, 9:14 PM
+
+        p.text-left.offset-top-24 Last week I took part in the winning ceremony of “The Person of the Year” award in Chicago, IL. The main goal of the festival is to award people who help to promote tolerance and humanism in various spheres of our life and – social, economic, political, cultural etc. I was invited to present an award to Jim Smith from Miami, FL. He rescued 5 children from the fire in Philadelphia, PA when he was visiting his relatives in the same region. After the ceremony, participants told their stories to journalists, bloggers and representatives of mass media. I was surprised by some of the stories told there.
+
+        p.text-left After Jim Smith discovered what was happening in the house that he was driving by, he immediately decided to help its residents. Everything happened so quickly that Jim could barely remember his actions afterwards. Still, he acted like a true hero in this difficult situation. His story shocked and amazed me a lot.
+
+        +quote-simple("I don't think I am a hero or at least someone who saves people’s lives. I’m glad the children are safe now")
+
+        p.text-left Jim managed to do the work of rescuing the children aged from 5 to 11 years old (3 boys and 2 girls) less than in 5 minutes. Due to his profession – Jim is an architect – he quickly noticed what was blocking the way for children to get out, and helped them, so that they could stay alive and unharmed. His actions were awarded according to his deserts.
+
+
+      hr.offset-top-66
+
+      h4.offset-top-66.text-uppercase.text-spacing-120.text-bold Related Posts
+
+      .range.offset-top-34.text-xs-left.inset-lg-left-50
+        .unit.unit-xs.unit-xs-horizontal
+          .unit-left
+            a(href="#")
+              img(src="images/single-post-02-100x100.jpg" width="100" height="100" alt="")
+          .unit-body
+            p.small.text-uppercase.text-spacing-120.text-primary
+              a(href="#") Lifestyle
+              = ', '
+              a(href="#") Story
+            h5.text-bold.offset-top-20
+              a(href="#") How gadgets can benefit your lifestyle.
+
+        .unit.unit-xs.unit-xs-horizontal.offset-top-41
+          .unit-left
+            a(href="#")
+              img(src="images/single-post-03-100x100.jpg" width="100" height="100" alt="")
+          .unit-body
+            p.small.text-uppercase.text-spacing-120.text-primary
+              a(href="#") News
+              = ', '
+              a(href="#") Events
+            h5.text-bold.offset-top-20
+              a(href="#") Top 10 events to visit in the USA this spring.
+
+      #comments
+      hr.offset-top-66
+
+      h4.offset-top-66.text-uppercase.text-spacing-120.text-bold Comments
+
+      .offset-top-41
+        //- Comment 1
+        +box-comment(
+        "box-comment-classic",
+        {
+          "width": 100,
+          "height": 100,
+          "src": "images/single-post-04-100x100.jpg",
+          "alt": "July Mao"
+        },
+        "Feb 18, 9:14 PM",
+        "July Mao",
+        "This story is amazing! I didn’t even know that it is possible to find such people nowadays. I’m glad that those children are safe now."
+        )
+          //- Reply 1
+          +box-comment(
+          "box-comment-classic",
+          {
+            "width": 60,
+            "height": 60,
+            "src": "images/users/user-john-doe-60x60.jpg",
+            "alt": "Alex Ross"
+          },
+          "Feb 18, 10:13 PM",
+          "Alex Ross",
+          "I agree with you, even though there were dozens of other great stories on this ceremony."
+          )
+            //- Comment 2
+        +box-comment(
+        "box-comment-classic",
+        {
+          "width": 60,
+          "height": 60,
+          "src": "images/single-post-04-100x100.jpg",
+          "alt": "July Mao"
+        },
+        "Feb  16, 7:42 PM",
+        "July Mao",
+        "Nevertheless, rescuing people from the fire is an action worthy of a hero. And I think Jim Smith is a true hero."
+        )
+
+      form.rd-mailform.offset-top-41.text-left(data-form-output="form-contact-me", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+        .form-group
+          label.form-label(for="post-wide-comment-message") Message:
+          textarea#post-wide-comment-message.form-control(data-constraints="@Required" style="height: 170px")
+        .group-sm.text-left.offset-top-20
+          button(type="submit").btn.btn-primary.font-accent.text-spacing-60 SUBMIT

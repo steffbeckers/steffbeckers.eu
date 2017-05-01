@@ -1,0 +1,1356 @@
+//
+// Variables
+// --------------------------------------------------
+
+@import "bootstrap/variables";
+
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base:               #1c1c1c;
+$gray-darker:             #3a3a3a;
+$gray-dark:               #282828;
+$gray:                    #555;
+$gray-light:              #9c9c9c;
+$gray-lighter:            #f6f6f6;
+
+$brand-primary:           #fbc318;
+$brand-success:           #5cb85c;
+$brand-info:              #2f6890;
+$brand-warning:           #f0ad4e;
+$brand-danger:            #d9534f;
+
+// Custom Colors
+$brand-boston-blue:       #3f8fac;
+$brand-pelorous:          #41bcc4;
+$brand-scooter:           #40cad5;
+$brand-turquoise:         $brand-primary;
+$brand-silver-chalice:    #adadad;
+$brand-mine-shaft:        #282828;
+$brand-teal-blue:         #4e3214;
+$brand-chathams-blue:     $brand-primary;
+$brand-calypso:           $brand-primary;
+$brand-mercury:           #e1e1e1;
+$brand-gallery:           #efefef;
+$brand-curious-blue:      #14a5eb;
+$brand-mandy:             #e75854;
+$brand-nobel:             #b5b5b5;
+$brand-alto:              #cecece;
+$brand-astronaut:         #4e3214;
+$brand-concrete:          #f2f2f2;
+$brand-malibu:            $brand-primary;
+$brand-silver:            #c0c0c0;
+
+
+$white: #fff;
+$white-light:             rgba($white, .3);
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+$content-bg:            $white;
+$header-bg:             $white;
+$footer-bg: 			      $white;
+
+//** Background color for `<body>`.
+$body-bg:                 #fff;
+//** Global text color on `<body>`.
+$text-color:            $brand-silver-chalice;
+
+//** Global textual link color.
+$link-color:            darken($brand-primary, 15%);
+//** Link hover color set via `darken()` function.
+$link-hover-color:      $brand-primary;
+//** Link hover decoration.
+$link-hover-decoration: none;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+// Import fonts
+
+
+$font-family-sans-serif:  "Source Sans Pro", Helvetica, Arial, sans-serif;
+$font-family-serif:       "Quicksand", Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+
+
+$font-family-base:        $font-family-sans-serif;
+$font-family-sec:         $font-family-serif;
+
+
+// Template width (w/o units)
+$template-width:          2050;
+
+// Template width var for resizing
+$template-width-min:      ($template-width+1)*1px;
+$layout-boxed-width:      1920px;
+
+
+// Base FZ & LH (w/o units)
+$base-text-size:          18;
+$base-lh-size:            24;
+
+$base-vm-size:            (($base-text-size*100)/$template-width)*1vw;
+
+
+$font-size-base:          $base-text-size * 1px;
+$font-size-large:         ceil(($font-size-base * 1.25)); // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
+
+$font-weight-base:        400;
+
+//PSD FZ headers /FOR EDIT (w/o units)
+$Size-h1:                 60;
+$Size-h2:                 60;
+$Size-h3:                 36;
+$Size-h4:                 36;
+$Size-h5:                 24;
+$Size-h6:                 24;
+
+//PSD LH headers /FOR EDIT (w/o units)
+$Lh-h1:                   36;
+$Lh-h2:                   36;
+$Lh-h3:                   36;
+$Lh-h4:                   36;
+$Lh-h5:                   36;
+$Lh-h6:                   36;
+
+
+//Calculating FZ headers
+$font-size-h1:            $Size-h1*1px;
+$font-size-h2:            $Size-h2*1px;
+$font-size-h3:            $Size-h3*1px;
+$font-size-h4:            $Size-h4*1px;
+$font-size-h5:            $Size-h5*1px;
+$font-size-h6:            $Size-h6*1px;
+
+
+
+//** line-height for headers /FOR EDIT
+// $font-lh-h_: floor((PSD l-h / $font-size-h1));
+
+$font-lh-h1:              ($Lh-h1 / $Size-h1);
+$font-lh-h2:              ($Lh-h2 / $Size-h2);
+$font-lh-h3:              ($Lh-h3 / $Size-h3);
+$font-lh-h4:              ($Lh-h4 / $Size-h4);
+$font-lh-h5:              ($Lh-h5 / $Size-h5);
+$font-lh-h6:              ($Lh-h6 / $Size-h6);
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        ($base-lh-size / $base-text-size); // l-h/fz-base
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)); // ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    $font-family-serif;
+$headings-font-weight:    400;
+$headings-line-height:    1.1;
+$headings-color:          $brand-mine-shaft;
+
+
+//== Iconography
+//
+//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
+
+//** Load fonts from this directory.
+$icon-font-path: "../fonts/";
+
+//** File name for all font files.
+$icon-font-name:           "glyphicons-halflings-regular";
+$icon-font-awesome:        "fontawesome-webfont";
+$icon-material-design:     "materialdesignicons-webfont";
+
+//** Element ID within SVG icon file.
+$icon-font-svg-id:         "glyphicons_halflingsregular";
+$icon-font-awesome-id:     "fontawesomeregular";
+$icon-material-design-id:  "materialdesigniconsregular";
+
+//** Icons font family options
+$icon-font-material-design: "Material Design Icons";
+$icon-font-fontawesome:     "FontAwesome";
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical:     10px;
+$padding-base-horizontal:   19px;
+
+$padding-large-vertical:    13px;
+$padding-large-horizontal:  15px;
+
+$padding-small-vertical:    6px;
+$padding-small-horizontal:  13px;
+
+$padding-xs-vertical:       $padding-base-vertical*0.4;
+$padding-xs-horizontal:     $padding-base-horizontal*0.4;
+
+$line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.5;
+
+$border-radius-base:        0;
+$border-radius-large:       6px;
+$border-radius-small:       3px;
+
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color:    $gray-dark;
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg:       $brand-primary;
+
+//** Width of the `border` for generating carets that indicator dropdowns.
+$caret-width-base:          4px;
+//** Carets increase slightly in size for larger components.
+$caret-width-large:         5px;
+
+
+//== Tables
+//
+//## Customizes the `.table` component with basic values, each used across all table variations.
+
+//** Padding for `<th>`s and `<td>`s.
+$table-cell-padding:            8px;
+//** Padding for cells in `.table-condensed`.
+$table-condensed-cell-padding:  5px;
+
+//** Default background color used for all tables.
+$table-bg:                      transparent;
+//** Background color used for `.table-striped`.
+$table-bg-accent:               #f8f8f8;
+//** Background color used for `.table-hover`.
+$table-bg-hover:                #f5f5f5;
+$table-bg-active:               $table-bg-hover;
+
+//** Border color for table and cell borders.
+$table-border-color:            #ddd;
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-font-size: 16;
+$btn-lh-size: 24;
+
+$btn-font-weight:                400;
+
+$btn-default-color:              $white;
+$btn-default-bg:                 $gray-base;
+$btn-default-border:             $gray-base;
+
+$btn-primary-color:              $white;
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             $brand-primary;
+
+$btn-success-color:              $white;
+$btn-success-bg:                 $brand-success;
+$btn-success-border:             $brand-success;
+
+$btn-info-color:                 $white;
+$btn-info-bg:                    $brand-info;
+$btn-info-border:                $brand-info;
+
+$btn-warning-color:              $white;
+$btn-warning-bg:                 $brand-warning;
+$btn-warning-border:             $brand-warning;
+
+$btn-danger-color:               $white;
+$btn-danger-bg:                  $brand-danger;
+$btn-danger-border:              $brand-danger;
+
+$btn-link-disabled-color:        $gray-light;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius-base:         $border-radius-base;
+$btn-border-radius-large:        $border-radius-large;
+$btn-border-radius-small:        $border-radius-small;
+
+
+//== Forms
+//
+//##
+
+//** `<input>` background color
+$input-bg:                       #fff;
+//** `<input disabled>` background color
+$input-bg-disabled:              $gray-lighter;
+
+//** Text color for `<input>`s
+$input-color:                    $brand-silver-chalice;
+//** `<input>` border color
+$input-border:                   #f6f6f6;
+
+//** Font size for input
+$input-font-size:                18px;
+
+//** Default `.form-control` border radius
+// This has no effect on `<select>`s in some browsers, due to the limited stylability of `<select>`s in CSS.
+$input-border-radius:            $border-radius-base;
+//** Large `.form-control` border radius
+$input-border-radius-large:      $border-radius-large;
+//** Small `.form-control` border radius
+$input-border-radius-small:      $border-radius-small;
+
+//** Border color for inputs on focus
+$input-border-focus:             $brand-primary;
+
+//** Placeholder text color
+$input-color-placeholder:        $brand-silver-chalice;
+$input-color-placeholder-focus:  $brand-primary;
+
+//** Default `.form-control` height
+$input-height-base:              50px;
+//** Large `.form-control` height
+$input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2);
+//** Small `.form-control` height
+$input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2);
+
+//** `.form-group` margin
+$form-group-margin-bottom:       15px;
+
+$legend-color:                   $gray-dark;
+$legend-border-color:            #e5e5e5;
+
+//** Background color for textual input addons
+$input-group-addon-bg:           $gray-lighter;
+//** Border color for textual input addons
+$input-group-addon-border-color: $input-border;
+
+//** Disabled cursor for form controls and buttons.
+$cursor-disabled:                not-allowed;
+
+//** Textarea default
+$textarea-default-height:       170px;
+$textarea-default-min-height:   50px;
+$textarea-default-max-height:   370px;
+
+//== Dropdowns
+//
+
+// $dropdown-font-size: 14;
+// $dropdown-lh-size: 36;
+
+//## Dropdown menu container and contents.
+
+//** Background for the dropdown menu.
+$dropdown-bg:                    #fff;
+//** Dropdown menu `border-color`.
+$dropdown-border:                rgba(0,0,0,.15);
+//** Dropdown menu `border-color` **for IE8**.
+$dropdown-fallback-border:       #ccc;
+//** Divider color for between dropdown items.
+$dropdown-divider-bg:            #e5e5e5;
+
+//** Dropdown link text color.
+$dropdown-link-color:            $gray-dark;
+//** Hover color for dropdown links.
+$dropdown-link-hover-color:      darken($gray-dark, 5%);
+//** Hover background for dropdown links.
+$dropdown-link-hover-bg:         #f5f5f5;
+
+//** Active dropdown menu item text color.
+$dropdown-link-active-color:     $component-active-color;
+//** Active dropdown menu item background color.
+$dropdown-link-active-bg:        $component-active-bg;
+
+//** Disabled dropdown menu item background color.
+$dropdown-link-disabled-color:   $gray-light;
+
+//** Text color for headers within dropdown menus.
+$dropdown-header-color:          $gray-light;
+
+//** Deprecated `$dropdown-caret-color` as of v3.1.0
+$dropdown-caret-color:           #000;
+
+
+//-- Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//
+// Note: These variables are not generated into the Customizer.
+
+$zindex-navbar:            1000;
+$zindex-dropdown:          1000;
+$zindex-popover:           1060;
+$zindex-tooltip:           1070;
+$zindex-navbar-fixed:      1030;
+$zindex-modal-background:  1040;
+$zindex-modal:             1050;
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+$screen-xs:                  480px;
+$screen-xs-min:              $screen-xs;
+$screen-phone:               $screen-xs-min;
+
+// Small screen / tablet
+$screen-sm:                  768px;
+$screen-sm-min:              $screen-sm;
+$screen-tablet:              $screen-sm-min;
+
+// Medium screen / desktop
+$screen-md:                  992px;
+$screen-md-min:              $screen-md;
+$screen-desktop:             $screen-md-min;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px;
+$screen-lg-min:              $screen-lg;
+$screen-lg-desktop:          $screen-lg-min;
+
+// Extra Large screen / 4k desktop
+$screen-xl:                  1800px;
+$screen-xl-min:              $screen-xl;
+$screen-xl-desktop:          $screen-xl-min;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xxs-max:             ($screen-xs-min - 1);
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
+$screen-lg-max:              ($screen-xl-min - 1);
+
+// Define media prefix
+$medias: (0: null, $screen-xs-min : xs, $screen-sm-min : sm, $screen-md-min : md, $screen-lg-min : lg, $screen-xl-min : xl);
+
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns:              12;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         30px;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-sm-min;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+$container-tablet:             (720px + $grid-gutter-width);
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet;
+
+// Medium screen / desktop
+$container-desktop:            (940px + $grid-gutter-width);
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop;
+
+// Large screen / wide desktop
+$container-large-desktop:      (1140px + $grid-gutter-width);
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop;
+
+
+//== Navbar
+//
+//##
+
+// $navbar-font-size: 16;
+// $navbar-lh-size: 18;
+
+// Basics of a navbar
+$navbar-height:                    50px;
+$navbar-margin-bottom:             $line-height-computed;
+$navbar-border-radius:             $border-radius-base;
+$navbar-padding-horizontal:        floor(($grid-gutter-width / 2));
+$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2);
+$navbar-collapse-max-height:       340px;
+
+$navbar-default-color:             #777;
+$navbar-default-bg:                #f8f8f8;
+$navbar-default-border:            darken($navbar-default-bg, 6.5%);
+
+// Navbar links
+$navbar-default-link-color:                #777;
+$navbar-default-link-hover-color:          #333;
+$navbar-default-link-hover-bg:             transparent;
+$navbar-default-link-active-color:         #555;
+$navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%);
+$navbar-default-link-disabled-color:       #ccc;
+$navbar-default-link-disabled-bg:          transparent;
+
+// Navbar brand label
+$navbar-default-brand-color:               $navbar-default-link-color;
+$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%);
+$navbar-default-brand-hover-bg:            transparent;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           #ddd;
+$navbar-default-toggle-icon-bar-bg:        #888;
+$navbar-default-toggle-border-color:       #ddd;
+
+
+//=== Inverted navbar
+// Reset inverted navbar basics
+$navbar-inverse-color:                      lighten($gray-light, 15%);
+$navbar-inverse-bg:                         #222;
+$navbar-inverse-border:                     darken($navbar-inverse-bg, 10%);
+
+// Inverted navbar links
+$navbar-inverse-link-color:                 lighten($gray-light, 15%);
+$navbar-inverse-link-hover-color:           #fff;
+$navbar-inverse-link-hover-bg:              transparent;
+$navbar-inverse-link-active-color:          $navbar-inverse-link-hover-color;
+$navbar-inverse-link-active-bg:             darken($navbar-inverse-bg, 10%);
+$navbar-inverse-link-disabled-color:        #444;
+$navbar-inverse-link-disabled-bg:           transparent;
+
+// Inverted navbar brand label
+$navbar-inverse-brand-color:                $navbar-inverse-link-color;
+$navbar-inverse-brand-hover-color:          #fff;
+$navbar-inverse-brand-hover-bg:             transparent;
+
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-bg:            #333;
+$navbar-inverse-toggle-icon-bar-bg:         #fff;
+$navbar-inverse-toggle-border-color:        #333;
+
+
+//== Navs
+//
+//##
+
+//=== Shared nav styles
+$nav-link-padding:                          10px 15px;
+$nav-link-hover-bg:                         $gray-lighter;
+
+$nav-disabled-link-color:                   $gray-light;
+$nav-disabled-link-hover-color:             $gray-light;
+
+//== Tabs
+$nav-tabs-border-color:                     #ddd;
+
+$nav-tabs-link-hover-border-color:          $gray-lighter;
+
+$nav-tabs-active-link-hover-bg:             $body-bg;
+$nav-tabs-active-link-hover-color:          $gray;
+$nav-tabs-active-link-hover-border-color:   #ddd;
+
+$nav-tabs-justified-link-border-color:            #ddd;
+$nav-tabs-justified-active-link-border-color:     $body-bg;
+
+//== Pills
+$nav-pills-border-radius:                   $border-radius-base;
+$nav-pills-active-link-hover-bg:            $component-active-bg;
+$nav-pills-active-link-hover-color:         $component-active-color;
+
+
+//== Pagination
+//
+//##
+
+$pagination-color:                     $link-color;
+$pagination-bg:                        #fff;
+$pagination-border:                    #ddd;
+
+$pagination-hover-color:               $link-hover-color;
+$pagination-hover-bg:                  $gray-lighter;
+$pagination-hover-border:              #ddd;
+
+$pagination-active-color:              #fff;
+$pagination-active-bg:                 $brand-primary;
+$pagination-active-border:             $brand-primary;
+
+$pagination-disabled-color:            $gray-light;
+$pagination-disabled-bg:               #fff;
+$pagination-disabled-border:           #ddd;
+
+
+//== Pager
+//
+//##
+
+$pager-bg:                             $pagination-bg;
+$pager-border:                         $pagination-border;
+$pager-border-radius:                  15px;
+
+$pager-hover-bg:                       $pagination-hover-bg;
+
+$pager-active-bg:                      $pagination-active-bg;
+$pager-active-color:                   $pagination-active-color;
+
+$pager-disabled-color:                 $pagination-disabled-color;
+
+
+//== Jumbotron
+//
+//##
+
+$jumbotron-padding:              30px;
+$jumbotron-color:                inherit;
+$jumbotron-bg:                   $gray-lighter;
+$jumbotron-heading-color:        inherit;
+$jumbotron-font-size:            ceil(($font-size-base * 1.5));
+$jumbotron-heading-font-size:    ceil(($font-size-base * 4.5));
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+$state-success-text:             #3c763d;
+$state-success-bg:               #dff0d8;
+$state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%);
+
+$state-info-text:                #31708f;
+$state-info-bg:                  #d9edf7;
+$state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%);
+
+$state-warning-text:             #8a6d3b;
+$state-warning-bg:               #fcf8e3;
+$state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%);
+
+$state-danger-text:              #a94442;
+$state-danger-bg:                #a94442;
+$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%);
+
+
+//== Tooltips
+//
+//##
+
+//** Tooltip max width
+$tooltip-max-width:           200px;
+//** Tooltip text color
+$tooltip-color:               #fff;
+//** Tooltip background color
+$tooltip-bg:                  #000;
+$tooltip-opacity:             .9;
+
+//** Tooltip arrow width
+$tooltip-arrow-width:         5px;
+//** Tooltip arrow color
+$tooltip-arrow-color:         $tooltip-bg;
+
+
+//== Popovers
+//
+//##
+
+//** Popover body background color
+$popover-bg:                          #fff;
+//** Popover maximum width
+$popover-max-width:                   276px;
+//** Popover border color
+$popover-border-color:                rgba(0,0,0,.2);
+//** Popover fallback border color
+$popover-fallback-border-color:       #ccc;
+
+//** Popover title background color
+$popover-title-bg:                    darken($popover-bg, 3%);
+
+//** Popover arrow width
+$popover-arrow-width:                 10px;
+//** Popover arrow color
+$popover-arrow-color:                 $popover-bg;
+
+//** Popover outer arrow width
+$popover-arrow-outer-width:           ($popover-arrow-width + 1);
+//** Popover outer arrow color
+$popover-arrow-outer-color:           fade_in($popover-border-color, 0.05);
+//** Popover outer arrow fallback color
+$popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%);
+
+
+//== Labels
+//
+//##
+
+//** Default label background color
+$label-default-bg:            $gray-light;
+//** Primary label background color
+$label-primary-bg:            $brand-primary;
+//** Success label background color
+$label-success-bg:            $brand-success;
+//** Info label background color
+$label-info-bg:               $brand-info;
+//** Warning label background color
+$label-warning-bg:            $brand-warning;
+//** Danger label background color
+$label-danger-bg:             $brand-danger;
+
+//** Default label text color
+$label-color:                 #fff;
+//** Default text color of a linked label
+$label-link-hover-color:      #fff;
+
+
+//== Modals
+//
+//##
+
+//** Padding applied to the modal body
+$modal-inner-padding:         15px;
+
+//** Padding applied to the modal title
+$modal-title-padding:         15px;
+//** Modal title line-height
+$modal-title-line-height:     $line-height-base;
+
+//** Background color of modal content area
+$modal-content-bg:                             #fff;
+//** Modal content border color
+$modal-content-border-color:                   rgba(0,0,0,.2);
+//** Modal content border color **for IE8**
+$modal-content-fallback-border-color:          #999;
+
+//** Modal backdrop background color
+$modal-backdrop-bg:           #000;
+//** Modal backdrop opacity
+$modal-backdrop-opacity:      .5;
+//** Modal header border color
+$modal-header-border-color:   #e5e5e5;
+//** Modal footer border color
+$modal-footer-border-color:   $modal-header-border-color;
+
+$modal-lg:                    900px;
+$modal-md:                    600px;
+$modal-sm:                    300px;
+
+
+//== Alerts
+//
+//## Define alert colors, border radius, and padding.
+
+$alert-padding:               15px;
+$alert-border-radius:         $border-radius-base;
+$alert-link-font-weight:      bold;
+
+$alert-success-bg:            $state-success-bg;
+$alert-success-text:          $state-success-text;
+$alert-success-border:        $state-success-border;
+
+$alert-info-bg:               $state-info-bg;
+$alert-info-text:             $state-info-text;
+$alert-info-border:           $state-info-border;
+
+$alert-warning-bg:            $state-warning-bg;
+$alert-warning-text:          $state-warning-text;
+$alert-warning-border:        $state-warning-border;
+
+$alert-danger-bg:             $state-danger-bg;
+$alert-danger-text:           $state-danger-text;
+$alert-danger-border:         $state-danger-border;
+
+
+//== Progress bars
+//
+//##
+
+//** Background color of the whole progress component
+$progress-bg:                 #f5f5f5;
+//** Progress bar text color
+$progress-bar-color:          #fff;
+//** Variable for setting rounded corners on progress bar.
+$progress-border-radius:      $border-radius-base;
+
+//** Default progress bar color
+$progress-bar-bg:             $brand-primary;
+//** Success progress bar color
+$progress-bar-success-bg:     $brand-success;
+//** Warning progress bar color
+$progress-bar-warning-bg:     $brand-warning;
+//** Danger progress bar color
+$progress-bar-danger-bg:      $brand-danger;
+//** Info progress bar color
+$progress-bar-info-bg:        $brand-info;
+
+
+//== List group
+//
+//##
+
+//** Background color on `.list-group-item`
+$list-group-bg:                 #fff;
+//** `.list-group-item` border color
+$list-group-border:             #ddd;
+//** List group border radius
+$list-group-border-radius:      $border-radius-base;
+
+//** Background color of single list items on hover
+$list-group-hover-bg:           #f5f5f5;
+//** Text color of active list items
+$list-group-active-color:       $component-active-color;
+//** Background color of active list items
+$list-group-active-bg:          $component-active-bg;
+//** Border color of active list elements
+$list-group-active-border:      $list-group-active-bg;
+//** Text color for content within active list items
+$list-group-active-text-color:  lighten($list-group-active-bg, 40%);
+
+//** Text color of disabled list items
+$list-group-disabled-color:      $gray-light;
+//** Background color of disabled list items
+$list-group-disabled-bg:         $gray-lighter;
+//** Text color for content within disabled list items
+$list-group-disabled-text-color: $list-group-disabled-color;
+
+$list-group-link-color:         #555;
+$list-group-link-hover-color:   $list-group-link-color;
+$list-group-link-heading-color: #333;
+
+
+//== Panels
+//
+//##
+
+$panel-bg:                    #fff;
+$panel-body-padding:          15px;
+$panel-heading-padding:       10px 15px;
+$panel-footer-padding:        $panel-heading-padding;
+$panel-border-radius:         $border-radius-base;
+
+//** Border color for elements within panels
+$panel-inner-border:          #ddd;
+$panel-footer-bg:             #f5f5f5;
+
+$panel-default-text:          $gray-dark;
+$panel-default-border:        #ddd;
+$panel-default-heading-bg:    #f5f5f5;
+
+$panel-primary-text:          #fff;
+$panel-primary-border:        $brand-primary;
+$panel-primary-heading-bg:    $brand-primary;
+
+$panel-success-text:          $state-success-text;
+$panel-success-border:        $state-success-border;
+$panel-success-heading-bg:    $state-success-bg;
+
+$panel-info-text:             $state-info-text;
+$panel-info-border:           $state-info-border;
+$panel-info-heading-bg:       $state-info-bg;
+
+$panel-warning-text:          $state-warning-text;
+$panel-warning-border:        $state-warning-border;
+$panel-warning-heading-bg:    $state-warning-bg;
+
+$panel-danger-text:           $state-danger-text;
+$panel-danger-border:         $state-danger-border;
+$panel-danger-heading-bg:     $state-danger-bg;
+
+
+//== Thumbnails
+//
+//##
+
+//** Padding around the thumbnail image
+$thumbnail-padding:           4px;
+//** Thumbnail background color
+$thumbnail-bg:                $body-bg;
+//** Thumbnail border color
+$thumbnail-border:            #ddd;
+//** Thumbnail border radius
+$thumbnail-border-radius:     $border-radius-base;
+
+//** Custom text color for thumbnail captions
+$thumbnail-caption-color:     $text-color;
+//** Padding around the thumbnail caption
+$thumbnail-caption-padding:   9px;
+
+
+//== Wells
+//
+//##
+
+$well-bg:                     #f5f5f5;
+$well-border:                 darken($well-bg, 7%);
+
+
+//== Badges
+//
+//##
+
+$badge-color:                 #fff;
+//** Linked badge text color on hover
+$badge-link-hover-color:      #fff;
+$badge-bg:                    $gray-light;
+
+//** Badge text color in active nav link
+$badge-active-color:          $link-color;
+//** Badge background color in active nav link
+$badge-active-bg:             #fff;
+
+$badge-font-weight:           bold;
+$badge-line-height:           1;
+$badge-border-radius:         10px;
+
+
+//== Breadcrumbs
+//
+//##
+
+$breadcrumb-padding-vertical:   8px;
+$breadcrumb-padding-horizontal: 15px;
+//** Breadcrumb background color
+$breadcrumb-bg:                 #f5f5f5;
+//** Breadcrumb text color
+$breadcrumb-color:              #ccc;
+//** Text color of current page in the breadcrumb
+$breadcrumb-active-color:       $gray-light;
+//** Textual separator for between breadcrumb elements
+$breadcrumb-separator:          "/";
+
+
+//== Carousel
+//
+//##
+
+$carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6);
+
+$carousel-control-color:                      #fff;
+$carousel-control-width:                      15%;
+$carousel-control-opacity:                    .5;
+$carousel-control-font-size:                  20px;
+
+$carousel-indicator-active-bg:                #fff;
+$carousel-indicator-border-color:             #fff;
+
+$carousel-caption-color:                      #fff;
+
+
+//== Close
+//
+//##
+
+$close-font-weight:           bold;
+$close-color:                 #000;
+$close-text-shadow:           0 1px 0 #fff;
+
+
+//== Code
+//
+//##
+
+$code-color:                  #c7254e;
+$code-bg:                     #f9f2f4;
+
+$kbd-color:                   #fff;
+$kbd-bg:                      #333;
+
+$pre-bg:                      #f5f5f5;
+$pre-color:                   $gray-dark;
+$pre-border-color:            #ccc;
+$pre-scrollable-max-height:   340px;
+
+
+//== Type
+//
+//##
+
+//** Horizontal offset for forms and lists.
+$component-offset-horizontal: 180px;
+//** Text muted color
+$text-muted:                  $gray-light;
+//** Abbreviations and acronyms border color
+$abbr-border-color:           $gray-light;
+//** Headings small color
+$headings-small-color:        $gray-light;
+//** Blockquote small color
+$blockquote-small-color:      $gray-light;
+//** Blockquote font size
+$blockquote-font-size:        ($font-size-base * 1.25);
+//** Blockquote border color
+$blockquote-border-color:     $gray-lighter;
+//** Page header border color
+$page-header-border-color:    $gray-lighter;
+//** Width of horizontal description list titles
+$dl-horizontal-offset:        $component-offset-horizontal;
+//** Point at which .dl-horizontal becomes horizontal
+$dl-horizontal-breakpoint:    $grid-float-breakpoint;
+//** Horizontal line color.
+$hr-border:                   $gray-lighter;
+
+
+//== Shadows
+//
+//##
+
+$shadow-area-ambient: 0px 0px 1px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-xxs: 1px 1px 1px rgba(0, 0, 0, 0.15);
+$shadow-area-xs: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-sm: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-md: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-lg: 0 5px 23px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-xl: 0 12px 36px 0 rgba(0, 0, 0,.15);
+
+//== Flex Grid system
+//
+//## Define your custom flex responsive grid.
+
+$shell-width:         300px;
+$shell-xs-width:      480px;
+$shell-sm-width:      750px;
+$shell-md-width:      970px;
+$shell-lg-width:      1200px;
+$shell-xl-width:      1800px;
+
+$range-ws:            50px;
+$range-ws-sm:         30px;
+$range-ws-lg:         66px;
+
+$cell-count:          12;
+$cell-spacing:        30px;
+$cell-spacing-narrow: 10px;
+
+
+//== RD Navbar
+//
+//##
+
+$rd-navbar-min-font-size: 24px;
+$rd-navbar-min-line-height: 48px;
+$rd-navbar-min-height: 56px;
+
+$rd-navbar-color: $white;
+$rd-navbar-background: rgba(#1c1c1c, .5);
+$rd-navbar-shadow: none;
+$rd-navbar-width: 1200px;
+
+//RD Navbar panel
+$rd-navbar-panel-color: $rd-navbar-color;
+$rd-navbar-panel-background: $rd-navbar-background;
+
+//RD Navbar nav
+$rd-navbar-nav-min-width: 270px;
+$rd-navbar-nav-color: $brand-primary;
+$rd-navbar-nav-background: transparent;
+$rd-navbar-nav-hover-color: $white;
+$rd-navbar-nav-hover-background: $brand-primary;
+$rd-navbar-nav-active-color: $rd-navbar-nav-hover-color;
+$rd-navbar-nav-active-background: $rd-navbar-nav-hover-background;
+
+//RD Navbar dropdown
+$rd-navbar-dropdown-width: 220px;
+$rd-navbar-dropdown-background: #2d2d2d;
+$rd-navbar-dropdown-item-color: $brand-primary;
+$rd-navbar-dropdown-item-background: transparent;
+$rd-navbar-dropdown-item-hover-color: $white;
+$rd-navbar-dropdown-item-hover-background: transparent;
+$rd-navbar-dropdown-item-active-color: $rd-navbar-dropdown-item-hover-color;
+$rd-navbar-dropdown-item-active-background: $rd-navbar-dropdown-item-hover-background;
+
+//RD Navbar megamenu
+$rd-navbar-megamenu-gutter: 30px;
+$rd-navbar-megamenu-background: #2d2d2d;
+$rd-navbar-megamenu-item-color: $brand-primary;
+$rd-navbar-megamenu-item-background: transparent;
+$rd-navbar-megamenu-item-hover-color: $white;
+$rd-navbar-megamenu-item-hover-background: transparent;
+
+//RD Navbar togles
+$rd-navbar-toggle-preset: "button-lines-arrow-2";
+$rd-navbar-search-toggle-preset: "search-preset-1";
+$rd-navbar-collapse-toggle-preset: "collapse-preset-1";
+
+//RD Navbar Fixed
+$rd-navbar-fixed-height: $rd-navbar-min-height;
+$rd-navbar-fixed-line-height: $rd-navbar-min-line-height;
+$rd-navbar-fixed-font-size: $rd-navbar-min-font-size;
+$rd-navbar-fixed-panel-color:  $gray-base;
+$rd-navbar-fixed-toggle-color: $gray-base;
+$rd-navbar-fixed-panel-background: $white;
+$rd-navbar-fixed-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17);
+
+//RD Navbar static indents
+$navbar-static-nav-indent: 5px;
+
+//RD Navbar fullwidth indents
+$navbar-fullwidth-nav-indent: 2px;
+
+
+//== Dividers
+//
+//##
+
+//** Hr
+$hr-height:                           1px;
+$hr-padding:                          0px;
+$hr-offset-top:                       30px;
+$hr-offset-bottom:                    30px;
+//** hr dashed
+$hr-dashed-background:                transparent;
+$hr-dashed-height:                    0;
+$hr-dashed-border-bottom:             1px dashed $gray;
+//** Divider
+$divider-background:                  $gray;
+$divider-width:                       50px;
+$divider-height:                      4px;
+$divider-padding:                     0;
+$divider-offsets:                     29px auto 34px;
+//** Divider Vertical
+$divider-vertical-background:         $gray;
+$divider-vertical-width:              2px;
+$divider-vertical-height:             20px;
+//** Sizing
+$divider-xs-width:                    30px;
+$divider-xs-height:                   2px;
+$divider-sm-width:                    30px;
+$divider-lg-width:                    70px;
+$divider-lg-height:                   4px;
+//** Text Subline
+$text-subline-background:             $brand-primary;
+$text-subline-padding:                0;
+$text-subline-height:                 1px;
+//** before
+$text-subline-before-background:      $brand-primary;
+$text-subline-before-position-top:    0;
+$text-subline-before-position-left:   0;
+$text-subline-before-width:           50px;
+$text-subline-before-height:          1px;
+
+
+//== Accordions
+//
+//##
+
+$accordion-color:                         $brand-primary;
+$accordion-color-hover:                   $gray-darker;
+$accordion-active-color:                  $accordion-color-hover;
+$accordion-list-color:                    $gray;
+$accordion-list-active-color:             $accordion-color;
+
+$accordion-arrow-icon-position:           relative;
+$accordion-arrow-icon-position-right:     30px;
+$accordion-arrow-icon-width:              20px;
+$accordion-accordion-inset:               15px 30px 15px 28px;
+$accordion-list-inset:                    0 0 13px;
+$accordion-content-inset:                 25px 30px 30px 30px;
+
+$accordion-size:                          16px;
+$accordion-weight:                        700;
+$accordion-list-weight:                   $accordion-weight;
+$accordion-list-size:                     $accordion-size;
+$accordion-arrow-icon-size:               35px;
+$accordion-arrow-icon-weight:             700;
+$accordion-arrow-icon-family:             "Material Icons";
+$accordion-arrow-icon:                    '\e145';
+$accordion-arrow-icon-active:             '\e15b';
+
+$accordion-md-border-bottom:              none;
+$accordion-md-border-top:                 none;
+$accordion-border:                        1px solid $gray;
+
+//** Common Horizontal and Vertical Tabs
+$accordion-tabs-list-border-background:                     $gray-darker;
+$accordion-tabs-border-position:                            absolute;
+$accordion-tabs-border-position-left:                       50%;
+$accordion-tabs-list-border-position-bottom:                0;
+$accordion-tabs-list-border-width:                          0;
+$accordion-tabs-list-border-active-width:                   100%;
+$accordion-tabs-list-border-height:                         1px;
+$accordion-tabs-content-inset-top:                          25px;
+$accordion-tabs-list-offset-left:                           10px;
+$accordion-tabs-list-border-top:                            none;
+$accordion-tabs-list-border-bottom:                         none;
+$accordion-tabs-boxed-list-letter-color:                    $white;
+$accordion-tabs-boxed-list-inset:                           14px 27px;
+$accordion-tabs-boxed-list-size:                            14px;
+$accordion-tabs-boxed-list-weight:                          700;
+$accordion-tabs-boxed-list-letter-spacing:                  .06em;
+//** 992
+$accordion-tabs-boxed-list-md-border-bottom:                1px solid $gray;
+$accordion-tabs-boxed-list-md-li-border:                    1px solid $brand-primary;
+$accordion-tabs-boxed-list-md-offset-top:                   0;
+$accordion-tabs-boxed-content-md-border-bottom:             none;
+$accordion-tabs-boxed-content-md-border-right:              none;
+//** after styling
+$accordion-tabs-boxed-list-md-li-after-position:            absolute;
+$accordion-tabs-boxed-list-md-li-after-position-bottom:     -1px;
+$accordion-tabs-boxed-list-md-li-after-position-left:       0;
+$accordion-tabs-boxed-list-md-li-after-position-width:      100%;
+$accordion-tabs-boxed-list-md-li-after-border-bottom:       2px solid $gray;
+//** active tab
+$accordion-tabs-boxed-list-md-active-background-color:      $white;
+$accordion-tabs-boxed-list-md-active-after-width:           0;
+//** 1200
+
+$accordion-tabs-boxed-list-lg-offsets:                      0 0 0 -1px;
+$accordion-tabs-boxed-lg-border-top:                        1px solid $gray;
+$accordion-tabs-boxed-list-lg-border-top:                   none;
+$accordion-tabs-boxed-list-lg-border-bottom:                none;
+$accordion-tabs-boxed-list-lg-li-border-top:                1px solid $gray;
+$accordion-tabs-boxed-list-lg-li-border-right:              none;
+$accordion-tabs-boxed-list-lg-li-first-item-border-top:     none;
+$accordion-tabs-boxed-list-lg-li-last-item-border-bottom:   1px solid $gray;
+//** after styling
+$accordion-tabs-boxed-list-lg-li-after-position-top:        0;
+$accordion-tabs-boxed-list-lg-li-after-position-right:      -1px;
+$accordion-tabs-boxed-list-lg-li-after-position-bottom:     auto;
+$accordion-tabs-boxed-list-lg-li-after-position-left:       auto;
+$accordion-tabs-boxed-list-lg-li-after-width:               1px;
+$accordion-tabs-boxed-list-lg-li-after-border-right:        1px solid $white;
+//** active tab
+$accordion-tabs-boxed-list-lg-active-after-height:          102%;
+//** 1200
+//** horizontal tabs
+$accordion-horizontal-tabs-list-lg-left-offset:             33px;
+//** vertical tabs
+$accordion-vertical-tabs-list-lg-border-position:           absolute;
+$accordion-vertical-tabs-list-lg-border-position-top:       50%;
+$accordion-vertical-tabs-list-lg-border-position-left:      0;
+$accordion-vertical-tabs-list-lg-active-height:             100%;
+$accordion-vertical-tabs-list-lg-active-width:              1px;
+$accordion-vertical-tabs-list-lg-border-height:             0;
+$accordion-vertical-tabs-list-lg-inset:                     0 0 0 30px;
+$accordion-vertical-tabs-content-lg-inset-top:              0;
+$accordion-vertical-tabs-list-lg-offset-left:               0;
+$accordion-vertical-tabs-list-lg-offset-top:                25px;
+$accordion-vertical-tabs-list-lg-border-left:               1px solid $brand-primary;
+//** Boxed Tabs
+$accordion-tabs-boxed-inset-left:                           20px;
+$accordion-tabs-boxed-inset-right:                          40px;
+$accordion-tabs-boxed-arrow-position-right:                 10px;
+$accordion-tabs-boxed-content-inset:                        20px;
+$accordion-tabs-boxed-content-offset-top:                   5px;
+$accordion-tabs-boxed-border:                               1px solid $brand-primary;
+$accordion-tabs-boxed-content-border:                       $accordion-tabs-boxed-border;
+$accordion-tabs-boxed-active-border-bottom:                 1px solid transparent;
+
+
+//== Progress bars
+//
+//##
+
+//** Progress bar sizing options
+$progress-font-weight:                  700;
+$progress-font-size:                    13px;
+$progess-height:                        20px;
+//** Background color of the whole progress component
+$progress-bg:                           #f5f5f5;
+//** Progress bar text color
+$progress-bar-color:                    #fff;
+//** Variable for setting rounded corners on progress bar.
+$progress-border-radius:                $border-radius-base;
+//** Default progress bar color
+$progress-bar-bg:                       $brand-primary;
+//** Success progress bar color
+$progress-bar-success-bg:               $brand-success;
+//** Warning progress bar color
+$progress-bar-warning-bg:               $brand-warning;
+//** Danger progress bar color
+$progress-bar-danger-bg:                $brand-danger;
+//** Info progress bar color
+$progress-bar-info-bg:                  $brand-info;
+//** Dark progress bar color
+$progress-bar-dark-bg:                  $gray;
+//** Progress Linear
+$progress-bar-linear-empty-background:  #e7e7e7;
+$progress-linear-height:                10px;
+$progress-bar-linear-border-radius:     $border-radius-base;
+//** Circle Progress Bars
+$progress-bar-circle-icon:              '%';
+$progress-bar-circle-width:             74%;
+$progress-bar-circle-height:            74%;
+$progress-bar-circle-size:              38px;
+$progress-bar-circle-weight:            900;
+$progress-bar-circle-line-height:       38px;
+
+
+//== Box Comment
+//
+//##
+
+//** Box Comment Common variables
+$box-comment-meta-offset-top:                           0;
+$box-comment-meta-size:                                 14px;
+$box-comment-meta-link-hover:                           $brand-turquoise;
+$box-comment-meta-icon-size:                            20px;
+$box-comment-title-offset-top:                          0;
+$box-comment-title-size:                                $font-size-small;
+$box-comment-title-weight:                              700;
+$box-comment-img-width:                                 40px;
+$box-comment-img-height:                                40px;
+$box-comment-img-border-radius:                         50%;
+$box-comment-body-size:                                 $font-size-small;
+//** 480
+$box-comment-img-xs-width:                              60px;
+$box-comment-img-xs-height:                             60px;
+//** Box Comment classic
+$box-comment-classic-before-position-top:               48px;
+$box-comment-classic-before-position-bottom:            -8px;
+$box-comment-classic-offset-top:                        16px;
+$box-comment-classic-before-after-position-left:        19px;
+$box-comment-classic-before-after-background:           $gray;
+$box-comment-classic-before-after-width:                1px;
+//** 480
+$box-comment-classic-xs-width:                          30px;
+$box-comment-classic-xs-height:                         30px;
+$box-comment-classic-xs-offset-top:                     5px;
+$box-comment-classic-xs-offset-left:                    5px;
+$box-comment-classic-xs-header-offset-top:              5px;
+$box-comment-classic-xs-box-inside-offset-left:         80px;
+$box-comment-classic-xs-after-position-top:             29px;
+$box-comment-classic-xs-after-position-right:           100%;
+$box-comment-classic-xs-after-position-left:            auto;
+$box-comment-classic-xs-after-height:                   1px;
+$box-comment-classic-xs-after-width:                    42px;
+$box-comment-classic-xs-before-offset-top:              68px;
+$box-comment-classic-xs-after-offset-right:             8px;
+$box-comment-classic-xs-before-after-position-left:     29px;
+//** Box Comment boxed
+$box-comment-boxed-img-offset-top:                      15px;
+$box-comment-boxed-offset-top:                          5px;
+$box-comment-boxed-img-border:                          1px solid $gray;
+$box-comment-boxed-img-background:                      $white;
+$box-comment-boxed-img-padding:                         2px;
+$box-comment-boxed-img-offset-right:                    -30px;
+$box-comment-boxed-body-offset-top:                     3px;
+$box-comment-boxed-media-body-padding:                  20px 20px 25px 20px;
+$box-comment-boxed-media-body-border-radius:            $border-radius-small;
+$box-comment-boxed-media-body-border:                   1px solid $gray-lighter;
+//** 480
+$box-comment-boxed-img-xs-offset-right:                 -50px;
+$box-comment-boxed-img-xs-padding:                      4px;
+$box-comment-boxed-media-body-xs-padding:               0px 65px 0px 52px;
+//** 1200
+$box-comment-boxed-lg-offset-left:                      30px;
+$box-comment-outboxed-lg-offset-left:                   80px;
+//** Box Comment outlined
+$box-comment-outlined-offset-top:                       20px;
+$box-comment-outlined-body-offset-top:                  5px;
+//** 1200
+$box-comment-outlined-body-lg-offset-top:               10px;
+$box-comment-outlined-body-lg-offset-left:              80px;
+$box-comment-outlined-img-lg-offset-top:                10px;
+$box-comment-outlined-media-body-lg-padding:            20px;
+$box-comment-outlined-media-body-lg-border-radius:      $border-radius-small;
+$box-comment-outlined-media-body-lg-border:             1px solid $gray-lighter;
+$box-comment-outlined-meta-first-child-lg-offset-left:  20px;
+
+
+
+//** Post Modern Timeline
+$post-modern-timeline-sm-border-color:                $gray-lighter;
+$post-modern-timeline-sm-author-name-color:           $white;
+$post-modern-timeline-sm-author-name-background:      $gray-dark;
+$post-modern-timeline-sm-author-name-padding:         3px 10px 5px;
+$post-modern-timeline-sm-author-name-size:            12px;
+$post-modern-timeline-sm-author-name-border-radius:   $border-radius-small;
+$post-modern-timeline-date-offsets:                   4px 14px;
+$post-modern-timeline-date-size:                      17px;
+$post-modern-timeline-date-weight:                    700;

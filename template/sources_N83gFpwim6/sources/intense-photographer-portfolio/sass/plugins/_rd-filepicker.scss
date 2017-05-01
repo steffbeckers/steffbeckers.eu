@@ -1,0 +1,155 @@
+/**
+ * RD Filepicker
+ * @Section
+ */
+
+.rd-file-picker{
+  position: relative;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 13px;
+  border: 1px solid $gray;
+  background-color: white;
+  border-radius: 2px;
+
+  &-btn{
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    width: 50%;
+    padding: 10px;
+
+    background: rgba(20, 69, 61, 0.78);
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+
+    transition: .2s;
+
+    &:hover{
+      background: darken(rgba(20, 69, 61, 0.78), 5%);
+    }
+
+    svg{
+      fill: white;
+      padding-right: 6px;
+    }
+  }
+
+  &-meta{
+    width: 90%;
+    color: #000;
+    cursor: default;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  input[type="file"]{
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+    transform: translate(-3px, -3px);
+
+    overflow: hidden;
+    background-color: red;
+    transition: none;
+    visibility: hidden;
+  }
+}
+
+.rd-file-drop{
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+  font-size: 18px;
+
+  background-color: rgba(0,0,0,.1);
+  outline: 2px dashed #92b0b3;
+  outline-offset: -10px;
+  transition: .2s;
+
+  &-logo{
+    width: 100px;
+    fill: rgba(255, 255, 255, 0);
+    stroke: white;
+    stroke-width: 6px;
+  }
+  &-wrap{
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    -webkit-align-items: baseline;
+    -moz-align-items: baseline;
+    align-items: baseline;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    p{
+      margin-left: 15px;
+      margin-top: 0;
+    }
+  }
+  &-meta{
+    margin-top: 20px;
+  }
+  &-btn{
+    cursor: pointer;
+    svg{
+      fill: white;
+    }
+  }
+
+  input[type="file"]{
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+    transform: translate(-3px, -3px);
+
+    overflow: hidden;
+    background-color: red;
+    transition: none;
+    visibility: hidden;
+  }
+}
+
+.file-grabbing{
+  background-color: rgba(255, 255, 255, 0.05);
+  outline-color: rgba(0, 0, 0, 0.15);
+}
+

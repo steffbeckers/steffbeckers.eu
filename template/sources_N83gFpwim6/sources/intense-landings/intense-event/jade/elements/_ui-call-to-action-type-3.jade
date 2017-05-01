@@ -1,0 +1,15 @@
+//- inputs - mass of object {inputs} only type= "text"
+//- radios - mass of object {radio} only type = "radio"
+//- btnClass - button appearance class
+//- formDesc - form description
+mixin call-to-action-type-3(inputs, btnClass, btnText, formDesc)
+  form.well-lg.bg-white.shadow-drop-md.text-left.rd-mailform(data-form-output='form-output-global', data-form-type='order', method='post', action='bat/rd-mailform.php')
+    p= formDesc
+    each field, i in inputs
+      .form-group(class= i === 0 ? "offset-top-30": "")
+        label.form-label.form-label-sm(for= field.label)= field.placeholder
+        input.form-control.input-sm.form-control-impressed.form-validation-inside(id= field.label type= field.inputType data-constraints= field.constrains)
+    .form-group.offset-top-14
+      block
+    button(type="submit").btn.btn-block(class= btnClass).offset-top-20= btnText
+

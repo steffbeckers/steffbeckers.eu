@@ -1,0 +1,106 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-page-title
+include ../elements/_ui-section-header
+include ../elements/_ui-box-service
+include ../elements/_ui-card-service
+
+block variables
+  - var activeIndex = 2
+  - var footerActiveIndex = 2
+  - var menuIncludeButton = true
+  - var pageName = 'Services'
+
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  //- Page Content
+  +page-title(pageName)
+
+  //- Our Services 1
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      +section-header("Our Services 1", "Barbershop offers world-class men's haircuts, beard grooming, and hot razor shaves. Here are just some of the services we are known for.")
+
+      +box-service({
+        type: 'dark-inverse',
+        img: 'services-1-500x490',
+        title: 'TRADITIONAL HAIRCUTS',
+        text: "This classic and traditional service is perfect if you want your hair to be done the right way. Our barbers will be glad to help you with it. ",
+        price: '39.00'
+      })
+
+      +box-service({
+        img: 'services-2-500x490',
+        title: 'Beard SHAVE',
+        text: "Beard shave is one of our most popular services. It is a must for all men who want to have a beard that looks stunning.",
+        price: '29.00'
+      })
+
+      +box-service({
+        type: 'dark-inverse',
+        img: 'services-3-500x490',
+        title: 'Mustache trim',
+        text: "Mustaches are a classic facial hair choice for men, and they never seem to go out of style for long. With us, you can keep your mustache groomed.",
+        price: '32.00'
+      })
+
+      +box-service({
+        img: 'services-4-500x490',
+        title: 'BEARD TRIM',
+        text: "Today beards require more tailoring than in earlier days. That’s why we believe our beard trim service may be useful for you.",
+        price: '35.00'
+      })
+  ='\n'
+
+  //- OUR SERVICES 2
+  section.section-lg.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-50
+        .cell-xs-12
+          +section-header('OUR SERVICES 2', "Barbershop offers world-class men's haircuts, beard grooming, and hot razor shaves. Here are just some of the services we are known for.")
+
+        .cell-xs-12
+          .range.range-30
+            .cell-xs-6.cell-md-3
+              +card-service({
+                img: 'icon-service-1-70x62',
+                title: 'TRADITIONAL HAIRCUTS',
+                price: '39.00'
+              })
+
+            .cell-xs-6.cell-md-3
+              +card-service({
+                img: 'icon-service-2-70x62',
+                title: 'SHAVES',
+                price: '29.00'
+              })
+
+            .cell-xs-6.cell-md-3
+              +card-service({
+                img: 'icon-service-3-70x62',
+                title: 'beard trim',
+                price: '35.00'
+              })
+
+            .cell-xs-6.cell-md-3
+              +card-service({
+                img: 'icon-service-4-70x62',
+                title: 'Mustache trim',
+                price: '32.00'
+              })
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_footer-default
+

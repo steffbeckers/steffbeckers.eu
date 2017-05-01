@@ -1,0 +1,18 @@
+//- Boxed Testimonials v2
+
+mixin testimonials-type-3(image, title, cite, q, citeStyle)
+  // Boxed Testimonials v2
+  blockquote.quote.quote-classic.quote-classic-boxed-2
+    .quote-meta
+      img.img-circle.quote-img(width= image.width, height= image.height, src= image.src, alt= image.alt)
+    .quote-body
+
+      p
+        q= q
+
+      cite.text-normal.text-bold.text-primary= title
+      p.quote-desc.text-italic.offset-top-0(class= citeStyle)= cite
+
+
+
+

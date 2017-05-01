@@ -1,0 +1,165 @@
+// CSS Flex Grid Framework
+
+@mixin make-shell($gutter: 30px) {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+
+@mixin make-range($gutter: 30px) {
+  margin-left: ceil(($gutter / -2));
+  margin-right: floor(($gutter / -2));
+}
+
+@mixin make-cell-spacing($gutter: 30px) {
+  padding-left: ceil(($gutter / 2));
+  padding-right: floor(($gutter / 2));
+}
+
+@mixin make-cell($resolution, $count: 12) {
+  .cell-#{$resolution}-preffix-0 {
+    margin-left: 0%;
+  }
+
+  @for $i from 1 through $count {
+    .cell-#{$resolution}-#{$i} {
+      @include flex-basis(percentage($i / $count));
+    }
+
+    .cell-#{$resolution}-preffix-#{$i} {
+      margin-left: percentage($i / $count);
+    }
+
+    .cell-#{$resolution}-push-#{$i} {
+      @include order($i);
+    }
+  }
+
+  .cell-#{$resolution}-1-5 {
+    @include flex-basis(percentage(0.2));
+  }
+}
+
+@mixin make-fallback($resolution, $count: 12) {
+  @for $i from 1 through $count {
+    .cell-xs-#{$i}{
+      margin-left: auto;
+      margin-right: auto;
+      max-width: percentage($i / $count);
+    }
+  }
+
+  .cell-xs-1-5{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: percentage(0.2);
+  }
+
+  @for $i from 1 through $count {
+    .cell-sm-#{$i}{
+      margin-left: auto;
+      margin-right: auto;
+      max-width: percentage($i / $count);
+    }
+  }
+
+  .cell-sm-1-5{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: percentage(0.2);
+  }
+
+  @for $i from 1 through $count {
+    .cell-md-#{$i}{
+      margin-left: auto;
+      margin-right: auto;
+      max-width: percentage($i / $count);
+    }
+  }
+
+  .cell-md-1-5{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: percentage(0.2);
+  }
+
+  @for $i from 1 through $count {
+    .cell-lg-#{$i} {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: percentage($i / $count);
+    }
+  }
+
+  .cell-lg-1-5{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: percentage(0.2);
+  }
+
+  [class*="cell-xs-preffix-"],
+  [class*="cell-sm-preffix-"],
+  [class*="cell-md-preffix-"],
+  [class*="cell-lg-preffix-"]{
+    margin-left: auto;
+  }
+}
+
+@mixin make-grid-system($resolution, $cell-count) {
+  .range-#{$resolution}-center {
+    @include justify-content(center);
+  }
+
+  .range-#{$resolution}-left {
+    @include justify-content(flex-start);
+  }
+
+  .range-#{$resolution}-right {
+    @include justify-content(flex-end);
+  }
+
+  .range-#{$resolution}-justify {
+    @include justify-content(space-between);
+  }
+
+  .range-#{$resolution}-around {
+    @include justify-content(space-around);
+  }
+
+  .range-#{$resolution}-top {
+    @include align-items(flex-start);
+  }
+
+  .range-#{$resolution} {
+    @include flex-direction(row);
+  }
+
+  .range-#{$resolution}-reverse {
+    @include flex-direction(row-reverse);
+  }
+
+  .range-#{$resolution}-middle {
+    @include align-items(center);
+  }
+
+  .range-#{$resolution}-bottom {
+    @include align-items(flex-end);
+  }
+
+  .cell-#{$resolution}-top {
+    @include align-self(flex-start);
+  }
+
+  .cell-#{$resolution}-middle {
+    @include align-self(center);
+  }
+
+  .cell-#{$resolution}-bottom {
+    @include align-self(flex-end);
+  }
+
+  .range > {
+    @include make-cell($resolution, $cell-count);
+  }
+}

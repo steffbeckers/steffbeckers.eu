@@ -1,0 +1,87 @@
+//
+// RD Navbar Sidebar Toggle Footer
+// --------------------------------------------------
+
+%rd-navbar-sidebar-toggle-footer {
+  .rd-navbar-footer {
+    padding: $rd-navbar-sidebar-toggle-footer-list-padding;
+    margin: $rd-navbar-sidebar-toggle-footer-list-offsets;
+    text-align: center;
+    .list-inline {
+      margin: $rd-navbar-sidebar-toggle-footer-list-inline-offsets;
+      > li {
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+      + p {
+        margin-top: 25px;
+      }
+    }
+    dl {
+      margin-bottom: 15px;
+    }
+    dt, dd {
+      display: inline-block;
+      span {
+        font-size: $rd-navbar-sidebar-toggle-footer-list-definition-icon-size-size;
+        vertical-align: middle;
+      }
+
+    }
+    dt {
+      margin-right: 10px;
+    }
+  }
+
+  .rd-navbar-address{
+    text-align: left;
+    display: inline-block;
+  }
+
+
+}
+
+//
+// Dark Theme
+// --------------------------------------------------
+
+%rd-navbar-sidebar-toggle-footer-dark {
+  .rd-navbar-footer {
+    dl a {
+      &:hover {
+        color: $rd-navbar-dark-sidebar-toggle-footer-list-definition-link-hover-color;
+      }
+    }
+
+    dt, dd {
+      span {
+        color: $rd-navbar-dark-sidebar-toggle-footer-list-definition-icon-color;
+      }
+    }
+  }
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+
+%rd-navbar-sidebar-toggle-footer-light {
+  .rd-navbar-footer p {
+    color: $rd-navbar-light-sidebar-toggle-color;
+  }
+
+  .rd-navbar-footer {
+    dl a {
+      color: $rd-navbar-light-sidebar-toggle-footer-list-definition-link-color;
+      &:hover {
+        color: $rd-navbar-light-sidebar-toggle-footer-list-definition-link-hover-color;
+      }
+    }
+
+    dt, dd {
+      span {
+        color: $rd-navbar-light-sidebar-toggle-footer-list-definition-icon-color;
+      }
+    }
+  }
+}

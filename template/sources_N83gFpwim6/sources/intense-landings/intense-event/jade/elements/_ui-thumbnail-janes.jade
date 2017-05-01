@@ -1,0 +1,16 @@
+
+
+
+mixin thumbnail-janes(options)
+  -var photoswipe = (typeof(options.target.href) !== 'undefined') ? {"href": options.target.href} : {"data-photo-swipe-item": "", "data-size": ""+options.target.width+"x"+options.target.height, "href": options.target.src}
+
+  // Thumbnail Janes
+  figure.thumbnail-janes
+    div
+      a&attributes(photoswipe)
+        img(width=options.thumb.width, height=options.thumb.height, src=options.thumb.src, alt=options.thumb.alt)
+    figcaption
+      div
+        h4.thumbnail-janes-title= options.title
+      p= options.description
+      a(href= options.btnLink).btn(class= options.btnClass).offset-xl-top-20= options.btnText

@@ -1,0 +1,497 @@
+//
+// Lists
+// --------------------------------------------------
+
+// Reset styles
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: block;
+  }
+}
+
+// Description Lists
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: inherit;
+}
+
+// Default list
+.list {
+  > li + li {
+    margin-top: 5px;
+  }
+}
+
+.list-xl {
+  > li + li {
+    margin-top: 35px;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .list-xl {
+    > li + li {
+      margin-top: 50px;
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .list-xl {
+    > li + li {
+      margin-top: 70px;
+    }
+  }
+}
+
+// Inline list
+//
+
+@mixin inline-list($x, $y: $x) {
+  @include transform(translateY(-$y));
+  margin-bottom: -$y;
+  margin-left: - round($x / 2);
+  margin-right: - round($x / 2);
+
+  > * {
+    margin-top: $y;
+    padding: 0 round($x / 2);
+  }
+}
+
+.inline-list {
+  position: relative;
+  > li {
+    display: inline-block;
+  }
+}
+
+.inline-list-xs {
+  @include inline-list(5px, 5px);
+}
+
+.inline-list-sm {
+  @include inline-list(7px, 7px);
+}
+
+.inline-list-md {
+  @include inline-list(25px, 8px);
+}
+
+// Terms list
+//
+
+.terms-list {
+  text-align: left;
+
+  dt {
+    @include header-base-styles;
+    @include header-h3;
+  }
+
+  dt + dd {
+    margin-top: 10px;
+  }
+
+  dd + dt {
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .terms-list {
+    dd + dt {
+      margin-top: 50px;
+    }
+  }
+}
+
+.terms-list-bordered {
+  text-align: left;
+
+  dt {
+    position: relative;
+    @include header-base-styles;
+    @include header-h3;
+    padding-bottom: 12px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: $black-haze;
+    }
+  }
+
+  dd {
+    color: $text-color;
+  }
+
+  dt + dd {
+    margin-top: 20px;
+  }
+
+  dd + dt {
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .terms-list-bordered {
+    dd + dt {
+      margin-top: 50px;
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .terms-list-bordered {
+    dd + dt {
+      margin-top: 65px;
+    }
+  }
+}
+
+.terms-list-inline {
+  vertical-align: middle;
+  dt,
+  dd {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  dt {
+    padding-right: 5px;
+  }
+
+  dt:after {
+    content: ':';
+  }
+}
+
+.terms-list-bold {
+  font: 400 20px $font-family-sec;
+  line-height: 1.3;
+  color: $gray-base;
+
+  dt,
+  dd {
+    display: inline-block;
+  }
+
+  dt:after {
+    content: ':';
+  }
+
+  dd {
+    padding-left: 20px;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .terms-list-bold {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .terms-list-bold {
+    font-size: 30px;
+  }
+}
+
+// Index list
+//
+
+.index-list {
+  counter-reset: li;
+
+  > li {
+    .list-index-counter {
+      &:before {
+        content: counter(li, decimal-leading-zero);
+        counter-increment: li;
+      }
+    }
+  }
+}
+
+// Marked list
+//
+
+.marked-list {
+  > li {
+    position: relative;
+    padding-left: 25px;
+
+    &:before {
+      position: absolute;
+      top: -2px;
+      left: 0;
+      content: '\f105';
+      font: 400 16px/24px $fa;
+      color: $gray-lighter;
+    }
+  }
+
+  > li + li {
+    margin-top: 10px;
+  }
+}
+
+// Ordered list
+//
+
+.ordered-list {
+  counter-reset: li;
+  li {
+    color: $text-color;
+
+    &:before {
+      display: inline-block;
+      margin-right: 13px;
+      width: 15px;
+      content: counter(li, decimal) '.';
+      counter-increment: li;
+      color: $gray-lighter;
+    }
+  }
+
+  li + li {
+    margin-top: 10px;
+  }
+}
+
+// List icon pack
+//
+
+.icon-pack-list {
+  margin-top: 6px;
+  > li {
+    margin-top: 25px;
+
+    span {
+      display: block;
+    }
+
+    span + span {
+      margin-top: 3px;
+      margin-left: .25em;
+    }
+  }
+}
+
+// List links
+//
+
+.links-list {
+  > li {
+    display: inline-block;
+  }
+
+  > li:after {
+    content: ';';
+  }
+
+  > li:last-child {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+// List bars
+//
+.list-bars {
+  text-align: left;
+
+  li {
+    display: block;
+  }
+
+  > li + li {
+    margin-top: 20px;
+  }
+
+  .progress-bar-horizontal {
+    margin-top: 0;
+  }
+}
+
+.list-bars-item-header {
+  font: 400 12px/18px $font-family-sec;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: $gray-base;
+}
+
+.list-bars-justify-offset {
+  @media (min-width: $screen-md-min) {
+    padding-top: 30px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    padding-top: 40px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .list-bars {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+// List rating
+//
+.list-rating {
+  font-size: 0;
+  line-height: 0;
+  li {
+    display: inline-block;
+    padding: 0 2px;
+    letter-spacing: 0;
+    width: auto;
+    font-size: 14px;
+  }
+}
+
+// Link list
+//
+.link-list {
+  text-align: left;
+  > li {
+    display: block;
+    background: $ecru-white;
+    border-radius: 4px;
+    padding: 10px 15px;
+
+    > *:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+
+  a {
+    @include link($brand-primary, $gray-base);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  li + li {
+    margin-top: 5px;
+  }
+}
+
+* + .link-list  {
+  margin-top: 35px;
+}
+
+// Terms list block
+//
+.terms-list-block {
+
+
+  dt,
+  dd {
+    @include flex-grow(1);
+    @include flex-shrink(0);
+
+    @include display-flex;
+    @include align-items(center);
+
+    padding: 10px 15px;
+    color: $gray-base;
+  }
+
+  dt {
+    font: 400 14px/18px $font-family-sec;
+    background: $white;
+
+    text-transform: uppercase;
+  }
+}
+
+.terms-list-block.terms-list-block-vertical:nth-child(n) {
+  display: block;
+  border: 0;
+
+  dt,
+  dd {
+    width: 100%;
+  }
+
+  dd {
+    border: 0;
+  }
+}
+
+@media (min-width: $screen-xs-min) {
+  .terms-list-group {
+    @include display-flex;
+    @include flex-direction(row);
+
+    .terms-list-block {
+      width: 50%;
+      @include flex-grow(1);
+      @include flex-shrink(0);
+    }
+  }
+
+  .terms-list-block {
+    @include display-flex;
+    @include flex-direction(row);
+    dt,
+    dd {
+      width: 50%;
+    }
+
+    dd {
+      border-bottom: 1px solid $conch;
+    }
+
+    &:first-of-type {
+      dd {
+        border-top: 1px solid $conch;
+      }
+    }
+  }
+}
+
+// List blocks bordered
+//
+
+.list-blocks-bordered {
+  background: $white;
+  text-align: left;
+
+  > li {
+    display: block;
+    padding: 20px;
+  }
+
+  p {
+    padding-left: 25px;
+  }
+
+  * + p {
+    margin-top: 14px;
+  }
+
+  > li + li {
+    border-top: 1px solid $conch;
+  }
+}

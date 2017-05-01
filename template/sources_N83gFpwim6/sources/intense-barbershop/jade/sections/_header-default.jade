@@ -1,0 +1,23 @@
+// RD Navbar
+.rd-navbar-wrap
+  nav.rd-navbar.rd-navbar-default(data-layout='rd-navbar-fixed', data-sm-layout='rd-navbar-fixed', data-sm-device-layout='rd-navbar-fixed', data-md-layout='rd-navbar-sidebar', data-md-device-layout='rd-navbar-fixed', data-lg-device-layout='rd-navbar-fixed', data-lg-layout='rd-navbar-sidebar', data-stick-up-clone='false')
+    .rd-navbar-inner
+      //- RD Navbar Panel
+      .rd-navbar-panel
+        //- RD Navbar Toggle
+        button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+          span
+        //- RD Navbar Brand
+        .rd-navbar-brand
+          a.brand-name(href='index.html')
+            +png('logo-default-199x36')
+
+      .rd-navbar-nav-wrap
+        .rd-navbar-nav-inner
+          include ../includes/_nav
+          .rd-navbar-nav-footer
+            ul.inline-list.inline-list-md
+              li: a.icon.icon-xs.link-gray-base.fa-facebook(href='#')
+              li: a.icon.icon-xs.link-gray-base.fa-twitter(href='#')
+              li: a.icon.icon-xs.link-gray-base.fa-youtube(href='#')
+              li: a.icon.icon-xs.link-gray-base.fa-linkedin(href='#')

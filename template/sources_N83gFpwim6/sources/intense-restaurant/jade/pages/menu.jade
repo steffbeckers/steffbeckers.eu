@@ -1,0 +1,177 @@
+extends  ../_skeleton
+
+include ../elements/_ui-rd-parallax
+include ../elements/_ui-isotope
+include ../elements/_ui-box-pricing-type-1
+
+//-Title
+block title
+  title= cfg.nav.menu.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.menu,
+    cfg.nav
+    )
+
+  // Page Contents
+  main.page-content
+    // Section Intro
+    section.context-dark
+      .rd-parallax(data-on="false" data-md-on="true")
+        .rd-parallax-layer(data-speed="0.45", data-type="media", data-url="images/intro-01-1920x955.jpg")
+        .rd-parallax-layer(data-speed="0.3", data-type='html' data-fade="true")
+          .shell
+            .section-110.range.range-xs-center.range-xs-middle
+              .cell-md-8
+                img(src='images/intro-logo-175x173.png' alt="" width=175 height=173)
+
+                h1.font-accent
+                  span.big= cfg.nav.menu.title
+
+                ul.list-inline.list-inline-dashed.p
+                  li
+                    a(href=cfg.nav.home.href)= cfg.nav.home.title
+                  li
+                    = cfg.nav.menu.title
+
+    // Section Menu
+    section.section-98.section-110
+      .shell
+        +isotope(["All", "Breakfasts", "Lunches", "Dinners", "Desserts", "Drinks"],{
+          "group": "gallery",
+          "layout": "masonry",
+          "alignClass": "isotope-filters-vertical"
+        }, "isotope-3")
+          .isotope-item.element-fullwidth(data-filter="Breakfasts")
+            .row
+              .col-sm-8.col-sm-offset-2.col-lg-offset-0.col-lg-5.col-lg-push-7
+                img.img-responsive.element-fullwidth(src="images/gallery-08-370x370.jpg" alt="" width=370 height=370)
+              .col-sm-8.col-sm-offset-2.col-lg-offset-0.col-lg-7.col-lg-pull-5
+                +box-pricing-type-1([{
+                  "title": "Old Timer's Breakfast",
+                  "price": "$22.00",
+                  "desc": "Two eggs cooked to order with grits, sawmill gravy, homemade buttermilk biscuits & real butter "
+                },
+                  {
+                    "title": "Fresh Start Sampler",
+                    "price": "$37.00",
+                    "desc": "Start your day with a mix of low fat vanilla yogurt, fresh seasonal fruit topped with our honey mix"
+                  },
+                  {
+                    "title": "Double Meat Breakfast",
+                    "price": "$42.00",
+                    "desc": "Three eggs cooked to order with a full order of bacon and sausage patties"
+                  }])
+
+
+          .isotope-item.element-fullwidth.offset-top-34(data-filter="Lunches")
+            .row
+              .col-sm-8.col-sm-offset-2.col-lg-offset-0.col-lg-5
+                img.img-responsive.element-fullwidth(src="images/gallery-09-370x370.jpg" alt="" width=370 height=370)
+              .col-sm-8.col-sm-offset-2.col-lg-offset-0.col-lg-7
+                +box-pricing-type-1([{
+                  "title": "Turkey milanese",
+                  "price": "$22.00",
+                  "desc": "Stuffed with prosciutto & provolone, breadcrumbed & topped with a free-range egg & black summer truffle."
+                },
+                  {
+                    "title": "Fritto misto",
+                    "price": "$37.00",
+                    "desc": "Mixed seasonal flash-fried sustainable fish & shellfish served with chunky Italian tartare sauce & lemon."
+                  },
+                  {
+                    "title": "Italian steak frites",
+                    "price": "$42.00",
+                    "desc": "Flash-grilled prime beef steak, served with Italian-spiced skinny fries & crunchy vegetable slaw."
+                  }])
+
+          .isotope-item.element-fullwidth.offset-top-34(data-filter="Dinners")
+            .row
+              .col-sm-8.col-sm-offset-2.col-lg-offset-0.col-lg-5.col-lg-push-7
+                img.img-responsive.element-fullwidth(src="images/gallery-10-370x370.jpg" alt="" width=370 height=370)
+              .col-sm-8.col-sm-offset-2.col-lg-offset-0.col-lg-7.col-lg-pull-5
+                +box-pricing-type-1([{
+                  "title": "Our famous prawn linguine",
+                  "price": "$22.00",
+                  "desc": "Fried garlicky prawns, fennel, tomatoes, chilli, saffron, fish broth & lemony rocket."
+                },
+                  {
+                    "title": "Gnocchi genovese",
+                    "price": "$37.00",
+                    "desc": "Potato gnocchi with green beans, crushed purple potatoes, basil pesto, toasted pine nuts, bella lodi & ricotta."
+                  },
+                  {
+                    "title": "Penne carbonara",
+                    "price": "$42.00",
+                    "desc": "Crispy chunks of smoked pancetta, sweet buttery leeks, lemon & a traditional carbonara sauce."
+                  }])
+
+          .isotope-item.element-fullwidth.offset-top-34(data-filter="Desserts")
+            .row
+              .col-sm-8.col-sm-offset-2.col-lg-offset-0.col-lg-5
+                img.img-responsive.element-fullwidth(src="images/gallery-11-370x370.jpg" alt="" width=370 height=370)
+              .col-sm-8.col-sm-offset-2.col-lg-offset-0.col-lg-7
+                +box-pricing-type-1([{
+                  "title": "Tiramisù",
+                  "price": "$22.00",
+                  "desc": "The classic Italian dessert topped with chocolate shavings & orange zest."
+                },
+                  {
+                    "title": "Rasbery & honeycomb pavlova",
+                    "price": "$37.00",
+                    "desc": "Rippled, gooey meringue, zesty cream, macerated raspberries, smashed honeycomb & fresh mint."
+                  },
+                  {
+                    "title": "Molten chocolate praline pudding",
+                    "price": "$42.00",
+                    "desc": "Warm chocolate cake with a liquid praline centre, served with salted caramel ice cream & praline. "
+                  }])
+
+          .isotope-item.element-fullwidth.offset-top-34(data-filter="Drinks")
+            .row
+              .col-sm-8.col-sm-offset-2.col-lg-offset-0.col-lg-5.col-lg-push-7
+                img.img-responsive.element-fullwidth(src="images/gallery-12-370x370.jpg" alt="" width=370 height=370)
+              .col-sm-8.col-sm-offset-2.col-lg-offset-0.col-lg-7.col-lg-pull-5
+                +box-pricing-type-1([{
+                  "title": "Raspberry mule",
+                  "price": "$22.00",
+                  "desc": "Vodka, raspberry purée & fresh lime juice topped with ginger beer"
+                },
+                  {
+                    "title": "La dolce vita",
+                    "price": "$37.00",
+                    "desc": "Saliza amaretto, triple sec & sugar syrup shaken up with fresh lemon & cranberry juice"
+                  },
+                  {
+                    "title": "Montepulciano d’abruzzo",
+                    "price": "$42.00",
+                    "desc": "Cherry & chocolate flavours are typical of this well-known grape"
+                  },
+                  {
+                    "title": "Sauvignon blanc",
+                    "price": "$19.00",
+                    "desc": "Herby aromas & melon flavours"
+                  }])
+
+
+
+
+
+
+
+  // Page Footer
+  include ../sections/_section-footer-variant-2

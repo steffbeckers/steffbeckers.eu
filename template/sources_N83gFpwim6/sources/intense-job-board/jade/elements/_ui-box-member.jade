@@ -1,0 +1,16 @@
+//- img - set path to image
+//- name - set block author name
+//- position - set block author position
+//- nameLink - link of author name
+mixin box-member(img, name, position, positionStyle, nameLink)
+  // Box Member
+  .box-member
+    img.img-responsive(src= img alt='')
+    h5.text-bold.offset-top-20
+      a(href= nameLink)= name
+      = ' '
+      small(class= positionStyle)= position
+    .box-member-wrap
+      .box-member-caption
+        .box-member-caption-inner
+          block

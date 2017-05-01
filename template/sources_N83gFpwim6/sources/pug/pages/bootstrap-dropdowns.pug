@@ -1,0 +1,131 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.bootstrapcomponents.submenu.dropdowns.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.bootstrapcomponents.submenu.dropdowns.title,
+  "icon-lg " + cfg.nav.components.submenu.bootstrapcomponents.submenu.dropdowns.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.bootstrapcomponents.submenu.dropdowns.title,
+      "href": cfg.nav.components.submenu.bootstrapcomponents.submenu.dropdowns.href
+    }
+  })
+
+
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    .shell
+      h1 Dropdowns
+      p Toggleable, contextual menu for displaying lists of links. Made interactive with the dropdown JavaScript plugin.
+      hr.divider.bg-mantis
+
+      h3.offset-top-66 Default Example
+      p Wrap the dropdown's trigger and the dropdown menu within #[code .dropdown], or another element that declares #[code position: relative;]. Then add the menu's HTML.
+
+      .dropdown.offset-top-41
+        button#dropdownMenu1.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+          | Dropdown
+          span.caret
+        ul.dropdown-menu(aria-labelledby='dropdownMenu1')
+          li
+            a(href='#') Action
+          li
+            a(href='#') Another action
+          li
+            a(href='#') Something else here
+          li.divider(role='separator')
+          li
+            a(href='#') Separated link
+
+      h3.offset-top-66 Dropup Example
+      p Wrap the dropdown's trigger and the dropdown menu within #[code .dropdown], or another element that declares #[code position: relative;]. Then add the menu's HTML.
+
+      .dropup.offset-top-41
+        button#dropdownMenu2.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+          | Dropup
+          span.caret
+        ul.dropdown-menu(aria-labelledby='dropdownMenu2')
+          li
+            a(href='#') Action
+          li
+            a(href='#') Another action
+          li
+            a(href='#') Something else here
+          li.divider(role='separator')
+          li
+            a(href='#') Separated link
+
+      h3.offset-top-66 Headers
+      p Add a header to label sections of actions in any dropdown menu.
+
+      .dropup.offset-top-41
+        button#dropdownMenu3.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+          | Dropup
+          span.caret
+        ul.dropdown-menu(aria-labelledby='dropdownMenu3')
+          li.dropdown-header Dropdown header
+          li
+            a(href='#') Action
+          li
+            a(href='#') Another action
+          li
+            a(href='#') Something else here
+          li.dropdown-header Dropdown header
+          li
+            a(href='#') Separated link
+
+      h3.offset-top-66 Disabled menu items
+      p Add #[code .disabled] to a #[code &lt;li&gt;] in the dropdown to disable the link.
+
+      .dropdown.offset-top-41
+        button#dropdownMenu4.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+          | Dropdown
+          span.caret
+        ul.dropdown-menu(aria-labelledby='dropdownMenu4')
+          li
+            a(href='#') Action
+          li.disabled
+            a(href='#') Another action
+          li
+            a(href='#') Something else here
+          li.divider
+          li
+            a(href='#') Separated link
+
+
+
+  // Page Footer
+  include ../sections/_section-footer-default

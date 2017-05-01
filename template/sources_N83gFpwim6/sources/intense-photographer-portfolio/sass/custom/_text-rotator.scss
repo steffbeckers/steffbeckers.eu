@@ -1,0 +1,30 @@
+//
+// Text Rotator
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.text-rotator {
+  display: inline-block;
+
+}
+
+.rotate-list {
+  position: absolute;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+
+  span {
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+.rotate-area {
+  display: inline-block;
+  transition: width 0.5s ease;
+  white-space: nowrap;
+}

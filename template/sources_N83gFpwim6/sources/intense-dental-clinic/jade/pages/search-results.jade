@@ -1,0 +1,59 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-parallax
+include ../elements/_widget-form-search
+
+//- Title
+block title
+  title Search Results
+
+//- Page
+block page
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logoInverse,
+    cfg.nav.blog.submenu.blogPost,
+    cfg.nav
+    )
+
+  // Page Content
+  main.page-content
+    // Breadcrumbs
+    section.context-dark
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/background-03-1920x640.jpg",
+        "htmlSpeed": "0"
+      })
+        .bg-overlay-info
+          .shell.section-34.section-sm-85.text-md-left
+            div.veil.reveal-sm-block.reveal-md-inline-block
+              h1 Search Results
+            div.pull-md-right.offset-sm-top-10.offset-md-top-20
+              ul.p.list-inline.list-inline-dashed
+                li
+                  a(href= cfg.nav.home.href) Home
+                li Search Results
+
+    section.shell.section-top-98
+
+      +widget-form-search("input-sm", "form-label-sm", "search-results")
+
+      .rd-search-results.offset-top-66
+
+    section.shell-wide.offset-top-66
+      hr.hr.bg-gray
+
+  // Page Footers
+  include ../sections/_section-footer

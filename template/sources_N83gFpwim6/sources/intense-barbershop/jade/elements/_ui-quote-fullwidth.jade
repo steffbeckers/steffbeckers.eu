@@ -1,0 +1,24 @@
+mixin quote-fullwidth(obj)
+  blockquote.quote-fullwidth
+    .quote-fullwidth-left
+      .quote-fullwidth-avatar
+        case obj.avatar.type
+          when "image"
+            +jpg(obj.avatar.data)
+          when "letter"
+            span=obj.avatar.data
+
+    .quote-fullwidth-body
+      .quote-fullwidth-header
+        cite=obj.cite
+        if(obj.rating)
+          ul.quote-fullwidth-rating
+            - for (var i = 0; i < obj.rating; i++)
+                li.icon.icon-primary.fa.fa-star
+
+      p.quote-fullwidth-text: q=obj.text
+
+      ul.inline-list.inline-list-md
+        li: a.icon.icon-xs.link-gray-base.fa-facebook(href='#')
+        li: a.icon.icon-xs.link-gray-base.fa-twitter(href='#')
+        li: a.icon.icon-xs.link-gray-base.fa-linkedin(href='#')

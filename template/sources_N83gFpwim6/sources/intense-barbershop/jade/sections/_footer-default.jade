@@ -1,0 +1,22 @@
+footer.page-footer.page-footer-default
+  .shell
+    .range.range-xs-center
+      .cell-lg-10
+        a.brand(href='index.html')
+          +png('logo-default-199x36')
+        .text-highlighted-wrap
+          p.text-highlighted Barbershop is a No.1 place to have a men’s haircut in San Francisco. Here you can get luxury barber experience at a reasonable price.
+        ul.footer-navigation.footer-navigation-horizontal
+          li(class={active: footerActiveIndex == 0}): a(href='index.html') Home
+          li(class={active: footerActiveIndex == 1}): a(href='about.html') About
+          li(class={active: footerActiveIndex == 2}): a(href='services.html') Services
+          li(class={active: footerActiveIndex == 3}): a(href='blog.html') Blog
+          li(class={active: footerActiveIndex == 4}): a(href='shop.html') Shop
+          li(class={active: footerActiveIndex == 5}): a(href='contacts-1.html') Contacts
+
+        .divider.divider-small.divider-light.block-centered
+
+        +social-links
+
+        if footerLink === true
+          // {%FOOTER_LINK}

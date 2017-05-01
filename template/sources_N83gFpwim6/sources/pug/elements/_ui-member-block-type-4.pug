@@ -1,0 +1,17 @@
+//- img - set path to image
+//- name - set block author name
+//- position - set block author position
+//- imgLink - image link
+//- desc - desc description
+mixin member-block-type-4(name, img, link, position, desc)
+  // Member block type 4
+  .unit.unit-spacing-lg.unit-sm.unit-sm-horizontal
+    .unit-left
+      img.img-circle(src=img.src, width="#{img.width}", height="#{img.height}" alt="")
+    .unit-body.text-sm-left
+      div
+        h4
+          a(href=link)= name
+      .offset-top-10
+        p.text-picton-blue= position
+      p.offset-top-10= desc

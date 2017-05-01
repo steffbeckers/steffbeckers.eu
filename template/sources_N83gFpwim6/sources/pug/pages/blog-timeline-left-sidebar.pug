@@ -1,0 +1,60 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+//- Title
+block title
+  title= cfg.nav.blog.submenu.timeline.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.blog,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.blog.submenu.timeline.title,
+  cfg.nav.blog.submenu.timeline.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.blog.title,
+      "href": cfg.nav.blog.href
+    },
+    2: {
+      "title": cfg.nav.blog.submenu.timeline.title,
+      "href": cfg.nav.blog.submenu.timeline.href
+    },
+    3: {
+      "title": cfg.nav.blog.submenu.timeline.submenu.leftSidebar.title,
+      "href": cfg.nav.blog.submenu.timeline.submenu.leftSidebar.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-top-110.section-sm-bottom-124
+    .shell
+      .range.range-sm-center.range-lg-left
+        .cell-md-9.cell-lg-8.cell-md-push-1.inset-md-left-30
+          include ../sections/_section-blog-timeline
+        .cell-md-3.cell-lg-3.cell-md-pull-1.offset-top-66.offset-md-top-0
+          include ../sections/_section-blog-sidebar-variant-1
+
+  // Page Footers
+  include ../sections/_section-footer-default

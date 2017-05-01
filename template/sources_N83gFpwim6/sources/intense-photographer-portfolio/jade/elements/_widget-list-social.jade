@@ -1,0 +1,11 @@
+//- Social List Widget
+//- socials - an array of {link}
+
+mixin widget-list-social(socials, iclass, lclass)
+  - var iclass = iclass ? " " + iclass : " icon-xxs icon-circle icon-darker-filled"
+  - var lclass = lclass
+
+  ul.list-inline(class=lclass)
+    each link in socials
+      li
+        a.icon(href=link.href class=link.icon + iclass)

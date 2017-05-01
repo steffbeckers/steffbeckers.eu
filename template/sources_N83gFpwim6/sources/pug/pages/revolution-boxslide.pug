@@ -1,0 +1,86 @@
+extends  ../_skeleton
+
+include ../elements/_ui-rd-navbar-default-transparent
+
+//-Title
+block title
+  title= cfg.nav.features.submenu.revolutionSlider.submenu.boxslide.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-transparent',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logoInverse,
+      cfg.nav.features,
+      cfg.nav
+    )
+
+    .rev_slider_wrapper--holder.bg-gray-base
+      .rev_slider_wrapper.fullscreen-container.context-dark
+        #rev_slider_1.rev_slider.fullscreenbanner
+          ul
+            li(data-transition="boxslide")
+              img.rev-slidebg(data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="15" src='images/intros/intro-02-1920x955.jpg')
+            li(data-transition="boxslide")
+              img.rev-slidebg(data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="15" src='images/intros/intro-new-08.jpg')
+            li(data-transition="boxslide")
+              img.rev-slidebg(data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="15" src='images/intros/intro-new-05.jpg')
+
+          .tp-static-layers(style='width:100%; height:100%; overflow:hidden')
+            .tp-static-layer.tp-caption(data-startslide='0',
+            data-endslide='99',
+            data-frames='[{"delay": 500, "speed": 300, "from": "opacity: 0", "to": "opacity: 1"}, {"delay": "wait", "speed": 300, "to": "opacity: 0"}]',
+            data-x='center',
+            data-y='center',
+            data-hoffset='0',
+            data-voffset='0',
+            data-width="['100%']",
+            data-height="['100%']")
+              .shell
+                .range
+                  .section-41.section-cover.range.range-xs-center.range-xs-middle
+                    .cell-md-preffix-5.cell-md-7.cell-xl-preffix-6.cell-lg-6
+                      h1.text-uppercase.text-ubold.text-spacing-60
+                        span.big join intense
+
+                      h4.veil.reveal-xl-block.offset-sm-top-20.text-light The smartest and most flexible bootstrap template by TemplateMonster you’ve ever seen.
+
+                      .range.range-sm-center.offset-top-34.offset-xl-top-50
+                        .cell-sm-6.cell-md-8
+                          // RD Mailform
+                          form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                            .form-group.text-left
+                              label.form-label.form-label-outside(for="form-reg-name") Name
+                              input#form-reg-name.form-control(type="text" data-constraints="@Required" name="name")
+
+                            .form-group.offset-top-20.offset-lg-top-10.offset-xl-top-20.text-left
+                              label.form-label.form-label-outside(for="form-reg-username") Phone
+                              input#form-reg-username.form-control(type="text" data-constraints="@Required" name="username")
+
+                            .form-group.offset-top-20.offset-lg-top-10.offset-xl-top-20.text-left
+                              label.form-label.form-label-outside(for="form-reg-email") E-mail
+                              input#form-reg-email.form-control(type="email" data-constraints="@Required @Email" name="email")
+
+                            .group.offset-top-30.text-md-left
+                              .group-item
+                                button(type="submit", style="padding-left: 50px; padding-right: 50px;").btn.btn-primary join us
+
+
+  // Page Contents
+  main.page-content
+    include ../sections/_section-revolution-slider
+    include ../sections/_section-buy-now
+    include ../sections/_section-welcome
+
+  // Page Footer
+  include ../sections/_section-footer-default

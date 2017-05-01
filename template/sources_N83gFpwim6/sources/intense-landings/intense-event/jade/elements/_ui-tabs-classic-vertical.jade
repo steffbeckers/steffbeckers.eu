@@ -1,0 +1,9 @@
+//- nameList - array of tabs list
+mixin tabs-classic-vertical(nameList, tabsGroup)
+  // Responsive-tabs
+  .responsive-tabs.responsive-tabs-classic.responsive-tabs-classic-vertical(data-type="vertical")
+    ul.resp-tabs-list(data-group= tabsGroup || "tabs-group-default", class= tabsGroup || "tabs-group-default")
+      each item in nameList
+        li= item
+    .resp-tabs-container(data-group= tabsGroup || "tabs-group-default", class= tabsGroup || "tabs-group-default")
+      block

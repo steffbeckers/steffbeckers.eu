@@ -1,0 +1,26 @@
+//- Twitter Widget
+//- twitterUser - twitter user name
+
+mixin widget-twitter(twitterUser, twitterIcon)
+  .twitter(data-twitter-username= twitterUser.dataTwitterUsername data-twitter-date-hours=" hours ago" data-twitter-date-minutes=" minutes ago")
+    div.twitter-sm(data-twitter-type='tweet')
+      if twitterIcon != null
+        div.twitter-date.text-dark.small
+          span.icon.icon-xxs.mdi.mdi-twitter.text-middle
+          = " "
+          span.text-middle(data-date ='text')
+      else
+        div.twitter-date.text-dark.small(data-date ='text')
+      div.twitter-text(data-tweet='text')
+      div.twitter-name.text-bold.big(data-screen_name='text')
+    div.hr.bg-gray-lighter
+    div.twitter-sm(data-twitter-type='tweet')
+      if twitterIcon != null
+        div.twitter-date.text-dark.small
+          span.icon.icon-xxs.mdi.mdi-twitter.text-middle
+          = " "
+          span.text-middle(data-date ='text')
+      else
+        div.twitter-date.text-dark.small(data-date ='text')
+      div.twitter-text(data-tweet='text')
+      div.twitter-name.text-bold.big(data-screen_name='text')

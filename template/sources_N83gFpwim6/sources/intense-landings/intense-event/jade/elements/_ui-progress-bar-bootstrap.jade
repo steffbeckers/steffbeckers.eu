@@ -1,0 +1,14 @@
+//- progress - object{progress}
+mixin progress-bar-bootstrap(progress)
+  // Bootstrap progress bar
+  - var multiple = progress.length? true : null
+  - var minWidth = (progress.numberHide != true) ? "min-width: 2em;" : ""
+
+  .progress
+    if multiple
+      each bar in progress
+        .progress-bar(class= bar.apClass)(role="progressbar" aria-valuenow= bar.valueTo aria-valuemin="0" aria-valuemax="100" style="#{minWidth} width: #{bar.valueTo}%;")
+          span(class= bar.numberHide && "sr-only")= bar.valueTo + '%'
+    else
+      .progress-bar(class= progress.apClass)(role="progressbar" aria-valuenow= progress.valueTo aria-valuemin="0" aria-valuemax="100" style="#{minWidth} width: #{progress.valueTo}%;")
+        span(class= progress.numberHide && "sr-only")= progress.valueTo + '%'

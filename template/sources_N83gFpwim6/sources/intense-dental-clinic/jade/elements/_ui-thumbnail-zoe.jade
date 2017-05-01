@@ -1,0 +1,18 @@
+//- thumbnail - {thumbnail} object
+mixin thumbnail-zoe(thumbnail, icons)
+  -var photoswipe = (typeof(thumbnail.target.href) !== 'undefined') ? {"href": thumbnail.target.href} : {"data-photo-swipe-item": "", "data-size": ""+thumbnail.target.width+"x"+thumbnail.target.height, "href": thumbnail.target.src}
+
+  // Thumbnail Zoe
+  figure.thumbnail-zoe
+    a&attributes(photoswipe)
+      img(width=thumbnail.thumb.width, height=thumbnail.thumb.height, src=thumbnail.thumb.src, alt=thumbnail.thumb.alt)
+    figcaption.text-left
+      ul.list-inline
+        each item in icons
+          li
+            a(href= item.iconHref)
+              span.icon.icon-xxs(class= item.iconClass)
+      h5.thumbnail-zoe-title.veil.reveal-lg-block= thumbnail.title
+
+
+

@@ -1,0 +1,11 @@
+//- table - Responsive Table object
+mixin table-custom(table)
+  // Classic Responsive Table
+  table.table.table-custom
+    each row, i in table
+      tr
+        each col in row
+          - if (i == 0)
+              th= col
+          - else
+              td= col

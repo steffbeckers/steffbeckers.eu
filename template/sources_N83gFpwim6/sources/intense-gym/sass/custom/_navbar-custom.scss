@@ -1,0 +1,60 @@
+//
+// Navbar Custom
+// --------------------------------------------------
+
+.navbar {
+  box-shadow: $shadow-area-sm;
+  border: none;
+  text-align: left;
+
+  &-brand {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .navbar-toggle {
+    margin-top: 9px;
+    margin-bottom: 9px;
+  }
+
+  .navbar-text {
+    margin-top: ($navbar-height - $line-height-computed)/2;
+    margin-bottom: ($navbar-height - $line-height-computed)/2;
+  }
+
+  .navbar-form {
+    margin-top: 6px;
+    margin-bottom: 6px;
+
+    // TODO QA Fix for ipad in 768 width orientation
+    padding-left: 10px;
+    padding-right: 10px;
+
+
+    .form-search-submit {
+      right: 15px;
+    }
+  }
+
+  &-nav{
+    > li > .dropdown-menu {
+      margin-top: 2px;
+    }
+
+    > li > a {
+      transition: .3s;
+      font-weight: 400;
+      font-size: 14px;
+
+      .badge {
+        margin-top: -17px;
+        margin-left: -5px;
+        margin-right: -5px;
+      }
+    }
+  }
+}
+
+.navbar-inverse {
+  @extend %context-dark;
+}

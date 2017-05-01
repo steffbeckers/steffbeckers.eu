@@ -1,0 +1,85 @@
+//
+// RD Navbar Default First level of Menu
+// --------------------------------------------------
+
+%rd-navbar-default-menu-first-lvl{
+  .rd-navbar-nav {
+    @include clearfix;
+    > li {
+      float: left;
+      position: relative;
+      > a {
+        @extend %rd-navbar-default-link-font;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        letter-spacing: 0.06em;
+        &:after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          margin-top: 4px;
+          @include bg-variant-custom(linear-gradient(90deg, $brand-primary 0%, $brand-neon-carrot 100%));
+          transition: .3s all ease;
+        }
+        > .rd-navbar-label {
+          position: absolute;
+          margin: -10px 0 0 -15px;
+        }
+      }
+
+      &.active > a, &.focus > a, > a:hover {
+        &:after {
+          left: 0;
+          width: 100%;
+        }
+      }
+
+      &.rd-navbar--has-megamenu {
+        position: static;
+      }
+
+      + li {
+        margin-left: 50px;
+      }
+    }
+
+    li.focus {
+      > .rd-navbar-dropdown, > .rd-navbar-megamenu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+//
+// Dark Theme
+// --------------------------------------------------
+
+%rd-navbar-default-menu-first-lvl-dark {
+  .rd-navbar-nav {
+    > li {
+      a {
+        color: $rd-navbar-dark-menu-first-lvl-list-item-link-color;
+      }
+    }
+  }
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+
+%rd-navbar-default-menu-first-lvl-light {
+  .rd-navbar-nav {
+    > li {
+      a {
+        color: $rd-navbar-light-menu-first-lvl-list-item-link-color;
+      }
+    }
+  }
+}

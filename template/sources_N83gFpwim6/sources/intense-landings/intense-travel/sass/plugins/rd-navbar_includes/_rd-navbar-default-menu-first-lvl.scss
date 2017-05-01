@@ -1,0 +1,74 @@
+//
+// RD Navbar Default First level of Menu
+// --------------------------------------------------
+
+%rd-navbar-default-menu-first-lvl{
+  .rd-navbar-nav {
+    @include clearfix;
+    > li {
+      float: left;
+      position: relative;
+      color: $rd-navbar-dark-menu-first-lvl-list-item-link-color;
+      > a {
+        @extend %rd-navbar-default-link-font;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        .icon{
+          font-size: 16px;
+          line-height: 16px;
+        }
+      }
+
+      &.active > a, &.focus > a, > a:hover {
+        color: $brand-primary;
+      }
+      &.active > a.btn-primary, &.focus > a.btn-primary, > a.btn-primary:hover {
+        color: $white;
+      }
+
+      &.rd-navbar--has-megamenu {
+        position: static;
+      }
+
+      + li {
+        margin-left: 20px;
+      }
+      .btn-sm{
+        margin-top: -3px;
+        margin-left: 10px;
+        padding: 7px 12px;
+        font-size: 10px;
+        line-height: 12px;
+        .icon{
+          font-size: 12px;
+          line-height: 12px;
+        }
+      }
+      &:nth-child(2){
+        position: relative;
+        &:before{
+          display: none;
+          content: "";
+          height: 100%;
+          width: 1px;
+          background: rgba($white, .4);
+          position: absolute;
+          left: -23px;
+          top: 0;
+        }
+      }
+      @media (min-width: $screen-md-min) {
+        & + li {
+          margin-left: 45px;
+        }
+        &:nth-child(2){
+          &:before{
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+

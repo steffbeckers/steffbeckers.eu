@@ -1,0 +1,84 @@
+extends  ../_skeleton
+
+block title
+	title Reservations
+
+block page
+	include ../elements/_ui-rd-parallax
+
+	// Page Header
+	header.page-header.slider-menu-position
+		+rd-navbar-default({
+			"style": "",
+			"logo": cfg.brand.logo,
+			"logoFixed": cfg.brand.logoSmall,
+			"activeLink": 4,
+			"attr": {
+				"data-layout": "rd-navbar-fixed",
+				"data-sm-layout": "rd-navbar-fixed",
+				"data-md-layout": "rd-navbar-fullwidth",
+				"data-lg-layout": "rd-navbar-static"
+			}
+		})
+
+		+breadcrumb("Reservations", {
+			0: {
+				"type": "link",
+				"title": cfg.nav.home.title,
+				"href": cfg.nav.home.href
+			},
+			1: {
+				"type": "link",
+				"title": "Reservations",
+				"href": "reservations.html"
+			}
+		}, "images/backgrounds/background-02-1920x900.jpg")
+
+	// Page Content
+	main.page-content
+
+		// FAQ
+		section.section-75.section-md-top-90.section-md-bottom-110
+			.shell
+				h1 Reservations
+
+				form.offset-top-44.well.rd-mailform.text-md-left(data-form-output="form-output-global", data-form-type='order', method='post', action='bat/rd-mailform.php')
+					.well-row.well-row-bg
+						p.text-uppercase.text-bold.text-spacing-25.font-accent.text-gray-dark Pickup time
+					.well-row
+						.range
+							.cell-sm-5.cell-md-4.well-row-flex
+								label.custom-label.text-gray-dark No. of passengers
+								.form-group
+									input.form-control(type="number" data-zeros="true" value="1" min="1" max="20")
+							.offset-top-15.offset-sm-top-0.cell-sm-5.cell-md-4.well-row-flex
+								label.custom-label.text-gray-dark No. of luggage
+								.form-group
+									input.form-control(type="number" data-zeros="true" value="1" min="1" max="20")
+							.offset-top-15.offset-md-top-0.cell-sm-5.cell-md-4.well-row-flex
+								label.custom-label.text-gray-dark Time
+								.form-group(style='max-width: 100px; width: 100%;')
+									input.form-control(placeholder='--:--' data-time-picker='time' type="text" style='text-align: center; padding: 10px 12px;' name="usr_time")
+					.well-row.well-row-bg
+						p.text-uppercase.text-bold.text-spacing-25.font-accent.text-gray-dark Where are you going?
+					.well-row
+						.range
+							.cell-sm-6
+								.form-group
+									label.form-label(for="up") Enter Pick up location
+									input#up.form-control(type="text" name="up" data-constraints="@Required")
+							.cell-sm-6.offset-top-12.offset-sm-top-0
+								.form-group
+									label.form-label(for="off") Enter Drop off location
+									input#off.form-control(type="text" name="off" data-constraints="@Required")
+					.well-row.well-row-bg
+						p.text-uppercase.text-bold.text-spacing-25.font-accent.text-gray-dark Special instructions
+					.well-row
+						.form-group
+							label.form-label(for="message") Enter your instructions here
+							textarea#message.form-control(style='height: 130px;' name="message")
+						.text-center.offset-top-33
+							button.btn.btn-sm.btn-primary book now
+
+	// Page Footer
+	include ../sections/_footer-default

@@ -1,0 +1,13 @@
+//- Simple quote Slider
+
+mixin quote-simple-slider(testimonials, titleClass)
+  // Simple quote Slider
+  .owl-carousel.owl-carousel-classic.owl-carousel-class-light.owl-carousel-simple-quote(data-items="1" data-nav="false" data-dots="true")
+    each testimonial in testimonials
+      div
+        blockquote.quote.quote-simple-2.text-left
+          p.quote-body.offset-bottom-0
+            q= testimonial.q
+
+          h6.quote-author.text-uppercase(class=titleClass)
+            cite.text-normal= "- " + testimonial.title

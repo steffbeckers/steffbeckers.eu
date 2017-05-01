@@ -1,0 +1,33 @@
+extends  ../_skeleton
+
+include ../elements/_ui-rd-navbar-top-panel
+
+block title
+  title Intense - multi-page template by TemplateMonster
+
+block page
+
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-dark',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logoInverse,
+    cfg.nav.features,
+    cfg.nav
+    )
+    include ../sections/_section-swiper-2
+
+  // Page Contents
+  main.page-content
+    include ../sections/_section-welcome
+    include ../sections/_section-buy-now
+
+  // Page Footer
+  include ../sections/_section-footer-default

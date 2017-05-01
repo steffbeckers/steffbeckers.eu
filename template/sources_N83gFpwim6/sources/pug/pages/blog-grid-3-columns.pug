@@ -1,0 +1,56 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+//- Title
+block title
+  title= cfg.nav.blog.submenu.grid.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.blog,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.blog.submenu.grid.title,
+  cfg.nav.blog.submenu.grid.submenu["3cols"].icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.blog.title,
+      "href": cfg.nav.blog.href
+    },
+    2: {
+      "title": cfg.nav.blog.submenu.grid.title,
+      "href": cfg.nav.blog.submenu.grid.href
+    },
+    3: {
+      "title": cfg.nav.blog.submenu.grid.submenu["3cols"].title,
+      "href": cfg.nav.blog.submenu.grid.submenu["3cols"].href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+
+    include ../sections/_section-blog-grid-3-columns
+
+  // Page Footers
+  include ../sections/_section-footer-default

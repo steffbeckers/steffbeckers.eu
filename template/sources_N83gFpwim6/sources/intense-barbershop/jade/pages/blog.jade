@@ -1,0 +1,112 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-page-title
+include ../elements/_ui-section-header
+include ../elements/_ui-post-classic
+include ../elements/_ui-post-block
+
+
+block variables
+  - var activeIndex = 3
+  - var footerActiveIndex = 3
+  - var menuIncludeButton = true
+  - var pageName = 'Blog'
+
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  //- Page Content
+  +page-title(pageName)
+
+  //- Classic
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-75
+        .cell-sm-10.cell-md-9.cell-lg-8
+          +section-header('Classic', "Barbershop is not only a place where you can get a first-class haircut. Our barbers also write interesting articles on everything concerning their sphere of interest.")
+
+        .cell-sm-10.cell-md-9.cell-lg-8
+          +post-classic({
+            img: 'blog-1-770x330',
+            title: 'Visiting a Barber',
+            text: "A barber knows how to cut men’s hair. If you’re like most men these days, you’re probably going to some unisex chain salon. Most of the time, you’d walk out of these places with an average haircut. Sometimes...",
+            meta: [
+              24,
+              132,
+              ['2016-08-26', '26.08.2016']
+            ]
+          })
+
+          +post-classic({
+            img: 'blog-2-770x330',
+            title: 'What Haircut Suits You',
+            text: "Different people have different face shapes. And not you, but your face shape decides will this haircut suit you or not. The Barbershop has prepared some advice for you, how to choose a proper haircut for...",
+            meta: [
+              24,
+              132,
+              ['2016-08-26', '26.08.2016']
+            ]
+          })
+
+  ='\n'
+
+  //- Grid
+  section.section-lg.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-75
+        .cell-xs-12
+          +section-header('Grid', "Barbershop is not only a place where you can get a first-class haircut. Our barbers also write interesting articles on everything concerning their sphere of interest.")
+
+        .cell-xs-12
+          .range.range-30
+            .cell-sm-6.cell-md-4
+              +post-block({
+                img: 'blog-3-370x250',
+                title: 'Visiting a Barber',
+                text: "A barber knows how to cut men’s hair. If you’re like most men these days, you’re probably going ",
+                meta: [
+                  24,
+                  132,
+                  ['2016-08-26', '26.08.2016']
+                ]
+              })
+
+            .cell-sm-6.cell-md-4
+              +post-block({
+                img: 'blog-4-370x250',
+                title: 'What Haircut Suits You',
+                text: "Different people have different face shapes. And not you, but your face shape decides will this",
+                meta: [
+                  24,
+                  132,
+                  ['2016-08-26', '26.08.2016']
+                ]
+              })
+
+            .cell-sm-6.cell-md-4
+              +post-block({
+                img: 'blog-5-370x250',
+                title: 'Top 7 Shaving Products',
+                text: "The right shaving cream can make the difference between a healthy skin and one plagued by ingrown hairs",
+                meta: [
+                  24,
+                  132,
+                  ['2016-08-26', '26.08.2016']
+                ]
+              })
+  ='\n'
+
+
+  //- Page Footer
+  include ../sections/_footer-default
+

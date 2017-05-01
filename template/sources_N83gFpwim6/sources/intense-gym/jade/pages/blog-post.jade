@@ -1,0 +1,184 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-post-default
+include ../elements/_ui-quote-simple
+include ../elements/_widget-post
+include ../elements/_ui-box-comment
+include ../elements/_ui-thumbnail-classic
+
+//-Title
+block title
+  title Post
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-floated(
+    'rd-navbar-dark',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.blog,
+    cfg.nav
+    )
+    .context-dark
+      +breadcrumb-modern("Blog", {
+        0: {
+          "type": "link",
+          "title": cfg.nav.home.title,
+          "href": cfg.nav.home.href
+        },
+        1: {
+          "type": "link",
+          "title": cfg.nav.blog.title,
+          "href": cfg.nav.blog.href
+        },
+        2: {
+          "type": "link",
+          "title": "Post",
+          "href": "#"
+        }
+      }, "images/background-04-1920x750.jpg")
+
+
+  // Page Contents
+  main.page-content.section-98.section-sm-110.text-sm-left
+    .shell
+      .range
+        .cell-md-8
+          +post-default("Mar 7, 2016", "Individual Training: Where to Begin", "John Doe ",
+          [{"title": "CrossFit", "href": "#"}],
+          42)
+          +thumbnail-classic({
+            "type": "thumbnail",
+            "thumb": {"src": "images/post-01-770x434.jpg", "width": 770, "height": 434, "alt": ""},
+            "target": {"src": "images/post-01-1024x683.jpg", "width": 1024, "height": 683, "alt": ""}
+          })
+          p Today we will speak about the topic that many coaches and attendees of our gym find urgent. Individual or personalized training is often a key to improvement of your physical health. We hope this article will provide you with necessary answers to questions you have about training.
+          p Any sport is basically a series of training done according to a specific system with planned intervals and preset loads. Such training allows achieving great results. It is true for boxing, weightlifting, swimming or any other sport. However, if the goal of your coaching is to acquire certain shape and to develop a heightened stamina, you have to go for a personal training.
+
+          +quote-simple("Personal fitness training is a preferable option for beginners regardless of their health level.")
+
+          p According to most professional fitness coaches, personal training is a perfect way for a beginner. First, you have to undergo a full diagnostics of your body and its vital systems. Afterward, you can freely decide what direction to pick for your training. We will be glad to assist you in it.
+
+          .offset-top-50
+            div.pull-sm-left
+              p.big.text-bold
+                span.big Share this post:
+
+            ul.list-inline.list-inline-sm.list-inline-danger.offset-top-10.offset-sm-top-0.pull-sm-right
+              li
+                a(href="#" class="fa fa-facebook")
+              li
+                a(href="#" class="fa fa-twitter")
+              li
+                a(href="#" class="fa fa-google-plus")
+              li
+                a(href="#" class="fa fa-pinterest-p")
+
+            div.clearfix
+
+            hr.offset-top-50
+
+            h4.offset-top-66.text-uppercase.text-spacing-120.text-medium Related Posts
+
+            .range.offset-top-41.range-sm-center
+              .cell-sm-10.cell-md-12
+                .range
+                  .cell-sm-6
+                    +widget-post("blog-post.html", "05/14/2015", "Benefits of Weightlifting", {
+                      "w": 60,
+                      "h": 60,
+                      "src": "images/post-13-60x60.jpg",
+                      "alt": ""
+                    }, "", "text-danger")
+                    .offset-top-24
+                      +widget-post("blog-post.html", "05/18/2015", "Getting Started with Yoga", {
+                        "w": 60,
+                        "h": 60,
+                        "src": "images/post-14-60x60.jpg",
+                        "alt": ""
+                      }, "", "text-danger")
+
+                  .cell-sm-6.offset-top-24.offset-sm-top-0
+                    +widget-post("blog-post.html", "05/9/2015", "The Meaning of Training", {
+                      "w": 60,
+                      "h": 60,
+                      "src": "images/post-15-60x60.jpg",
+                      "alt": ""
+                    },"", "text-danger")
+
+                    .offset-top-24
+                      +widget-post("blog-post.html", "05/21/2015", "Intense Cardio Classes", {
+                        "w": 60,
+                        "h": 60,
+                        "src": "images/post-16-60x60.jpg",
+                        "alt": ""
+                      }, "", "text-danger")
+
+            hr.offset-top-66
+
+            // Section OutBoxed Comments
+            .offset-top-66
+              h4.text-medium.text-uppercase.text-spacing-120 3 Comments
+              .offset-top-41
+                //- Comment 1
+                +box-comment(
+                "box-comment-outboxed",
+                {
+                  "width": 70,
+                  "height": 70,
+                  "src": "images/user-july-mao-70x70.jpg",
+                  "alt": "July Mao"
+                },
+                "Feb 16, 7:42 PM",
+                "July Mao",
+                "The topic you describe here is really important. However, the mentioned type of training cannot be applied to anyone."
+                )
+                  //- Reply 1
+                  +box-comment(
+                  "box-comment-outboxed",
+                  {
+                    "width": 70,
+                    "height": 70,
+                    "src": "images/user-john-doe-70x70.jpg",
+                    "alt": "John Doe"
+                  },
+                  "Feb 16, 7:46 PM",
+                  "John Doe",
+                  "You are absolutely right! But here, we have everything necessary to prepare even the pre - beginners to extensive physical training."
+                  )
+                //- Comment 2
+                +box-comment(
+                "box-comment-outboxed",
+                {
+                  "width": 70,
+                  "height": 70,
+                  "src": "images/user-mila-moa-70x70.jpg",
+                  "alt": "Kira Force"
+                },
+                "Feb 17, 7:34",
+                "Mila MOa",
+                "Very useful post! Thanks for sharing! Now I’ll be planning my visit to your gym to take part in some fitness classes."
+                )
+              h4.offset-top-34.text-uppercase.text-spacing-120.text-left.text-regular Leave a comment
+              form.offset-top-10.text-left
+                .form-group
+                  label.form-label.form-label-outside(for="box-comment-outboxed-comment-message") Message:
+                  textarea#box-comment-outboxed-comment-message.form-control(data-constraints="@Required")
+                .group-sm.text-left.offset-top-30
+                  button(type="button").btn.btn-xs.btn-danger comment
+
+        .cell-md-4.offset-top-66.offset-md-top-0
+          include ../sections/_section-blog-sidebar-variant-2
+
+  // Page Footer
+  include ../sections/_section-footer

@@ -1,0 +1,213 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-section-header
+include ../elements/_ui-box-icon
+include ../elements/_ui-box-post
+include ../elements/_ui-thumbnail-card
+
+block variables
+  - var activeIndex = 0
+  - var footerActiveIndex = 0
+  - var menuIncludeButton = true
+  - var pageName = 'Home'
+
+
+block title
+  title=pageName
+
+block menu
+  .page-header.page-header-perspective.page-header-perspective-transparent
+    .page-header-left
+      a.brand(href='index.html')
+        .brand-logo-default
+          +png('logo-default-199x36')
+        .brand-logo-white
+          +png('logo-white-200x36')
+
+    .page-header-right
+      .booking-control
+        a.btn.btn-xs.btn-circle.btn-primary(href=appointLink) BOOK NOW
+
+      #perspective-open-menu(data-custom-toggle='.perspective-menu-toggle', data-custom-toggle-hide-on-blur='true')
+        span.perspective-menu-text Menu
+        button.perspective-menu-toggle
+          span
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  //- Masters of the Blade
+  section.jumbotron-custom.jumbotron-custom-1.bg-gray-base.bg-image.text-center(style='background-image: url(images/bg-image-2.jpg);')
+    .jumbotron-custom-content
+      .shell
+        .range.range-sm-center
+          .cell-sm-10.cell-lg-9
+            a.brand-big(href='index.html')
+              +png('logo-md-white-136x160')
+            p.caption The Best
+            h1 Masters of the Blade
+            p.large At Barbershop, you will find an atmosphere of old school sophistication with modern amenities.We cater to gentlemen on the go. So stop in on your lunch break to get an old-fashioned straight razor shave or a perfect haircut.
+  ='\n'
+
+  //- OUR SERVICES
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-50
+        .cell-xs-12
+          +section-header('OUR SERVICES', "Barbershop offers world-class men's haircuts, beard grooming, and hot razor shaves. Here are just some of the services we are known for.")
+
+        .cell-xs-12
+          .range.range-30
+            .cell-xs-6.cell-md-3
+              +box-icon({
+                img: 'icon-service-1-70x62',
+                header: 'TRADITIONAL HAIRCUTS',
+                text: 'One of the most popular services our barbers provide'
+              })
+
+            .cell-xs-6.cell-md-3
+              +box-icon({
+                img: 'icon-service-2-70x62',
+                header: 'SHAVES',
+                text: 'Our shaving services will make you look really handsome'
+              })
+
+            .cell-xs-6.cell-md-3
+              +box-icon({
+                img: 'icon-service-3-70x62',
+                header: 'BEARD trim',
+                text: 'Well-trimmed beard is a must-have element of every men’s image'
+              })
+
+            .cell-xs-6.cell-md-3
+              +box-icon({
+                img: 'icon-service-4-70x62',
+                header: 'Mustache TRIM',
+                text: 'Mustaches also need to be trimmed regularly'
+              })
+  ='\n'
+
+  //- We help you look great
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      article.box-promo
+        .box-promo-left
+          +jpg('home-1-585x580', 'box-promo-image')
+        .box-promo-body
+          p.box-promo-title we help you look great
+
+          .box-promo-text
+            p Barbershop is San Francisco's premier barber shop for stylish men looking for a place where they can feel comfortable, speak their minds, and leave satisfied.
+
+          .box-promo-control
+            a.btn.btn-sm.btn-circle.btn-primary(href='about.html') learn more
+  ='\n'
+
+  //- OUR BARBERS
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-75
+        .cell-xs-12
+          +section-header("OUR BARBERS", "We employ only highly qualified barbers who are not just professionals, but also enjoy maintaining the atmosphere of a classic barbershop.")
+        .cell-xs-12
+          .range.range-30
+            .cell-sm-6.cell-md-4.height-fill
+              +thumbnail-card({
+                img: 'barbers-1-370x310',
+                header: 'simon Wilson',
+                text: 'Mr. Wilson is the founder and owner of our barbershop.'
+              })
+
+            .cell-sm-6.cell-md-4.height-fill
+              +thumbnail-card({
+                img: 'barbers-2-370x310',
+                header: 'Harry Anderson',
+                text: 'Harry brings a detailed, meticulous approach to styling.'
+              })
+
+            .cell-sm-6.cell-md-4.height-fill
+              +thumbnail-card({
+                img: 'barbers-3-370x310',
+                header: 'Matthew phillips',
+                text: 'Matthew has several years of experience in the barber industry.'
+              })
+  ='\n'
+
+  //- BARBERSHOP HAIRCUT SERVICES
+  section.section-xxl.bg-gray-dark.bg-gray-dark-overlay.bg-image(style='background-image: url(images/bg-image-3.jpg)')
+    .shell
+      .range
+        .cell-sm-8.cell-md-7.cell-lg-6
+          h2(style='max-width: 90%;').
+            BARBERSHOP HAIRCUT SERVICES
+          p.big.
+            We take pride in each service we provide. Every effort is made to give you the best barber experience whatever your haircut or shaving style is. Feel free to browse our services list to learn more about the services we offer our clients and guests.
+
+          a.btn.btn-sm.btn-circle.btn-primary(href='services.html') view all services
+  ='\n'
+
+  include ../sections/_section-testimonials-carousel
+
+  //- latest Blog Posts
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      +section-header("latest Blog Posts", "Barbershop is not only a place where you can get a first-class haircut. Our barbers also write interesting articles on everything concerning their sphere of interest.")
+
+      +box-post({
+        mod: 'box-post-image-right-bottom',
+        type: 'dark-inverse',
+        img: 'box-post-1-530x490',
+        title: 'Visiting a Barber',
+        text: "A barber knows how to cut men’s hair. If you’re like most men these days, you’re probably going to some unisex chain salon."
+      })
+
+      +box-post({
+        img: 'box-post-2-530x490',
+        title: 'What Haircut Suits You',
+        text: "Different people have different face shapes. And not you, but your face shape decides will this haircut suit you or not."
+      })
+
+      +box-post({
+        type: 'dark-inverse',
+        img: 'box-post-3-530x490',
+        title: 'Top 7 Shaving products',
+        text: "The right shaving cream can make the difference between a healthy skin and one plagued by ingrown hairs, razor burns, irritation etc."
+      })
+  ='\n'
+
+  //- Contact Us
+  section.box-wrap.box-wrap-sm.bg-white
+    .box-wrap-map
+      //- RD Google Map
+      .rd-google-map(class="rd-google-map__model", data-zoom='14', data-x='-73.9999000', data-y='40.643180')
+
+    .box-wrap-content
+      .shell
+        .box-contacts.box-contacts-horizontal.box-contacts-horizontal-small.box-wrap-content-interactive
+          .box-contacts-col.text-center.text-sm-left
+            .box-contacts-block
+              h3 Address
+              address 123 Street W, Seattle WA 99999 United States
+
+            .divider.divider-nebula
+
+            .box-contacts-block.text-center.text-sm-left
+              h3 Opening Hours
+              dl.box-contacts-terms-list
+                dt Monday – Friday
+                dd 9am - 6pm
+
+                dt Saturday and Sunday
+                dd 10am - 4pm
+  ='\n'
+
+
+  //- Page Footer
+  include ../sections/_footer-default
+
+block modal
+  include ../includes/_modal-single-barber
+

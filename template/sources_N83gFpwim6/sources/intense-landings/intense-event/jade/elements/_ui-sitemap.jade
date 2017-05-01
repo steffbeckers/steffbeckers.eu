@@ -1,0 +1,24 @@
+//- submenuObj - submennu object
+//- defaultIcon - icon use if icon in config didn`t exist
+//- additionaheaderClass - additonal class for header
+//- additionalLiClass - additonal class for LI element
+
+//-Includes
+include ../mixins/_sitemap
+
+mixin sitemapElement(submenuObj, defaultIcon, additionaheaderClass, additionalLiClass)
+  // Sitemap
+  - if (typeof(submenuObj.submenu) !== 'undefined') {
+        -if(typeof(submenuObj.title) !== 'undefined')
+            h6(class= additionaheaderClass)= submenuObj.title
+        ul.list.list-unstyled
+          each sublink in submenuObj.submenu
+            - if (typeof(sublink.submenu) !== 'undefined') {
+              +sitemapElement(sublink, defaultIcon, 'inset-left-20 small', 'inset-left-30')
+            -} else {
+              +sitemap(sublink, defaultIcon, additionalLiClass)
+            -}
+    -} else {
+      ul.list.list-unstyled
+        +sitemap(submenuObj, defaultIcon, additionalLiClass)
+    -}

@@ -1,0 +1,214 @@
+//
+// Sections
+// --------------------------------------------------
+
+.section-relative {
+  position: relative;
+  z-index: 1;
+}
+
+.slider-menu-position {
+  position: relative;
+  .rd-navbar-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.section-absolute {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.img-absolute {
+  display: none;
+  @media (min-width: $screen-lg-min) {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% + 80px);
+    max-height: 100%;
+    width: auto;
+  }
+}
+
+// Full Screen Section
+// --------------------------------------------------
+
+.section-cover {
+  min-height: 100vh;
+}
+
+.mock-up-wrapper {
+  position: relative;
+}
+
+.mock-up-desktop-wrapper {
+  margin-bottom: -80px;
+  max-width: 100%;
+}
+
+.mock-up-circle {
+  position: absolute;
+  left: -15%;
+  bottom: 65px;
+}
+
+.section-navigation {
+  position: relative;
+  .navigation-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    clip: rect(0, auto, auto, 0);
+  }
+  .navigation {
+    display: none;
+    @include transform(translateY(-50%));
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    box-shadow: none;
+    text-align: center;
+    padding: 0;
+    width: 280px;
+    &-list {
+      padding: 0;
+      list-style-type: none;
+      width: 100%;
+      li {
+        a {
+          display: block;
+          height: 30px;
+          line-height: 30px;
+          padding: 0;
+          font-weight: 400;
+          text-transform: none;
+          position: relative;
+          color: rgba(51, 51, 51, .34);
+          font-size: 10px;
+          transition: font-size .35s ease;
+          &:after {
+            content: "";
+            position: absolute;
+            right: 55px;
+            background: rgba(0, 0, 0, .1);
+            top: 50%;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            @include transform(translateY(-50%));
+            border: 2px solid transparent;
+          }
+        }
+        &.active, &:hover {
+          a {
+            color: rgba(51, 51, 51, 1);
+            font-size: 12px;
+            &:after {
+              @include transform(scale(2.1));
+              background: rgba(0, 0, 0, 1);
+              border-color: #ddd;
+              margin-top: -3px;
+            }
+          }
+        }
+      }
+      &.dark-section {
+        li {
+          a {
+            color: rgba(255, 255, 255, .34);
+            &:after {
+              background: rgba(255, 255, 255, .1);
+            }
+          }
+          &.active, &:hover {
+            a {
+              color: rgba(255, 255, 255, 1);
+              &:after {
+                background: rgba(255, 255, 255, 1);
+                border-color: #e5e5e5;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: $screen-xl-min) {
+    .navigation {
+      display: block;
+    }
+  }
+}
+
+.lt-ie-10,
+.ie-10,
+.ie-11,
+.ie-edge {
+  .navigation {
+    &-list {
+      li {
+        a {
+          &:after {
+            border: none;
+          }
+        }
+        &.active, &:hover {
+          &:after {
+            @include transform(scale(1.5));
+          }
+        }
+      }
+    }
+  }
+}
+
+// Graph demonstration section
+// --------------------------------------------------
+.section-graph-demonstration {
+  overflow: auto;
+  > .graph-content {
+    min-width: 500px;
+  }
+
+  @media (min-width: $screen-xs-min) {
+    > .graph-content {
+      min-width: 0;
+    }
+  }
+  .isotope {
+    .row {
+      > [class*="col-"] {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  // Fix "Filterable Column Chart" in chrome
+  #high-line {
+    overflow: hidden;
+
+    svg {
+      margin-top: -2px;
+    }
+  }
+}
+
+// Section Spacing
+// --------------------------------------------------
+
+$insets: (0, 20px, 30px, 41px, 50px, 66px, 80px, 85px, 98px, 110px, 124px, 135px, 150px, 254px, 350px);
+
+@include indent-responsive(section, '', (padding-top, padding-bottom), $medias, $insets);
+@include indent-responsive(section, top, padding-top, $medias, $insets);
+@include indent-responsive(section, bottom, padding-bottom, $medias, $insets);

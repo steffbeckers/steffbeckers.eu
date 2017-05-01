@@ -1,0 +1,69 @@
+//- Includes
+include ../elements/_widget-twitter
+include ../elements/_widget-form-contact
+include ../elements/_widget-list-social
+include ../elements/_widget-form-subscribe-type-2
+include ../elements/_widget-flickrfeed
+
+// Footer variant 3
+footer.section-relative.section-top-66.section-bottom-34.page-footer.bg-gray-base.context-dark
+  .shell
+    .range.range-sm-center.text-lg-left
+      .cell-sm-12
+        .range.range-xs-center
+
+          .cell-xs-10.cell-sm-3.text-left.cell-sm-push-4.cell-sm-10.cell-lg-3.offset-sm-top-50.offset-lg-top-0.cell-lg-push-2
+            // Twitter Feed
+            p.text-uppercase.text-spacing-60.text-bold.text-center.text-lg-left Twitter Feed
+            .offset-top-20
+              +widget-twitter({
+                "dataTwitterUsername": "templatemonster"
+              }, true)
+
+          .cell-xs-10.cell-sm-3.offset-top-66.cell-sm-push-3.cell-sm-10.cell-lg-2.offset-lg-top-0.cell-lg-push-3
+            // Flickr Feed
+            p.text-uppercase.text-spacing-60.text-bold Flickr
+            .offset-top-24
+              +widget-flickrfeed("tm58888_landscapes", {"data-image_q": "src"}, 4)
+
+          .cell-xs-10.cell-sm-3.offset-top-66.cell-sm-push-2.offset-sm-top-0.cell-sm-6.cell-lg-4.cell-lg-push-4
+            p.text-uppercase.text-spacing-60.text-bold Subscribe
+            p.offset-top-20.text-left.
+              Keep up with our always upcoming  product
+              features and technologies. Enter your e-mail and
+              subscribe to our newsletter.
+            .offset-top-30
+              +widget-form-subscribe-type-2("Type your E-Mail", "form-output-global","icon", true)
+
+          .cell-xs-10.cell-sm-3.offset-top-66.cell-sm-push-1.offset-sm-top-0.cell-sm-6.cell-lg-3.cell-lg-push-1
+            // Footer brand
+            .footer-brand
+              a(href=cfg.nav.home.href)
+                !=cfg.brand.logoInverse
+            p.offset-top-20.text-sm-left.
+              Intense is exactly what you need.
+              Create your own unique site with Intense.
+            .offset-top-20.text-xs-center.text-lg-left
+              +widget-list-social([
+                {
+                  "icon": "fa fa-facebook",
+                  "href": "#"
+                },
+                {
+                  "icon": "fa fa-twitter",
+                  "href": "#"
+                },
+                {
+                  "icon": "fa fa-google-plus",
+                  "href": "#"
+                },
+                {
+                  "icon": "fa fa-linkedin",
+                  "href": "#"
+                }
+              ])
+            p.small.text-darker.offset-top-20
+              | #{cfg.brand.name} &copy; #[span(id="copyright-year")] . #[a(href="privacy.html") Privacy Policy]
+              // {%FOOTER_LINK}
+
+

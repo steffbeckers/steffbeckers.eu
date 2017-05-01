@@ -1,0 +1,419 @@
+extends  ../_skeleton
+
+//-Includes
+include ../elements/_widget-post
+include ../elements/_widget-form-subscribe
+include ../elements/_widget-list-social
+include ../elements/_ui-testimonials-slider-2
+include ../elements/_ui-box-planning-type-3
+
+//-Title
+block title
+  title Product
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    // RD Navbar Transparent
+    .rd-navbar-wrap
+      nav.rd-navbar.rd-navbar-default(data-auto-height="false" data-md-auto-height="false" data-md-device-layout='rd-navbar-fixed', data-anchor-offset="20", data-lg-device-layout='rd-navbar-static', data-lg-auto-height="false", data-md-layout='rd-navbar-fixed', data-lg-layout='rd-navbar-static', data-lg-stick-up='true')
+        .rd-navbar-inner
+          // RD Navbar Panel
+          .rd-navbar-panel
+            // RD Navbar Toggle
+            button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar, .rd-navbar-nav-wrap')
+              span
+            // Navbar Brand
+            .rd-navbar-brand
+              a(href='index.html')
+                img(width='199', height='32', src='images/logo-light-199x32.png', alt='')
+          .rd-navbar-menu-wrap
+            .rd-navbar-nav-wrap
+              .rd-navbar-mobile-scroll
+                // Navbar Brand Mobile
+                .rd-navbar-mobile-brand
+                  a(href='index.html')
+                    img(width='199', height='32', src='images/logo-light-199x32.png', alt='')
+                // RD Navbar Nav
+                ul.rd-navbar-nav
+                  li.active
+                    a(href='#home') PRODUCT
+                  li
+                    a(href='#features') FEATURES
+                  li
+                    a(href='#reviews') REVIEWS
+                  li
+                    a(href="#pages") Pricing
+                  li
+                    a(href="#contacts") Newsletter
+                  li
+                    a.btn.btn-primary.btn-icon.btn-icon-left.btn-sm(href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&utm_medium=themebutton&utm_campaign=intense")
+                      span.icon.mdi.mdi-basket
+                      | GET THIS APP
+
+  // Page Contents
+  main.page-content
+    #home(data-type="anchor")
+      section
+        .rd-parallax.bg-white(data-on="false" data-md-on="true")
+          .rd-parallax-layer.background-custom-position(data-speed="0.15", data-type="media", data-url="images/bg-01-1920x1000.jpg")
+          .rd-parallax-layer(data-speed="0", data-type='html' data-md-fade="true")
+            .shell.padding-bottom-percent
+              .offset-top-140.offset-xs-top-0.offset-md-top-165
+                .range
+                  .range.section-cover.range-xs-middle
+                    .cell-xs-12
+                      h1.text-uppercase.text-bold.text-darkest Launch Your Startup Now!
+                      .offset-top-15
+                        h6.text-dark.text-regular INTENSE is a powerful app designed to support startups of any size.
+                      .offset-top-35.group
+                        a.btn.btn-primary.btn-icon.btn-icon-left.btn-sm(href="//www.templatemonster.com/intense-multipurpose-html-template.html?utm_source=livedemo&utm_medium=themebutton&utm_campaign=intense")
+                          span.icon.mdi.mdi-basket
+                          | GET THIS APP
+                        a.btn.btn-default.btn-sm(href='#') TRY IT FOR FREE
+
+    #features(data-type="anchor")
+      section.section-relative.section-65.section-md-top-0.section-md-bottom-100
+        img.img-responsive.veil.reveal-md-inline-block(src="images/home-01-1067x604.png", width="1067", height="604", alt="" style="margin-top: -19%; max-width: 55.5729%")
+        .shell.offset-md-top-60
+          h2 The Benefits of Intense
+          h6 There are dozens of useful features and advantages our product offers. With them, your startup or any kind of business project you are about to launch or #[br.veil.reveal-lg-inline-block] manage, is doomed to succeed!
+          .range.range-xs-center
+            .cell-xs-10.cell-sm-6.cell-md-4
+              span.icon.icon-lg.icon-circle.mdi.mdi-airplane.icon-primary
+              h4 Web Design
+              p.inset-sm-left-15.inset-sm-right-15 We pay a lot of attention to web design of our clients’ projects to make their startups successful.
+            .cell-xs-10.cell-sm-6.cell-md-4.offset-top-45.offset-sm-top-0
+              span.icon.icon-lg.icon-circle.mdi.mdi-alarm-check.icon-primary
+              h4 Internet Marketing
+              p.inset-sm-left-15.inset-sm-right-15 Intense provides a vast variety of internet marketing tools for your business to achieve great success.
+            .cell-xs-10.cell-sm-6.cell-md-4.offset-top-45.offset-md-top-0
+              span.icon.icon-lg.icon-circle.mdi.mdi-battery-charging.icon-primary
+              h4 Graphic Design
+              p.inset-sm-left-15.inset-sm-right-15 With our product you can easily create impressive graphic designs for presenting your startup to investors in a good light.
+            .cell-xs-10.cell-sm-6.cell-md-4.offset-top-45
+              span.icon.icon-lg.icon-circle.mdi.mdi-bell-outline.icon-primary
+              h4 Advanced Statistics
+              p.inset-sm-left-15.inset-sm-right-15 Intense supplies your every project with extensive statistics on startups you are managing.
+            .cell-xs-10.cell-sm-6.cell-md-4.offset-top-45
+              span.icon.icon-lg.icon-circle.mdi.mdi-cash-multiple.icon-primary
+              h4 Social Media Support
+              p.inset-sm-left-15.inset-sm-right-15 This product can provide full support on social media, giving instant feedback information on all posts about your startup.
+            .cell-xs-10.cell-sm-6.cell-md-4.offset-top-45
+              span.icon.icon-lg.icon-circle.mdi.mdi-car-connected.icon-primary
+              h4 Videography
+              p.inset-sm-left-15.inset-sm-right-15 Attractive video presentations can make more impact on your business partners, and that’s why this feature is a part of Intense.
+
+      section.bg-gray-lighter.section-50
+        .shell
+          .range
+            .cell-sm-6.cell-md-4.cell-lg-2
+              img.img-responsive.reveal-inline-block(src="images/client-01-144x63.png", width="144", height="63", alt="")
+            .cell-sm-6.cell-md-4.cell-lg-2.offset-top-30.offset-sm-top-0
+              img.img-responsive.reveal-inline-block(src="images/client-02-144x63.png", width="144", height="63", alt="")
+            .cell-sm-6.cell-md-4.cell-lg-2.offset-top-30.offset-md-top-0
+              img.img-responsive.reveal-inline-block(src="images/client-03-144x63.png", width="144", height="63", alt="")
+            .cell-sm-6.cell-md-4.cell-lg-2.offset-top-30.offset-lg-top-0
+              img.img-responsive.reveal-inline-block(src="images/client-04-144x63.png", width="144", height="63", alt="")
+            .cell-sm-6.cell-md-4.cell-lg-2.offset-top-30.offset-lg-top-0
+              img.img-responsive.reveal-inline-block(src="images/client-05-144x63.png", width="144", height="63", alt="")
+            .cell-sm-6.cell-md-4.cell-lg-2.offset-top-30.offset-lg-top-0
+              img.img-responsive.reveal-inline-block(src="images/client-06-144x63.png", width="144", height="63", alt="")
+      section.section-90.section-md-120
+        .shell
+          h2 Why use Intense?
+          h6 While other similar products offer a few features that you can really consider useful, Intense is always one step ahead #[br.veil.reveal-lg-inline-block] of competitors. Find out why you should use Intense for your startup development below.
+          .range.range-md-middle.offset-top-0.offset-md-top-50.range-xs-center
+            .cell-sm-12.cell-md-6.cell-md-push-1
+              img.center-block.img-responsive(src="images/home-02-443x631.png" alt="" width=443 height=631)
+            .cell-sm-5.cell-md-3.text-sm-left.offset-top-50.offset-md-top-0
+              .offset-m-md-right--35
+                .unit.unit-md.unit-md-horizontal
+                  .unit-left
+                    span.icon.icon-xxs.mdi.mdi-airplane.icon-primary
+                  .unit-body
+                    div
+                      h4.text-bold Cross-Platform
+                    p.offset-top-10 Intense provides perfect and flawless compatibility between various platforms.
+                .unit.unit-md.unit-md-horizontal.offset-top-30.offset-md-top-60
+                  .unit-left
+                    span.icon.icon-xxs.mdi.mdi-alarm-check.icon-primary
+                  .unit-body
+                    div
+                      h4.text-bold Responsive Design
+                    p.offset-top-10 The design of our product allows to use it on any device - it will always look stunning.
+                .unit.unit-md.unit-md-horizontal.offset-top-30.offset-md-top-60
+                  .unit-left
+                    span.icon.icon-xxs.mdi.icon-primary.mdi-bell-outline
+                  .unit-body
+                    div
+                      h4.text-bold Energy Consumption
+                    p.offset-top-10 Even if your gadget’s battery is running low, with Intense you can forget about charging it.
+
+            .cell-sm-5.cell-md-3.text-sm-left.cell-md-push-1.offset-top-50.offset-md-top-0
+              .offset-m-md-left--35
+                .unit.unit-md.unit-md-horizontal
+                  .unit-left
+                    span.icon.icon-xxs.mdi.icon-primary.mdi-battery-charging
+                  .unit-body
+                    div
+                      h4.text-bold Free Updates
+                    p.offset-top-10.
+                      Updating is the key of reliability, and that’s why our clients get free Intense updates .
+                .unit.unit-md.unit-md-horizontal.offset-top-30.offset-md-top-60
+                  .unit-left
+                    span.icon.icon-xxs.mdi.icon-primary.mdi-cash-multiple
+                  .unit-body
+                    div
+                      h4.text-bold Online Archive
+                    p.offset-top-10.
+                      Intense includes free access to our online archive of all standard business documents.
+                .unit.unit-md.unit-md-horizontal.offset-top-30.offset-md-top-60
+                  .unit-left
+                    span.icon.icon-xxs.mdi.icon-primary.mdi-car-connected
+                  .unit-body
+                    div
+                      h4.text-bold More Advantages
+                    p.offset-top-10.
+                      Need something more? Then our Premium Subscription is what you are looking for!
+
+      section.section-md-90
+        .shell-fluid.text-md-right
+          .section-list-absolute
+            img.img-responsive.reveal-inline-block(src="images/home-03-1111x594.png", width="1111", height="594", alt="")
+            ul.list.list-unstyled.text-left
+              li
+                .unit.unit-horizontal.unit-spacing-sm
+                  .unit-left
+                    span.icon.icon-xxs.mdi.icon-primary.mdi-airplane.offset-top-6
+                  .unit-body
+                    div
+                      h4.text-bold Employee Management
+                    p.offset-top-10.
+                      If you need to change information of a single employee, Intense can help you with it.
+                span.connector
+              li
+                .unit.unit-horizontal.unit-spacing-sm
+                  .unit-left
+                    span.icon.icon-xxs.mdi.icon-primary.mdi-alarm-check.offset-top-6
+                  .unit-body
+                    div
+                      h4.text-bold Human Resources
+                    p.offset-top-10.
+                      This product can help you easily manage all of your company’s human resources.
+                span.connector
+              li
+                .unit.unit-horizontal.unit-spacing-sm
+                  .unit-left
+                    span.icon.icon-xxs.mdi.icon-primary.mdi-bell-outline.offset-top-6
+                  .unit-body
+                    div
+                      h4.text-bold Actual Information
+                    p.offset-top-10.
+                      Intense uses secure information resources to supply you with actual business information.
+                span.connector
+
+      section.section-90
+        .shell-fluid.text-md-left
+          .section-list-absolute.section-list-absolute-right
+            img.img-responsive.reveal-inline-block(src="images/home-04-1111x584.png", width="1111", height="594", alt="")
+            ul.list.list-unstyled.text-left
+              li
+                .unit.unit-horizontal.unit-spacing-sm
+                  .unit-left
+                    span.icon.icon-xxs.mdi.icon-primary.mdi-battery-charging.offset-top-6
+                  .unit-body
+                    div
+                      h4.text-bold Employee Summary
+                    p.offset-top-10.
+                      You can receive latest information about an employee and his/her work within seconds.
+                span.connector
+              li
+                .unit.unit-horizontal.unit-spacing-sm
+                  .unit-left
+                    span.icon.icon-xxs.mdi.icon-primary.mdi-cash-multiple.offset-top-6
+                  .unit-body
+                    div
+                      h4.text-bold Enterprise Statistics
+                    p.offset-top-10.
+                      This feature is designed to supply a manager with up-to-date stats about their department.
+                span.connector
+              li
+                .unit.unit-horizontal.unit-spacing-sm
+                  .unit-left
+                    span.icon.icon-xxs.mdi.icon-primary.mdi-car-connected.offset-top-6
+                  .unit-body
+                    div
+                      h4.text-bold History Report
+                    p.offset-top-10.
+                      To be informed about events of your company, you can use History Report feature.
+                span.connector
+
+    #reviews(data-type="anchor")
+      section.context-dark
+        .rd-parallax(data-on="false" data-md-on="true")
+          .rd-parallax-layer(data-speed="0.35", data-type="media", data-url="images/bg-02-1920x730.jpg")
+          .rd-parallax-layer(data-speed="0", data-type='html')
+            .shell.section-90
+              h2 What Clients Say
+              .range.range-xs-center.offset-top-66
+                .cell-sm-8
+                  +testimonials-slider-2([{
+                    "image": {
+                      "width": 80,
+                      "height": 80,
+                      "src": "images/user-alisa-milano-80x80.jpg",
+                      "alt": "Alisa Milano"
+                    },
+                    "title": "Alisa Milano",
+                    "desc": "Sales at demolink.org",
+                    "q": "With the help of Intense, we finally managed to improve the characteristics of our products, increase the productivity of our employees, and create the better public image of our company. Thank you!"
+                  },
+                    {
+                      "image": {
+                        "width": 80,
+                        "height": 80,
+                        "src": "images/user-alisa-milano-80x80.jpg",
+                        "alt": "Alisa Milano"
+                      },
+                      "title": "Alisa Milano",
+                      "desc": "Sales at demolink.org",
+                      "q": "With the help of Intense, we finally managed to improve the characteristics of our products, increase the productivity of our employees, and create the better public image of our company. Thank you!"
+                    }])
+    #pages(data-type="anchor")
+      section.section-90
+        .shell
+          h2 Our Plans
+          .range.range-condensed.range-lg-center.range-xs-bottom
+            .cell-xs-0.cell-lg-2.text-right.veil.reveal-lg-block
+              .inset-right-30.section-lg-bottom-120
+                h4.text-primary.text-bold Available <br> Options
+                .offset-top-35
+                  ul.list-separated-1.list-unstyled.text-uppercase.text-shark.text-bold.text-spacing-120(style="font-size: 10px")
+                    li Space amount
+                    li Number of users
+                    li Bandwidth Amount
+                    li Support included
+                    li Number of databases
+
+            .cell-md-4.cell-lg-3
+              +box-planning-3("Starter", "19", "month", "TRY IT NOW")
+                ul.list-separated.list-unstyled
+                  li
+                    span.h6.text-bold.text-darkest 5GB
+                    span.h6.text-dark Space amount
+                  li
+                    span.h6.text-bold.text-darkest 20
+                    span.h6.text-dark users
+                  li
+                    span.h6.text-bold.text-darkest 10GB
+                    span.h6.text-dark Bandwidth
+                  li
+                    span.text-middle.icon.icon-xxs.mdi.mdi-close.text-danger
+                  li
+                    span.h6.text-bold.text-darkest 1
+                    span.h6.text-dark Database
+
+            .cell-md-4.cell-lg-3.offset-top-50.offset-lg-top-0
+              +box-planning-3("Business", "59", "month", "TRY IT NOW", "active")
+                ul.list-separated.list-unstyled
+                  li
+                    span.h6.text-bold.text-darkest 10GB
+                    span.h6.text-dark Space amount
+                  li
+                    span.h6.text-bold.text-darkest Unlimited
+                    span.h6.text-dark users
+                  li
+                    span.h6.text-bold.text-darkest 30GB
+                    span.h6.text-dark Bandwidth
+                  li
+                    span.text-middle.icon.icon-xxs.mdi.mdi-check.text-success
+                  li
+                    span.h6.text-bold.text-darkest 20
+                    span.h6.text-dark Databases
+
+            .cell-md-4.cell-lg-3.offset-top-50.offset-lg-top-0
+              +box-planning-3("Ultimate", "99", "month", "TRY IT NOW")
+                ul.list-separated.list-unstyled
+                  li
+                    span.h6.text-bold.text-darkest 100GB
+                    span.h6.text-dark Space amount
+                  li
+                    span.h6.text-bold.text-darkest Unlimited
+                    span.h6.text-dark users
+                  li
+                    span.h6.text-bold.text-darkest 60GB
+                    span.h6.text-dark Bandwidth
+                  li
+                    span.text-middle.icon.icon-xxs.mdi.mdi-check.text-success
+                  li
+                    span.h6.text-bold.text-darkest Unlimited
+                    span.h6.text-dark Databases
+    #contacts(data-type="anchor")
+      section.context-dark.bg-gray-base
+        .rd-parallax(data-on="false" data-md-on="true")
+          .rd-parallax-layer(data-speed="0.35", data-type="media", data-url="images/bg-03-1920x546.jpg")
+          .rd-parallax-layer(data-speed="0", data-type='html')
+            .shell.section-90.section-md-110
+              .range.range-xs-center
+                .cell-sm-8.cell-md-6
+                  h2 Subscribe to Our Newsletter
+                  p Keep up with our always upcoming  product features and technologies. Enter your e-mail and subscribe to our newsletter.
+                  .offset-top-40
+                    // RD Mailform
+                    form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                      .range.range-narrow
+                        .cell-xs-7.cell-sm-8
+                          .form-group
+                            label.form-label(for="contact-email") Enter Your Email Here
+                            input#contact-email.form-control(type="email" name="email" data-constraints="@Required @Email")
+                        .cell-xs-5.cell-sm-4.offset-top-15.offset-xs-top-0
+                          button(type="submit").btn.btn-primary Subscribe now
+  // Default footer
+  footer.section-relative.section-50.section-sm-top-90.section-sm-bottom-34.page-footer.bg-gray-base.context-dark
+    .shell
+      .range.range-sm-center.text-lg-left
+        .cell-sm-8.cell-md-12
+          .range.range-xs-center.range-lg-justify
+            .cell-xs-12.cell-md-4.cell-lg-4.text-md-left.cell-md-push-3
+              h6.text-uppercase.text-spacing-60.text-bold Newsletter
+              p(style="font-size: 15px") Keep up with our always upcoming  product features  and technologies. Enter your e-mail and subscribe to  our newsletter.
+              .offset-top-30
+                +widget-form-subscribe("Enter your E-Mail", "form-subscribe-footer")
+
+            .cell-xs-7.text-xs-left.cell-md-4.cell-lg-4.cell-md-push-2.offset-md-top-0.offset-top-40
+              h6.text-uppercase.text-spacing-60.text-bold Latest news
+              +widget-post("#", "05/14/2015", "Let’s Change the World", null, "text-primary")
+              +widget-post("#", "05/14/2015", "The Meaning of Web Design", null, "text-primary")
+
+            .cell-xs-12.offset-top-60.cell-md-4.cell-lg-3.cell-md-push-1.offset-md-top-0
+              // Footer brand
+              .footer-brand
+                a(href="../../index.html")
+                  img.img-responsive.reveal-inline-block(src="images/logo-dark-197x52.png", width="197", height="52", alt="" style="margin-top: -10px")
+              .offset-top-30
+                +widget-list-social([
+                  {
+                    "icon": "fa fa-facebook",
+                    "href": "#"
+                  },
+                  {
+                    "icon": "fa fa-twitter",
+                    "href": "#"
+                  },
+                  {
+                    "icon": "fa fa-google-plus",
+                    "href": "#"
+                  },
+                  {
+                    "icon": "fa fa-linkedin",
+                    "href": "#"
+                  }
+                ])
+    .shell.offset-top-35
+      p.small.text-darker
+        | Intense &copy; #[span(id="copyright-year")] . #[a(href="#") Privacy Policy]
+        // {%FOOTER_LINK}
+    

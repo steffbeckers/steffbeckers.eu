@@ -1,0 +1,116 @@
+//
+// Date picker
+// --------------------------------------------------
+.date-picker {
+
+
+}
+
+.date-picker-date {
+  display: block;
+  padding: 15px 10px;
+  font-family: $font-family-sec;
+
+  text-align: center;
+
+  &,
+  &:active,
+  &:focus,
+  &:hover {
+    color: $gray-base;
+    background: $white;
+  }
+
+  &-number {
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: .05em;
+  }
+
+  &-text {
+    font-size: 12px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+  }
+
+  &.disabled {
+    color: $gray-light;
+    background: $conch;
+  }
+}
+
+.rd-material-tab-active {
+  .date-picker-date {
+    color: $white;
+    background: $brand-primary;
+  }
+
+  .date-picker-list > li:nth-child(n) {
+    opacity: 1;
+    visibility: visible;
+    @include transform(translateY(0));
+  }
+}
+
+.date-picker-list {
+  @include spacing(2px, 8px);
+  text-align: center;
+  padding-bottom: 10px;
+
+  > li {
+    display: inline-block;
+    transition: .6s all ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+
+    @for $i from 0 through 20 {
+      &:nth-child(#{$i}) {
+        transition-delay: .05s * $i;
+        @include transform(translateY(5px + 3px * $i));
+      }
+    }
+  }
+
+  li a {
+    display: block;
+    padding: 9px 20px 8px;
+    font: 400 12px/18px $font-family-sec;
+    color: $gray-base;
+    background: $white;
+    cursor: pointer;
+
+    &:hover {
+      color: $white;
+      background: $brand-primary;
+    }
+  }
+
+  li.disabled a {
+    color: $gray-light;
+    background: $conch;
+    pointer-events: none;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .date-picker-date {
+    padding: 30px;
+    &-number {
+      font-size: 48px;
+    }
+
+    &-text {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: $screen-md-max) {
+    .date-picker-list {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+// Time

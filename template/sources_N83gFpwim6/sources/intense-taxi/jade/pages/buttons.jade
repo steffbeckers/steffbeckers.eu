@@ -1,0 +1,127 @@
+extends  ../_skeleton
+
+block title
+  title=cfg.nav.pages.submenu.buttons.title
+
+block page
+  // Page Header
+  header.page-header.slider-menu-position
+    +rd-navbar-default({
+      "style": "",
+      "logo": cfg.brand.logo,
+      "logoFixed": cfg.brand.logoSmall,
+      "activeLink": 8,
+      "attr": {
+        "data-layout": "rd-navbar-fixed",
+        "data-sm-layout": "rd-navbar-fixed",
+        "data-md-layout": "rd-navbar-fullwidth",
+        "data-lg-layout": "rd-navbar-static"
+      }
+    })
+
+    +breadcrumb(cfg.nav.pages.submenu.buttons.title, {
+      0: {
+        "type": "link",
+        "title": cfg.nav.home.title,
+        "href": cfg.nav.home.href
+      },
+      1: {
+        "type": "link",
+        "title": cfg.nav.pages.title,
+        "href": cfg.nav.pages.href
+      },
+      2: {
+        "type": "link",
+        "title": cfg.nav.pages.submenu.buttons.title,
+        "href": cfg.nav.pages.submenu.buttons.href
+      }
+    }, "images/backgrounds/background-02-1920x900.jpg")
+
+  // Page Content
+  main.page-content.section-75.section-md-top-90.section-md-bottom-110
+
+    // Buttons
+    section
+      .shell
+        .range.range-xs-center
+          .cell-xs-10.cell-lg-8
+            h1 Buttons
+
+            .offset-top-20.offset-md-top-44
+              p Easily insert buttons and call-to-actions in any page, #[br.veil.reveal-md-inline-block] use amazing custom options to spice up your pages.
+
+            // button sizes
+            .offset-top-53
+              h5 button sizes
+
+            .offset-top-23
+              p 4 different sizes: super, large,  default & small
+
+            .offset-top-20.offset-md-top-30
+              .group.group-xs
+                button.btn.btn-xl.btn-primary super size
+                button.btn.btn-lg.btn-primary large size
+                button.btn.btn-primary default size
+                button.btn.btn-xs.btn-primary small size
+
+            .offset-top-25
+              !{cfg.brand.svgDivider}
+
+            // button shapes
+            .offset-top-25
+              h5 button shapes
+
+            .offset-top-23
+              p 4 different shapes: defailt, round, square & circle
+
+            .offset-top-17
+              .group.group-xs
+                button.btn.btn-primary default
+                button.btn.btn-ellipse.btn-primary round
+                button.btn.btn-rect.btn-primary square
+                button.btn.btn-circle.btn-primary circle
+
+            .offset-top-5
+              !{cfg.brand.svgDivider}
+
+            // button with icons
+            .offset-top-25
+              h5 buttons with icons
+
+            .offset-top-23
+              p Buttons are fully intergrated with 900+ icons
+
+            .offset-top-30
+              .group.group-xs
+                button.btn.btn-primary.btn-icon.btn-icon-right
+                  span.icon.icon-xs.material-icons-ico.material-icons-person_outline
+                  | icon right
+                button.btn.btn-primary.btn-icon.btn-icon-left
+                  span.icon.icon-xs.material-icons-ico.material-icons-info_outline
+                  | icon left
+
+                button.btn.btn-primary-dr.btn-icon.btn-icon-left
+                  span.icon.icon-xs.material-icons-ico.material-icons-info_outline
+                  | icon left
+                button.btn.btn-primary-dr.btn-icon.btn-icon-right
+                  span.icon.icon-xs.material-icons-ico.material-icons-person_outline
+                  | icon right
+
+            .offset-top-25
+              !{cfg.brand.svgDivider}
+
+            // button with shadow
+            .offset-top-25
+              h5 buttons with shadow
+
+            .offset-top-23
+              p Enhance your buttons with a shadow effect
+
+            .offset-top-30
+              .group.group-xs
+                button.btn.btn-primary.shadow-drop-md shadow
+                button.btn.btn-white.shadow-drop-md shadow
+
+
+  // Page Footer
+  include ../sections/_footer-default

@@ -1,0 +1,192 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-page-title
+include ../elements/_ui-quote-primary
+include ../elements/_ui-box-icon
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Typography'
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  //- Page Content
+  +page-title(pageName)
+
+  //- Base typography
+  section.section-lg.bg-periglacial-blue
+    .shell
+      .range.range-50
+        .cell-md-8
+          ul.list.list-xl
+            li
+              h1 H1 Heading
+              p.large Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. You will definitely have a great experience of using our web page.
+            li
+              h2 H2 Heading
+              p.big Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. You will definitely have a great experience of using our web page.
+
+            li
+              h3 H3 Heading
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            li
+              h4 H4 Heading
+              p.small Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+        .cell-md-4
+          h1 H1 Heading
+          h2 H2 Heading
+          h3 H3 Heading
+          h4 H4 Heading
+          h5 H5 Heading
+          h6 H6 Heading
+  ='\n'
+
+  //- Blockquote
+  section.section-lg.bg-periglacial-blue
+    .shell
+      .range.range-50
+        .cell-md-8
+          h3 Blockquote
+          +quote-primary({
+            text: 'Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.',
+            cite: 'Dennis Williams'
+          })
+  ='\n'
+
+  //- HTML Text Elements
+  section.section-lg.bg-periglacial-blue
+    .shell
+      .range
+        .cell-md-8
+          h3 HTML Text Elements
+          .text-block
+            span Welcome to our wonderful world.
+            span.text-bold This is a bold text
+            mark This is a highlighted text
+            span We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login
+            span.tooltip-shadow(data-toggle='tooltip', data-placement="top", title="Tooltip") Tooltips
+            span widgets, you will definitely have a great experience of using our web page.
+            span.text-strike This is a strikethrough text
+            span.text-underline This is an underlined text.
+            a.link.link-default Link
+            a.link.link-default.hover Hover link
+            a.link.link-default.active Press link
+  ='\n'
+
+  //- Unordered List
+  section.section-lg.bg-periglacial-blue
+    .shell
+      .range.range-50
+        .cell-md-8
+          h3 Unordered List
+          p We specialize in a variety of services. Our aim is to deliver the top level of customer service based on your requests.
+          ul.marked-list.inset-left-25
+            li Consulting
+            li Customer Service
+            li Innovation
+            li Management
+            li Ethics
+          p We hope that with our services you will receive the most personalized help in purchasing any kind of products you are looking for.
+  ='\n'
+
+  //- Ordered List
+  section.section-md.bg-periglacial-blue
+    .shell
+      .range.range-50
+        .cell-md-8
+          h3 Ordered List
+          p We specialize in a variety of services. Our aim is to deliver the top level of customer service based on your requests.
+          ul.ordered-list.inset-left-25
+            li Consulting
+            li Customer Service
+            li Innovation
+            li Management
+            li Ethics
+          p We hope that with our services you will receive the most personalized help in purchasing any kind of products you are looking for.
+  ='\n'
+
+  //- Icon List
+  section.section-md.bg-periglacial-blue
+    .shell
+      .range.range-50
+        .cell-md-8
+          h3 Icon List
+          .range.range-30
+            .cell-xs-6.cell-sm-4
+              +box-icon({
+                img: 'icon-service-1-70x62',
+                header: 'TRADITIONAL HAIRCUTS',
+                text: 'One of the most popular services our barbers provide'
+              })
+
+            .cell-xs-6.cell-sm-4
+              +box-icon({
+                img: 'icon-service-2-70x62',
+                header: 'SHAVES',
+                text: 'Our shaving services will make you look really handsome'
+              })
+
+            .cell-xs-6.cell-sm-4
+              +box-icon({
+                img: 'icon-service-3-70x62',
+                header: 'BEARD trim',
+                text: 'Well-trimmed beard is a must-have element of every men’s image'
+              })
+  ='\n'
+
+  //- Image Centered
+  section.section-lg.bg-periglacial-blue
+    .shell
+      .range.range-50
+        .cell-md-8
+          h3 Image Centered
+          figure.figure-default.figure-lighter
+            +jpg('typography-1-770x485')
+            figcaption
+              p One of our clients
+          p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+  ='\n'
+
+  //- Image Left
+  section.section-lg.bg-periglacial-blue
+    .shell
+      .range
+        .cell-md-8
+          h3 Image Left
+
+          .range.range-30
+            .cell-sm-6
+              +jpg('typography-2-350x220', 'img-responsive')
+            .cell-sm-6
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+  ='\n'
+
+  //- Image Right
+  section.section-lg.bg-periglacial-blue
+    .shell
+      .range
+        .cell-md-8
+          h3 Image Right
+
+          .range.range-30.range-sm-reverse
+            .cell-sm-6
+              +jpg('typography-2-350x220', 'img-responsive')
+            .cell-sm-6
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_footer-default
+

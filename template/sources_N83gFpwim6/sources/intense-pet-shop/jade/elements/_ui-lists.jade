@@ -1,0 +1,24 @@
+//- list - object of List
+//- listItems - array of List
+
+mixin list(list, listItems)
+  // List
+  ul(class= list.style)
+    each item, index in listItems
+      case list.type
+        when "list-marker"
+          if listItems[(index) - 1]
+            li.offset-top-10
+              a(href="#" class= item.style)= item.text
+          else
+            li
+              a(href="#" class= item.style)= item.text
+        when "list-index"
+          if listItems[(index) - 1]
+            li.offset-top-10
+              span.list-index-counter(class= item.countStyle)
+              a(href="#" class= item.style)= item.text
+          else
+            li
+              span.list-index-counter(class= item.countStyle)
+              a(href="#" class= item.style)= item.text

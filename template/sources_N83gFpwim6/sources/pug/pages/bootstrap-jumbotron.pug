@@ -1,0 +1,54 @@
+extends  ../_skeleton
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-jumbotron-bootstrap
+//-Title
+block title
+  title= cfg.nav.components.submenu.bootstrapcomponents.submenu.jumbotron.title
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.bootstrapcomponents.submenu.jumbotron.title,
+  "icon-lg " + cfg.nav.components.submenu.bootstrapcomponents.submenu.jumbotron.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.bootstrapcomponents.submenu.jumbotron.title,
+      "href": cfg.nav.components.submenu.bootstrapcomponents.submenu.jumbotron.href
+    }
+  })
+  // Page Content
+  main.page-content.section-98.section-sm-124
+      .shell
+        h1 Jumbotron
+        p A lightweight, flexible component that can optionally extend the entire viewport to showcase key content on your site.
+        hr.divider.bg-mantis
+        .offset-top-66
+          .range.range-xs-center
+            .cell-xs-10
+              +jumbotron-bootstrap("Hello, world!", "btn-primary", "#", "", "", "Learn more" ,"This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.")
+
+  // Page Footer
+  include ../sections/_section-footer-default

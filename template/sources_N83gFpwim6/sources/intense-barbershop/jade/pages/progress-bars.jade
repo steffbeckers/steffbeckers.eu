@@ -1,0 +1,106 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-page-title
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Progress bars'
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+  //- Page Content
+  +page-title('Progress Bars')
+
+  //- Progress bars
+  section.section-lg.bg-periglacial-blue
+    .shell
+      .range.range-md-reverse.range-lg-justify.range-50
+        .cell-sm-9.cell-md-6.cell-lg-5
+          h3 Great User Experience
+          p.
+            Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers.
+        .cell-md-6
+          ul.list-bars.list-bars-justify-offset
+            li.list-bars-item
+              //- Progress Bar
+              p.list-bars-item-header Hair Cut
+              .progress-bar-js.progress-bar-horizontal.progress-bar-primary(data-value='60', data-stroke='10', data-counter='true' data-duration='1000', data-trail='100')
+
+            li.list-bars-item
+              //- Progress Bar
+              p.list-bars-item-header Hot towel shaving
+              .progress-bar-js.progress-bar-horizontal.progress-bar-primary(data-value='50', data-stroke='10', data-counter='true' data-duration='1000', data-trail='100')
+
+            li.list-bars-item
+              //- Progress Bar
+              p.list-bars-item-header clipper cut
+              .progress-bar-js.progress-bar-horizontal.progress-bar-primary(data-value='60', data-stroke='10', data-counter='true' data-duration='1000', data-trail='100')
+  ='\n'
+
+  //- Counters
+  section.bg-primary
+    .shell
+      .range.range-condensed.range-custom-bordered
+        .cell-xs-6.cell-sm-3
+          .counter-box
+            .counter(data-from='0', data-to='13') 13
+            .counter-box-header YEARS OF EXPERIENCE
+
+        .cell-xs-6.cell-sm-3
+          .counter-box
+            .counter(data-from='0', data-to='7') 7
+            .counter-box-header international partners
+
+        .cell-xs-6.cell-sm-3
+          .counter-box
+            .counter(data-from='0', data-to='26') 26
+            .counter-box-header QUALIFIED SPECIALISTS
+
+        .cell-xs-6.cell-sm-3
+          .counter-box
+            .counter(data-from='0', data-to='12') 12
+            .counter-box-header additional services
+  ='\n'
+
+  //- Counters circle
+  section.section-lg.bg-periglacial-blue
+    .shell
+      .range.range-50
+        .cell-xs-6.cell-sm-3
+          .progress-bar-radial-default
+            .progress-bar-radial-default-wrap
+              .progress-bar-js.progress-bar-radial.progress-bar-primary-v2(data-value='73', data-stroke='5' data-trail='3' data-gradient='#000000')
+            p.progress-bar-radial-default-header Leadership
+
+        .cell-xs-6.cell-sm-3
+          .progress-bar-radial-default
+            .progress-bar-radial-default-wrap
+              .progress-bar-js.progress-bar-radial.progress-bar-primary-v2(data-value='11', data-stroke='5' data-trail='3' data-gradient='#000000')
+            p.progress-bar-radial-default-header Management
+
+        .cell-xs-6.cell-sm-3
+          .progress-bar-radial-default
+            .progress-bar-radial-default-wrap
+              .progress-bar-js.progress-bar-radial.progress-bar-primary-v2(data-value='13', data-stroke='5' data-trail='3' data-gradient='#000000')
+            p.progress-bar-radial-default-header Innovation and creativity
+
+        .cell-xs-6.cell-sm-3
+          .progress-bar-radial-default
+            .progress-bar-radial-default-wrap
+              .progress-bar-js.progress-bar-radial.progress-bar-primary-v2(data-value='59', data-stroke='5' data-trail='3' data-gradient='#000000')
+            p.progress-bar-radial-default-header Resilience
+  ='\n'
+
+
+  //- Page Footer
+  include ../sections/_footer-default
+

@@ -1,0 +1,148 @@
+//
+// Pagination
+// --------------------------------------------------
+$pagination-size: 52px;
+$pagination-offset: 20px;
+
+.pagination-custom {
+  position: relative;
+  display: inline-block;
+  @include spacing(15px);
+  line-height: 0;
+  font-size: 0;
+
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    font: 400 14px/24px $font-family-sec;
+
+    &,
+    &:active,
+    &:focus {
+      color: $pagination-color;
+      background: $pagination-bg;
+      border-color: $pagination-border;
+    }
+
+    &:hover {
+      color: $pagination-hover-color;
+      background: $pagination-hover-bg;
+      border-color: $pagination-hover-border;
+    }
+
+    &.ellipsis {
+      pointer-events: none;
+    }
+  }
+
+  li a {
+    display: block;
+  }
+
+  li:first-child a,
+  li:last-child a {
+    position: relative;
+    width: 39px;
+    height: 12px;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url(../images/arrows.png);
+      transition: opacity .3s ease;
+    }
+
+    &:before {
+      opacity: 1;
+    }
+
+    &:after {
+      opacity: 0;
+    }
+
+    &:hover {
+      &:before {
+        opacity: 0;
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  li:first-child {
+    margin-right: 12px;
+    a {
+      &:before {
+        background-position: -39px -0px;
+      }
+
+      &:after {
+        background-position: -0px -0px;
+      }
+    }
+  }
+
+  li:last-child {
+    margin-left: 12px;
+    a {
+      &:before {
+        background-position: -39px -12px;
+      }
+
+      &:after {
+        background-position: -0px -12px;
+      }
+    }
+  }
+
+  li.disabled,
+  li.active {
+    pointer-events: none;
+  }
+
+  li.active a {
+    color: $pagination-active-color;
+    background: $pagination-active-bg;
+    border-color: $pagination-active-border;
+  }
+
+  li.disabled a {
+    opacity: .5;
+  }
+}
+
+* + .pagination-custom {
+  margin-top: 30px;
+}
+
+@media (min-width: $screen-xs-min) {
+  .pagination-custom {
+    li:first-child {
+      margin-right: 40px;
+    }
+
+    li:last-child {
+      margin-left: 40px;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  * + .pagination-custom {
+    margin-top: 55px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  * + .pagination-custom {
+    margin-top: 75px;
+  }
+}

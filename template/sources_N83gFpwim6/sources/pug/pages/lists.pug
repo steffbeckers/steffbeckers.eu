@@ -1,0 +1,172 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-breadcrumb-classic
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.lists.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.lists.title,
+  "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.lists.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.lists.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.lists.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-md-110
+
+    // Section Default Lists
+    section
+      .container
+        div
+          h1 Default Lists
+          hr.divider.divider.bg-mantis
+        .row.text-left.offset-top-30.offset-md-top-20
+          .col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0
+            //Default List
+            ul.list.list-unstyled
+              li Fully Responsive Design
+              li Social Integration
+              li 250+ Predesigned Pages
+              li Regular Content Updates
+              li Lots of Child Themes
+          .col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0.offset-top-30.offset-md-top-0
+            //Number List
+            ol.list.list-numbered
+              li Fully Responsive Design
+              li Social Integration
+              li 250+ Predesigned Pages
+              li Regular Content Updates
+              li Lots of Child Themes
+          .col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0.offset-top-30.offset-md-top-0
+            //Marked List
+            ul.list.list-marked
+              li Fully Responsive Design
+              li Social Integration
+              li 250+ Predesigned Pages
+              li Regular Content Updates
+              li Lots of Child Themes
+
+    // Section Index List
+    section.offset-top-98.offset-md-top-110
+      .container
+        h1 Index List
+        hr.divider.bg-mantis
+        ul.list-unstyled.list-index.row.text-md-left.offset-top-50
+          li.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0
+            // Index List
+            .unit.unit-spacing-xs.text-left
+              .unit-left.media-left-middle
+                span.list-index-counter.icon.icon-xs.text-picton-blue
+              .unit-body
+                h2 Responsive Design
+                p Intense looks perfect on any modern device, be it a laptop, a smartphone, or a tablet.
+          li.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0.offset-top-30.offset-md-top-0
+            .unit.unit-spacing-xs.text-left
+              .unit-left.media-left-middle
+                span.list-index-counter.icon.icon-xs.text-picton-blue
+              .unit-body
+                h2 Social Integration
+                p Intense is integrated with such popular social networks as Facebook, Twitter, Instagram and Flickr.
+          li.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0.offset-top-30.offset-md-top-0
+            .unit.unit-spacing-xs.text-left
+              .unit-left.media-left-middle
+                span.list-index-counter.icon.icon-xs.text-picton-blue
+              .unit-body
+                h2 250+ Pages
+                p Intense is a paradise for developers. Its initial release version comes shipped with 250+ responsive pages for any taste.
+
+    // Section Index List (Ellipsed)
+    section.offset-top-98.offset-md-top-110
+      .container
+        div
+          h1 Index List (Ellipsed)
+          hr.divider.bg-mantis
+        p.offset-top-20
+          | Each index of Index List is able to be styled as an Icon. Use any of Icon classes to create your own unique index <br class="veil reveal-lg-inline"> list styles.
+        ul.list-unstyled.list-index.row.text-left.offset-top-66
+          li.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0
+            // Index List (Ellipsed)
+            .unit.unit-sm.unit-sm-horizontal.text-center.text-sm-left
+              .unit-left
+                span.list-index-counter.icon.icon-circle.icon-darker-filled
+              .unit-body
+                h3.offset-sm-top-20 Regular Updates
+                p New child themes, skins and predesigned pages are being released 2-3 times per month. Intense owners get them for free.
+          li.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0.offset-top-66.offset-md-top-0
+            .unit.unit-sm.unit-sm-horizontal.text-center.text-sm-left
+              .unit-left
+                span.list-index-counter.icon.icon-circle.icon-darker-filled
+              .unit-body
+                h3.offset-sm-top-20 Child Themes
+                p A variety of niche-specific designs, which expand the possibilities of this template.
+
+          li.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0.offset-top-66.offset-md-top-0
+            .unit.unit-sm.unit-sm-horizontal.text-center.text-sm-left
+              .unit-left
+                span.list-index-counter.icon.icon-circle.icon-darker-filled
+              .unit-body
+                h3.offset-sm-top-20 Advanced UI Kit
+                p An impressive UI kit comprising 200+ layered PSD source files will be a useful addition to every designer’s toolbox.
+
+    // Section Index List (Outlined)
+    section.offset-top-98.offset-md-top-110
+      .container
+        div
+          h1 Index List (Outlined)
+          hr.divider.bg-mantis
+        p.offset-top-20
+          | Each index of Index List is able to be styled as an Icon. Use any of Icon classes to create your own unique index <br class="veil reveal-lg-inline">list styles.
+        ul.list-index.list-unstyled.row.offset-top-50.offset-md-top-66
+          li.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0
+            // Index List (Outlined)
+            span.list-index-counter.icon.icon-lg.icon-outlined.icon-darker-filled
+            h3.offset-top-10.offset-md-top-30 Regular Updates
+            p.text-md-left
+              | New child themes, skins and predesigned pages are being released 2-3 times per month. Intense owners get them for free.
+          li.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0.offset-top-50.offset-md-top-0
+            span.list-index-counter.icon.icon-lg.icon-outlined.icon-darker-filled
+            h3.offset-top-10.offset-md-top-30 Child Themes
+            p.text-md-left
+              | A variety of niche-specific designs, which expand the possibilities of this template.
+          li.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0.offset-top-50.offset-md-top-0
+            span.list-index-counter.icon.icon-lg.icon-outlined.icon-darker-filled
+            h3.offset-top-10.offset-md-top-30 Advanced UI Kit
+            p.text-md-left
+              | An impressive UI kit comprising 200+ layered PSD source files will be a useful addition to every designer’s toolbox.
+
+  // Page Footer
+  include ../sections/_section-footer-default
+
+

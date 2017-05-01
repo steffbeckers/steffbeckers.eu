@@ -1,0 +1,55 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-navbar-logo-center
+include  ../elements/_ui-breadcrumb-modern
+
+//-Title
+block title
+  title= cfg.nav.shop.submenu.checkout.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-logo-center(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.shop.submenu.checkout,
+    cfg.nav
+    )
+
+  +breadcrumb-modern("Checkout", {
+    0: {
+      "type": "link",
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "type": "link",
+      "title": cfg.nav.shop.title,
+      "href": cfg.nav.shop.href
+    },
+    2: {
+      "type": "link",
+      "title": cfg.nav.shop.submenu.checkout.title,
+      "href": cfg.nav.shop.submenu.checkout.href
+    }
+  }, "images/background-1-1920x651.jpg")
+
+
+  // Page Content
+  main.page-content
+    include ../sections/_section-shop-checkout-variant-2
+
+
+
+  // Page Footers
+  include ../sections/_section-footer-variant-4

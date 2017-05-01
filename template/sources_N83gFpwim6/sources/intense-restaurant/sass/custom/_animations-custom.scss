@@ -1,0 +1,121 @@
+//
+// Animation
+// --------------------------------------------------
+
+// Animation for btn-anis-effect
+//
+
+@include keyframes(criss-cross-left){
+  0% {
+    left: -20px;
+  }
+  50% {
+    left: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    left: 50%;
+    width: 375px;
+    height: 375px;
+  }
+}
+
+@include keyframes(criss-cross-right){
+  0% {
+    right: -20px;
+  }
+  50% {
+    right: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    right: 50%;
+    width: 375px;
+    height: 375px;
+  }
+}
+
+
+// Animation for btn-naira-effect
+//
+
+@include keyframes(anim-naira-1){
+  50% {
+    @include transform(translateY(-50%) rotate3d(0, 0, 1, -10deg));
+    animation-timing-function: ease-out;
+  }
+  100% {
+    @include transform(translateY(0%) rotate3d(0, 0, 1, 0deg));
+  }
+}
+
+@include keyframes(anim-naira-2){
+  50% {
+    @include transform(translateY(50%) rotate3d(0, 0, 1, 10deg));
+    animation-timing-function: ease-out;
+  }
+  100% {
+    @include transform(translateY(0%) rotate3d(0, 0, 1, 0deg));
+  }
+}
+
+// Custom FadeInUp Keyframes Animation
+//
+
+@include keyframes(fadeInUpSm){
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 50%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUpSm{
+  -webkit-animation-name: fadeInUpSm;
+  animation-name: fadeInUpSm;
+  animation-duration: .4s;
+}
+
+
+// Custom FadeOutDown Keyframes Animation
+//
+
+@include keyframes(fadeOutDownSm){
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+.fadeOutDownSm{
+  -webkit-animation-name: fadeOutDownSm;
+  animation-name: fadeOutDownSm;
+  animation-duration: .4s;
+}
+
+
+// Bg gradient animation
+//
+
+@include keyframes(fadeBoth){
+  0%,
+  100%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+}

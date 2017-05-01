@@ -1,0 +1,64 @@
+//- Includes
+include ../elements/_ui-rd-parallax
+
+// See it in action
+section#mailform-widget
+  +rd-parallax({
+    "backgroundSpeed": "0.35",
+    "attrType": "media",
+    "src": "images/backgrounds/background-05-1920x960.jpg",
+    "htmlSpeed": "0"
+  })
+    .bg-overlay-white
+      .shell.section-98.section-sm-110
+        h1 See It In Action
+        hr.divider.bg-mantis
+        .range.range-xs-center
+          .cell-sm-8.cell-md-12
+            .range.range-xs-center
+              .cell-md-8
+                // RD Mailform
+                form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                  .range
+                    .cell-md-6
+                      .form-group
+                        label.form-label.form-label-outside(for="rd-mailform-first-name") First name:
+                        input#rd-mailform-first-name.form-control(type="text" name="name" data-constraints="@Required")
+                    .cell-md-6
+                      .form-group
+                        label.form-label.form-label-outside(for="rd-mailform-last-name") Last name:
+                        input#rd-mailform-last-name.form-control(type="text" name="name" data-constraints="@Required")
+                    .cell-md-6.offset-md-top-20
+                      .form-group
+                        label.form-label.form-label-outside(for="rd-mailform-email") E-mail:
+                        input#rd-mailform-email.form-control(type="email" name="email" data-constraints="@Required @Email")
+
+                    .cell-md-6.offset-md-top-20
+                      .range
+                        .cell-sm-6
+                          .form-group
+                            label.form-label.form-label-outside(for="rd-mailform-phone") Phone:
+                            input#rd-mailform-phone.form-control(type="text" name="phone" data-constraints="@Required")
+                        .cell-sm-6
+                          .form-group
+                            label.form-label.form-label-outside(for="rd-mailform-select") Gender:
+                            select#rd-mailform-select.form-control(data-placeholder="Select an option", data-minimum-results-for-search="Infinity")
+                              option Male
+                              option Female
+
+                    .cell-md-6.offset-md-top-20
+                      .form-group
+                        label.form-label.form-label-outside(for="rd-mailform-date") Date:
+                        input#rd-mailform-date.form-control(type="text" name="date" data-constraints="@Required" data-time-picker="date")
+                    .cell-md-6.offset-md-top-20
+                      .form-group
+                        label.form-label.form-label-outside(for="rd-mailform-time") Time:
+                        input#rd-mailform-time.form-control(type="text" name="time" data-constraints="@Required" data-time-picker="time")
+
+                    .cell-lg-12.offset-top-30.offset-md-top-20
+                      .form-group
+                        label.form-label.form-label-outside(for="rd-mailform-message") Message:
+                        textarea#rd-mailform-message.form-control(name="message" data-constraints="@Required" style="height: 150px")
+                      .range.range-xs-center.range-lg-left.text-center.text-lg-left.offset-top-30
+                        .cell-xs-5.cell-md-4.cell-lg-3
+                          button(type="submit").btn.btn-block.btn-primary Send

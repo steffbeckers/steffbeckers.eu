@@ -1,0 +1,38 @@
+//
+// Navs Custom
+// --------------------------------------------------
+
+.nav-tabs {
+  > li, > li:last-child{
+    margin-bottom: -1px;
+  }
+}
+
+.nav-stacked {
+  > li + li {
+    margin-top: 4px;
+  }
+}
+
+// Stacked pills
+// --------------------------------------------------
+
+
+@media (min-width: $screen-md-min) {
+  .nav-stacked-container {
+    .tab-content,
+    .nav-stacked {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .nav-stacked {
+      width: 25%;
+    }
+
+    .tab-content {
+      width: 73%;
+      padding-left: 2%;
+    }
+  }
+}

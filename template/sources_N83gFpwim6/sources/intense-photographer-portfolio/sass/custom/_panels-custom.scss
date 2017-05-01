@@ -1,0 +1,75 @@
+//
+// Panels custom
+// --------------------------------------------------
+
+// Collapsable panels (aka, accordion)
+//
+// Wrap a series of panels in `.panel-group` to turn them into an accordion with
+// the help of our collapse JavaScript plugin.
+
+.panel-title,
+.panel-heading,
+.panel-footer{
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.panel-group {
+  .panel-title {
+    padding-right: 25px;
+  }
+
+  &.accordion {
+    .panel-heading {
+      position: relative;
+      padding: 0;
+
+      a {
+        display: inline-block;
+        width: 100%;
+        padding: 13px 22px;
+        transition: .2s;
+
+        &:after {
+          position: absolute;
+          top: 10px;
+          bottom: 0;
+          right: 20px;
+          width: 20px;
+          font-family: "Material Design Icons";
+          font-size: 21px;
+          font-weight: 400;
+          color: $gray-dark;
+          content: '\f465';
+        }
+
+        &.collapsed {
+          &:after {
+            content: '\f504';
+          }
+        }
+      }
+    }
+
+    .panel-body {
+      padding: 8px 25px 15px 20px;
+      font-size: 16px;
+      line-height: (25/16);
+    }
+
+    .panel + .panel {
+      margin-top: 10px;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    &.accordion .panel-heading {
+      font-size: 16px;
+
+      a:after {
+        right: 15px;
+      }
+    }
+  }
+}

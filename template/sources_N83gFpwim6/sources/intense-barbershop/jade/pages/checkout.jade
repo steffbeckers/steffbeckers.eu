@@ -1,0 +1,214 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-section-header
+include ../elements/_ui-quote-review
+include ../elements/_ui-product
+
+block variables
+  - var activeIndex = 4
+  - var menuIncludeButton = true
+  - var pageName = 'Checkout'
+
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  section.section-xl.bg-periglacial-blue
+    .shell
+      a.link.link-primary.link-return(href='cart.html') Back
+
+      ul.link-list
+        li
+          span Returning customer?
+          a(href='#') Click here to login
+
+        li
+          span Have a coupon?
+          a(href='#') Click here to enter your code
+
+
+  section.section-xl.bg-periglacial-blue
+    .shell
+      .range.range-sm-center.range-50
+        .cell-md-10.cell-lg-6
+          h3.text-center Billing Details
+          //- RD Mailform
+          form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+            .range.range-sm-bottom.range-15
+              .cell-sm-6
+                .form-group
+                  label.form-label-outside(for="billing-first-name") First Name *
+                  input#billing-first-name.form-control(type="text" name="first-name" data-constraints='@Required')
+
+              .cell-sm-6
+                .form-group
+                  label.form-label-outside(for="billing-last-name") Last Name *
+                  input#billing-last-name.form-control(type="text" name="last-name" data-constraints='@Required')
+
+              .cell-xs-12
+                .form-group
+                  label.form-label-outside(for="billing-company-name") Company Name
+                  input#billing-company-name.form-control(type="text" name="company-name")
+
+              .cell-sm-6
+                .form-group
+                  label.form-label-outside(for="billing-email") Email Address *
+                  input#billing-email.form-control(type="email" name="email" data-constraints="@Email @Required")
+
+              .cell-sm-6
+                .form-group
+                  label.form-label-outside(for="billing-phone") Phone *
+                  input#billing-phone.form-control(type="email" name="phone" data-constraints="@Required @Numeric")
+
+              .cell-xs-12
+                .form-group
+                  label.form-label-outside(for="billing-address") Address *
+                  input#billing-address.form-control(type="text" name="address" data-constraints='@Required')
+
+              .cell-xs-12
+                .form-group
+                  label.form-label-outside(for="billing-apartment") Apartment, suite, unit etc. (optional)
+                  input#billing-apartment.form-control(type="text" name="apartment")
+
+              .cell-sm-6
+                .form-group
+                  label.form-label-outside(for="billing-country") Country
+                  input#billing-country.form-control(type="text" name="country")
+
+              .cell-sm-6
+                .form-group
+                  label.form-label-outside(for="billing-town") Postcode *
+                  input#billing-town.form-control(type="text" name="postcode" data-constraints='@Required')
+
+          label.checkbox-inline.checkbox-primary
+            input.checkbox-custom(type='checkbox')
+            | Create an account?
+
+
+        .cell-md-10.cell-lg-6
+          h3.text-center Ship to a different address?
+          //- RD Mailform
+          form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+            .range.range-sm-bottom.range-15
+              .cell-sm-6
+                .form-group
+                  label.form-label-outside(for="shipping-first-name") First Name *
+                  input#shipping-first-name.form-control(type="text" name="first-name" data-constraints='@Required')
+
+              .cell-sm-6
+                .form-group
+                  label.form-label-outside(for="shipping-last-name") Last Name *
+                  input#shipping-last-name.form-control(type="text" name="last-name" data-constraints='@Required')
+
+              .cell-xs-12
+                .form-group
+                  label.form-label-outside(for="shipping-company-name") Company Name
+                  input#shipping-company-name.form-control(type="text" name="company-name")
+
+              .cell-xs-12
+                .form-group
+                  label.form-label-outside(for="shipping-address") Address *
+                  input#shipping-address.form-control(type="text" name="address" data-constraints='@Required')
+
+              .cell-xs-12
+                .form-group
+                  label.form-label-outside(for="shipping-apartment") Apartment, suite, unit etc. (optional)
+                  input#shipping-apartment.form-control(type="text" name="apartment")
+
+              .cell-sm-6
+                .form-group
+                  label.form-label-outside(for="shipping-country") Country
+                  input#shipping-country.form-control(type="text" name="country")
+
+              .cell-sm-6
+                .form-group
+                  label.form-label-outside(for="shipping-town") Postcode *
+                  input#shipping-town.form-control(type="text" name="postcode" data-constraints='@Required')
+
+              .cell-xs-12
+                .form-group
+                  label.form-label-outside(for="shipping-notes") Order Notes
+                  textarea#shipping-notes.form-control(name="notes")
+  ='\n'
+
+  //- Your order
+  section.section-lg.bg-periglacial-blue
+    .shell
+      .range.range-50
+        .cell-xs-12
+          h3 Your order
+
+      .range.range-30
+        .cell-sm-8.cell-md-6
+          .terms-list-group
+            dl.terms-list-block.terms-list-block-vertical
+              dt Product
+              dd Uppercut Deluxe Extra
+            dl.terms-list-block.terms-list-block-vertical
+              dt Total
+              dd $44.99
+
+          dl.terms-list-block.terms-list-block-horizontal
+            dt Subtotal
+            dd $44.99
+
+          dl.terms-list-block.terms-list-block-horizontal
+            dt Shipping
+            dd.
+              Please fill in your details to
+              see available shipping methods.
+
+          dl.terms-list-block.terms-list-block-horizontal
+            dt Total
+            dd $44.99
+
+        .cell-sm-8.cell-md-6
+          ul.list-blocks-bordered
+            li
+              label.radio-inline.radio-bold
+                input(type='radio', name='radio-group-1')
+                | Cheque Payment
+
+              p.text-gray-base.
+                Please send your cheque to Barbershop, 123 Street W, Seattle WA 99999 United States.
+
+            li
+              .group-lg.group-middle
+                label.radio-inline.radio-bold
+                  input(type='radio', name='radio-group-1')
+                  | PayPal
+                a.link.link-primary(href='#') What is PayPal?
+
+              ul.inline-list.inline-list-sm
+                li: a(href='#')
+                  +png('card-1-65x40')
+
+                li: a(href='#')
+                  +png('card-2-65x40')
+
+                li: a(href='#')
+                  +png('card-3-65x40')
+
+                li: a(href='#')
+                  +png('card-4-65x40')
+
+                li: a(href='#')
+                  +png('card-5-65x40')
+
+
+        .cell-sm-8.cell-md-12.offset-custom-1.text-right
+          a.btn.btn-sm.btn-default-size.btn-primary.btn-circle(href='#') Place order
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_footer-default
+

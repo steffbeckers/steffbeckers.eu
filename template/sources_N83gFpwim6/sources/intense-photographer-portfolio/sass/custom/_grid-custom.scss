@@ -1,0 +1,50 @@
+//
+// Custom grid styles
+// --------------------------------------------------
+
+// Custom col
+
+.col-xs-1-5{
+  width: 20%;
+}
+
+@media (min-width: $screen-sm-min) {
+  .col-sm-1-5{
+    width: 20%;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .col-md-1-5{
+    width: 20%;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .col-lg-1-5{
+    width: 20%;
+  }
+}
+
+// Row narrow
+
+.row-narrow{
+  margin-left: floor(-$cell-spacing-narrow/2);
+  margin-right: ceil(-$cell-spacing-narrow/2);
+
+  > [class*="col"]{
+    padding-left: floor($cell-spacing-narrow/2);
+    padding-right: ceil($cell-spacing-narrow/2);
+  }
+}
+
+// Row gutter reset
+.row-condensed{
+  margin-left: 0;
+  margin-right: 0;
+
+  > [class*="col"]{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

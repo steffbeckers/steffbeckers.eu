@@ -1,0 +1,21 @@
+//- Bootstrap Pager
+//- size - pagination sizing class
+//- prev - prev button {link}
+//- next - next button {link}
+//- justify - true/false to justify pager buttons
+
+mixin pager-bootstrap(size, prev, next, justify)
+  - var prevClass = (justify? "previous": "") + (prev.href ? "": " disabled")
+  - var nextClass = (justify? "next": "") + (next.href ? "": " disabled")
+
+  // Bootstrap Pager
+  nav
+    ul.pager(class= size || "")
+      li(class= prevClass)
+        a(href=prev.href)
+          span.icon-left(class= prev.icon || "", aria-hidden="true")
+          = prev.title
+      li(class= nextClass)
+        a(href=next.href)
+          = next.title
+          span.icon-right(class= next.icon || "", aria-hidden="true")

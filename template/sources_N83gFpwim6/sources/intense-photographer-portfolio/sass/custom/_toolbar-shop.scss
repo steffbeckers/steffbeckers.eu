@@ -1,0 +1,97 @@
+//
+// Toolbar Shop
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.toolbar-shop{
+  @include display-flex;
+  @include justify-content(flex-end);
+  background: $toolbar-shop-bg;
+  width: 100%;
+  &-icon{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    border-right: 1px solid $gray;
+    padding: 0 13px;
+    span{
+      vertical-align: middle;
+    }
+    &.active{
+      color: $brand-primary;
+    }
+  }
+  &-sorter{
+    display: none;
+    white-space: nowrap;
+  }
+  &-pager{
+    @include display-flex();
+    @include justify-content(space-between);
+    @include align-items(center);
+    width: 100%;
+    > *{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    label,select {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    label{
+      margin-right: 18px;
+    }
+
+    .select2-container{
+      width: 118px!important;
+    }
+
+    .select2-container--bootstrap .select2-selection{
+      border-radius: 0;
+      border: none;
+      border-left: 1px solid $gray;
+    }
+
+    .select2-selection__arrow{
+      color: $gray-dark;
+    }
+
+    .select2-container--bootstrap .select2-selection--single .select2-selection__rendered{
+      color: $gray-darker;
+    }
+
+
+    .select2-container--bootstrap{
+      display: inline-block;
+    }
+    label{
+      margin-bottom: 0;
+    }
+
+  }
+
+  .toolbar-shop-current{
+    margin-left: 10px;
+  }
+
+  @media (min-width: $screen-sm)  {
+    @include justify-content(space-between);
+    &-sorter{
+      display: block;
+    }
+    &-pager{
+      display: block;
+      width: auto;
+    }
+
+    .toolbar-shop-current{
+      margin-left: 0;
+      margin-right: 6px;
+    }
+  }
+
+
+}

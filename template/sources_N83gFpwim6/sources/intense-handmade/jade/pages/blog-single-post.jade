@@ -1,0 +1,76 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-navbar-logo-center
+include  ../elements/_ui-breadcrumb-modern
+
+//- Title
+block title
+  title= cfg.nav.blog.submenu.blogPost.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-logo-center(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.blog.submenu.blogPost,
+    cfg.nav
+    )
+
+  +breadcrumb-modern("Single Blog Post", {
+    0: {
+      "type": "link",
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "type": "link",
+      "title": cfg.nav.blog.title,
+      "href": cfg.nav.blog.href
+    },
+    2: {
+      "type": "link",
+      "title": cfg.nav.blog.submenu.blogPost.title,
+      "href": cfg.nav.blog.submenu.blogPost.href
+    }
+  }, "images/background-1-1920x651.jpg")
+
+    .post-meta.offset-top-50
+      ul.list-inline.p
+        li
+          span.text-middle.icon-xxs.mdi.mdi-clock
+          time.text-middle.small(datetime='2016-01-01') March 7, 2016
+        li
+          span.text-middle.icon-xxs.mdi.mdi-comment-multiple-outline
+          span.text-middle.small
+          = ' 141'
+        li
+          span.text-middle.icon-xxs.mdi.mdi-heart
+          span.text-middle.small
+          = ' 541'
+        li
+          span.text-middle.icon-xxs.mdi.mdi-share
+          span.text-middle.small
+          = ' 318'
+
+  // Page Content
+  main.page-content.section-top-98.section-sm-110
+    .shell
+      .range.range-md-center.range-lg-right
+        .cell-md-8.inset-md-right-30
+          include ../sections/_section-blog-single-post
+        .cell-md-4.cell-lg-3.offset-top-66.offset-md-top-0
+          include ../sections/_section-blog-sidebar-variant-7
+
+
+  // Page Footers
+  include ../sections/_section-footer-variant-4

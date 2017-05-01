@@ -1,0 +1,54 @@
+//
+// Text Alignment
+// --------------------------------------------------
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+.text-middle{
+  vertical-align: middle;
+}
+
+@mixin make-text-alignment($resolution){
+  .text-#{$resolution}-left {
+    text-align: left;
+  }
+
+  .text-#{$resolution}-center {
+    text-align: center;
+  }
+
+  .text-#{$resolution}-right {
+    text-align: right;
+  }
+
+  .text-#{$resolution}-justify {
+    text-align: justify;
+  }
+}
+
+html:not(.lt-ie10) {
+  @media (min-width: $screen-xs) {
+    @include make-text-alignment("xs");
+  }
+
+  @media (min-width: $screen-sm-min) {
+    @include make-text-alignment("sm");
+  }
+
+  @media (min-width: $screen-md-min) {
+    @include make-text-alignment("md");
+  }
+
+  @media (min-width: $screen-lg-min) {
+    @include make-text-alignment("lg");
+  }
+}

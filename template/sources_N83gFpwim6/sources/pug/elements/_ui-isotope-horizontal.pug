@@ -1,0 +1,17 @@
+//- isotope - Isotope object
+//- amountList - array of Isotope
+mixin isotope-horizontal(amountList, isotope, filterID)
+  .isotope-wrap
+    // Isotope Filters
+    .isotope-filters
+      button.btn.btn-sm.btn-default(data-custom-toggle=filterID) Filter
+        span.caret
+
+      ul.list-sm-inline(id=filterID)
+        each item, index in amountList
+          li
+            a.text-bold(class= index === 0 ? "active" : "")(data-isotope-filter= item.toLocaleLowerCase() === "all" ? "*" : item, data-isotope-group= isotope.group, href="#")= item
+
+    // Isotope
+    .isotope.offset-top-41(data-isotope-layout= isotope.layout, data-isotope-group= isotope.group)
+      block

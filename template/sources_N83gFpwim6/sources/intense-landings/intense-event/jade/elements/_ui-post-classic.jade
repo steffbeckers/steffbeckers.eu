@@ -1,0 +1,66 @@
+//- Post Classic
+//- url - expanded post link
+//- date - date of publishment
+//- title - post title
+//- author - authors name
+//- authorImg - authors image link
+//- tags - array of {link}
+//- media - {media} object
+
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-carousel-gallery-classic
+include ../elements/_ui-video-embed
+include ../elements/_ui-soundcloud-player-classic
+
+mixin post-classic(url, date,title, author, authorImg, tags, media)
+  // Post Classic
+  article.post.post-classic
+    // Post media
+    if media
+      header.post-media
+        case media.type
+          when "gallery"
+            +carousel-gallery-classic(media.images)
+          when "soundcloud"
+            +soundcloud-player-classic(media)
+          when "video"
+            +video-embed(media)
+          when "thumbnail"
+            //- TODO: Remove this wrap on photoswipe init fix
+            div(data-photo-swipe="gallery")
+              +thumbnail-classic(media)
+          default
+            = ""
+
+    // Post content
+    section.post-content.text-left(class= media? "offset-top-41": "")
+      .unit.unit-sm.unit-sm-horizontal.unit-sm-inverse
+        .unit-body
+          // Post Meta
+          .post-meta.text-dark
+            span.text-middle.icon-xxs.text-picton-blue.mdi.mdi-arrow-right
+            time(datetime="2016-01-01").text-middle.small= date
+
+          // Post Title
+          h3.offset-top-10
+            a(href=url)= title
+
+          // Post Body
+          .post-body
+            block
+
+          // Post Tags
+          if tags
+            p.text-dark.text-sm-right
+              small
+                each tag, i in tags
+                  a(href= tag.href)= tag.title
+                  - if (i !== (tags.length - 1))
+                    = ", "
+        .unit-right
+          .unit.unit-horizontal.unit-middle.unit-sm-vertical.unit-spacing-xs
+            .unit-left
+              img.img-circle(src=authorImg, alt=' ', width=70, height=70)
+            .unit-body
+              p.text-dark
+                cite.small.text-normal= author

@@ -1,0 +1,76 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Step 4'
+  - var bodyClass = 'one-screen-page'
+
+block title
+  title=pageName
+
+block menu
+  .page-header.page-header-perspective
+    .page-header-left
+      a.brand(href='index.html')
+        +png('logo-default-199x36')
+
+    .page-header-center
+      .step-progress
+        p.step-progress-caption Almost done
+
+    .page-header-right
+      if (menuIncludeButton)
+        .booking-control
+          a.btn.btn-xs.btn-circle.btn-primary(href=appointLink) BOOK NOW
+
+      #perspective-open-menu(data-custom-toggle='.perspective-menu-toggle', data-custom-toggle-hide-on-blur='true')
+        span.perspective-menu-text Menu
+        button.perspective-menu-toggle
+          span
+  .custom-progress
+    .custom-progress-body(style='width: 100%;')
+
+block header
+  include ../sections/_header-default
+
+block page
+  //- Page Content
+  section.section-xs.bg-periglacial-blue.one-screen-page-content.text-center
+    .shell
+      a.link.link-primary.link-return(href='step-3.html') Back
+    .shell
+      h2 ONE MORE STEP!
+      .p.text-width-medium
+        p.big To complete your appointment, please review all details described below. Don’t forget to provide your name and phone and telephone so that we could contact you.
+
+      .box-contacts.box-contacts-vertical.box-contacts-vertical-small.box-wrap-content-interactive.block-centered
+        .box-contacts-col
+          .box-contacts-block
+            h3 Service:
+            p Traditional Haircut
+
+          .box-contacts-block
+            h3 Barber:
+            p Matthew Phillips
+
+          .box-contacts-block
+            h3 Date:
+            p November 12 (12:00 - 13:00)
+
+        .box-contacts-col.box-contacts-right
+          .box-contacts-block
+            //- RD Mailform
+            form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php', data-success-redirect='finish.html')
+              .form-group
+                label.form-label-outside(for="contact-full-name") Full Name
+                input#contact-full-name.form-control(type="text" name="name" data-constraints='@Required')
+
+              .form-group
+                label.form-label-outside(for="contact-phone") Telephone
+                input#contact-phone.form-control(type="text" name="phone" data-constraints='@Required @Numeric')
+
+              button(type="submit").btn.btn-sm.btn-primary.btn-block.btn-circle Book now
+  ='\n'
+
+  // Page Footer
+  include ../sections/_footer-default

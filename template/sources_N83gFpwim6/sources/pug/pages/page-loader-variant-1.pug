@@ -1,0 +1,50 @@
+extends  ../_skeleton
+
+include ../elements/_ui-rd-navbar-default-transparent
+include ../elements/_ui-page-loader-variant-1
+
+//-Title
+block title
+  title= cfg.nav.features.title
+
+//- Page
+block page
+
+  +page-loader-1(cfg.brand.logoBig)
+
+  // Page Head
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-transparent',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logoInverse,
+      cfg.nav.features,
+      cfg.nav
+    )
+    include ../sections/_section-swiper
+
+  // Page Contents
+  main.page-content
+
+    include ../sections/_section-welcome
+    include ../sections/_section-mock-up
+    include ../sections/_section-main-features
+    include ../sections/_section-buy-now
+    include ../sections/_section-about-us
+    include ../sections/_section-skills
+    include ../sections/_section-features
+    include ../sections/_section-our-work
+    .shell-fluid
+      hr.hr.bg-gray-lighter
+    include ../sections/_section-our-team
+    include ../sections/_section-what-clients-say
+    include ../sections/_section-our-partners
+
+  // Page Footer
+  include ../sections/_section-footer-default

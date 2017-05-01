@@ -1,0 +1,62 @@
+//
+// RD Google Map
+// --------------------------------------------------
+
+.rd-google-map {
+  color: $rd-google-map-color;
+  &__model{
+    height: $rd-google-map-xs-height;
+
+    img {
+      max-width: none !important;
+    }
+
+    @media (min-width: $screen-xs-min) {
+      height: $rd-google-map-xs-height;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      height: $rd-google-map-sm-height;
+    }
+  }
+
+  &__model-mod-1{
+    height: $rd-google-map-xs-height;
+
+    img {
+      max-width: none !important;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      height: 400px;
+    }
+  }
+  &__model-mod-2{
+    height: $rd-google-map-xs-height;
+
+    img {
+      max-width: none !important;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      height: 493px;
+    }
+  }
+  &__locations{
+    display: none;
+  }
+}
+
+.pac-container{
+  &:after{
+    display: none !important;
+  }
+  .pac-item {
+    padding: 5px 11px 3px !important;
+    cursor: pointer;
+    .pac-icon{
+      margin-top: 6px!important;
+    }
+  }
+}
+

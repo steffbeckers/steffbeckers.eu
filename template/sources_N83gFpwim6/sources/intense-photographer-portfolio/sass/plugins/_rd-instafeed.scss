@@ -1,0 +1,73 @@
+//
+//  RD Instagram
+// --------------------------------------------------
+
+//  Base styles
+// --------------------------------------------------
+
+.instafeed {
+  &-item {
+    position: relative;
+    border: 5px solid $white;
+    transition: .3s all ease;
+
+    // overlay
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: rgba($gray-base, .6);
+      opacity: 0;
+      transition: .3s opacity ease;
+    }
+
+    img {
+      width: 100%;
+      transition: .3s all ease;
+    }
+  }
+
+  // instafeed wrapper
+  .instafeed-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, 0%));
+    display: inline-block;
+    width: 100%;
+    opacity: 0;
+    transition: .3s all ease;
+    color: $white;
+
+    .instafeed-likes, .instafeed-comment, .instafeed-icon-item,
+    .instafeed-likes .instafeed-likes-count,
+    .instafeed-comment .instafeed-comment-count{
+      display: inline-block;
+    }
+
+    .instafeed-likes + .instafeed-comment {
+      margin-left: 20px;
+
+      + .instafeed-icon-item {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  // hover
+  &-item:hover {
+    @include transform(scale(1.05));
+
+    &:before {
+      opacity: 1;
+    }
+
+    .instafeed-wrapper{
+      @include transform(translate(-50%, -50%));
+      opacity: 1;
+    }
+  }
+}

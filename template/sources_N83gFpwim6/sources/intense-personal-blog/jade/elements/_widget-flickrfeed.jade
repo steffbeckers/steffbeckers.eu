@@ -1,0 +1,11 @@
+//- Flickrfeed Widget
+//- flickrTag - flickr tag
+//- imageSizeSuffix - flickr size suffix (data-image_s, data-image_q, data-image_t, data-image_m, data-image_n,
+//- data-image_-, data-image_z, data-image_c, data-image_b, data-image_h, data-image_k, data-image_o)
+//- imageCount - count of images to show in
+
+mixin widget-flickrfeed(flickrTag, flickrAttributes, imageCount)
+  .group-xs.flickr.widget-flickrfeed(data-photo-swipe='gallery' data-flickr-tags=flickrTag)
+    - for (var i = 0; i < imageCount; i++)
+      a.flickr-item.thumbnail-classic(data-photo-swipe-item="" href="" data-image_c='href' data-size="800x800" data-type='flickr-item')
+        img(width="82" height="82" data-title='alt', src='images/_blank.png', alt='')&attributes(flickrAttributes)

@@ -1,0 +1,19 @@
+//
+// Visibility Responsive
+// --------------------------------------------------
+
+@include make-hidden();
+@include make-visible(block);
+@include make-visible(flex);
+@include make-visible(inline-block);
+@include make-visible(inline);
+
+@each $resolution, $alias in ($screen-xs-min : xs, $screen-sm-min : sm, $screen-md-min : md, $screen-lg-min : lg, $screen-xl-min : xl){
+  @media (min-width: $resolution) {
+    @include make-visible(block, $alias);
+    @include make-visible(flex, $alias);
+    @include make-visible(inline-block, $alias);
+    @include make-visible(inline, $alias);
+    @include make-hidden($alias);
+  }
+}

@@ -1,0 +1,49 @@
+//- type - alerts skin (success, info, danger, warning)
+//- title - alerts header
+//- description - alerts description
+//- icon - alerts links object
+//- size - alerts links object
+//- submit - alerts links object
+//- dismiss - alerts links object
+//- alertBtnType - button type of color
+//- alertBtnSize - button size
+mixin alerts-classic(type, title, description, icon, size, submit, dismiss)
+  // Alerts Classic
+  .alert-classic(class='#{type} #{size}')
+    case type
+      when "alert-classic-success"
+        - var alertBtnType = "btn-success"
+      when "alert-classic-info"
+        - var alertBtnType = "btn-info"
+      when "alert-classic-danger"
+        - var alertBtnType = "btn-danger"
+      when "alert-classic-warning"
+        - var alertBtnType = "btn-warning"
+    case size
+      when "alert-classic-sm"
+        - var alertBtnSize = "btn-sm"
+        h6
+          if icon
+            span.text-middle.icon.icon-xs(class= icon)
+          span.text-middle= title
+      when "alert-classic-lg"
+        h4
+          if icon
+            span.text-middle.icon.icon-xxs(class= icon)
+          span.text-middle= title
+        - var alertBtnSize = "btn-sm"
+      default
+        h5
+          if icon
+            span.text-middle.icon.icon-xxs(class= icon)
+          span.text-middle= title
+        - var alertBtnSize = "btn-md"
+
+    if description
+      p= description
+    - if (submit || dismiss)
+      .group-sm.offset-top-20.offset-sm-top-34
+        - if ( submit )
+          a.btn(class=[alertBtnSize, alertBtnType] href='#')= submit
+        - if ( dismiss )
+          a.btn.btn-default(class=alertBtnSize href='#')= dismiss

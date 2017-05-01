@@ -1,0 +1,118 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-text-rotator
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.textRotator.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.textRotator.title,
+  "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.textRotator.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.textRotator.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.textRotator.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-110
+    // Fade Up Animation
+    section
+      .shell
+        h1 Fade Up Animation
+        hr.divider.bg-mantis
+        .offset-sm-top-50
+          h3 Intense is the
+            +text-rotator(
+            'most complex,most powerful,most flexible',
+            {
+              "dataTextClass": " text-mantis text-ubold",
+              "dataEnable": "1200",
+              "dataRotateInterval": "3000",
+              "dataRotateAnimation": "fadeInUp, fadeOutUp"
+            })
+            | &nbsp;Bootstrap theme on TemplateMonster
+
+    // Fade Down Animation
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h1 Fade Down Animation
+        hr.divider.bg-mantis
+        .offset-sm-top-50
+          h3 Intense is the
+            +text-rotator(
+            'most complex,most powerful,most flexible',
+            {
+              "dataTextClass": " text-mantis text-ubold",
+              "dataEnable": "1200",
+              "dataRotateInterval": "3000",
+              "dataRotateAnimation": "fadeInDown, fadeOutDown"
+            })
+            | &nbsp;Bootstrap theme on TemplateMonster
+
+    // Slide Up Animation
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h1 Slide Up Animation
+        hr.divider.bg-mantis
+        .offset-sm-top-50
+          h3 Intense is the
+            +text-rotator(
+            'most complex,most powerful,most flexible',
+            {
+              "dataTextClass": " text-mantis text-ubold",
+              "dataEnable": "1200",
+              "dataRotateInterval": "3000",
+              "dataRotateAnimation": "slideInUp, slideOutUp"
+            })
+            | &nbsp;Bootstrap theme on TemplateMonster
+
+    // Slide Down Animation
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h1 Slide Down Animation
+        hr.divider.bg-mantis
+        .offset-sm-top-50
+          h3 Intense is the
+            +text-rotator(
+            'most complex,most powerful,most flexible',
+            {
+              "dataTextClass": " text-mantis text-ubold",
+              "dataEnable": "1200",
+              "dataRotateInterval": "3000",
+              "dataRotateAnimation": "slideInDown, slideOutDown"
+            })
+            | &nbsp;Bootstrap theme on TemplateMonster
+
+  // Page Footers
+  include ../sections/_section-footer-default

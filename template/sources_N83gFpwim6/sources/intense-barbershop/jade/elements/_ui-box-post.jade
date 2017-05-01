@@ -1,0 +1,21 @@
+mixin box-post(obj)
+  - var mod = obj.mod ? obj.mod : ''
+  - var modClasses = [mod]
+
+  case obj.type
+    when 'dark-inverse'
+      - var modClasses = ['box-post-dark', 'box-post-reverse', mod]
+
+  article.box-post(class=modClasses)
+    .box-post-left
+      +png(obj.img, 'box-post-image')
+
+    .box-post-body
+      p.box-post-title: a(href='single-post.html')=obj.title
+
+      .box-post-text
+        p=obj.text
+
+      a.btn.btn-sm.box-post-control(href='single-post.html') READ MORE
+
+

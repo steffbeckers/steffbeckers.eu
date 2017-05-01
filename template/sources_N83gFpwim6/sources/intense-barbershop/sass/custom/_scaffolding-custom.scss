@@ -1,0 +1,205 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+// Body reset
+body {
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  letter-spacing: $base-lsp-size;
+  font-weight: $font-weight-base;
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  outline: none;
+}
+
+// Page styles
+// --------------------------------------------------
+
+.page {
+  overflow: hidden;
+  background-color: $content-bg;
+}
+
+.one-screen-page {
+  .page {
+    width: 100%;
+  }
+
+  #wrapper {
+    @include display-flex;
+    @include flex-direction(column);
+    width: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  .rd-navbar-fixed-linked & {
+    #wrapper {
+      height: calc(100vh - 56px);
+    }
+  }
+
+  .page-footer {
+    @include flex-shrink(0);
+  }
+}
+
+.one-screen-page-content {
+  @include display-flex;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
+  @include flex-grow(1);
+  @include flex-shrink(0);
+}
+
+section {
+  position: relative;
+  z-index: 1;
+}
+
+.page-footer {
+  background: $footer-bg;
+}
+
+.page-footer-default {
+  padding: 50px 0 25px;
+  text-align: center;
+  background: $footer-bg;
+}
+
+@media (min-width: $screen-sm-min) {
+  .page-footer-default {
+    padding-top: 80px;
+  }
+}
+
+.page-footer-variant-2 {
+  padding: 45px 0;
+
+  @media (min-width: $screen-sm-min) {
+    padding: 80px 0;
+  }
+}
+
+.page-footer.page-footer-variant-3 {
+  padding: 60px 0;
+
+  * + .divider {
+    margin-top: 14px;
+  }
+
+  .divider + * {
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .page-footer.page-footer-variant-3 {
+    padding: 70px 0 100px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .page-footer.page-footer-variant-3 {
+    padding: 80px 0 130px;
+  }
+}
+
+// Footer navigaton
+//
+.footer-navigation {
+  > li {
+    text-transform: uppercase;
+    font: 400 12px/21px $font-family-sec;
+    letter-spacing: .1em;
+  }
+
+  > li > a {
+    @include link($gray-light, $brand-primary);
+  }
+
+  > li.active > a {
+    pointer-events: none;
+    color: $brand-primary;
+  }
+
+  &-vertical {
+    @include spacing(35px, 9px);
+
+    > li {
+      display: inline-block;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      > li {
+        display: block;
+      }
+    }
+  }
+
+  &-horizontal {
+    @include spacing(35px, 10px);
+
+    > li {
+      display: inline-block;
+    }
+  }
+}
+
+// Links
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  transition: .33s all ease-out;
+
+  &,
+  &:active,
+  &:focus {
+    color: $link-color;
+  }
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &[href*='callto'],
+  &[href*='mailto'] {
+    white-space: nowrap;
+  }
+}
+
+// Horizontal rules
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-top: 1px solid $hr-border;
+}
+
+// Brand
+.brand {
+  display: inline-block;
+}
+
+.brand-big {
+  @media (max-width: $screen-xs-min - 1px) {
+    img {
+      width: 92px;
+      height: auto;
+    }
+  }
+}

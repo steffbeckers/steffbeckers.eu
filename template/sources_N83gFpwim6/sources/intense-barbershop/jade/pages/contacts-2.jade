@@ -1,0 +1,66 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 5
+  - var menuIncludeButton = true
+  - var pageName = 'Contacts 2'
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  //- Contact Us
+  section.box-wrap.box-wrap-md.bg-white
+    .box-wrap-map
+      //- RD Google Map
+      .rd-google-map(class="rd-google-map__model", data-zoom='14', data-x='-74.0150000', data-y='40.643180')
+        ul.map_locations
+
+    .box-wrap-content
+      .shell
+        .range
+          .cell-xs-12
+            .box-contacts.box-contacts-vertical.box-wrap-content-interactive
+              .box-contacts-col
+                .box-contacts-block
+                  h3 Address
+                  address 123 Street W, Seattle WA 99999
+
+                .box-contacts-block
+                  h3 Opening Hours
+                  .box-contacts-block-inner
+                    dl.box-contacts-terms-list
+                      dt Monday – Friday
+                      dd 9am - 6pm
+
+                    dl.box-contacts-terms-list
+                      dt Saturday
+                      dd 10am - 4pm
+
+              .box-contacts-col.box-contacts-right
+                .box-contacts-block
+                  h3 Get In Touch
+                  p(style='max-width: 350px;') If you have a question, leave your name and phone number, and we’ll contact you shortly.
+                  //- RD Mailform
+                  form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                    .form-group
+                      label.form-label-outside(for="contact-full-name") Full Name
+                      input#contact-full-name.form-control(type="text" name="name" data-constraints='@Required')
+
+                    .form-group
+                      label.form-label-outside(for="contact-phone") Telephone
+                      input#contact-phone.form-control(type="text" name="phone" data-constraints='@Required @Numeric')
+
+                    button(type="submit").btn.btn-sm.btn-primary.btn-block.btn-circle SEND REQUEST
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_footer-default
+

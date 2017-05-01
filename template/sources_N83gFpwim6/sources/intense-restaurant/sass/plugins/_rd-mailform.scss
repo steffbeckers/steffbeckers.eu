@@ -1,0 +1,58 @@
+/*
+* @subsection   RD Mail Form
+* @description  Describes style declarations for RD Mail Form extension
+* @version      2.0.0
+*/
+
+$input-height: 39px;
+$input-font-weight: inherit;
+$input-font-size: 13px;
+$input-line-height: 24px;
+$input-offset-top: 28px;
+$input-color: #fff;
+$input-background: none;
+$input-border-radius: 0;
+$input-border-color: #212121;
+$input-border: 1px solid $input-border-color;
+$input-padding: ($input-height - $input-line-height) / 2 18px;
+@if ($input-border != none) {
+  $input-padding: ($input-height - $input-line-height - (nth($input-border, 1) * 2)) / 2 18px;
+}
+ $textarea-height: 83px;
+$placeholder-clr: $input-color;
+$placeholder-opacity: 1;
+
+.rd-mailform {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+
+  fieldset {
+    border: none;
+
+    > .row + .row {
+      margin-top: $input-offset-top;
+    }
+  }
+
+  &.input-group {
+    display: table;
+
+    .form-control {
+      height: 40px;
+    }
+  }
+  .mfInput {
+    position: relative;
+  }
+
+  textarea {
+    resize: vertical;
+    overflow: auto;
+    height: $textarea-height;
+  }
+
+}
+
+

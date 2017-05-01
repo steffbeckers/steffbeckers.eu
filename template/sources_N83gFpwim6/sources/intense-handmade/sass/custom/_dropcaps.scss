@@ -1,0 +1,21 @@
+//
+//  Dropcaps
+// --------------------------------------------------
+
+.dropcap {
+  &:first-letter{
+    float: left;
+    padding-right: 8px;
+    margin-left: -10px;
+    margin-top: 2px;
+    font-size: $dropcap-size;
+    font-weight: $dropcap-weight;
+    line-height: $dropcap-line-height;
+  }
+
+  &-dark {
+    &:first-letter {
+      color: $dropcap-color;
+    }
+  }
+}

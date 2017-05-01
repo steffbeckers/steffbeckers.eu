@@ -1,0 +1,188 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-breadcrumb-classic
+include  ../elements/_ui-box-icon-type-1
+include  ../elements/_ui-box-icon-type-2
+include  ../elements/_ui-box-icon-type-3
+include  ../elements/_ui-box-icon-type-4
+include  ../elements/_ui-box-icon-type-5
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.iconBoxes.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.iconBoxes.title,
+  "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.iconBoxes.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.iconBoxes.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.iconBoxes.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-md-110
+
+    // Section Icon Box Type 1
+    section
+      .shell
+        h1 Icon Box v.1
+        hr.divider.bg-mantis
+        .range.text-md-left.offset-top-50.offset-lg-top-66
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0
+            +box-icon-type-1("icon-sm icon-picton-blue mdi mdi-monitor", "Responsive & Retina", "Adapts to any device", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-41.offset-md-top-0
+            +box-icon-type-1("icon-sm icon-picton-blue mdi mdi-rocket", "Optimized for speed", "Smartly Coded & Maintained", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-41.offset-md-top-0
+            +box-icon-type-1("icon-sm icon-picton-blue mdi mdi-xml", "Truly Multi-Purpose", "Easy to Use and Customize", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+
+    // Section Icon Box Type 2
+    section.offset-top-98.offset-top-lg-110
+      .shell
+        h1 Icon Box v.2
+        hr.divider.bg-mantis
+        .range.text-md-left.offset-top-50.offset-lg-top-66
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0
+            +box-icon-type-2("icon-circle icon-blue-gray-filled mdi mdi-monitor", "Responsive & Retina", "text-uppercase offset-top-20", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-66.offset-md-top-0
+            +box-icon-type-2("icon-circle icon-blue-gray-filled mdi mdi-rocket", "Optimized for speed", "text-uppercase offset-top-20", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-66.offset-md-top-0
+            +box-icon-type-2("icon-circle icon-blue-gray-filled mdi mdi-xml", "Truly Multi-Purpose", "text-uppercase offset-top-20", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+
+    // Section Icon Box Type 3
+    section.offset-top-98.offset-top-lg-110
+      .shell
+        h1 Icon Box v.3
+        hr.divider.bg-mantis
+        .range.text-md-left.offset-top-50.offset-lg-top-66
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0
+            +box-icon-type-3("icon-sm text-dollar-bill mdi mdi-monitor", "Responsive & Retina", "text-uppercase text-bold", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+            +box-icon-type-3("icon-sm text-dollar-bill mdi mdi-rocket", "Optimized for speed", "text-uppercase text-bold", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+            +box-icon-type-3("icon-sm text-dollar-bill mdi mdi-xml", "Truly Multi-Purpose", "text-uppercase text-bold", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+        .offset-top-66.code-icon-box-3.text-left
+
+    // Section Icon Box Type 4
+    section.offset-top-98.offset-top-lg-110
+      .shell
+        h1 Icon Box v.4
+        hr.divider.bg-mantis
+        .range.offset-top-50.offset-top-66
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0
+            +box-icon-type-4("icon-mantis-filled icon-outlined mdi mdi-monitor")
+              h4.text-uppercase.offset-top-30.text-bold Responsive & Retina
+              p.
+                The information should be not only well - organized and easy to read, but it should be also presented in a
+                visually pleasing manner, thus making the process of reading an enjoyable journey.
+
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+            +box-icon-type-4("icon-mantis-filled icon-outlined mdi mdi-rocket")
+              h4.text-uppercase.offset-top-30.text-bold Optimized for speed
+              p.
+                The information should be not only well - organized and easy to read, but it should be also presented in a
+                visually pleasing manner, thus making the process of reading an enjoyable journey.
+
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+            +box-icon-type-4("icon-mantis-filled icon-outlined mdi mdi-xml")
+              h4.text-uppercase.offset-top-30.text-bold Truly Multi-Purpose
+              p.
+                The information should be not only well - organized and easy to read, but it should be also presented in
+                a visually pleasing manner, thus making the process of reading an enjoyable journey.
+    // Section Icon Box Type 5
+    section.offset-top-98.offset-top-lg-110
+      .shell
+        h1 Icon Box v.5
+        hr.divider.bg-mantis
+        .range.offset-top-98
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0
+            +box-icon-type-5("icon-darker-filled mdi mdi-monitor", "Responsive & Retina", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-98.offset-md-top-0
+            +box-icon-type-5("icon-darker-filled mdi mdi-rocket", "Optimized for speed", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-98.offset-md-top-0
+            +box-icon-type-5("icon-darker-filled mdi mdi-xml", "Truly Multi-Purpose", "The information should be not only well - organized and easy to read, but it should be also presented in a visually pleasing manner, thus making the process of reading an enjoyable journey.")
+        .offset-top-66.code-icon-box-5.text-left
+
+    // Section Icon Box Type 6
+    section.offset-top-98.offset-top-lg-110
+      .shell
+        h1 Icon Box v.6
+        hr.divider.bg-mantis
+        .range.range-md-middle.offset-top-34
+          .cell-md-4.cell-md-push-1
+            img.center-block.img-responsive(src="images/moqups/moqup-home-mobile.png" alt="" width=247 height=470)
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.text-md-right.offset-top-34.offset-md-top-0
+            .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal
+              .unit-body
+                h4.text-uppercase.text-bold.offset-md-top-20 Social Integration
+                p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+              .unit-right
+                span.icon.icon-circle.icon-lg.icon-bordered.icon-picton-blue.mdi.mdi-message-text-outline
+
+            .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+              .unit-body
+                h4.text-uppercase.text-bold.offset-md-top-20 All images Included
+                p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+              .unit-right
+                span.icon.icon-circle.icon-lg.icon-bordered.icon-picton-blue.mdi.mdi-image-filter
+
+            .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+              .unit-body
+                h4.text-uppercase.text-bold.offset-md-top-20 2000+ <br class="veil reveal-md-inline veil-lg"> icons
+                p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+              .unit-right
+                span.icon.icon-circle.icon-lg.icon-bordered.icon-picton-blue.mdi.mdi-emoticon-happy
+
+          .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.text-md-left.cell-md-push-1.offset-top-50.offset-md-top-0
+            //.source-code(data-output="code-icon-box-6v2")
+            .unit.unit-spacing-sm.unit-md.unit-md-horizontal
+              .unit-left
+                span.icon.icon-circle.icon-lg.icon-bordered.icon-picton-blue.mdi.mdi-cellphone-link
+              .unit-body
+                h4.text-uppercase.text-bold.offset-md-top-20 Responsive & Retina
+                p.
+                  The information should be not only well-organized and easy to read. thus making the process enjoyable.
+            .unit.unit-spacing-sm.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+              .unit-left
+                span.icon.icon-circle.icon-lg.icon-bordered.icon-picton-blue.mdi.mdi-television-guide
+              .unit-body
+                h4.text-uppercase.text-bold.offset-md-top-20 Extensive docs
+                p.
+                  The information should be not only well-organized and easy to read. thus making the process enjoyable.
+            .unit.unit-spacing-sm.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+              .unit-left
+                span.icon.icon-circle.icon-lg.icon-bordered.icon-picton-blue.mdi.mdi-play-box-outline
+              .unit-body
+                h4.text-uppercase.text-bold.offset-md-top-20 Video backgrounds
+                p.
+                  The information should be not only well-organized and easy to read. thus making the process enjoyable.
+  // Page Footer
+  include ../sections/_section-footer-default

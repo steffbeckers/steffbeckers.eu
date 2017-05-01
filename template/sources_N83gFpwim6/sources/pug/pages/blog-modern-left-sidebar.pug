@@ -1,0 +1,61 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+//-Title
+block title
+  title= cfg.nav.blog.submenu.modern.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.blog,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.blog.submenu.modern.title,
+  cfg.nav.blog.submenu.modern.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.blog.title,
+      "href": cfg.nav.blog.href
+    },
+    2: {
+      "title": cfg.nav.blog.submenu.modern.title,
+      "href": cfg.nav.blog.submenu.modern.href
+    },
+    3: {
+      "title": cfg.nav.blog.submenu.modern.submenu.leftSidebar.title,
+      "href": cfg.nav.blog.submenu.modern.submenu.leftSidebar.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-top-110.section-sm-bottom-124
+    .shell
+      .range.range-sm-center.range-lg-left
+        .cell-sm-10.cell-md-8.cell-lg-7.cell-md-push-2
+          .inset-left-0.inset-md-left-20
+            include ../sections/_section-blog-modern-right
+        .cell-md-3.cell-lg-3.cell-md-push-1.offset-top-66.offset-md-top-0
+            include ../sections/_section-blog-sidebar-variant-1
+
+  // Page Footers
+  include ../sections/_section-footer-default

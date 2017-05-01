@@ -1,0 +1,26 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+//-Title
+block title
+  title= cfg.nav.pages.submenu["503"].title
+
+//- Page
+block page
+
+  // Page Content
+  main.page-content(style="background: #191919 url(images/backgrounds/background-31-1920x1280.jpg) 0/cover no-repeat")
+    .bg-overlay-white
+      .one-page
+        .one-page-header
+          //Navbar Brand
+          .rd-navbar-brand
+            a(href= cfg.nav.home.href) !{cfg.brand.logo}
+
+        include ../sections/_section-503
+
+        .one-page-footer
+          p.small
+            | #{cfg.brand.name} &copy; #[span(id="copyright-year")] . #[a(href="privacy.html") Privacy Policy]

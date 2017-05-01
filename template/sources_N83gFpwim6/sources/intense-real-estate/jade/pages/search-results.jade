@@ -1,0 +1,50 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-pagination-bootstrap
+include ../elements/_widget-form-search
+
+//- Title
+block title
+  title= "Search result"
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    "",
+    cfg.nav
+    )
+    // Section Search result
+    section.rd-parallax.context-dark
+      div.rd-parallax-layer(data-speed="0.2" data-type="media" data-url="images/bg-header-1920x362.jpg")
+      div.rd-parallax-layer(data-speed="0" data-type="html")
+        .shell.section-top-34.section-sm-top-98.section-bottom-34
+          div
+            h1.text-bold Search result
+          ul.list-inline.list-inline-dashed.p.text-light.breadcrumb-modern.offset-top-10.offset-sm-top-66
+            li.active
+              a(href="./") Home
+            li  Search result
+      // Page Content
+  main.page-content.section-98.section-sm-124
+    .shell
+
+      +widget-form-search("input-sm", "form-label-sm", "search-results")
+
+      .rd-search-results.offset-top-66
+
+
+
+        // Page Footers
+  include ../sections/_section-footer-default

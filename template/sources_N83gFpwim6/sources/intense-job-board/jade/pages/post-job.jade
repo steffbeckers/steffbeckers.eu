@@ -1,0 +1,155 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block title
+  title= cfg.nav.postJob.title
+
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    // - RD Navbar
+    +rd-navbar-floated(
+    'rd-navbar-dark rd-navbar-dark-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.postJob,
+    cfg.nav
+    )
+    .context-dark
+      +breadcrumb-modern("Post a Job", {
+        0: {
+          "type": "link",
+          "title": cfg.nav.home.title,
+          "href": cfg.nav.home.href
+        },
+        1: {
+          "type": "link",
+          "title": cfg.nav.postJob.title,
+          "href": cfg.nav.postJob.href
+        }
+      }, "images/background-02-1920x870.jpg")
+
+  // Page Contents
+  main.page-content
+
+    // Post a Job in Minutes
+    section.section-98.section-sm-110
+      .shell
+        h1 Post a Job in Minutes
+        hr.divider.bg-darkers
+        .range.range-xs-center.offset-top-66
+          .cell-md-10.cell-lg-7
+            p Have an account? If you don’t have an account you can create one below by entering your email address/username. Your account details will be confirmed via email.
+
+        .range.range-xs-center.offset-top-0
+          .cell-sm-10
+            // RD Mailform
+            form.rd-mailform.text-left.offset-top-50(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+              .range
+                .cell-md-6
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-email") Your Email
+                    input#post-job-email.form-control(type="email" name="email" data-constraints="@Required @Email")
+
+                .cell-md-6.offset-top-30.offset-md-top-0
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-last-name") Job Title
+                    input#post-job-last-name.form-control(type="text" name="title" data-constraints="@Required")
+
+                .cell-md-6.offset-top-30
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-location") Location #[span.text-muted (optional)]
+                    input#post-job-location.form-control(type="text" name="location" data-constraints="@Required")
+
+                .cell-md-6.offset-top-30
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-type") Job Type
+                    select#post-job-type.form-control(data-placeholder="Select an option", data-minimum-results-for-search="Infinity")
+                      option Full Time
+                      option Part Time
+
+                .cell-md-6.offset-top-30
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-category") Job Category
+                    input#post-job-category.form-control(type="text" name="category" data-constraints="@Required")
+
+                .cell-md-6.offset-top-30
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-tags") Job Tags #[span.text-muted (optional)]
+                    input#post-job-tags.form-control(type="text" name="tags" data-constraints="@Required")
+
+                .cell-lg-12.offset-top-30.offset-md-top-20
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="contact-me-message") Description
+                    textarea#contact-me-message.form-control(name="description" data-constraints="@Required" style="height: 179px;")
+
+                .cell-md-6.offset-top-30
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-application") Application Email/URL
+                    input#post-job-application.form-control(type="text" name="application" data-constraints="@Required")
+
+                .cell-md-6.offset-top-30
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-minimum-rate") Minimum Rate/h ($) #[span.text-muted (optional)]
+                    input#post-job-minimum-rate.form-control(type="text" name="minimum-rate" data-constraints="@Required @IsNumeric")
+
+                .cell-md-6.offset-top-30
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-maximum-rate") Maximum Rate/h ($) #[span.text-muted (optional)]
+                    input#post-job-maximum-rate.form-control(type="text" name="maximum-rate" data-constraints="@Required @IsNumeric")
+
+                .cell-md-6.offset-top-30
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-minimum-salary") Minimum Salary ($) #[span.text-muted (optional)]
+                    input#post-job-minimum-salary.form-control(type="text" name="minimum-salary" data-constraints="@Required @IsNumeric")
+
+                .cell-md-6.offset-top-30
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-maximum-salary") Maximum Salary ($) #[span.text-muted (optional)]
+                    input#post-job-maximum-salary.form-control(type="text" name="maximum-salary" data-constraints="@Required @IsNumeric")
+
+                .cell-md-6.offset-top-30
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-hours") Hours per week #[span.text-muted (optional)]
+                    input#post-job-hours.form-control(type="text" name="hours" data-constraints="@Required @IsNumeric")
+
+                .cell-lg-12.offset-top-41
+                  h4 Company Details
+                  div
+                    hr.hr.bg-gray
+
+                .cell-md-6.offset-top-30
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-company-name") Company Name
+                    input#post-job-company-name.form-control(type="text" name="company-name" data-constraints="@Required")
+
+                .cell-md-6.offset-top-30
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-website") Website #[span.text-muted (optional)]
+                    input#post-job-website.form-control(type="text" name="website" data-constraints="@Required")
+
+                .cell-md-6.offset-top-30
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-video") Video #[span.text-muted (optional)]
+                    input#post-job-video.form-control(type="text" name="video" data-constraints="@Required")
+
+                .cell-md-6.offset-top-30
+                  .form-group
+                    label.form-label.form-label-outside.text-sbold(for="post-job-tagline") Tagline #[span.text-muted (optional)]
+                    input#post-job-tagline.form-control(type="text" name="tagline" data-constraints="@Required")
+
+              .group.group-xl.offset-top-30.text-center.text-md-left
+                a(href="#").btn.btn-primary.btn-transparent Download logo
+                button(type="submit").btn.btn-primary Preview
+
+
+  // Page Footers
+  include ../sections/_section-footer

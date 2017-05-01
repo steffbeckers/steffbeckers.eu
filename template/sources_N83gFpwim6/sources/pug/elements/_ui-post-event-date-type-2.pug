@@ -1,0 +1,52 @@
+//- url - expanded post link
+//- date - publish date
+//- title - Post title
+//- media - {media} object
+//- btn - {btn} object
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-carousel-gallery-classic
+include ../elements/_ui-video-embed
+include ../elements/_ui-soundcloud-player-classic
+
+mixin post-event-date-type-2(url, date, title, media, personName)
+  // Post Event
+  article.post.post-event-type-2
+    // Post media
+    if media
+      header.post-media
+        case media.type
+          when "gallery"
+            +carousel-gallery-classic(media.images)
+          when "soundcloud"
+            +soundcloud-player-classic(media)
+          when "video"
+            +video-embed(media)
+          when "thumbnail"
+            div(data-photo-swipe="gallery")
+              +thumbnail-classic(media)
+          when "img"
+            a(href= media.target.href)
+              img(src= media.image.src width= media.image.width  height=media.image.height alt=media.image.alt)
+              span.icon.fa.fa-info-circle
+          default
+            = ""
+    // Post content
+    section.post-content.text-left(class= media ? "offset-top-10" : "")
+
+      // Post Body
+      .post-body
+
+        .icon.icon-xxs.mdi.mdi-account.text-middle
+        = ' '
+        span.text-middle= personName
+
+        // Post Title
+        h5.offset-top-10
+          a(href=url)= title
+
+        // Post meta
+        .post-meta.context-dark
+          time(datetime="2016-01-01")
+            span.post-meta-day= date.number
+            span.post-meta-month.offset-top-4= date.month
+            span.post-meta-time= date.time

@@ -1,0 +1,220 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-product-grid
+include ../elements/_ui-product-grid-type-2
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.productGrids.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.productGrids.title,
+  cfg.nav.components.submenu.toolkitComponents.submenu.productGrids.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.productGrids.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.productGrids.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-110
+
+    // Product Grids Type 1
+    section
+      .shell
+        h1 Product Grids Type 1
+        hr.divider.bg-mantis
+        .range.range-xs-center
+          .cell-xs-6.cell-sm-5.cell-md-3
+            +product-grid({
+              "title": "Engineered Rib Cashmere",
+              "link": "#",
+              "brand": "Armani Brand",
+              "price": [
+                "57.00",
+                "35.00"
+              ],
+              "images": [
+                {
+                  "src": "images/shop/product-01-270x360.png",
+                  "alt": ""
+                },
+                {
+                  "src": "images/shop/product-01-270x360-2.png",
+                  "alt": ""
+                },
+                {
+                  "src": "images/shop/product-01-270x360-3.png",
+                  "alt": ""
+                }
+              ],
+              "label": {
+                "adClass": "label-danger",
+                "text": "Sale"
+              }
+            })
+          .cell-xs-6.cell-sm-5.cell-md-3.offset-top-41.offset-xs-top-0
+            +product-grid({
+              "title": "Ruched Bandage Miniskirt",
+              "link": "#",
+              "brand": "Step Brand",
+              "price": "59.00",
+              "images": [
+                {
+                  "src": "images/shop/product-02-270x360.png",
+                  "alt": ""
+                },
+                {
+                  "src": "images/shop/product-02-270x360-2.png",
+                  "alt": ""
+                },
+                {
+                  "src": "images/shop/product-02-270x360-3.png",
+                  "alt": ""
+                }
+              ],
+              "label": {
+                "adClass": "label-info",
+                "text": "New"
+              }
+            })
+          .cell-xs-6.cell-sm-5.cell-md-3.offset-top-41.offset-md-top-0
+            +product-grid({
+              "title": "Knit Cami Top",
+              "link": "#",
+              "brand": "Amo Brand",
+              "price": "48.00",
+              "images": [
+                {
+                  "src": "images/shop/product-03-270x360.png",
+                  "alt": ""
+                },
+                {
+                  "src": "images/shop/product-03-270x360-2.png",
+                  "alt": ""
+                }, {
+                  "src": "images/shop/product-03-270x360-3.png",
+                  "alt": ""
+                }
+              ]
+            })
+          .cell-xs-6.cell-sm-5.cell-md-3.offset-top-41.offset-md-top-0
+            +product-grid({
+              "title": "Contrast Back Zip",
+              "link": "#",
+              "brand": "Polo Brand",
+              "price": "14.00",
+              "images": [
+                {
+                  "src": "images/shop/product-04-270x360.png",
+                  "alt": ""
+                },
+                {
+                  "src": "images/shop/product-04-270x360-2.png",
+                  "alt": ""
+                },
+                {
+                  "src": "images/shop/product-04-270x360-3.png",
+                  "alt": ""
+                }
+              ]
+            })
+
+    // Product Grids Type 2
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h1 Product Grids Type 2
+        .range.range-xs-center
+          .cell-xs-6.cell-sm-5.cell-md-3
+            +product-grid-type-2({
+              "title": "Knit Skater Skirt",
+              "link": "#",
+              "brand": "Step Brand",
+              "price": "68.00",
+              "image": [
+                {
+                  "src": "images/shop/product-06-270x360.png",
+                  "alt": ""
+                }
+              ],
+              "label": {
+                "adClass": "label-info",
+                "text": "New"
+              }
+            })
+          .cell-xs-6.cell-sm-5.cell-md-3.offset-top-41.offset-xs-top-0
+            +product-grid-type-2({
+              "title": "Collar Leather Jacket",
+              "link": "#",
+              "brand": "Amo Brand",
+              "price": "38.00",
+              "image": [
+                {
+                  "src": "images/shop/product-05-270x360.png",
+                  "alt": ""
+                }
+              ],
+              "label": {
+                "adClass": "label-danger",
+                "text": "Sale"
+              }
+            })
+          .cell-xs-6.cell-sm-5.cell-md-3.offset-top-41.offset-md-top-0
+            +product-grid-type-2({
+              "title": "Ruched Bandage Miniskirt",
+              "link": "#",
+              "brand": "Step Brand",
+              "price": "59.00",
+              "image": [
+                {
+                  "src": "images/shop/product-02-270x360.png",
+                  "alt": ""
+                }
+              ]
+            })
+          .cell-xs-6.cell-sm-5.cell-md-3.offset-top-41.offset-md-top-0
+            +product-grid-type-2({
+              "title": "Knit Cami Top",
+              "link": "#",
+              "brand": "Amo Brand",
+              "price": "48.00",
+              "image": [
+                {
+                  "src": "images/shop/product-03-270x360.png",
+                  "alt": ""
+                }
+              ]
+            })
+
+
+  // Page Footers
+  include ../sections/_section-footer-default

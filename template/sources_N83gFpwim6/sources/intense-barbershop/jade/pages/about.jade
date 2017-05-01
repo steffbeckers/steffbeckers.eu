@@ -1,0 +1,133 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-page-title
+include ../elements/_ui-section-header
+include ../elements/_ui-quote-fullwidth
+include ../elements/_ui-thumbnail-card
+
+block variables
+  - var activeIndex = 1
+  - var footerActiveIndex = 1
+  - var menuIncludeButton = true
+  - var pageName = 'About'
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  //- Page Content
+  +page-title(pageName)
+
+  include ../sections/_section-who-we-are-white
+
+  //- TESTIMONIALS
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-75
+        .cell-xs-12
+          +section-header("TESTIMONIALS", "These reviews that our clients have recently submitted are the best way to learn more about our barbershop’s level of service and customer support.")
+
+        .cell-lg-10
+          +quote-fullwidth({
+            avatar: {
+              type: 'image',
+              data: 'testimonials-1-100x100'
+            },
+            cite: 'Matt Parker',
+            text: 'I have taken my 3 yr old son for his first men’s haircut and now I’m glad he has such a fantastic look. I recommend any of the barbers at Barbershop for service and pride in their work. I believe my son would never be allowed to leave the chair without a really handsome cut.',
+            rating: 5
+          })
+
+          +quote-fullwidth({
+            avatar: {
+              type: 'image',
+              data: 'testimonials-2-100x100'
+            },
+            cite: 'John Miller',
+            text: "I wouldn't go anywhere else in San Francisco. I've been coming here for the last year and I've never felt better about paying good money for a haircut. The guys know what they are doing, give solid advice, and cut like pros. I wasn't used to this before but I’ll visit Barbershop again.",
+            rating: 4
+          })
+
+          +quote-fullwidth({
+            avatar: {
+              type: 'image',
+              data: 'testimonials-3-100x100'
+            },
+            cite: 'Anthony Smith',
+            text: 'Polite, professional, charming and courteous team. The best haircut I have ever had! Simon was full of crack, was more than happy to suggest the best cut for me and he even offered a free beverage - what more could you want?! This barbershop is indeed my favorite one.',
+            rating: 5
+          })
+
+        .cell-xs-12
+          a.btn.btn-sm.btn-style-1.btn-primary(href='testimonials.html') VIEW ALL REVIEWS
+  ='\n'
+
+  //- OUR BARBERS
+  section.section-xl.bg-gray-dark.bg-image.text-center(style='background-image: url(images/bg-image-1.jpg);')
+    .shell
+      .range.range-50
+        .cell-xs-12
+          +section-header("OUR BARBERS", "We employ only highly qualified barbers who are not just professionals, but also enjoy maintaining the atmosphere of a classic barbershop.")
+        .cell-xs-12
+          .range.range-30
+            .cell-sm-6.cell-md-4.height-fill
+              +thumbnail-card({
+                img: 'barbers-1-370x310',
+                header: 'simon Wilson',
+                text: 'Mr. Wilson is the founder and owner of our barbershop.'
+              })
+
+            .cell-sm-6.cell-md-4.height-fill
+              +thumbnail-card({
+                img: 'barbers-2-370x310',
+                header: 'Harry Anderson',
+                text: 'Harry brings a detailed, meticulous approach to styling.'
+              })
+
+            .cell-sm-6.cell-md-4.height-fill
+              +thumbnail-card({
+                img: 'barbers-3-370x310',
+                header: 'Matthew phillips',
+                text: 'Matthew has several years of experience in the barber industry.'
+              })
+
+        .cell-xs-12
+          a.btn.btn-sm.btn-style-1.btn-primary(href='barbers.html') VIEW all team
+  ='\n'
+
+  //- FAQ
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-75
+        .cell-xs-12
+          +section-header("FAQ", "If you have any questions regarding the services our barbershop offers, feel free to browse this section of frequently asked questions.")
+
+        .cell-lg-10
+          article.box-spacer
+            dl.terms-list-bordered
+              dt Do I have to have an appointment?
+              dd No. Sign in on the list at the front desk and if there is a wait, you can take advantage of our free Wi-Fi to surf the web or catch up on your email. As soon as your name gets to the top of the list, we’ll get you on your way to that great haircut you’ve been looking forward to.
+
+              dt What if I need a little more off the top (or bottom or otherwise)?
+              dd Please feel free to call our administrator and let either the stylist that did the initial service or the store manager know that you would like to come back in and they will make the necessary adjustment within 7 days.
+
+              dt Do you accept walk-ins?
+              dd Yes, we accept walk-ins!  We have at least one barber dedicated to serving walk-ins nearly every day! We keep track of who’s waiting for walk-in service with our online sign-in list. You can get on the list online or you can sign up at our computer.
+
+        .cell-xs-12
+          a.btn.btn-sm.btn-style-1.btn-primary(href='faq.html') Read more
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_footer-default
+
+block modal
+  include ../includes/_modal-single-barber

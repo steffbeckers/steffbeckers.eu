@@ -1,0 +1,2977 @@
+//
+// Variables 
+// --------------------------------------------------
+
+@import "bootstrap/variables";
+
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base:               #191919;
+$gray-darkest:            #232323;
+$gray-darkers:            #404142;
+$gray-darker:             #434345;
+$gray-dark:               #7a7a7a;
+$gray:                    #bababa;
+$gray-light:              #f6f6f6;
+$gray-lighter:            #f5f5f5;
+$gray-lightest:           #f7f7f7;
+
+$brand-primary:           #8ac03c;
+$brand-success:           #abcc37;
+$brand-info:              #79ccf2;
+$brand-warning:           #ffdb13;
+$brand-danger:            #d13535;
+$brand-deluge:            #8668ad;
+
+// Derivatives colors
+$brand-butterfly-bush:    #695999;
+$brand-picton-blue:       #55bbeb;
+$brand-dollar-bill:       #84c450;
+$brand-neon-carrot:       #d6a41d;
+$brand-ku-crimson:        #e50a0a;
+$brand-iceberg:           #64aae1;
+$brand-waikawa:           #5771a4;
+$brand-lilac:             #f2f4fa;
+
+
+$white: #fff;
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+$content-bg:            $white;
+$header-bg:             $white;
+$footer-bg: 			      $gray-base;
+
+//** Background color for `<body>`.
+$body-bg:               $gray-base;
+
+//** Background color for `<main>`.
+$main-bg:               $white;
+
+//** Global text color on `<body>`.
+$text-color:            $gray-darker;
+
+//** Global textual link color.
+$link-color:            inherit;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      inherit;
+//** Link hover decoration.
+$link-hover-decoration: underline;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+// Import fonts
+
+
+$font-family-sans-serif:  "Open Sans", Helvetica, Arial, sans-serif;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+
+$font-family-base:        $font-family-sans-serif;
+$font-family-accent:      "Yesteryear", cursive;
+
+
+// Template width (w/o units)
+$template-width:          1920;
+
+// Template width var for resizing
+$template-width-min:      ($template-width+1)*1px;
+$layout-boxed-width:      1920px;
+
+
+// Base FZ & LH (w/o units)
+$base-text-size:          15;
+$base-lh-size:            24;
+
+$base-vm-size:            (($base-text-size*100)/$template-width)*1vw;
+
+
+$font-size-base:          $base-text-size * 1px;
+$font-size-large:         ceil(($font-size-base * 1.0625)); // ~17px
+$font-size-small:         ceil(($font-size-base * 0.9375)); // ~15px
+
+$font-weight-base:        400;
+
+//PSD FZ headers /FOR EDIT (w/o units)
+$Size-h1:                 45;
+$Size-h2:                 38;
+$Size-h3:                 30;
+$Size-h4:                 24;
+$Size-h5:                 22;
+$Size-h6:                 17;
+
+//PSD LH headers /FOR EDIT (w/o units)
+$Lh-h1:                   54;
+$Lh-h2:                   45;
+$Lh-h3:                   36;
+$Lh-h4:                   30;
+$Lh-h5:                   27;
+$Lh-h6:                   25;
+
+
+//Calculating FZ headers
+$font-size-h1:            $Size-h1*1px;
+$font-size-h2:            $Size-h2*1px;
+$font-size-h3:            $Size-h3*1px;
+$font-size-h4:            $Size-h4*1px;
+$font-size-h5:            $Size-h5*1px;
+$font-size-h6:            $Size-h6*1px;
+
+
+
+//** line-height for headers /FOR EDIT
+// $font-lh-h_: floor((PSD l-h / $font-size-h1));
+
+$font-lh-h1:              ($Lh-h1 / $Size-h1);
+$font-lh-h2:              ($Lh-h2 / $Size-h2);
+$font-lh-h3:              ($Lh-h3 / $Size-h3);
+$font-lh-h4:              ($Lh-h4 / $Size-h4);
+$font-lh-h5:              ($Lh-h5 / $Size-h5);
+$font-lh-h6:              ($Lh-h6 / $Size-h6);
+
+$line-height-base:        ($base-lh-size / $base-text-size); // lh/fz-base
+
+$line-height-computed:    $base-lh-size*1px;
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    inherit;
+$headings-font-weight:    700;
+$headings-line-height:    1.1;
+$headings-color:          $gray-darkers;
+
+
+//== Iconography
+//
+//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
+
+//** Load fonts from this directory.
+$icon-font-path: "../fonts/";
+
+//** File name for all font files.
+$icon-font-name:           "glyphicons-halflings-regular";
+$icon-font-awesome:        "fontawesome-webfont";
+$icon-material-design:     "materialdesignicons-webfont";
+
+//** Element ID within SVG icon file.
+$icon-font-svg-id:         "glyphicons_halflingsregular";
+$icon-font-awesome-id:     "fontawesomeregular";
+$icon-material-design-id:  "materialdesigniconsregular";
+
+//** Icons font family options
+$icon-font-material-design: "Material Design Icons";
+$icon-font-fontawesome:     "FontAwesome";
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical:     9px;
+$padding-base-horizontal:   16px;
+
+$padding-large-vertical:    17px;
+$padding-large-horizontal:  22px;
+
+$padding-small-vertical:    7px;
+$padding-small-horizontal:  12px;
+
+$padding-xs-vertical:       6px;
+$padding-xs-horizontal:     16px;
+
+$line-height-large:         1.3333333; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.5;
+
+$border-radius-base:        5px;
+$border-radius-large:       10px;
+$border-radius-small:       3px;
+
+$border-width-base:         2px;
+$border-width-large:        4px;
+$border-width-small:        1px;
+
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color:    $white;
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg:       $brand-primary;
+
+//** Width of the `border` for generating carets that indicator dropdowns.
+$caret-width-base:          4px;
+//** Carets increase slightly in size for larger components.
+$caret-width-large:         5px;
+
+
+//== Tables
+//
+//## Customizes the `.table` component with basic values, each used across all table variations.
+
+//** Padding for `<th>`s and `<td>`s.
+$table-cell-padding:                  8px;
+//** Padding for cells in `.table-condensed`.
+$table-condensed-cell-padding:        5px;
+
+//** Default background color used for all tables.
+$table-bg:                            transparent;
+//** Background color used for `.table-striped`.
+$table-bg-accent:                     #f9f9f9;
+//** Background color used for `.table-hover`.
+$table-bg-hover:                      #f5f5f5;
+$table-bg-active:                     $table-bg-hover;
+
+//** Border color for table and cell borders.
+$table-border-color:                  #ddd;
+
+//** Table Striped
+$table-striped-odd-background:        $gray-lightest;
+
+//** Custom Tables
+$table-custom-odd-background:         $gray-lightest;
+//** large table from 768
+$table-custom-large-column-padding:   8px 18px;
+//** small table to 767
+$table-custom-small-column-padding:   6px;
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-font-size:               15px;
+$btn-lh-size:                 28px;
+$btn-font-weight:             900;
+
+$btn-font-size-large:         17px;
+$btn-lh-size-large:           32px;
+$btn-font-weight-large:       $btn-font-weight;
+
+$btn-font-size-small:         12px;
+$btn-lh-size-small:           24px;
+$btn-font-weight-small:       $btn-font-weight;
+
+$btn-font-size-xs:            11px;
+$btn-lh-size-xs:              20px;
+$btn-font-weight-xs:          $btn-font-weight;
+//**  btn-link
+$btn-link-padding-left:       12px;
+$btn-link-padding-right:      12px;
+$btn-link-weight:             900;
+$btn-link-color:              $gray-darker;
+$btn-link-line-height:        1.9;
+//**  btn-link after
+$btn-link-after-background:   linear-gradient(90deg, $brand-primary 0%, $brand-dollar-bill 100%);
+//**  btn more
+$btn-more-size:               17px;
+$btn-more-line-height:        18px;
+$btn-more-weight:             700;
+//**  btn more icon
+$btn-more-icon-size:          18px;
+$btn-more-icon-line-height:   $btn-more-icon-size;
+$btn-more-icon-color:         $brand-picton-blue;
+//**  btn more icon hover
+$btn-more-icon-hover-color:   $brand-primary;
+//**  btn icon
+$btn-icon-padding:            17px;
+$btn-icon-size:               28px;
+$btn-icon-offset:             10px;
+//**  btn icon xs
+$btn-icon-xs-padding:         10px;
+$btn-icon-xs-size:            20px;
+$btn-icon-xs-offset:          10px;
+//**  btn icon sm
+$btn-icon-sm-padding:         10px;
+$btn-icon-sm-size:            24px;
+$btn-icon-sm-offset:          8px;
+//**  btn icon lg
+$btn-icon-lg-padding:         30px;
+$btn-icon-lg-size:            32px;
+$btn-icon-lg-offset:          14px;
+
+
+//== Icons
+//
+//##
+
+$icon-default-size:             34px;
+$icon-default-weight:           400;
+$icon-default-line-height:      56px;
+$icon-circle-border-radius:     50%;
+$icon-rounded-border-radius:    $border-radius-base;
+$icon-outlined-border:          2px solid $gray-lighter;
+//** Icon shapes
+$icon-shapes-width:             70px;
+$icon-shapes-height:            70px;
+$icon-shapes-line-height:       70px;
+$icon-shapes-size:              32px;
+$icon-shapes-border:            2px solid;
+//** Icon sizes
+//** xxs
+$icon-xxs-size:                 18px;
+$icon-xxs-line-height:          18px;
+//** xs
+$icon-xs-size:                  21px;
+$icon-xs-line-height:           32px;
+//** sm
+$icon-sm-size:                  42px;
+$icon-sm-line-height:           42px;
+//** lg
+$icon-lg-size:                  60px;
+$icon-lg-line-height:           60px;
+//** xlg
+$icon-xlg-size:                 96px;
+$icon-xlg-line-height:          96px;
+//** Icon Appearance
+//** icon default
+$icon-default-color:            $gray-darker;
+$icon-default-border-color:     $gray;
+//** icon darker
+$icon-darker-color:             $gray-darker;
+$icon-darker-border-color:      $gray-darker;
+//** icon primary
+$icon-primary-color:            $brand-primary;
+$icon-primary-border-color:     $brand-primary;
+//** icon deluge
+$icon-deluge-color:             $brand-deluge;
+$icon-deluge-border-color:      $brand-deluge;
+//** icon picton blue
+$icon-picton-blue-color:        $brand-picton-blue;
+$icon-picton-blue-border-color: $brand-picton-blue;
+//** icon success
+$icon-success-color:            $brand-success;
+$icon-success-border-color:     $brand-success;
+//** icon warning
+$icon-warning-color:            $brand-warning;
+$icon-warning-border-color:     $brand-warning;
+//** icon danger
+$icon-danger-color:             $brand-danger;
+$icon-danger-border-color:      $brand-danger;
+//** icon info
+$icon-info-color:               $brand-info;
+$icon-info-border-color:        $brand-info;
+
+
+//== Dropcaps
+//
+//##
+
+$dropcap-color:                 $gray-dark;
+$dropcap-size:                  120px;
+$dropcap-weight:                300;
+$dropcap-line-height:           0.7;
+
+//== Shadows
+//
+//##
+
+$shadow-area-ambient:           0px 0px 1px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-xxs:               1px 1px 1px rgba(0, 0, 0, 0.15);
+$shadow-area-xs:                0 1px 4px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-sm:                0 1px 10px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-md:                0 3px 11px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-lg:                0 5px 23px 0 rgba(0, 0, 0, 0.15);
+$shadow-area-xl:                0 12px 36px 0 rgba(0, 0, 0,.15);
+$shadow-area-variant-2:         0 0px 20px 2px rgba(0, 0, 0,.1);
+
+
+//== Forms
+//
+//##
+
+//** Form Control color options
+$input-bg:                       $white;
+$input-bg-disabled:              $gray-lighter;
+$input-color:                    $gray-darkest;
+$input-border:                   $gray;
+
+//** Form Control impressed color options
+$input-impressed-bg: $gray-lightest;
+
+//** Form Control text styling options
+$input-font-size:                16px;
+
+//** Form Control border radius
+$input-border-radius:            $border-radius-base;
+$input-border-radius-large:      $border-radius-large;
+$input-border-radius-small:      $border-radius-small;
+
+//** Border color for inputs on focus
+$input-border-focus:             $gray;
+
+//** Placeholder color options
+$input-color-placeholder:        $input-color;
+$input-color-placeholder-focus:  $brand-primary;
+
+//** Form Control sizing options
+$input-height-base:              $btn-lh-size + ($padding-base-vertical + $border-width-base)*2;
+$input-height-large:             $btn-lh-size-large + ($padding-large-vertical + $border-width-base)*2;
+$input-height-small:             $btn-lh-size-small + ($padding-small-vertical + $border-width-small)*2;
+
+//** Form Group spacing options
+$form-group-margin-bottom:       10px;
+
+//** Legend styling options
+$legend-color:                   $gray-dark;
+$legend-border-color:            $gray-lighter;
+
+//** Input Group Addon styling options
+$input-group-addon-color:        $white;
+$input-group-addon-bg:           $brand-primary;
+$input-group-addon-border-color: $brand-primary;
+
+//** Form label styling options
+$form-label-position-top:          25px;
+$form-label-focus-position-top:    1px;
+//** sm input size variation
+$form-label-sm-position-top:       20px;
+$form-label-sm-focus-position-top: -1px;
+//** lg input size variation
+$form-label-lg-position-top:       35px;
+$form-label-lg-focus-position-top: 8px;
+
+//** Disabled cursor for form controls and buttons.
+$cursor-disabled:                not-allowed;
+
+//** Checkbox custom styling options
+$checkbox-icon:                   "\f222";
+$checkbox-icon-font:              $icon-font-material-design;
+$checkbox-checked-color:          $gray-darker;
+
+//** Radio custom styling options
+$radio-checked-color:             $gray-darker;
+$radio-input-width:               14px;
+$radio-input-height:              14px;
+$radio-input-background:          $gray-lighter;
+$radio-input-border-radius:       50%;
+$radio-input-padding:             3px;
+$radio-input-shadow:              inset $shadow-area-xxs, inset 0 0 0 3px $gray-lighter;
+//** checked state
+$radio-input-checked-background:  $gray-darker;
+
+//** Textarea default
+$textarea-default-height:       170px;
+$textarea-default-min-height:   50px;
+$textarea-default-max-height:   370px;
+
+//** Form validation styling options
+$form-validation-position-top:           100%;
+$form-validation-size:                   10px;
+$form-validation-line-height:            $form-validation-size;
+$form-validation-offset-top:             2px;
+$form-validation-error-color:            $brand-ku-crimson;
+$form-validation-success-color:          $brand-dollar-bill;
+//** inside input
+$form-validation-inside-position-top:    2px;
+$form-validation-inside-position-left:   12px;
+$form-validation-inside-bg:              $white;
+
+//** Form control feedback styling options
+$form-control-feedback-size:             20px;
+$form-control-feedback-padding-right:    50px;
+//** sm input size variation
+$form-control-sm-feedback-padding-right: 40px;
+//** lg input size variation
+$form-control-lg-feedback-padding-right: 70px;
+
+//** Search form styling options
+//** submit btn
+$form-search-btn-size:                   24px;
+$form-search-btn-color:                  $gray-darker;
+//** focus state
+$form-search-btn-focus-color:            $brand-primary;
+//** label
+$form-search-label-color:                $gray-darkest;
+//** input
+$form-search-input-padding-right:        35px;
+$form-search-input-color:                $gray-darkest;
+
+
+//== Dropdowns
+//
+
+//## Dropdown menu container and contents.
+
+//** Background for the dropdown menu.
+$dropdown-bg:                    #fff;
+
+//** Divider color for between dropdown items.
+$dropdown-divider-bg:            $gray;
+
+//** Dropdown link text color.
+$dropdown-link-color:            $gray-darker;
+
+//** Hover color for dropdown links.
+$dropdown-link-hover-color:      $gray-darker;
+
+//** Hover background for dropdown links.
+$dropdown-link-hover-bg:         $gray-lighter;
+
+//** Active dropdown menu item text color.
+$dropdown-link-active-color:     $component-active-color;
+
+//** Active dropdown menu item background color.
+$dropdown-link-active-bg:        $component-active-bg;
+
+//** Disabled dropdown menu item background color.
+$dropdown-link-disabled-color:   $gray;
+
+//** Text color for headers within dropdown menus.
+$dropdown-header-color:          $gray-dark;
+
+//** Deprecated `$dropdown-caret-color` as of v3.1.0
+$dropdown-caret-color:           $gray-darker;
+
+//** The dropdown menu
+$dropdown-menu-size:             13px;
+$dropdown-menu-border-radius:    $border-radius-small;
+//** Links within the dropdown menu
+$dropdown-menu-item-padding:     5px 20px;
+//** Dropdown section headers
+$dropdown-header-size:           12px;
+$dropdown-header-padding:        8px 20px 3px;
+
+//== Select
+//
+
+//** single selection
+$select2-single-selection-height:                 28px;
+$select2-single-selection-rendered-padding-left : 8px;
+$select2-single-selection-rendered-padding-right: 20px;
+
+//** dropdown
+$select2-dropdown-arrow-color:                    $input-color-placeholder;
+$select2-single-selection-dropdown-background:    $white;
+$select2-single-selection-dropdown-border:        1px solid #aaa;
+$select2-dropdown-icon:                           '\f236';
+$select2-dropdown-icon-family:                    $icon-font-material-design;
+
+//** multiple selection
+$select2-multiple-selection-results-group-size:   12px;
+$select2-multiple-selection-results-group-weight: 400;
+
+//** clear selection
+$select2-clear-selection-offset-right:            10px;
+$select2-clear-selection-weight:                  700;
+$select2-clear-selection-hover-color:             #333;
+$select2-clear-selection-color:                   $select2-dropdown-arrow-color;
+
+//** choice remove
+$select2-single-selection-choice-remove-color:    #999;
+
+//-- Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//
+// Note: These variables are not generated into the Customizer.
+
+$zindex-navbar:            1000;
+$zindex-dropdown:          1000;
+$zindex-popover:           1060;
+$zindex-tooltip:           1070;
+$zindex-navbar-fixed:      1030;
+$zindex-modal-background:  1040;
+$zindex-modal:             1050;
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+$screen-xs:                  480px;
+$screen-xs-min:              $screen-xs;
+$screen-phone:               $screen-xs-min;
+
+// Small screen / tablet
+$screen-sm:                  768px;
+$screen-sm-min:              $screen-sm;
+$screen-tablet:              $screen-sm-min;
+
+// Medium screen / desktop
+$screen-md:                  992px;
+$screen-md-min:              $screen-md;
+$screen-desktop:             $screen-md-min;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px;
+$screen-lg-min:              $screen-lg;
+$screen-lg-desktop:          $screen-lg-min;
+
+// Extra Large screen / 4k desktop
+$screen-xl:                  1800px;
+$screen-xl-min:              $screen-xl;
+$screen-xl-desktop:          $screen-xl-min;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xxs-max:             ($screen-xs-min - 1);
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
+$screen-lg-max:              ($screen-xl-min - 1);
+
+$medias: (0: null, $screen-xs-min : xs, $screen-sm-min : sm, $screen-md-min : md, $screen-lg-min : lg, $screen-xl-min : xl);
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns:              12;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         30px;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-sm-min;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+$container-tablet:             (720px + $grid-gutter-width);
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet;
+
+// Medium screen / desktop
+$container-desktop:            (940px + $grid-gutter-width);
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop;
+
+// Large screen / wide desktop
+$container-large-desktop:      (1170px + $grid-gutter-width);
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop;
+
+
+//== Navbar
+//
+//##
+
+// $navbar-font-size: 16;
+// $navbar-lh-size: 18;
+
+// Basics of a navbar
+$navbar-height:                            52px;
+$navbar-margin-bottom:                     $line-height-computed;
+$navbar-border-radius:                     $border-radius-base;
+$navbar-padding-horizontal:                floor(($grid-gutter-width / 2));
+$navbar-padding-vertical:                  (($navbar-height - $line-height-computed) / 2);
+$navbar-collapse-max-height:               340px;
+
+$navbar-default-color:                     $gray-darker;
+$navbar-default-bg:                        $white;
+
+// Navbar links
+$navbar-default-link-color:                $gray-darker;
+$navbar-default-link-hover-color:          $gray-darker;
+$navbar-default-link-hover-bg:             $gray-lighter;
+$navbar-default-link-active-color:         $white;
+$navbar-default-link-active-bg:            $brand-primary;
+$navbar-default-link-disabled-color:       $gray;
+$navbar-default-link-disabled-bg:          transparent;
+
+// Navbar brand label
+$navbar-default-brand-color:               $navbar-default-link-color;
+$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%);
+$navbar-default-brand-hover-bg:            transparent;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           #ddd;
+$navbar-default-toggle-icon-bar-bg:        #888;
+$navbar-default-toggle-border-color:       #ddd;
+
+
+//=== Inverted navbar
+// Reset inverted navbar basics
+$navbar-inverse-color:                      $gray-darker;
+$navbar-inverse-bg:                         $gray-darkest;
+
+// Inverted navbar links
+$navbar-inverse-link-color:                 $white;
+$navbar-inverse-link-hover-color:           $white;
+$navbar-inverse-link-hover-bg:              $gray-base;
+$navbar-inverse-link-active-color:          $white;
+$navbar-inverse-link-active-bg:             $brand-primary;
+$navbar-inverse-link-disabled-color:        $gray-darker;
+$navbar-inverse-link-disabled-bg:           transparent;
+
+// Inverted navbar brand label
+$navbar-inverse-brand-color:                $navbar-inverse-link-color;
+$navbar-inverse-brand-hover-color:          $white;
+$navbar-inverse-brand-hover-bg:             transparent;
+
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-bg:            #333;
+$navbar-inverse-toggle-icon-bar-bg:         #fff;
+$navbar-inverse-toggle-border-color:        #333;
+
+
+//== Navs
+//
+//##
+
+//=== Shared nav styles
+$nav-link-padding:                              10px 18px;
+$nav-link-hover-bg:                             $gray-lightest;
+
+$nav-disabled-link-color:                       $gray;
+$nav-disabled-link-hover-color:                 $gray;
+
+//== Tabs
+$nav-tabs-border-color:                         $gray;
+$nav-tabs-link-hover-border-color:              $gray-lightest;
+$nav-tabs-active-link-hover-bg:                 $white;
+$nav-tabs-active-link-hover-color:              $gray-darker;
+$nav-tabs-active-link-hover-border-color:       $gray;
+
+$nav-tabs-justified-link-border-color:          $gray;
+$nav-tabs-justified-active-link-border-color:   $white;
+
+//** Accordions
+$accordion-color:                         $gray-dark;
+$accordion-color-hover:                   $gray-darker;
+$accordion-active-color:                  $accordion-color-hover;
+$accordion-list-color:                    $accordion-color;
+$accordion-list-active-color:             $accordion-color-hover;
+
+$accordion-arrow-icon-position:           relative;
+$accordion-arrow-icon-position-top:       11px;
+$accordion-arrow-icon-position-right:     0;
+$accordion-arrow-icon-position-bottom:    0;
+$accordion-arrow-icon-width:              20px;
+$accordion-accordion-inset:               15px 20px 15px 2px;
+$accordion-list-inset:                    0 0 13px;
+$accordion-content-inset:                 2px 5px 17px 2px;
+
+$accordion-size:                          16px;
+$accordion-weight:                        700;
+$accordion-list-weight:                   $accordion-weight;
+$accordion-list-size:                     $accordion-size;
+$accordion-arrow-icon-size:               21px;
+$accordion-arrow-icon-weight:             400;
+$accordion-arrow-icon-family:             "Material Design Icons";
+$accordion-arrow-icon:                    '\f504';
+$accordion-arrow-icon-active:             '\f465';
+
+$accordion-md-border-bottom:              none;
+$accordion-md-border-top:                 none;
+$accordion-border:                        1px solid $gray;
+
+//** Common Horizontal and Vertical Tabs
+$accordion-tabs-list-border-background:                     $gray-darker;
+$accordion-tabs-border-position:                            absolute;
+$accordion-tabs-border-position-left:                       50%;
+$accordion-tabs-list-border-position-bottom:                0;
+$accordion-tabs-list-border-width:                          0;
+$accordion-tabs-list-border-active-width:                   100%;
+$accordion-tabs-list-border-height:                         1px;
+$accordion-tabs-content-inset-top:                          32px;
+$accordion-tabs-list-offset-left:                           10px;
+$accordion-tabs-list-border-top:                            none;
+$accordion-tabs-list-border-bottom:                         none;
+$accordion-tabs-boxed-list-letter-color:                    $gray-darker;
+$accordion-tabs-boxed-list-inset:                           13px 20px;
+$accordion-tabs-boxed-list-size:                            14px;
+$accordion-tabs-boxed-list-weight:                          900;
+$accordion-tabs-boxed-list-letter-spacing:                  .06em;
+//** 992
+$accordion-tabs-boxed-list-md-border-bottom:                1px solid $gray;
+$accordion-tabs-boxed-list-md-li-border-top:                1px solid $gray;
+$accordion-tabs-boxed-list-md-li-border-bottom:             1px solid transparent;
+$accordion-tabs-boxed-list-md-li-border-left:               1px solid $gray;
+$accordion-tabs-boxed-list-md-offset-top:                   0;
+$accordion-tabs-boxed-content-md-inset:                     44px 61px 40px 61px;
+$accordion-tabs-boxed-content-md-border-bottom:             none;
+$accordion-tabs-boxed-content-md-border-right:              none;
+//** after styling
+$accordion-tabs-boxed-list-md-li-after-position:            absolute;
+$accordion-tabs-boxed-list-md-li-after-position-bottom:     -1px;
+$accordion-tabs-boxed-list-md-li-after-position-left:       0;
+$accordion-tabs-boxed-list-md-li-after-position-width:      100%;
+$accordion-tabs-boxed-list-md-li-after-border-bottom:       1px solid $gray;
+//** active tab
+$accordion-tabs-boxed-list-md-active-border-bottom-color:   $white;
+$accordion-tabs-boxed-list-md-active-background-color:      $white;
+$accordion-tabs-boxed-list-md-active-after-width:           0;
+//** 1200
+$accordion-tabs-boxed-list-lg-inset:                        43px 43px 43px 60px;
+$accordion-tabs-boxed-list-lg-offsets:                      0 0 0 -1px;
+$accordion-tabs-boxed-lg-border-top:                        1px solid $gray;
+$accordion-tabs-boxed-list-lg-border-top:                   none;
+$accordion-tabs-boxed-list-lg-border-bottom:                none;
+$accordion-tabs-boxed-list-lg-li-border-top:                1px solid $gray;
+$accordion-tabs-boxed-list-lg-li-border-right:              none;
+$accordion-tabs-boxed-list-lg-li-first-item-border-top:     none;
+$accordion-tabs-boxed-list-lg-li-last-item-border-bottom:   1px solid $gray;
+//** after styling
+$accordion-tabs-boxed-list-lg-li-after-position-top:        0;
+$accordion-tabs-boxed-list-lg-li-after-position-right:      -1px;
+$accordion-tabs-boxed-list-lg-li-after-position-bottom:     auto;
+$accordion-tabs-boxed-list-lg-li-after-position-left:       auto;
+$accordion-tabs-boxed-list-lg-li-after-width:               1px;
+$accordion-tabs-boxed-list-lg-li-after-border-right:        1px solid $white;
+//** active tab
+$accordion-tabs-boxed-list-lg-active-after-height:          102%;
+//** 1200
+//** horizontal tabs
+$accordion-horizontal-tabs-list-lg-left-offset:             33px;
+//** vertical tabs
+$accordion-vertical-tabs-list-lg-border-position:           absolute;
+$accordion-vertical-tabs-list-lg-border-position-top:       50%;
+$accordion-vertical-tabs-list-lg-border-position-left:      0;
+$accordion-vertical-tabs-list-lg-active-height:             100%;
+$accordion-vertical-tabs-list-lg-active-width:              1px;
+$accordion-vertical-tabs-list-lg-border-height:             0;
+$accordion-vertical-tabs-list-lg-inset:                     0 0 0 30px;
+$accordion-vertical-tabs-content-lg-inset-top:              0;
+$accordion-vertical-tabs-list-lg-offset-left:               0;
+$accordion-vertical-tabs-list-lg-offset-top:                25px;
+$accordion-vertical-tabs-list-lg-border-left:               1px solid $gray;
+//** Boxed Tabs
+$accordion-tabs-boxed-inset-left:                           20px;
+$accordion-tabs-boxed-inset-right:                          40px;
+$accordion-tabs-boxed-arrow-position-right:                 20px;
+$accordion-tabs-boxed-content-inset-left-and-right:         20px;
+$accordion-tabs-boxed-content-offset-top:                   5px;
+$accordion-tabs-boxed-border:                               1px solid $gray;
+$accordion-tabs-boxed-content-border:                       $accordion-tabs-boxed-border;
+$accordion-tabs-boxed-active-border-bottom:                 1px solid transparent;
+
+//== Pills
+$nav-pills-border-radius:                                   $border-radius-small;
+$nav-pills-active-link-hover-bg:                            $brand-primary;
+$nav-pills-active-link-hover-color:                         $white;
+
+
+//== Pagination
+//
+//##
+
+$pagination-color:              $gray-darker;
+$pagination-bg:                 transparent;
+$pagination-border:             $gray;
+
+$pagination-hover-color:        $white;
+$pagination-hover-bg:           $gray-darkest;
+$pagination-hover-border:       $gray-darkest;
+
+$pagination-active-color:       $white;
+$pagination-active-bg:          $brand-primary;
+$pagination-active-border:      $brand-primary;
+
+$pagination-disabled-color:     $gray;
+$pagination-disabled-bg:        transparent;
+$pagination-disabled-border:    $gray;
+
+
+//== Pager
+//
+//##
+
+$pager-bg:                $pagination-bg;
+$pager-border:            $pagination-border;
+$pager-border-radius:     $border-radius-small;
+
+$pager-hover-color:       $pagination-hover-color;
+$pager-hover-bg:          $pagination-hover-bg;
+$pager-hover-border:      $pagination-hover-border;
+
+$pager-active-bg:         $pager-hover-bg;
+
+$pager-disabled-color:    $pagination-disabled-color;
+$pager-disabled-bg:       $pagination-disabled-bg;
+$pager-disabled-border:   $pagination-disabled-border;
+
+
+//== Jumbotron
+//##
+
+$jumbotron-padding:                 38px;
+$jumbotron-padding-right:           6%;
+$jumbotron-padding-left:            6%;
+$jumbotron-color:                   inherit;
+$jumbotron-bg:                      $gray-darkest;
+$jumbotron-heading-color:           inherit;
+$jumbotron-font-size:               16px;
+$jumbotron-heading-font-size:       ceil(($font-size-base * 4.5));
+$jumbotron-heading-border-radius:   $border-radius-base;
+
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+$state-success-text:     $brand-dollar-bill;
+$state-success-bg:       $brand-success;
+$state-success-border:   $brand-success;
+
+$state-info-text:        $brand-iceberg;
+$state-info-bg:          $brand-info;
+$state-info-border:      $brand-info;
+
+$state-warning-text:     $brand-neon-carrot;
+$state-warning-bg:       $brand-warning;
+$state-warning-border:   $brand-warning;
+
+$state-danger-text:      $brand-ku-crimson;
+$state-danger-bg:        $brand-danger;
+$state-danger-border:    $brand-danger;
+
+
+//== Tooltips
+//
+//##
+
+//** Tooltip max width
+$tooltip-max-width:           200px;
+//** Tooltip text color
+$tooltip-color:               #fff;
+//** Tooltip background color
+$tooltip-bg:                  #000;
+$tooltip-opacity:             .9;
+
+//** Tooltip arrow width
+$tooltip-arrow-width:         5px;
+//** Tooltip arrow color
+$tooltip-arrow-color:         $tooltip-bg;
+
+
+//== Popovers
+//
+//##
+
+//** Popover body background color
+$popover-bg:                          #fff;
+//** Popover maximum width
+$popover-max-width:                   276px;
+//** Popover border color
+$popover-border-color:                rgba(0,0,0,.2);
+//** Popover fallback border color
+$popover-fallback-border-color:       #ccc;
+
+//** Popover title background color
+$popover-title-bg:                    darken($popover-bg, 3%);
+
+//** Popover arrow width
+$popover-arrow-width:                 10px;
+//** Popover arrow color
+$popover-arrow-color:                 $popover-bg;
+
+//** Popover outer arrow width
+$popover-arrow-outer-width:           ($popover-arrow-width + 1);
+//** Popover outer arrow color
+$popover-arrow-outer-color:           fade_in($popover-border-color, 0.05);
+//** Popover outer arrow fallback color
+$popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%);
+
+
+//== Labels
+//
+//##
+
+//** Default label background color
+$label-default-bg:                    $gray;
+//** Primary label background color
+$label-primary-bg:                    $brand-primary;
+//** Success label background color
+$label-success-bg:                    $brand-success;
+//** Info label background color
+$label-info-bg:                       $brand-info;
+//** Warning label background color
+$label-warning-bg:                    $brand-warning;
+//** Danger label background color
+$label-danger-bg:                     $brand-danger;
+//** Deluge label background color
+$label-deluge-bg:                     $brand-deluge;
+
+//** Default label text color
+$label-color:                         #fff;
+//** Default text color of a linked label
+$label-link-hover-color:              #fff;
+//**
+$label-padding:                       .2em .6em .2em;
+//** Labels Custom
+$label-custom-hover:                  $white;
+$label-custom-padding:                8px;
+$label-custom-size:                   8px;
+$label-custom-weight:                 900;
+$label-custom-line-height:            1;
+$label-custom-title-offset-left:      10px;
+$label-ellipsis-custom-border-radius: 10px;
+$label-rounded-custom:                3px;
+//** labels custom sizing
+$label-xs-custom-padding:             3px 5px;
+$label-sm-custom-padding:             7px;
+$label-lg-custom-padding:             9px 10px;
+$label-lg-custom-padding:             9px 10px;
+$label-lg-custom-size:                12px;
+$label-xl-custom-padding:             10px 12px;
+$label-xl-custom-size:                12px;
+
+
+//== Modals
+//
+//##
+
+//** Padding applied to the modal body
+$modal-inner-padding:                  15px;
+
+//** Padding applied to the modal title
+$modal-title-padding:                  15px;
+//** Modal title line-height
+$modal-title-line-height:              $line-height-base;
+
+//** Background color of modal content area
+$modal-content-bg:                     #fff;
+//** Modal content border color
+$modal-content-border-color:           rgba(0,0,0,.2);
+//** Modal content border color **for IE8**
+$modal-content-fallback-border-color:  #999;
+
+//** Modal backdrop background color
+$modal-backdrop-bg:                    #000;
+//** Modal backdrop opacity
+$modal-backdrop-opacity:               .5;
+//** Modal header border color
+$modal-header-border-color:            #e5e5e5;
+//** Modal footer border color
+$modal-footer-border-color:            $modal-header-border-color;
+
+$modal-lg:                             900px;
+$modal-md:                             600px;
+$modal-sm:                             300px;
+
+
+//== Alerts
+//
+//## Define alert colors, border radius, and padding.
+
+$alert-padding:                           12px 15px;
+$alert-border-radius:                     $border-radius-base;
+$alert-link-font-weight:                  bold;
+
+$alert-success-bg:                        $state-success-bg;
+$alert-success-text:                      $state-success-text;
+$alert-success-border:                    $state-success-border;
+
+$alert-info-bg:                           $state-info-bg;
+$alert-info-text:                         $state-info-text;
+$alert-info-border:                       $state-info-border;
+
+$alert-warning-bg:                        $state-warning-bg;
+$alert-warning-text:                      $state-warning-text;
+$alert-warning-border:                    $state-warning-border;
+
+$alert-danger-bg:                         $state-danger-bg;
+$alert-danger-text:                       $state-danger-text;
+$alert-danger-border:                     $state-danger-border;
+
+//** Alert Classic
+$alert-classic-background-color:          $gray-lighter;
+
+$alert-classic-title-weight:              700;
+
+$alert-classic-padding:                   17px 22px 17px;
+$alert-classic-offset-top:                10px;
+$alert-classic-border-left-width:         3px;
+$alert-classic-border-left-style:         solid;
+
+//** Alert Classic Styles
+//** alert danger
+$alert-classic-danger-title-color:        $brand-ku-crimson;
+$alert-classic-danger-border-left-color:  $brand-danger;
+//** alert info
+$alert-classic-info-title-color:          $brand-iceberg;
+$alert-classic-info-border-left-color:    $brand-info;
+//** alert success
+$alert-classic-success-title-color:       $brand-dollar-bill;
+$alert-classic-success-border-left-color: $brand-success;
+//** alert warning
+$alert-classic-warning-title-color:       $brand-neon-carrot;
+$alert-classic-warning-border-left-color: $brand-warning;
+
+//** Alert Classic Sizing
+$alert-classic-sm-padding-top:            7px;
+$alert-classic-sm-padding-bottom:         7px;
+$alert-classic-sm-border-left-width:      2px;
+$alert-classic-lg-padding-top:            23px;
+$alert-classic-lg-padding-bottom:         28px;
+$alert-classic-lg-border-left-width:      4px;
+
+//** Snackbars
+$snackbars-color:                         $white;
+$snackbars-background-color:              $gray-darkest;
+$snackbars-padding:                       9px 16px;
+$snackbars-xs-padding:                    14px 17px;
+$snackbars-padding-from-icon-to-text:     14px;
+$snackbars-max-width:                     280px;
+$snackbars-xs-max-width:                  370px;
+$snackbars-offset-top:                    10px;
+$snackbars-offset-left:                   auto;
+$snackbars-offset-right:                  auto;
+$snackbars-icon-size:                     20px;
+$snackbars-border-radius:                 $border-width-base;
+$snackbars-box-shadow:                    $shadow-area-xs;
+
+
+//== Progress bars
+//
+//##
+
+//** Progress bar sizing options
+$progress-font-weight:                  700;
+$progress-font-size:                    13px;
+$progess-height:                        20px;
+//** Background color of the whole progress component
+$progress-bg:                           #f5f5f5;
+//** Progress bar text color
+$progress-bar-color:                    #fff;
+//** Variable for setting rounded corners on progress bar.
+$progress-border-radius:                $border-radius-base;
+//** Default progress bar color
+$progress-bar-bg:                       $brand-primary;
+//** Success progress bar color
+$progress-bar-success-bg:               $brand-success;
+//** Warning progress bar color
+$progress-bar-warning-bg:               $brand-warning;
+//** Danger progress bar color
+$progress-bar-danger-bg:                $brand-danger;
+//** Info progress bar color
+$progress-bar-info-bg:                  $brand-info;
+//** Dark progress bar color
+$progress-bar-dark-bg:                  $gray-darkest;
+//** Progress Linear
+$progress-bar-linear-empty-background:  $gray-lighter;
+$progress-linear-height:                12px;
+$progress-bar-linear-border-radius:     $border-radius-base;
+//** Circle Progress Bars
+$progress-bar-circle-icon:              '%';
+$progress-bar-circle-width:             74%;
+$progress-bar-circle-height:            74%;
+$progress-bar-circle-size:              38px;
+$progress-bar-circle-weight:            900;
+$progress-bar-circle-line-height:       38px;
+
+
+//== List group
+//
+//##
+
+//** Background color on `.list-group-item`
+$list-group-bg:                   $white;
+
+//** `.list-group-item` border color
+$list-group-border:               $gray;
+
+//** List group border radius
+$list-group-border-radius:        $border-radius-small;
+
+//** Background color of single list items on hover
+$list-group-hover-bg:             $gray-lightest;
+
+//** Text color of active list items
+$list-group-active-color:         $white;
+
+//** Background color of active list items
+$list-group-active-bg:            $brand-primary;
+
+//** Border color of active list elements
+$list-group-active-border:        $brand-primary;
+
+//** Text color for content within active list items
+$list-group-active-text-color:    $white;
+
+//** Text color of disabled list items
+$list-group-disabled-color:       $gray-light;
+
+//** Background color of disabled list items
+$list-group-disabled-bg:          $gray-lighter;
+
+//** Text color for content within disabled list items
+$list-group-disabled-text-color:  $list-group-disabled-color;
+
+$list-group-link-color:           #555;
+$list-group-link-hover-color:     $list-group-link-color;
+$list-group-link-heading-color:   #333;
+
+
+//== Panels
+//
+//##
+
+$panel-bg:                    #fff;
+$panel-size:                  15px;
+$panel-weight:                700;
+$panel-body-padding:          15px;
+$panel-heading-padding:       10px 15px;
+$panel-footer-padding:        $panel-heading-padding;
+$panel-border-radius:         $border-radius-base;
+
+//** Border color for elements within panels
+$panel-inner-border:          #ddd;
+$panel-footer-bg:             #f5f5f5;
+
+$panel-default-text:          $gray-darker;
+$panel-default-border:        #ddd;
+$panel-default-heading-bg:    $gray-lighter;
+
+$panel-primary-text:          #fff;
+$panel-primary-border:        $brand-primary;
+$panel-primary-heading-bg:    $brand-primary;
+
+$panel-success-text:          $state-success-text;
+$panel-success-border:        $state-success-border;
+$panel-success-heading-bg:    $state-success-bg;
+
+$panel-info-text:             $state-info-text;
+$panel-info-border:           $state-info-border;
+$panel-info-heading-bg:       $state-info-bg;
+
+$panel-warning-text:          $state-warning-text;
+$panel-warning-border:        $state-warning-border;
+$panel-warning-heading-bg:    $state-warning-bg;
+
+$panel-danger-text:           $state-danger-text;
+$panel-danger-border:         $state-danger-border;
+$panel-danger-heading-bg:     $state-danger-bg;
+
+
+//== Thumbnails
+//
+//##
+
+//** Padding around the thumbnail image
+$thumbnail-padding:                               0;
+//** Thumbnail background color
+$thumbnail-bg:                                    $body-bg;
+//** Thumbnail border radius
+$thumbnail-border-radius:                         $border-radius-base;
+//** Custom text color for thumbnail captions
+$thumbnail-caption-color:                         $text-color;
+//** Padding around the thumbnail caption
+$thumbnail-caption-padding:                       20px;
+//** Thumbnail Classic
+$thumbnail-classic-figcaption-padding:            20px;
+$thumbnail-classic-hover-box-shadow:              $shadow-area-lg;
+//** thumbnail classic title
+$thumbnail-classic-title-background:              $white;
+$thumbnail-classic-title-box-shadow:              $shadow-area-md;
+$thumbnail-classic-title-padding:                 12px;
+//** thumbnail classic description
+$thumbnail-classic-desc-color:                    $white;
+$thumbnail-classic-desc-background:               $gray-darkest;
+$thumbnail-classic-desc-padding:                  6px;
+$thumbnail-classic-desc-box-shadow:               $shadow-area-md;
+//** Thumbnail Zoe
+$thumbnail-zoe-figcaption-background:             $white;
+$thumbnail-zoe-title-list-hover-color:            $brand-picton-blue;
+//** Thumbnail Winston
+$thumbnail-winston-title-background:              $gray-darkest;
+$thumbnail-winston-title-color:                   $white;
+$thumbnail-winston-title-padding:                 20px 5px;
+//** 1200
+$thumbnail-winston-title-lg-padding:              .1em .5em;
+//** left items of thumbnail winston
+$thumbnail-winston-left-items-background:         $white;
+$thumbnail-winston-left-items-padding:            0.4em 1em;
+$thumbnail-winston-left-items-offsets:            0 0 0.55em;
+//** Thumbnail Josip
+$thumbnail-josip-figcaption-background:           $gray-darkest;
+$thumbnail-josip-figcaption-width:                100%;
+$thumbnail-josip-figcaption-height:               60px;
+$thumbnail-josip-figcaption-padding:              3px 5%;
+//** 992
+$thumbnail-josip-figcaption-md-height:            85px;
+$thumbnail-josip-figcaption-md-padding:           17px 5%;
+//** thumbnail josip title
+$thumbnail-josip-title-color: $white;
+//** Thumbnail Janes
+$thumbnail-janes-figcaption-background:           $white;
+$thumbnail-janes-figcaption-padding:              20px;
+//** 1200
+$thumbnail-janes-figcaption-lg-padding:           25px 30px 30px 30px;
+$thumbnail-janes-figcaption-lg-hover-box-shadow:  $shadow-area-md;
+//** Thumbnail Apollo
+$thumbnail-apollo-figcaption-padding:             15px 20px 10px;
+$thumbnail-apollo-color:                          $white;
+$thumbnail-apollo-hover-overlay:                  $brand-picton-blue;
+$thumbnail-apollo-padding:                        0 8%;
+
+
+//== Wells
+//
+//##
+
+$well-bg:      #f5f5f5;
+$well-border:  darken($well-bg, 7%);
+
+
+//== Badges
+//
+//##
+
+$badge-padding:               2px 5px;
+$badge-color:                 $white;
+//** Linked badge text color on hover
+$badge-link-hover-color:      $white;
+$badge-bg:                    $brand-primary;
+//** Badge text color in active nav link
+$badge-active-color:          $brand-primary;
+//** Badge background color in active nav link
+$badge-active-bg:             $white;
+$badge-font-weight:           bold;
+$badge-font-size:             12px;
+$badge-line-height:           1;
+$badge-border-radius:         10px;
+//** Badge inside pills
+$badge-pills-offset-left:     5px;
+$badge-pills-offset-bottom:   3px;
+
+
+//== Breadcrumbs
+//
+//##
+
+$breadcrumb-padding-vertical:             8px;
+$breadcrumb-padding-horizontal:           15px;
+//** Breadcrumb background color
+$breadcrumb-bg:                           #f5f5f5;
+//** Breadcrumb text color
+$breadcrumb-color:                        #ccc;
+//** Text color of current page in the breadcrumb
+$breadcrumb-active-color:                 $gray-light;
+//** Textual separator for between breadcrumb elements
+$breadcrumb-separator:                    "/";
+//** Breadcrumb Classic
+$breadcrumb-classic-color:                $white;
+$breadcrumb-classic-position:             relative;
+$breadcrumb-classic-after-position:       absolute;
+$breadcrumb-classic-after-position-right: 0;
+$breadcrumb-classic-after-position-left:  0;
+$breadcrumb-classic-after-width:          100%;
+$breadcrumb-classic-after-height:         100%;
+$breadcrumb-classic-animation:            fadeBoth 6s infinite;
+//** Breadcrumb Default
+$breadcrumb-default-color:                $gray-dark;
+$breadcrumb-default-hover:                $brand-picton-blue;
+$breadcrumb-default-background:           $gray-lightest;
+$breadcrumb-default-inset:                28px 15px;
+$breadcrumb-default-offset-left:          3px;
+$breadcrumb-default-size:                 15px;
+//- icon styling
+$breadcrumb-default-icon-color:           $gray-dark;
+$breadcrumb-default-icon-inset-right:     4px;
+$breadcrumb-default-icon:                 "\f234";
+$breadcrumb-default-icon-font-family:     "Material Design Icons";
+
+
+//== Carousel
+//
+//##
+
+$carousel-text-shadow:              0 1px 2px rgba(0,0,0,.6);
+$carousel-control-color:            #fff;
+$carousel-control-width:            15%;
+$carousel-control-opacity:          .5;
+$carousel-control-font-size:        20px;
+$carousel-indicator-active-bg:      #fff;
+$carousel-indicator-border-color:   #fff;
+$carousel-caption-color:            #fff;
+
+
+//== Close
+//
+//##
+
+$close-font-weight:   bold;
+$close-color:         #000;
+$close-text-shadow:   0 1px 0 #fff;
+
+
+//== Code
+//
+//##
+
+$code-color:                  #c7254e;
+$code-bg:                     #f9f2f4;
+
+$kbd-color:                   #fff;
+$kbd-bg:                      #333;
+
+$pre-bg:                      #f5f5f5;
+$pre-color:                   $gray-dark;
+$pre-border-color:            #ccc;
+$pre-scrollable-max-height:   340px;
+
+
+//== Type
+//
+//##
+
+//** Horizontal offset for forms and lists.
+$component-offset-horizontal: 180px;
+//** Text muted color
+$text-muted:                  $gray;
+//** Abbreviations and acronyms border color
+$abbr-border-color:           $gray-light;
+//** Headings small color
+$headings-small-color:        $gray-light;
+//** Blockquote small color
+$blockquote-small-color:      $gray-light;
+//** Blockquote font size
+$blockquote-font-size:        ($font-size-base * 1.25);
+//** Blockquote border color
+$blockquote-border-color:     $gray-lighter;
+//** Page header border color
+$page-header-border-color:    $gray-lighter;
+//** Width of horizontal description list titles
+$dl-horizontal-offset:        $component-offset-horizontal;
+//** Point at which .dl-horizontal becomes horizontal
+$dl-horizontal-breakpoint:    $grid-float-breakpoint;
+//** Horizontal line color.
+$hr-border:                   $gray-lighter;
+
+
+//== Flex Grid system
+//
+//##
+
+$shell-width:         300px;
+$shell-xs-width:      480px;
+$shell-sm-width:      750px;
+$shell-md-width:      970px;
+$shell-lg-width:      1200px;
+$shell-xl-width:      1800px;
+
+$range-ws:            50px;
+$range-ws-sm:         30px;
+$range-ws-lg:         66px;
+
+$cell-count:          12;
+$cell-spacing:        30px;
+$cell-spacing-narrow: 10px;
+
+
+//== Stepper
+//
+//##
+
+$stepper-arrow-color:         $gray-dark;
+$stepper-arrow-color-hover:   $gray-darker;
+$stepper-arrow-icon-font:     $icon-font-material-design;
+$stepper-arrow-icon-up:       "\f238";
+$stepper-arrow-icon-down:     "\f237";
+
+
+//== Stepper type 2
+//
+//##
+
+$stepper-type-2-arrow-color:        $gray;
+$stepper-type-2-arrow-color-hover:  $gray-dark;
+$stepper-type-2-arrow-icon-font:    $icon-font-material-design;
+$stepper-type-2-arrow-icon-up:      "\f504";
+$stepper-type-2-arrow-icon-down:    "\f465";
+
+
+//== Quotes
+//
+//##
+
+//** all types quotes braces
+$quote-braces-icon:                         "\f373";
+$quote-braces-font:                         $icon-font-material-design;
+$quote-braces-size:                         54px;
+$quote-braces-line-height:                  54px;
+
+//** Quote Classic
+$quote-braces-color:                        $gray-lighter;
+$quote-classic-body-padding:                20px 20px 40px;
+//** quote classic description
+$quote-classic-desc-size:                   13px;
+//** quote classic boxed
+$quote-classic-boxed-body-padding:          24px 20px 0 27px;
+$quote-classic-boxed-body-offset-bottom:    56px;
+$quote-classic-boxed-body-border-radius:    $border-radius-small;
+$quote-classic-boxed-body-border:           1px solid $gray-lighter;
+//** Quote Classic Boxed v2
+$quote-classic-boxed-2-body-padding:        60px 25px 20px 30px;
+$quote-classic-boxed-2-body-background:     $white;
+$quote-classic-boxed-2-body-border-radius:  $border-radius-small;
+$quote-classic-boxed-2-body-box-shadow:     $shadow-area-md;
+$quote-classic-boxed-2-braces-icon-color:   $brand-danger;
+//** Quote Slider v2
+$quote-slider-2-author-color:               $brand-danger;
+//** Quote Slider v3
+$quote-slider-3-braces-icon-color:          $brand-picton-blue;
+//** Quote Outboxed
+$quote-outboxed-body-padding:               26px 21px 25px 30px;
+$quote-outboxed-body-background:            $gray-lighter;
+$quote-outboxed-body-border-radius:         $border-radius-small;
+$quote-outboxed-braces-icon-color:          $gray;
+
+
+//== RD Video Player
+//
+//##
+
+$rd-video-player-controls-color:                $white;
+$rd-video-player-title-color:                   $white;
+$rd-video-player-volume-bar-background:         $white;
+$rd-video-player-overlay-background:            $gray-darkest;
+//** video title
+$rd-video-player-title-size:                    13px;
+$rd-video-player-title-weight:                  700;
+//** fullscreen icon 
+$rd-video-player-fullscreen-size:               18px;
+$rd-video-player-fullscreen-line-height:        16px;
+$rd-video-player-fullscreen-sm-size:            20px;
+$rd-video-player-fullscreen-sm-line-height:     15px;
+//** video time
+$rd-video-time-size:                            13px;
+//** video play-pause controls
+$rd-video-play-pause-size:                      20px;
+$rd-video-play-pause-controls-width:            28px;
+$rd-video-play-pause-controls-height:           28px;
+$rd-video-play-pause-controls-offsets:          0 5px;
+$rd-video-play-pause-controls-line-height:      24px;
+$rd-video-play-pause-controls-border:           2px solid rgba($white, 0.5);
+//** 768
+$rd-video-play-pause-sm-size:                   24px;
+$rd-video-play-pause-controls-sm-width:         36px;
+$rd-video-play-pause-controls-sm-height:        36px;
+$rd-video-play-pause-controls-sm-offsets:       0;
+$rd-video-play-pause-controls-sm-line-height:   32px;
+//** video icons controls
+$rd-video-player-volume-icon:                   '\f66e';
+$rd-video-player-play-pause-icon:               '\f4d3';
+$rd-video-player-fullscreen-icon:               '\f389';
+//** video progress bar
+$rd-video-progress-bar-background:              $white;
+$rd-video-progress-bar-width:                   100%;
+$rd-video-progress-bar-height:                  8px;
+$rd-video-progress-bar-offsets:                 0 10px 0 10px;
+$rd-video-progress-bar-sm-offsets:              0 17px 0 18px;
+//** video top controls
+$rd-video-top-controls-padding:                 10px 10px;
+$rd-video-top-controls-xs-padding:              23px 30px;
+//** video playlist
+$rd-video-playlist-color:                       $white;
+$rd-video-playlist-size:                        13px;
+$rd-video-playlist-weight:                      700;
+
+
+//== RD Audio Player
+//
+//##
+
+$rd-audio-player-controls-color:                      $gray-darker;
+$rd-audio-player-controls-padding:                    8px 10px;
+$rd-audio-player-controls-xs-padding:                 18px 10px;
+$rd-audio-player-controls-md-padding:                 18px 30px;
+//** icons sizing
+$rd-audio-player-icon-audio-size:                     16px;
+$rd-audio-player-icon-audio-xs-size:                  18px;
+//** audio volume
+$rd-audio-player-icon-volume:                         '\f66e';
+//** audio volume bar
+$rd-audio-player-audio-volume-bar-background:         $gray-lighter;
+//** audio play pause
+$rd-audio-player-icon-play-pause:                     '\f4d3';
+$rd-audio-player-icon-audio-play-pause-size:          20px;
+$rd-audio-player-icon-audio-play-pause-width:         28px;
+$rd-audio-player-icon-audio-play-pause-height:        28px;
+//** 768
+$rd-audio-player-icon-audio-play-pause-sm-size:       24px;
+$rd-audio-player-icon-audio-play-pause-sm-width:      36px;
+$rd-audio-player-icon-audio-play-pause-sm-height:     36px;
+//** audio title
+$rd-audio-player-icon-audio-title-wrap-size:          13px;
+$rd-audio-player-icon-audio-title-wrap-weight:        700;
+$rd-audio-player-icon-audio-title-wrap-line-height:   18px;
+$rd-audio-player-icon-audio-title-wrap-offsets:       0 10px;
+//** audio title
+$rd-audio-player-icon-audio-time-size: 13px;
+//** audio progress bar
+$rd-audio-player-audio-progress-bar-background:       $gray-lighter;
+//** audio playlist
+$rd-audio-player-playlist-wrap-background:            $white;
+$rd-audio-player-playlist-title-weight:               900;
+$rd-audio-player-playlist-title-size:                 13px;
+$rd-audio-player-playlist-title-padding:              7px 18px;
+$rd-audio-player-playlist-title-border-bottom:        1px solid $gray;
+//** audio playlist item
+$rd-audio-player-playlist-item-padding:               8px 15px;
+$rd-audio-player-playlist-item-xs-padding:            8px 70px 8px 18px;
+$rd-audio-player-playlist-item-weight:                700;
+$rd-audio-player-playlist-item-size:                  13px;
+$rd-audio-player-playlist-item-line-height:           24px;
+//** audio playlist item icon
+$rd-audio-player-playlist-item-icon:                  '\f4fc';
+$rd-audio-player-playlist-item-icon-weight:           400;
+$rd-audio-player-playlist-item-icon-size:             24px;
+$rd-audio-player-playlist-item-icon-line-height:      24px;
+
+
+//== RD Instagram
+//
+//##
+
+$instafeed-overlay-color:             $white;
+$instafeed-hover-overlay-background:  rgba($gray-base, .6);
+$instafeed-border:                    5px solid $white;
+
+
+//== RD Twitter Feed
+//
+//##
+
+$twitter-name-color:                $brand-picton-blue;
+$twitter-heshteg-color:             $brand-picton-blue;
+//** twitter-sm + twitter-sm
+$twitter-sm-between-offset-top:     18px;
+//** Boxed Twitter Feed
+$boxed-twitter-background:          $white;
+$boxed-twitter-border-radius:       $border-radius-base;
+//** twitter author
+$boxed-twitter-author-padding:      25px 20px 0;
+$boxed-twitter-author-sm-padding:   20px;
+//** tweet author
+$boxed-twitter-author-tweet:        0 15px 20px;
+$boxed-twitter-author-sm-tweet:     0 25px 25px;
+$boxed-twitter-author-tweet-color:  $brand-iceberg;
+//** twitter time
+$boxed-twitter-time-padding:        25px;
+
+
+//== Toolbar Shop
+//
+//##
+
+$toolbar-shop-bg:                 $gray-lightest;
+$toolbar-shop-icon-color:         $gray-darker;
+$toolbar-shop-icon-color-active:  $brand-primary;
+$toolbar-shop-icon-height:        50px;
+$toolbar-shop-icon-padding:       0 13px;
+$toolbar-shop-icon-line-height:   50px;
+$toolbar-shop-icon-border-right:  1px solid $gray;
+//** Grid
+$toolbar-shop-grid-icon:          "\f661";
+//** List
+$toolbar-shop-list-icon:          "\f660";
+
+
+//== Page loader variant 1
+//
+//##
+
+$page-loader-v-1-bg:              $gray-base;
+$page-loader-v-1-padding:         0 25px;
+//** spinner
+$page-loader-v-1-spinner-width:   56px;
+$page-loader-v-1-spinner-height:  56px;
+
+
+//== Custom Countdown
+//
+//##
+
+//** Countdown Custom
+$countdown-custom-section-inset-top:        10px;
+$countdown-custom-section-width:            60px;
+$countdown-custom-section-height:           60px;
+$countdown-custom-section-border-radius:    50%;
+//** 480
+$countdown-custom-xs-section-inset-top:     25px;
+$countdown-custom-xs-section-width:         92px;
+$countdown-custom-xs-section-height:        92px;
+$countdown-custom-xs-section-border-width:  3px;
+//** 768
+$countdown-custom-sm-section-inset-top:     40px;
+$countdown-custom-sm-section-width:         155px;
+$countdown-custom-sm-section-height:        155px;
+//** countdown amount
+$countdown-custom-amount-size:              22px;
+$countdown-custom-amount-weight:            900;
+$countdown-custom-amount-line-height:       2.2;
+$countdown-custom-amount-xs-line-height:    1;
+$countdown-custom-sm-amount-size:           45px;
+//** countdown period
+$countdown-custom-period-color:             $gray-dark;
+$countdown-custom-period-size:              10px;
+$countdown-custom-period-line-height:       1;
+$countdown-custom-sm-period-size:           16px;
+//** offsets
+$countdown-custom-offset-left:              5px;
+//** 480
+$countdown-custom-xs-offset-left:           10px;
+//** 768
+$countdown-custom-sm-offset-left:           22px;
+//** 992
+$countdown-custom-md-offset-left:           44px;
+//** Countdown Modern
+//** letter
+$countdown-modern-color:                    rgba($gray-darker, .2);
+$countdown-modern-size:                     44px;
+$countdown-modern-sm-size:                  72px;
+$countdown-modern-position:                 absolute;
+$countdown-modern-position-top:             0;
+$countdown-modern-sm-position-top:          8px;
+$countdown-modern-position-right:           0;
+$countdown-modern-position-left:            0;
+$countdown-modern-z-index:                  -1;
+//** Countdown Ellipse
+$countdown-ellipse-xs-border:               3px solid $gray-lightest;
+//** Countdown Inline
+$countdown-inline-size:                     13px;
+$countdown-inline-xs-size:                  16px;
+//** Common countdown amount and period
+$countdown-inline-offset-right:             2px;
+$countdown-inline-offset-xs-right:          4px;
+//** countdown amount
+$countdown-inline-amount-weight:            700;
+$countdown-inline-amount-offset-left:       4px;
+$countdown-inline-amount-xs-offset-left:    7px;
+
+
+//== Box Comment
+//
+//##
+
+//** Box Comment Common variables
+$box-comment-meta-offset-top:                           0;
+$box-comment-meta-size:                                 12px;
+$box-comment-meta-link-hover:                           $brand-picton-blue;
+$box-comment-meta-icon-size:                            14px;
+$box-comment-title-offset-top:                          0;
+$box-comment-title-size:                                $font-size-small;
+$box-comment-title-weight:                              700;
+$box-comment-img-width:                                 40px;
+$box-comment-img-height:                                40px;
+$box-comment-img-border-radius:                         50%;
+$box-comment-body-size:                                 $font-size-small;
+//** 480
+$box-comment-img-xs-width:                              60px;
+$box-comment-img-xs-height:                             60px;
+//** Box Comment classic
+$box-comment-classic-before-position-top:               48px;
+$box-comment-classic-before-position-bottom:            -8px;
+$box-comment-classic-offset-top:                        16px;
+$box-comment-classic-before-after-position-left:        19px;
+$box-comment-classic-before-after-background:           $gray;
+$box-comment-classic-before-after-width:                1px;
+//** 480
+$box-comment-classic-xs-width:                          30px;
+$box-comment-classic-xs-height:                         30px;
+$box-comment-classic-xs-offset-top:                     5px;
+$box-comment-classic-xs-offset-left:                    5px;
+$box-comment-classic-xs-header-offset-top:              5px;
+$box-comment-classic-xs-box-inside-offset-left:         80px;
+$box-comment-classic-xs-after-position-top:             29px;
+$box-comment-classic-xs-after-position-right:           100%;
+$box-comment-classic-xs-after-position-left:            auto;
+$box-comment-classic-xs-after-height:                   1px;
+$box-comment-classic-xs-after-width:                    42px;
+$box-comment-classic-xs-before-offset-top:              68px;
+$box-comment-classic-xs-after-offset-right:             8px;
+$box-comment-classic-xs-before-after-position-left:     29px;
+//** Box Comment boxed
+$box-comment-boxed-img-offset-top:                      15px;
+$box-comment-boxed-offset-top:                          20px;
+$box-comment-boxed-img-border:                          1px solid $gray;
+$box-comment-boxed-img-background:                      $white;
+$box-comment-boxed-img-padding:                         2px;
+$box-comment-boxed-img-offset-right:                    -30px;
+$box-comment-boxed-body-offset-top:                     10px;
+$box-comment-boxed-media-body-padding:                  15px 20px 15px 30px;
+$box-comment-boxed-media-body-border-radius:            $border-radius-small;
+$box-comment-boxed-media-body-border:                   1px solid $gray;
+//** 480
+$box-comment-boxed-img-xs-offset-right:                 -50px;
+$box-comment-boxed-img-xs-padding:                      4px;
+$box-comment-boxed-media-body-xs-padding:               20px 30px 20px 50px;
+//** 1200
+$box-comment-boxed-lg-offset-left:                      30px;
+$box-comment-outboxed-lg-offset-left:                   80px;
+//** Box Comment outlined
+$box-comment-outlined-offset-top:                       20px;
+$box-comment-outlined-body-offset-top:                  5px;
+//** 1200
+$box-comment-outlined-body-lg-offset-top:               10px;
+$box-comment-outlined-body-lg-offset-left:              80px;
+$box-comment-outlined-img-lg-offset-top:                10px;
+$box-comment-outlined-media-body-lg-padding:            20px;
+$box-comment-outlined-media-body-lg-border-radius:      $border-radius-small;
+$box-comment-outlined-media-body-lg-border:             1px solid $gray;
+$box-comment-outlined-meta-first-child-lg-offset-left:  20px;
+
+
+//== Dividers
+//
+//##
+
+//** Hr
+$hr-height:                           1px;
+$hr-padding:                          0px;
+$hr-offset-top:                       30px;
+$hr-offset-bottom:                    30px;
+//** hr dashed
+$hr-dashed-background:                transparent;
+$hr-dashed-height:                    0;
+$hr-dashed-border-bottom:             1px dashed $gray;
+//** Divider
+$divider-background:                  $gray;
+$divider-width:                       34px;
+$divider-height:                      2px;
+$divider-padding:                     0;
+$divider-offsets:                     27px auto 34px;
+//** Divider Vertical
+$divider-vertical-background:         $gray;
+$divider-vertical-width:              2px;
+$divider-vertical-height:             20px;
+//** Sizing
+$divider-sm-width:                    30px;
+$divider-lg-width:                    60px;
+$divider-lg-height:                   3px;
+//** Text Subline
+$text-subline-background:             $gray;
+$text-subline-padding:                0;
+$text-subline-height:                 1px;
+//** before
+$text-subline-before-background:      $gray-base;
+$text-subline-before-position-top:    0;
+$text-subline-before-position-left:   0;
+$text-subline-before-width:           40px;
+$text-subline-before-height:          1px;
+
+
+//== RD google map
+//
+//##
+
+$rd-google-map-height:    200px;
+$rd-google-map-color:     $gray-darkest;
+//** 480
+$rd-google-map-xs-height: 250px;
+//** 768
+$rd-google-map-sm-height: 400px;
+
+
+//== UI ToTop
+//
+//##
+
+$to-top-color:              $white;
+$to-top-background:         $brand-primary;
+$to-top-box-shadow:         $shadow-area-sm;
+$to-top-position-right:     15px;
+$to-top-position-bottom:    15px;
+$to-top-hover-color:        $white;
+$to-top-hover-background:   $brand-primary;
+//** 480
+$to-top-position-xs-right:  40px;
+$to-top-position-xs-bottom: 40px;
+
+
+//== Isotope
+//
+//##
+
+$isotope-item-offset:                                   30px;
+$isotope-filters-list-item-offset-left:                 23px;
+$isotope-filters-list-item-offset-top:                  24px;
+//** filters
+$isotope-filters-list-position-top:                     100%;
+$isotope-filters-list-position-right:                   0;
+$isotope-filters-list-padding:                          5px 0;
+$isotope-filters-list-offset:                           5px 0;
+$isotope-filters-list-min-width:                        130px;
+$isotope-filters-list-size:                             16px;
+$isotope-filters-list-background:                       $white;
+$isotope-filters-list-border-radius:                    5px;
+$isotope-filters-list-box-shadow:                       0 6px 12px rgba(0, 0, 0, 0.175);
+//** filters link
+$isotope-filters-list-link-padding:                     5px 20px;
+$isotope-filters-list-link-line-height:                 1.5;
+$isotope-filters-list-link-color:                       $gray-darker;
+$isotope-filters-list-link-hover-background:            $gray-lighter;
+//** 992
+$isotope-filters-list-link-after-md-position-bottom:    -1px;
+$isotope-filters-list-link-after-md-position-left:      50%;
+$isotope-filters-list-md-border-bottom:                 1px solid $gray;
+$isotope-filters-list-link-md-padding:                  0 5px 13px;
+$isotope-filters-list-link-md-hover-color:              $gray-darker;
+$isotope-filters-list-link-md-hover-background:         transparent;
+//** filters vertical
+$isotope-filters-vertical-list-border-left:             1px solid $gray;
+$isotope-filters-vertical-list-link-padding:            0 25px;
+
+
+//== RD Datepicker
+//
+//##
+
+$datepicker-width:                   292px;
+$datepicker-size:                    18px;
+$datepicker-line-height:             30px;
+$datepicker-color:                   #333;
+$datepicker-border:                  1px solid #ebebeb;
+$datepicker-background:              $white;
+//** form input
+$datepicker-form-input-height:       40px;
+$datepicker-form-input-padding:      3px 20px;
+//** body
+$datepicker-body-padding:            4px;
+//** title
+$datepicker-title-size:              20px;
+$datepicker-title-line-height:       30px;
+$datepicker-title-padding:           5px 40px;
+//** day
+$datepicker-day-width:               40px;
+$datepicker-day-height:              40px;
+$datepicker-day-size:                18px;
+$datepicker-day-line-height:         40px;
+$datepicker-day-color:               #333;
+$datepicker-day-background:          transparent;
+$datepicker-day-selected-color:      $white;
+$datepicker-day-selected-background: #038AC6;
+$datepicker-day-offset-color:        #ccc;
+$datepicker-day-offset-background:   transparent;
+$datepicker-day-hover-color:         $brand-primary;
+$datepicker-day-hover-background:    #038AC6;
+//** day prev and next
+$datepicker-day-prev-width:          30px;
+$datepicker-day-prev-height:         30px;
+//** today
+$datepicker-today-color:             $white;
+$datepicker-today-background:        #333;
+
+
+//== RD Facebook
+//
+//##
+
+$rd-facebook-padding:                       20px;
+$rd-facebook-background:                    $white;
+$rd-facebook-box-shadow:                    $shadow-area-md;
+//** time
+$rd-facebook-time-offset:                   5px 0 8px 0;
+$rd-facebook-time-size:                     15px;
+$rd-facebook-time-color:                    $gray-dark;
+//** message
+$rd-facebook-message-link-color:            $brand-picton-blue;
+//** attachment
+$rd-facebook-attachment-offset:             25px 0;
+$rd-facebook-attachment-wrap-offset-top:    15px;
+$rd-facebook-attachment-color:              $gray-dark;
+//** comments
+$rd-facebook-comments-padding:              15px 0;
+$rd-facebook-comments-message-offset-top:   10px;
+//** 1200
+$rd-facebook-lg-padding:                    24px 30px 30px 30px;
+$rd-facebook-attachment-lg-padding:         20px;
+$rd-facebook-attachment-lg-border:          1px solid $gray;
+
+
+//== Posts
+//
+//##
+
+//** Post Wide
+$post-wide-body-xl-height:                            162px;
+$post-wide-body-xl-padding:                           7% 20px 5%;
+$post-wide-body-xl-border-top:                        1px solid $gray-lighter;
+$post-wide-body-xl-border-bottom:                     1px solid $gray-lighter;
+//** Post Boxed
+$post-boxed-media-background:                         $gray-base;
+$post-boxed-content-sm-color:                         $white;
+//** Post Modern
+$post-modern-box-shadow:                              $shadow-area-md;
+$post-modern-content-padding:                         30px 30px 24px;
+//** Post Timeline (horizontal "divider")
+$post-timeline-border-color:                          $gray;
+//** Post Modern Timeline
+$post-modern-timeline-sm-border-color:                $gray;
+$post-modern-timeline-sm-author-name-color:           $white;
+$post-modern-timeline-sm-author-name-background:      $gray-darkest;
+$post-modern-timeline-sm-author-name-padding:         3px 10px;
+$post-modern-timeline-sm-author-name-size:            12px;
+$post-modern-timeline-sm-author-name-border-radius:   $border-radius-small;
+//** post date
+$post-modern-timeline-date-offsets:                   21px 10px;
+$post-modern-timeline-date-size:                      17px;
+$post-modern-timeline-date-weight:                    700;
+//** Post Event
+//** meta day
+$post-event-meta-day-background:                      $brand-picton-blue;
+$post-event-meta-day-height:                          50px;
+$post-event-meta-day-size:                            30px;
+$post-event-meta-day-line-height:                     50px;
+$post-event-meta-day-border-radius:                   $border-radius-small;
+$post-event-meta-day-box-shadow:                      $shadow-area-md;
+//** 768
+$post-event-meta-day-sm-height:                       70px;
+$post-event-meta-day-sm-line-height:                  70px;
+//** meta month
+$post-event-meta-month-background:                    $gray-darker;
+$post-event-meta-month-height:                        20px;
+$post-event-meta-month-size:                          12px;
+$post-event-meta-month-line-height:                   20px;
+$post-event-meta-month-border-radius:                 $border-radius-small;
+$post-event-meta-month-box-shadow:                    $shadow-area-md;
+//** 768
+$post-event-meta-month-sm-width:                      70px;
+$post-event-meta-month-sm-height:                     30px;
+$post-event-meta-month-sm-size:                       17px;
+$post-event-meta-month-sm-line-height:                30px;
+//** Post Vacation
+$post-vacation-background:                            $white;
+$post-vacation-hover-background:                      $gray-darker;
+$post-vacation-padding:                               22px 27px;
+$post-vacation-box-shadow:                            $shadow-area-xs;
+//** Widget Event
+$widget-event-meta-time-size:                         12px;
+//** Post Event Type 2
+$post-event-type-2-max-width:                   270px;
+$post-event-type-2-post-meta-padding:           10px 10px 6px;
+$post-event-type-2-post-meta-background:        $brand-primary;
+$post-event-type-2-overlay-background:          rgba($gray-darkest, .6);
+//** post event type 2 day
+$post-event-type-2-post-meta-day-font-size:     30px;
+$post-event-type-2-post-meta-day-line-height:   24px;
+//** post event type 2 month
+$post-event-type-2-post-meta-month-font-size:   15px;
+$post-event-type-2-post-meta-month-line-height: inherit;
+//** post event type 2 time
+$post-event-type-2-post-meta-time-font-size:    15px;
+//** post event type 2 icon
+$post-event-type-2-post-media-icon-color:       $white;
+$post-event-type-2-post-media-icon-width:       48px;
+$post-event-type-2-post-media-icon-height:      48px;
+$post-event-type-2-post-media-icon-font-size:   48px;
+$post-event-type-2-post-media-icon-line-height: 48px;
+
+
+//== RD calendar
+//
+//##
+
+$rd-calendar-shadow:                                            $shadow-area-md;
+$rd-calendar-max-width:                                         270px;
+$rd-calendar-background:                                        $white;
+//** head
+$rd-calendar-head-padding:                                      18px 30px;
+$rd-calendar-head-background:                                   $brand-primary;
+$rd-calendar-head-text-size:                                    24px;
+$rd-calendar-head-text-color:                                   $white;
+$rd-calendar-head-text-weight:                                  400;
+//** month
+$rd-calendar-month-size:                                        24px;
+$rd-calendar-month-weight:                                      400;
+$rd-calendar-month-color:                                       $white;
+//** controls
+$rd-calendar-controls-font:                                     400 24px/38px $icon-font-material-design;
+$rd-calendar-controls-color:                                    $white;
+//** controls next
+$rd-calendar-controls-next-content:                             '\f238';
+$rd-calendar-controls-next-position-right:                      13px;
+//** controls prev
+$rd-calendar-controls-prev-content:                             '\f237';
+$rd-calendar-controls-prev-position-left:                       13px;
+//** controls close icon
+$rd-calendar-controls-close-content:                            '\f24c';
+$rd-calendar-controls-close-position-top:                       13px;
+$rd-calendar-controls-close-position-right:                     15px;
+$rd-calendar-controls-close-size:                               18px;
+$rd-calendar-controls-close-line-height:                        20px;
+//** events
+$rd-calendar-events-position-top:                               40px;
+$rd-calendar-events-padding:                                    10px 20px 15px;
+$rd-calendar-events-background:                                 $white;
+$rd-calendar-events-border-radius:                              $border-radius-small;
+$rd-calendar-events-shadow:                                     $shadow-area-sm;
+$rd-calendar-events-border:                                     3px solid $brand-picton-blue;
+//** event title
+$rd-calendar-events-title-color:                                $gray-darker;
+//** event + event
+$rd-calendar-events-between-border:                             1px solid $gray-light;
+$rd-calendar-events-between-offset:                             5px;
+//** table
+$rd-calendar-table-border-spacing:                              10px;
+//** table th
+$rd-calendar-table-th-color:                                    $gray-dark;
+$rd-calendar-table-th-padding:                                  5px 0;
+$rd-calendar-table-th-size:                                     13px;
+$rd-calendar-table-th-weight:                                   700;
+//** table date (td)
+$rd-calendar-table-td-width:                                    24px;
+$rd-calendar-table-td-height:                                   24px;
+$rd-calendar-table-td-size:                                     13px;
+$rd-calendar-table-td-weight:                                   700;
+$rd-calendar-table-td-color:                                    $gray-darker;
+$rd-calendar-table-border-radius:                               50%;
+//** table date (td) today
+$rd-calendar-table-td-today-background:                         $brand-primary;
+$rd-calendar-table-td-today-color:                              $white;
+//** table date (td) has events
+$rd-calendar-table-td-has-event-after-background:               $brand-picton-blue;
+$rd-calendar-table-td-has-event-hover-color:                    $white;
+$rd-calendar-table-td-has-event-today-hover-background:         $brand-picton-blue;
+//** full-width calendar
+$rd-calendar-fullwidth-max-width:                               370px;
+//** controls
+$rd-calendar-fullwidth-controls-color:                          $gray-darker;
+//** controls close icon`
+$rd-calendar-fullwidth-controls-close-position-top:             3px;
+$rd-calendar-fullwidth-controls-close-position-right:           1px;
+//** table th
+$rd-calendar-fullwidth-table-th-color:                          $gray-dark;
+$rd-calendar-fullwidth-table-th-padding-left:                   15px;
+$rd-calendar-fullwidth-table-th-size:                           22px;
+//** table date (td)
+$rd-calendar-fullwidth-table-td-border-radius:                  $border-radius-base;
+$rd-calendar-fullwidth-table-td-padding-bottom:                 9%;
+$rd-calendar-fullwidth-table-td-background:                     $white;
+$rd-calendar-fullwidth-table-td-box-shadow:                     $shadow-area-md;
+//** table date (td) today
+$rd-calendar-fullwidth-table-td-today-background:               transparent;
+$rd-calendar-fullwidth-table-td-today-color:                    $gray-darker;
+$rd-calendar-fullwidth-table-td-today-border:                   2px solid $gray-darker;
+//** table date (div inside td)
+$rd-calendar-fullwidth-table-date-width:                        40px;
+$rd-calendar-fullwidth-table-date-height:                       40px;
+$rd-calendar-fullwidth-table-date-size:                         22px;
+$rd-calendar-fullwidth-table-date-line-height:                  38px;
+$rd-calendar-fullwidth-table-date-weight:                       700;
+$rd-calendar-fullwidth-table-date-position-top:                 10px;
+$rd-calendar-fullwidth-table-date-position-left:                10px;
+//** table date (td) has events
+$rd-calendar-fullwidth-table-td-has-event-today-border-color:   $white;
+//** 1800
+$rd-calendar-fullwidth-xl-border-spacing:                       20px;
+
+
+//== RD Filepicker
+//
+//##
+
+$rd-filepicker-size:                          13px;
+$rd-filepicker-border:                        1px solid $gray;
+$rd-filepicker-background:                    $white;
+$rd-filepicker-border-radius:                 $border-radius-base;
+//** btn
+$rd-filepicker-btn-padding:                   10px;
+$rd-filepicker-btn-background:                rgba(20, 69, 61, 0.78);
+$rd-filepicker-btn-color:                     $white;
+$rd-filepicker-btn-border-radius:             $border-radius-base;
+$rd-filepicker-btn-hover-background:          darken($rd-filepicker-btn-background, 5%);
+//** svg
+$rd-filepicker-svg-fill:                      $white;
+$rd-filepicker-svg-padding-right:             6px;
+//** meta
+$rd-filepicker-meta-width:                    90%;
+$rd-filepicker-meta-color:                    #000;
+//** filedrop
+$rd-filepicker-filedrop-padding:              100px 0;
+$rd-filepicker-filedrop-size:                 18px;
+$rd-filepicker-filedrop-background:           rgba(0,0,0,.1);
+$rd-filepicker-filedrop-outline:              2px dashed #92b0b3;
+//** filedrop input
+$rd-filepicker-filedrop-input-background:     $brand-danger;
+//** filedrop btn
+$rd-filepicker-filedrop-btn-svg-background:   $white;
+//** filedrop logo
+$rd-filepicker-filedrop-logo-width:           100px;
+$rd-filepicker-filedrop-logo-background:      rgba(255, 255, 255, 0);
+$rd-filepicker-filedrop-logo-stroke:          $white;
+$rd-filepicker-filedrop-logo-stroke-width:    6px;
+//** filedrop wrap
+$rd-filepicker-filedrop-wrap-offset-top:      20px;
+$rd-filepicker-filedrop-wrap-offset-left:     15px;
+//** filedrop meta
+$rd-filepicker-filedrop-meta-offset-top:      20px;
+//** file grabbing
+$rd-filepicker-filegrabbing-background:       rgba(255, 255, 255, 0.05);
+$rd-filepicker-filegrabbing-outline:          rgba(0, 0, 0, 0.15);
+
+
+//== RD material tabs
+//
+//##
+
+$rd-material-tab-md-padding:                    45px 61px 25px;
+//** link
+$rd-material-tabs-link-size:                    16px;
+$rd-material-tabs-link-weight:                  700;
+$rd-material-tabs-link-padding:                 13px 17px;
+$rd-material-tabs-link-color:                   $gray-darker;
+$rd-material-tabs-link-background:              $gray-light;
+//** active, hover link state
+$rd-material-tabs-active-link-background:       transparent;
+$rd-material-tabs-link-hover-background:        darken($rd-material-tabs-link-background, 10%);
+//** common horizontal stacked and default style
+$rd-material-tabs-link-border:                  1px solid $gray;
+//** tabs horizontal
+$rd-material-tabs-horizontal-link-size:         16px;
+$rd-material-tabs-horizontal-link-weight:       700;
+$rd-material-tabs-horizontal-link-padding:      13px 17px;
+$rd-material-tabs-horizontal-link-color:        $gray-darker;
+$rd-material-tabs-horizontal-link-background:   $gray-light;
+
+
+//== Search result
+//
+//##
+
+$rd-search-background:                $brand-success;
+$rd-search-list-size:                 18px;
+//** result item
+$rd-result-item-padding-left:         20px;
+$rd-result-item-offset-left:          20px;
+$rd-result-item-color:                $gray-dark;
+$rd-result-item-inside-color:         $gray-darker;
+//** 768
+$rd-result-item-sm-padding-left:      40px;
+//** result item + result item
+$rd-result-item-offset-top-between:   41px;
+//** title
+$rd-search-title-color:               $gray-base;
+//** match
+$rd-search-math-size:                 $font-size-small;
+$rd-search-math-letter-spacing:       0.12em;
+$rd-search-math-color:                $brand-picton-blue;
+
+
+//== RD Timepicker
+//
+//##
+
+$rd-timepicker-background-position-top:     90px;
+$rd-timepicker-background:                  $white;
+$rd-timepicker-shadow:                      3px 5px 30px 0px rgba(0, 0, 0, 0.3);
+$rd-timepicker-before-border:               6px solid $brand-primary;
+//** panel
+$rd-timepicker-panel-background:            $brand-primary;
+$rd-timepicker-panel-height:                100px;
+$rd-timepicker-panel-padding:               25px 50px;
+//** time
+$rd-timepicker-time-size:                   42px;
+$rd-timepicker-time-line-height:            47px;
+$rd-timepicker-time-color:                  $white;
+//** time hour, minutes
+$rd-timepicker-time-hours-weight:           700;
+$rd-timepicker-time-hours-color:            lighten(desaturate(adjust_hue($brand-primary, -2.9290617848969873), 7.783194249359667%), 22.745098039215677%);
+//** meridiem item
+$rd-timepicker-meridiem-item-size:          16px;
+$rd-timepicker-meridiem-item-line-height:   1.4;
+$rd-timepicker-meridiem-item-weight:        400;
+$rd-timepicker-meridiem-item-color:         lighten(desaturate(adjust_hue($brand-primary, -2.9290617848969873), 7.783194249359667%), 22.745098039215677%);
+//** wrapper
+$rd-timepicker-wrapper-width:               260px;
+$rd-timepicker-wrapper-height:              260px;
+$rd-timepicker-wrapper-offset:              20px auto;
+$rd-timepicker-wrapper-background:          #eeeeee;
+//** center
+$rd-timepicker-center-width:                10px;
+$rd-timepicker-center-height:               10px;
+$rd-timepicker-center-background:           $brand-primary;
+//** display
+$rd-timepicker-display-color:               #3d3a3b;
+//** display item
+$rd-timepicker-display-item-background:     $brand-primary;
+$rd-timepicker-display-item-color:          $white;
+//** 992
+$rd-timepicker-md-width:                    320px;
+$rd-timepicker-md-position-left:            57%;
+$rd-timepicker-wrapper-md-width:            280px;
+$rd-timepicker-wrapper-md-height:           280px;
+$rd-timepicker-time-md-size:                56px;
+$rd-timepicker-time-md-line-height:         51px;
+
+
+//== RD Toggles
+//
+//##
+
+$rd-toggles-mftoggle-width:                 32px;
+$rd-toggles-mftoggle-height:                14px;
+$rd-toggles-mftoggle-background:            $gray-light;
+$rd-toggles-mftoggle-border-radius:         15px;
+$rd-toggles-mftoggle-offset-left:           6px;
+$rd-toggles-mftoggle-offset-right:          20px;
+$rd-toggles-mftoggle-shadow:                inset 1px 1px 1px 0 rgba(0, 0, 0, 0.15);
+$rd-toggles-mftoggle-active-background:     $brand-primary;
+//** after
+$rd-toggles-mftoggle-after-width:           20px;
+$rd-toggles-mftoggle-after-height:          21px;
+$rd-toggles-mftoggle-after-background:      $white;
+$rd-toggles-mftoggle-after-border-radius:   20px;
+$rd-toggles-mftoggle-after-shadow:          1px 1px 3px 0 rgba(0, 0, 0, 0.25);
+//** after active
+$rd-toggles-mftoggle-active-after-shadow:   0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba($brand-primary, 0.3);
+
+
+//== RD Validator
+//
+//##
+
+$rd-validation-color:      #e50a0a;
+$rd-validation-size:       10px;
+$rd-validation-background: $white;
+
+
+//== Pricing and Plans
+//
+//##
+
+//** Box planning type 1
+$box-planning-type-1-max-width:           300px;
+$box-planning-type-1-label-size:          11px;
+$box-planning-type-1-label-weight:        900;
+$box-planning-type-1-label-line-height:   34px;
+$box-planning-type-1-label-fill:          $brand-primary;
+$box-planning-type-1-label-width:         150px;
+$box-planning-type-1-label-height:        150px;
+$box-planning-type-1-active-box-shadow:   0 5px 23px 0 rgba(0, 0, 0, 0.15);
+$box-planning-type-1-active-title-color:  $brand-primary;
+//** Box planning type 2
+$box-planning-type-2-max-width:           320px;
+$box-planning-type-2-active-box-shadow:   0 5px 23px 0 rgba(0, 0, 0, 0.15);
+// Box planning type 4
+$box-planning-type-4-max-width:           270px;
+
+
+//== Box icons
+//
+//##
+
+$box-icon-padding:          42px 25px 27px 25px;
+//** 768
+$box-icon-sm-padding:       15px;
+//** 1200
+$box-icon-lg-padding:       50px;
+//** bordered
+$box-icon-bordered-border:  2px solid $gray-light;
+
+
+//== Box member
+//
+//##
+
+//** type 1
+$box-member-caption-padding:                      20px;
+$box-member-hover-background:                     rgba($white, .7);
+//** type 3
+$box-member-type-3-max-width:                     246px;
+$box-member-type-3-shadow:                        $shadow-area-md;
+$box-member-type-3-border-radius:                 $border-radius-base;
+//** type 3 body
+$box-member-type-3-body-padding:                  40px 30px 0 30px;
+//** type 3 footer btn
+$box-member-type-3-footer-btn-size:               12px;
+//** type 3 footer btn icon
+$box-member-type-3-footer-btn-icon-size:          18px;
+//** type 5
+$box-member-type-5-padding:                       34px 15px;
+$box-member-type-5-list-item-icon-offset-right:   10px;
+$box-member-type-5-list-item-offset-top:          14px;
+//** 768
+$box-member-type-5-list-item-sm-offset-top:       28px;
+//** 992
+$box-member-type-5-md-padding:                    34px 55px;
+
+  
+//== Product
+//
+//##
+
+$product-image-background:                $gray-lighter;
+$product-thumbnail-background:            $gray;
+$product-thumbnail-box-shadow:            $shadow-area-xs;
+$product-thumbnail-active:                $white;
+//** product rating
+$product-rating-color:                    $brand-warning;
+$product-rating-size:                     18px;
+//** product review count
+$product-review-count-size:               15px;
+//** product radio
+$product-radio-custom-color:              $white;
+$product-radio-custom-background:         $gray-darker;
+$product-radio-width:                     40px;
+$product-radio-height:                    40px;
+$product-radio-weight:                    700;
+$product-radio-line-height:               40px;
+$product-radio-border-radius:             50%;
+$product-radio-hover-color:               $white;
+$product-radio-hover-background:          $gray-darker;
+//** Common product List\Grid Styles
+$product-list-grid-background:            $white;
+$product-list-grid-hover-background:      $white;
+$product-list-grid-hover-border:          1px solid transparent;
+$product-list-grid-hover-border-radius:   $border-radius-small;
+//** Product Grid Type-2
+$product-grid-type-2-title-hover-color:       $brand-picton-blue;
+$product-grid-type-2-title-hover-box-shadow:  0 0px 15px 0 rgba(0, 0, 0, 0.15);
+
+//== Scroll to
+//
+//##
+
+$scrollToNext-color:          $white;
+$scrollToNext-hover-color:    $white;
+$scrollToNext-width:          50px;
+$scrollToNext-height:         50px;
+$scrollToNext-size:           24px;
+$scrollToNext-line-height:    46px;
+$scrollToNext-border-radius:  50%;
+
+
+//== Swiper
+//
+//##
+
+//** swiper arrows default style options
+$swiper-arrow-width:                    46px;
+$swiper-arrow-height:                   46px;
+$swiper-arrow-size:                     46px;
+$swiper-arrow-line-height:              46px;
+$swiper-arrow-color:                    $white;
+
+//** swiper dots
+$swiper-dots-width:                     8px;
+$swiper-dots-height:                    8px;
+$swiper-dots-offset-left:               8px;
+$swiper-dots-background:                $white;
+//** swiper dots type 1
+$swiper-dots-type-1-width:              14px;
+$swiper-dots-type-1-height:             14px;
+$swiper-dots-type-1-border:             2px solid $white;
+$swiper-dots-type-1-offset:             0 15px;
+//** active state
+$swiper-dots-type-1-active-background:  $white;
+
+
+//== RD Navbar
+//
+//##
+
+//** Base styles
+$rd-navbar-size:            16px;
+$rd-navbar-line-height:     24px;
+$rd-navbar-weight:          700;
+$rd-navbar-text-transform:  uppercase;
+
+// Common RD navbar components styling options
+//##
+//** RD Navbar Cart
+//** Cart list
+$rd-navbar-cart-list-products-padding:            0 15px 15px 0;
+//** cart product title
+$rd-navbar-cart-product-title-size:               12px;
+$rd-navbar-cart-product-title-offset-bottom:      5px;
+//** cart product controls
+$rd-navbar-cart-product-remove-size:              12px;
+//** cart product price
+$rd-navbar-cart-product-price-size:               12px;
+//** Cart total
+$rd-navbar-cart-total-title-size:                 14px;
+$rd-navbar-cart-total-price-size:                 14px;
+$rd-navbar-cart-total-offset-top:                 20px;
+//** cart Dark theme
+$rd-navbar-dark-cart-product-remove-color:        $gray-dark;
+$rd-navbar-dark-cart-product-remove-hover-color:  $white;
+$rd-navbar-dark-cart-product-border-bottom:       1px solid $gray-darkest;
+$rd-navbar-dark-cart-product-image-background:    $gray-lighter;
+$rd-navbar-dark-cart-product-price-color:         $gray-dark;
+$rd-navbar-dark-cart-dropdown-background:         darken(saturate(adjust_hue($gray-base, 0), 0%), 1.5686274509803937%);
+//** common total title, price, product-title
+$rd-navbar-dark-cart-total-price-product-color:   $white;
+//** cart Light theme
+$rd-navbar-light-cart-product-remove-color:       $gray-dark;
+$rd-navbar-light-cart-product-remove-hover-color: $gray-darkest;
+$rd-navbar-light-cart-product-border-bottom:      1px solid $gray-lighter;
+$rd-navbar-light-cart-product-image-background:   $gray-lighter;
+$rd-navbar-light-cart-product-price-color:        $gray-dark;
+$rd-navbar-light-cart-dropdown-background:        $white;
+//** common total title, price, product-title
+$rd-navbar-light-cart-total-price-product-color:  $gray-darkest;
+
+//** RD Navbar Default Panel
+$rd-navbar-panel-toggle-color:                          $white;
+$rd-navbar-panel-cart-icon-color:                       $white;
+$rd-navbar-panel-cart-icon-state-before:                '\f206';
+$rd-navbar-panel-cart-icon-state-after:                 '\f69a';
+//** dark panel theme
+$rd-navbar-dark-panel-background:                       $gray-base;
+$rd-navbar-dark-cart-color:                             $white;
+//** light panel theme
+$rd-navbar-light-background:                            $white;
+$rd-navbar-light-toggle-background:                     $gray-darkest;
+$rd-navbar-light-cart-color:                            $gray-darkest;
+//** RD Navbar Aside Right
+$rd-navbar-aside-right-cart-dropdown-width:             280px;
+$rd-navbar-aside-right-cart-dropdown-padding:           70px 15px 0;
+//** dark aside right theme
+$rd-navbar-dark-aside-right-cart-dropdown-color:        $white;
+$rd-navbar-dark-aside-right-cart-dropdown-background:   $gray-base;
+//** light aside right theme
+$rd-navbar-light-aside-right-cart-dropdown-color:       $gray-darkest;
+$rd-navbar-light-aside-right-cart-dropdown-background:  $white;
+//** RD Navbar Default Aside Left
+$rd-navbar-aside-left-padding:                          10px 0;
+// dark aside left theme
+$rd-navbar-dark-aside-left-color:                       $white;
+$rd-navbar-dark-aside-left-background:                  $gray-base;
+// light aside left theme
+$rd-navbar-light-aside-left-color:                      $gray-base;
+$rd-navbar-light-aside-left-background:                 $white;
+
+//** RD Navbar Default Mobile Search
+//** dark default mobile search theme
+$rd-navbar-dark-mobile-search-form-lable-focus-color:         $gray-dark;
+$rd-navbar-dark-mobile-search-form-search-submit-color:       $gray-darker;
+$rd-navbar-dark-mobile-search-form-search-input-color:        $white;
+$rd-navbar-dark-mobile-search-form-search-input-background:   $gray-darkest;
+//** dark default mobile search theme
+$rd-navbar-light-mobile-search-form-lable-focus-color:        $gray-dark;
+$rd-navbar-light-mobile-search-form-search-submit-color:      $gray-darker;
+$rd-navbar-light-mobile-search-form-search-input-color:       $gray-darkest;
+$rd-navbar-light-mobile-search-form-search-input-background:  $gray-lightest;
+
+//** RD Navbar First level of Menu
+//** dark first level of menu theme
+$rd-navbar-dark-menu-first-lvl-list-item-link-color:   $white;
+//** light first level of menu theme
+$rd-navbar-light-menu-first-lvl-list-item-link-color:  $gray-darkest;
+
+//** RD Navbar Menu Dropdown
+//** common styles: navbar dropdown, navbar megamenu, navbar cart dropdown
+$rd-navbar-menu-dropdown-lists-second-lvl-border-top:                               1px solid $brand-primary;
+//** common styles: navbar dropdown, navbar megamenu
+$rd-navbar-menu-dropdown-lists-dropdown-megamenu-item-link-padding:                 8px 30px 8px 20px;
+$rd-navbar-menu-dropdown-lists-dropdown-megamenu-item-caret-icon:                   '\f238';
+$rd-navbar-menu-dropdown-lists-dropdown-megamenu-item-caret-icon-size:              22px;
+$rd-navbar-menu-dropdown-lists-dropdown-megamenu-item-caret-icon-family:            'Material Design Icons';
+$rd-navbar-menu-dropdown-lists-dropdown-megamenu-item-caret-icon-line-height:       34px;
+//** megamenu icon caret
+$rd-navbar-menu-dropdown-megamenu-active-item-hover-color:                          $brand-primary;
+//** dark menu dropdown theme
+//** common styles: navbar dropdown, navbar megamenu
+$rd-navbar-dark-menu-dropdown-lists-dropdown-megamenu-background:                   darken(saturate(adjust_hue($gray-base, 0), 0%), 1.5686274509803937%);
+$rd-navbar-dark-menu-dropdown-lists-dropdown-megamenu-active-item-color:            $gray-darker;
+$rd-navbar-dark-menu-dropdown-lists-dropdown-megamenu-item-link-color:              $white;
+$rd-navbar-dark-menu-dropdown-lists-dropdown-megamenu-item-icon-color:              $gray-dark;
+$rd-navbar-dark-menu-dropdown-lists-dropdown-megamenu-item-hover-link-color:        $white;
+$rd-navbar-dark-menu-dropdown-lists-dropdown-megamenu-item-hover-link-background:   $gray-darkest;
+$rd-navbar-dark-menu-dropdown-lists-dropdown-megamenu-item-hover-link-after-color:  $white;
+//** dark megamenu theme
+$rd-navbar-dark-menu-dropdown-lists-dropdown-megamenu-before-border-color:          $gray-darkest;
+$rd-navbar-dark-menu-dropdown-lists-dropdown-megamenu-item-color:                   $gray-dark;
+$rd-navbar-dark-menu-dropdown-lists-dropdown-megamenu-item-hover-color:             $white;
+$rd-navbar-dark-menu-dropdown-lists-dropdown-megamenu-item-active-color:            $brand-primary;
+$rd-navbar-dark-menu-dropdown-lists-dropdown-megamenu-item-active-hover-color:      $brand-primary;
+//** light menu dropdown theme
+$rd-navbar-light-menu-dropdown-lists-dropdown-megamenu-background:                  $white;
+$rd-navbar-light-menu-dropdown-lists-dropdown-megamenu-active-item-color:           $gray-darker;
+$rd-navbar-light-menu-dropdown-lists-dropdown-megamenu-item-link-color:             $gray-darker;
+$rd-navbar-light-menu-dropdown-lists-dropdown-megamenu-item-icon-color:             $gray;
+$rd-navbar-light-menu-dropdown-lists-dropdown-megamenu-item-hover-link-color:       $white;
+$rd-navbar-light-menu-dropdown-lists-dropdown-megamenu-item-hover-link-background:  $gray-base;
+$rd-navbar-light-menu-dropdown-lists-dropdown-megamenu-item-hover-link-after-color: $white;
+//** light megamenu theme
+$rd-navbar-light-menu-dropdown-lists-dropdown-megamenu-before-border-color:         $gray;
+$rd-navbar-light-menu-dropdown-lists-dropdown-megamenu-item-color:                  $gray-dark;
+$rd-navbar-light-menu-dropdown-lists-dropdown-megamenu-item-active-color:           $brand-primary;
+$rd-navbar-light-menu-dropdown-lists-dropdown-megamenu-item-active-hover-color:     $brand-primary;
+$rd-navbar-light-menu-dropdown-lists-dropdown-megamenu-item-hover-color:            $gray-darkest;
+
+//** RD Navbar Mobile menu
+//** mobile menu list
+$rd-navbar-mobile-menu-list-offset-top:                                     30px;
+//** mobile menu list item
+$rd-navbar-mobile-menu-list-item-offset-top:                                5px;
+//** mobile menu list item link
+$rd-navbar-mobile-menu-list-item-link-padding:                              8px 30px 8px 15px;
+//** mobile menu list item label
+$rd-navbar-mobile-menu-list-item-label-offset-left:                         5px;
+//** mobile menu list item icon
+$rd-navbar-mobile-menu-list-item-icon-size:                                 20px;
+$rd-navbar-mobile-menu-list-item-icon-offset-right:                         5px;
+//** mobile menu list item arrow
+$rd-navbar-mobile-menu-list-item-arrow-width:                               35px;
+$rd-navbar-mobile-menu-list-item-arrow-size:                                24px;
+$rd-navbar-mobile-menu-list-item-arrow-line-height:                         40px;
+$rd-navbar-mobile-menu-list-item-arrow-family:                              'Material Design Icons';
+$rd-navbar-mobile-menu-list-item-arrow-content:                             '\f236';
+$rd-navbar-mobile-menu-list-item-arrow-active-content:                      '\f239';
+//** mobile menu common megamenu, dropdown
+$rd-navbar-mobile-menu-dropdown-padding:                                    5px 0;
+$rd-navbar-mobile-menu-dropdown-item-link-padding-left:                     25px;
+//** dropdown 2lvl
+$rd-navbar-mobile-menu-dropdown2-item-link-padding-left:                    35px;
+//** dropdown 3lvl
+$rd-navbar-mobile-menu-dropdown3-item-link-padding-left:                    45px;
+//** mobile menu megamenu
+$rd-navbar-mobile-menu-megamenu-tabs-padding-left:                          25px;
+$rd-navbar-mobile-menu-megamenu-tabs-content-padding:                       0 10px;
+$rd-navbar-mobile-menu-megamenu-tabs-content-list-item-link-padding-left:   35px;
+//** mobile menu resp tabs
+$rd-navbar-mobile-menu-tabs-accordion-padding:                              10px 30px 10px 15px;
+$rd-navbar-mobile-menu-tabs-accordion-line-height:                           20px;
+$rd-navbar-mobile-menu-tabs-accordion-offset-bottom:                        5px;
+//** mobile menu Dark theme
+$rd-navbar-dark-mobile-menu-list-item-link-color:                           $white;
+$rd-navbar-dark-mobile-menu-list-item-hover-link-background:                $gray-darkest;
+$rd-navbar-dark-mobile-menu-list-item-hover-toggle-color:                   $white;
+$rd-navbar-dark-mobile-menu-list-item-arrow-color:                          $gray-darker;
+//** mobile menu Dark theme tabs
+$rd-navbar-dark-mobile-menu-list-item-tabs-active-background:               $gray-darkest;
+$rd-navbar-dark-mobile-menu-list-item-tabs-active-arrow-color:              $white;
+//** mobile menu Dark theme dropdowns
+$rd-navbar-dark-mobile-menu-dropdown-item-link-color:                       $white;
+$rd-navbar-dark-mobile-menu-submenu-toggle-color:                           $gray-darker;
+//** mobile menu Light theme
+$rd-navbar-light-mobile-menu-list-item-link-color:                          $gray-darkest;
+$rd-navbar-light-mobile-menu-list-item-hover-link-background:               $gray-darkest;
+$rd-navbar-light-mobile-menu-list-item-hover-link-color:                    $white;
+$rd-navbar-light-mobile-menu-list-item-hover-toggle-color:                  $white;
+$rd-navbar-light-mobile-menu-list-item-arrow-color:                         $gray-darker;
+//** mobile menu Light theme tabs
+$rd-navbar-light-mobile-menu-list-item-tabs-active-background:              $gray-darkest;
+$rd-navbar-light-mobile-menu-list-item-tabs-active-color:                   $white;
+$rd-navbar-light-mobile-menu-list-item-tabs-active-arrow-color:             $white;
+//** mobile menu Light theme dropdowns
+$rd-navbar-light-mobile-menu-dropdown-item-link-color:                      $gray-darkest;
+$rd-navbar-light-mobile-menu-dropdown-item-link-icon-color:                 $gray;
+$rd-navbar-light-mobile-menu-submenu-toggle-color:                          $gray-dark;
+
+//** RD Navbar Search
+//** RD Navbar Search Form
+$rd-navbar-search-form-input-size:                26px;
+$rd-navbar-search-form-input-weight:              900;
+$rd-navbar-search-form-input-padding:             0px 13% 0px 85px;
+//** RD Navbar Search Form label
+$rd-navbar-search-form-label-padding-left:        85px;
+$rd-navbar-search-form-label-size:                26px;
+$rd-navbar-search-form-label-weight:              900;
+//** RD Navbar Search Form label focus
+$rd-navbar-search-form-label-focus-size:          18px;
+//** RD Navbar Search Toggle
+$rd-navbar-search-toggle-offset-left:             25px;
+$rd-navbar-search-toggle-icon-color:              $white;
+$rd-navbar-search-toggle-icon-size:               24px;
+$rd-navbar-search-toggle-open-icon:               '\f43b';
+$rd-navbar-search-toggle-close-icon:              '\f24c';
+//** Search Form Dark theme
+$rd-navbar-dark-search-form-border:               1px solid rgba(255, 255, 255, 0.15);
+$rd-navbar-dark-search-form-label-color:          $white;
+$rd-navbar-dark-search-form-label-focus-color:    $gray-dark;
+$rd-navbar-dark-search-form-input-color:          $white;
+//** Search Form Light theme
+$rd-navbar-light-search-form-border:              1px solid rgba(255, 255, 255, 0.15);
+$rd-navbar-light-search-form-label-color:         $gray-darkest;
+$rd-navbar-light-search-form-label-focus-color:   $gray-dark;
+$rd-navbar-light-search-form-input-color:         $gray-darkest;
+
+//** RD Navbar Desktop Cart
+$rd-navbar-desktop-cart-width:                    240px;
+$rd-navbar-desktop-cart-padding:                  13px 15px 15px;
+$rd-navbar-desktop-cart-border:                   1px solid $brand-primary;
+$rd-navbar-desktop-cart-shadow:                   $shadow-area-sm;
+//** RD Navbar Desktop Cart Icon
+$rd-navbar-desktop-cart-icon-color:               $white;
+$rd-navbar-desktop-cart-icon-open:                '\f206';
+$rd-navbar-desktop-cart-icon-close:               '\f69a';
+$rd-navbar-desktop-cart-icon-open-size:           24px;
+$rd-navbar-desktop-cart-icon-close-size:          22px;
+
+//** RD Navbar Top Panel
+$rd-navbar-top-panel-top-links-offset:            36px;
+$rd-navbar-top-panel-contact-info-offset:         70px;
+$rd-navbar-top-panel-contact-info-icon-size:      20px;
+$rd-navbar-top-panel-toggle-icon-state-before:    "\f2ce";
+$rd-navbar-top-panel-toggle-icon-state-after:     "\f24c";
+$rd-navbar-top-panel-mobile-width:                250px;
+$rd-navbar-top-panel-mobile-padding:              20px;
+$rd-navbar-top-panel-mobile-margin-bottom:        10px;
+$rd-navbar-top-panel-mobile-address-item-margin-bottom:   5px;
+
+//** RD Navbar Top Panel Light Theme
+$rd-navbar-light-top-panel-border-bottom-color:          $gray;
+$rd-navbar-light-top-panel-top-links-color:              $gray-dark;
+$rd-navbar-light-top-panel-top-links-color-hover:        $brand-primary;
+$rd-navbar-light-top-panel-contact-info-color:           $gray-darkest;
+$rd-navbar-light-top-panel-contact-info-icon-color:      $gray-dark;
+$rd-navbar-light-top-panel-mobile-background:            $white;
+$rd-navbar-light-top-panel-toggle-icon-color:            $gray-darkest;
+//** RD Navbar Top Panel Dark Theme
+$rd-navbar-dark-top-panel-border-bottom-color:          $gray-darker;
+$rd-navbar-dark-top-panel-top-links-color:              $gray-dark;
+$rd-navbar-dark-top-panel-top-links-color-hover:        $brand-primary;
+$rd-navbar-dark-top-panel-contact-info-color:           $gray-light;
+$rd-navbar-dark-top-panel-contact-info-icon-color:      $gray-dark;
+$rd-navbar-dark-top-panel-mobile-background:            $gray-base;
+$rd-navbar-dark-top-panel-toggle-icon-color:            $white;
+
+
+//** Navbar Default
+//** Navbar Default Slogan
+$rd-navbar-default-slogan-size:                   18px;
+$rd-navbar-default-slogan-offset-left:            7px;
+//** Navbar Default Inner
+$rd-navbar-default-inner-padding:                 40px 85px 20px 85px;
+//** Navbar Default Megamenu
+$rd-navbar-default-megamenu-offset-top:           23px;
+//** Navbar Default Cart Wrap
+$rd-navbar-default-cart-wrap-offset-left:         20px;
+//** Navbar Default Stuck
+$rd-navbar-default-stuck-shadow:                  $shadow-area-md;
+$rd-navbar-default-stuck-dropdown-offset-top:     26px;
+$rd-navbar-default-stuck-inner-padding-top:       20px;
+$rd-navbar-default-stuck-inner-padding-bottom:    20px;
+//** Navbar Default Light Theme
+$rd-navbar-default-light-inner-padding:           40px 85px 43px 85px;
+$rd-navbar-default-light-background:              $white;
+//** common search toggle, cart icon
+$rd-navbar-default-light-toggles-color:           $gray-darkest;
+//** common search input, search toggle, cart
+$rd-navbar-default-light-inputs-color:            $gray-darkest;
+$rd-navbar-default-light-stuck-background:        $white;
+//** Navbar Default Dark Theme
+//** common search input, search toggle, cart
+$rd-navbar-default-dark-inputs-color:             $white;
+$rd-navbar-default-dark-stuck-background:         $gray-base;
+
+//** RD Navbar Sidebar Toggle
+$rd-navbar-sidebar-toggle-lg-toggle-width:                                315px;
+$rd-navbar-sidebar-toggle-lg-toggle-padding:                              0;
+$rd-navbar-sidebar-toggle-lg-toggle-offset-top:                           20px;
+$rd-navbar-sidebar-toggle-lg-toggle-mobile-brand-offset-top:              45px;
+$rd-navbar-sidebar-toggle-lg-toggle-form-search-offset-top:               50px;
+$rd-navbar-sidebar-toggle-lg-mobile-scroll-padding:                       0 30px;
+//** light sidebar toggle theme
+//** common styles: navbar search toggle and navbar cart
+$rd-navbar-sidebar-toggle-search-toggle-cart-color:                       $gray-darkest;
+//** RD Navbar Sidebar Toggle Footer
+$rd-navbar-sidebar-toggle-footer-list-offsets:                            50px 0 50px;
+$rd-navbar-sidebar-toggle-footer-list-padding:                            0 2px;
+$rd-navbar-sidebar-toggle-footer-list-inline-offsets:                     15px -2px 0;
+$rd-navbar-sidebar-toggle-footer-list-definition-icon-size-size:          24px;
+// dark sidebar toggle footer theme
+$rd-navbar-dark-sidebar-toggle-footer-list-definition-link-hover-color:   $brand-picton-blue;
+$rd-navbar-dark-sidebar-toggle-footer-list-definition-icon-color:         $brand-picton-blue;
+// light sidebar toggle footer theme
+$rd-navbar-light-sidebar-toggle-color: $gray;
+$rd-navbar-light-sidebar-toggle-footer-list-definition-link-color:        $gray-darkest;
+$rd-navbar-light-sidebar-toggle-footer-list-definition-link-hover-color:  $brand-picton-blue;
+$rd-navbar-light-sidebar-toggle-footer-list-definition-icon-color:        $brand-picton-blue;
+//** RD Navbar Sidebar Toggle Panel
+$rd-navbar-sidebar-toggle-panel-lg-toggle-color:                          $white;
+$rd-navbar-sidebar-toggle-panel-lg-toggle-size:                           30px;
+$rd-navbar-sidebar-toggle-panel-lg-toggle-width:                          56px;
+//** toggle icon
+$rd-navbar-sidebar-toggle-panel-lg-toggle-icon-state-before:              '\f0c9';
+$rd-navbar-sidebar-toggle-panel-lg-toggle-icon-state-after:               '\f69a';
+$rd-navbar-sidebar-toggle-panel-lg-toggle-icon-state-family:              'FontAwesome';
+// dark sidebar toggle panel theme
+$rd-navbar-dark-sidebar-toggle-panel-background:                          $gray-base;
+// light sidebar toggle panel theme
+$rd-navbar-light-sidebar-toggle-panel-background:                         $white;
+$rd-navbar-light-sidebar-toggle-panel-color:                              $gray-darkest;
+$rd-navbar-light-sidebar-toggle-panel-lg-toggle-color:                    $gray-darkest;
+$rd-navbar-light-sidebar-toggle-panel-lg-toggle-width:                    48px;
+$rd-navbar-light-sidebar-toggle-panel-lg-toggle-size:                     24px;
+
+//** RD Navbar Floated
+$rd-navbar-floated-offset-top:                  30px;
+//** dropdown
+$rd-navbar-floated-dropdown-offset-top:         29px;
+//** inner
+$rd-navbar-floated-inner-padding:               17px 40px;
+$rd-navbar-floated-inner-border-radius:         $border-radius-small;
+$rd-navbar-floated-inner-shadow:                $shadow-area-md;
+//** cart
+$rd-navbar-floated-cart-offset-left:            20px;
+//** search
+$rd-navbar-floated-search-padding-left:         40px;
+//** stuck
+$rd-navbar-floated-stuck-shadow:                $shadow-area-md;
+$rd-navbar-floated-stuck-dropdown-offset-top:   26px;
+//** RD Navbar Floated Light Theme
+$rd-navbar-floated-light-inner-background:      $white;
+//** common search input, search toggle, cart
+$rd-navbar-floated-light-inputs-color:          $gray-darkest;
+//** stuck
+$rd-navbar-floated-light-stuck-background:      $white;
+//** RD Navbar Floated Dark Theme
+$rd-navbar-floated-dark-inner-background:       $gray-base;
+//** common search input, search toggle, cart
+$rd-navbar-floated-dark-inputs-color:           $white;
+//** stuck
+$rd-navbar-floated-dark-stuck-background:       $gray-base;
+
+//** RD Navbar Sidebar Fixed
+$rd-navbar-sidebar-fixed-panel-width:                                         64px;
+$rd-navbar-sidebar-fixed-list-item-offset-top:                                20px;
+$rd-navbar-sidebar-fixed-list-item-link-size:                                 28px;
+$rd-navbar-sidebar-fixed-list-item-link-weight:                               400;
+//** RD Navbar Sidebar Fixed Menu
+//** RD Navbar Sidebar Fixed Menu Light Theme
+$rd-navbar-sidebar-fixed-light-wrap-background:                               $gray-base;
+$rd-navbar-sidebar-fixed-light-wrap-color:                                    $white;
+$rd-navbar-sidebar-fixed-light-list-item-active-color:                        $brand-picton-blue;
+$rd-navbar-sidebar-fixed-light-list-item-active-background:                   transparent;
+//** RD Navbar Sidebar Fixed Menu Dark Theme
+$rd-navbar-sidebar-fixed-dark-wrap-background:                                $white;
+$rd-navbar-sidebar-fixed-dark-wrap-color:                                     $gray-base;
+$rd-navbar-sidebar-fixed-dark-list-item-active-color:                         $brand-picton-blue;
+$rd-navbar-sidebar-fixed-dark-list-item-active-background:                    transparent;
+//** RD Navbar Sidebar Fixed Panel
+$rd-navbar-sidebar-fixed-panel-search-toggle-icon-width:                      48px;
+$rd-navbar-sidebar-fixed-panel-search-toggle-icon-size:                       28px;
+$rd-navbar-sidebar-fixed-panel-search-toggle-icon-color:                      $gray-darker;
+$rd-navbar-sidebar-fixed-panel-search-toggle-icon:                            '\f43b';
+$rd-navbar-sidebar-fixed-panel-search-toggle-icon-state-active:               '\f250';
+//** RD Navbar Sidebar Fixed Panel Light Theme
+$rd-navbar-sidebar-fixed-light-panel-background:                              $white;
+$rd-navbar-sidebar-fixed-light-panel-shadow:                                  $shadow-area-md;
+$rd-navbar-sidebar-fixed-light-panel-toggle-width:                            48px;
+$rd-navbar-sidebar-fixed-light-panel-toggle-size:                             24px;
+$rd-navbar-sidebar-fixed-light-panel-toggle-color:                            $white;
+//** RD Navbar Sidebar Fixed Panel Dark Theme
+$rd-navbar-sidebar-fixed-dark-panel-background:                               $gray-base;
+$rd-navbar-sidebar-fixed-dark-panel-toggle-color:                             $gray-darker;
+//** RD Navbar Sidebar Fixed Search
+$rd-navbar-sidebar-fixed-search-input-size:                                   56px;
+$rd-navbar-sidebar-fixed-search-input-weight:                                 700;
+$rd-navbar-sidebar-fixed-search-label-size:                                   $rd-navbar-sidebar-fixed-search-input-size;
+$rd-navbar-sidebar-fixed-search-label-focus-size:                             18px;
+$rd-navbar-sidebar-fixed-search-submit-size:                                  14px;
+$rd-navbar-sidebar-fixed-search-submit-padding:                               15px;
+$rd-navbar-sidebar-fixed-search-submit-border-radius:                         $border-radius-small;
+//** RD Navbar Sidebar Fixed Search Dark Theme
+$rd-navbar-sidebar-fixed-dark-search-toggle-color:                            $white;
+$rd-navbar-sidebar-fixed-dark-search-color:                                   $white;
+$rd-navbar-sidebar-fixed-dark-search-background:                              rgba($gray-base, .9);
+$rd-navbar-sidebar-fixed-dark-search-form-background:                         $gray-base;
+$rd-navbar-sidebar-fixed-dark-search-label-color:                             $white;
+$rd-navbar-sidebar-fixed-dark-search-input-color:                             $white;
+$rd-navbar-sidebar-fixed-dark-search-input-background:                        $gray-base;
+$rd-navbar-sidebar-fixed-dark-search-input-focus-shadow:                      inset $shadow-area-xxs;
+//** 1200
+$rd-navbar-sidebar-fixed-dark-search-form-lg-background:                      transparent;
+$rd-navbar-sidebar-fixed-dark-search-form-lg-border-color:                    $gray-darker;
+$rd-navbar-sidebar-fixed-dark-search-form-lg-icon-color:                      $gray-darkest;
+//** quick result
+$rd-navbar-sidebar-fixed-dark-search-quick-result-color:                      $brand-picton-blue;
+$rd-navbar-sidebar-fixed-dark-search-quick-result-submit-color:               $white;
+$rd-navbar-sidebar-fixed-dark-search-quick-result-submit-background:          $brand-picton-blue;
+$rd-navbar-sidebar-fixed-dark-search-quick-result-submit-hover-background:    $brand-primary;
+$rd-navbar-sidebar-fixed-dark-search-quick-result-item-title-color:           $white;
+$rd-navbar-sidebar-fixed-dark-search-quick-result-item-tags-color:            $gray-dark;
+$rd-navbar-sidebar-fixed-dark-search-quick-result-item-date-color:            $gray-dark;
+//** RD Navbar Sidebar Fixed Search Light Theme
+$rd-navbar-sidebar-fixed-light-search-toggle-color:                           $gray-darker;
+$rd-navbar-sidebar-fixed-light-search-color:                                  $gray-base;
+$rd-navbar-sidebar-fixed-light-search-background:                             rgba($white, .95);
+$rd-navbar-sidebar-fixed-light-search-form-background:                        $gray-darker;
+$rd-navbar-sidebar-fixed-light-search-input-background:                       $input-impressed-bg;
+$rd-navbar-sidebar-fixed-light-search-input-focus-shadow:                     inset $shadow-area-xxs;
+//** 1200
+$rd-navbar-sidebar-fixed-light-search-form-lg-background:                     transparent;
+$rd-navbar-sidebar-fixed-light-search-form-lg-border-color:                   $gray-darker;
+$rd-navbar-sidebar-fixed-light-search-form-lg-icon-color:                     $gray;
+//** quick result
+$rd-navbar-sidebar-fixed-light-search-quick-result-color:                     $brand-picton-blue;
+$rd-navbar-sidebar-fixed-light-search-quick-result-submit-color:              $white;
+$rd-navbar-sidebar-fixed-light-search-quick-result-submit-background:         $brand-primary;
+$rd-navbar-sidebar-fixed-light-search-quick-result-submit-hover-background:   $brand-picton-blue;
+$rd-navbar-sidebar-fixed-light-search-quick-result-item-tags-color:           $gray-dark;
+$rd-navbar-sidebar-fixed-light-search-quick-result-item-date-color:           $gray-dark;
+
+//** Navbar Top Panel
+//** top panel
+$rd-navbar-top-panel-dropdown-offset-top:       39px;
+$rd-navbar-top-panel-padding-bottom:            10px;
+$rd-navbar-top-panel-margin-bottom:             39px;
+
+//** inner
+$rd-navbar-top-panel-inner-padding:             14px 0 33px;
+//** brand
+$rd-navbar-top-panel-brand-offset:              15px;
+//** stuck
+$rd-navbar-top-panel-stuck-shadow:                $shadow-area-md;
+$rd-navbar-top-panel-stuck-dropdown-offset-top:   26px;
+
+//** Navbar Top Panel Light Theme
+$rd-navbar-top-panel-light-background:           $white;
+//** stuck
+$rd-navbar-top-panel-light-stuck-background:     $white;
+
+//** Navbar Top Panel Dark Theme
+$rd-navbar-top-panel-dark-background:            $gray-base;
+//** stuck
+$rd-navbar-top-panel-dark-stuck-background:      $gray-base;
+
+
+//** Navbar Logo Center
+//** top block
+$rd-navbar-logo-center-top-block-padding:       35px 0;
+$rd-navbar-logo-center-menu-dropdown-offset:    10px;
+//** Menu
+$rd-navbar-logo-center-menu-wrap-padding:       10px 0;
+$rd-navbar-logo-center-menu-item-padding:       5px 11px 5px;
+$rd-navbar-logo-center-menu-item-offset:        25px;
+$rd-navbar-logo-center-menu-item-icon-size:     20px;
+
+//** stuck
+$rd-navbar-logo-center-stuck-shadow:                $shadow-area-md;
+
+//** Navbar Logo Center Light Theme
+$rd-navbar-logo-center-light-background:            $white;
+//** Menu
+$rd-navbar-logo-center-light-menu-background:       $gray-lighter;
+$rd-navbar-logo-center-light-item-color:            $gray-darkest;
+$rd-navbar-logo-center-light-item-color-hover:      $brand-primary;
+$rd-navbar-logo-center-light-item-color-active:     $white;
+$rd-navbar-logo-center-light-item-background-active-1:     $brand-primary;
+$rd-navbar-logo-center-light-item-background-active-2:     $brand-dollar-bill;
+$rd-navbar-logo-center-light-fixed-cart-badge-background:     $brand-dollar-bill;
+$rd-navbar-logo-center-light-fixed-cart-badge-color:     $white;
+
+//** Top block
+$rd-navbar-logo-center-light-top-block-color:       $gray-darker;
+$rd-navbar-logo-center-light-top-block-icon-color:  $gray;
+//** stuck
+$rd-navbar-logo-center-light-stuck-background:      $white;
+
+//** Navbar Logo Center Dark Theme
+$rd-navbar-logo-center-dark-background:            $gray-base;
+//** Menu
+$rd-navbar-logo-center-dark-menu-background:       $gray-darkest;
+$rd-navbar-logo-center-dark-item-color:           $white;
+$rd-navbar-logo-center-dark-item-color-hover:      $brand-primary;
+$rd-navbar-logo-center-dark-item-color-active:     $white;
+$rd-navbar-logo-center-dark-item-background-active-1:     $brand-primary;
+$rd-navbar-logo-center-dark-item-background-active-2:     $brand-dollar-bill;
+$rd-navbar-logo-center-dark-fixed-cart-badge-background:     $brand-dollar-bill;
+$rd-navbar-logo-center-dark-fixed-cart-badge-color:     $white;
+
+//** Top block
+$rd-navbar-logo-center-dark-top-block-color:       $gray-dark;
+$rd-navbar-logo-center-dark-top-block-icon-color:  $gray-darker;
+//** stuck
+$rd-navbar-logo-center-dark-stuck-background:      $gray-base;

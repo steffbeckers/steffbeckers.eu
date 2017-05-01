@@ -1,0 +1,15 @@
+//-title - box title
+//-price - box-price
+//-period - box period
+//-state - active/not
+//- btnText - button text
+mixin box-planning-1(title, price, period, btnText, state)
+  // Planning Box type 1
+  .box-planning(class=(state != null ? 'active' : ''))
+    span.box-planning-label.bg-mantis Popular
+    h2= title
+    p.h1= price
+    p.small.text-uppercase= period
+    hr.hr-gradient
+    block
+    button.btn.btn-block.btn-primary= btnText

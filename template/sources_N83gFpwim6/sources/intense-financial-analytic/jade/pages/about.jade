@@ -1,0 +1,307 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-parallax
+include ../elements/_ui-box-icon-type-2
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-post-boxed
+
+//-Title
+block title
+  title= cfg.nav.about.title
+
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logoInverse,
+      cfg.nav.about,
+      cfg.nav
+    )
+
+    // Breadcrumbs
+    section
+      +rd-parallax({
+        "backgroundSpeed": "0.25",
+        "attrType": "media",
+        "src": "images/background-03-1920x447.jpg",
+        "htmlSpeed": "0",
+        "fade": "false"
+      })
+
+        .shell
+          .range
+            .range.range-xs-middle.range-xs-center.section-41.section-sm-50.section-md-66.context-dark
+              .cell-xs-12
+                div
+                  h1.text-capitalize
+                    span.big
+                      | About
+                .offset-top-10
+                  ul.list-inline.list-inline-dashed.text-italic.p
+                    li
+                      a(href="index.html") Home
+                    li
+                      | About
+
+  // Page Contents
+  main.page-content
+    // Section John Doe
+    section.section-98.section-sm-110
+      .shell
+        .range.range-xs-center
+          .cell-sm-10.cell-md-4.text-md-left
+            .inset-md-right-30
+              img.img-responsive.center-block(src="images/user-john-doe-344x345.jpg" width="344" height="345" alt="")
+              .offset-top-34.text-center
+                a.btn.btn-lg.btn-block.btn-primary(href= cfg.nav.help.href) Free consultation
+              .offset-top-24.offset-md-top-41.text-center
+                p
+                  span.icon.icon-xxs.text-middle.mdi.mdi-cellphone-android.text-darker
+                  =" "
+                  span.text-middle
+                    a(href="callto:#").text-dark 1-800-1234-567
+                p
+                  span.icon.icon-xxs.text-middle.mdi.mdi-email-open.text-darker
+                  =" "
+                  span.text-middle
+                    a(href="mailto:#").text-dark johndoe@demolink.org
+
+
+
+          .cell-sm-10.text-md-left.cell-md-8.offset-top-24.offset-md-top-0
+            h1 John Doe
+            div
+              h3.font-default.text-italic.text-regular
+                | Senior advisor for Intense, an independently owned financial planning company
+            div
+              hr.divider.divider-lg.reveal-inline-block.bg-mantis
+            .offset-top-24.offset-md-top-50
+              p I am a senior advisor for an independently owned financial planning company called Intense. We are an International Financial Planning company with offices in multiple jurisdictions over the world. Working with Intense gives me the ability to advise business owners all over the world via Internet or personally in the area of my location.
+              .offset-top-20
+                blockquote.quote.quote-variant-2
+                  .h3.text-italic.font-default
+                    q My job is to help professionals achieve their financial goals whilst having adequate protection along the way. I do this by tailoring  financial solutions to suit my clients’ individual needs.
+              .range.range-xs-center.offset-top-50.offset-md-top-40
+                .cell-xs-5.cell-sm-3
+                  +thumbnail-classic({
+                    "type": "thumbnail",
+                    "title": "",
+                    "description": "",
+                    "thumb": {
+                      "src": "images/certificate-01-170x242.jpg",
+                      "width": 170,
+                      "height": 242,
+                      "alt": ""
+                    },
+                    "target": {
+                      "src": "images/certificate_01-772x1000_orinal.jpg",
+                      "width": 772,
+                      "height": 1000,
+                      "alt": ""
+                    }
+                  })
+                .cell-xs-5.cell-sm-3
+                  +thumbnail-classic({
+                    "type": "thumbnail",
+                    "title": "",
+                    "description": "",
+                    "thumb": {
+                      "src": "images/certificate-02-170x242.jpg",
+                      "width": 170,
+                      "height": 242,
+                      "alt": ""
+                    },
+                    "target": {
+                      "src": "images/certificate_02-772x1000_orinal.jpg",
+                      "width": 772,
+                      "height": 1000,
+                      "alt": ""
+                    }
+                  })
+                .cell-xs-5.cell-sm-3.offset-top-30.offset-sm-top-0
+                  +thumbnail-classic({
+                    "type": "thumbnail",
+                    "title": "",
+                    "description": "",
+                    "thumb": {
+                      "src": "images/certificate-03-170x242.jpg",
+                      "width": 170,
+                      "height": 242,
+                      "alt": ""
+                    },
+                    "target": {
+                      "src": "images/certificate_03-772x1000_orinal.jpg",
+                      "width": 772,
+                      "height": 1000,
+                      "alt": ""
+                    }
+                  })
+                .cell-xs-5.cell-sm-3.offset-top-30.offset-sm-top-0
+                  +thumbnail-classic({
+                    "type": "thumbnail",
+                    "title": "",
+                    "description": "",
+                    "thumb": {
+                      "src": "images/certificate-04-170x242.jpg",
+                      "width": 170,
+                      "height": 242,
+                      "alt": ""
+                    },
+                    "target": {
+                      "src": "images/certificate_04-772x1000_orinal.jpg",
+                      "width": 772,
+                      "height": 1000,
+                      "alt": ""
+                    }
+                  })
+
+    // Timeline
+    section.section-98.section-sm-110.bg-white-lilac
+      .shell.text-sm-left
+        .range.range-xs-center
+          .cell-sm-4
+            .text-bold.text-primary 2009
+            div
+              h5 Bestselling Author
+          .cell-xs-10.cell-sm-8.offset-top-14.offset-sm-top-0
+            p John is a #1 New York Times bestselling author. With more than 1 million copies collectively in print, his seven books on personal finance have been translated into several languages and educated countless people worldwide. The Truth About Money was recognized with an Excellence in Financial Literacy Education (EIFLE) Book of the Year Award from the Institute for Financial Literacy (March 2007), a Gold Medal Axiom Award (March 2008), an Apex Award (June 2007), and was named Book of the Year by Small Press magazine (1997). The Lies About Money was awarded the Axiom Personal Finance Book of the Year (March 2008) and an EIFLE Award (Jan. 2009). John's eighth book, The Truth About Retirement Plans and IRAs, a #1 national best-seller, was published in April 2009.
+        .range.range-xs-center.offset-top-50
+          .cell-sm-4
+            .text-bold.text-primary 2012
+            div
+              h5
+                | Award-Winning Host of Radio and Television Shows
+          .cell-xs-10.cell-sm-8.offset-top-14.offset-sm-top-0
+            p John's radio show has been on the air for more than 20 years and is heard throughout the country, enjoying more than 1 million listeners every week. In 2011, John was named among the "Heavy Hundred" in the radio industry by TALKERS magazine. John's television show, The Truth About Money with John Doe, airs on more than 200 public television stations across the country and has won 8 Telly Awards.
+        .range.range-xs-center.offset-top-50
+          .cell-sm-4
+            .text-bold.text-primary 2014
+            div
+              h5
+                | Award-Winning Educator
+          .cell-xs-10.cell-sm-8.offset-top-14.offset-sm-top-0
+            p John appears on stage frequently, talking to thousands of people every year, and is widely acknowledged as an entertaining and informative speaker. He has testified before Congress three times, participated in an SEC Roundtable and appointed by Presidents Bill Clinton and George W. Bush as a delegate to all three National Summits on Retirement Savings. John taught personal finance at Georgetown University for nine years. He publishes an award-winning 16-page monthly newsletter and his website offers comprehensive and free personal finance education.
+        .range.range-xs-center.offset-top-50
+          .cell-sm-4
+            .text-bold.text-primary 2015
+            div
+              h5
+                | Philanthropic Activities
+          .cell-xs-10.cell-sm-8.offset-top-14.offset-sm-top-0
+            p John is active in community service. He served five years on the board of the United Way of the National Capital Area, including two years as Chairman. He serves on the Southeast Board of The Boys and Girls Clubs of America, is a member of The Boys and Girls Clubs of Greater Washington Foundation Board and served on the BGCGW Metropolitan Board of Directors for seven years and serves on the BGCGW Leadership Council. He is a Policy Board Member of the American Savings Education Council. and is on the Foundation Board of Directors for the Wolf Trap Foundation for the Performing Arts. Also, John formerly served on the boards of Junior Achievement of the National Capital Area and the Washington National Opera.
+
+    // Why John Doe?
+    section.section-98.section-sm-110
+      .shell
+        h1 Why John Doe?
+        div
+          hr.divider.divider-lg.bg-mantis
+        .range.range-xs-center.offset-top-41.offset-md-top-66
+          .cell-xs-10.cell-sm-7.cell-md-4
+            +box-icon-type-2('icon mdi mdi-account-multiple icon-mantis-filled icon-circle', 'Customer-Oriented', 'offset-top-20', 'I work for people like you, folks who are tired of the deceptive business practices pervasive in the retail mutual fund industry, and who are tired of suffering greater risks, higher fees and lower returns than they should.')
+          .cell-xs-10.cell-sm-7.cell-md-4.offset-top-66.offset-md-top-0
+            +box-icon-type-2('icon mdi mdi-account-check icon-mantis-filled icon-circle', 'Professional', 'offset-top-20', 'I am the owner of the largest independent financial planning firms in the nation, managing more than $15 billion for more than 28,000 clients both online and via 41 offices across the country.')
+          .cell-xs-10.cell-sm-7.cell-md-4.offset-top-66.offset-md-top-0
+            +box-icon-type-2('icon mdi mdi-chart-bar icon-mantis-filled icon-circle', 'Cooperative', 'offset-top-20', "Whether you're just starting out in your career, already retired, or in between, you deserve access to the best investment management advice available.")
+
+    // Call to action
+    section.section-98.section-sm-66.bg-mantis.context-dark
+      .shell
+        .range.range-md-middle
+          .cell-md-9
+            h3 Invest with professionals to achieve your financial goals!
+          .cell-md-3.offset-top-41.offset-md-top-0
+            a(href= cfg.nav.help.href).btn.btn.btn-lg.btn-warning.btn-block Free consultation
+
+    // Usefull Information for You
+    section.section-98.section-sm-top-110.section-sm-bottom-124.bg-white-lilac
+      .shell
+        h1 Useful Information for You
+        div
+          hr.divider.divider-lg.bg-mantis
+        .range.range-xs-center.offset-top-41.offset-md-top-66
+          .cell-xs-10.cell-sm-8.cell-md-4
+            +post-boxed("#", "", "Are You Worried About the Stock Market?", "",
+            [
+            ],
+            {
+              "type": "thumbnail",
+              "width": 370,
+              "height": 260,
+              "src": "images/post-04-370x260.jpg",
+              "alt": ""
+            })
+          .cell-xs-10.cell-sm-8.cell-md-4.offset-top-66.offset-md-top-0
+            +post-boxed("#", "", "My New Seminar Focuses on 3 Keys to Help You", "",
+            [],
+            {
+              "type": "thumbnail",
+              "width": 370,
+              "height": 260,
+              "src": "images/post-05-370x260.jpg",
+              "alt": ""
+            })
+          .cell-xs-10.cell-sm-8.cell-md-4.offset-top-66.offset-md-top-0
+            +post-boxed("#", "", "The Most Important Chart on Investing You'll Ever See", "",
+            [],
+            {
+              "type": "thumbnail",
+              "width": 370,
+              "height": 260,
+              "src": "images/post-06-370x260.jpg",
+              "alt": ""
+            })
+        .range.range-xs-center.offset-top-66
+          .cell-xs-5.cell-md-3
+            a(href="#").btn.btn-lg.btn-primary.btn-block view all
+
+    // Have a Question?
+    section.section-98.section-sm-top-110.section-sm-bottom-124
+      .shell
+        h1 Have a Question?
+        div
+          hr.divider.divider-lg.bg-mantis
+        .offset-top-41.offset-md-top-66
+          .range.range-xs-center
+            .cell-xs-10.cell-md-8
+              // RD Mailform
+              form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                .range.range-xs-center
+                  .cell-sm-6
+                    .form-group
+                      label.form-label.form-label-outside.form-label-size-lg.form-label-size-lg(for="git-3-mailform-first-name") First name
+                      input#git-3-mailform-first-name.form-control(type="text" name="firstname" data-constraints="@Required")
+                  .cell-sm-6
+                    .form-group
+                      label.form-label.form-label-outside.form-label-size-lg(for="git-3-mailform-last-name") Last name
+                      input#git-3-mailform-last-name.form-control(type="text" name="lastname" data-constraints="@Required")
+                  .cell-sm-12
+                    .form-group.offset-sm-top-20
+                      label.form-label.form-label-outside.form-label-size-lg(for="git-3-mailform-email") E-mail
+                      input#git-3-mailform-email.form-control(type="text" name="email" data-constraints="@Required @Email")
+                  .cell-sm-12
+                    .form-group.offset-sm-top-20
+                      label.form-label.form-label-outside.form-label-size-lg(for="git-3-mailform-message") Message
+                      textarea#git-3-mailform-message.form-control(name="message" data-constraints="@Required")
+                  .offset-top-30.text-center
+                    button(type="submit", style="width:270px;").btn.btn-lg.btn-primary submit
+
+
+
+
+
+
+  // Page Footer
+  include ../sections/_section-footer-default

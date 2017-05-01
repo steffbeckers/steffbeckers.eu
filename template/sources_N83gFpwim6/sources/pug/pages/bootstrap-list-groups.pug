@@ -1,0 +1,195 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.bootstrapcomponents.submenu.listGroups.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.bootstrapcomponents.submenu.listGroups.title,
+  "icon-lg " + cfg.nav.components.submenu.bootstrapcomponents.submenu.listGroups.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.bootstrapcomponents.submenu.listGroups.title,
+      "href": cfg.nav.components.submenu.bootstrapcomponents.submenu.listGroups.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    // List group
+    section
+      .shell
+        h1 List group
+        p List groups are a flexible and powerful component for displaying not only simple lists of elements, but complex ones with custom content.
+        hr.divider.bg-mantis
+
+        // Basic example
+        .range.range-xs-center.offset-top-66
+          .cell-md-6
+            h3 Basic example
+            p The most basic list group is simply an unordered list with list items, and the proper classes. Build upon it with the options that follow, or your own CSS as needed.
+
+            ul.list-group.text-left
+              li.list-group-item Cras justo odio
+              li.list-group-item Dapibus ac facilisis in
+              li.list-group-item Morbi leo risus
+              li.list-group-item Porta ac consectetur ac
+              li.list-group-item Vestibulum at eros
+
+        // Badges
+        .range.range-xs-center.offset-top-66
+          .cell-md-7
+            h3.offset-top-30 Badges
+            p Add the badges component to any list group item and it will automatically be positioned on the right.
+            ul.list-group.text-left
+              li.list-group-item
+                span.badge 14
+                |     Cras justo odio
+              li.list-group-item
+                span.badge 2
+                |  Dapibus ac facilisis in
+              li.list-group-item
+                span.badge 1
+                |  Morbi leo risus
+
+        // Linked items
+        .range.range-xs-center.offset-top-66
+          .cell-md-7
+            h3.offset-top-30 Linked items
+            p Linkify list group items by using anchor tags instead of list items (that also means a parent
+              = ' '
+              code &lt;div&gt;
+              = ' '
+              | instead of an
+              = ' '
+              code &lt;ul&gt;
+              = ' . '
+              | No need for individual parents around each element.
+
+            .list-group.text-left
+              a.list-group-item.active(href='#')
+                | Cras justo odio
+              a.list-group-item(href='#') Dapibus ac facilisis in
+              a.list-group-item(href='#') Morbi leo risus
+              a.list-group-item(href='#') Porta ac consectetur ac
+              a.list-group-item(href='#') Vestibulum at eros
+
+        // Button items
+        .range.range-xs-center.offset-top-66
+          .cell-md-7
+            h3.offset-top-30 Button items
+            p List group items may be buttons instead of list items (that also means a parent
+              = ' '
+              code &lt;div&gt;
+              = ' '
+              | instead of an
+              = ' '
+              code &lt;ul&gt;
+              = ' '
+              | No need for individual parents around each element.
+              = ' '
+              span.text-danger Don't use the standard
+              = ' '
+              code .btn
+              = ' '
+              span.text-danger classes here.
+
+            .list-group.text-left
+              button.list-group-item(type='button') Cras justo odio
+              button.list-group-item(type='button') Dapibus ac facilisis in
+              button.list-group-item(type='button') Morbi leo risus
+              button.list-group-item(type='button') Porta ac consectetur ac
+              button.list-group-item(type='button') Vestibulum at eros
+
+        // Disabled items
+        .range.range-xs-center.offset-top-66
+          .cell-md-7
+            h3.offset-top-30 Disabled items
+            p Add
+              = ' '
+              code .disabled
+              = ' '
+              | to a
+              = ' '
+              code list-group-item
+              | to gray it out to appear disabled.
+
+            .list-group.text-left
+              a.list-group-item.disabled.text-darker(href='#')
+                | Cras justo odio
+              a.list-group-item(href='#') Dapibus ac facilisis in
+              a.list-group-item(href='#') Morbi leo risus
+              a.list-group-item(href='#') Porta ac consectetur ac
+              a.list-group-item(href='#') Vestibulum at eros
+
+        // Contextual classes
+        .range.range-xs-center.offset-top-66
+          .cell-md-7
+            h3.offset-top-30 Contextual classes
+            p Use contextual classes to style list items, default or linked. Also includes
+              = ' '
+              code .active
+              = ' '
+              | state.
+
+            ul.list-group.text-left
+              li.list-group-item.list-group-item-success Dapibus ac facilisis in
+              li.list-group-item.list-group-item-info Cras sit amet nibh libero
+              li.list-group-item.list-group-item-warning Porta ac consectetur ac
+              li.list-group-item.list-group-item-danger Vestibulum at eros
+            .list-group.text-left
+              a.list-group-item.list-group-item-success(href='#') Dapibus ac facilisis in
+              a.list-group-item.list-group-item-info(href='#') Cras sit amet nibh libero
+              a.list-group-item.list-group-item-warning(href='#') Porta ac consectetur ac
+              a.list-group-item.list-group-item-danger(href='#') Vestibulum at eros
+
+        // Custom content
+        .range.range-xs-center.offset-top-66
+          .cell-md-7
+            h3.offset-top-30 Custom content
+            p Add nearly any HTML within, even for linked list groups like the one below.
+
+            a.list-group-item.active.text-left(href='#')
+              h4.list-group-item-heading List group item heading
+              p.list-group-item-text
+                | Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+            a.list-group-item.text-left(href='#')
+              h4.list-group-item-heading List group item heading
+              p.list-group-item-text
+                | Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+            a.list-group-item.text-left(href='#')
+              h4.list-group-item-heading List group item heading
+              p.list-group-item-text
+                | Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+
+  // Page Footers
+  include ../sections/_section-footer-default

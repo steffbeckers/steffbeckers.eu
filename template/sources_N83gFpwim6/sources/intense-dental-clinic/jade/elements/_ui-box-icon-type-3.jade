@@ -1,0 +1,12 @@
+//- icon - icon class
+//- title - box title
+//- title - box title attr
+//- desc - description of box
+mixin box-icon-type-3(icon, title, titleAttr, desc)
+  // Icon Box Type 3
+  .unit.unit-middle.unit-spacing-xs.unit-xs.unit-xs-horizontal.text-center.text-xs-left
+    .unit-left
+      span.icon.text-middle(class= icon)
+    .unit-body
+      h4.text-spacing-60(class= titleAttr)= title
+  p.offset-top-10.text-center.text-xs-left= desc

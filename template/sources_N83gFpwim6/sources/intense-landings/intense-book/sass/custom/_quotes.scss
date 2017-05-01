@@ -1,0 +1,131 @@
+//
+// Quotes
+// --------------------------------------------------
+
+
+// Base Styles
+// --------------------------------------------------
+
+.quote {
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+// Quote Classic
+// -------------------------
+
+.quote-classic {
+  text-align: left;
+  position: relative;
+
+  q {
+    quotes: none;
+  }
+
+  .quote-body {
+    padding: $quote-classic-body-padding;
+  }
+
+  .quote-meta {
+    margin-left: -20px;
+    margin-bottom: -40px;
+  }
+
+  .quote-desc {
+    font-size: $quote-classic-desc-size;
+    font-weight: $quote-classic-desc-weight;
+  }
+
+  .quote-author {
+    margin-bottom: 4px;
+  }
+
+  .quote-desc {
+    margin-top: 4px;
+  }
+
+  > *{
+    position: relative;
+    z-index: 1;
+  }
+
+  &:before {
+    position: absolute;
+    top: -8px;
+    left: -12px;
+    z-index: 0;
+    font-family: $quote-braces-font;
+    font-size: $quote-braces-size;
+    line-height: $quote-braces-line-height;
+    color: $quote-braces-color;
+    content: $quote-braces-icon;
+    @include transform(scaleX(-1));
+  }
+}
+
+// Quote Outboxed
+// -------------------------
+
+.quote-outboxed {
+  &:before {
+    display: none;
+  }
+
+  .divider {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .quote-body {
+    position: relative;
+    padding: $quote-outboxed-body-padding;
+    background: $quote-outboxed-body-background;
+    border-radius: $quote-outboxed-body-border-radius;
+
+    &:before {
+      position: absolute;
+      top: 6px;
+      left: 8px;
+      font-family: $quote-braces-font;
+      font-size: $quote-braces-size;
+      line-height: $quote-braces-line-height;
+      color: $quote-outboxed-braces-icon-color;
+      content: $quote-braces-icon;
+      @include transform(scaleX(-1));
+      z-index: -1;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 35px;
+      @include triangle(bottom, 20px, 10px, $gray-lighter);
+    }
+  }
+
+  .quote-author {
+    margin: 0 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+  }
+
+  .quote-desc {
+    margin-top: -2px;
+  }
+
+  .quote-meta {
+    margin: 24px 0 0 3px;
+  }
+
+  &:before {
+    color: $gray;
+    top: 0;
+    left: 0;
+    z-index: 6;
+  }
+}
+
+

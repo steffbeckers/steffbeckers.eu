@@ -1,0 +1,169 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.bootstrapcomponents.submenu.buttonGroups.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.bootstrapcomponents.submenu.buttonGroups.title,
+  "icon-lg " + cfg.nav.components.submenu.bootstrapcomponents.submenu.buttonGroups.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.bootstrapcomponents.submenu.buttonGroups.title,
+      "href": cfg.nav.components.submenu.bootstrapcomponents.submenu.buttonGroups.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    // Button groups
+    section
+      .shell
+        h1 Button groups
+        p Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with our buttons plugin.
+        hr.divider.bg-mantis
+
+        // Basic example
+        h3.offset-top-66 Basic example
+        p Wrap a series of buttons with #[code .btn] in #[code .btn-group]
+
+        .offset-top-41
+          .btn-group.btn-group-sm(role='group', aria-label='...')
+            button.btn.btn-default(type='button') Left
+            button.btn.btn-default(type='button') Middle
+            button.btn.btn-default(type='button') Right
+
+        // Button toolbar
+        h3.offset-top-66 Button toolbar
+        p Combine sets of #[code &lt;div class="btn-group"&gt;] into a #[code &lt;div class="btn-toolbar"&gt;] for more complex components.
+
+        .offset-top-41
+          .btn-group.btn-group-sm(role='group', aria-label='First group')
+            button.btn.btn-default(type='button') 1
+            button.btn.btn-default(type='button') 2
+            button.btn.btn-default(type='button') 3
+            button.btn.btn-default(type='button') 4
+
+        // Sizing
+        h3.offset-top-66 Sizing
+        .range.range-xs-center
+          .cell-md-8
+            p Instead of applying button sizing classes to every button in a group, just add #[code .btn-group-*] to each #[code .btn-group], including when nesting multiple groups
+
+        .offset-top-41
+          .reveal-block
+            .btn-group(role='group', aria-label='Large button group')
+              button.btn.btn-default(type='button') Left
+              button.btn.btn-default(type='button') Middle
+              button.btn.btn-default(type='button') Right
+
+          .reveal-block.offset-top-20
+            .btn-group.btn-group-sm(role='group', aria-label='Default button group')
+              button.btn.btn-default(type='button') Left
+              button.btn.btn-default(type='button') Middle
+              button.btn.btn-default(type='button') Right
+
+          .reveal-block.offset-top-20
+            .btn-group.btn-group-xs(role='group', aria-label='Small button group')
+              button.btn.btn-default(type='button') Left
+              button.btn.btn-default(type='button') Middle
+              button.btn.btn-default(type='button') Right
+
+        // Nesting
+        h3.offset-top-66 Nesting
+        p Place a #[code .btn-group] within another #[code .btn-group] when you want dropdown menus mixed with a series of buttons.
+
+        .offset-top-41
+          .btn-group.btn-group-sm(role='group', aria-label='')
+            button.btn.btn-default(type='button') 1
+            button.btn.btn-default(type='button') 2
+            .btn-group.btn-group-sm(role='group')
+              button.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                | Dropdown
+                span.caret
+              ul.dropdown-menu
+                li
+                  a(href='#') Dropdown link
+                li
+                  a(href='#') Dropdown link
+
+        // Vertical variation
+        h3.offset-top-66 Vertical variation
+        p Make a set of buttons appear vertically stacked rather than horizontally. #[ Split button dropdowns are not supported here.]
+
+        .offset-top-41
+          .btn-group-vertical.btn-group-sm(role="group" aria-label="")
+            button.btn.btn-default(type='button') Button
+            .btn-group.btn-group-sm(role='group')
+              button#btnGroupVerticalDrop1.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                | Dropdown
+                span.caret
+              ul.dropdown-menu(aria-labelledby='btnGroupVerticalDrop1')
+                li
+                  a(href='#') Dropdown link
+                li
+                  a(href='#') Dropdown link
+
+        // Justified button groups
+        h3.offset-top-66 Justified button groups
+        .range.range-xs-center
+          .cell-md-8
+            P Make a group of buttons stretch at equal sizes to span the entire width of its parent. Also works with button dropdowns within the button group.
+            P With #[span.text-danger &lt;a&gt;] elements
+            p Just wrap a series of #[code .btn] in #[code .btn-group.btn-group-justified].
+            .offset-top-41
+              .btn-group.btn-group-sm.btn-group-justified(role='group', aria-label='Justified button group')
+                a.btn.btn-default(href='#', role='button') Left
+                a.btn.btn-default(href='#', role='button') Middle
+                a.btn.btn-default(href='#', role='button') Right
+
+            .offset-top-30.veil.reveal-xs-block
+              .btn-group.btn-group-sm.btn-group-justified(role='group', aria-label='Justified button group with nested dropdown')
+                a.btn.btn-default(href='#', role='button') Left
+                a.btn.btn-default(href='#', role='button') Middle
+                .btn-group.btn-group-sm(role='group')
+                  a.btn.btn-default.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                    | Dropdown
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Action
+                    li
+                      a(href='#') Another action
+                    li
+                      a(href='#') Something else here
+                    li.divider(role='separator')
+                    li
+                      a(href='#') Separated link
+
+  // Page Footers
+  include ../sections/_section-footer-default

@@ -1,0 +1,85 @@
+//-
+//- Common usage mixins
+//- --------------------------------------------------
+
+//- Img image
+mixin img(name, className)
+  - var size = name.match('[0-9]+(x)[0-9]+')[0].split('x');
+  - var ext = name.split('.')[1];
+
+  img(src='images/' + name, alt='', width=size[0], height=size[1], class=className)
+
+//- Jpg image
+mixin jpg(name, className)
+  - var size = name.match('[0-9]+(x)[0-9]+')[0].split('x');
+  img(src='images/' + name + '.jpg', alt='', width=size[0], height=size[1], class=className)
+
+//- Png image
+mixin png(name, className)
+  - var size = name.match('[0-9]+(x)[0-9]+')[0].split('x');
+  img(src='images/' + name + '.png', alt='', width=size[0], height=size[1], class=className)
+
+//-
+//- Specific usage mixins
+//- ---------------------------------------------------
+
+//- Social list
+mixin social-links
+  ul.inline-list.inline-list-md
+    li: a.icon.icon-xs.link-gray-light.fa-facebook(href='#')
+    li: a.icon.icon-xs.link-gray-light.fa-twitter(href='#')
+    li: a.icon.icon-xs.link-gray-light.fa-youtube(href='#')
+    li: a.icon.icon-xs.link-gray-light.fa-linkedin(href='#')
+
+//- Table
+mixin table(classes, modClasses)
+  .table-custom-responsive(class=modClasses)
+    table.table-custom(class=classes)
+      thead
+        tr
+          th Column 1
+          th Column 2
+          th Column 3
+          th Column 4
+
+      tbody
+        tr
+          td Item #1
+          td Description
+          td Subtotal:
+          td $2.00
+        tr
+          td Item #2
+          td Description
+          td Discount:
+          td $2.00
+        tr
+          td Item #3
+          td Description
+          td Shipping:
+          td $3.00
+
+        tr
+          td Item #4
+          td Description
+          td Tax:
+          td $4.00
+
+      tfoot
+        tr
+          td All Items
+          td Description
+          td Your Total:
+          td $10.00
+
+
+//- Pagination
+mixin pagination
+  ul.pagination-custom
+    li.disabled: a(href='#')
+    li.active: a(href='#') 1
+    li: a(href='#') 2
+    li: a(href='#') 3
+    li.ellipsis ...
+    li: a(href='#') 12
+    li: a(href='#')

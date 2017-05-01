@@ -1,0 +1,57 @@
+//- Classic  Product List
+
+mixin product-list-classic(product)
+  - var thumbnails = product.images.length? true : null
+  - var priceArr = typeof(product.price) == 'string' ? true : false
+
+  // Product
+  .product.product-list.product-list-classic.unit.unit-sm-horizontal.unit-xs-top
+    // Product Image
+    .product-image.unit-left
+       img.img-responsive(src=product.images[0].src alt=product.images[0].alt width=product.images[0].width height=product.images[0].height).product-image-area
+       // Product Thumnails
+       if thumbnails
+         ul.product-thumbnails
+           each image, index in product.images
+             li(class= (index == 0) ? "active" : "")
+               img.img-responsive(src=image.src alt=image.alt width=image.width height=image.height)
+       // Product Label
+       - if (typeof(product.label) !== "undefined")
+         span.product-label.label-custom.label-lg-custom.label-rounded-custom(class= product.label.adClass)= product.label.text
+
+    .unit-body.text-left
+
+      // Product Brand
+      p.product-brand.text-italic.text-dark= product.brand
+      // Product Title
+      h4.product-title.offset-top-0
+        a(href= product.link)= product.title
+
+      // Product Rating
+      .product-rating.offset-top-20
+        span.mdi.mdi-star
+        span.mdi.mdi-star
+        span.mdi.mdi-star
+        span.mdi.mdi-star-half
+        span.mdi.mdi-star-outline
+        span.product-review-count.text-dark= product.reviews + " customer reviews"
+
+      p.product-desc= product.desc
+
+      // Product price
+      .product-price.text-bold.h5.offset-top-24
+        if priceArr
+          span= '$' + product.price
+        else
+          span.product-price-new= "$" + product.price[1]
+          span.product-price-old.text-dark.small= '$' + product.price[0]
+
+
+      .form-group.product-number.offset-top-20
+        label.text-dark Quantity:
+        input.form-control.input-sm.form-control-impressed(type="number" data-zeros="true" value="1" min="1" max="20")
+
+      // Product Add To cart
+      a(href= product.link).btn.btn-sm.btn-picton-blue.btn-icon.btn-icon-left.product-btn.offset-top-20.offset-xs-top-0.offset-top-lg-20
+       span.icon.mdi.mdi-cart-outline
+       | Add to Cart

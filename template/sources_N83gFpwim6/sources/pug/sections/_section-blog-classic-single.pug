@@ -1,0 +1,214 @@
+//- Includes
+include ../elements/_ui-rd-parallax
+include ../elements/_ui-member-block-type-3
+include ../elements/_ui-quote-simple
+include ../elements/_widget-tags
+include ../elements/_widget-post
+include ../elements/_ui-box-comment
+
+// Header Transparent
++rd-parallax({
+  "backgroundSpeed": "0.35",
+  "attrType": "media",
+  "src": "images/backgrounds/background-10-1920x1062.jpg",
+  "htmlSpeed": "0"
+  })
+  section.section-254.context-dark.bg-overlay-gray-darkest
+    .shell
+      div
+        ul.list-inline.list-inline-dashed.p
+          li
+            a(href="#") Home
+          li
+            a(href="#") Pages
+          li  Blog
+      h2.offset-top-10
+        span.big  5 Steps to Blog’s Success
+      .post-meta
+        ul.list-inline.p
+          li
+            span.text-middle.icon-xxs.mdi.mdi-clock
+            time.text-middle.small(datetime='2016-01-01') March 7, 2016
+          li
+            span.text-middle.icon-xxs.mdi.mdi-comment-multiple-outline
+            span.text-middle.small
+            = ' 141'
+          li
+            span.text-middle.icon-xxs.mdi.mdi-heart
+            span.text-middle.small
+            = ' 542'
+          li
+            span.text-middle.icon-xxs.mdi.mdi-share
+            span.text-middle.small
+            = ' 42'
+
+
+// Author Aside
+section.section-66.offset-top-24
+  .shell
+    .range
+      .cell-md-3.offset-top-50
+        +member-block-type-3("images/users/user-july-mao-140x140.jpg", "July Mao", "Support Operator",[{
+          "iconClass": "mdi mdi-facebook",
+          "btnLink": "#"
+        },
+        {
+          "iconClass": "mdi mdi-twitter",
+          "btnLink": "#"
+        },
+        {
+          "iconClass": "mdi mdi-google-plus",
+          "btnLink": "#"
+        }], "All Posts")
+      .cell-md-9.text-left
+        p.offset-top-50.dropcap.dropcap-dark.text-left Unfortunately people will not come to your blog just to see what you have published on it. To make sure that your blog becomes a successful one, you have to work on it to attract visitors interested in your content. This can be achieved by serious work on some important aspects. In a word, give people the reason to see what you have to say or offer.
+
+        p The following pieces of advice may help you draw traffic to your blog:
+
+        ol.list.list-numbered
+          li First of all, submit your blog to search engines in order to be ranked. Google, Yahoo and Bing are the most popular ones, so be sure to submit it to all the three. That’s not all of course; there is no guarantee that your blog will reach the top ranking. You will need to make an extra effort for that.
+          li Write fresh content. You must publish quality content at least three or four times, a week.
+          li Join Facebook, Twitter, Squidoo or other Social Networking sites and make connections with various groups of people sharing your interests.
+          li Become a member of forums related to your niche to meet new people and share ideas. Add a link to your blog in the signature line in order that others can click it to reach your blog.
+          li Create content not only for your blog but also for best article directories. Using the resource box to add a link to your blog is a great way to get traffic and rank if you submit quality articles.
+section
+  +rd-parallax({
+    "backgroundSpeed": "0.35",
+    "attrType": "media",
+    "src": "images/backgrounds/background-05-1920x960.jpg",
+    "htmlSpeed": "0"
+  })
+    section(style="min-height: 160px; padding-bottom: 31.25%")
+
+// Conclusion
+section.section-66.section-bottom-124
+  .shell
+    .range.range-xs-center.range-lg-right
+      .cell-xs-10.cell-sm-9.text-left
+
+        h6.text-bold Conclusion
+
+        p What other techniques do you have for promoting a blog/generating traffic? Kindly share in the comments section.
+        p P.S: If you need more help or guidance, feel free to leave a comment below. And if you have your own strategies to drive traffic to your blog, don’t be shy to share.
+
+        footer.offset-top-50.text-sm-left.clearfix
+          .group
+            a(href="#").btn.btn-danger.btn-icon.btn-icon-left
+              span.icon.icon-xs.mdi.mdi-heart
+              | like #[span.badge 521]
+            a(href="#").btn.btn-info.btn-icon.btn-icon-left
+              span.icon.icon-xs.mdi.mdi-facebook
+              | Share on facebook
+            a(href="#").btn.btn-sapphire.btn-icon.btn-icon-left
+              span.icon.icon-xs.mdi.mdi-twitter
+              | Share on Twitter
+
+        .offset-top-34
+          +widget-tags("btn btn-xs btn-default", [
+            {"title": "Web", "href": "#"},
+            {"title": "UX", "href": "#"},
+            {"title": "Marketing", "href": "#"},
+            {"title": "News", "href": "#"}
+          ])
+
+        hr.offset-top-66
+
+        h4.offset-top-66.text-uppercase.text-spacing-120.text-center.text-bold Related Posts
+
+        .range.offset-top-41.range-sm-center
+          .cell-sm-10
+            .range
+              .cell-sm-6
+                +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "05/14/2015", "Making Money Online with Your Computer Only", {
+                  "w": 60,
+                  "h": 60,
+                  "src": "images/users/user-john-doe-60x60.jpg",
+                  "alt": ""
+                }, "", "text-picton-blue")
+                .offset-top-24
+                  +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "05/18/2015", "Proper Color Solutions For The Office", {
+                    "w": 60,
+                    "h": 60,
+                    "src": "images/users/user-bernard-show-60x60.jpg",
+                    "alt": ""
+                  }, "", "text-picton-blue")
+
+              .cell-sm-6.offset-top-24.offset-sm-top-0
+                +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "05/9/2015", "Four Types of Verbal Communication", {
+                  "w": 60,
+                  "h": 60,
+                  "src": "images/users/user-sam-cole-60x60.jpg",
+                  "alt": ""
+                },"", "text-picton-blue")
+
+                .offset-top-24
+                  +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "05/21/2015", "Let’s Change the world", {
+                    "w": 60,
+                    "h": 60,
+                    "src": "images/users/user-july-mao-60x60.jpg",
+                    "alt": ""
+                  }, "", "text-picton-blue")
+
+            hr.offset-top-66
+
+            h4.offset-top-66.text-uppercase.text-spacing-120.text-center.text-bold Comments
+            .offset-top-41
+            //- Comment 1
+            +box-comment(
+            "box-comment-boxed",
+            {
+              "width": 60,
+              "height": 60,
+              "src": "images/users/user-alex-merphy-60x60.jpg",
+              "alt": "Alex Merphy"
+            },
+            "Feb 18, 9:14",
+            "Alex Merphy",
+            "Very smart people working on the project — they provided great insight and brought experience to it. Sales person was very prompt."
+            )
+              //- Reply 1
+              +box-comment(
+              "box-comment-boxed",
+              {
+                "width": 60,
+                "height": 60,
+                "src": "images/users/user-kira-force-60x60.jpg",
+                "alt": "Kira Force"
+              },
+              "Feb 18, 10:13",
+              "Kira Force",
+              "They have outperformed every expectation we had. The company promised — and delivered with fewer steps and minimal paper."
+              )
+                //- Reply 2
+              +box-comment(
+              "box-comment-boxed",
+              {
+                "width": 60,
+                "height": 60,
+                "src": "images/users/user-eugene-newman-60x60.jpg",
+                "alt": "Eugene Newman"
+              },
+              "Feb 18, 9:14",
+              "Eugene Newman",
+              "The service is excellent and the personnel I worked with are great. Very responsive team and easy company to work with. I enjoy our partnership."
+              )
+                //- Comment 2
+            +box-comment(
+            "box-comment-boxed",
+            {
+              "width": 60,
+              "height": 60,
+              "src": "images/users/user-diana-russo-60x60.jpg",
+              "alt": "Diana Russo"
+            },
+            "Feb 17, 7:34",
+            "Diana Russo",
+            "An efficient and reliable resource. They always remain flexible, cost effective, and lightning fast. Keep up the good work!"
+            )
+            h5.offset-top-34.text-uppercase.text-spacing-120.text-bold Leave a comment
+            form.rd-mailform.offset-top-10.text-left(data-form-output="form-contact-me", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+              .form-group
+                label.form-label.form-label-outside(for="comment-message") Message:
+                textarea#comment-message.form-control(data-constraints="@Required" style="height: 170px")
+              .group-sm.text-left.offset-top-30
+                button(type="submit").btn.btn-sm.btn-primary comment

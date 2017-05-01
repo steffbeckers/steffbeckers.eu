@@ -1,0 +1,215 @@
+mixin tilter-8(tilter)
+  -var targetBlank = (tilter.targetBlank === true)? "_blank" : "_self"
+  a.tilter.tilter--8(target=targetBlank href=tilter.link)
+    .tilter__figure
+      img.tilter__image.img-responsive(src=tilter.thumb.src, alt=tilter.title)
+      .tilter__caption
+        h5.tilter__title !{tilter.title}
+      div.tilter__deco.tilter__deco--lines
+
+// Revolution
+section.section-98.smooth.section-sm-110#section-revolution
+  .shell-wide
+    h1
+      span  15+
+        span.text-red= " Revolution "
+        | Slider effects
+
+    img(src="images/logos/slider.jpg", alt="").img-responsive.center-block.offset-top-0.veil.reveal-xs-block
+
+    .offset-top-66
+      .range
+        .cell-lg-4.cell-sm-6
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/crossfade.jpg',
+                alt: 'CrossFade'
+              },
+              title: 'CrossFade',
+              link: 'revolution-crossfade.html'
+            })
+
+        .cell-lg-4.cell-sm-6.offset-top-41.offset-sm-top-0
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/fadethrough.jpg',
+                alt: 'FadeThrough'
+              },
+              title: 'FadeThrough',
+              link: 'revolution-fadethrough.html'
+            })
+
+        .cell-lg-4.cell-sm-6.offset-top-41.offset-lg-top-0
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/slide-1.jpg',
+                alt: 'Slide 1'
+              },
+              title: 'Slide 1',
+              link: 'revolution-slidehorizontal.html'
+            })
+
+        .cell-lg-4.cell-sm-6.offset-top-41
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/slide-2.jpg',
+                alt: 'Slide 2'
+              },
+              title: 'Slide 2',
+              link: 'revolution-slidevertical.html'
+            })
+
+        .cell-lg-4.cell-sm-6.offset-top-41
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/slide-overlay-1.jpg',
+                alt: 'Slide overlay 1'
+              },
+              title: 'Slide overlay 1',
+              link: 'revolution-slidingoverlayhorizontal.html'
+            })
+
+        .cell-lg-4.cell-sm-6.offset-top-41
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/slide-overlay-2.jpg',
+                alt: 'Slide overlay 2'
+              },
+              title: 'Slide overlay 2',
+              link: 'revolution-slidingoverlayvertical.html'
+            })
+
+        .cell-lg-4.cell-sm-6.offset-top-41
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/boxslide.jpg',
+                alt: 'Box Slide'
+              },
+              title: 'Box Slide',
+              link: 'revolution-boxslide.html'
+            })
+
+        .cell-lg-4.cell-sm-6.offset-top-41
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/slotslide.jpg',
+                alt: 'Slot Slide'
+              },
+              title: 'Slot Slide',
+              link: 'revolution-slotslide.html'
+            })
+
+        .cell-lg-4.cell-sm-6.offset-top-41
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/boxfade.jpg',
+                alt: 'Box Fade'
+              },
+              title: 'Box Fade',
+              link: 'revolution-boxfade.html'
+            })
+
+        .cell-lg-4.cell-sm-6.offset-top-41
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/slotfade.jpg',
+                alt: 'Slot Fade'
+              },
+              title: 'Slot Fade',
+              link: 'revolution-slotfade.html'
+            })
+
+        .cell-lg-4.cell-sm-6.offset-top-41
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/parallaxhorizontal.jpg',
+                alt: 'Parallax 1'
+              },
+              title: 'Parallax 1',
+              link: 'revolution-parallaxhorizontal.html'
+            })
+
+        .cell-lg-4.cell-sm-6.offset-top-41
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/parallaxvertical.jpg',
+                alt: 'Parallax 2'
+              },
+              title: 'Parallax 2',
+              link: 'revolution-parallaxvertical.html'
+            })
+
+        .cell-lg-4.cell-sm-6.offset-top-41
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/slotzoom-horizontal.jpg',
+                alt: 'Zoom 1'
+              },
+              title: 'Zoom 1',
+              link: 'revolution-slotzoom-horizontal.html'
+            })
+
+        .cell-lg-4.cell-sm-6.offset-top-41
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/slotzoom-vertical.jpg',
+                alt: 'Zoom 2'
+              },
+              title: 'Zoom 2',
+              link: 'revolution-slotzoom-vertical.html'
+            })
+
+        .cell-lg-4.cell-sm-6.offset-top-41
+          .inset-xl-left-20.inset-xl-right-20
+            +tilter-8({
+              thumb:{
+                width: '200px',
+                height: '200px',
+                src: 'images/sliders/incube.jpg',
+                alt: 'Incube'
+              },
+              title: 'Incube',
+              link: 'revolution-incube.html'
+            })

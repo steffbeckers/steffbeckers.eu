@@ -1,0 +1,20 @@
+//- title - title of element
+//- btnClass - button class
+//- btnHref - button link
+//- iconClass - class of icon inside button
+//- iconAlign - icon aligment inside button
+//- btnText - button text
+//- desc - jumbotron description
+mixin jumbotron-bootstrap(title, btnClass, btnHref, iconClass, iconAlign, btnText, desc)
+  //Bootstrap jumbotron
+  .jumbotron.shadow-drop-lg.context-dark.text-left
+    h2
+      span.big= title
+    p= desc
+    if iconClass != null
+      a(href= btnHref).btn(class= btnClass).btn-icon(class='btn-icon-' + iconAlign).offset-top-14
+        span.icon(class= iconClass)
+        = btnText
+    else
+      a(href= btnHref).btn(class= btnClass).offset-top-14= btnText
+

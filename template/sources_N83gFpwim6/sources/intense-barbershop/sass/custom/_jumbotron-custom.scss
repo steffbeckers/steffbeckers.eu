@@ -1,0 +1,207 @@
+//
+// Jumbotron custom
+// --------------------------------------------------
+.jumbotron-custom-1 {
+  .jumbotron-custom-content {
+    padding: 30px 0 50px;
+  }
+}
+
+.jumbotron-custom-2 {
+  .jumbotron-custom-content {
+    padding: 40px 0 50px;
+  }
+}
+
+.jumbotron-custom-3 {
+  .jumbotron-custom-content {
+    padding: 40px 0 50px;
+  }
+}
+
+.rd-navbar-fixed-linked {
+  @media (max-height: $screen-xs-max) {
+    .jumbotron-custom {
+      min-height: calc(100vh - 56px);
+      @include display-flex;
+      @include flex-direction(column);
+      @include flex-wrap(nowrap);
+      @include align-items(center);
+      @include justify-content(center);
+    }
+  }
+}
+
+.rd-navbar-sidebar-linked {
+  .jumbotron-custom-1 {
+    @include display-flex;
+    @include flex-direction(column);
+    @include flex-wrap(nowrap);
+    @include align-items(center);
+    @include justify-content(center);
+
+    @media (max-height: 799px) {
+      min-height: 100vh;
+    }
+
+    @media (min-height: 800px) {
+      min-height: 800px;
+    }
+  }
+
+  &.ie-10,
+  &.ie-11 {
+    .jumbotron-custom-1 {
+      display: block;
+      vertical-align: middle;
+      white-space: nowrap;
+      > * {
+        display: inline-block;
+        width: 100%;
+        vertical-align: middle;
+        white-space: normal;
+      }
+      &:after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        min-height: inherit;
+        width: 0;
+      }
+    }
+  }
+}
+
+.rd-navbar-static-linked {
+  .jumbotron-custom-2 {
+    @include display-flex;
+    @include flex-direction(column);
+    @include flex-wrap(nowrap);
+    @include align-items(center);
+    @include justify-content(center);
+
+    @media (max-height: 799px) {
+      min-height: 100vh;
+    }
+
+    @media (min-height: 800px) {
+      min-height: 800px;
+    }
+  }
+
+  &.ie-10,
+  &.ie-11 {
+    .jumbotron-custom-2 {
+      display: block;
+      vertical-align: middle;
+      white-space: nowrap;
+      > * {
+        display: inline-block;
+        width: 100%;
+        vertical-align: middle;
+        white-space: normal;
+      }
+      &:after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        min-height: inherit;
+        width: 0;
+      }
+    }
+  }
+}
+
+.rd-navbar-fullwidth-linked {
+  .jumbotron-custom-3 {
+    @include display-flex;
+    @include flex-direction(column);
+    @include flex-wrap(nowrap);
+    @include align-items(center);
+    @include justify-content(center);
+
+    @media (max-height: 799px) {
+      min-height: 100vh;
+    }
+
+    @media (min-height: 800px) {
+      min-height: 800px;
+    }
+  }
+
+  &.ie-10,
+  &.ie-11 {
+    .jumbotron-custom-3 {
+      display: block;
+      vertical-align: middle;
+      white-space: nowrap;
+      > * {
+        display: inline-block;
+        width: 100%;
+        vertical-align: middle;
+        white-space: normal;
+      }
+      &:after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        min-height: inherit;
+        width: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .jumbotron-custom-1 .jumbotron-custom-content {
+    padding: 80px 0 160px;
+  }
+
+  .jumbotron-custom-2 .jumbotron-custom-content {
+    padding: 95px 0 120px;
+  }
+
+  .jumbotron-custom-3 .jumbotron-custom-content {
+    padding: 70px 0 100px;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .jumbotron-custom-1 .jumbotron-custom-content {
+    padding: 65px 0 100px;
+  }
+
+  .jumbotron-custom-2 .jumbotron-custom-content {
+    padding: 95px 0 130px;
+  }
+
+  .jumbotron-custom-3 .jumbotron-custom-content {
+    padding: 95px 0 130px;
+  }
+}
+
+.desktop .jumbotron-custom-1 .jumbotron-custom-content {
+  @media (min-width: $screen-md-min) {
+    padding-top: 100px;
+  }
+
+  @media (min-width: $screen-lg-min) and (min-height: 730px) {
+    padding: 115px 0 220px;
+  }
+}
+
+.desktop .jumbotron-custom-2 .jumbotron-custom-content {
+  @media (min-width: $screen-md-min) {
+    padding: 250px 0 130px;
+  }
+}
+
+.desktop .jumbotron-custom-3 .jumbotron-custom-content {
+  @media (min-width: $screen-md-min) {
+    padding: 220px 0 100px;
+  }
+
+  @media (min-width: $screen-xl-min) {
+    padding: 280px 0 200px;
+  }
+}

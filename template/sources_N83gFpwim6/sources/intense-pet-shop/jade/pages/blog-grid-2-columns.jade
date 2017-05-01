@@ -1,0 +1,232 @@
+extends  ../_skeleton
+
+block title
+	title Grid Blog 2 Columns
+
+block page
+	// Page Header
+	header.page-header.slider-menu-position
+		+rd-navbar-default({
+			"style": "",
+			"logo": cfg.brand.logo,
+			"logoFixed": cfg.brand.logoSmall,
+			"activeLink": 6,
+			"attr": {
+				"data-layout": "rd-navbar-fixed",
+				"data-sm-layout": "rd-navbar-fixed",
+				"data-md-layout": "rd-navbar-fullwidth",
+				"data-lg-layout": "rd-navbar-static"
+			}
+		})
+
+		+breadcrumb("Blog Grid", {
+			0: {
+				"type": "link",
+				"title": cfg.nav.home.title,
+				"href": cfg.nav.home.href
+			},
+			1: {
+				"type": "link",
+				"title": cfg.nav.news.title,
+				"href": cfg.nav.news.href
+			},
+			2: {
+				"type": "link",
+				"title": "Grid Blog",
+				"href": "blog-grid.html"
+			}
+		}, "images/backgrounds/background-02-1920x900.jpg")
+
+	// Page Content
+	main.page-content.section-75.section-md-top-90.section-md-bottom-95
+
+		// Blog Grid
+		section
+			.shell
+				h1 Blog
+
+				.range.range-xs-center.range-sm-left.range-lg-center.offset-top-50
+					.cell-sm-6
+						// Post Boxed
+						.post-boxed.text-left
+							.post-boxed-img-wrap
+								img.img-responsive.center-block(src="images/blog/post-24-570x381.jpg" width="570" height="381" alt="")
+							.post-boxed-body
+								.post-boxed-header
+									// List inline marked
+									ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-white.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-left-6.inset-sm-left-4
+										li
+											a.text-malibu(href="#") How to
+										li
+											a.text-malibu(href="#") Lost property
+										li
+											a.text-malibu(href="#") Taxi
+								.post-boxed-footer.offset-top-25.offset-sm-top-0
+									.post-boxed-title.font-accent.text-bold.text-spacing-50
+										a.text-white(href="blog-single-post.html") finding lost property
+
+									.offset-top-5
+										// List inline
+										ul.list-inline
+											li.p.text-extra-small.text-bold.text-spacing-0 #[span.text-white by] #[a.text-malibu.inset-left-4(href="single-member.html") Richard Nelson]
+											li.text-spacing-0.inset-left-20
+												span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-malibu.text-middle
+												span.text-extra-small.text-white.text-middle.inset-left-8.text-bold 2 days ago
+
+
+					.cell-sm-6.offset-top-30.offset-sm-top-0
+						// Post Boxed
+						.post-boxed.text-left
+							.post-boxed-img-wrap
+								img.img-responsive.center-block(src="images/blog/post-25-570x381.jpg" width="570" height="381" alt="")
+							.post-boxed-body
+								.post-boxed-header
+									// List inline marked
+									ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-white.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-left-6.inset-sm-left-4
+										li
+											a.text-malibu(href="#") How to
+										li
+											a.text-malibu(href="#") Taxi
+										li
+											a.text-malibu(href="#") Services
+								.post-boxed-footer.offset-top-25.offset-sm-top-0
+									.post-boxed-title.font-accent.text-bold.text-spacing-50
+										a.text-white(href="blog-single-post.html") how to select a taxi service
+
+									.offset-top-5
+										// List inline
+										ul.list-inline
+											li.p.text-extra-small.text-bold.text-spacing-0 #[span.text-white by] #[a.text-malibu.inset-left-4(href="single-member.html") Richard Nelson]
+											li.text-spacing-0.inset-left-20
+												span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-malibu.text-middle
+												span.text-extra-small.text-white.text-middle.inset-left-8.text-bold 5 days ago
+
+					.cell-sm-6.offset-top-30
+						// Post Boxed
+						.post-boxed.text-left
+							.post-boxed-img-wrap
+								img.img-responsive.center-block(src="images/blog/post-26-570x381.jpg" width="570" height="381" alt="")
+							.post-boxed-body
+								.post-boxed-header
+									// List inline marked
+									ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-white.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-left-6.inset-sm-left-4
+										li
+											a.text-malibu(href="#") Innovations
+										li
+											a.text-malibu(href="#") Taxi
+										li
+											a.text-malibu(href="#") Industry news
+								.post-boxed-footer.offset-top-25.offset-sm-top-0
+									.post-boxed-title.font-accent.text-bold.text-spacing-50
+										a.text-white(href="blog-single-post.html") city-taxi update: new gadgets
+
+									.offset-top-5
+										// List inline
+										ul.list-inline
+											li.p.text-extra-small.text-bold.text-spacing-0 #[span.text-white by] #[a.text-malibu.inset-left-4(href="single-member.html") Richard Nelson]
+											li.text-spacing-0.inset-left-20
+												span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-malibu.text-middle
+												span.text-extra-small.text-white.text-middle.inset-left-8.text-bold 8 days ago
+
+					.cell-sm-6.offset-top-30
+						// Post Boxed
+						.post-boxed.text-left
+							.post-boxed-img-wrap
+								img.img-responsive.center-block(src="images/blog/post-27-570x381.jpg" width="570" height="381" alt="")
+							.post-boxed-body
+								.post-boxed-header
+									// List inline marked
+									ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-white.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-left-6.inset-sm-left-4
+										li
+											a.text-malibu(href="#") Hybrid taxis
+										li
+											a.text-malibu(href="#") Discounts
+										li
+											a.text-malibu(href="#") Company news
+								.post-boxed-footer.offset-top-25.offset-sm-top-0
+									.post-boxed-title.font-accent.text-bold.text-spacing-50
+										a.text-white(href="blog-single-post.html") Hybrid taxis are getting more popular #[br.veil.reveal-lg-inline-block] thanks to our new discount system
+
+									.offset-top-5
+										// List inline
+										ul.list-inline
+											li.p.text-extra-small.text-bold.text-spacing-0 #[span.text-white by] #[a.text-malibu.inset-left-4(href="single-member.html") Tom Jefferson]
+											li.text-spacing-0.inset-left-20
+												span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-malibu.text-middle
+												span.text-extra-small.text-white.text-middle.inset-left-8.text-bold 3 days ago
+
+					.cell-sm-6.offset-top-30
+						// Post Boxed
+						.post-boxed.text-left
+							.post-boxed-img-wrap
+								img.img-responsive.center-block(src="images/blog/post-28-570x381.jpg" width="570" height="381" alt="")
+							.post-boxed-body
+								.post-boxed-header
+									// List inline marked
+									ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-white.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-left-6.inset-sm-left-4
+										li
+											a.text-malibu(href="#") Taxi
+										li
+											a.text-malibu(href="#") Ridesharing
+										li
+											a.text-malibu(href="#") Information
+								.post-boxed-footer.offset-top-25.offset-sm-top-0
+									.post-boxed-title.font-accent.text-bold.text-spacing-50
+										a.text-white(href="blog-single-post.html") ridesharing is not worth the risk
+
+									.offset-top-5
+										// List inline
+										ul.list-inline
+											li.p.text-extra-small.text-bold.text-spacing-0 #[span.text-white by] #[a.text-malibu.inset-left-4(href="single-member.html") Richard Nelson]
+											li.text-spacing-0.inset-left-20
+												span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-malibu.text-middle
+												span.text-extra-small.text-white.text-middle.inset-left-8.text-bold 6 days ago
+
+					.cell-sm-6.offset-top-30
+						// Post Boxed
+						.post-boxed.text-left
+							.post-boxed-img-wrap
+								img.img-responsive.center-block(src="images/blog/post-29-570x381.jpg" width="570" height="381" alt="")
+							.post-boxed-body
+								.post-boxed-header
+									// List inline marked
+									ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-white.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-left-6.inset-sm-left-4
+										li
+											a.text-malibu(href="#") Ordering online
+										li
+											a.text-malibu(href="#") Taxi
+										li
+											a.text-malibu(href="#") Tips
+								.post-boxed-footer.offset-top-25.offset-sm-top-0
+									.post-boxed-title.font-accent.text-bold.text-spacing-50
+										a.text-white(href="blog-single-post.html") advantages of ordering a taxi online #[br.veil.reveal-lg-inline-block] and why this method is so popular
+
+									.offset-top-5
+										// List inline
+										ul.list-inline
+											li.p.text-extra-small.text-bold.text-spacing-0 #[span.text-white by] #[a.text-malibu.inset-left-4(href="single-member.html") Richard Nelson]
+											li.text-spacing-0.inset-left-20
+												span.icon.icon-sm.material-icons-ico.material-icons-access_time.text-malibu.text-middle
+												span.text-extra-small.text-white.text-middle.inset-left-8.text-bold 9 days ago
+
+				.offset-top-50
+					// Classic Pagination
+					nav
+						ul.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-marked-silver-chalice.pagination-classic
+							li.text-regular
+								a.icon.icon-sm.icon-primary.material-icons-ico.material-icons-chevron_left(href='#')
+							li.active
+								a(href='#') 01
+							li
+								a(href='#') 02
+							li
+								a(href='#') 03
+							li
+								a(href='#') 04
+							li
+								a(href='#') 05
+							li.text-regular
+								a.icon.icon-sm.icon-primary.material-icons-ico.material-icons-chevron_right(href='#')
+
+	// Page Footer
+	include ../sections/_footer-default

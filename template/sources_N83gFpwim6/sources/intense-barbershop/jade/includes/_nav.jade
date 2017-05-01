@@ -1,0 +1,38 @@
+//- RD Navbar Nav
+ul.rd-navbar-nav
+  each item, index in menu
+    li(class={active: activeIndex === index})
+      a(href=item.link)=item.title
+
+      //- Megamenu handler
+      if(typeof(item.megamenu) !== 'undefined')
+        //- RD Navbar Megamenu
+        ul.rd-navbar-megamenu
+          each column in item.megamenu
+            li
+              each block in column
+                if (typeof (block.link) !== 'undefined')
+                  p.rd-megamenu-header: a(href=block.link)=block.title
+                else
+                  p.rd-megamenu-header=block.title
+
+                if (typeof(block.list) !== 'undefined')
+                  ul.rd-megamenu-list
+                    each listItem in block.list
+                      li: a(href=listItem.link)=listItem.title
+
+      //- Dropdown menu handler
+      if(typeof(item.dropdown) !== 'undefined')
+        //- RD Navbar Dropdown
+        ul.rd-navbar-dropdown
+          each subItem1, index1 in item.dropdown
+            li(class={active: activeIndex1 === index1})
+              a(href=subItem1.link)=subItem1.title
+
+              //- Submenu 2 lvl handler
+              if(typeof(subItem1.dropdown) !== 'undefined')
+                //- RD Navbar Dropdown
+                ul.rd-navbar-dropdown
+                  each subItem2, index2 in subItem1.dropdown
+                    li(class={active: activeIndex2 === index2})
+                      a(href=subItem2.link)=subItem2.title

@@ -1,0 +1,88 @@
+//
+// Icons
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.icon {
+  display: inline-block;
+  text-align: center;
+
+  &:before {
+    display: inline-block;
+    font-weight: 400;
+    font-style: normal;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.icon[class*='icon-circle'] {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.icon[class*='icon-round'] {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+
+// Alternate icons
+// --------------------------------------------------
+
+.page {
+  .icon-default {
+    color: $text-color;
+  }
+
+  .icon-primary {
+    color: $brand-primary;
+  }
+
+  .icon-wild-sand-filled {
+    &,
+    &:active,
+    &:focus {
+    	color: $gray-light;
+      background: $wild-sand;
+    }
+
+    &:hover {
+      color: $white;
+      background: $brand-primary;
+    }
+  }
+}
+
+// Button Sizes
+// --------------------------------------------------
+.icon-xs {
+  @include icon-sizing(16px);
+}
+
+.icon-xs-outline {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+}
+
+.page {
+  .icon-xxs {
+    @include icon-sizing(14px);
+  }
+
+  .icon-sm {
+  }
+
+  .icon-md {
+    @include icon-sizing(30px);
+  }
+
+  .icon-lg {
+  }
+}

@@ -1,0 +1,10 @@
+// Classic Gallery Carousel
+//- media - {thumbnail} object array
+
+include _ui-thumbnail-classic
+
+mixin carousel-gallery-classic(media)
+  // Owl Carousel
+  .owl-carousel.owl-carousel-classic(data-items='1' data-dots="true" data-nav="true" data-nav-class='["owl-prev mdi mdi-chevron-left", "owl-next mdi mdi-chevron-right"]' data-photo-swipe="gallery")
+    each thumbnail in media
+      +thumbnail-classic(thumbnail)

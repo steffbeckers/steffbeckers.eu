@@ -1,0 +1,61 @@
+//
+// Links
+// --------------------------------------------------
+.link {
+  display: inline-block;
+}
+
+.page {
+  .link-default {
+    &,
+    &.active,
+    &:active,
+    &:focus {
+      color: $brand-primary;
+    }
+
+    &.hover,
+    &:hover {
+      color: $gray-light;
+    }
+  }
+
+  .link-gray-light {
+    @include link($gray-light, $brand-primary);
+  }
+
+  .link-gray-base {
+    @include link($gray-base, $brand-primary);
+  }
+
+  .link-primary {
+    @include link($brand-primary, $gray-base);
+  }
+
+  .link-return {
+    position: relative;
+    font: 400 12px/24px $font-family-sec;
+    letter-spacing: .5em;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    vertical-align: baseline;
+
+    &:before {
+      position: relative;
+      top: 2px;
+      content: '\e5cb';
+      font-family: 'Material Icons';
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 0;
+      width: 100%;
+      border-top: 2px solid;
+    }
+  }
+}

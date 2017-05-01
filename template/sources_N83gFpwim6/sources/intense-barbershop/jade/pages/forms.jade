@@ -1,0 +1,94 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-page-title
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Forms'
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  //- Page Content
+  +page-title(pageName)
+
+  //- Login form
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center
+        .cell-sm-10.cell-md-8.cell-lg-6
+          .inset-sm-25
+            h3 Login form
+            .group-sm.group-sm-justify.group-middle
+              .btn.btn-sm.btn-facebook.btn-icon.btn-icon-left
+                span.icon.fa.fa-facebook
+                | Facebook
+              .btn.btn-sm.btn-twitter.btn-icon.btn-icon-left
+                span.icon.fa.fa-twitter
+                | Twitter
+              .btn.btn-sm.btn-google.btn-icon.btn-icon-left
+                span.icon.fa.fa-google-plus
+                | Google+
+            .text-decoration-lines
+              span.text-decoration-lines-content or
+
+            // RD Mailform
+            form.rd-mailform
+              .form-group
+                label.form-label-outside(for="login-email") E-mail
+                input#login-email.form-control(type="email" name="email" data-constraints="@Email @Required")
+
+              .form-group
+                label.form-label-outside(for="login-email") Password
+                input#login-password.form-control(type="password" name="pass" data-constraints="@Required")
+
+              button(type="submit").btn.btn-sm.btn-primary.btn-block.btn-circle sign in
+  ='\n'
+
+  .divider.divider-conch
+
+  //- Contact Us
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center
+        .cell-sm-10.cell-md-10.cell-lg-6
+          h3 Contact Us
+          // RD Mailform
+          form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+            .range.range-sm-bottom.range-15
+              .cell-sm-6
+                .form-group
+                  label.form-label-outside(for="contact-first-name") First name
+                  input#contact-first-name.form-control(type="text" name="first-name" data-constraints='@Required')
+
+              .cell-sm-6
+                .form-group
+                  label.form-label-outside(for="contact-last-name") Last name
+                  input#contact-last-name.form-control(type="text" name="last-name" data-constraints='@Required')
+
+              .cell-xs-12
+                .form-group
+                  label.form-label-outside(for="contact-message") Your Message
+                  textarea#contact-message.form-control(name="message" data-constraints="@Required")
+
+              .cell-sm-6
+                .form-group
+                  label.form-label-outside(for="contact-email") E-mail
+                  input#contact-email.form-control(type="email" name="email" data-constraints="@Email @Required")
+
+              .cell-sm-6.offset-custom-1
+                button(type="submit").btn.btn-sm.btn-primary.btn-block.btn-circle send message
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_footer-default
+

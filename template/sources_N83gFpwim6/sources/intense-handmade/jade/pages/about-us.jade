@@ -1,0 +1,324 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-navbar-logo-center
+include  ../elements/_ui-breadcrumb-modern
+include ../elements/_ui-progress-bar-linear
+include ../elements/_ui-rd-parallax
+include  ../elements/_ui-box-icon-type-4
+include ../elements/_ui-testimonials-type-3
+
+//- Title
+block title
+  title= cfg.nav.aboutUs.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-logo-center(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.aboutUs,
+    cfg.nav
+    )
+
+  +breadcrumb-modern("About Us", {
+    0: {
+      "type": "link",
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "type": "link",
+      "title": cfg.nav.aboutUs.title,
+      "href": cfg.nav.aboutUs.href
+    }
+  }, "images/background-1-1920x651.jpg")
+
+  // Page Content
+  main.page-content
+
+    // Who We Are
+    section.section-98.section-sm-110
+      .shell
+        h1.text-between Who We Are
+        .range.range-xs-center
+          .cell-sm-10.cell-md-5.cell-md-push-6.cell-lg-4
+            +progress-bar-linear({
+              "title": "Sewing",
+              "apClass": "bg-success",
+              "valueTo": "70"
+            })
+            .offset-top-50
+              +progress-bar-linear({
+                "title": "Woodwork",
+                "apClass": "bg-info",
+                "valueTo": "54"
+              })
+            .offset-top-50
+              +progress-bar-linear({
+                "title": "Scrapbooking",
+                "apClass": "bg-warning",
+                "valueTo": "87"
+              })
+            .offset-top-50
+              +progress-bar-linear({
+                "title": "Painting",
+                "apClass": "bg-danger",
+                "valueTo": "65"
+              })
+          .cell-sm-10.offset-top-50.offset-md-top-0.cell-md-5.cell-md-pull-6.cell-lg-4.text-sm-left.inset-md-right-30
+            p We are a team of handmade masters passionate about creating useful things with our own hands from materials that everyone can find in their homes. We see handmade craft as our hobby, and are always happy to share it with you.
+            p As a team of enthusiastic handmaders, sewers, and scrapbookers, we also practise in writing articles about various techniques used in handmade art. We also cooperate with suppliers of goods and consumables for handmaders.
+
+    // HDW
+    section.context-dark
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/background-2-1920x1184.jpg",
+        "htmlSpeed": "0"
+      })
+        .section-98.section-sm-124.bg-overlay-gray-darkest
+          .shell
+            .range
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0
+                +box-icon-type-4("icon-carrot-filled icon-outlined mdi mdi-monitor")
+                  h4.text-uppercase.offset-top-30.text-bold Handmade
+                  p.
+                    We teach basics of handmade craft that are quite easy to learn and practise. However, we help experienced handmaders as well.
+
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+                +box-icon-type-4("icon-carrot-filled icon-outlined mdi mdi-rocket")
+                  h4.text-uppercase.offset-top-30.text-bold design
+                  p.
+                    If you are into design, but do not have access to expensive materials and cloth, our tutorials and lessons we conduct may be useful for you.
+
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+                +box-icon-type-4("icon-carrot-filled icon-outlined mdi mdi-xml")
+                  h4.text-uppercase.offset-top-30.text-bold workshops
+                  p.
+                    Our masters carry out weekly workshops that are free to participate even if you don’t know anything about handmade art.
+
+    // Our Handmade Masters
+    section.section-98.section-sm-110
+      .shell
+        h1.text-between Our Handmade Masters
+        .range.range-xs-center
+          .cell-sm-5.cell-lg-3
+            img.img-rounded(src="images/user-linda-armstrong-270x270.jpg" width="270" height="270" alt="")
+            div.offset-top-20
+              h5
+                a(href="#") Linda Armstrong
+            div.offset-top-4
+              p.text-primary Scrapbooking
+            div.offset-top-4
+              .icon.icon-xxs.mdi.mdi-trending-up.text-dark.text-middle
+              span.text-darkest.text-middle.inset-left-10 1687.54
+
+          .cell-sm-5.cell-lg-3.offset-top-41.offset-sm-top-0
+            img.img-rounded(src="images/user-doris-salazar-270x270.jpg" width="270" height="270" alt="")
+            div.offset-top-20
+              h5
+                a(href="#") Doris Salazar
+            div.offset-top-4
+              p.text-primary Painting
+            div.offset-top-4
+              .icon.icon-xxs.mdi.mdi-trending-up.text-dark.text-middle
+              span.text-darkest.text-middle.inset-left-10 1345.78
+
+          .cell-sm-5.cell-lg-3.offset-top-41.offset-lg-top-0
+            img.img-rounded(src="images/user-stephanie-patterson-270x270.jpg" width="270" height="270" alt="")
+            div.offset-top-20
+              h5
+                a(href="#") Stephanie Patterson
+            div.offset-top-4
+              p.text-primary Sewing
+            div.offset-top-4
+              .icon.icon-xxs.mdi.mdi-trending-up.text-dark.text-middle
+              span.text-darkest.text-middle.inset-left-10 1258.98
+
+          .cell-sm-5.cell-lg-3.offset-top-41.offset-lg-top-0
+            img.img-rounded(src="images/user-barbara-gonzales-270x270.jpg" width="270" height="270" alt="")
+            div.offset-top-20
+              h5
+                a(href="#") Barbara Gonzales
+            div.offset-top-4
+              p.text-primary Woodwork
+            div.offset-top-4
+              .icon.icon-xxs.mdi.mdi-trending-up.text-dark.text-middle
+              span.text-darkest.text-middle.inset-left-10 975.02
+
+          // Next Range
+          .range-spacer.veil.reveal-lg-block.offset-top-66
+
+          .cell-sm-5.cell-lg-3.offset-top-41.offset-lg-top-0
+            img.img-rounded(src="images/user-jean-schmidt-270x270.jpg" width="270" height="270" alt="")
+            div.offset-top-20
+              h5
+                a(href="#") Jean Schmidt
+            div.offset-top-4
+              p.text-primary Decorating
+            div.offset-top-4
+              .icon.icon-xxs.mdi.mdi-trending-up.text-dark.text-middle
+              span.text-darkest.text-middle.inset-left-10 1687.54
+
+          .cell-sm-5.cell-lg-3.offset-top-41.offset-lg-top-0
+            img.img-rounded(src="images/user-joyce-morrison-270x270.jpg" width="270" height="270" alt="")
+            div.offset-top-20
+              h5
+                a(href="#") Joyce Morrison
+            div.offset-top-4
+              p.text-primary Interior design
+            div.offset-top-4
+              .icon.icon-xxs.mdi.mdi-trending-up.text-dark.text-middle
+              span.text-darkest.text-middle.inset-left-10 1345.78
+
+          .cell-sm-5.cell-lg-3.offset-top-41.offset-lg-top-0
+            img.img-rounded(src="images/user-rachel-ortiz-270x270.jpg" width="270" height="270" alt="")
+            div.offset-top-20
+              h5
+                a(href="#") Rachel Ortiz
+            div.offset-top-4
+              p.text-primary Carving
+            div.offset-top-4
+              .icon.icon-xxs.mdi.mdi-trending-up.text-dark.text-middle
+              span.text-darkest.text-middle.inset-left-10 1258.98
+
+          .cell-sm-5.cell-lg-3.offset-top-41.offset-lg-top-0
+            img.img-rounded(src="images/user-margaret-ray-270x270.jpg" width="270" height="270" alt="")
+            div.offset-top-20
+              h5
+                a(href="#") Margaret Ray
+            div.offset-top-4
+              p.text-primary Handmade toys
+            div.offset-top-4
+              .icon.icon-xxs.mdi.mdi-trending-up.text-dark.text-middle
+              span.text-darkest.text-middle.inset-left-10 975.02
+
+    // What Clients Say?
+    section.section-top-98.section-sm-110.bg-lighter
+      .shell
+        h1.text-between What Clients Say?
+        .range.range-xs-center.offset-top-66
+          .cell-xs-10.cell-sm-8.cell-lg-12
+            .owl-carousel.owl-carousel-classic.owl-carousel-class-light.owl-carousel-testimonials-3(data-items="1" data-stage-padding="10" data-margin="25" data-lg-items="3" data-nav="false" data-dots="true")
+              div
+                +testimonials-type-3(
+                {
+                  "width": 80,
+                  "height": 80,
+                  "src": "images/user-katherine-ferguson-80x80.jpg",
+                  "alt": ""
+                },
+                "Katherine Ferguson",
+                "Ceo/Founder at demolink.org",
+                "This website is a perfect place to get consumables for any handmade ideas, both for enthusiasts and professionals."
+                  )
+              div
+                +testimonials-type-3(
+                {
+                  "width": 80,
+                  "height": 80,
+                  "src": "images/user-alisa-milano-80x80.jpg",
+                  "alt": ""
+                },
+                "Alisa Milano",
+                "Sales at demolink.org",
+                "The variety of things, decorations, and gifts that one can make is almost infinite, and this is what I like best about handmade craft."
+                )
+              div
+                +testimonials-type-3(
+                {
+                  "width": 80,
+                  "height": 80,
+                  "src": "images/user-betty-hunt-80x80.jpg",
+                  "alt": ""
+                },
+                "Betty Hunt",
+                "Support at demolink.org",
+                "Your articles are very informative – they help me introduce fresh ideas into my handmade decorations."
+                )
+              div
+                +testimonials-type-3(
+                {
+                  "width": 80,
+                  "height": 80,
+                  "src": "images/user-betty-hunt-80x80.jpg",
+                  "alt": ""
+                },
+                "Betty Hunt",
+                "Support at demolink.org",
+                "Your articles are very informative – they help me introduce fresh ideas into my handmade decorations."
+                )
+              div
+                +testimonials-type-3(
+                {
+                  "width": 80,
+                  "height": 80,
+                  "src": "images/user-katherine-ferguson-80x80.jpg",
+                  "alt": ""
+                },
+                "Katherine Ferguson",
+                "Ceo/Founder at demolink.org",
+                "This website is a perfect place to get consumables for any handmade ideas, both for enthusiasts and professionals."
+                )
+              div
+                +testimonials-type-3(
+                {
+                  "width": 80,
+                  "height": 80,
+                  "src": "images/user-alisa-milano-80x80.jpg",
+                  "alt": ""
+                },
+                "Alisa Milano",
+                "Sales at demolink.org",
+                "The variety of things, decorations, and gifts that one can make is almost infinite, and this is what I like best about handmade craft."
+                )
+              div
+                +testimonials-type-3(
+                {
+                  "width": 80,
+                  "height": 80,
+                  "src": "images/user-alisa-milano-80x80.jpg",
+                  "alt": ""
+                },
+                "Alisa Milano",
+                "Sales at demolink.org",
+                "The variety of things, decorations, and gifts that one can make is almost infinite, and this is what I like best about handmade craft."
+                )
+              div
+                +testimonials-type-3(
+                {
+                  "width": 80,
+                  "height": 80,
+                  "src": "images/user-katherine-ferguson-80x80.jpg",
+                  "alt": ""
+                },
+                "Katherine Ferguson",
+                "Ceo/Founder at demolink.org",
+                "This website is a perfect place to get consumables for any handmade ideas, both for enthusiasts and professionals."
+                )
+              div
+                +testimonials-type-3(
+                {
+                  "width": 80,
+                  "height": 80,
+                  "src": "images/user-betty-hunt-80x80.jpg",
+                  "alt": ""
+                },
+                "Betty Hunt",
+                "Support at demolink.org",
+                "Your articles are very informative – they help me introduce fresh ideas into my handmade decorations."
+                )
+
+  // Page Footers
+  include ../sections/_section-footer-variant-4

@@ -1,0 +1,115 @@
+/**
+ * RD Datepicker
+ * @Section
+ */
+
+.rd-mailform-time-picker.form-group {
+  position: relative;
+}
+
+.form-input {
+  display: inline-block;
+  width: 100%;
+  font-size: $datepicker-size;
+  line-height: $datepicker-line-height;
+  border: 2px solid;
+  padding: $datepicker-form-input-padding;
+  height: $datepicker-form-input-height;
+}
+
+.rd-datepicker {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: $datepicker-width;
+  color: $datepicker-color;
+  background: $datepicker-background;
+  border: $datepicker-border;
+  transition: .3s all;
+  z-index: 99;
+
+  &-header {
+    position: relative;
+  }
+
+  &-body {
+    width: 100%;
+    table-layout: fixed;
+    padding: $datepicker-body-padding;
+  }
+
+  &-title {
+    padding: $datepicker-title-padding;
+    font-size: $datepicker-title-size;
+    line-height: $datepicker-title-line-height;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &-day,
+  &-week {
+    font-size: $datepicker-day-size;
+    width: $datepicker-day-width;
+    height: $datepicker-day-height;
+    line-height: $datepicker-day-line-height;
+    text-align: center;
+  }
+
+  &-day {
+    color: $datepicker-day-color;
+    background: $datepicker-day-background;
+    cursor: pointer;
+    transition: .3s all;
+
+    &:hover {
+      color: $datepicker-day-hover-color;
+      background: $datepicker-day-hover-background;
+    }
+
+    &.offset {
+      color: $datepicker-day-offset-color;
+      background: $datepicker-day-offset-background;
+    }
+
+    &.today {
+      color: $datepicker-today-color;
+      background: $datepicker-today-background;
+    }
+
+    &.selected {
+      color: $datepicker-day-selected-color;
+      background: $datepicker-day-selected-background;
+    }
+  }
+
+  &-next,
+  &-prev {
+    position: absolute;
+    top: 50%;
+    width: $datepicker-day-prev-width;
+    height: $datepicker-day-prev-height;
+    line-height: $datepicker-day-prev-height;
+    text-align: center;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+
+    &:hover {
+      color: $datepicker-day-hover-color;
+    }
+  }
+
+  &-next {
+    right: 5px;
+  }
+
+  &-prev {
+    left: 5px;
+  }
+}
+
+.rd-datepicker-open {
+  display: block;
+}

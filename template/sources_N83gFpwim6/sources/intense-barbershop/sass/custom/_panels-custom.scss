@@ -1,0 +1,235 @@
+//
+// Panels custom styles
+// --------------------------------------------------
+
+// Light
+$accordion-light-color: $pickled-bluewood;
+$accordion-light-background: $white;
+$accordion-light-border: $wild-sand;
+$accordion-light-content-color: $text-color;
+$accordion-light-content-background: $wild-sand;
+$accordion-light-arrow-color: $brand-primary;
+$accordion-light-header-padding: 16px 30px 16px 57px;
+$accordion-light-content-padding: 0 45px 45px nth($accordion-light-header-padding, 4);
+
+// Panel groups
+.panel-group-custom {
+  margin-bottom: 0;
+
+  .panel-heading + .panel-collapse > .panel-body,
+  .panel-heading + .panel-collapse > .list-group {
+    border-top: 0;
+  }
+
+  .panel + .panel {
+    margin-top: 0;
+  }
+}
+
+.panel-group.panel-group-corporate {
+  .panel + .panel {
+    margin-top: 30px;
+  }
+}
+
+.panel-custom {
+  margin: 0;
+  background: inherit;
+  border: 0;
+  border-radius: 0;
+  @include box-shadow(none);
+  text-align: left;
+
+  a {
+    display: block;
+  }
+
+  // Panel heading
+  .panel-heading {
+    padding: 0;
+    border-bottom: 0;
+    @include border-top-radius(0);
+  }
+
+  // Panel contents
+  .panel-body {
+    padding: 0;
+    border: 0;
+  }
+}
+
+.range [class*='cell'] .panel-contrast + .panel-contrast {
+  margin-top: 30px !important;
+}
+
+* + .panel-group-custom {
+  margin-top: 35px;
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: 50px;
+  }
+}
+
+// Panel light
+.panel-light {
+  border: 1px solid $accordion-light-border;
+
+  .panel-title:not(:first-child) {
+    border-top: 1px solid $accordion-light-border;
+  }
+
+  .panel-title a {
+    position: relative;
+    padding: $accordion-light-header-padding;
+    font: 400 18px/24px $font-family-sec;
+    letter-spacing: 0;
+    color: $accordion-light-color;
+    background: $accordion-light-content-background;
+
+    // Opened state
+    .panel-arrow:after {
+      position: relative;
+      display: block;
+      transition: .4s all ease;
+      @include transform(rotate(180deg));
+    }
+
+    // Closed state
+    &.collapsed {
+      background: $accordion-light-background;
+      .panel-arrow:after {
+        @include transform(rotate(0deg));
+      }
+    }
+  }
+
+  .panel-arrow {
+    position: absolute;
+    top: 49%;
+    @include transform(translateY(-50%));
+    left: 17px;
+    transition: .33s;
+    will-change: transform;
+
+    &:after {
+      content: '\e313';
+      font: 400 24px "Material Icons";
+      color: $accordion-light-arrow-color;
+    }
+  }
+
+  .panel-collapse {
+    position: relative;
+    margin-top: -1px;
+    border-bottom: 1px solid $accordion-light-border;
+    color: $accordion-light-content-color;
+    will-change: transform;
+  }
+
+  .panel-body {
+    background: $accordion-light-content-background;
+    padding: $accordion-light-content-padding;
+  }
+}
+
+// Panel contrast
+.panel-contrast {
+  background: $white;
+
+  .panel-title a {
+    padding: 45px 40px 0;
+    position: relative;
+
+    @include header-base-styles;
+    @include header-h3;
+
+    .panel-arrow {
+      &:after {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    &.collapsed {
+      padding: 45px 40px 40px;
+      .panel-arrow {
+        background: $conch;
+
+        &:before,
+        &:after {
+          background: $gray-base;
+        }
+
+        &:after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  .panel-arrow {
+    $arrow-height: 8px;
+    $arrow-width: 2px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: $tumbleweed;
+
+    transition: .33s all ease;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      background: $white;
+      top: 50%;
+      left: 50%;
+      @include transform(translate(-50%, -50%));
+    }
+
+    &:before {
+      width: $arrow-height;
+      height: $arrow-width;
+    }
+
+    &:after {
+      width: $arrow-width;
+      height: $arrow-height;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .panel-body {
+    padding: 20px 40px 40px;
+  }
+}
+
+.panel-minimal {
+  .panel-title a {
+    @include header-base-styles;
+    @include header-h4;
+  }
+
+  .panel-body {
+    padding: 10px 5px 15px 5px;
+  }
+}
+
+.panel-group-minimal {
+  .panel-custom + .panel-custom {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .panel-group-minimal {
+    .panel-custom + .panel-custom {
+      margin-top: 12px;
+    }
+  }
+}

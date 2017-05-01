@@ -1,0 +1,49 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-page-title
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Tables'
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  //- Page Content
+  +page-title(pageName)
+
+  //- Table primary
+  section.section-xl.bg-periglacial-blue
+    .shell
+      +table(['table-custom-primary'], 'table-round')
+  ='\n'
+
+  .divider.divider-conch
+
+  //- Table light
+  section.section-xl.bg-periglacial-blue
+    .shell
+      +table(['table-custom-light', 'table-custom-bordered'], 'table-round')
+  ='\n'
+
+  .divider.divider-conch
+
+  //- Table striped & primary
+  section.section-xl.bg-periglacial-blue
+    .shell
+      +table(['table-custom-primary', 'table-custom-striped'], 'table-round')
+  ='\n'
+
+
+  //- Page Footer
+  include ../sections/_footer-default
+

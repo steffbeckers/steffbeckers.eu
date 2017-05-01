@@ -1,0 +1,393 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-page-loader-variant-1
+include ../elements/_ui-rd-parallax
+include ../elements/_ui-post-modern
+include ../elements/_ui-box-icon-type-3
+include ../elements/_ui-quote-simple
+include ../elements/_ui-box-offer-type-1
+include ../elements/_ui-testimonials-slider-5
+
+block title
+  title= cfg.brand.name
+
+block page
+
+  +page-loader-1(cfg.brand.logoBig)
+
+  // Page Head
+  header.page-head.slider-menu-position
+    // - RD Navbar
+    +rd-navbar-floated(
+    'rd-navbar-dark rd-navbar-dark-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.home,
+    cfg.nav
+    )
+
+  // Page Contents
+  main.page-content
+    // Build Your Future
+    section
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/background-01-1920x870.jpg",
+        "htmlSpeed": "0"
+      })
+        .bg-overlay-gray-darkest
+          .shell.section-98.section-sm-254
+            .range.range-xs-center
+              .cell-xs-12
+                div.text-extra-big.text-white.text-bold Build Your Future
+                h4.text-muted.offset-top-20.offset-sm-top-41 We offer #[span.text-primary.text-bold 2,989] job vacancies right now!
+
+                form.offset-top-10.offset-sm-top-30
+                  .group-sm.group-top
+                    .group-item.element-fullwidth(style="max-width: 352px;")
+                      .form-group
+                        label.form-label.rd-input-label(for="home-search-form-input") Job title, skills, or company
+                        input.form-control#home-search-form-input(type="text" name="s" autocomplete="off")
+
+                    .group-item.element-fullwidth(style="max-width: 230px;")
+                      .form-group
+                        select.form-control(id="form-filter-location" name="location" data-minimum-results-for-search="Infinity")
+                          option(value="1") City or state
+                          option(value="2") New York
+                          option(value="3") Missouri
+                          option(value="4") Los Angeles
+
+                    .reveal-block.reveal-lg-inline-block
+                      button(type="button").btn.btn-primary.element-fullwidth(style="max-width: 170px; min-width: 170px; min-height: 50px;") Find Job
+
+    // Offers
+    section.section-top-50.section-bottom-34.section-lg-top-0.section-lg-bottom-0.context-dark.bg-primary
+      .range.range-condensed.range-xs-center
+        .cell-xs-10.cell-sm-9.cell-md-10.cell-lg-12
+          .owl-carousel.owl-carousel-default.veil-lg-owl-dots.veil-owl-nav(data-items="1" data-xs-items="2" data-md-items="3" data-lg-items="6" data-dots="true")
+            div
+              +box-offer-type-1({
+                "link": "find-job.html",
+                "waypoint": null
+              },{
+                "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                "itemPadding": "section-lg-34",
+              },"icon icon-lg mdi mdi-hospital",
+              {
+                "styling": "h5 offset-top-14",
+                "description": "Healthcare",
+              },"divider divider-sm bg-white")
+
+            div
+              +box-offer-type-1({
+                "link": "find-job.html",
+                "waypoint": null
+              },{
+                "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                "itemPadding": "section-lg-34",
+              },"icon icon-lg mdi mdi-car",
+              {
+                "styling": "h5 offset-top-14",
+                "description": "Automobile Jobs",
+              },"divider divider-sm bg-white")
+
+            div
+              +box-offer-type-1({
+                "link": "find-job.html",
+                "waypoint": null
+              },{
+                "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                "itemPadding": "section-lg-34",
+              },"icon icon-lg fa fa-building-o",
+              {
+                "styling": "h5 offset-top-14",
+                "description": "Construction",
+              },"divider divider-sm bg-white")
+
+            div
+              +box-offer-type-1({
+                "link": "find-job.html",
+                "waypoint": null
+              },{
+                "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                "itemPadding": "section-lg-34",
+              },"icon icon-lg mdi mdi-food",
+              {
+                "styling": "h5 offset-top-14",
+                "description": "Food Service",
+              },"divider divider-sm bg-white")
+
+            div
+              +box-offer-type-1({
+                "link": "find-job.html",
+                "waypoint": null
+              },{
+                "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                "itemPadding": "section-lg-34",
+              },"icon icon-lg mdi mdi-earth",
+              {
+                "styling": "h5 offset-top-14",
+                "description": "Logistics",
+              },"divider divider-sm bg-white")
+
+            div
+              +box-offer-type-1({
+                "link": "find-job.html",
+                "waypoint": null
+              },{
+                "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                "itemPadding": "section-lg-34",
+              },"icon icon-lg mdi mdi-cash-multiple",
+              {
+                "styling": "h5 offset-top-14",
+                "description": "Finance",
+              },"divider divider-sm bg-white")
+
+    // Latest Jobs
+    section.section-98.section-sm-110
+      .shell
+        h1 Latest Jobs
+        hr.divider.divider-sm.bg-darkers
+        // Bootstrap Table
+        .table-responsive.clearfix
+          table.table.table-striped
+            tr
+              th
+              th.text-regular.text-dark.big Date
+              th.text-regular.text-dark.big Company
+              th.text-regular.text-dark.big Job Vacancy
+              th.text-regular.text-dark.big City
+              th.text-regular.text-dark.big Salary
+              th.text-regular.text-dark.big Employment
+            tr
+              th
+                span.icon.icon-xxs.mdi.mdi-fire.text-danger
+              td 11.05.2016, 4:16pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-01-45x40.png" width="45" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) Developer
+              td New York
+              td $6000
+              td Full time
+            tr
+              th
+                span.icon.icon-xxs.mdi.mdi-fire.text-danger
+              td 06.02.2016, 2:54pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-02-50x40.png" width="50" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) Project Manager
+              td San Diego
+              td $4000
+              td Full time
+            tr
+              th
+                span.icon.icon-xxs.mdi.mdi-airplane.text-neon-carrot
+              td 18.01.2016, 2:42pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-03-40x40.png" width="40" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) Truck Driver
+              td Dallas
+              td $2000
+              td Part time
+            tr
+              th
+              td 13.04.2016, 2:54pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-04-76x40.png" width="76" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) JS Programmer
+              td Seattle
+              td $7000
+              td Full time
+            tr
+              th
+              td 18.05.2016, 4:32pm
+              td
+                a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                  img.img-semi-transparent-inverse(src="images/partner-01-45x40.png" width="45" height="40" alt='')
+              td.text-bold.text-primary.p
+                a(href=cfg.nav.allPages.submenu.projectManagers.href) Developer
+              td San Francisco
+              td $5000
+              td Part time
+
+        .range.range-xs-center.offset-top-66
+          .cell-xs-5.cell-sm-3.cell-md-3.cell-lg-2
+            a.btn.btn-primary.reveal-xs-block(href=cfg.nav.findJob.href) view all
+
+    // Why People Choose Us
+    section.section-98.section-sm-110.bg-gray-light
+      .shell
+        h1 Why People Choose Us
+        hr.divider.divider-sm.bg-darkers
+        .range.range-xs-center.text-md-left.offset-top-50.offset-lg-top-66
+          .cell-sm-9.cell-md-4.cell-md-preffix-0
+            +box-icon-type-3("icon-sm text-primary mdi mdi-account-check", "Verified employers", "text-uppercase text-bold", "We pay a lot of attention to the employers we cooperate with and vacancies they submit to our job board.")
+          .cell-sm-9.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+            +box-icon-type-3("icon-sm text-primary mdi mdi-chart-bar", "Demanded vacancies", "text-uppercase text-bold", "Our catalog contains only the most demanded vacancies from American and international companies with offices in the US.")
+          .cell-sm-9.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+            +box-icon-type-3("icon-sm text-primary mdi mdi-newspaper", "Employment blog", "text-uppercase text-bold", "We have recently launched our employment blog where we review top rated vacancies and give useful advice to our readers.")
+
+    // Start Building Your Own Job Board Now
+    section.context-dark
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/background-02-1920x870.jpg",
+        "htmlSpeed": "0"
+      })
+        .bg-overlay-gray-darkest
+          .shell.section-98
+            .range.range-xs-middle.range-condensed
+              .cell-md-8.cell-lg-10.text-center.text-md-left
+                h1 Start Building Your Own Career Now
+              .cell-md-4.cell-lg-2.offset-top-41.offset-md-top-0
+                a.btn.btn-primary.btn-block.center-block(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href style="max-width:195px;") get started
+
+    // Testimonials
+    section.section-98.section-sm-110
+      .shell
+        h1 Testimonials
+        hr.divider.divider-sm.bg-darkers
+        +testimonials-slider-5([{
+          "image": {
+            "width": 60,
+            "height": 60,
+            "src": "images/user-brittany-freeman-60x60.jpg",
+            "alt": "Brittany Freeman"
+          },
+          "title": {
+            "titleStyling": "h5 text-primary",
+            "titleDesc": "Brittany Freeman"
+          },
+          "description": {
+            "descStyling": "p text-dark",
+            "desc": "Manager"
+          },
+          "quote": {
+            "title": "Thank you for the assistance you provided in my job searching. During a short period of using your website I have found several vacancies where my skills can be used.",
+            "styling": "h4 text-center text-regular text-italic",
+            "firstDivider": "hr hr-gradient",
+            "lastDivider": "hr hr-gradient"
+          },
+          "unitStyling": "unit unit-xs unit-xs-horizontal unit-spacing-sm text-xs-left",
+        },
+          {
+            "image": {
+              "width": 60,
+              "height": 60,
+              "src": "images/user-james-newman-60x60.jpg",
+              "alt": "James Newman"
+            },
+            "title": {
+              "titleStyling": "h5 text-primary",
+              "titleDesc": "James Newman"
+            },
+            "description": {
+              "descStyling": "p text-dark",
+              "desc": "Manager"
+            },
+            "quote": {
+              "title": "I just want to thank you for your help. I was so pleased and grateful. Keep up the excellent work. Your site provides the best support I have ever encountered.",
+              "styling": "h4 text-center text-regular text-italic",
+              "firstDivider": "hr hr-gradient",
+              "lastDivider": "hr hr-gradient"
+            },
+            "unitStyling": "unit unit-xs unit-xs-horizontal unit-spacing-sm text-xs-left",
+          },
+          {
+            "image": {
+              "width": 60,
+              "height": 60,
+              "src": "images/user-jim-johnson-60x60.jpg",
+              "alt": "Jim Johnson"
+            },
+            "title": {
+              "titleStyling": "h5 text-primary",
+              "titleDesc": "Jim Johnson"
+            },
+            "description": {
+              "descStyling": "p text-dark",
+              "desc": "Manager"
+            },
+            "quote": {
+              "title": "Thank you very much for your rapid response. It's no doubt that your company is worth admiring! I have experienced the fastest support ever.",
+              "styling": "h4 text-center text-regular text-italic",
+              "firstDivider": "hr hr-gradient",
+              "lastDivider": "hr hr-gradient"
+            },
+            "unitStyling": "unit unit-xs unit-xs-horizontal unit-spacing-sm text-xs-left",
+          }])
+
+    // Latest Blog Posts
+    section.section-98.section-sm-110.bg-gray-light
+      .shell
+        h1 Latest Blog Posts
+        hr.divider.divider-sm.bg-darkers
+        .range.range-xs-center
+          .cell-sm-9.cell-md-6
+            //- Post with Video
+            +post-modern(cfg.nav.blog.href, "mdi mdi-video", "2 days ago", "Intense tutorial: Writing a proper resume and autobiography for young specialists", [
+              {"title": "Business", "href": "#"}],
+            {
+              "type": "video",
+              "href": "//www.youtube.com/embed/-AhmuMqZB0s",
+              "ratio": "16by9"
+            })
+              p Nowadays many companies are looking for young specialists that have some professional potential. Young graduates can easily attract employer’s attention by writing a proper resume.
+
+            //- Post with Gallery
+            .offset-top-30
+              +post-modern(cfg.nav.blog.href, "mdi mdi-instagram", "7 days ago", "How to impress your future employer", [
+                {"title": "Lifestyle", "href": "#"}],
+              {
+                "type": "thumbnail",
+                "thumb": {"src": "images/home-01-570x321.jpg", "width": 570, "height": 321, "alt": ""}
+              })
+
+          .cell-sm-9.cell-md-6.offset-top-30.offset-md-top-0
+            //- Post with Text
+            +post-modern(cfg.nav.blog.href, "mdi mdi-pen", "3 days ago", "Top 50 international companies to consider your potential employer.", [
+              {"title": "News", "href": "#"}])
+              p There are thousands of possibilities that can help you find the job of your dream. But how many of them will really lead you to the success of working at the well-known international company? Let’s find it out.
+
+            //- Post with Audio
+            .offset-top-30
+              +post-modern(cfg.nav.blog.href, "mdi mdi-soundcloud", "5 days ago", "Top 5 tracks to enhance your working process: from rock to electronic music.", [
+                {"title": "Music", "href": "#"}],
+              {
+                "type": "soundcloud",
+                "embed": '<iframe height="166" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/149065581&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>'
+              })
+
+            //- Post with Image
+            .offset-top-30
+              +post-modern(cfg.nav.blog.href, "mdi mdi-image", "2 days ago", "Teamwork as a vital element of your own success and career promotion.", [
+                {"title": "Business", "href": "#"}],
+              {
+                "type": "thumbnail",
+                "thumb": {"src": "images/home-02-570x321.jpg", "width": 571, "height": 321, "alt": ""}
+              })
+                p It is widely known that teamwork is very important to successful completion of any idea. Nevertheless, some projects based on the principle of cooperation often lack some simple but effective features.
+
+          .range.range-xs-center.offset-top-66
+            .cell-xs-7.cell-sm-5.cell-md-4.cell-lg-3
+              .inset-lg-left-20.inset-lg-right-20
+                a.btn.btn-primary.reveal-xs-block(href=cfg.nav.blog.href) view all blog posts
+
+  // Page Footer
+  include ../sections/_section-footer

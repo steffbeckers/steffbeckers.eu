@@ -1,0 +1,74 @@
+//
+// Modals Custom
+// --------------------------------------------------
+
+.modal-custom {
+  top: 50%;
+  z-index: 99999;
+  min-height: 400px;
+  @include transform(translateY(-50%));
+
+  // Modal Content
+  .modal-content {
+    border-radius: 0;
+    box-shadow: none;
+
+    // Modal Header
+    .modal-header {
+      border-bottom: none;
+
+      .close {
+        opacity: 1;
+        transition: .3s all ease;
+
+        &:hover {
+          opacity: .5;
+        }
+      }
+    }
+
+    // Modal Footer
+    .modal-footer {
+      border-top: none;
+    }
+  }
+
+  // Modal Body
+  .modal-body {
+    padding: 0px 25px 30px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    min-height: 600px;
+
+    .modal-body {
+      padding: 0px 60px 50px;
+    }
+  }
+  @media (min-width: $screen-lg-min) {
+    .modal-dialog {
+      width: 968px;
+    }
+
+    .modal-body {
+      padding: 0 90px 95px;
+    }
+
+    .modal-content {
+      .modal-header {
+        .close {
+          margin-top: 10px;
+          margin-right: 35px;
+        }
+      }
+    }
+  }
+
+  // Media queries for mobile devices
+  @media (min-height: 320px) and (max-height: 480px) {
+    min-height: 250px;
+  }
+  @media (min-height: 940px) {
+    bottom: auto;
+  }
+}

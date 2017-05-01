@@ -1,0 +1,13 @@
+mixin box-icon-unit(obj)
+  - var classes = ['']
+  if (obj.reverse)
+    - var classes = ['unit-xs-inverse', 'text-sm-right']
+
+  article.box-icon.unit.unit-spacing-md.unit-xs-horizontal(class=classes)
+    .unit-left
+      figure.box-icon-image
+        +png(obj.img)
+
+    .unit-body
+      p.box-icon-header: a(href='services.html')=obj.header
+      p.box-icon-text=obj.text

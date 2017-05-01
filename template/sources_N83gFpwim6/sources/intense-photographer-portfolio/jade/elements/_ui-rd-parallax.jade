@@ -1,0 +1,8 @@
+//- parallax - RD Parallax object
+
+mixin rd-parallax(parallax)
+  // RD Parallax
+  .rd-parallax(data-on="false" data-md-on="true")
+    .rd-parallax-layer(data-speed= parallax.backgroundSpeed, data-type= parallax.attrType, data-url= parallax.src)
+    .rd-parallax-layer(data-speed= parallax.htmlSpeed, data-type='html')
+      block

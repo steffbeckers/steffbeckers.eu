@@ -1,0 +1,42 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-navbar-default-transparent
+include ../elements/_ui-page-loader-variant-1
+
+//-Title
+block title
+  title= cfg.nav.features.submenu.rdPlugins.submenu.rdParallax.title
+
+//- Page
+block page
+
+  +page-loader-1(cfg.brand.logoBig)
+
+  // Page Head
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logoInverse,
+    cfg.nav.features,
+    cfg.nav
+    )
+  // Page Content
+  main.page-content
+    include ../sections/_section-integration-with-parallax
+    include ../sections/_section-what-wiki-says
+    include ../sections/_section-how-parallax-works
+    include ../sections/_section-parallax-plugin-compatible
+    include ../sections/_section-cross-browser-support
+    include ../sections/_section-gpl-license
+    include ../sections/_section-see-it-in-action-parallax
+
+  // Page Footer
+  include ../sections/_section-footer-default

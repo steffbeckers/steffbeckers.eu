@@ -1,0 +1,138 @@
+//- Includes
+include ../elements/_widget-flickrfeed
+
+footer.page-footer.bg-white.section-75.section-md-top-103.section-md-bottom-55.text-md-left
+  .shell
+    .range.range-xs-center.range-lg-justify
+      .cell-sm-5.cell-md-4
+        .inset-lg-right-120
+          div
+            p.text-uppercase.text-bold.font-accent.text-spacing-0.text-mine-shaft Recent posts
+
+          .offset-top-15.offset-sm-top-25.text-left
+            // Unit
+            .unit.unit-middle.unit-horizontal.unit-spacing-xs
+              .unit-left
+                img.img-circle(src='images/users/user-sandra-green-70x70.jpg', alt=' ', width='70', height='70')
+              .unit-body
+                div
+                  p.text-extra-small.text-spacing-0 August 25, 2016
+                .offset-top-4
+                  p.text-extra-small.text-spacing-0
+                    a.text-turquoise(href="blog-classic-left-sidebar.html") Finding lost property
+
+          .offset-top-30.text-left
+            // Unit
+            .unit.unit-middle.unit-horizontal.unit-spacing-xs
+              .unit-left
+                img.img-circle(src='images/users/user-mike-sanders-70x70.jpg', alt=' ', width='70', height='70')
+              .unit-body
+                div
+                  p.text-extra-small.text-spacing-0 August 20, 2016
+                .offset-top-4
+                  p.text-extra-small.text-spacing-0
+                    a.text-turquoise(href="blog-classic-left-sidebar.html") Debuting at Annapolis Sailboat Show
+
+          .offset-top-30.text-left
+            // Unit
+            .unit.unit-middle.unit-horizontal.unit-spacing-xs
+              .unit-left
+                img.img-circle(src='images/users/user-tom-jefferson-70x70.jpg', alt=' ', width='70', height='70')
+              .unit-body
+                div
+                  p.text-extra-small.text-spacing-0 August 15, 2016
+                .offset-top-4
+                  p.text-extra-small.text-spacing-0
+                    a.text-turquoise(href="blog-classic-left-sidebar.html") Top 5 reasons to charter in Montenegro
+
+      .cell-sm-5.cell-md-4.offset-top-44.offset-sm-top-0
+        .inset-lg-right-40
+          div
+            p.text-uppercase.text-bold.font-accent.text-spacing-0.text-mine-shaft tags
+          .offset-top-15.offset-sm-top-25
+            // List inline marked
+            ul.list-inline.list-tags.list-tags-small.font-accent.text-bold.text-spacing-25.text-left.text-extra-small.text-uppercase
+              li
+                a.text-turquoise(href="#") YACHTS
+              li
+                a.text-turquoise(href="#") LUXURY
+              li
+                a.text-turquoise(href="#") CHARTER
+              li
+                a.text-turquoise(href="#") REGATTAS
+              li
+                a.text-turquoise(href="#") services
+              li
+                a.text-turquoise(href="#") crew
+              li
+                a.text-turquoise(href="#") events
+              li
+                a.text-turquoise(href="#") sailing
+
+          .offset-top-53
+            div
+              p.text-uppercase.text-bold.font-accent.text-spacing-0.text-mine-shaft flickr
+
+            .offset-top-20.offset-sm-top-30
+              +widget-flickrfeed("tm61233", {"data-image_q": "src"}, {
+                "style": "group group-xs widget-flickrfeed-lg",
+                "dataSize": "1050x700",
+                "img": {
+                  "width": 85,
+                  "height": 85
+                }
+              }, 6)
+
+      .cell-md-4.offset-top-44.offset-md-top-0
+        .inset-lg-right-30
+          .range.range-xs-center
+            .cell-sm-5.cell-md-12
+              div
+                p.text-uppercase.text-bold.font-accent.text-spacing-0.text-mine-shaft address
+
+              .offset-top-15.offset-sm-top-25
+                // Contact Info
+                address.contact-info.text-left
+                  div
+                    p.text-gray-light.text-extra-small.text-spacing-0 4578 Marmora St, San Francisco D04 89GR.
+                  dl.text-extra-small
+                    dt.text-extra-small.text-gray-light.text-regular.reveal-inline-block Telephone:
+                    dd.text-extra-small.text-gray-light.reveal-inline-block.p
+                      a.text-gray-light(href="callto:#") 1-800-1234-567
+                  dl.text-extra-small
+                    dt.text-extra-small.text-gray-light.text-regular.reveal-inline-block E-mail:
+                    dd.text-extra-small.text-gray-light.p.reveal-inline-block
+                      a.text-turquoise(href="mailto:#") mail@demolink.org
+
+            .cell-sm-5.cell-md-12.offset-top-44.offset-sm-top-0.offset-md-top-50
+              div
+                p.text-uppercase.text-bold.font-accent.text-spacing-0.text-mine-shaft Newsletter
+
+              .offset-top-15.offset-sm-top-25
+                p.text-extra-small.text-spacing-0 Keep up with our latest news and events. Enter your e-mail and subscribe to our newsletter.
+
+              .offset-top-20
+                form.rd-mailform.rd-mailform-subscribe(data-form-output='form-subscribe-footer', data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+                  .form-group
+                    .input-group
+                      input.form-control(type='email', name='email', data-constraints='@Email @Required')
+                      span.input-group-btn
+                        button.btn.btn-primary.text-capitalize.text-spacing-0(type='submit') Subscribe
+                  #form-subscribe-footer.form-output
+
+              .offset-top-20.offset-sm-top-44
+                ul.list-inline.list-inline-0.list-calypso
+                  li.text-center
+                    a.icon.icon-xxs.fa.fa-facebook.text-turquoise(href='#')
+                  li.text-center
+                    a.icon.icon-xxs.fa.fa-google-plus.text-turquoise(href='#')
+                  li.text-center
+                    a.icon.icon-xxs.fa.fa-linkedin.text-turquoise(href='#')
+                  li.text-center
+                    a.icon.icon-xxs.fa.fa-twitter.text-turquoise(href='#')
+
+    .offset-top-60
+      .hr.bg-gray-lighter
+
+    .offset-top-50
+      p.text-extra-small.text-gray-light City-taxi &#169; #[span(id="copyright-year").] #[a.text-gray-light(href="privacy.html") Privacy Policy]

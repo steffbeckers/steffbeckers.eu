@@ -1,0 +1,22 @@
+//- labelId - id for label
+//- Input width - input width used inline
+//- Input width - input width used inline
+//- placeholder - form input placeholder
+//- inputType - input type
+//- formConstrains - form constrains for validations
+//- formControlClass - form controls additional classes
+//- btnClass - button scope of classes
+//- btnText - button text
+mixin call-to-action-type-1(labelId, inputWidth, btnWidth, placeholder, inputType, formConstrains, formControlClass, btnClass, btnText)
+  // Call to action type 1
+  - var labelId = labelId || "label-1"
+  - var inputType = inputType || "text"
+  - var inputWidth = inputWidth || "320px"
+  form.rd-mailform(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+    .group-sm.group-top.offset-top-30
+      .group-item.element-fullwidth(style="max-width: #{inputWidth}")
+        .form-group
+          label.form-label.rd-input-label(for= labelId) Enter Your Email:
+          input.form-control(class=formControlClass id= labelId type= inputType data-constraints= formConstrains)
+      button(style="max-width: #{btnWidth}" type="submit" class= btnClass).btn.element-fullwidth.offset-top-20.offset-sm-top-10= btnText
+

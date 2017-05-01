@@ -1,0 +1,198 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-parallax
+include ../elements/_ui-box-icon-type-2
+include ../elements/_ui-isotope
+
+//-Title
+block title
+  title= cfg.nav.planning.title
+
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logoInverse,
+      cfg.nav.planning,
+      cfg.nav
+    )
+
+    // Breadcrumbs
+    section
+      +rd-parallax({
+        "backgroundSpeed": "0.25",
+        "attrType": "media",
+        "src": "images/background-03-1920x447.jpg",
+        "htmlSpeed": "0",
+        "fade": "false"
+      })
+
+        .shell
+          .range
+            .range.range-xs-middle.range-xs-center.section-41.section-sm-50.section-md-66.context-dark
+              .cell-xs-12
+                div
+                  h1.text-capitalize
+                    span.big
+                      | Financial Planning
+                .offset-top-10
+                  ul.list-inline.list-inline-dashed.text-italic.p
+                    li
+                      a(href="index.html") Home
+                    li
+                      | Financial Planning
+
+  // Page Contents
+  main.page-content
+    //Invest management
+    section.section-top-41.section-bottom-98.section-md-top-85.section-md-bottom-110
+      .shell
+        .offset-top-34
+          +isotope(['Investment Management','Retirement Planning','Long Term Care','Estate Planning','Social Security'],{
+            "group": "gallery",
+            "layout": "fitRows",
+            "title": ' ',
+            "alignClass": "isotope-filters-vertical"
+          }, "isotope-1", "offset-md-top-20")
+            .row.text-lg-left
+              .isotope-item(data-filter="Investment Management")
+                div
+                  h1 Investment Management
+                div.offset-top-4
+                  hr.divider.divider-lg.bg-mantis.reveal-inline-block
+                .offset-top-20.offset-md-top-50
+                  p I am working with clients, from individual investors to large financial institutions, to develop advanced portfolio management strategies to help them achieve specific goals for their own or their institution's financial future.
+                  p How I organize my work:
+                  ul.list.list-marked
+                    li Help clients navigate today’s evolving markets and identify the opportunities that shape their portfolios and long-term investment goals;
+                    li Develop and manage customized solutions for the world’s leading pension plans, sovereign wealth funds, central banks, insurance companies, financial institutions, endowments, foundations, individuals and family offices;
+                    li Advise clients on how to allocate assets to meet unique objectives, addressing the dynamic market environment;
+                    li Research market ideas and build investment portfolios across a broad range of asset classes.
+                  .offset-top-34
+                    img.img-responsive.reveal-inline-block(src="images/post-07-770x410.jpg", width="770", height="410", alt="")
+                  .offset-top-34
+                    p While I have a variety of services for my clients, many are looking for someone to manage their investments (whether these are retirement funds, joint accounts or trusts).
+                  p I review each client’s goals, investment experience and risk tolerance, and determine a financial investment plan best suited for that client. To meet my clients' needs I use a variety of methods to properly manage your assets.
+                  p A big piece of this process I call "multi-dimensional diversification."  This involves multiple asset classes, multiple management styles at both strategic and tactical levels, and often multiple managers.
+
+              .isotope-item(data-filter="Retirement Planning")
+                h1 Retirement Planning
+                div
+                  hr.divider.divider-lg.bg-mantis.reveal-inline-block
+                .offset-top-20.offset-md-top-50
+                  p It's not going to be your parents' retirement - rewarded at 65 with a gold watch, a guaranteed pension, and health insurance for life. For many peoples, retiring in this new century is a mystery. Earlier generations of workers could rely on employer-provided pensions, but now many workers will need to rely on their own work-related and personal savings plus Social Security benefits. These savings have to last longer because peoples are living longer, often into their eighties and nineties.
+                  p If you are one of those people who want to plan - and are about 10 to 15 years from the day you retire - this booklet is for you. Today's (and tomorrow's) retirees may well have a new kind of retirement. With a longer and healthier life span, bikes, boats, planes, and RVs may be part of your life, because you are more likely than previous generations to be an active older American.
+                  p Retirement can be a time to explore new possibilities or to slow down and fully enjoy the life you spent your working years building—or it can be a bit of both. Regardless of your path, you want to ensure that this phase is as financially secure and satisfying as it can be—a process that ideally begins with your first job and continues even after retirement begins.
+                  p Here, I can take you expert guidance on all the elements that contribute to a good retirement: saving and investing; planning; maintaining your health; identifying activities and work to suit you; and, of course, being a savvy consumer.
+              .isotope-item(data-filter="Long Term Care")
+                h1 Long Term Care
+                div
+                  hr.divider.divider-lg.bg-mantis.reveal-inline-block
+                .offset-top-20.offset-md-top-50
+                  p Long-term care involves a variety of services designed to meet a person's health or personal care needs during a short or long period of time. These services help people live as independently and safely as possible when they can no longer perform everyday activities on their own. Most Care Provided at Home Long-term care is provided in different places by different caregivers, depending on a person's needs. Most long-term care is provided at home by unpaid family members and friends. It can also be given in a facility such as a nursing home or in the community, for example, in an adult day care center.
+                  p The most common type of long-term care is personal care -- help with everyday activities, also called "activities of daily living." These activities include bathing, dressing, grooming, using the toilet, eating, and moving around -- for example, getting out of bed and into a chair.
+                  p Long-term care also includes community services such as meals, adult day care, and transportation services. These services may be provided free or for a fee.
+                  p Long-term care insurance is a type of policy which is designed to provide for the financial welfare of an individual beyond a certain period. An example of this can be seen when a common disability package is replaced with its long-term counterpart. Such a plan is commonly seen with individuals who may have chronic illnesses (such as COPD or emphysema) and those who have become physically handicapped. This insurance policy exists in the United States, Canada and the United Kingdom. It can be known by its acronym LTCI or simply as LTI (Long-Term Insurance).
+              .isotope-item(data-filter="Estate Planning")
+                h1 Estate Planning
+                div
+                  hr.divider.divider-lg.bg-mantis.reveal-inline-block
+                .offset-top-20.offset-md-top-50
+                  p Many people believe they don't need estate planning because they think they don't have an estate. Or they think the value of their estate is not great enough to cause estate taxation, so what's the point?
+                  p With few exceptions, everyone has an estate -- even the young child with a custodial account in his name and the granddaughter who received a lovely piece of jewelry for her 16th birthday.
+                  p Bottom line: If you own something of value that you would pass on to someone else upon your death, you have an estate. Whether you know it or not, you also have an estate plan. The state has one for you free of charge (well, sort of) if you don't get around to writing a will or designing a plan of your own.
+                  p Broadly speaking, an estate plan encompasses the accumulation, conservation and distribution of an estate. A good plan will enhance and maintain the financial security of individuals and their families.
+                  p When you're developing a plan for your estate, it's important to understand your entire financial picture. That's where I`m come in. Working with your tax and legal advisors, I will help coordinate your investment strategies to help ensure that your plan reflects your wishes for your legacy.
+                  p Complete the form if you'd like to receive my three estate planning guides, which include information about the importance of having certain estate documents, maintaining beneficiary designations, and organizing your financial documents
+              .isotope-item(data-filter="Social Security")
+                h1 Social Security
+                div
+                  hr.divider.divider-lg.bg-mantis.reveal-inline-block
+                .offset-top-20.offset-md-top-50
+                  p Social Security benefits are one of the most important parts of any retirement portfolio. A poor claiming decision can cost tens-of-thousands of dollars, while making the right decision can contribute significantly to one's financial security.
+                  p However, Social Security is a complex system. I provide the tools to help you make the best Social Security planning. My reports present not only the optimal strategy, they also provide comparisons to other strategies that may work better when your entire financial situation is taken into consideration. My reports also help you advise about little-known Social Security strategies such as "file and suspend" and the restricted application, "free spousal" strategy.
+                  p Your primary insurance amount, or PIA -- the benefit you would get at full retirement age -- determines the size of your monthly retirement check. According to the Social Security Administration's website, the PIA is based on the Average Indexed Monthly Earnings, or AIME, as applied to an inflation-adjusted formula. The PIA is then adjusted for whether you take retirement before or after your normal retirement age -- 66 for those now reaching retirement age, but gradually adjusted to age 67 for those born after 1960.
+                  p You can begin drawing reduced Social Security as early as 62. For every month you delay after reaching full retirement age, up to age 70, the monthly benefit increases.
+                  p According to a 2010 report of the Senate Special Committee on Aging, for someone with an AIME of $5,000 in 2010, the PIA would total $1,971.
+                  p In keeping with the original intent behind Social Security -- a way to lift seniors out of poverty -- lower-wage earners get a higher proportion of their earnings than higher-wage earners. The maximum monthly benefit that can be received in 2014 is $2,642 for a worker retiring at full retirement age.
+
+    //Possible Risks
+    section.section-98.section-md-top-110.section-md-bottom-0.bg-white-lilac
+      .shell
+        h1 Possible Risks
+        div
+          hr.divider.divider-lg.bg-mantis
+        .range.range-xs-center
+          .cell-xs-10.cell-sm-8.cell-md-6
+            +box-icon-type-2('icon mdi mdi-chart-line icon-chestnut-roze-filled icon-circle', 'Market Risk', 'offset-top-20', 'Also called "principal risk", it is the chance that a downturn (or a bad investment) chews up your money. It’s there for both stocks and bonds — when interest rates rise, bondholders will see the market value of their paper shrink — and for most people it’s the big bugaboo.')
+          .cell-xs-10.cell-sm-8.cell-md-6.offset-top-66.offset-md-top-0
+            +box-icon-type-2('icon mdi mdi-cash-multiple icon-chestnut-roze-filled icon-circle', 'Inflation or Purchasing-Power Risk', 'offset-top-20', 'For most people it the “risk of avoiding risk” — the opposite end of the spectrum from market risk — the possibility that you are too conservative and your money can’t grow fast enough to keep pace with inflation.')
+        .range.range-xs-center.range-md-reverse.offset-top-66.offset-md-top-110.text-md-left
+          .cell-xs-10.cell-sm-8.cell-md-7
+            h2.font-default.text-italic.text-sbold I will help you understand
+            .offset-md-top-50.inset-md-left-30
+              ul.list-marked
+                li Retirement Financial Planning with Wealth Creation;
+                li Wealth Creation;
+                li Asset Protection;
+                li Investing for Retirement with Self Managed Superannuation Fund (SMSFs);
+                li And more instruments.
+            p To find out more, please download our free e-book:
+            .range.range-xs-center.range-xl-left.offset-top-24.offset-md-top-14
+              .cell-sm-6.cell-md-5.cell-xl-6.text-sm-right
+                a(href="#").btn.btn-lg.btn-primary.btn-block Free e-book
+              .cell-sm-6.cell-md-7.cell-xl-6.text-sm-left.offset-top-20.offset-sm-top-0
+                a(href= cfg.nav.help.href).btn.btn-lg.btn-warning.btn-block Free consultation
+          .cell-xs-10.cell-md-4.cell-md-preffix-1.text-md-left.cell-xs-bottom.offset-top-66.offset-md-top-0.text-center.text-md-lefte.veil.reveal-md-block
+            img.img-responsive.reveal-inline-block(src="images/user-john-doe-332x455.png", width="332", height="455", alt="")
+
+    // Planning Your Financial
+    section.section-98.section-sm-110
+      .shell
+        h1 Let’s Start Planning Your Financial Future Today
+        div
+          hr.divider.divider-lg.bg-mantis
+        .offset-top-41.offset-md-top-66
+          // Index List (Ellipsed)
+          ul.list-unstyled.list-index.row.text-left.offset-top-66
+            li.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0
+              .unit.unit-sm.unit-sm-horizontal.text-center.text-sm-left
+                .unit-left
+                  span.list-index-counter.icon.icon-circle.icon-xs.icon-mantis-filled.text-bold.font-accent
+                .unit-body
+                  h5.offset-md-top-20 Talk
+                  p Actually, I'll listen as you explain your needs, dreams, and fears. Then I'll design a personalized plan that explains how we can help you reach your financial goals.
+            li.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0.offset-top-66.offset-md-top-0
+              .unit.unit-sm.unit-sm-horizontal.text-center.text-sm-left
+                .unit-left
+                  span.list-index-counter.icon.icon-circle.icon-xs.icon-mantis-filled.text-bold.font-accent
+                .unit-body
+                  h5.offset-md-top-20 Act
+                  p We work together to implement the plan. Then I keep you updated on where you stand and adapt the plan as life happens.
+
+            li.col-sm-8.col-sm-offset-2.col-md-4.col-md-offset-0.offset-top-66.offset-md-top-0
+              .unit.unit-sm.unit-sm-horizontal.text-center.text-sm-left
+                .unit-left
+                  span.list-index-counter.icon.icon-circle.icon-xs.icon-mantis-filled.text-bold.font-accent
+                .unit-body
+                  h5.offset-md-top-20 Relax
+                  p I`m here for you whenever you need. Call me at any time, for any reason. Buying a new car? Ask my advice. I can always help you.
+
+        .offset-top-41
+          a(href= cfg.nav.help.href).btn.btn-lg.btn-warning Get started today
+
+
+  // Page Footer
+  include ../sections/_section-footer-default

@@ -1,0 +1,37 @@
+extends  ../_skeleton
+
+//-Title
+block title
+  title= cfg.nav.portfolio.title
+
+//- Page
+block page
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-sidebar-toggle(
+    'rd-navbar-sidebar-toggle rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-fixed',
+      "data-lg-stick-up": 'false',
+      "data-lg-hover-on": "false"
+    },
+    "<img style='margin-top: -5px;margin-left: -15px;' width='138' height='31' src='images/logo-dark.png' alt=''/>",
+    cfg.nav.portfolio,
+    cfg.nav
+    )
+  // Page Content ss
+
+  main.page-content
+    // Page Header
+    include ../sections/_section-header
+    section.section-98.section-md-110
+      .shell-fluid
+        h1.text-bold Beauty Session
+        ul.p.list-inline.list-inline-dashed.offset-top-24
+          li
+            a(href="#{cfg.nav.home.href}") Home
+          li Portfolio
+        include ../sections/_section-single-project-type-1

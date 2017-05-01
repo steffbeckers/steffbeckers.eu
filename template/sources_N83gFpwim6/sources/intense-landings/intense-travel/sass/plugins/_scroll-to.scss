@@ -1,0 +1,73 @@
+//
+// Scroll to
+// --------------------------------------------------
+
+.scrollToNext {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 20;
+
+  width: $scrollToNext-width;
+  height: $scrollToNext-height;
+  overflow: hidden;
+
+  font-size: $scrollToNext-size;
+  line-height: $scrollToNext-line-height;
+
+  color: $scrollToNext-color;
+  border-radius: $scrollToNext-border-radius;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.11), 3px 4px 5px 0 rgba(0, 0, 0, 0.11);
+
+  &:before{
+    display: block;
+    transition: .5s;
+    transition-delay: 1.4s;
+  }
+
+  &.toTop{
+    animation: rotate 1.6s linear;
+    animation-delay: 1s;
+
+    &:before{
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@keyframes rotate {
+  0%, 100%{
+    transform: scale(1);
+  }
+  30%, 60%{
+    transform: scale(0.7);
+  }
+}
+
+.scrollToNext:focus {
+  color: $scrollToNext-hover-color;
+}
+
+.scrollToNext:hover {
+  color: $scrollToNext-hover-color;
+  text-decoration: none;
+}
+
+.scrollToNext.active {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.mobile .scrollToNext,
+.tablet .scrollToNext {
+  display: none !important;
+}
+
+@media (min-width: 480px) {
+  .scrollToNext {
+    right: 40px;
+    bottom: 40px;
+  }
+}

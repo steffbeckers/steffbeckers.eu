@@ -1,0 +1,90 @@
+//
+// RD Navbar Sidebar Toggle Footer
+// --------------------------------------------------
+
+%rd-navbar-sidebar-toggle-footer {
+  .rd-navbar-footer {
+    margin: 50px 0 50px;
+    padding: 0 2px;
+    text-align: left;
+    .list-inline {
+      margin: 15px -2px 0;
+      > li {
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+      + p {
+        margin-top: 25px;
+      }
+    }
+    dl {
+      margin-bottom: 15px;
+    }
+    dt, dd {
+      display: inline-block;
+      span {
+        font-size: 24px;
+        vertical-align: middle;
+      }
+
+    }
+    dt {
+      margin-right: 10px;
+    }
+  }
+
+  .rd-navbar-address{
+    text-align: left;
+    display: inline-block;
+  }
+
+
+}
+
+//
+// Dark Theme
+// --------------------------------------------------
+%rd-navbar-sidebar-toggle-footer-dark {
+  .rd-navbar-footer {
+    dl a {
+      &:hover {
+        color: $brand-primary;
+      }
+    }
+
+    dt, dd {
+      span {
+        color: $brand-primary;
+      }
+
+    }
+  }
+
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+%rd-navbar-sidebar-toggle-footer-light {
+
+  .rd-navbar-footer p {
+    color: $gray;
+  }
+
+  .rd-navbar-footer {
+    dl a {
+      color: $gray-darkest;
+      &:hover {
+        color: $brand-primary;
+      }
+    }
+
+    dt, dd {
+      span {
+        color: $brand-primary;
+      }
+
+    }
+  }
+
+}

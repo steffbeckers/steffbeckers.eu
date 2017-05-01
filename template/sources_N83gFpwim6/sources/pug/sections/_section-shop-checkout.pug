@@ -1,0 +1,137 @@
+//- Includes
+include ../elements/_ui-table-bootstrap
+
+// Shop Checkout
+section.section-98.section-sm-110
+  form.shell.rd-mailform.text-left(data-form-output="form-contact-me", data-form-type='contact', method='post')
+    .range.range-xs-center
+      .cell-xs-10.cell-md-9.cell-lg-12
+        .range
+
+          // Billing Address
+          .cell-lg-6
+            h3.text-center Billing Address
+            .range.offset-top-24
+              .cell-sm-6
+                .form-group
+                  label.form-label.form-label-outside.form-label-sm(for="shop-billing-checkout-first-name") First Name:
+                  input#shop-billing-checkout-first-name.form-control.form-control-impressed.input-sm(type="text" name="first-name" data-constraints="@Required")
+              .cell-sm-6
+                .form-group
+                  label.form-label.form-label-outside.form-label-sm(for="shop-billing-checkout-last-name") Last Name:
+                  input#shop-billing-checkout-last-name.form-control.form-control-impressed.input-sm(type="text" name="last-name" data-constraints="@Required")
+            .form-group.offset-top-30
+              label.form-label.form-label-outside.form-label-sm(for="shop-billing-checkout-company") Company:
+              input#shop-billing-checkout-company.form-control.form-control-impressed.input-sm(type="text" name="company" data-constraints="@Required")
+            .form-group.offset-top-30
+              label.form-label.form-label-outside.form-label-sm(for="shop-billing-checkout-address-first") Address:
+              input#shop-billing-checkout-address-first.form-control.form-control-impressed.input-sm(type="text" name="address-first" data-constraints="@Required")
+            .form-group.offset-top-20
+              input#shop-billing-checkout-address-second.form-control.form-control-impressed.input-sm(type="text" name="address-second")
+            .form-group.offset-top-30
+              label.form-label.form-label-outside.form-label-sm(for="shop-billing-checkout-city-town") City / Town:
+              input#shop-billing-checkout-city-town.form-control.form-control-impressed.input-sm(type="text" name="city-town" data-constraints="@Required")
+            .range.offset-top-30
+              .cell-sm-6
+                .form-group
+                  label.form-label.form-label-outside.form-label-sm(for="shop-billing-checkout-email") E-Mail:
+                  input#shop-billing-checkout-email.form-control.form-control-impressed.input-sm(type="email" name="email" data-constraints="@Required @Email")
+              .cell-sm-6
+                .form-group
+                  label.form-label.form-label-outside.form-label-sm(for="shop-billing-checkout-phone") Phone:
+                  input#shop-billing-checkout-phone.form-control.form-control-impressed.input-sm(type="text" name="phone" data-constraints="@Required")
+
+          // Shipping Address
+          .cell-lg-6.offset-top-66.offset-lg-top-0
+            h3.text-center Shipping Address
+            .range.offset-top-24
+              .cell-sm-6
+                .form-group
+                  label.form-label.form-label-outside.form-label-sm(for="shop-shipping-checkout-first-name") First Name:
+                  input#shop-shipping-checkout-first-name.form-control.form-control-impressed.input-sm(type="text" name="first-name" data-constraints="@Required")
+              .cell-sm-6
+                .form-group
+                  label.form-label.form-label-outside.form-label-sm(for="shop-shipping-checkout-last-name") Last Name:
+                  input#shop-shipping-checkout-last-name.form-control.form-control-impressed.input-sm(type="text" name="last-name" data-constraints="@Required")
+            .form-group.offset-top-30
+              label.form-label.form-label-outside.form-label-sm(for="shop-shipping-checkout-company") Company:
+              input#shop-shipping-checkout-company.form-control.form-control-impressed.input-sm(type="text" name="company" data-constraints="@Required")
+            .form-group.offset-top-30
+              label.form-label.form-label-outside.form-label-sm(for="shop-shipping-checkout-address-first") Address:
+              input#shop-shipping-checkout-address-first.form-control.form-control-impressed.input-sm(type="text" name="address-first" data-constraints="@Required")
+            .form-group.offset-top-20
+              input#shop-shipping-checkout-address-second.form-control.form-control-impressed.input-sm(type="text" name="address-second")
+            .form-group.offset-top-30
+              label.form-label.form-label-outside.form-label-sm(for="shop-shipping-checkout-city-town") City / Town:
+              input#shop-shipping-checkout-city-town.form-control.form-control-impressed.input-sm(type="text" name="city-town" data-constraints="@Required")
+            .range.offset-top-30
+              .cell-sm-6
+                .form-group
+                  label.form-label.form-label-outside.form-label-sm(for="shop-shipping-checkout-email") E-Mail:
+                  input#shop-shipping-checkout-email.form-control.form-control-impressed.input-sm(type="email" name="email" data-constraints="@Required @Email")
+              .cell-sm-6
+                .form-group
+                  label.form-label.form-label-outside.form-label-sm(for="shop-shipping-checkout-phone") Phone:
+                  input#shop-shipping-checkout-phone.form-control.form-control-impressed.input-sm(type="text" name="phone" data-constraints="@Required")
+
+    .range.offset-top-66.text-left.range-xs-center
+      .cell-xs-10.cell-md-9.cell-lg-12
+        .range
+          .cell-lg-6
+            h4 Your Orders
+            .table-responsive
+              table.table
+                thead
+                  tr
+                    th
+                    th Product
+                    th Quantity
+                    th Total
+                tbody
+                  tr
+                    th
+                      img(src="images/shop/product-01-70x70.jpg" width="70" height="70" alt="")
+                    td.big.text-middle Engineered Rib Cashmere
+                    td.text-middle 1
+                    td.text-middle $39.00
+                  tr
+                    th
+                      img(src="images/shop/product-02-70x70.jpg" width="70" height="70" alt="")
+                    td.big.text-middle Ruched Bandage Miniskirt
+                    td.text-middle 2
+                    td.text-middle $199.00
+          .cell-lg-6.offset-top-66.offset-lg-top-0
+            h4 Cart Totals
+            .table-responsive
+              table.table
+                thead
+                  tr
+                    th Operations
+                    th Result
+                tbody
+                  tr
+                    th Cart Subtotal
+                    td $238.00
+                  tr
+                    th Shipping
+                    td Free Delivery
+                  tr
+                    th Total
+                    td.text-bold.text-ku-crimson $238.00
+
+            .form-group.offset-top-41.offset-lg-top-24
+              label.radio-inline
+                input(name="shop-checkout-radio", value="radio-1", type="radio")
+                span.text-bold Direct Bank Transfer
+            .form-group
+              label.radio-inline
+                input(name="shop-checkout-radio", value="radio-1", type="radio")
+                span.text-bold Cheque Payment
+            .form-group
+              label.radio-inline
+                input(name="shop-checkout-radio", value="radio-1", type="radio")
+                span.text-bold Paypal
+            .offset-top-34.text-center.text-lg-right
+              button(type="submit").btn.btn-icon.btn-icon-left.btn-primary
+                span.icon.mdi.mdi-lock
+                | Place Order

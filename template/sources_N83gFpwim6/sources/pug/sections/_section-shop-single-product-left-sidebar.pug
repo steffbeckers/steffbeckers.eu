@@ -1,0 +1,325 @@
+//- Includes
+include  ../elements/_ui_accordion-classic
+include  ../elements/_ui-tabs-boxed-vertial
+include ../elements/_ui-product-grid
+include ../elements/_ui-media-elements
+
+-
+  var product = {
+  "title": "Cu dicam nostro est",
+  "brand": "Armani Brand",
+  "price": [
+  "57.00",
+  "35.00"
+  ],
+  "images": [
+  {
+  "src": "images/shop/product-01-570x760.png",
+  "alt": "Cu dicam nostro est 1",
+  "extraLarge": "images/shop-product-1-1-extra-large.png",
+  "thumb": "images/shop/product-01-84x84.png"
+  },
+  {
+  "src": "images/shop/product-01-570x760-2.png",
+  "alt": "Cu dicam nostro est 2",
+  "extraLarge": "images/shop-product-1-2-extra-large.png",
+  "thumb": "images/shop/product-01-84x84-2.png"
+  },
+  {
+  "src": "images/shop/product-01-570x760-3.png",
+  "alt": "Cu dicam nostro est 3",
+  "extraLarge": "images/shop-product-1-3-extra-large.png",
+  "thumb": "images/shop/product-01-84x84-3.png"
+  }
+  ],
+  "label": {
+  "adClass": "label-danger",
+  "text": "Sale"
+  },
+  "reviews": 4,
+  "desc": "Quis detracto in vel, ad mucius equidem mel, vis cu melius alienum inciderint. Convenire mnesarchum definitionem duo ut, in sea quot magna ceteros, ex his quando corpora splendide. Purto zril nobis ne est, eu assum platonem intellegebat qui. Ex ridens nominati partiendo quo, mei eu tota verear adversarium. Per utroque philosophia ad, vim in enim dolorum, graeco gloriatur ea mea."
+  };
+
+
+
+
+.product.product-single
+  .range
+    .cell-sm-8.cell-md-6
+      .product-image
+        img.img-responsive(src=product.images[0].src alt=product.images[0].alt).product-image-area
+        - if (product.images.length)
+        ul.product-thumbnails
+          each image, index in product.images
+            li(data-large-image=image.src class= (index == 0) ? "active" : "")
+              img.img-responsive(src=image.thumb alt=image.alt)
+
+    .cell-sm-12.cell-md-6.text-left.offset-top-41.offset-md-top-0
+      // Product Brand
+      p.product-brand.text-italic.text-dark= product.brand
+      // Product Title
+      h1.product-title.offset-top-0
+        a(href= cfg.nav.shop.submenu.singleProduct.submenu.leftSidebar.href)= product.title
+
+      // Product Rating
+      .product-rating.offset-top-20
+        span.mdi.mdi-star
+        span.mdi.mdi-star
+        span.mdi.mdi-star
+        span.mdi.mdi-star-half
+        span.mdi.mdi-star-outline
+        span.product-review-count.text-dark= product.reviews + " customer reviews"
+
+      +accordion-classic(['Description', 'Size & Fit', 'Delivery & Returns'])
+        div
+          | Fashion has always been so temporary and uncertain. You can’t keep up with it. This social phenomenon is very whimsical, thus we as the consumers always try to stay in touch with all the latest fashion tendencies.
+        div
+          | 17.25" bust#[<br>]
+          | 14" shoulder to shoulder#[<br>]
+          | 32.25" shoulder to hem#[<br>]
+          | Measurements taken from size small#[<br>]
+          | Model wears size small. Model is 5'9#[<br>]
+          | This dress fits true to size
+        div
+          | We deliver our goods worldwide. No matter where you live, your order will be shipped in time and delivered right to your door or to any other location you have stated. The packages are handled with utmost care, so the ordered products will be handed to you safe and sound, just like you expect them to be.
+
+      .product-radio-wrap.product-radio-color.offset-top-34
+        h5.product-radio-title(style="min-width: 130px;") Colors
+        .form-group.offset-top-10.offset-xs-top-0
+          label.radio-inline
+            input(name="input-group-radio-color", value="color-1", type="radio")
+            span.product-radio(style="background-color: #1d2f61")
+          label.radio-inline
+            input(name="input-group-radio-color", value="color-2", type="radio")
+            span.product-radio(style="background-color: #9291a0")
+          label.radio-inline
+            input(name="input-group-radio-color", value="color-3", type="radio")
+            span.product-radio(style="background-color: #f3f1f2")
+
+      .product-radio-wrap.offset-top-24
+        h5.product-radio-title(style="min-width: 130px;") Select Size
+        .form-group.offset-top-10.offset-xs-top-0
+          label.radio-inline
+            input(name="input-group-radio-size", value="size-1", type="radio")
+            span.small.product-radio XS
+          label.radio-inline
+            input(name="input-group-radio-size", value="size-2", type="radio")
+            span.small.product-radio S
+          label.radio-inline
+            input(name="input-group-radio-size", value="size-3", type="radio")
+            span.small.product-radio M
+          label.radio-inline
+            input(name="input-group-radio-size", value="size-4", type="radio")
+            span.small.product-radio L
+
+      // Product price
+      .product-price.text-bold.h1.offset-top-34
+        - if (typeof(product.price) == 'string'){
+        span= '$' + product.price
+        -}else{
+        span.product-price-new= "$" + product.price[1]
+        span.product-price-old.text-dark.small= '$' + product.price[0]
+        -}
+
+      .offset-top-34
+
+        .form-group.product-number
+          label.text-dark Quantity:
+          input.form-control.input-sm.form-control-impressed(type="number" data-zeros="true" value="1" min="1" max="20")
+        // Product Add To cart
+        a(href= cfg.nav.shop.submenu.cart.href).btn.btn-sm.btn-primary.btn-icon.btn-icon-left.product-btn.offset-top-20.offset-xs-top-0
+          span.icon.mdi.mdi-cart-outline
+          | Add to Cart
+
+
+  .offset-top-66
+    +tabs-boxed-vertical(['Additional Information', 'Video Review', 'Customer Reviews', 'Comments'])
+      div
+        | Fashion has always been so temporary and uncertain. You can’t keep up with it. This social phenomenon is very whimsical, thus we as the consumers always try to stay in touch with all the latest fashion tendencies.
+      div
+        +media-elements({
+          "type": "video",
+          "href": "//www.youtube.com/embed/NN6zt1sF73w",
+          "ratio": "16by9"
+        })
+      div
+        h5.text-uppercase 4 Customer Reviews
+
+        // CUSTOMER REVIEWS
+        ul.list-unstyled.list-reviews.offset-sm-top-30
+          li
+            ul.list-inline.list-xs-inline
+              li
+                span.text-bold.text-uppercase.big John Doe
+              li.star-raiting
+                span.big
+                  span.big
+                    span.mdi.mdi-star.text-warning
+                    span.mdi.mdi-star.text-warning
+                    span.mdi.mdi-star.text-warning
+                    span.mdi.mdi.mdi-star-half.text-warning
+                    span.mdi.mdi.mdi-star-outline.text-warning
+            p.offset-top-10
+              | Eius munere cum no. Alia ridens corpora ea his. Sed etiam ignota eu. Vidisse legendos pro ad, numquam voluptatibus per ut, his quot prompta ad. Ius malis movet ea. Altera dissentiunt ut pro, mundi ignota ad sed.
+
+          li.offset-top-30
+            ul.list-inline.list-xs-inline
+              li
+                span.text-bold.text-uppercase.big Alex Ross
+              li.star-raiting
+                span.big
+                  span.big
+                    span.mdi.mdi-star.text-warning
+                    span.mdi.mdi-star.text-warning
+                    span.mdi.mdi-star.text-warning
+                    span.mdi.mdi-star.text-warning
+                    span.mdi.mdi-star.text-warning
+            p.offset-top-10
+              | Qui an veri illum incorrupte. Cu has assum laboramus gloriatur, mea ea meis ferri definitionem, quod percipit evertitur ad qui. Altera omittam moderatius id vis, at vix quod bonorum dolorum. Ei pro graecis reformidans, nisl percipitur ullamcorper vis eu.
+
+          li.offset-top-30
+            ul.list-inline.list-xs-inline
+              li
+                span.text-bold.text-uppercase.big Diana Roe
+              li.star-raiting
+                span.big
+                  span.big
+                    span.mdi.mdi-star.text-warning
+                    span.mdi.mdi-star.text-warning
+                    span.mdi.mdi-star.text-warning
+                    span.mdi.mdi.mdi-star-outline.text-warning
+                    span.mdi.mdi.mdi-star-outline.text-warning
+            p.offset-top-10
+              | Eius munere cum no. Alia ridens corpora ea his. Sed etiam ignota eu. Vidisse legendos pro ad, numquam voluptatibus per ut, his quot prompta ad. Ius malis movet ea. Altera dissentiunt ut pro, mundi ignota ad sed.
+
+          li.offset-top-30
+            ul.list-inline.list-xs-inline
+              li
+                span.text-bold.text-uppercase.big Sara Cole
+              li.star-raiting
+                span.big
+                  span.big
+                    span.mdi.mdi-star.text-warning
+                    span.mdi.mdi-star.text-warning
+                    span.mdi.mdi-star.text-warning
+                    span.mdi.mdi.mdi-star.text-warning
+                    span.mdi.mdi.mdi-star-half.text-warning
+            p.offset-top-10
+              | No sit case indoctum, ad dicta singulis deterruisset vel. Mea ne nusquam corpora percipit, at ponderum rationibus sea, ubique invenire adolescens pri cu. Est maiorum omittantur ei. Et pro nisl insolens tincidunt, nam equidem maiorum tincidunt eu, magna tibique id vim
+
+      div
+        h5.text-uppercase Comments
+
+        // CUSTOMER REVIEWS
+        ul.list-unstyled.list-reviews.offset-sm-top-30
+          li
+            p.text-bold.text-uppercase.big John Doe
+            p.offset-top-0
+              | Eius munere cum no. Alia ridens corpora ea his. Sed etiam ignota eu. Vidisse legendos pro ad, numquam voluptatibus per ut, his quot prompta ad. Ius malis movet ea. Altera dissentiunt ut pro, mundi ignota ad sed.
+
+          li.offset-top-30
+            p.text-bold.text-uppercase.big Alex Ross
+            p.offset-top-0
+              | Qui an veri illum incorrupte. Cu has assum laboramus gloriatur, mea ea meis ferri definitionem, quod percipit evertitur ad qui. Altera omittam moderatius id vis, at vix quod bonorum dolorum. Ei pro graecis reformidans, nisl percipitur ullamcorper vis eu.
+
+        h6.offset-top-41.text-uppercase Leave a comment
+        .form-group
+          label.form-label.form-label-outside(for="comment-message") Message:
+          textarea#comment-message.form-control(data-constraints="@Required" style="height: 170px")
+        .group-sm.text-left.offset-top-30
+          button(type="submit").btn.btn-sm.btn-primary comment
+
+
+.offset-top-66
+  h4.text-spacing-120.text-left.text-uppercase.text-bold Related Products
+  hr.bg-gray
+  .range
+
+    .cell-xs-6.cell-sm-4.cell-md-3.offset-top-41.offset-xs-top-0
+      +product-grid({
+        "title": "Eos ad diam",
+        "link": cfg.nav.shop.submenu.singleProduct.submenu.leftSidebar.href,
+        "brand": "Step Brand",
+        "price": "59.00",
+        "images": [
+          {
+            "src": "images/shop/product-01-270x360.png",
+            "alt": "Eos ad diam 1"
+          },
+          {
+            "src": "images/shop/product-01-270x360-2.png",
+            "alt": "Eos ad diam 2"
+          },
+          {
+            "src": "images/shop/product-01-270x360-3.png",
+            "alt": "Eos ad diam 3"
+          }
+        ],
+        "label": {
+          "adClass": "label-info",
+          "text": "New"
+        }
+      })
+    .cell-xs-6.cell-sm-4.cell-md-3.offset-top-41.offset-xs-top-0
+      +product-grid({
+        "title": "Ut vix agam",
+        "link": cfg.nav.shop.submenu.singleProduct.submenu.leftSidebar.href,
+        "brand": "Amo Brand",
+        "price": "48.00",
+        "images": [
+          {
+            "src": "images/shop/product-02-270x360.png",
+            "alt": "Ut vix agam 1"
+          },
+          {
+            "src": "images/shop/product-02-270x360-2.png",
+            "alt": "Ut vix agam 2"
+          }, {
+            "src": "images/shop/product-02-270x360-3.png",
+            "alt": "Ut vix agam 3"
+          }
+        ]
+      })
+    .cell-xs-6.cell-sm-4.cell-md-3.offset-top-41.offset-sm-top-0
+      +product-grid({
+        "title": "Ponderum perfecto",
+        "link": cfg.nav.shop.submenu.singleProduct.submenu.leftSidebar.href,
+        "brand": "Polo Brand",
+        "price": "14.00",
+        "images": [
+          {
+            "src": "images/shop/product-03-270x360.png",
+            "alt": "Ponderum perfecto 1"
+          },
+          {
+            "src": "images/shop/product-03-270x360-2.png",
+            "alt": "Ponderum perfecto 2"
+          },
+          {
+            "src": "images/shop/product-03-270x360-3.png",
+            "alt": "Ponderum perfecto 3"
+          }
+        ]
+      })
+    .cell-xs-6.cell-sm-4.cell-md-3.offset-top-41.offset-md-top-0
+      +product-grid({
+        "title": "Eu nec reque",
+        "link": cfg.nav.shop.submenu.singleProduct.submenu.leftSidebar.href,
+        "brand": "Amo Brand",
+        "price": "38.00",
+        "images": [
+          {
+            "src": "images/shop/product-04-270x360.png",
+            "alt": "Eu nec reque 1"
+          },
+          {
+            "src": "images/shop/product-04-270x360-2.png",
+            "alt": "Eu nec reque 2"
+          },
+          {
+            "src": "images/shop/product-04-270x360-3.png",
+            "alt": "Eu nec reque 3"
+          }
+        ]
+      })
+

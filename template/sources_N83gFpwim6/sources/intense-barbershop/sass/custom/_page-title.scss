@@ -1,0 +1,81 @@
+//
+// Page title
+// --------------------------------------------------
+.page-title {
+  text-align: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-color: $gray-base;
+  background-image: url('../images/bg-image-title.jpg');
+  color: $white;
+  @include display-flex;
+  @include flex-direction(column);
+  @include flex-wrap(nowrap);
+  @include align-items(center);
+  @include justify-content(center);
+  min-height: 20.83333333333333vw;
+
+  > * {
+    width: 100%;
+  }
+}
+
+.page-title-content {
+  padding: 35px 0;
+}
+
+@media (min-width: $screen-xl-min) {
+  .page-title {
+    min-height: 400px;
+  }
+}
+
+.ie-10,
+.ie-11 {
+  .page-title {
+    display: block;
+    vertical-align: middle;
+    white-space: nowrap;
+    > * {
+      display: inline-block;
+      width: 100%;
+      vertical-align: middle;
+      white-space: normal;
+    }
+    &:after {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      min-height: inherit;
+      width: 0;
+    }
+  }
+}
+
+.page-title-header {
+  @include header-base-styles;
+  @include header-h1;
+  color: $white;
+  text-align: center;
+}
+
+.page-title-header + * {
+  margin-top: 10px;
+}
+
+@media (min-width: $screen-sm-min) {
+  .page-title-content {
+    padding: 60px 0;
+  }
+
+  .page-title-header + * {
+    margin-top: 22px;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .page-title-content {
+    padding: 80px 0;
+  }
+}

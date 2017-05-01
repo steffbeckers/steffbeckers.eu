@@ -1,0 +1,35 @@
+extends  ../_skeleton
+
+//-Title
+block title
+  title Inspirational stories told by real people around the world.
+
+block search-meta
+  meta(name="keywords" content="Lifestyle, Beauty")
+  meta(name="date" content="Feb 17")
+
+//- Page
+block page
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-sidebar-fixed(
+    'rd-navbar-light rd-navbar-sidebar-fixed',
+    {
+      "data-lg-auto-height": "false",
+      "data-lg-stick-up": 'false',
+      "data-lg-hover-on": "false",
+      "data-body-class": "body-inset-left"
+    },
+    cfg.brand.logo,
+    cfg.nav.blogArchive.submenu.singlePost,
+    cfg.nav
+    )
+
+  // Page Content
+  main.page-content
+
+    include ../sections/_section-blog-archive-single
+
+  // Page Footers
+  include ../sections/_section-footer-variant-3

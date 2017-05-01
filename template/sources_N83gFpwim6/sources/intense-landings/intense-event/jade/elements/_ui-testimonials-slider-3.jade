@@ -1,0 +1,13 @@
+//- Testimonials Slider
+
+mixin testimonials-slider-3(testimonials)
+  // Testimonials Slider v.3
+  .owl-carousel.owl-carousel-classic.owl-carousel-class-light.owl-carousel-testimonials-3(data-items="1" data-nav="false" data-dots="true")
+    each testimonial in testimonials
+      div
+        blockquote.quote.quote-slider-3
+          p.quote-body= testimonial.q
+          img.quote-img.img-circle(width=testimonial.image.width, height=testimonial.image.height, src=testimonial.image.src, alt=testimonial.image.alt)
+          h6.quote-author
+            cite.text-normal= testimonial.title
+          p.quote-desc= testimonial.desc

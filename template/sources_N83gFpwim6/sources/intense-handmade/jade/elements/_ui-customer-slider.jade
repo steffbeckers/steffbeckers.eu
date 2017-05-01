@@ -1,0 +1,8 @@
+//- customer - Customer Slider object
+
+mixin customer-slider(customer)
+  // Customer Slider
+  .owl-carousel.owl-carousel-testimonials-2(data-mouse-drag="false" data-items="1" data-xs-items="2" data-sm-items="3" data-md-items="4" data-nav-custom=".owl-custom-navigation" data-dots="false" data-nav="false")
+    each index in customer
+      a(href=index.link.href)
+        img.img-semi-transparent(src=index.image.src width=index.image.width height=index.image.height alt=index.image.alt)

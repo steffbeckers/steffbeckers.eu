@@ -1,0 +1,6 @@
+//- map - {map} Object
+mixin map-embed(map)
+  // Embed Map
+  .embed-responsive(class="embed-responsive-" + map.ratio)
+    iframe.embed-responsive-item(src=map.href + "?wmode=transparent", style='border:0', allowfullscreen='')
+

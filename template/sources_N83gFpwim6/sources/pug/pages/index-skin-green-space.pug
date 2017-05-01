@@ -1,0 +1,756 @@
+- var fonts = "//fonts.googleapis.com/css?family=Crimson+Text:700italic,400,400italic,700%7CMontserrat:400,700"
+- var html_class = "wide wow-animation smoothscroll scrollTo"
+
+//- Includes
+include ../_config
+include ../_mixins
+include ../mixins/_gallery-photoswipe
+include ../elements/_ui-page-loader-variant-1
+include ../elements/_ui-rd-navbar-default-transparent
+include ../elements/_widget-form-contact
+include ../elements/_widget-post
+include ../elements/_widget-list-social
+include ../elements/_ui-rd-parallax
+include ../elements/_ui-box-icon-type-2
+include ../elements/_ui-media-elements
+include ../elements/_ui-counter-type-1
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-isotope
+include ../elements/_ui-testimonials-type-3
+include ../elements/_ui-partners-carousel
+
+doctype html
+html(lang="en" class=html_class)
+  head
+    title= cfg.nav.home.submenu.skins.submenu.greenSpace.title
+
+    meta(charset="utf-8")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+    block search-meta
+      meta(name="keywords" content="intense web design multipurpose template")
+      meta(name="date" content="Dec 26")
+
+    link(rel="icon" href="images/favicon.ico" type="image/x-icon")
+    // Stylesheets
+    link(rel="stylesheet" type="text/css" href=fonts)
+    link(rel="stylesheet" href="intense-financial-analytic/css/style.css")
+    = "\n\t\t"
+    <!--[if lt IE 10]>
+    div(style='background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;')
+      a(href="http://windows.microsoft.com/en-US/internet-explorer/")
+        img(src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.")
+    script(src="js/html5shiv.min.js")
+    = "\n\t\t"
+    <![endif]-->
+  body
+    // Page
+    div(class="page text-center")
+      +page-loader-1("<img class='img-responsive' style='margin-top: -20px;margin-left: -18px;' width='330' height='67' src='images/childs/green-space-logo-big-330x67.png' alt=''/>")
+      // Page Head
+      header.page-head.slider-menu-position
+        //- RD Navbar
+        +rd-navbar-default(
+        'rd-navbar-default rd-navbar-transparent',
+        {
+          "data-lg-auto-height": "true",
+          "data-md-layout": 'rd-navbar-fixed',
+          "data-lg-layout": 'rd-navbar-static',
+          "data-lg-stick-up": 'true'
+        },
+        "<img class='img-responsive' width='246' height='32' src='images/childs/green-space-logo-light-246x32.png' alt=''/>",
+        cfg.nav.home,
+        cfg.nav
+        )
+
+        // Welcome to Intense
+        section
+          .bg-gray-base.context-dark.rd-parallax(data-on="false" data-md-on="true")
+            .rd-parallax-layer(data-speed="0.45", data-type="media", data-url="images/backgrounds/background-42-1920x1024.jpg")
+            .rd-parallax-layer(data-speed="0.3", data-type='html' data-md-fade="true")
+              .shell
+                .range
+                  .range.range-xs-middle.range-xs-center.section-cover.section-98.section-sm-110.text-md-left.context-dark
+                    .cell-xs-12
+                      div
+                        h2.font-default.text-italic.text-regular Welcome to
+                      div.offset-top-4.offset-lg-top-0
+                        h1.text-capitalize
+                          span.big
+                            | Intense
+                      .range.offset-top-4.offset-lg-top-30
+                        .cell-lg-6
+                          h6.font-default.text-regular The smartest and most flexible bootstrap template by TemplateMonster you've ever seen. Create exactly what you need with our powerful bootstrap toolkit.
+                      .group.group-xl.offset-top-30
+                        a(href= cfg.buyLink).btn.btn-lg.btn-warning buy intense now
+                        a(href="#" data-waypoint-to="#welcome").btn.btn-lg.btn-default start a journey
+
+      // Page Contents
+      main.page-content
+        // Welcome
+        section.section-top-98.section-sm-top-110#welcome
+          .shell
+            h1 Intense is the most complex Bootstrap theme on Template Monster
+            hr.divider.divider-lg.bg-primary
+            .range.range-xs-center
+              .cell-sm-9.cell-lg-8
+                p Join the 205,000+ Satified Customers Today at TemplateMonster.com. Created by the industry leaders Intense is a comprehensive set of tools which are super easy to pick up and run. It gives you a huge leg up to create your own beautiful site. Powerful options & tools, unlimited designs, responsive framework and amazing support are the reasons for our customers to fall in love.
+
+          // Mock Up
+          .offset-top-50(style="overflow: hidden;")
+            .mock-up-wrapper.veil.reveal-sm-inline-block
+              .mock-up-desktop-wrapper.wow.fadeInUpBig(data-wow-duration="1s" data-wow-delay="0s")
+                img(src="images/moqups/moqup-home-desktop.png" width="615" height="508" alt="").mock-up-desktop.img-responsive
+              .mock-up-circle.veil.reveal-md-block.wow.zoomIn(data-wow-delay="1.6s")
+                img(src="images/moqups/moqup-home-ellipse.png" width="309" height="315" alt="")
+              .mock-up-mobile-wrapper.wow.fadeInUp(data-wow-delay="0.9s")
+                img(src="images/moqups/moqup-home-mobile.png" width="247" height="470" alt="").mock-up-mobile
+
+        // Take Full Control of Your Site
+        section.section-98.section-sm-110.bg-white-lilac
+          .shell
+            h1 Take Full Control of Your Site
+            hr.divider.divider-lg.bg-mantis
+            .range.range-xs-center
+              .cell-sm-9.cell-lg-8
+                p Check out an incredible set of features provided by Intense. We collected all common required features in one theme. That makes Intense one of the most awesome themes on the market. Intense allows you to take control of almost every element and section of the site.
+
+            .range.range-xs-center.offset-top-66
+              .cell-sm-8.cell-md-4
+                +box-icon-type-2('icon mdi mdi-cube-outline icon-mantis-filled icon-circle', 'Extended Toolkit', 'offset-top-20', 'Intense provides a poweful and flexible exntended toolkit in addition to basic Bootsrap. If you’ve used Bootstrap itself, you’ll find this all super familiar and easy-to-use.')
+              .cell-sm-8.cell-md-4.offset-top-66.offset-md-top-0
+                +box-icon-type-2('icon mdi mdi-image-filter-none icon-mantis-filled icon-circle', 'Parallax Effects', 'offset-top-20', 'Everyone loves parallax scrolling effects, they are simply beautiful. Intense has advanced parallax options & controls based on flexible and easy-to-use RD Parallax plugin."')
+              .cell-sm-8.cell-md-4.offset-top-66.offset-md-top-0
+                +box-icon-type-2('icon mdi mdi-share-variant icon-mantis-filled icon-circle', 'Social Integration', 'offset-top-20', 'Intense has full set of social icons and styling options which allow you to share any content the way you wish.')
+              .cell-sm-8.cell-md-4.offset-top-66
+                +box-icon-type-2('icon mdi mdi-spellcheck icon-mantis-filled icon-circle', 'Made For Speed', 'offset-top-20', 'We know how embarassing and time-consuming can be content loading, so we took care of pages optimization for your smooth expirience.')
+              .cell-sm-8.cell-md-4.offset-top-66
+                +box-icon-type-2('icon mdi mdi-magnify icon-mantis-filled icon-circle', 'SEO Optimized', 'offset-top-20', 'Intense was built with care allowing search engines to index the pages of your site correctly to achieve higher rankings in search results.')
+              .cell-sm-8.cell-md-4.offset-top-66
+                +box-icon-type-2('icon mdi mdi-brush icon-mantis-filled icon-circle', 'Advanced UI Kit', 'offset-top-20', 'Intense has dozens of new components and elements built on the same level of quality as Bootstrap elements and highlighted with several example pages.')
+
+            .range.range-xs-center.offset-top-66
+              .cell-lg-4
+                .inset-lg-left-50.inset-lg-right-50
+                  a(href=cfg.nav.features.submenu.uiKit.href).btn.btn-primary.btn-lg.reveal-lg-block explore more
+
+        // About
+        section.section-98.section-md-110
+          .shell
+            .range.text-lg-left
+              .cell-sm-preffix-2.cell-sm-8.cell-lg-preffix-0.cell-lg-6
+                .shadow-drop-xl
+                  +media-elements({
+                    "type": "rd-video-player",
+                    "ratio": "16by9",
+                    "href": "video/intense/intense",
+                    "title": "What can we say about Intense ?",
+                    "preview": "video/intense/intense-preview.jpg",
+                    "classes": "play-on-scroll",
+                    "muted": "true",
+                    "preload": "false"
+                  })
+              .cell-sm-preffix-2.cell-sm-8.cell-lg-preffix-0.cell-lg-6.offset-top-30.offset-lg-top-0
+                .inset-lg-left-50
+                  h1 About
+                  hr.divider.divider-lg.hr-lg-left-0.bg-mantis.offset-top-0
+                  p.offset-top-20.offset-lg-top-50 TemplateMonster is an A-size depot of website templates - more than 46,000 designs to choose from. Since coming up in May 2002, we've gone partners with Magento, Drupal, WordPress, PrestaShop, Joomla, WooCommerce, and many more. 1 million clients were served during this time. Web templates + installation + hosting + customization + Search Engine Optimization + copywriting — all these services you can always get at TemplateMonster.com. If you're thirsty for knowledge, TemplateMonster blog provides you with the most recent web design news, infographics, freebies, discounts & promos.
+
+        // Skills
+        section
+          +rd-parallax({
+            "backgroundSpeed": "0.35",
+            "attrType": "media",
+            "src": "images/backgrounds/background-45-1920-950.jpg",
+            "htmlSpeed": "0"
+          })
+            .shell.section-98
+              .range
+                .cell-sm-8.cell-sm-preffix-2.cell-md-12.cell-md-preffix-0
+                  .range
+                    .cell-sm-6.cell-md-3.cell-md-preffix-0
+                      +counter-type-1("Templates", "text-bold text-white", {
+                        "dataTo": "58249",
+                        "dataSpeed": "3000",
+                        "attr": "text-uppercase font-default text-white text-regular text-spacing-60 offset-top-20"
+                      }, "divider bg-warning", "h2")
+                    .cell-sm-6.cell-md-3.offset-top-66.offset-sm-top-0
+                      +counter-type-1("Happy Clients", "text-bold text-white", {
+                        "dataTo": "246",
+                        "dataSpeed": "2500",
+                        "preffix": "K",
+                        "attr": "text-uppercase font-default text-white text-regular text-spacing-60 offset-top-20"
+                      }, "divider bg-warning", "h2")
+                    .cell-sm-6.cell-md-3.offset-top-66.offset-md-top-0
+                      +counter-type-1("Hours of Coding", "text-bold text-white", {
+                        "dataTo": "1200",
+                        "dataSpeed": "1500",
+                        "attr": "text-uppercase font-default text-white text-regular text-spacing-60 offset-top-20"
+                      }, "divider bg-warning", "h2")
+                    .cell-sm-6.cell-md-3.offset-top-66.offset-md-top-0
+                      +counter-type-1("Lines of Code", "text-bold text-white", {
+                        "dataTo": "834",
+                        "dataSpeed": "1300",
+                        "preffix": "K",
+                        "attr": "text-uppercase font-default text-white text-regular text-spacing-60 offset-top-20"
+                      }, "divider bg-warning", "h2")
+
+        // Still Not Sure?
+        section.section-98.section-md-110
+          .shell-wide
+            h1 Still Not Sure?
+            div.offset-top-0
+              hr.divider.divider-lg.bg-mantis
+            p.offset-top-50.offset-lg-top-66 Check out other themes based on Intense
+            .offset-top-41
+              +isotope(['All', 'Infrastructure', 'Portfolio', 'Blog', 'Agency', 'Creative'],{
+                "group": "gallery",
+                "layout": "fitRows",
+                "alignClass": "isotope-filters-horizontal"
+              }, "isotope-1")
+                // Isotope
+                .row
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.restaurant.title,
+                        "description": cfg.themes.restaurant.desc,
+                        "thumb": cfg.themes.restaurant.image,
+                        "target": {"href": cfg.themes.restaurant.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Portfolio')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.photographer.title,
+                        "description": cfg.themes.photographer.desc,
+                        "thumb": cfg.themes.photographer.image,
+                        "target": {"href": cfg.themes.photographer.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Blog')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.personalBlog.title,
+                        "description": cfg.themes.personalBlog.desc,
+                        "thumb": cfg.themes.personalBlog.image,
+                        "target": {"href": cfg.themes.personalBlog.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.realEstate.title,
+                        "description": cfg.themes.realEstate.desc,
+                        "thumb": cfg.themes.realEstate.image,
+                        "target": {"href": cfg.themes.realEstate.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.handmade.title,
+                        "description": cfg.themes.handmade.desc,
+                        "thumb": cfg.themes.handmade.image,
+                        "target": {"href": cfg.themes.handmade.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.dentalClinic.title,
+                        "description": cfg.themes.dentalClinic.desc,
+                        "thumb": cfg.themes.dentalClinic.image,
+                        "target": {"href": cfg.themes.dentalClinic.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.financialAdvisor.title,
+                        "description": cfg.themes.financialAdvisor.desc,
+                        "thumb": cfg.themes.financialAdvisor.image,
+                        "target": {"href": cfg.themes.financialAdvisor.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.gym.title,
+                        "description": cfg.themes.gym.desc,
+                        "thumb": cfg.themes.gym.image,
+                        "target": {"href": cfg.themes.gym.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.childCare.title,
+                        "description": cfg.themes.childCare.desc,
+                        "thumb": cfg.themes.childCare.image,
+                        "target": {"href": cfg.themes.childCare.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.jobBoard.title,
+                        "description": cfg.themes.jobBoard.desc,
+                        "thumb": cfg.themes.jobBoard.image,
+                        "target": {"href": cfg.themes.jobBoard.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.product.title,
+                        "description": cfg.themes.product.desc,
+                        "thumb": cfg.themes.product.image,
+                        "target": {"href": cfg.themes.product.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.app.title,
+                        "description": cfg.themes.app.desc,
+                        "thumb": cfg.themes.app.image,
+                        "target": {"href": cfg.themes.app.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.startup.title,
+                        "description": cfg.themes.startup.desc,
+                        "thumb": cfg.themes.startup.image,
+                        "target": {"href": cfg.themes.startup.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.book.title,
+                        "description": cfg.themes.book.desc,
+                        "thumb": cfg.themes.book.image,
+                        "target": {"href": cfg.themes.book.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.travel.title,
+                        "description": cfg.themes.travel.desc,
+                        "thumb": cfg.themes.travel.image,
+                        "target": {"href": cfg.themes.travel.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                      .shadow-variant-2
+                        +thumbnail-classic({
+                          "type": "thumbnail",
+                          "title": cfg.themes.event.title,
+                          "description": cfg.themes.event.desc,
+                          "thumb": cfg.themes.event.image,
+                          "target": {"href": cfg.themes.event.href},
+                          "targetBlank": true
+                        })
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.taxi.title,
+                        "description": cfg.themes.taxi.desc,
+                        "thumb": cfg.themes.taxi.image,
+                        "target": {"href": cfg.themes.taxi.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.barbershop.title,
+                        "description": cfg.themes.barbershop.desc,
+                        "thumb": cfg.themes.barbershop.image,
+                        "target": {"href": cfg.themes.barbershop.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.petshop.title,
+                        "description": cfg.themes.petshop.desc,
+                        "thumb": cfg.themes.petshop.image,
+                        "target": {"href": cfg.themes.petshop.href},
+                        "targetBlank": true
+                      })
+
+        // Meet Our Team
+        section.section-66.section-md-top-110.section-md-bottom-0.bg-white-lilac.section-team-custom-effects.section-custom-effects
+          .shell.section-relative
+            h1 Meet Our Team
+            div.offset-top-0
+              hr.divider.divider-lg.bg-mantis
+            .range.range-xs-center
+              .cell-lg-8
+                p We are a team of developers, designers and leads who love what they do.
+
+            // Simple quote Slider
+            .owl-carousel.owl-carousel-classic.owl-carousel-class-light.offset-top-41.offset-md-top-0(data-items="1" data-nav="false" data-dots="false" data-nav-custom=".owl-custom-navigation" )
+              div
+                .range.range-md-reverse.range-xs-center.range-xs-middle.text-md-left
+                  .cell-sm-10.cell-md-6
+                    div
+                      h2.text-primary.font-default John Doe
+                    div.offset-top-4
+                      h6.font-default.text-regular Founder
+                    .offset-top-30
+                      p Intense is an International Financial Planning company with offices in multiple jurisdictions over the world. Working with Intense gives me the ability to advise international expatriates living in the middle east from where I live in USA.
+                    blockquote.quote.quote-variant-2.offset-top-20
+                      .h3.text-italic.font-default
+                        .inset-md-left-30.inset-lg-left-0
+                          q I am John Doe, a senior advisor for an independently owned financial planning company called Intense.
+
+                  .cell-md-6
+                    img.img-responsive.veil.reveal-md-inline-block(src="images/users/user-john-doe-598x624.png", width="598", height="624", alt="")
+
+              div
+                .range.range-md-reverse.range-xs-center.range-xs-middle.text-md-left
+                  .cell-md-6
+                    div
+                      h2.text-primary.font-default Paul Howell
+                    div.offset-top-4
+                      h6.font-default.text-regular Manager
+                    .offset-top-30
+                      p Intense is an International Financial Planning company with offices in multiple jurisdictions over the world. Working with Intense gives me the ability to advise international expatriates living in the middle east from where I live in USA.
+                    blockquote.quote.quote-variant-2.offset-top-20
+                      .h3.text-italic.font-default
+                        .inset-md-left-30.inset-lg-left-0
+                          q I am Paul Howell, a senior advisor for an independently owned financial planning company called Intense.
+
+                  .cell-md-6
+                    img.img-responsive.veil.reveal-md-inline-block(src="images/users/user-paul-howell-598x624.png", width="598", height="624", alt="")
+
+              div
+                .range.range-md-reverse.range-xs-center.range-xs-middle.text-md-left
+                  .cell-md-6
+                    div
+                      h2.text-primary.font-default Gregory Tucker
+                    div.offset-top-4
+                      h6.font-default.text-regular Developer
+                    .offset-top-30
+                      p Intense is an International Financial Planning company with offices in multiple jurisdictions over the world. Working with Intense gives me the ability to advise international expatriates living in the middle east from where I live in USA.
+                    blockquote.quote.quote-variant-2.offset-top-20
+                      .h3.text-italic.font-default
+                        .inset-md-left-30.inset-lg-left-0
+                          q I am Gregory Tucker, a senior advisor for an independently owned financial planning company called Intense.
+
+                  .cell-md-6
+                    img.img-responsive.veil.reveal-md-inline-block(src="images/users/user-gregory-tucker-598x624.png", width="598", height="624", alt="")
+
+            .owl-custom-navigation.owl-customer-navigation.text-md-left
+              .owl-nav
+                .owl-prev.mdi.mdi-chevron-left(data-owl-prev)
+                .owl-next.mdi.mdi-chevron-right(data-owl-next)
+
+        // Testimonials
+        section.section-98.section-sm-110
+          .shell
+            h1 Testimonials
+            hr.divider.divider-lg.bg-mantis
+            .range.range-xs-center.offset-top-41.offset-md-top-66
+              .cell-sm-8.cell-md-4
+                +testimonials-type-3(
+                {
+                  "width": 80,
+                  "height": 80,
+                  "src": "images/users/user-steven-carpenter-80x80.jpg",
+                  "alt": ""
+                },
+                "Johnson.M.J.",
+                'Director of "Financial Times"',
+                "It is not every day that you come across a passionate and trustworthy financial advisor. John Doe is true professional who does his work really well. Thanks John!",
+                {
+                  "title": "h6 font-default text-primary",
+                  "cite": "text-normal",
+                  "desc": "font-default text-italic"
+                }
+                )
+              .cell-sm-8.cell-md-4.offset-top-41.offset-md-top-0
+                +testimonials-type-3(
+                {
+                  "width": 80,
+                  "height": 80,
+                  "src": "images/users/user-carol-harper-80x80.jpg",
+                  "alt": ""
+                },
+                "Carol Harper",
+                "Director at Risktec Solutions Ltd",
+                "In just 2 very short meetings with John he managed to find the solution personally catered to my situation and expectations. Punctual, well informed and very reliable.",
+                {
+                  "title": "h6 font-default text-primary",
+                  "cite": "text-normal",
+                  "desc": "font-default text-italic"
+                }
+                )
+              .cell-sm-8.cell-md-4.offset-top-41.offset-md-top-0
+                +testimonials-type-3(
+                {
+                  "width": 80,
+                  "height": 80,
+                  "src": "images/users/user-andrew-wilson-80x80.jpg",
+                  "alt": ""
+                },
+                "Snow.J.R.",
+                "Managing Director of BPW Global",
+                "A very professional financial advisor, who is true to his word. John has demonstrated a high amount of integrity in the time I have known him, and he is fast to respond to my concerns.",
+                {
+                  "title": "h6 font-default text-primary",
+                  "cite": "text-normal",
+                  "desc": "font-default text-italic"
+                }
+                )
+
+        // Our Partners
+        section.context-dark.bg-gray-base
+          +rd-parallax({
+            "backgroundSpeed": "0.35",
+            "attrType": "media",
+            "src": "images/backgrounds/background-46-1920-950.jpg",
+            "htmlSpeed": "0"
+          })
+            .shell.section-98.section-sm-110
+              div
+                h2
+                  span.big Our Partners
+              hr.divider.divider-lg.bg-warning
+              .range.range-xs-center.offset-top-24
+                .cell-xs-10.cell-lg-8
+                  p.
+                    Join TemplateMonster Affiliate Program. Earn up to 50% commissions with TemplateMonster affiliate program. Anyone Can Become an Affiliate. We want you to earn more!
+                .cell-xs-12
+                  .offset-top-50.offset-lg-top-66
+                    +partners-carousel([
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-01-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-02-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-03-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-04-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-04-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-03-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-02-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "link": {"href": cfg.nav.pages.submenu.clients.href},
+                        "image": {
+                          "src": "images/clients/partner-01-181x101.png",
+                          "width": 181,
+                          "height": 101,
+                          "alt": ""
+                        }
+                      }
+                    ])
+
+      // Page Footer
+      footer.section-relative.section-top-66.section-bottom-34.page-footer.bg-gray-base.context-dark
+        .shell
+          .range.range-sm-center.text-lg-left
+            .cell-sm-8.cell-md-12
+              .range.range-xs-center
+                .cell-xs-10.cell-sm-8.text-xs-left.cell-md-5.cell-lg-4.cell-lg-push-3
+                  h6.text-uppercase.text-spacing-60.text-center.text-md-left Contact us
+
+                  +widget-form-contact()
+
+                .cell-xs-10.cell-sm-8.offset-top-66.cell-md-5.cell-md-preffix-1.offset-md-top-0.text-md-left.cell-lg-4.cell-lg-push-2.cell-lg-preffix-0
+                  h6.text-uppercase.text-spacing-60.text-center.text-md-left Latest from the blog
+
+                  .offset-top-30
+                    +widget-post(
+                    cfg.nav.blog.submenu.classic.submenu.singlePost.href,
+                    "05/14/2015",
+                    "Let’s Change the world",
+                    {
+                      "src": "images/blog/post-thumb-04-60x60.jpg",
+                      "w": "60",
+                      "h": "60",
+                      "alt": ""
+                    },
+                    "",
+                    "text-primary"
+                    )
+                    +widget-post(
+                    cfg.nav.blog.submenu.classic.submenu.singlePost.href,
+                    "05/14/2015",
+                    "The meaning of Web Design",
+                    {
+                      "src": "images/blog/post-thumb-05-60x60.jpg",
+                      "w": "60",
+                      "h": "60",
+                      "alt": ""
+                    },
+                    "",
+                    "text-primary"
+                    )
+                    +widget-post(
+                    cfg.nav.blog.submenu.classic.submenu.singlePost.href,
+                    "05/14/2015",
+                    "Get Started with TemplateMonster",
+                    {
+                      "src": "images/blog/post-thumb-06-60x60.jpg",
+                      "w": "60",
+                      "h": "60",
+                      "alt": ""
+                    },
+                    "",
+                    "text-primary"
+                    )
+
+
+                .cell-xs-12.offset-top-66.cell-lg-4.cell-lg-push-1.offset-lg-top-0
+                  // Footer brand
+                  .footer-brand
+                    a(href=cfg.nav.home.href)
+                      img.img-responsive.reveal-inline-block(src='images/childs/green-space-logo-138x31.png' width='138' height='31' alt='')
+                  p.text-darker.text-italic.offset-top-4 Financial Advisor
+
+                  .range.range-xs-center.offset-top-30.text-xs-left
+                    .cell-xs-4.cell-xs-preffix-1.cell-md-3.cell-md-preffix-3.cell-lg-6.cell-lg-preffix-0
+                      address.contact-info
+                        dl
+                          dt.text-white.text-bold Address:
+                          dd.text-dark.reveal-lg-block
+                            | 28 Jackson Blvd Ste
+                            br
+                            | 1020 Chicago
+                            br
+                            | IL 60604-2340.
+                    .cell-xs-4.cell-xs-preffix-2.cell-md-4.cell-md-preffix-0.cell-lg-6.cell-lg-preffix-0.offset-top-10.offset-xs-top-0
+                      address.contact-info.p
+                        dl
+                          dt.text-white.text-bold Phone
+                          dd.text-dark
+                            a(href="callto:#") +1 800 559 6580
+                          dt.text-white.text-bold.offset-top-10 E-mail:
+                          dd.text-dark
+                            a(href="mailto:#") mail@demolink.org
+
+                  .offset-top-30
+                    +widget-list-social([
+                      {
+                        "icon": "fa fa-facebook",
+                        "href": "#"
+                      },
+                      {
+                        "icon": "fa fa-twitter",
+                        "href": "#"
+                      },
+                      {
+                        "icon": "fa fa-google-plus",
+                        "href": "#"
+                      },
+                      {
+                        "icon": "fa fa-linkedin",
+                        "href": "#"
+                      }
+                    ])
+
+        .shell.offset-top-50
+          p.small.text-darker
+            | #{cfg.brand.name} &copy; #[span(id="copyright-year")] . #[a(href="privacy.html") Privacy Policy]
+            // {%FOOTER_LINK}
+
+    // Global Mailform Output
+    #form-output-global.snackbars
+    +gallery-photoswipe()
+    // Java script
+    script(src="js/core.min.js")
+    script(src="js/script.js")

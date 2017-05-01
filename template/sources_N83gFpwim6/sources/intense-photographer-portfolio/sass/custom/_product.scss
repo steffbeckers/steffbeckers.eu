@@ -1,0 +1,411 @@
+//
+// Product
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.product{
+  position: relative;
+
+  &,&:before,&-thumbnails, &-image-area {
+    transition: .3s all ease;
+  }
+
+  .label-lg-custom{
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  &-image{
+    position: relative;
+    background: $gray-lighter;
+    img{
+      display: inline-block;
+    }
+  }
+
+  &-thumbnails{
+    list-style-type: none;
+    padding-left: 0;
+    li{
+      background: $gray;
+      cursor: pointer;
+      box-shadow: $shadow-area-xs;
+      overflow: hidden;
+      &.active{
+        background: $white;
+      }
+    }
+  }
+
+  &-label{
+    position: absolute;
+    left: 10px;
+    top: 11px;
+  }
+
+  &-title{
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  &-brand{
+    margin: 0;
+    font-style: italic;
+  }
+
+  &-rating{
+    color: $brand-warning;
+    font-size: 18px;
+  }
+
+  &-review-count{
+    margin-left: 16px;
+    font-size: 15px;
+  }
+
+  &-radio-wrap{
+
+    .radio-custom-dummy{
+      display: none;
+    }
+
+    .radio-custom:checked ~ .product-radio{
+      @include transform(scale(0.9));
+      background: $gray-darker;
+      color: $white;
+    }
+
+    .radio-inline{
+      padding-left: 0;
+    }
+
+    @media (min-width: $screen-xs) {
+      > *{
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+
+  }
+
+  &-radio-title{
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 10px;
+    + .product-radio{
+      display: inline-block;
+    }
+  }
+
+  &-radio{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    display: block;
+    background: $gray-lighter;
+    text-align: center;
+    font-weight: 700;
+    transition: .3s all ease;
+    position: relative;
+    vertical-align: middle;
+    &:hover{
+      background: $gray-darker;
+      color: $white;
+    }
+  }
+
+  &-number{
+    white-space: nowrap;
+    label{
+      margin-bottom: 0;
+    }
+    >*{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .stepper{
+      margin-left: 10px;
+    }
+  }
+
+  &-price-old{
+    text-decoration: line-through;
+    padding: 0 10px;
+  }
+}
+
+// Product List\Grid Styles
+// --------------------------------------------------
+.product-list, .product-grid{
+
+  text-align: center;
+  background: $white;
+  z-index: 0;
+  padding-top: 15px;
+
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: 1px solid transparent;
+    border-radius: $border-radius-small;
+    background: $white;
+    z-index: -1;
+  }
+
+  .product-thumbnails{
+    position: absolute;
+    right: 11px;
+    top: 11px;
+    li{
+      width: 40px;
+      height: 40px;
+      border-radius: $border-radius-small;
+      cursor: pointer;
+      overflow: hidden;
+      img{
+        max-width: 150%;
+        margin-left: -10px;
+      }
+      +li{
+        margin-top: 5px;
+      }
+    }
+  }
+
+
+  @media (min-width: $screen-lg){
+    .product-thumbnails{
+      li{
+        width: 60px;
+        height: 60px;
+        img{
+          margin-left: -15px;
+        }
+      }
+    }
+
+    .product-thumbnails{
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:hover{
+
+      &:before{
+        border-color: $gray;
+      }
+
+      .product-thumbnails{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+}
+
+// Product Grid Styles
+// --------------------------------------------------
+
+.product-grid{
+  @media (min-width: $screen-lg){
+    .product-block-hover{
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:hover{
+      padding-bottom: 65px;
+      margin-bottom: -65px;
+      z-index: 4;
+
+      .product-block-hover{
+        transition: .3s all ease .2s;
+
+        opacity: 1;
+        visibility: visible;
+      }
+
+    }
+  }
+
+  .product-price{
+    font-size: 17px;
+  }
+
+  .product-price-old{
+    color: $gray-dark;
+  }
+
+  .product-price-new{
+    margin-left: 13px;
+  }
+}
+
+// Product List Styles
+// --------------------------------------------------
+.product-list{
+
+  .product-price-old{
+    margin-left: 10px;
+  }
+
+  .product-image{
+    min-width: 35%;
+  }
+
+  @media (min-width: $screen-xs) {
+    .product-btn, .product-number{
+      display: inline-block;
+    }
+    .product-btn{
+      margin-top: 0;
+      margin-left: 20px;
+    }
+  }
+}
+
+
+// Product List Wide
+// --------------------------------------------------
+
+.product-list-wide{
+  .product-list-right{
+    padding-top: 0;
+  }
+  .product-price{
+    margin-top: 0;
+  }
+
+  .product-image{
+    min-width: 30%;
+  }
+
+  .product-image + .unit-body{
+    width: 100%;
+  }
+
+  @media (min-width: $screen-sm) {
+    .product-image + .unit-body{
+      width: 70%;
+    }
+  }
+  @media (min-width: $screen-md) {
+    .product-image{
+      min-width: 23%;
+    }
+    .product-image + .unit-body{
+      width: 77%;
+    }
+  }
+
+
+  @media (max-width: $screen-lg) {
+    .product-desc{
+      margin-bottom: 0;
+    }
+  }
+
+
+  @media (min-width: $screen-lg){
+
+    .product-list-right{
+      min-width: 31%;
+      border-left: 1px solid $gray;
+      padding: 13px 30px;
+      margin-left: 15px;
+    }
+    .h5{
+      font-size: 30px;
+    }
+
+    .product-btn{
+      @include button-size($padding-base-vertical, $padding-base-horizontal, $btn-font-size, $btn-lh-size, $border-radius-small);
+      margin-left: 0;
+      .icon{
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+
+// Single Product
+// --------------------------------------------------
+
+.product-single {
+
+  .product-thumbnails{
+    text-align: center;
+    position: absolute;
+    bottom: 13px;
+    left: 0;
+    right: 0;
+    li{
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      will-change: transform;
+      border-radius: $border-radius-base;
+      &,img{
+        transition: .3s all ease;
+      }
+      img{
+        opacity: .6;
+        will-change: opacity;
+      }
+      &.active{
+        img{
+          opacity: 1;
+        }
+        @include transform(scale(1.1));
+      }
+      +li{
+        margin-left: 12px;
+      }
+      @media (min-width: $screen-sm) {
+        width: 84px;
+        height: 84px;
+      }
+    }
+  }
+
+  @media (min-width: $screen-xs) {
+    .product-btn, .product-number {
+      display: inline-block;
+    }
+    .product-btn {
+      margin-left: 20px;
+    }
+  }
+}
+
+
+
+.zoomWindow{
+  background: $gray-lighter;
+}
+
+
+
+.animateImageIn{
+  opacity: 1;
+  visibility: visible;
+}
+
+.animateImageOut{
+  opacity: 0;
+  visibility: hidden;
+}

@@ -1,0 +1,158 @@
+//
+// Custom Countdown
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.countdown-custom {
+  .countdown {
+    &:before { 
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    &-section {
+      display: inline-block;
+      width: $countdown-custom-section-width;
+      height: $countdown-custom-section-height;
+      padding-top: $countdown-custom-section-inset-top;
+      text-align: center;
+      border-radius: $countdown-custom-section-border-radius;
+
+      &:nth-child(5) {
+        display: none;
+      }
+
+      @media (min-width: $screen-lg-min) {
+        &:nth-child(5) {
+          display: inline-block;
+        }
+      }
+    }
+    &-row {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .countdown-section + .countdown-section {
+      margin-left: $countdown-custom-offset-left;
+    }
+    &-amount {
+      display: block;
+      font-weight: $countdown-custom-amount-weight;
+      font-size: $countdown-custom-amount-size;
+      line-height: $countdown-custom-amount-line-height;
+      text-transform: uppercase;
+      color: $gray-darker;
+    }
+    &-period {
+      display: block;
+      font-size: $countdown-custom-period-size;
+      line-height: $countdown-custom-period-line-height;
+      color: $countdown-custom-period-color;
+    }
+    @media (min-width: $screen-xs-min) {
+      &-section {
+        width: $countdown-custom-xs-section-width;
+        height: $countdown-custom-xs-section-height;
+        padding-top: $countdown-custom-xs-section-inset-top;
+        border-width: $countdown-custom-xs-section-border-width;
+      }
+      &-amount {
+        line-height: $countdown-custom-amount-xs-line-height;
+      }
+      .countdown-section + .countdown-section {
+        margin-left: $countdown-custom-xs-offset-left;
+      }
+    }
+    @media (min-width: $screen-sm-min) {
+      &-section {
+        width: $countdown-custom-sm-section-width;
+        height: $countdown-custom-sm-section-height;
+        padding-top: $countdown-custom-sm-section-inset-top;
+      }
+      .countdown-section + .countdown-section {
+        margin-left: $countdown-custom-sm-offset-left;
+      }
+      &-amount {
+        font-size: $countdown-custom-sm-amount-size;
+      }
+      &-period {
+        font-size: $countdown-custom-sm-period-size;
+      }
+    }
+    @media (min-width: $screen-md-min) {
+      .countdown-section + .countdown-section {
+        margin-left: $countdown-custom-md-offset-left;
+      }
+    }
+  }
+
+  // Countdown Modern
+  &.countdown-modern {
+    .countdown-section {
+      position: relative;
+      z-index: 1;
+
+      .countdown-period{
+        display: none;
+      }
+
+      .countdown-letter {
+        position: $countdown-modern-position;
+        top: $countdown-modern-position-top;
+        right: $countdown-modern-position-left;
+        left: $countdown-modern-position-right;
+        z-index: $countdown-modern-z-index;
+        text-align: center;
+        font-size: $countdown-modern-size;
+        color: $countdown-modern-color;
+        text-transform: uppercase;
+
+        @media (min-width: $screen-sm-min) {
+          font-size: $countdown-modern-sm-size;
+          top: $countdown-modern-sm-position-top;
+        }
+      }
+    }
+  }
+
+  // Countdown Ellipse
+  @media (min-width: $screen-xs-min) {
+    &.countdown-ellipse .countdown-section {
+      border: $countdown-ellipse-xs-border;
+    }
+  }
+}
+
+
+// Countdown Inline
+// --------------------------------------------------
+
+.countdown-inline {
+  font-size: $countdown-inline-size;
+
+  .countdown-section {
+    .countdown-amount, .countdown-period {
+      margin-right: $countdown-inline-offset-right;
+    }
+    .countdown-amount {
+      font-weight: $countdown-inline-amount-weight;
+      margin-left: $countdown-inline-amount-offset-left;
+    }
+  }
+
+  @media (min-width: $screen-xs-min) {
+    font-size: $countdown-inline-xs-size;
+
+    .countdown-amount, .countdown-period {
+      margin-right: $countdown-inline-offset-xs-right;
+    }
+    .countdown-amount {
+      margin-left: $countdown-inline-amount-xs-offset-left;
+    }
+  }
+}
+

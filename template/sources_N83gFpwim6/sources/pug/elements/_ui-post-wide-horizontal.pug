@@ -1,0 +1,85 @@
+//- Post Wide
+//- url - expanded post link
+//- date - date of publishment
+//- title - post title
+//- author - authors name
+//- tags - array of {link}
+//- commetns - count of post comments
+//- shares - count of post shares
+//- media - {media} object
+
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-carousel-gallery-default
+include ../elements/_ui-video-embed
+
+mixin post-wide-horizontal(url, date, title, author, tags, comments, shares, media)
+  // Post Wide
+  article.post.post-wide.post-wide-horizontal
+    .range.range-xl-center
+      // Post Media
+      .cell-xl-5
+        header.post-media
+          case media.type
+            when "gallery"
+              .context-dark
+                //- &#34; is a " character
+                +carousel-gallery-default(media.images, {
+                  "data-items" : "1",
+                  "data-nav" : "true",
+                  "data-nav-class" : '[&#34;owl-prev mdi mdi-arrow-left&#34;, &#34;owl-next mdi mdi-arrow-right&#34;]',
+                  "data-photo-swipe" : "gallery"
+                })
+              = ""
+            when "video"
+              +video-embed(media)
+            when "thumbnail"
+              //- TODO: Remove this wrap on photoswipe init fix
+              div(data-photo-swipe="gallery")
+                +thumbnail-classic(media)
+            default
+              = ""
+
+      // Post Content
+      .cell-xl-5.offset-top-0
+        section.post-content.text-left
+          // Post Title
+          .post-title
+            h3
+              a(href=url)= title
+
+          // Post Meta
+          .post-meta.text-dark.small
+            p
+              | Post by: &nbsp;#{author} on&nbsp;
+              time(datetime="2016-01-01")= date
+              if tags
+                | &nbsp;in&nbsp;
+                span.reveal-block.reveal-xs-inline
+                each tag, i in tags
+                  a(href= tag.href)= tag.title
+                  - if (i !== (tags.length - 1))
+                  = ", "
+
+          // Post Body
+          .post-body.offset-top-20
+            block
+
+          // Posts controls
+          .post-controls.text-right.offset-top-30
+            ul.list-inline.list-inline-sm
+              li
+                .h6
+                  a(href= url + "#comments")
+                    span.text-middle.icon.icon-xxs.mdi.mdi-comment-text-outline
+                    span.text-middle.text-bold= comments
+
+              li
+                .h6
+                  a(href= url + "#shares")
+                    span.text-middle.icon.icon-xxs.mdi.mdi-share-variant
+                    span.text-middle.text-bold= shares
+
+              li
+                a(href= url).btn-more
+                  span.text-middle.text-bold.text-uppercase.inset-right-8 read more
+                  span.text-middle.icon.icon-xxs.mdi.mdi-arrow-right

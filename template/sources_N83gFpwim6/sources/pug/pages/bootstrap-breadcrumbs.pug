@@ -1,0 +1,69 @@
+extends  ../_skeleton
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-breadcrumb-default
+//-Title
+block title
+  title= cfg.nav.components.submenu.bootstrapcomponents.submenu.breadcrumbs.title
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.bootstrapcomponents.submenu.breadcrumbs.title,
+  "icon-lg " + cfg.nav.components.submenu.bootstrapcomponents.submenu.breadcrumbs.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.bootstrapcomponents.submenu.breadcrumbs.title,
+      "href": cfg.nav.components.submenu.bootstrapcomponents.submenu.breadcrumbs.href
+    }
+  })
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    .shell
+      h1 Breadcrumbs
+      p Indicate the current page's location within a navigational hierarchy.
+      hr.divider.bg-mantis
+      h3.offset-top-66 Default Example
+      p Separators are automatically added in CSS through #[code :before] and #[code content].
+      .offset-top-41
+        +breadcrumb-default({
+          0: {
+            "type": "link",
+            "title": "Home",
+            "href": "./"
+          },
+          1: {
+            "type": "link",
+            "title": "Library",
+            "href": "#"
+          },
+          2: {
+            "type": "link",
+            "title": "Data",
+            "href": "#"
+          }
+        })
+  // Page Footer
+  include ../sections/_section-footer-default

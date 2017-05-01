@@ -1,0 +1,84 @@
+//
+// RD Facebook
+// --------------------------------------------------
+
+// General Styles
+// --------------------------------------------------
+
+.post-facebook {
+  background: $white;
+  padding: 20px;
+  position: relative;
+  box-shadow: $shadow-area-md;
+  .post-meta {
+    @include clearfix;
+
+    time {
+      margin: 5px 0 8px 0;
+      font-size: 15px;
+      color: $gray-dark;
+    }
+    &_profile {
+
+      &-img {
+        display: inline-block;
+        border-radius: 50%;
+      }
+
+      &-name {
+        display: inline-block;
+        margin: 0;
+      }
+    }
+  }
+
+  .post-message{
+    text-align: left;
+    overflow: hidden;
+    > a{
+      color: $brand-picton-blue;
+    }
+  }
+
+  .post-attachment {
+    margin: 25px 0;
+    position: relative;
+
+    &-wrap{
+      margin-top: 15px;
+      > p{
+        margin-top: 5px;
+        color: $gray;
+      }
+    }
+  }
+
+  .icon-xxs {
+    font-size: 20px;
+  }
+  .post-comments{
+
+    h6{
+      margin-bottom: 0;
+    }
+
+    .post-comment {
+      padding: 15px 0;
+
+      .comment-message{
+        margin-top: 10px;
+      }
+    }
+  }
+
+
+  @media (min-width: $screen-lg-min) {
+    padding: 24px 30px 30px 30px;
+
+    .post-attachment {
+      padding-left: 20px;
+      border-left: 1px solid $gray;
+    }
+  }
+}
+

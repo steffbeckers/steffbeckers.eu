@@ -1,0 +1,174 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-rd-parallax
+
+//-Title
+block title
+  title= cfg.nav.services.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logoInverse,
+    cfg.nav.services,
+    cfg.nav
+    )
+
+  // Page Contents
+  main.page-content
+    // Breadcrumbs
+    section.context-dark
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/background-03-1920x640.jpg",
+        "htmlSpeed": "0"
+      })
+        .bg-overlay-info
+          .shell.section-34.section-sm-85.text-md-left
+            div.veil.reveal-sm-block.reveal-md-inline-block
+              h1 Services
+            div.pull-md-right.offset-sm-top-10.offset-md-top-20
+              ul.p.list-inline.list-inline-dashed
+                li
+                  a(href= cfg.nav.home.href) Home
+                li Services
+
+    // Our Services
+    section.section-98.section-sm-top-110.section-sm-bottom-124
+      .shell.shell-wide
+        h1 Our Services
+        hr.divider.bg-mantis
+        p.offset-top-50 We’re pleased to offer a wide range of dental services
+        .range.range-xs-center.offset-top-66.text-sm-left
+          .cell-xs-10.cell-sm-6.cell-lg-5.cell-xl-3
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/service-01-420x310.jpg", "width": 420, "height": 310, "alt": ""},
+              "target": {"href": cfg.nav.services.submenu.singleService.href}
+            })
+            div.offset-top-24
+              h5.text-info
+                a(href=cfg.nav.services.submenu.singleService.href) General and Preventive Care
+            ul.list-marked.inset-lg-left-20.offset-top-10.text-dark
+              li Sealants
+              li Root Canal Therapy
+              li Extractions
+              li Scaling and Root Planing
+
+          .cell-xs-10.cell-sm-6.cell-lg-5.cell-xl-3.offset-top-50.offset-sm-top-0
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/service-02-420x310.jpg", "width": 420, "height": 310, "alt": ""},
+              "target": {"href": cfg.nav.services.submenu.singleService.href}
+            })
+            div.offset-top-24
+              h5.text-info
+                a(href=cfg.nav.services.submenu.singleService.href) Cosmetic Dentistry
+            ul.list-marked.inset-lg-left-20.offset-top-10.text-dark
+              li Cosmetic Contouring
+              li Whitening
+              li Laser dentistry
+
+          .cell-xs-10.cell-sm-6.cell-lg-5.cell-xl-3.offset-top-50.offset-xl-top-0
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/service-03-420x310.jpg", "width": 420, "height": 310, "alt": ""},
+              "target": {"href": cfg.nav.services.submenu.singleService.href}
+            })
+            div.offset-top-24
+              h5.text-info
+                a(href=cfg.nav.services.submenu.singleService.href) Restorative Dentistry
+            ul.list-marked.inset-lg-left-20.offset-top-10.text-dark
+              li Root Canals
+              li Tooth Whitening
+              li Invisalign
+
+          .cell-xs-10.cell-sm-6.cell-lg-5.cell-xl-3.offset-top-50.offset-xl-top-0
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/service-04-420x310.jpg", "width": 420, "height": 310, "alt": ""},
+              "target": {"href": cfg.nav.services.submenu.singleService.href}
+            })
+            div.offset-top-24
+              h5.text-info
+                a(href=cfg.nav.services.submenu.singleService.href) Additional Treatments
+            ul.list-marked.inset-lg-left-20.offset-top-10.text-dark
+              li Laser dentistry
+              li Digital Imaging (X-rays)
+
+
+          // next range
+          .range-spacer.veil.reveal-xl-inline-block.offset-top-66
+
+
+          .cell-xs-10.cell-sm-6.cell-lg-5.cell-xl-3.offset-top-50.offset-xl-top-0
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/service-05-420x310.jpg", "width": 420, "height": 310, "alt": ""},
+              "target": {"href": cfg.nav.services.submenu.singleService.href}
+            })
+            div.offset-top-24
+              h5.text-info
+                a(href=cfg.nav.services.submenu.singleService.href) Orthodontics
+            ul.list-marked.inset-lg-left-20.offset-top-10.text-dark
+              li Digital Imaging (X-rays)
+              li Diagnodent
+
+          .cell-xs-10.cell-sm-6.cell-lg-5.cell-xl-3.offset-top-50.offset-xl-top-0
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/service-06-420x310.jpg", "width": 420, "height": 310, "alt": ""},
+              "target": {"href": cfg.nav.services.submenu.singleService.href}
+            })
+            div.offset-top-24
+              h5.text-info
+                a(href=cfg.nav.services.submenu.singleService.href) Pediatric Dentistry
+            ul.list-marked.inset-lg-left-20.offset-top-10.text-dark
+              li Children's Oral Health
+
+          .cell-xs-10.cell-sm-6.cell-lg-5.cell-xl-3.offset-top-50.offset-xl-top-0
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/service-07-420x310.jpg", "width": 420, "height": 310, "alt": ""},
+              "target": {"href": cfg.nav.services.submenu.singleService.href}
+            })
+            div.offset-top-24
+              h5.text-info
+                a(href=cfg.nav.services.submenu.singleService.href) Dentures & Denture Repair
+            ul.list-marked.inset-lg-left-20.offset-top-10.text-dark
+              li Denture Repair
+
+          .cell-xs-10.cell-sm-6.cell-lg-5.cell-xl-3.offset-top-50.offset-xl-top-0
+            +thumbnail-classic({
+              "type": "thumbnail",
+              "thumb": {"src": "images/service-08-420x310.jpg", "width": 420, "height": 310, "alt": ""},
+              "target": {"href": cfg.nav.services.submenu.singleService.href}
+            })
+            div.offset-top-24
+              h5.text-info
+                a(href=cfg.nav.services.submenu.singleService.href) Diagnostics
+            ul.list-marked.inset-lg-left-20.offset-top-10.text-dark
+              li Cleanings
+              li Fluoride Treatments
+              li Sealants
+
+    section.shell-wide
+      hr.hr.bg-gray
+
+
+  // Page Footer
+  include ../sections/_section-footer

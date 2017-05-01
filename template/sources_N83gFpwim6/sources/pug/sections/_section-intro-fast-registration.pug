@@ -1,0 +1,38 @@
+//Swiper
+.bg-gray-base.context-dark.rd-parallax(data-on="false" data-md-on="true")
+  .rd-parallax-layer(data-speed="0.45", data-type="media", data-url="images/intros/intro-03-1920x955.jpg" style="background-position: 72% center")
+  .rd-parallax-layer(data-speed="0.3", data-type='html' data-md-fade="true")
+    .shell
+      .range
+        .section-110.section-cover.range.range-md-center.range-md-middle.range-xl-right
+          .cell-md-12.cell-lg-10.cell-xl-6
+            .range
+              .cell-md-6.cell-xl-12.text-md-left.text-xl-center
+                h1.text-uppercase.text-ubold.text-spacing-60
+                  span.big create #[<br>] an account
+
+                h4.veil.reveal-sm-block.offset-sm-top-20.text-light Let's Create Something Together!
+              .cell-md-6.cell-xl-12.offset-sm-top-66
+                .range.range-sm-center
+                  .cell-sm-6.cell-md-8
+                    // RD Mailform
+                    form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                      .form-group
+                        label.form-label(for="form-reg-name") Name
+                        input#form-reg-name.form-control(type="text" data-constraints="@Required" name="name")
+
+                      .form-group.offset-sm-top-30
+                        label.form-label(for="form-reg-email") E-mail
+                        input#form-reg-email.form-control(type="email" data-constraints="@Required @Email" name="email")
+
+                      .form-group.offset-sm-top-30
+                        label.form-label(for="form-reg-username") Username
+                        input#form-reg-username.form-control(type="text" data-constraints="@Required" name="username")
+
+                      .form-group.offset-sm-top-30
+                        label.form-label(for="form-reg-password") Password
+                        input#form-reg-password.form-control(type="password" data-constraints="@Required" name="password")
+
+                      .group.offset-top-30
+                        .group-item.element-fullwidth
+                          button(type="submit").btn.btn-block.btn-primary create account

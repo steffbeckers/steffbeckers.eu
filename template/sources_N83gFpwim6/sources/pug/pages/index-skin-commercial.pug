@@ -1,0 +1,785 @@
+- var fonts = "//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,700italic"
+- var html_class = "wide wow-animation smoothscroll scrollTo"
+
+//- Includes
+include ../_config
+include ../_mixins
+include ../mixins/_gallery-photoswipe
+include ../elements/_ui-page-loader-variant-1
+include ../elements/_ui-rd-navbar-default-transparent
+include ../elements/_ui-rd-parallax
+include ../elements/_ui-box-offer-type-1
+include ../elements/_widget-form-subscribe
+include ../elements/_ui-box-icon-type-3
+include ../elements/_ui-media-elements
+include ../elements/_ui-isotope
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-box-member
+include ../elements/_widget-list-social
+include ../elements/_ui-post-modern
+include ../elements/_ui-testimonials-slider-5
+
+doctype html
+html(lang="en" class=html_class)
+  head
+    title= cfg.nav.home.submenu.skins.submenu.commercial.title
+
+    meta(charset="utf-8")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+    block search-meta
+      meta(name="keywords" content="intense web design multipurpose template")
+      meta(name="date" content="Dec 26")
+
+    link(rel="icon" href="images/favicon.ico" type="image/x-icon")
+    // Stylesheets
+    link(rel="stylesheet" type="text/css" href=fonts)
+    link(rel="stylesheet" href="intense-job-board/css/style.css")
+    = "\n\t\t"
+    <!--[if lt IE 10]>
+    div(style='background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;')
+      a(href="http://windows.microsoft.com/en-US/internet-explorer/")
+        img(src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.")
+    script(src="js/html5shiv.min.js")
+    = "\n\t\t"
+    <![endif]-->
+  body
+    // Page
+    div(class="page text-center")
+      +page-loader-1("<img class='img-responsive' style='margin-top: -20px;margin-left: -18px;' width='330' height='67' src='images/childs/intense-job-board-logo-big-330x67.png' alt=''/>")
+
+      // Page Head
+      header.page-head.slider-menu-position
+        //- RD Navbar
+        +rd-navbar-default(
+        'rd-navbar-default rd-navbar-transparent',
+        {
+          "data-lg-auto-height": "true",
+          "data-md-layout": 'rd-navbar-fixed',
+          "data-lg-layout": 'rd-navbar-static',
+          "data-lg-stick-up": 'true'
+        },
+        "<img class='img-responsive' width='237' height='32' src='images/childs/intense-job-board-logo-237x32.png' alt=''/>",
+        cfg.nav.home,
+        cfg.nav
+        )
+
+      // Page Contents
+      main.page-content
+
+        // Welcome to Intense
+        section
+          +rd-parallax({
+            "backgroundSpeed": "0.35",
+            "attrType": "media",
+            "src": "images/backgrounds/background-47-1920-1131.jpg",
+            "htmlSpeed": "0"
+          })
+            .bg-overlay-gray-darkest
+              .shell.section-98.section-sm-254
+                .range.range-xs-center
+                  .cell-xs-12
+                    div.text-extra-big.text-white.text-bold Welcome to Intense
+                    h4.text-muted.offset-top-20.offset-sm-top-41 We offer #[span.text-warning.text-bold 10] niche themes right now!
+
+                    form.offset-top-10.offset-sm-top-30
+                      .group-sm.group-top
+                        .group-item.element-fullwidth(style="max-width: 352px;")
+                          .form-group
+                            label.form-label.rd-input-label(for="home-search-form-input") Title, or theme name
+                            input.form-control#home-search-form-input(type="text" name="s" autocomplete="off")
+
+                        .group-item.element-fullwidth(style="max-width: 230px;")
+                          .form-group
+                            select.form-control(id="form-filter-location" name="location" data-minimum-results-for-search="Infinity")
+                              option(value="1") Category
+                              option(value="2") Portfolio
+                              option(value="3") Blog
+                              option(value="4") Agency
+
+                        .reveal-block.reveal-lg-inline-block
+                          button.btn.btn-primary.element-fullwidth(type="button" style="max-width: 170px; min-width: 170px; min-height: 50px;") search
+
+        // Offers
+        section.section-top-50.section-bottom-34.section-lg-top-0.section-lg-bottom-0.context-dark.bg-primary
+          .range.range-condensed.range-xs-center
+            .cell-xs-10.cell-sm-9.cell-md-10.cell-lg-12
+              .owl-carousel.owl-carousel-default.veil-lg-owl-dots.veil-owl-nav(data-items="1" data-xs-items="2" data-md-items="3" data-lg-items="6" data-dots="true")
+                div
+                  +box-offer-type-1({
+                    "link": cfg.nav.pages.submenu.careers.href,
+                    "waypoint": null
+                  },{
+                    "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                    "itemPadding": "section-lg-34",
+                  },"icon icon-lg mdi mdi-food",
+                  {
+                    "styling": "h5",
+                    "description": "Infrastructure",
+                  },"divider divider-sm bg-white")
+
+                div
+                  +box-offer-type-1({
+                    "link": cfg.nav.pages.submenu.careers.href,
+                    "waypoint": null
+                  },{
+                    "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                    "itemPadding": "section-lg-34",
+                  },"icon icon-lg mdi mdi-file-image",
+                  {
+                    "styling": "h5",
+                    "description": "Portfolio",
+                  },"divider divider-sm bg-white")
+
+                div
+                  +box-offer-type-1({
+                    "link": cfg.nav.pages.submenu.careers.href,
+                    "waypoint": null
+                  },{
+                    "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                    "itemPadding": "section-lg-34",
+                  },"icon icon-lg mdi mdi-format-text",
+                  {
+                    "styling": "h5",
+                    "description": "Blog",
+                  },"divider divider-sm bg-white")
+
+                div
+                  +box-offer-type-1({
+                    "link": cfg.nav.pages.submenu.careers.href,
+                    "waypoint": null
+                  },{
+                    "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                    "itemPadding": "section-lg-34",
+                  },"icon icon-lg mdi mdi-account-multiple",
+                  {
+                    "styling": "h5",
+                    "description": "Agency",
+                  },"divider divider-sm bg-white")
+
+                div
+                  +box-offer-type-1({
+                    "link": cfg.nav.pages.submenu.careers.href,
+                    "waypoint": null
+                  },{
+                    "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                    "itemPadding": "section-lg-34",
+                  },"icon icon-lg mdi mdi-palette",
+                  {
+                    "styling": "h5",
+                    "description": "Creative",
+                  },"divider divider-sm bg-white")
+
+                div
+                  +box-offer-type-1({
+                    "link": cfg.nav.pages.submenu.careers.href,
+                    "waypoint": null
+                  },{
+                    "styling": "list list-unstyled list-vertical-right-line bg-primary",
+                    "itemPadding": "section-lg-34",
+                  },"icon icon-lg mdi mdi-factory",
+                  {
+                    "styling": "h5",
+                    "description": "Industrial",
+                  },"divider divider-sm bg-white")
+
+        // Welcome
+        section.section-top-98.section-sm-top-110
+          .shell
+            h1 Intense is the most complex Bootstrap theme on Template Monster
+            hr.divider.divider-sm.bg-darkers
+            .range.range-xs-center
+              .cell-sm-9.cell-lg-10
+                p Join the #[span.text-bold.text-primary 205,000+] Satified Customers Today at TemplateMonster.com. Created by the industry leaders Intense is a comprehensive set of tools which are super easy to pick up and run. It gives you a huge leg up to create your own beautiful site. Powerful options & tools, unlimited designs, responsive framework and amazing support are the reasons for our customers to fall in love.
+
+          // Mock Up
+          .offset-top-50(style="overflow: hidden;")
+            .mock-up-wrapper.veil.reveal-sm-inline-block
+              .mock-up-desktop-wrapper.wow.fadeInUpBig(data-wow-duration="1s" data-wow-delay="0s")
+                img(src="images/moqups/moqup-home-desktop.png" width="615" height="508" alt="").mock-up-desktop.img-responsive
+              .mock-up-circle.veil.reveal-md-block.wow.zoomIn(data-wow-delay="1.6s")
+                img(src="images/moqups/moqup-home-ellipse.png" width="309" height="315" alt="")
+              .mock-up-mobile-wrapper.wow.fadeInUp(data-wow-delay="0.9s")
+                img(src="images/moqups/moqup-home-mobile.png" width="247" height="470" alt="").mock-up-mobile
+
+        // Take Full Control of Your Site
+        section.section-98.section-sm-110.bg-gray-light
+          .shell
+            h1 Take Full Control of Your Site
+            hr.divider.divider-sm.bg-darkers
+            .range.range-xs-center
+              .cell-sm-9.cell-lg-10
+                p Check out an incredible set of features provided by Intense. We collected all common required features in one theme. That makes Intense one of the most awesome themes on the market. Intense allows you to take control of almost every element and section of the site.
+
+            .range.range-xs-center.text-md-left.offset-top-50.offset-lg-top-66
+              .cell-sm-9.cell-md-4.cell-md-preffix-0
+                +box-icon-type-3("icon-sm text-primary mdi mdi-format-bold", "BASED ON BOOTSTRAP 3", "text-uppercase text-bold", "Intense is based on the one of the most popular and flexible CSS Frameworks - Bootstrap. It gives you confidence in quality and flexibility of the product you buy.")
+              .cell-sm-9.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+                +box-icon-type-3("icon-sm text-primary mdi mdi-cube-outline", "EXTENDED TOOLKIT", "text-uppercase text-bold", "Intense provides a poweful and flexible exntended toolkit in addition to basic Bootsrap. If you’ve used Bootstrap itself, you’ll find this all super familiar and easy-to-use.")
+              .cell-sm-9.cell-md-4.cell-md-preffix-0.offset-top-50.offset-md-top-0
+                +box-icon-type-3("icon-sm text-primary mdi mdi-palette", "UNLIMITED SKINS & COLORS", "text-uppercase text-bold", "Theme components inherit much of their style from variables, exactly like Bootstrap. Change a few values and the theme adapts.")
+              .cell-sm-9.cell-md-4.cell-md-preffix-0.offset-top-50
+                +box-icon-type-3("text-primary mdi mdi-image-filter-none", "PARALLAX EFFECTS", "text-uppercase text-bold", "Everyone loves parallax scrolling effects, they are simply beautiful. Intense has advanced parallax options & controls based on flexible and easy-to-use RD Parallax plugin.")
+              .cell-sm-9.cell-md-4.cell-md-preffix-0.offset-top-50
+                +box-icon-type-3("text-primary mdi mdi-share-variant", "SOCIAL INTEGRATION", "text-uppercase text-bold", "Intense has full set of social icons and styling options which allow you to share any content the way you wish.")
+              .cell-sm-9.cell-md-4.cell-md-preffix-0.offset-top-50
+                +box-icon-type-3("text-primary mdi mdi-spellcheck", "MADE FOR SPEED", "text-uppercase text-bold", "We know how embarassing and time-consuming can be content loading, so we took care of pages optimization for your smooth expirience.")
+
+        // Intense is exactly what you need
+        section.context-dark
+          +rd-parallax({
+            "backgroundSpeed": "0.35",
+            "attrType": "media",
+            "src": "images/backgrounds/background-48-1920x870.jpg",
+            "htmlSpeed": "0"
+          })
+            .bg-overlay-gray-darkest
+              .shell.section-98
+                .range.range-xs-middle.range-condensed.range-xs-center
+                  .cell-lg-8
+                    h1 Intense is exactly what you need
+                  .cell-lg-4.offset-top-41.offset-lg-top-0
+                    a.btn.btn-primary.btn-block.center-block(href=cfg.buyLink style="max-width:220px;") buy intense now
+
+        // About
+        section.section-98.section-md-110
+          .shell
+            .range.text-lg-left
+              .cell-sm-preffix-2.cell-sm-8.cell-lg-preffix-0.cell-lg-6.cell-lg-push-6
+                .shadow-drop-xl
+                  +media-elements({
+                    "type": "rd-video-player",
+                    "ratio": "16by9",
+                    "href": "video/intense/intense",
+                    "title": "What can we say about Intense ?",
+                    "preview": "video/intense/intense-preview.jpg",
+                    "classes": "play-on-scroll",
+                    "muted": "true",
+                    "preload": "false"
+                  })
+              .cell-sm-preffix-2.cell-sm-8.cell-lg-preffix-0.cell-lg-6.cell-lg-pull-6.offset-top-30.offset-lg-top-0
+                .inset-lg-right-20
+                  h1 About
+                  hr.hr-lg-left-0.divider.divider-sm.bg-darkers
+                  p TemplateMonster is an A-size depot of website templates - more than 46,000 designs to choose from. Since coming up in May 2002, we've gone partners with Magento, Drupal, WordPress, PrestaShop, Joomla, WooCommerce, and many more. 1 million clients were served during this time. Web templates + installation + hosting + customization + Search Engine Optimization + copywriting — all these services you can always get at TemplateMonster.com. If you're thirsty for knowledge, TemplateMonster blog provides you with the most recent web design news, infographics, freebies, discounts & promos.
+
+        // Child Themes
+        section.section-98.section-md-110.bg-gray-light
+          .shell-wide
+            h1 Child Themes
+            hr.divider.divider-sm.bg-darkers
+            .offset-top-41
+              +isotope(['All', 'Infrastructure', 'Portfolio', 'Blog', 'Agency', 'Creative'],{
+                "group": "gallery",
+                "layout": "fitRows",
+                "alignClass": "isotope-filters-horizontal"
+              }, "isotope-1")
+                // Isotope
+                .row
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.restaurant.title,
+                        "description": cfg.themes.restaurant.desc,
+                        "thumb": cfg.themes.restaurant.image,
+                        "target": {"href": cfg.themes.restaurant.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Portfolio')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.photographer.title,
+                        "description": cfg.themes.photographer.desc,
+                        "thumb": cfg.themes.photographer.image,
+                        "target": {"href": cfg.themes.photographer.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Blog')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.personalBlog.title,
+                        "description": cfg.themes.personalBlog.desc,
+                        "thumb": cfg.themes.personalBlog.image,
+                        "target": {"href": cfg.themes.personalBlog.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.realEstate.title,
+                        "description": cfg.themes.realEstate.desc,
+                        "thumb": cfg.themes.realEstate.image,
+                        "target": {"href": cfg.themes.realEstate.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.handmade.title,
+                        "description": cfg.themes.handmade.desc,
+                        "thumb": cfg.themes.handmade.image,
+                        "target": {"href": cfg.themes.handmade.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.dentalClinic.title,
+                        "description": cfg.themes.dentalClinic.desc,
+                        "thumb": cfg.themes.dentalClinic.image,
+                        "target": {"href": cfg.themes.dentalClinic.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.financialAdvisor.title,
+                        "description": cfg.themes.financialAdvisor.desc,
+                        "thumb": cfg.themes.financialAdvisor.image,
+                        "target": {"href": cfg.themes.financialAdvisor.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.gym.title,
+                        "description": cfg.themes.gym.desc,
+                        "thumb": cfg.themes.gym.image,
+                        "target": {"href": cfg.themes.gym.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.childCare.title,
+                        "description": cfg.themes.childCare.desc,
+                        "thumb": cfg.themes.childCare.image,
+                        "target": {"href": cfg.themes.childCare.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.jobBoard.title,
+                        "description": cfg.themes.jobBoard.desc,
+                        "thumb": cfg.themes.jobBoard.image,
+                        "target": {"href": cfg.themes.jobBoard.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.product.title,
+                        "description": cfg.themes.product.desc,
+                        "thumb": cfg.themes.product.image,
+                        "target": {"href": cfg.themes.product.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.app.title,
+                        "description": cfg.themes.app.desc,
+                        "thumb": cfg.themes.app.image,
+                        "target": {"href": cfg.themes.app.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.startup.title,
+                        "description": cfg.themes.startup.desc,
+                        "thumb": cfg.themes.startup.image,
+                        "target": {"href": cfg.themes.startup.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.book.title,
+                        "description": cfg.themes.book.desc,
+                        "thumb": cfg.themes.book.image,
+                        "target": {"href": cfg.themes.book.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.travel.title,
+                        "description": cfg.themes.travel.desc,
+                        "thumb": cfg.themes.travel.image,
+                        "target": {"href": cfg.themes.travel.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                      .shadow-variant-2
+                        +thumbnail-classic({
+                          "type": "thumbnail",
+                          "title": cfg.themes.event.title,
+                          "description": cfg.themes.event.desc,
+                          "thumb": cfg.themes.event.image,
+                          "target": {"href": cfg.themes.event.href},
+                          "targetBlank": true
+                        })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.taxi.title,
+                        "description": cfg.themes.taxi.desc,
+                        "thumb": cfg.themes.taxi.image,
+                        "target": {"href": cfg.themes.taxi.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.barbershop.title,
+                        "description": cfg.themes.barbershop.desc,
+                        "thumb": cfg.themes.barbershop.image,
+                        "target": {"href": cfg.themes.barbershop.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.petshop.title,
+                        "description": cfg.themes.petshop.desc,
+                        "thumb": cfg.themes.petshop.image,
+                        "target": {"href": cfg.themes.petshop.href},
+                        "targetBlank": true
+                      })
+
+        // Our Team
+        section.section-98.section-sm-110
+          .shell
+            h1 Our Team
+            hr.divider.divider-sm.bg-darkers
+            .range.range-xs-center.offset-sm-top-66
+              .cell-sm-10.cell-lg-12
+                .range
+                  .cell-sm-6.cell-lg-3.offset-top-66.offset-xs-top-0
+                    +box-member("images/users/user-john-doe-270x270.jpg", "John Doe", "Founder", "text-primary", cfg.nav.pages.submenu.teamMember.href)
+                      +widget-list-social([
+                        {
+                          "icon": "fa fa-facebook",
+                          "href": "#"
+                        },
+                        {
+                          "icon": "fa fa-twitter",
+                          "href": "#"
+                        },
+                        {
+                          "icon": "fa fa-google-plus",
+                          "href": "#"
+                        }
+                      ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+                  .cell-sm-6.cell-lg-3.offset-top-66.offset-sm-top-0.offset-lg-top-0
+                    +box-member("images/users/user-july-mao-270x270.jpg", "July Mao", "Web Designer", "text-primary", cfg.nav.pages.submenu.teamMember.href)
+                      +widget-list-social([
+                        {
+                          "icon": "fa fa-facebook",
+                          "href": "#"
+                        },
+                        {
+                          "icon": "fa fa-twitter",
+                          "href": "#"
+                        },
+                        {
+                          "icon": "fa fa-google-plus",
+                          "href": "#"
+                        }
+                      ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+
+                  .cell-sm-6.cell-lg-3.offset-top-66.offset-lg-top-0
+                    +box-member("images/users/user-bernard-show-270x270.jpg", "Bernard Show", "Co-Founder", "text-primary", cfg.nav.pages.submenu.teamMember.href)
+                      +widget-list-social([
+                        {
+                          "icon": "fa fa-facebook",
+                          "href": "#"
+                        },
+                        {
+                          "icon": "fa fa-twitter",
+                          "href": "#"
+                        },
+                        {
+                          "icon": "fa fa-google-plus",
+                          "href": "#"
+                        }
+                      ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+                  .cell-sm-6.cell-lg-3.offset-top-66.offset-lg-top-0
+                    +box-member("images/users/user-ronald-oswald-270x270.jpg", "Ronald Oswald", "Developer", "text-primary", cfg.nav.pages.submenu.teamMember.href)
+                      +widget-list-social([
+                        {
+                          "icon": "fa fa-facebook",
+                          "href": "#"
+                        },
+                        {
+                          "icon": "fa fa-twitter",
+                          "href": "#"
+                        },
+                        {
+                          "icon": "fa fa-google-plus",
+                          "href": "#"
+                        }
+                      ], "icon-xs icon-circle icon-darker-filled", "list-inline-xs")
+
+        // Welcome to Intense
+        section.context-dark
+          +rd-parallax({
+            "backgroundSpeed": "0.35",
+            "attrType": "media",
+            "src": "images/backgrounds/background-49-1920x870.jpg",
+            "htmlSpeed": "0"
+          })
+            .bg-overlay-gray-darkest
+              .shell.section-98.section-sm-top-110.section-sm-bottom-155
+                h1 Testimonials
+                hr.divider.divider-sm.bg-white
+                .offset-top-66
+                  +testimonials-slider-5([{
+                    "image": {
+                      "width": 60,
+                      "height": 60,
+                      "src": "images/users/user-alex-merphy-60x60.jpg",
+                      "alt": "Alex Merphy"
+                    },
+                    "title": {
+                      "titleStyling": "h5 text-picton-blue",
+                      "titleDesc": "Alex Merphy"
+                    },
+                    "description": {
+                      "descStyling": "p text-white",
+                      "desc": "Manager"
+                    },
+                    "quote": {
+                      "title": "Thank you for the assistance you provided in my job searching. During a short period of using your website I have found several vacancies where my skills can be used.",
+                      "styling": "h4 text-center text-regular text-italic",
+                      "firstDivider": "hr hr-mantis",
+                      "lastDivider": "hr hr-mantis"
+                    },
+                    "unitStyling": "unit unit-xs unit-xs-horizontal unit-spacing-sm text-xs-left",
+                  },
+                    {
+                      "image": {
+                        "width": 60,
+                        "height": 60,
+                        "src": "images/users/user-july-mao-60x60.jpg",
+                        "alt": "July Mao"
+                      },
+                      "title": {
+                        "titleStyling": "h5 text-picton-blue",
+                        "titleDesc": "July Mao"
+                      },
+                      "description": {
+                        "descStyling": "p text-white",
+                        "desc": "Manager"
+                      },
+                      "quote": {
+                        "title": "I just want to thank you for your help. I was so pleased and grateful. Keep up the excellent work. Your site provides the best support I have ever encountered.",
+                        "styling": "h4 text-center text-regular text-italic",
+                        "firstDivider": "hr hr-mantis",
+                        "lastDivider": "hr hr-mantis"
+                      },
+                      "unitStyling": "unit unit-xs unit-xs-horizontal unit-spacing-sm text-xs-left",
+                    },
+                    {
+                      "image": {
+                        "width": 60,
+                        "height": 60,
+                        "src": "images/users/user-amanda-smith-60x60.jpg",
+                        "alt": "Amanda Smith"
+                      },
+                      "title": {
+                        "titleStyling": "h5 text-picton-blue",
+                        "titleDesc": "Amanda Smith"
+                      },
+                      "description": {
+                        "descStyling": "p text-white",
+                        "desc": "Manager"
+                      },
+                      "quote": {
+                        "title": "Thank you very much for your rapid response. It's no doubt that your company is worth admiring! I have experienced the fastest support ever.",
+                        "styling": "h4 text-center text-regular text-italic",
+                        "firstDivider": "hr hr-mantis",
+                        "lastDivider": "hr hr-mantis"
+                      },
+                      "unitStyling": "unit unit-xs unit-xs-horizontal unit-spacing-sm text-xs-left",
+                    }])
+
+        // Latest Blog Posts
+        section.section-98.section-sm-110.bg-gray-light
+          .shell
+            h1 Latest Blog Posts
+            hr.divider.divider-sm.bg-darkers
+            .range.range-xs-center.offset-top-66
+              .cell-sm-9.cell-md-6
+                //- Post with Video
+                +post-modern(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "mdi mdi-video", "2 days ago", "Intense tutorial: Writing a proper resume and autobiography for young specialists", [
+                  {"title": "Business", "href": "#"}],
+                {
+                  "type": "video",
+                  "href": "//www.youtube.com/embed/-AhmuMqZB0s",
+                  "ratio": "16by9"
+                })
+                  p Nowadays many companies are looking for young specialists that have some professional potential. Young graduates can easily attract employer’s attention by writing a proper resume.
+
+                //- Post with Gallery
+                .offset-top-30
+                  +post-modern(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "mdi mdi-instagram", "7 days ago", "How to impress your future employer", [
+                    {"title": "Lifestyle", "href": "#"}],
+                  {
+                    "type": "thumbnail",
+                    "thumb": {"src": "images/skins/skin-job-board-01-570x321.jpg", "width": 570, "height": 321, "alt": ""}
+                  })
+
+              .cell-sm-9.cell-md-6.offset-top-30.offset-md-top-0
+                //- Post with Text
+                +post-modern(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "mdi mdi-pen", "3 days ago", "Top 50 international companies to consider your potential employer.", [
+                  {"title": "News", "href": "#"}])
+                  p There are thousands of possibilities that can help you find the job of your dream. But how many of them will really lead you to the success of working at the well-known international company? Let’s find it out.
+
+                //- Post with Audio
+                .offset-top-30
+                  +post-modern(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "mdi mdi-soundcloud", "5 days ago", "Top 5 tracks to enhance your working process: from rock to electronic music.", [
+                    {"title": "Music", "href": "#"}],
+                  {
+                    "type": "soundcloud",
+                    "embed": '<iframe height="166" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/149065581&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>'
+                  })
+
+                //- Post with Image
+                .offset-top-30
+                  +post-modern(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "mdi mdi-image", "2 days ago", "Teamwork as a vital element of your own success and career promotion.", [
+                    {"title": "Business", "href": "#"}],
+                  {
+                    "type": "thumbnail",
+                    "thumb": {"src": "images/skins/skin-job-board-02-570x321.jpg", "width": 571, "height": 321, "alt": ""}
+                  })
+                    p It is widely known that teamwork is very important to successful completion of any idea. Nevertheless, some projects based on the principle of cooperation often lack some simple but effective features.
+
+              .range.range-xs-center.offset-top-66
+                .cell-xs-7.cell-sm-5.cell-md-4.cell-lg-3
+                  .inset-lg-left-20.inset-lg-right-20
+                    a.btn.btn-primary.reveal-xs-block(href=cfg.nav.components.submenu.toolkitComponents.submenu.posts.href) view all blog posts
+
+
+      // Page Footer
+      footer.section-relative.section-top-66.section-bottom-34.page-footer.bg-gray-darkest
+        .shell
+          .range.range-sm-center.text-md-left
+            .cell-sm-8.cell-md-12
+              .range.range-xs-center
+                .cell-xs-10.cell-md-5.cell-md-push-2
+                  h6.text-uppercase.text-spacing-60.font-default.text-white Newsletter
+                  .inset-lg-right-80
+                    p.text-muted Keep up with our always upcoming  news and updates. Enter your e-mail and subscribe to our newsletter.
+                  .offset-top-30
+                    .inset-lg-right-93
+                      +widget-form-subscribe("Type your E-Mail", "form-subscribe-footer")
+
+                .cell-xs-4.cell-md-2.offset-top-50.offset-md-top-0.cell-md-push-3.text-xs-left
+                  h6.text-uppercase.text-spacing-60.font-default.text-white Cities
+                  .reveal-block
+                    .reveal-inline-block
+                      ul.list.list-unstyled.list-inline-primary
+                        li.text-primary
+                          a(href="#") New York
+                        li.text-primary
+                          a(href="#") San Diego
+                        li.text-primary
+                          a(href="#") Los Angeles
+                        li.text-primary
+                          a(href="#") Boston
+                        li.text-primary
+                          a(href="#") Washington
+                        li.text-primary
+                          a(href="#") Chicago
+
+                .cell-xs-4.cell-md-2.offset-top-50.offset-md-top-0.cell-md-push-3.text-xs-left
+                  h6.text-uppercase.text-spacing-60.font-default.text-white Categories
+                  .reveal-block
+                    .reveal-inline-block
+                      ul.list.list-unstyled.list-inline-primary
+                        li.text-primary
+                          a(href="#") Healthcare
+                        li.text-primary
+                          a(href="#") Automobile Jobs
+                        li.text-primary
+                          a(href="#") Food Services
+                        li.text-primary
+                          a(href="#") Construction
+                        li.text-primary
+                          a(href="#") Logistics
+                        li.text-primary
+                          a(href="#") Finance
+
+
+                .cell-md-3.offset-top-50.offset-md-top-0.cell-md-push-1
+                  // Footer brand
+                  .footer-brand
+                    a(href="../index.html")
+                      img(width='237' height='32' src='images/childs/intense-job-board-logo-237x32.png' alt='')
+                  ul.list-inline.list-inline-sm.reveal-inline-block.offset-top-34.post-meta.text-dark.list-inline-primary
+                    li
+                      a(href="#")
+                        span.icon.icon-xxs.fa-facebook
+                    li
+                      a(href="#")
+                        span.icon.icon-xxs.fa-twitter
+                    li
+                      a(href="#")
+                        span.icon.icon-xxs.fa-google-plus
+                    li
+                      a(href="#")
+                        span.icon.icon-xxs.fa-youtube-play
+                    li
+                      a(href="#")
+                        span.icon.icon-xxs.fa-instagram
+
+                  p.text-dark.offset-top-50
+                    | Intense &copy; #[span(id="copyright-year")] . #[a(href="privacy.html") Privacy Policy]
+                    // {%FOOTER_LINK}
+
+      // Global Mailform Output
+      #form-output-global.snackbars
+      +gallery-photoswipe()
+      // Java script
+      script(src="js/core.min.js")
+      script(src="js/script.js")

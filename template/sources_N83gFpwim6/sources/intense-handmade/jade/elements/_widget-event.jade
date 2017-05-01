@@ -1,0 +1,24 @@
+//- Event Widget
+//- url - expanded post link
+//- date - date of publishment
+//- title - post title
+//- image - post image
+mixin widget-event(url, date, time, title, image, aClass)
+  // Event Widget
+  article.post.widget-event.text-left(class= aClass)
+    a(href=url)
+      div.unit.unit-horizontal.unit-spacing-xs.unit-middle
+        if image
+          .unit-left
+            img.img-circle(width=image.w, height=image.h, src=image.src, alt=image.alt)
+        .unit-body
+          .post-meta
+            ul.list-inline.list-inline-sm
+              li
+                span.icon-xxs.text-picton-blue.mdi.mdi-calendar
+                time.text-dark(datetime="2016-01-01")= date
+              li
+                span.icon-xxs.text-picton-blue.mdi.mdi-clock
+                time.text-dark(datetime="2016-01-01")= time
+          .post-title
+            h6.text-regular= title

@@ -1,0 +1,111 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-navbar-logo-center
+include  ../elements/_ui-breadcrumb-modern
+
+//-Title
+block title
+  title= cfg.nav.shop.submenu.singleProduct.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-logo-center(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+      cfg.brand.logo,
+      cfg.nav.shop.submenu.singleProduct,
+      cfg.nav
+    )
+
+  +breadcrumb-modern("Shop", {
+    0: {
+      "type": "link",
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "type": "link",
+      "title": cfg.nav.shop.title,
+      "href": cfg.nav.shop.href
+    },
+    2: {
+      "type": "link",
+      "title": cfg.nav.shop.submenu.singleProduct.title,
+      "href": cfg.nav.shop.submenu.singleProduct.href
+    }
+  }, "images/background-1-1920x651.jpg")
+
+
+  // Page Content
+  main.page-content.section-top-98.section-sm-124
+    section
+      .shell
+        .range
+          .cell-md-9
+            include ../sections/_section-shop-single-product-no-sidebar
+          .cell-md-3.offset-top-66.offset-md-top-0.inset-lg-left-50
+            // Section Shop Sidebar
+            aside.text-left
+              .range
+                .cell-xs-6.cell-md-12
+                  // Categories
+                  h6.text-uppercase.text-spacing-60 Categories
+                  div.text-subline
+                  div.offset-top-20
+                    label.checkbox.reveal-inline-block
+                      input(name="input-group-category", value="woman", type="checkbox")
+                      | Handmade #[span.text-dark (37)]
+                  div.offset-top-10
+                    label.checkbox.reveal-inline-block
+                      input(name="input-group-category", value="dresses", type="checkbox")
+                      | Scrapbooking #[span.text-dark (211)]
+                  div.offset-top-10
+                    label.checkbox.reveal-inline-block
+                      input(name="input-group-category", value="skirts", type="checkbox")
+                      | Woodwork #[span.text-dark (12)]
+                  div.offset-top-10
+                    label.checkbox.reveal-inline-block
+                      input(name="input-group-category", value="coats", type="checkbox")
+                      | Textile #[span.text-dark (7)]
+                  div.offset-top-10
+                    label.checkbox.reveal-inline-block
+                      input(name="input-group-category", value="top", type="checkbox")
+                      | Tools and Materials #[span.text-dark (15)]
+
+                .cell-xs-6.cell-md-12
+                  // Brands
+                  h6.offset-top-41.offset-xs-top-0.offset-md-top-41.text-uppercase.text-spacing-60 Brands
+                  div.text-subline
+                  div.offset-top-20
+                    label.checkbox.reveal-inline-block
+                      input(name="input-group-brands", value="apc", type="checkbox")
+                      | Koh-i-Noor #[span.text-dark (37)]
+                  div.offset-top-10
+                    label.checkbox.reveal-inline-block
+                      input(name="input-group-brands", value="armani", type="checkbox")
+                      | Pilot #[span.text-dark (211)]
+                  div.offset-top-10
+                    label.checkbox.reveal-inline-block
+                      input(name="input-group-brands", value="loro", type="checkbox")
+                      | Pentel #[span.text-dark (12)]
+                  div.offset-top-10
+                    label.checkbox.reveal-inline-block
+                      input(name="input-group-brands", value="coat", type="checkbox")
+                      | Platinum #[span.text-dark (7)]
+                  div.offset-top-10
+                    label.checkbox.reveal-inline-block
+                      input(name="input-group-brands", value="topiro", type="checkbox")
+                      | Sakura  #[span.text-dark (15)]
+
+
+  // Page Footers
+  include ../sections/_section-footer-variant-4

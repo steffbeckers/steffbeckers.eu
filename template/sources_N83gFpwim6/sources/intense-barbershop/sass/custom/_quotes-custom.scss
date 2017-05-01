@@ -1,0 +1,502 @@
+// Quotes custom
+
+// Reset styles
+blockquote {
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  q {
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+  cite {
+    font-style: normal;
+  }
+
+  small,
+  .small {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+// Quote primary
+//
+.quote-primary {
+  position: relative;
+  padding: 80px 25px 40px;
+  color: $white;
+  background: $brand-primary;
+  text-align: left;
+
+  &:before {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    content: '\f10d';
+    font: 400 36px/48px $fa;
+    color: inherit;
+  }
+
+  cite {
+    display: block;
+    font: 400 18px/24px $font-family-sans-serif;
+    letter-spacing: .02em;
+
+    &:before {
+      content: '-';
+      font: inherit;
+      display: inline-block;
+      margin-right: .5em;
+      vertical-align: middle;
+    }
+  }
+
+  // Offsets
+  * + cite,
+  cite + * {
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .quote-primary {
+    padding: 30px 40px 30px 100px;
+
+    &:before {
+      left: 40px;
+      top: 30px;
+    }
+  }
+}
+
+
+@mixin quote-avatar() {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  z-index: 10;
+
+  img,
+  span {
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: $white;
+    background: $tumbleweed;
+    font: 400 48px/108px $font-family-sec;
+    text-align: center;
+  }
+}
+
+@mixin quote-rating() {
+  font-size: 0;
+  line-height: 0;
+  li {
+    display: inline-block;
+    padding: 0 2px;
+    letter-spacing: 0;
+    width: auto;
+    font-size: 14px;
+  }
+}
+
+// Quote fullwidth
+//
+
+.quote-fullwidth {
+  padding: 35px 25px 35px;
+  background: $white;
+  text-align: left;
+
+  q {
+    font-style: italic;
+    color: $gray-dark;
+
+    &:before,
+    &:after {
+      content: '"';
+    }
+  }
+
+  cite {
+    @include header-base-styles;
+    @include header-h3;
+  }
+
+  // Offsets
+  * + .quote-fullwidth-text {
+    margin-top: 14px;
+  }
+
+  * + .inline-list {
+    margin-top: 35px;
+  }
+}
+
+.quote-fullwidth-header {
+  @include spacing(14px, 4px);
+
+  > * {
+    display: inline-block;
+    vertical-align: baseline;
+  }
+}
+
+.quote-fullwidth-avatar {
+  @include quote-avatar;
+}
+
+.quote-fullwidth-rating {
+  @include quote-rating;
+}
+
+.quote-fullwidth-body {
+  margin-top: 30px;
+}
+
+.quote-fullwidth + .quote-fullwidth {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    @include transform(translateX(-50%));
+    height: 1px;
+    width: 80%;
+    background: $black-haze;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .quote-fullwidth {
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include justify-content(center);
+    padding: 40px 50px;
+
+    // Offsets
+    * + .inline-list {
+      margin-top: 47px;
+    }
+  }
+
+  .quote-fullwidth-left {
+    @include flex-shrink(0);
+  }
+
+  .quote-fullwidth-body {
+    @include flex-grow(1);
+    margin-top: 0;
+    padding-left: 40px;
+  }
+
+  .quote-fullwidth-avatar {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .quote-fullwidth {
+    padding: 90px 60px 45px 90px;
+  }
+
+  .quote-fullwidth-avatar {
+    position: relative;
+    top: -9px;
+  }
+
+  .quote-fullwidth-body {
+    padding-left: 70px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .quote-fullwidth {
+    padding: 90px 100px 65px 130px;
+  }
+}
+
+// Quote card
+//
+.quote-card {
+  padding: 30px 25px;
+  background: $white;
+  text-align: center;
+
+  q {
+    font-style: italic;
+    color: $gray-dark;
+
+    &:before,
+    &:after {
+      content: '"';
+    }
+  }
+
+  cite {
+    @include header-base-styles;
+    @include header-h3;
+  }
+
+  // Offsets
+  * + .inline-list {
+    margin-top: 25px;
+  }
+}
+
+.quote-card-avatar {
+  @include quote-avatar;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quote-card-rating {
+  @include quote-rating;
+}
+
+* + .quote-card-header {
+  margin-top: 30px;
+}
+
+* + .quote-card-rating {
+  margin-top: 5px;
+}
+
+* + .quote-card-text {
+  margin-top: 30px;
+}
+
+@media (min-width: $screen-sm-min) {
+  .quote-card {
+    padding: 75px 30px;
+
+    // Offsets
+    * + .inline-list {
+      margin-top: 47px;
+    }
+  }
+
+  * + .quote-card-header {
+    margin-top: 45px;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .quote-card {
+    padding: 30px 25px 35px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .quote-card {
+    padding: 75px 30px;
+  }
+}
+
+// Quote review
+.quote-review {
+  padding: 30px 30px 50px;
+  text-align: left;
+  background: $white;
+
+  q {
+    font-style: italic;
+    color: $gray-dark;
+
+    &:before,
+    &:after {
+      content: '"';
+    }
+  }
+}
+
+.quote-review-body {
+  margin-top: 30px;
+}
+
+.quote-review-avatar {
+  @include quote-avatar;
+}
+
+.quote-review-rating {
+  @include quote-rating;
+}
+
+.quote-review-header {
+  @include spacing(14px, 4px);
+
+  > * {
+    display: inline-block;
+    vertical-align: baseline;
+  }
+}
+
+.quote-review-title {
+  @include header-base-styles;
+  font-size: 18px;
+  line-height: 1.45;
+  letter-spacing: 0;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 22px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: $font-size-h3;
+    line-height: $font-lh-h3;
+  }
+}
+
+.quote-review-meta {
+  font-size: 10px;
+  letter-spacing: 0;
+  color: $gray-light;
+
+  > * {
+    display: inline-block;
+    margin-right: .45em;
+  }
+}
+
+.quote-review-user {
+  font-weight: 700;
+  color: $brand-primary;
+}
+
+// Offsets
+* + .quote-review-meta {
+  margin-top: 12px;
+}
+
+* + .quote-review-text {
+  margin-top: 15px;
+}
+
+.quote-review + .quote-review {
+  margin-top: 10px;
+}
+
+@media (min-width: $screen-sm-min) {
+  .quote-review {
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include justify-content(center);
+    padding: 65px 100px 80px 80px;
+  }
+
+  .quote-review-left {
+    @include flex-shrink(0);
+  }
+
+  .quote-review-body {
+    @include flex-grow(1);
+    padding-left: 40px;
+    margin-top: 0;
+  }
+
+  .quote-review-avatar {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // Offsets
+  * + .quote-review-meta {
+    margin-top: 5px;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .quote-review {
+    padding: 85px 100px 115px 130px;
+  }
+
+  .quote-review-body {
+    padding-left: 65px;
+  }
+}
+
+// Quote centered
+//
+
+.quote-centered {
+  background: transparent;
+  text-align: center;
+
+  q {
+    font-style: italic;
+    color: $gray-dark;
+
+    &:before,
+    &:after {
+      content: '"';
+    }
+  }
+
+  cite {
+    display: block;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    color: $headings-color;
+    @include header-h3;
+  }
+
+  // Offsets
+  * + cite {
+    margin-top: 30px;
+  }
+
+  * + .quote-centered-text {
+    margin-top: 14px;
+  }
+
+  * + .inline-list {
+    margin-top: 35px;
+  }
+}
+
+.quote-centered-avatar {
+  @include quote-avatar;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@media (min-width: $screen-sm-min) {
+  .quote-centered {
+
+    // Offsets
+    * + .inline-list {
+      margin-top: 47px;
+    }
+
+    * + cite {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .quote-centered {
+
+    // Offsets
+    * + cite {
+      margin-top: 55px;
+    }
+  }
+}

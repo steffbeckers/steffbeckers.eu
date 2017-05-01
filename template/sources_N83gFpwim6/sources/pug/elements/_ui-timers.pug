@@ -1,0 +1,6 @@
+//- timer Timer object
+//- type types of Timers (countdown-modern, countdown-inline, countdown-ellipse)
+mixin timer(timer, type)
+  // Countdown
+  div(class= type)
+    .countdown(data-type= timer.dataTypeattr data-time= timer.dataTime, data-format= timer.dataFormat)

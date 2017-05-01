@@ -1,0 +1,64 @@
+//- Includes
+include ../elements/_ui_accordion-bootstrap
+
+// Faq Variant 2
+section.section-66.section-sm-top-110.section-lg-bottom-0
+  .shell
+    .range.range-xs-center
+      .cell-lg-6
+        img.veil.reveal-lg-inline-block(src="images/pages/about-us-01-470x770.png" width="470" height="770" alt="")
+      .cell-sm-9.cell-lg-6.offset-top-0
+        h1.text-darker.text-lg-left General Questions
+        hr.divider.bg-mantis.hr-lg-left-0
+        .offset-top-41.offset-lg-top-66
+          +accordion-bootstrap('accordion-1',
+          [{
+            'headerId': 'headingOne',
+            'contentId': 'collapseOne',
+            'title': 'Who can take advantage of Intense?',
+            'description': 'Intense is a universal solution for professional developers, designers and end users. This powerful HTML template can be used to build sites of any type, be it a blogger’s resource or professional portfolio. Intense meets all the modern quality standards, which will give you a solid basis to compete with rivals on the web.'
+          },
+            {
+              'headerId': 'headingTwo',
+              'contentId': 'collapseTwo',
+              'title': 'How can web developers benefit from Intense?',
+              'description': 'Intense is a flexible instrument for professional developers. It comes packed with 250+ pre-designed pages, 20 premium plugins, 50+ scalable shortcodes, and an extended Bootstrap toolkit. Moreover, Intense is based on a CSS Flex grid system and provides full Sass support.'
+            },
+            {
+              'headerId': 'headingThree',
+              'contentId': 'collapseThree',
+              'title': 'What makes Intense special for web designers?',
+              'description': 'Intense offers a huge UI kit for web designers. It includes 150 PSD files, 2000+ font icons, unlimited skins and colors, parallax and hover effects, canvas animations, and much more. All these features can streamline the workflow and turn any project into an eye candy.'
+            },
+            {
+              'headerId': 'headingFour',
+              'contentId': 'collapseFour',
+              'title': 'Does Intense have a design for my specific niche?',
+              'description': 'The package of Intense has child templates intended for a variety of niches. Whether you run a model agency, restaurant or consulting firm, you can choose a ready-made solution for your own business. The number of child themes is constantly growing to embrace a wider range of niches.'
+            },
+            {
+              'headerId': 'headingFive',
+              'contentId': 'collapseFive',
+              'title': 'What does Intense offer for my marketing needs?',
+              'description': 'Intense has effective instruments for your marketing campaigns. Its package contains a number of landing and newsletter templates designed with proven marketing tactics in mind.'
+            },
+            {
+              'headerId': 'headingSix',
+              'contentId': 'collapseSix',
+              'title': 'What pages would Intense have in its full package?',
+              'description': 'Intense gives an access to 250+ ready-made pages for multiple purposes. Among them, there are 10+ homepages, 10+ one-page designs, 20+ header and 10+ footer styles, 20+ extra pages, 10+ event templates, 20+ portfolio layouts, 20+ blog templates, and many others.'
+            },
+            {
+              'headerId': 'headingSeven',
+              'contentId': 'collapseSeven',
+              'title': 'Is Intense an eCommerce-ready solution?',
+              'description': 'Yes, you can use Intense to give a head start to a web store. It is integrated with a shopping cart and includes 10+ eCommerce templates for building different store pages.'
+            }])
+
+// First Workout - Free
+section.section-66.context-dark.bg-blue-gray
+  .shell
+    h2 If you have a question please send us a letter
+    a.btn.btn-default.btn-icon.btn-icon-left.offset-top-20(href=cfg.nav.pages.submenu.contactUs.href)
+      span.icon.mdi.mdi-email-outline
+      | Contact Us

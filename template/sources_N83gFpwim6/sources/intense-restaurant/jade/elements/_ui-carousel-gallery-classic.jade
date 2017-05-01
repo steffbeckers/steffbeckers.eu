@@ -1,0 +1,8 @@
+// Classic Gallery Carousel
+//- thumbnails - {thumbnail} object array
+mixin carousel-gallery-classic(thumbnails)
+  // Owl Carousel
+  .owl-carousel.owl-carousel-classic(data-items='1' data-dots="true" data-nav="true" data-nav-class='["owl-prev mdi mdi-chevron-left", "owl-next mdi mdi-chevron-right"]' data-photo-swipe="gallery")
+    each thumbnail in thumbnails
+      a(href=thumbnail.large, data-size="#{thumbnail.width}x#{thumbnail.height}", data-photo-swipe-item="")
+        img.img-cover(width=thumbnail.width, height=thumbnail.height, src=thumbnail.small, alt=thumbnail.title)

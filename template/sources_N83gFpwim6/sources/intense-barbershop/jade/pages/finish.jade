@@ -1,0 +1,51 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-thumbnail-option
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Finish'
+  - var bodyClass = 'one-screen-page'
+
+block title
+  title=pageName
+
+block menu
+  .page-header.page-header-perspective
+    .page-header-left
+      a.brand(href='index.html')
+        +png('logo-default-199x36')
+
+    .page-header-center
+      .step-progress
+        .step-progress-caption
+          span done
+          +png('icon-done-15x14')
+
+    .page-header-right
+      if (menuIncludeButton)
+        .booking-control
+          a.btn.btn-xs.btn-circle.btn-primary(href=appointLink) BOOK NOW
+
+      #perspective-open-menu(data-custom-toggle='.perspective-menu-toggle', data-custom-toggle-hide-on-blur='true')
+        span.perspective-menu-text Menu
+        button.perspective-menu-toggle
+          span
+
+
+block header
+  include ../sections/_header-default
+
+block page
+  //- Page Content
+  section.section-xl.bg-periglacial-blue.one-screen-page-content.text-center
+    .shell
+      h2 THANK YOU!
+      .p.text-width-small
+        p.big Thanks for submitting your appointment! Our administrators will contact you shortly to confirm your booking and to answer questions you may have.
+      a.btn.btn-sm.btn-style-1.btn-primary(href='index.html') Back to homepage
+  ='\n'
+
+  // Page Footer
+  include ../sections/_footer-default

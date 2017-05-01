@@ -1,0 +1,127 @@
+@mixin make-flow-offset($xl-offset, $lg-offset: $xl-offset,$md-offset: $lg-offset, $sm-offset: $md-offset, $xs-offset: $sm-offset) {
+  & > * + * {
+    margin-top: $xs-offset;
+  }
+
+  html:not(.lt-ie10) & {
+    @media (min-width: $screen-xs-min) {
+      #{cols-full("xs")} {
+        margin-top: 0;
+      }
+    }
+
+    @media (min-width: $screen-xs-min) {
+      #{cols("xs")} {
+        margin-top: $xs-offset;
+      }
+    }
+
+    @media (min-width: $screen-sm-min) {
+      #{cols-full("sm")} {
+        margin-top: 0;
+      }
+    }
+
+    @media (min-width: $screen-sm-min) {
+      #{cols("sm")} {
+        margin-top: $sm-offset;
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+      #{cols-full("md")} {
+        margin-top: 0;
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+      #{cols("md")} {
+        margin-top: $md-offset;
+      }
+    }
+
+    @media (min-width: $screen-lg-min) {
+      #{cols-full("lg")} {
+        margin-top: 0;
+      }
+    }
+
+    @media (min-width: $screen-lg-min) {
+      #{cols("lg")} {
+        margin-top: $lg-offset;
+      }
+    }
+    @media (min-width: $screen-xl-min) {
+      #{cols-full("xl")} {
+        margin-top: 0;
+      }
+    }
+
+    @media (min-width: $screen-xl-min) {
+      #{cols("xl")} {
+        margin-top: $lg-offset;
+      }
+    }
+  }
+  html:not(.lt-ie10) & {
+    @media (min-width: $screen-xs-min) {
+      #{cells-full("xs")} {
+        margin-top: 0;
+      }
+    }
+
+    @media (min-width: $screen-xs-min) {
+      #{cells("xs")} {
+        margin-top: $xs-offset;
+      }
+    }
+
+    @media (min-width: $screen-sm-min) {
+      #{cells-full("sm")} {
+        margin-top: 0;
+      }
+    }
+
+    @media (min-width: $screen-sm-min) {
+      #{cells("sm")} {
+        margin-top: $sm-offset;
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+      #{cells-full("md")} {
+        margin-top: 0;
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+      #{cells("md")} {
+        margin-top: $md-offset;
+      }
+    }
+
+    @media (min-width: $screen-lg-min) {
+      #{cells-full("lg")} {
+        margin-top: 0;
+      }
+    }
+
+    @media (min-width: $screen-lg-min) {
+      #{cells("lg")} {
+        margin-top: $xl-offset;
+      }
+    }
+
+    @media (min-width: $screen-xl-min) {
+      #{cells-full("xl")} {
+        margin-top: 0;
+      }
+    }
+
+    @media (min-width: $screen-xl-min) {
+      #{cells("xl")} {
+        margin-top: $lg-offset;
+      }
+    }
+  }
+}

@@ -1,0 +1,377 @@
+//
+// Search Results
+// --------------------------------------------------
+
+// Base styles
+// ------------------
+.rd-search {
+  position: relative;
+
+  .form-group {
+    display: block;
+    margin: 0;
+    font-size: 0;
+  }
+
+  label {
+    * {
+      margin-top: 0;
+    }
+  }
+
+  .rd-search-submit {
+    top: 50%;
+    background-color: transparent;
+    border: none;
+    @include transform(translateY(-50%));
+  }
+
+  .text-mobile {
+    display: block;
+  }
+
+  .text-default {
+    display: none;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .text-mobile {
+      display: none;
+    }
+    .text-default {
+      display: block;
+    }
+  }
+}
+
+.rd-search-submit {
+  @include reset-button();
+  @include make-toggle(
+                  $rd-navbar-search-toggle-preset,
+                  $rd-navbar-min-line-height,
+                  22px,
+                  $gray-darker
+  );
+  position: absolute;
+  right: 0;
+  transition: color .33s;
+
+  &:hover {
+    color: $brand-primary;
+  }
+}
+
+// RD Search minimal
+.rd-search-minimal {
+  $text-color: rgba($gray-base, .2);
+  $border-color: $gray-light;
+  position: relative;
+  @include display-flex;
+  @include flex-direction(row);
+  @include flex-wrap(nowrap);
+  @include align-items(stretch);
+  @include justify-content(center);
+  padding-left: 40px;
+  border-bottom: 1px solid $border-color;
+
+  &:before {
+    content: '\e8b6';
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%));
+    left: 10px;
+    font: 400 21px 'Material Icons';
+    color: $gray-base;
+  }
+
+  .form-group {
+    @include flex-grow(1);
+  }
+
+  .form-label,
+  .form-control {
+    font: 400 16px/24px $font-family-sec;
+    color: $text-color;
+    letter-spacing: -.025em;
+  }
+
+  .form-label {
+    top: 29px;
+  }
+
+  .form-control {
+    padding: 17px 20px;
+  }
+
+  button[type='submit'] {
+    padding: 0 20px;
+    @include flex-shrink(0);
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .form-label,
+    .form-control {
+      font-size: 19px;
+    }
+  }
+}
+
+// RD Search classic
+.rd-search-classic {
+  overflow: hidden;
+  border: 1px solid $gray-light;
+  border-radius: 5px;
+
+  .form-control {
+    min-height: 50px;
+    padding: 13px 50px 15px 19px;
+    border: 0;
+  }
+
+  .rd-search-submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    line-height: 0;
+    height: auto;
+    @include transform(none);
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);
+    text-align: left;
+
+    &:before {
+      content: '\e8b6';
+      font: 400 25px 'Material Icons';
+    }
+  }
+}
+
+// Search results (hybrid styles)
+// ----------------------------
+.search_error {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Live Search Results
+// ----------------------------
+.rd-search-results-live {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 998;
+  margin: -3px 0 0;
+  font-size: $font-size-base;
+  line-height: 34px;
+  text-align: left;
+  color: $text-color;
+  opacity: 0;
+  visibility: hidden;
+
+  > * {
+    padding: 16px;
+    border: $input-border-obj;
+    border-top: 0;
+  }
+
+  .search-quick-result {
+    font: 700 14px/24px $font-family-sec;
+    color: $gray-base;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  .search_list {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 30px;
+
+    li + li {
+      margin-top: 20px;
+    }
+
+    .search_error {
+      font-size: 14px;
+      line-height: 1.1;
+    }
+  }
+
+  .search_link {
+    @include link($abbey, $brand-primary);
+  }
+
+  p {
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .search_title {
+    margin-bottom: 0;
+    font-family: $font-family-sec;
+    font-size: 14px;
+    font-weight: 700;
+    color: $headings-color;
+  }
+
+  .search_submit {
+    display: block;
+    padding: 6px 20px;
+    font-size: $btn-font-size * 1px;
+    font-weight: $btn-font-weight;
+    text-align: center;
+    color: $white;
+    background: $brand-primary;
+    border-radius: 5px;
+    border: 0;
+    text-transform: uppercase;
+    transition: .3s ease-out;
+
+    &:hover {
+      color: $white;
+      background: $keppel;
+    }
+  }
+
+  .match {
+    display: none;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    .search_link {
+      p {
+        display: block;
+      }
+    }
+  }
+}
+
+.rd-navbar-fixed-linked {
+  .rd-search-results-live {
+    display: none;
+  }
+}
+
+.rd-search-results-live.active.cleared {
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: .08s;
+}
+
+.active .rd-search-results-live {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+// Search results (list)
+// ----------------------------
+.rd-search-results {
+  .search_list {
+    text-align: left;
+    padding-left: 0;
+    font-size: 14px;
+    list-style-type: none;
+    counter-reset: result;
+  }
+
+  .result-item {
+    position: relative;
+    padding-left: 40px;
+    color: $text-color;
+
+    &:before {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      content: counter(result, decimal-leading-zero) '.';
+      counter-increment: result;
+      font: 900 17px $font-family-serif;
+      line-height: 1;
+      color: rgba($gray-base, .3);
+    }
+
+    &:only-child {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .search {
+    color: $white;
+    background: $brand-primary;
+  }
+
+  .search_error {
+    .search {
+      color: $text-color;
+      background-color: transparent;
+    }
+  }
+
+  .match em {
+    font: 400 12px/16px $font-family-sec;
+    font-style: normal;
+    text-transform: uppercase;
+    color: $gray-base;
+  }
+
+  // Offsets
+  * + p {
+    margin-top: 10px;
+  }
+
+  * + .match {
+    margin-top: 5px;
+  }
+
+  * + .result-item {
+    margin-top: 35px;
+  }
+
+  // Resize
+  @media (min-width: $screen-xs-min) {
+    .result-item {
+      padding-left: 60px;
+      &:before {
+        left: 15px;
+        font-size: 19px;
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .result-item {
+      &:before {
+        top: 0;
+      }
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    .result-item {
+      padding-left: 85px;
+
+      &:before {
+        top: 0;
+        left: 40px;
+      }
+    }
+  }
+
+  @media (min-width: $screen-lg-min) {
+    .result-item {
+      padding-left: 100px;
+
+      &:before {
+        left: 44px;
+      }
+    }
+  }
+}

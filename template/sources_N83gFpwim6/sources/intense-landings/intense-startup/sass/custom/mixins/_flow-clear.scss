@@ -1,0 +1,8 @@
+@mixin clear-grid-flow($prefix) {
+  .col-#{$prefix}-clear {
+    clear: left;
+  }
+  .col-#{$prefix}-release {
+    clear: none;
+  }
+}

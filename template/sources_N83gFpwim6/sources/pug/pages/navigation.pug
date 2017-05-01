@@ -1,0 +1,168 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_widget-form-search
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.navigation.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.navigation.title,
+  cfg.nav.components.submenu.toolkitComponents.submenu.navigation.href,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.navigation.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.navigation.href
+    }
+  })
+
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    // Dividers styles
+    section
+      .shell
+        h1 Bootstrap Navbar
+        hr.divider.divider-md.bg-mantis
+
+        .section-code.offset-top-66
+          nav.navbar.navbar-default
+            .container-fluid
+              // Brand and toggle get grouped for better mobile display
+              .navbar-header
+                button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
+                  span.sr-only Toggle navigation
+                  span.icon-bar
+                  span.icon-bar
+                  span.icon-bar
+                a.navbar-brand(href='#')!=cfg.brand.logo
+              // Collect the nav links, forms, and other content for toggling
+              #bs-example-navbar-collapse-1.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                  li.active
+                    a(href='#')
+                      | Home
+                      span.sr-only (current)
+                  li.dropdown
+                    a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                      | Features
+                      span.caret
+                    ul.dropdown-menu
+                      li
+                        a(href='#') Action
+                      li
+                        a(href='#') Another action
+                      li
+                        a(href='#') Something else here
+                      li.divider(role='separator')
+                      li
+                        a(href='#') Separated link
+                  li.dropdown
+                    a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                      | Pages
+                      span.caret
+                    ul.dropdown-menu
+                      li
+                        a(href='#') Action
+                      li
+                        a(href='#') Another action
+                      li
+                        a(href='#') Something else here
+                      li.divider(role='separator')
+                      li
+                        a(href='#') Separated link
+
+                .navbar-right
+                  ul.nav.navbar-nav
+                    li
+                      a(href='#') Cart
+                        span.badge 3
+
+                .navbar-right
+                  +widget-form-search('form-control-impressed', 'form-label-sm', 'navbar-form-search', 'navbar-form')
+
+          nav.navbar.navbar-inverse.offset-top-20
+            .container-fluid
+              // Brand and toggle get grouped for better mobile display
+              .navbar-header
+                button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-inverse', aria-expanded='false')
+                  span.sr-only Toggle navigation
+                  span.icon-bar
+                  span.icon-bar
+                  span.icon-bar
+                a.navbar-brand(href='#')
+                  !=cfg.brand.logoInverse
+              #bs-example-navbar-collapse-inverse.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                  li.active
+                    a(href='#')
+                      | Home
+                      span.sr-only (current)
+                  li.dropdown
+                    a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                      | Features
+                      span.caret
+                    ul.dropdown-menu
+                      li
+                        a(href='#') Action
+                      li
+                        a(href='#') Another action
+                      li
+                        a(href='#') Something else here
+                      li.divider(role='separator')
+                      li
+                        a(href='#') Separated link
+                  li.dropdown
+                    a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+                      | Pages
+                      span.caret
+                    ul.dropdown-menu
+                      li
+                        a(href='#') Action
+                      li
+                        a(href='#') Another action
+                      li
+                        a(href='#') Something else here
+                      li.divider(role='separator')
+                      li
+                        a(href='#') Separated link
+
+                .navbar-right
+                  ul.nav.navbar-nav
+                    li
+                      a(href='#') Cart
+                        span.badge 3
+
+                .navbar-right
+                  +widget-form-search('form-control-impressed', 'form-label-sm', 'navbar-inverse-form-search', 'navbar-form')
+
+  // Page Footers
+  include ../sections/_section-footer-default

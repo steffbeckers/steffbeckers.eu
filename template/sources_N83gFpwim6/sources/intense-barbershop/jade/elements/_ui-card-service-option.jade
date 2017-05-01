@@ -1,0 +1,9 @@
+mixin card-service-option(obj)
+
+  article.card-service-option
+    +png(obj.img, 'card-service-option-image')
+    p.card-service-option-title=obj.title
+
+    .card-service-option-panel
+      p.card-service-option-text=obj.text
+      a.btn.btn-xs.card-service-option-control(href='step-2.html') Choose

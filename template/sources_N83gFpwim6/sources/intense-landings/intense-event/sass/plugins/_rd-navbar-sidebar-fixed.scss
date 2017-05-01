@@ -1,0 +1,56 @@
+//
+// RD Navbar Sidebar Fixed
+// --------------------------------------------------
+body {
+  &.body-inset-left {
+    @media (min-width: $screen-lg) {
+      padding-left: $rd-navbar-sidebar-fixed-panel-width;
+    }
+  }
+}
+
+
+.rd-navbar-sidebar-fixed {
+    display: block;
+    z-index: auto;
+    @extend %rd-navbar-default-mobile-menu;
+    @extend %rd-navbar-sidebar-fixed-menu;
+    @extend %rd-navbar-sidebar-fixed-panel;
+    @extend %rd-navbar-sidebar-fixed-search;
+  .rd-navbar-nav-wrap{
+    overflow-y: scroll;
+  }
+  // Themes
+
+  //  Dark Theme
+  // -------------------
+
+  &.rd-navbar-dark {
+
+    .rd-navbar-search-toggle {
+      span {
+        color: $rd-navbar-sidebar-fixed-dark-search-toggle-color;
+      }
+    }
+      @extend %rd-navbar-default-mobile-menu-dark;
+      @extend %rd-navbar-sidebar-fixed-panel-dark;
+      @extend %rd-navbar-sidebar-fixed-menu-dark;
+      @extend %rd-navbar-sidebar-fixed-search-dark;
+  }
+
+  // Light Theme
+  // -------------------
+
+  &.rd-navbar-light {
+    .rd-navbar-search-toggle {
+      span {
+        color: $rd-navbar-sidebar-fixed-light-search-toggle-color;
+      }
+    }
+      @extend %rd-navbar-default-mobile-menu-light;
+      @extend %rd-navbar-sidebar-fixed-panel-light;
+      @extend %rd-navbar-sidebar-fixed-menu-light;
+      @extend %rd-navbar-sidebar-fixed-search-light;
+
+  }
+}

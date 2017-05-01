@@ -1,0 +1,56 @@
+extends  ../_skeleton
+
+//- Page includes
+include ../elements/_ui-breadcrumb-classic
+
+//- Title
+block title
+  title= cfg.nav.blog.submenu.masonry.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.blog,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.blog.submenu.masonry.title,
+  cfg.nav.blog.submenu.masonry.submenu["2cols"].icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.blog.title,
+      "href": cfg.nav.blog.href
+    },
+    2: {
+      "title": cfg.nav.blog.submenu.masonry.title,
+      "href": cfg.nav.blog.submenu.masonry.href
+    },
+    3: {
+      "title": cfg.nav.blog.submenu.masonry.submenu["2cols"].title,
+      "href": cfg.nav.blog.submenu.masonry.submenu["2cols"].href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+
+    include ../sections/_section-blog-masonry-2-columns
+
+  // Page Footers
+  include ../sections/_section-footer-default

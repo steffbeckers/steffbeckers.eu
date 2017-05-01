@@ -1,0 +1,43 @@
+//- Includes
+include ../elements/_ui-post-boxed
+include ../elements/_ui-pagination-bootstrap
+
+// Section Blog Grid 1 Columns
+section
+  .shell
+    .range.range-xs-center
+      .col-lg-6
+        +post-boxed(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "2 days ago", "5 Steps to Blog’s Success", "John Doe", [
+          {"title": "Business", "href": "#"},
+          {"title": "Startup", "href": "#"}],
+          { "src": "images/blog/post-01-570x321.jpg",  "width": 570,  "height": 321, "alt": "" }
+        )
+
+        .offset-top-66.offset-sm-top-30
+          +post-boxed(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "4 days ago", "Making Money Online with Your Computer Only", "July Mao", [
+            {"title": "Photography", "href": "#"}],
+            { "src": "images/blog/post-02-570x321.jpg", "width": 570, "height": 321, "alt": "" }
+          )
+
+        .offset-top-66.offset-sm-top-30
+          +post-boxed(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "5 days ago", "Listen to The Truth About Retirement  with John Doe", "Bernard Show", [
+            {"title": "Design", "href": "#"},
+            {"title": "Startup", "href": "#"}],
+            { "src": "images/blog/post-03-570x321.jpg", "width": 570, "height": 321, "alt": "" }
+          )
+
+        .offset-top-66.offset-sm-top-30
+          +post-boxed(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "5 days ago", "The ultimate technique to pitch anything", "John Doe", [
+            {"title": "Development", "href": "#"}],
+            { "src": "images/blog/post-04-570x321.jpg", "width": 570, "height": 321, "alt": "" }
+          )
+
+        .offset-top-66.offset-sm-top-30
+          +post-boxed(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "6 days ago", "What is design thinking", "July Mao", [
+            {"title": "Design", "href": "#"},
+            {"title": "Creativity", "href": "#"}],
+            { "src": "images/blog/post-05-570x321.jpg", "width": 570, "height": 321, "alt": "" }
+          )
+
+    .offset-top-66
+      +pagination-bootstrap(null, 1, [{"href": "#"}, {"href": "#"}, {"href": "#"}, {"href": "#"}], null, {"href": "#"})

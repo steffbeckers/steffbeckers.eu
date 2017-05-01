@@ -1,0 +1,151 @@
+include ../elements/_ui-tabs-classic
+include ../elements/_widget-form-search
+include ../mixins/_rd-navbar-submenu-simple
+
+//- RD Navbar Transparent
+//- skin - rd navbar skin (transparent, inverse, default)
+//- attrs - additional HTML attributes of rd navbar
+//- logo - logo markup (<img/> or text)
+//- links - nav links object
+mixin rd-navbar-default(skin, attrs, logo, activeLink, links)
+  // RD Navbar Transparent
+  .rd-navbar-wrap
+    nav&attributes(attrs).rd-navbar(class="#{skin}" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static")
+      .rd-navbar-inner
+        // RD Navbar Panel
+        .rd-navbar-panel
+          // RD Navbar Toggle
+          button.rd-navbar-toggle(data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap")
+            span
+
+          //Navbar Brand
+          .rd-navbar-brand
+            a(href="index.html") !{logo}
+
+        .rd-navbar-menu-wrap
+          .rd-navbar-nav-wrap
+            -var tabs = [{obj: cfg.nav.components, columns: 4}]
+            -var megamenus = [{obj: cfg.nav.pages, columns: 4}]
+            -var type = 'simple'
+            -var megamenuColumns = 4
+
+            .rd-navbar-mobile-scroll
+              //Navbar Brand Mobile
+              .rd-navbar-mobile-brand
+                a(href="index.html") !{logo}
+
+              .form-search-wrap
+                +widget-form-search('form-control-gray-lightest input-sm', "form-label-sm", "rd-navbar-form-search-widget")
+
+              // RD Navbar Nav
+              ul.rd-navbar-nav
+                each link, title in links
+                  -type = 'simple'
+                  li(class=(activeLink.title == link.title) ? 'active' : '')
+                    a(href=link.href class=link.icon)
+                      span= link.title
+                      - if (typeof(link.label) !== 'undefined')
+                        span.rd-navbar-label.text-middle.label-custom.label-danger.label-xs-custom.label-rounded-custom.label #{link.label}
+                    each tab in tabs
+                      -
+                        if (JSON.stringify(tab.obj) === JSON.stringify(link)){
+                          type = 'tabs'
+                          if (tab.columns !== 'undefined') megamenuColumns = tab.columns
+                        }
+
+                    each megamenu in megamenus
+                      -
+                        if (JSON.stringify(megamenu.obj) === JSON.stringify(link)){
+                          type = 'megamenu'
+                          if (megamenu.columns !== 'undefined') megamenuColumns = megamenu.columns
+                        }
+                    case type
+                      when 'tabs'
+                        .rd-navbar-megamenu
+                          -var tabList = []
+                          each title in link.submenu
+                            -tabList.push(title.title)
+                          if tabList.length > 0
+                            +tabs-classic(tabList)
+                              each tab in link.submenu
+                                .row
+                                  -var columnLength = Object.keys(tab.submenu).length / megamenuColumns
+
+                                  - for (var i = 1; i <= megamenuColumns; i++){
+                                    -var j = 0
+                                      ul(class='col-lg-' + 12 / megamenuColumns)
+                                        each dropdown in tab.submenu
+                                          -j++
+                                          -if (j <= (i - 1) * columnLength) continue
+                                          -if (j > i*columnLength) break
+                                          li
+                                            a(href=dropdown.href)
+                                              span.rd-navbar-icon(class=dropdown.icon)
+                                              span.text-middle= dropdown.title
+                                              - if (typeof(dropdown.label) !== 'undefined')
+                                                span.rd-navbar-label.label-custom.label-danger.label-xs-custom.label-rounded-custom.label #{dropdown.label}
+                                  -}
+                      when 'megamenu'
+                        .rd-navbar-megamenu
+                          .row
+                            -var columnLength = Object.keys(link.submenu).length / megamenuColumns
+                            - for (var i = 1; i <= megamenuColumns; i++){
+                              -var j = 0
+                                ul(class='col-lg-' + 12 / megamenuColumns)
+                                  each dropdown in link.submenu
+                                    -j++
+                                    -if (j <= (i - 1) * columnLength) continue
+                                    -if (j > i*columnLength) break
+                                    li
+                                      a(href=dropdown.href)
+                                        span.rd-navbar-icon(class=dropdown.icon)
+                                        span.text-middle= dropdown.title
+                                        - if (typeof(dropdown.label) !== 'undefined')
+                                          span.rd-navbar-label.label-custom.label-danger.label-xs-custom.label-rounded-custom.label #{dropdown.label}
+
+                            -}
+
+                      default
+                        +rd-navbar-simple-submenu(link)
+          //RD Navbar Search
+          div.rd-navbar-search
+            a.rd-navbar-search-toggle.mdi(data-rd-navbar-toggle=".rd-navbar-inner,.rd-navbar-search" href="#")
+              span
+            form(action="search-results.html" method="GET").rd-navbar-search-form.search-form-icon-right.rd-search
+              div.form-group
+                label(for="rd-navbar-search-form-input" class="form-label") Type and hit enter...
+                input(class="rd-navbar-search-form-input form-control form-control-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off")
+              //button(type="submit").rd-navbar-search-form-submit.mdi.mdi-magnify
+            //div.rd-navbar-live-search-results
+            //button(data-rd-navbar-toggle=".rd-navbar-search, .rd-navbar-inner, .rd-navbar-live-search-results").rd-navbar-search-toggle
+            //  span
+
+          //RD Navbar shop
+          .rd-navbar-cart-wrap
+            a.rd-navbar-cart(href="#").mdi(data-rd-navbar-toggle=".rd-navbar-cart-dropdown")
+              span
+            div.rd-navbar-cart-dropdown
+              ul.rd-navbar-list-products
+                li
+                  div.rd-navbar-product-image
+                    img(src="images/shop/product-01-60x60.png", alt="")
+                  div.rd-navbar-product-caption
+                    h6.rd-navbar-product-title
+                      a(href=cfg.nav.shop.submenu.singleProduct.submenu.leftSidebar.href) Fashion model new
+                    p.rd-navbar-product-price $129.99
+                  a.mdi.mdi-window-close.rd-navbar-product-remove(href="#")
+                li
+                  div.rd-navbar-product-image
+                    img(src="images/shop/product-01-60x60-3.png", alt="")
+                  div.rd-navbar-product-caption
+                    h6.rd-navbar-product-title
+                      a(href=cfg.nav.shop.submenu.singleProduct.submenu.leftSidebar.href) Fashion model new 2
+                    p.rd-navbar-product-price $69.99
+                  a.mdi.mdi-window-close.rd-navbar-product-remove(href="#")
+              div.rd-navbar-cart-total
+                h6.rd-navbar-cart-total-title Cart subtotal
+                span.rd-navbar-cart-total-price $199.98
+              .text-center
+                a.btn.btn-rect.btn-sm.btn-primary.btn-icon.btn-icon-left(href=cfg.nav.shop.submenu.cart.href)
+                  span.icon.mdi.mdi-lock
+                  = "Go to checkout"

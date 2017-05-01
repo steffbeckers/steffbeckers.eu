@@ -1,0 +1,12 @@
+//- thumbnail - {thumbnail} object
+mixin thumbnail-marley(thumbnail)
+  // Thumbnail Marley
+  figure.thumbnail-marley
+    a(href=thumbnail.large, data-size="#{thumbnail.width}x#{thumbnail.height}", data-photo-swipe-item="")
+      img(width=thumbnail.width, height=thumbnail.height, src=thumbnail.small, alt=thumbnail.title)
+    figcaption.text-left
+      span.icon.icon-xxs(class= thumbnail.iconClass).pull-right
+      div
+        h6.thumbnail-marley-title.text-bold= thumbnail.title
+
+

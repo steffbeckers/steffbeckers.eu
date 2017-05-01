@@ -1,0 +1,18 @@
+//- href - link to web pages
+//- waypoint - slow move to sections on web page
+//- list.styling - list styling classes
+//- itemPadding - padding on list item
+//- icon - icon styling
+//- title.styling - title styling classes
+//- title.description - title of element
+//- divider - divider styling
+
+mixin box-offer-type-1(href, list, icon, title, divider)
+  // Box Offer Type 1
+  a(href= href.link data-waypoint-to= href.waypoint)
+    ul(class= list.styling)
+      li
+        div(class= list.itemPadding)
+          span(class= icon)
+          div(class= title.styling)= title.description
+          hr(class= divider)

@@ -1,0 +1,57 @@
+//- Includes
+include ../elements/_ui-post-modern
+include ../elements/_ui-pagination-bootstrap
+
+// Section Blog Grid 2 Columns
+section
+  .shell
+    .range.range-xs-center
+      .cell-md-6
+        //- Post with Video
+        +post-modern(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "mdi mdi-video", "2 days ago", " 5 Steps to Blog’s Success.", [
+          {"title": "Business", "href": "#"}],
+        {
+          "type": "video",
+          "href": "//www.youtube.com/embed/-AhmuMqZB0s",
+          "ratio": "16by9"
+        })
+          p Unfortunately people will not come to your blog just to see what you have published on it. To make sure that your blog becomes a successful one, you have to work on it to attract visitors interested in your content.
+
+        //- Post with Gallery
+        .offset-top-30
+          +post-modern(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "mdi mdi-instagram", "7 days ago", "Making Money Online with Your Computer Only", [
+            {"title": "Lifestyle", "href": "#"}],
+          {
+            "type": "thumbnail",
+            "thumb": { "src": "images/blog/post-05-570x321.jpg", "width": 570, "height": 321, "alt": "" },
+            "target": { "href": cfg.nav.blog.submenu.classic.submenu.singlePost.href}
+          })
+
+        .offset-top-30
+          //- Post with Text
+          +post-modern(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "mdi mdi-pen", "3 days ago", "Proper Color Solutions For The Office", [
+            {"title": "News", "href": "#"}])
+            p When it comes to remodeling an office, one of the most important aspects is painting. Any shade of paint can change the complete look of a room as a color has an ability to change a drab and boring room into a stunning one. Many people prefer to paint their homes in serene colors as it relaxes the mind.
+
+        //- Post with Audio
+        .offset-top-30
+          +post-modern(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "mdi mdi-soundcloud", "5 days ago", "5 Most Common Mistakes New Managers Make", [
+            {"title": "Music", "href": "#"}],
+          {
+            "type": "soundcloud",
+            "embed": '<iframe height="166" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/149065581&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>'
+          })
+
+        //- Post with Image
+        .offset-top-30
+          +post-modern(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "mdi mdi-image", "2 days ago", "Four Types of Verbal Communication", [
+            {"title": "Business", "href": "#"}],
+          {
+            "type": "thumbnail",
+            "thumb": { "src": "images/blog/post-06-570x321.jpg", "width": 571, "height": 321, "alt": "" },
+            "target": { "href": cfg.nav.blog.submenu.classic.submenu.singlePost.href}
+          })
+            p Verbal communication include sounds, words, language, and speech. Speaking is an effective way of communicating and helps in expressing our emotions in words. This form of communication is further classified into four types.
+
+    .offset-top-66
+      +pagination-bootstrap(null, 1, [{"href": "#"}, {"href": "#"}, {"href": "#"}, {"href": "#"}], null, {"href": "#"})

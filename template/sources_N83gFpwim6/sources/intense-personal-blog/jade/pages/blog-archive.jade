@@ -1,0 +1,48 @@
+extends  ../_skeleton
+
+//-Title
+block title
+  title= cfg.nav.blogArchive.title
+
+block search-meta
+  meta(name="keywords" content="My Publications")
+  meta(name="date" content="Feb 18")
+
+//- Page
+block page
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-sidebar-fixed(
+    'rd-navbar-light rd-navbar-sidebar-fixed',
+    {
+      "data-lg-auto-height": "false",
+      "data-lg-stick-up": 'false',
+      "data-lg-hover-on": "false",
+      "data-body-class": "body-inset-left"
+    },
+    cfg.brand.logo,
+    cfg.nav.blogArchive,
+    cfg.nav
+    )
+
+  // Page Content
+  main
+    // Header Logo
+    include ../sections/_section-header-logo
+
+    // Page Content
+    .page-content.section-top-124.section-bottom-98.section-xs-top-0.section-lg-bottom-124.offset-xs-top-41
+      // My Publications
+      .shell
+        h2.text-bold
+          span.h6.reveal-block.text-uppercase.text-regular.font-default.text-spacing-120.text-primary blog
+          | My Publications
+        .range.range-sm-center.range-lg-left
+          .cell-md-9.inset-md-right-30
+            include ../sections/_section-blog-timeline-archive
+          .cell-md-3.cell-lg-3.offset-top-66.offset-md-top-0
+            include ../sections/_section-blog-sidebar-variant-6
+
+  // Page Footers
+  include ../sections/_section-footer-variant-3

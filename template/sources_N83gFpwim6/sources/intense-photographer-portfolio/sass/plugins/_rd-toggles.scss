@@ -1,0 +1,293 @@
+/**
+ * RD Toggles
+ * @Section
+ */
+
+label {
+  cursor: pointer;
+  span {
+    display: inline-block;
+  }
+}
+
+.mfToggle__input-outer {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 14px;
+  background-color: $gray-light;
+  border-radius: 15px;
+  margin-right: 20px;
+  transition: background 0.3s ease;
+  vertical-align: middle;
+  margin-left: 6px;
+  box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.15);
+
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-color: $white;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25);
+    left: -9px;
+    top: -4px;
+    transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease;
+  }
+
+  &:active {
+    &:after {
+      box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba($brand-primary, 0.3);
+    }
+  }
+
+  &.active {
+    background-color: $brand-primary;
+
+    &:after {
+      left: 18px;
+    }
+    &:active {
+      &:after {
+        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba($brand-primary, 0.3);
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    position: absolute !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    border: none !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    z-index: -999999 !important;
+  }
+}
+
+.mfCheckbox__input-outer {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  border: 1px solid $gray;
+  border-radius: 2px;
+  margin-right: 10px;
+  border-radius: 2px;
+  vertical-align: text-bottom;
+  transition: 0.15s ease-in;
+
+  &:before {
+    position: absolute;
+    content: "\f222";
+    display: block;
+    font-size: 20px;
+    line-height: 20px;
+    opacity: 0;
+    font-family: 'Material Design Icons';
+    top: 35%;
+    left: 70%;
+    @include transform ( translate(-50%, -50%) );
+    transition: 0.25s ease-in;
+  }
+
+  &.active {
+    box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.15);
+    background: $gray-light;
+
+    &:before {
+      opacity: 1;
+    }
+
+  }
+
+  input[type="checkbox"] {
+    position: absolute !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    border: none !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    z-index: -999999 !important;
+  }
+}
+
+.mfRadio {
+  &__input-outer {
+    vertical-align: middle;
+    position: relative;
+    display: inline-block;
+    background: $gray-light;
+    width: 14px;
+    height: 14px;
+    margin-right: 12px;
+    border: 1px solid $gray;
+    border-radius: 100%;
+    box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.15);
+    transition: 0.1s ease;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      background-color: transparent;
+      border-radius: 100%;
+      transition: background 0.3s ease;
+    }
+
+    &:active {
+      box-shadow: 0 1px 3px 1px rgba(220, 220, 220, 0.15), 0 0 0 15px rgba($gray-light, 0.22);
+    }
+
+    &:hover {
+      &:after {
+        background-color: rgba($gray-darker, 0.4);
+      }
+    }
+
+    &.active {
+      &:after {
+        background-color: $gray-darker;
+      }
+      &:active {
+        box-shadow: none;
+      }
+    }
+  }
+  input[type="radio"] {
+    position: absolute !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    border: none !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    z-index: -999999 !important;
+  }
+  span {
+    vertical-align: middle;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .mfToggle__input-outer {
+    margin-right: 10px;
+  }
+}
+
+
+@-webkit-keyframes checkbox-on {
+  0% {
+    box-shadow: 0 0 0 10px $white, 10px -10px 0 10px $white, 32px 0px 0 20px $white, 0px 32px 0 20px $white, -5px 5px 0 10px $white, 15px 2px 0 11px $white;
+  }
+  50% {
+    box-shadow: 0 0 0 10px $white, 10px -10px 0 10px $white, 32px 0px 0 20px $white, 0px 32px 0 20px $white, -5px 5px 0 10px $white, 20px 2px 0 11px $white;
+  }
+  100% {
+    box-shadow: 0 0 0 10px $white, 10px -10px 0 10px $white, 32px 0px 0 20px $white, 0px 32px 0 20px $white, -5px 5px 0 10px $white, 20px -12px 0 11px $white;
+  }
+}
+
+@keyframes checkbox-on {
+  0% {
+    box-shadow: 0 0 0 10px $white, 10px -10px 0 10px $white, 32px 0px 0 20px $white, 0px 32px 0 20px $white, -5px 5px 0 10px $white, 15px 2px 0 11px $white;
+  }
+  50% {
+    box-shadow: 0 0 0 10px $white, 10px -10px 0 10px $white, 32px 0px 0 20px $white, 0px 32px 0 20px $white, -5px 5px 0 10px $white, 20px 2px 0 11px $white;
+  }
+  100% {
+    box-shadow: 0 0 0 10px $white, 10px -10px 0 10px $white, 32px 0px 0 20px $white, 0px 32px 0 20px $white, -5px 5px 0 10px $white, 20px -12px 0 11px $white;
+  }
+}
+
+@-webkit-keyframes checkbox-off {
+  0% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+
+  25% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+
+  50% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: -4px;
+    margin-left: 6px;
+    width: 0px;
+    height: 0px;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px, 0 0 0 0 inset;
+  }
+
+  51% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 10px inset;
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 0px inset;
+  }
+}
+
+@keyframes checkbox-off {
+  0% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+  25% {
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset;
+  }
+  50% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: -4px;
+    margin-left: 6px;
+    width: 0px;
+    height: 0px;
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px, 0 0 0 0 inset;
+  }
+  51% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 10px inset;
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    margin-top: -2px;
+    margin-left: -2px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 0px inset;
+  }
+}

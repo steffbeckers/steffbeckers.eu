@@ -1,0 +1,185 @@
+//- Includes
+include ../elements/_widget-shop-panel
+include ../elements/_ui-product-grid
+
+// Shop Grid View
+
++widget-panel-shop(cfg.nav.shop.submenu.grid.submenu.rightSidebar.href, cfg.nav.shop.submenu.list.submenu.rightSidebar.href, 'grid')
+
+.range
+  .cell-xs-6.cell-sm-6.cell-lg-4
+    +product-grid({
+      "title": "Engineered Rib Cashmere",
+      "link": cfg.nav.shop.submenu.singleProduct.submenu.rightSidebar.href,
+      "brand": "Armani Brand",
+      "price": [
+        "57.00",
+        "35.00"
+      ],
+      "images": [
+        {
+          "src":"images/shop/product-01-270x360.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        },
+        {
+          "src":"images/shop/product-01-270x360-2.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        },
+        {
+          "src":"images/shop/product-01-270x360-3.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        }
+      ],
+      "label": {
+        "adClass": "label-danger",
+        "text": "Sale"
+      }
+    })
+  .cell-xs-6.cell-sm-6.cell-lg-4.offset-top-41.offset-xs-top-0
+    +product-grid({
+      "title": "Ruched Bandage Miniskirt",
+      "link": cfg.nav.shop.submenu.singleProduct.submenu.rightSidebar.href,
+      "brand": "Step Brand",
+      "price": "59.00",
+      "images":[
+        {
+          "src": "images/shop/product-02-270x360.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        },
+        {
+          "src": "images/shop/product-02-270x360-2.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        },
+        {
+          "src": "images/shop/product-02-270x360-3.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        }
+      ],
+      "label":{
+        "adClass": "label-info",
+        "text": "New"
+      }
+    })
+  .cell-xs-6.cell-sm-6.cell-lg-4.offset-top-41.offset-lg-top-0
+    +product-grid({
+      "title": "Knit Cami Top",
+      "link": cfg.nav.shop.submenu.singleProduct.submenu.rightSidebar.href,
+      "brand": "Amo Brand",
+      "price": "48.00",
+      "images": [
+        {
+          "src": "images/shop/product-03-270x360.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        },
+        {
+          "src": "images/shop/product-03-270x360-2.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        }, {
+          "src": "images/shop/product-03-270x360-3.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        }
+      ]
+    })
+  .cell-xs-6.cell-sm-6.cell-lg-4.offset-top-41
+    +product-grid({
+      "title": "Contrast Back Zip",
+      "link": cfg.nav.shop.submenu.singleProduct.submenu.rightSidebar.href,
+      "brand": "Polo Brand",
+      "price": "14.00",
+      "images": [
+        {
+          "src": "images/shop/product-04-270x360.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        },
+        {
+          "src": "images/shop/product-04-270x360-2.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        },
+        {
+          "src": "images/shop/product-04-270x360-3.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        }
+      ]
+    })
+  .cell-xs-6.cell-sm-6.cell-lg-4.offset-top-41.offset-md-top-50
+    +product-grid({
+      "title": "Collar Leather Jacket",
+      "link": cfg.nav.shop.submenu.singleProduct.submenu.rightSidebar.href,
+      "brand": "Amo Brand",
+      "price": "38.00",
+      "images": [
+        {
+          "src": "images/shop/product-05-270x360.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        },
+        {
+          "src": "images/shop/product-05-270x360-2.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        },
+        {
+          "src": "images/shop/product-05-270x360-3.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        }
+      ]
+    })
+  .cell-xs-6.cell-sm-6.cell-lg-4.offset-top-41.offset-md-top-50
+    +product-grid({
+      "title": "Knit Skater Skirt",
+      "link": cfg.nav.shop.submenu.singleProduct.submenu.rightSidebar.href,
+      "brand": "Step Brand",
+      "price": "68.00",
+      "images": [
+        {
+          "src": "images/shop/product-06-270x360.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        },
+        {
+          "src": "images/shop/product-06-270x360-2.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        },
+        {
+          "src": "images/shop/product-06-270x360-3.png",
+          "width": 270,
+          "height": 360,
+          "alt": ""
+        }
+      ]
+    })
+
+.offset-top-66
+  +pagination-bootstrap("pagination-sm", 1, [{"href": "#"}, {"href": "#"}, {"href": "#"}, {"href": "#"}], null, {"href": "#"}) h1
+

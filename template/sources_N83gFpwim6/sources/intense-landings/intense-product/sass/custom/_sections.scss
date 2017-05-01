@@ -1,0 +1,309 @@
+//
+// Sections
+// --------------------------------------------------
+
+.section-relative {
+  position: relative;
+  z-index: 1;
+}
+
+.slider-menu-position {
+  position: relative;
+  .rd-navbar-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+// Full Screen Section
+// --------------------------------------------------
+.rd-parallax-layer[data-url].background-custom-position{
+  background-position: 0 0;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @media(min-width: 992px){
+    background-size: auto;
+  }
+}
+.section-cover {
+  min-height: 100vh;
+  @media(min-width:992px){
+    min-height: 0;
+  }
+}
+.padding-bottom-percent{
+  @media(min-width:992px){
+    padding-bottom: 24.66%;
+  }
+}
+
+.section-list-absolute {
+  position: relative;
+  display: block;
+  max-width: 945px;
+  margin-left: auto;
+  margin-right: auto;
+  ul {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .connector {
+    height: 2px;
+    width: 96px;
+    background: $brand-primary;
+    display: none;
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 50%;
+    margin-top: -1px;
+    &:after {
+      position: absolute;
+      top: 29px;
+      left: calc(100% - 12px);
+      content: "";
+      width: 83px;
+      height: 2px;
+      background: $brand-primary;
+      @include transform(rotate(45deg));
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-top: -6px;
+      margin-left: -6px;
+      top: 60px;
+      left: calc(100% + 60px);
+      background: $brand-primary;
+    }
+  }
+  @media (min-width: $screen-sm-min) {
+      ul{
+        width: 100%;
+        max-width: 100%;
+        li{
+          width: 31%;
+          display: inline-block;
+          vertical-align: top;
+          margin-top: 0;
+          & + li{
+            margin-left: 2%;
+          }
+        }
+      }
+  }
+  @media (min-width: $screen-md-min) {
+    img {
+      width: 70%;
+    }
+    .connector {
+      display: block;
+    }
+    ul {
+      li {
+        position: absolute;
+        max-width: 300px;
+        padding-left: 0;
+        &:before {
+          display: none;
+        }
+        &:first-child {
+          top: -70px;
+          left: 160px;
+        }
+        &:nth-child(2) {
+          left: 0;
+          top: 8%;
+        }
+        &:last-child {
+          left: 2%;
+          bottom: 17%;
+          .connector {
+            width: 275px;
+            &:after {
+              display: none;
+            }
+            &:before {
+              top: 0;
+              left: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 1600px) {
+    display: inline-block;
+    max-width: 100%;
+    img {
+      width: 100%;
+    }
+    .connector {
+      width: 180px;
+      left: calc(100% + 50px);
+      &:after {
+        top: 29px;
+        left: calc(100% - 12px);
+      }
+      &:before {
+        top: 60px;
+        left: calc(100% + 60px);;
+      }
+    }
+    ul {
+      li {
+        &:first-child {
+          top: -6px;
+          left: 11px;
+        }
+        &:nth-child(2) {
+          left: -26%;
+          top: 13%;
+        }
+        &:last-child {
+          left: -35%;
+          bottom: 32%;
+          .connector {
+            width: 473px;
+            &:before {
+              top: 0;
+              left: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-right {
+    .connector {
+      right: calc(100% + 10px);
+      left: auto;
+      margin-top: -1px;
+      &:after {
+        top: 29px;
+        right: calc(100% - 12px);
+        left: auto;
+        width: 83px;
+        @include transform(rotate(-45deg));
+      }
+      &:before {
+        top: 60px;
+        right: calc(100% + 60px);
+        left: auto;
+        margin-top: -6px;
+        margin-left: 0;
+        margin-right: -6px;
+      }
+    }
+    @media (min-width: $screen-md-min) {
+      ul {
+        li {
+          &:first-child {
+            top: -70px;
+            right: 160px;
+            left: auto;
+          }
+          &:nth-child(2) {
+            right: 0;
+            left: auto;
+            top: 12%;
+            .connector {
+              width: 150px;
+              &:after {
+                display: none;
+              }
+              &:before {
+                top: 0;
+                right: 100%;
+                left: auto;
+              }
+            }
+          }
+        &:last-child {
+          right: 0;
+          left: auto;
+          bottom: 11%;
+          .connector {
+            width: 230px;
+            &:after {
+              display: none;
+            }
+            &:before {
+              top: 0;
+              right: 100%;
+              left: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 1600px) {
+    .connector {
+      right: calc(100% + 50px);
+      left: auto;
+      &:after {
+        top: 29px;
+        right: calc(100% - 12px);
+        left: auto;
+      }
+      &:before {
+        top: 60px;
+        right: calc(100% + 60px);
+        left: auto;
+      }
+    }
+    ul {
+      li {
+        &:first-child {
+          top: 2px;
+          right: 25px;
+          left: auto;
+        }
+        &:nth-child(2) {
+          right: -25%;
+          left: auto;
+          top: 15%;
+          .connector {
+            width: 300px;
+            &:before {
+              top: 0;
+              right: 100%;
+              left: auto;
+            }
+          }
+        }
+        &:last-child {
+          right: -34%;
+          left: auto;
+          bottom: 30%;
+          .connector {
+            width: 350px;
+            &:before {
+              top: 0;
+              right: 100%;
+              left: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+}
+
+// Section Spacing
+// --------------------------------------------------
+
+$insets: (0, 34px, 50px, 65px, 90px, 100px, 110px, 120px);
+
+@include indent-responsive(section, '', (padding-top, padding-bottom), $medias, $insets);
+@include indent-responsive(section, top, padding-top, $medias, $insets);
+@include indent-responsive(section, bottom, padding-bottom, $medias, $insets);

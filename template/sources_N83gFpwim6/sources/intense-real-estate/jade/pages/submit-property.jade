@@ -1,0 +1,210 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-map
+include ../elements/_ui-table-bootstrap
+
+//-Title
+block title
+  title= cfg.nav.submit.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head
+
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.submit,
+    cfg.nav
+    )
+
+    //- Section header
+    section.rd-parallax.context-dark
+      div.rd-parallax-layer(data-speed="0.2" data-type="media" data-url="images/bg-header-1920x362.jpg")
+      div.rd-parallax-layer(data-speed="0" data-type="html")
+        .shell.section-top-34.section-sm-top-98.section-bottom-34
+          div
+            h1.text-bold Submit Property
+          ul.list-inline.list-inline-dashed.p.text-light.breadcrumb-modern.offset-top-10.offset-sm-top-66
+            li.active
+              a(href="./") Home
+            li  Submit Property
+
+  // Page Contents
+  main.page-content
+
+    //Section The Presidio Residences
+    section.section-98.section-sm-110
+      .shell
+        h2.text-bold Fill in the Form
+        hr.divider.bg-saffron
+        form.rd-mailform.text-left.offset-sm-top-66(method='post', action='bat/rd-mailform.php' data-form-output='form-output-global')
+          .range
+            .cell-md-6
+              .form-group
+                label.form-label.form-label-size-lg.form-label-outside(for="form-property-title")  Property Title
+                input#form-property-title.form-control.bg-white(type="text" name="property_title" data-constraints="@Required")
+              .range.offset-top-20
+                .cell-sm-6
+                  .form-group
+                    label.form-label.form-label-size-lg.form-label-outside(for="form-property-location")  Location
+                    select.form-control(id="form-property-location" name="property_location")
+                      option(value="1") any
+                      option(value="2") San Francisco
+                      option(value="3") New York
+                      option(value="4") Las Vegas
+                .cell-sm-6
+                  .form-group
+                    label.form-label.form-label-size-lg.form-label-outside(for="form-property-status") Property Status
+                    select.form-control(id="form-property-status" name="property_status" )
+                      option(value="1") any
+                      option(value="2") Sale
+                      option(value="3") Rent
+                      option(value="4") Commercial
+
+              .form-group.offset-top-20
+                label.form-label.form-label-size-lg.form-label-outside(for="form-property-type") Type
+                select.form-control(id="form-property-type" name="property_type")
+                  option(value="1") any
+                  option(value="2") Apartment
+                  option(value="3") Office
+                  option(value="4") Hotel
+              .range.offset-top-20
+                .cell-sm-4
+                  .form-group
+                    label.form-label.form-label-size-lg.form-label-outside(for="form-beds") Beds
+                    select.form-control(id="form-beds" name="property_beds")
+                      option(value="1") any
+                      option(value="2") 1
+                      option(value="3") 2
+                      option(value="4") 3
+                      option(value="5") 4
+                .cell-sm-4
+                  .form-group
+                    label.form-label.form-label-size-lg.form-label-outside(for="form-baths") Baths
+                    select.form-control(id="form-baths" name="property_baths")
+                      option(value="1") any
+                      option(value="2") 1
+                      option(value="3") 2
+                      option(value="4") 3
+                      option(value="5") 4
+                .cell-sm-4
+                  .form-group
+                    label.form-label.form-label-size-lg.form-label-outside(for="form-property-price")  Price(USD)
+                    input#form-property-price.form-control.bg-white(type="text" name="property_price" data-constraints="@Required")
+
+              .form-group.offset-top-20
+                label.form-label.form-label-size-lg.form-label-outside(for="form-property-description") Property Description
+                textarea#form-property-description.form-control.bg-white(name="property_description" style="height: 150px;" data-constraints="@Required")
+
+
+            .cell-md-6
+              .form-group
+                label.form-label.form-label-size-lg.form-label-outside(for="rd-google-map-address") Address
+                .input-group
+                  input#rd-google-map-address.form-control(placeholder=holder, type="text", name="address" data-constraints="@Required")
+                  span.input-group-btn
+                    a#rd-google-map-address-submit.btn.btn-primary(href="#") Find Address
+
+              .rd-google-map.offset-top-24
+                #rd-google-map.rd-google-map__model-mod-2(data-zoom= 14, data-x= -73.9874068, data-y= 40.643180, data-styles= [{
+                  "featureType": "administrative",
+                  "elementType": "labels.text.fill",
+                  "stylers": [{"color": "#444444"}]
+                }, {
+                  "featureType": "administrative.locality",
+                  "elementType": "labels",
+                  "stylers": [{"visibility": "on"}]
+                }, {
+                  "featureType": "landscape",
+                  "elementType": "all",
+                  "stylers": [{"color": "#f2f2f2"}, {"visibility": "simplified"}]
+                }, {
+                  "featureType": "poi",
+                  "elementType": "all",
+                  "stylers": [{"visibility": "on"}]
+                }, {
+                  "featureType": "poi",
+                  "elementType": "geometry",
+                  "stylers": [{"visibility": "simplified"}, {"saturation": "-65"}, {"lightness": "45"}, {"gamma": "1.78"}]
+                }, {
+                  "featureType": "poi",
+                  "elementType": "labels",
+                  "stylers": [{"visibility": "off"}]
+                }, {
+                  "featureType": "poi",
+                  "elementType": "labels.icon",
+                  "stylers": [{"visibility": "off"}]
+                }, {
+                  "featureType": "road",
+                  "elementType": "all",
+                  "stylers": [{"saturation": -100}, {"lightness": 45}]
+                }, {
+                  "featureType": "road",
+                  "elementType": "labels",
+                  "stylers": [{"visibility": "on"}]
+                }, {
+                  "featureType": "road",
+                  "elementType": "labels.icon",
+                  "stylers": [{"visibility": "off"}]
+                }, {
+                  "featureType": "road.highway",
+                  "elementType": "all",
+                  "stylers": [{"visibility": "simplified"}]
+                }, {
+                  "featureType": "road.highway",
+                  "elementType": "labels.icon",
+                  "stylers": [{"visibility": "off"}]
+                }, {
+                  "featureType": "road.arterial",
+                  "elementType": "labels.icon",
+                  "stylers": [{"visibility": "off"}]
+                }, {
+                  "featureType": "transit.line",
+                  "elementType": "geometry",
+                  "stylers": [{"saturation": "-33"}, {"lightness": "22"}, {"gamma": "2.08"}]
+                }, {
+                  "featureType": "transit.station.airport",
+                  "elementType": "geometry",
+                  "stylers": [{"gamma": "2.08"}, {"hue": "#ffa200"}]
+                }, {
+                  "featureType": "transit.station.airport",
+                  "elementType": "labels",
+                  "stylers": [{"visibility": "off"}]
+                }, {
+                  "featureType": "transit.station.rail",
+                  "elementType": "labels.text",
+                  "stylers": [{"visibility": "off"}]
+                }, {
+                  "featureType": "transit.station.rail",
+                  "elementType": "labels.icon",
+                  "stylers": [{"visibility": "simplified"}, {"saturation": "-55"}, {"lightness": "-2"}, {"gamma": "1.88"}, {"hue": "#ffab00"}]
+                }, {
+                  "featureType": "water",
+                  "elementType": "all",
+                  "stylers": [{"color": "#bbd9e5"}, {"visibility": "simplified"}]
+                }])
+
+          h5.text-bold.offset-top-66 Additional Details
+          .additional-fields(data-init-count="1"  data-additional-field='<div class="submit-property-detail offset-top-41 offset-sm-top-20"><div class="row"><div class="col-xs-10 col-sm-11"><div class="range range-xs-middle"><div class="cell-sm-5"><div class="form-group"><label for="form-property-detail-title-$num$" class="form-label form-label-size-lg form-label-outside"> Title </label><input id="form-property-detail-title-$num$" type="text" name="propery_detail_title_$num$" data-constraints="@Required" class="form-control bg-white"></div></div><div class="cell-sm-7"><div class="form-group"><label for="form-property-detail-value-1" class="form-label form-label-size-lg form-label-outside"> Value </label><input id="form-property-detail-value-1" type="text" name="propery_detail_value_1" data-constraints="@Required" class="form-control bg-white"></div></div></div></div><div class="col-xs-2 col-sm-1 text-center offset-top-14 offset-sm-top-10"><a href="#" class="additional-field-remove icon icon-xxs mdi mdi-close text-dark offset-top-41"></a></div></div></div>')
+            .additional-fields-wrap
+            .range.offset-top-34
+              .cell-md-2.cell-xs-4
+                button.additional-fields-add.btn.btn-default.btn-block Add detail
+          hr.bg-lighter
+          .range
+            .cell-md-3.cell-xs-6
+              button(type="submit").btn.btn-primary.btn-block submit
+
+  // Page Footer
+  include ../sections/_section-footer-default

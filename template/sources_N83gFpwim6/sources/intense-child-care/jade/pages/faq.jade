@@ -1,0 +1,91 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-rd-parallax
+include ../elements/_ui_accordion-classic
+//-Title
+block title
+  title= cfg.nav.faq.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.faq,
+    cfg.nav
+    )
+  // Page Content
+  main.page-content
+    // Breadcrumbs
+    section.context-dark
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/bg-01-1920x718.jpg",
+        "htmlSpeed": "0"
+      })
+        .bg-overlay-info
+          .shell.section-34.section-sm-66.text-md-left
+            div.veil.reveal-sm-block.reveal-md-inline-block
+              h1.text-bold
+                span.big FAQ
+            div.pull-md-right.offset-sm-top-10.offset-md-top-41
+              ul.p.list-inline.list-inline-dashed
+                li.text-safety-orange
+                  a(href= cfg.nav.home.href) Home
+                li FAQ
+
+    // Welcome to Intense
+    section.section-md-top-110.section-md-bottom-0.section-98
+      .shell
+        .range.range-xs-center
+          .cell-xs-10.cell-md-6
+            img.img-responsive.veil.reveal-xs-inline-block.offset-top-10(src="images/faq-01-581-652.jpg" width=581 height=652 alt="")
+          .cell-xs-10.cell-md-6.text-md-left.offset-top-50.offset-md-top-0
+            .text-center
+              h1.text-bold.text-primary General Questions
+              +svg-divider("bg-primary", "71", "13")
+            .offset-top-30.offset-md-top-0.section-50
+              +accordion-classic(['Does my child have to take a nap?', 'How much do your programs cost?', 'How can I enroll at your center?', 'What should I pack in my child’s pack?'])
+                div
+                  | In every daycare program we offer, children get one hour of daytime sleep. It allows your children to have a rest from various activities and recover their powers for further wakefulness. During this time, our teachers go around reading a story to children while soothing music is playing. We make sure your children benefit from this “rest time” and are full of energy afterward.
+                div
+                  | Our programs differ from other childcare centers and schools in their affordability. It means you can find a proper program for your child even if you don’t have enough resources to pay for the full cost of our programs. If you would like to cut down the expenses on the upbringing of your child, using our credit service is the perfect solution. With it, you can be calm for your kid.
+                div
+                  | If you decide to enroll at our center or select one of our programs for your child, we will immediately pick the best group for him/her. During your first visit to our center, our managers will invite you on a tour around our premises so that you could see where your child will be learned and cared for. You can also enroll online if you are currently away from your place of residence.
+                div
+                  | We can provide your child with almost everything necessary. However, there are some things that you should pack him/her with. Unless the program you selected doesn’t include a free meal, the first thing to pack is a daily lunch. A few other things are a sunsafe hat, a comfort item, and a bottle of water. Everything else your child can get at our center.
+    // First Lesson - Free
+    section.context-dark
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/bg-02-1920x748.jpg",
+        "htmlSpeed": "0"
+      })
+        .shell.section-66.context-dark
+          h1.text-bold First Lesson - Free
+          .range.range-xs-center.offset-top-20
+            .cell-xs-10.cell-xs-8
+              div
+                p The free lesson is a perfect opportunity for your kid to enjoy our programs, including learning and entertaining activities.
+              .offset-top-30
+                a(href=cfg.nav.contacts.href).btn.btn-icon.btn-icon-left.btn-default
+                  span.icon.mdi-email-outline.mdi
+                  span Send us a letter
+
+  // Page Footer
+  include ../sections/_section-footer-default
+
+

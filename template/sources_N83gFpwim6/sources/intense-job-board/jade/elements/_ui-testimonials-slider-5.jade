@@ -1,0 +1,26 @@
+//- Testimonials Slider
+
+mixin testimonials-slider-5(testimonials, carousel)
+  .owl-carousel.owl-carousel-default.owl-carousel-arrows.veil-md-owl-dots.veil-owl-nav.reveal-md-owl-nav.inset-left-7p.inset-right-7p(data-items="1" data-nav="true" data-dots="true" data-nav-class='["owl-prev mdi mdi-chevron-left", "owl-next mdi mdi-chevron-right"]')
+    each testimonial in testimonials
+      div
+        .range.range-xs-center
+          .cell-lg-8
+            .reveal-inline-block
+              div(class= testimonial.unitStyling)
+                .unit-left
+                  img.img-circle(width=testimonial.image.width, height=testimonial.image.height, src=testimonial.image.src, alt=testimonial.image.alt)
+                .unit-body
+                  div
+                    div(class= testimonial.title.titleStyling)= testimonial.title.titleDesc
+                  div
+                    div(class= testimonial.description.descStyling)= testimonial.description.desc
+
+            .offset-top-41
+              +quote-simple(
+              {
+                "title": testimonial.quote.title,
+                "styling": testimonial.quote.styling,
+                "firstDivider": testimonial.quote.firstDivider,
+                "lastDivider": testimonial.quote.lastDivider
+              })

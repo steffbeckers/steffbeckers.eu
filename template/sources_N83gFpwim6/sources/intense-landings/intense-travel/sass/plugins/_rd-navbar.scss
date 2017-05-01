@@ -1,0 +1,56 @@
+//
+// RD Navbar
+// --------------------------------------------------
+
+$rd-navbar-fixed-height: 56px;
+
+%rd-navbar-transition {
+  transition: .3s all cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+
+%rd-navbar-default-link-font {
+  font-size: $rd-navbar-size;
+  font-weight: $rd-navbar-weight;
+  line-height: $rd-navbar-line-height;
+}
+
+.rd-navbar {
+  display: none;
+  position: relative;
+  z-index: 99999;
+  text-align: left;
+
+  ul {
+    list-style-type: none;
+    margin-bottom: 0;
+  }
+
+  a {
+    transition: .3s all ease;
+  }
+
+  .responsive-tabs-classic {
+    border-bottom: none;
+    .resp-tab-content + .resp-accordion{
+      border-top: none;
+    }
+  }
+}
+
+// Stuck menu
+.rd-navbar-static.rd-navbar--is-stuck {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.rd-navbar-fixed,
+.rd-navbar-static{
+  display: block;
+}
+
+.rd-navbar--no-transition {
+  &, *{
+    transition: none!important;
+  }
+}

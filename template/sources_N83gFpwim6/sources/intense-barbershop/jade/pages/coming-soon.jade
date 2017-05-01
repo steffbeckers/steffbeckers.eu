@@ -1,0 +1,30 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Coming soon'
+  - var bodyClass = 'one-screen-page'
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+  //- Page Content
+  section.section-sm.bg-periglacial-blue.one-screen-page-content.text-center
+    .shell
+      h2 Coming Soon
+      .p.text-width-smaller
+        p.big We are getting ready to launch our website in a few moments, so get ready and stay connected with the latest updates!
+
+      a.btn.btn-sm.btn-style-1.btn-primary(href='index.html') Back to homepage
+  ='\n'
+
+
+  // Page Footer
+  include ../sections/_footer-default

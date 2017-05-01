@@ -1,0 +1,14 @@
+//
+// Links
+// --------------------------------------------------
+@mixin link($default-clr, $hover-color) {
+  &,
+  &:active,
+  &:focus {
+    color: $default-clr;
+  }
+
+  &:hover {
+    color: $hover-color;
+  }
+}

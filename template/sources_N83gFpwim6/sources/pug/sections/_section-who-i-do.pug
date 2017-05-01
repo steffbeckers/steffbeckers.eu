@@ -1,0 +1,49 @@
+//- Includes
+include ../elements/_ui-progress-bar-circle
+
+// What i Do
+section.section-98.section-sm-110.context-dark(style="background: #191919 url(images/index-09.png);")
+  .shell
+    h1 What i Do
+    hr.divider.bg-mantis
+    .range.range-xs-center.offset-top-0
+      .cell-sm-10
+        p Web design is my expertise. I offer a wide range of services from wireframing to full-cycle web development. No matter what size is your project of – it will be done quickly and on the highest quality level.
+    .range.range-sm-center.offset-top-66
+      .cell-sm-8.cell-md-12
+        .range
+          .cell-sm-6.cell-md-3
+            +progress-bar-circle({
+              "value": "0.87",
+              "colorFill": "#5aba67, #78c157",
+              "colorEmpty": "rgb(245,245,245)",
+              "colorSize": "175"
+            })
+            h4.text-bold.offset-top-20 Photoshop
+
+          .offset-top-41.cell-sm-6.offset-sm-top-0.cell-md-3
+            +progress-bar-circle({
+                "value": "0.75",
+                "colorFill": "#f5bf2f, #f3a43d",
+                "colorEmpty": "rgb(245,245,245)",
+                "colorSize": "175"
+            })
+            h4.text-bold.offset-top-20 Sketch 3
+
+          .offset-top-41.cell-sm-6.cell-md-3.offset-md-top-0
+            +progress-bar-circle({
+              "value": "0.42",
+              "colorFill": "#64aae1, #79ccf2",
+              "colorEmpty": "rgb(245,245,245)",
+              "colorSize": "175"
+            })
+            h4.text-bold.offset-top-20 Coding
+
+          .offset-top-41.cell-sm-6.cell-md-3.offset-md-top-0
+            +progress-bar-circle({
+              "value": "0.65",
+              "colorFill": "#f54b0f, #e50a0a",
+              "colorEmpty": "rgb(245,245,245)",
+              "colorSize": "175"
+            })
+            h4.text-bold.offset-top-20 Development

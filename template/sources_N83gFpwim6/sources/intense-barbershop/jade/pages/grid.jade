@@ -1,0 +1,233 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-page-title
+
+
+block variables
+  - var activeIndex = 0
+  - var menuPerspective = true
+  - var pageName = 'Grid'
+
+block title
+  title=pageName
+
+block menu
+  include ../sections/_menu-perspective
+
+block header
+  include ../sections/_header-default
+
+block page
+
+  //- Page Content
+  +page-title(pageName)
+  //- Grid
+  section.section-lg.bg-periglacial-blue.text-center
+    .container-fullwidth.grid-system-outline
+      h3 Full-Width Grid System
+
+      .row.row-no-gutter.grid-system-row
+        .col-xs-12
+          .grid-element
+            h5 1/1
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers. Our site design and navigation has been thoroughly thought out. The layout is aesthetically appealing, contains concise texts in order not to take your precious time. Text styling allows scanning the pages quickly. Site navigation is extremely intuitive and user-friendly. You will always know where you are now and will be able to skip from one page to another with a single mouse click. We use only trusted, verified content, so you can believe every word we are saying. We are always happy to greet the new visitors on our site. Our blog and social media accounts are available to encourage communication and connection between clients and personnel and tell you more about us in the informal environments where we can have a dialogue instead of just a narrative like that.
+      .row.row-no-gutter.grid-system-row
+        .col-xs-6
+          .grid-element
+            h5 1/2
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers. Our site
+        .col-xs-6
+          .grid-element
+            h5 1/2
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers. Our site
+      .row.row-no-gutter.grid-system-row
+        .col-xs-4
+          .grid-element
+            h5 1/3
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience
+        .col-xs-4
+          .grid-element
+            h5 1/3
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience
+        .col-xs-4
+          .grid-element
+            h5 1/3
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience
+      .row.row-no-gutter.grid-system-row
+        .col-xs-3
+          .grid-element
+            h5 1/4
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced
+        .col-xs-3
+          .grid-element
+            h5 1/4
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced
+        .col-xs-3
+          .grid-element
+            h5 1/4
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced
+        .col-xs-3
+          .grid-element
+            h5 1/4
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced
+      .row.row-no-gutter.grid-system-row
+        .col-xs-2
+          .grid-element.grid-element-spacing-1
+            h5 1/6
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced
+        .col-xs-2
+          .grid-element.grid-element-spacing-1
+            h5 1/6
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced
+        .col-xs-2
+          .grid-element.grid-element-spacing-1
+            h5 1/6
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced
+        .col-xs-2
+          .grid-element.grid-element-spacing-1
+            h5 1/6
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced
+        .col-xs-2
+          .grid-element.grid-element-spacing-1
+            h5 1/6
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced
+        .col-xs-2
+          .grid-element.grid-element-spacing-1
+            h5 1/6
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced
+      .row.row-no-gutter.grid-system-row
+        .col-xs-8
+          .grid-element
+            h5 2/3
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers. Our site
+        .col-xs-4
+          .grid-element
+            h5 1/3
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will
+
+  //- Boxed Grid System
+  section.section-lg.bg-periglacial-blue.text-center
+    .container.grid-system-bordered
+      h3 Boxed Grid System
+
+      .row.grid-system-row
+        .col-xs-12
+          .grid-element
+            h5 1/1
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff and happy customers. Our site design and navigation has been thoroughly thought out. The layout is aesthetically appealing, contains concise texts in order not to take your precious time. Text styling allows scanning the pages quickly. Site navigation is extremely intuitive and user-friendly. You will always know where you are now and will be able to skip from one page to another with a single mouse click. We use only trusted, verified content, so you can believe every word we are saying. We are always happy to greet the new visitors on our site. Our blog and social media accounts are available to encourage communication and connection between clients and personnel and tell you more about us in the informal environments where we can have a dialogue instead of just a narrative like that.
+      .row.grid-system-row
+        .col-xs-6
+          .grid-element
+            h5 1/2
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you
+        .col-xs-6
+          .grid-element
+            h5 1/2
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you
+      .row.grid-system-row
+        .col-xs-4
+          .grid-element
+            h5 1/3
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating
+        .col-xs-4
+          .grid-element
+            h5 1/3
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating
+        .col-xs-4
+          .grid-element
+            h5 1/3
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating
+      .row.grid-system-row
+        .col-xs-3
+          .grid-element
+            h5 1/4
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is
+        .col-xs-3
+          .grid-element
+            h5 1/4
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is
+        .col-xs-3
+          .grid-element
+            h5 1/4
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is
+        .col-xs-3
+          .grid-element
+            h5 1/4
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is
+      .row.grid-system-row
+        .col-xs-2
+          .grid-element
+            h5 1/6
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and
+        .col-xs-2
+          .grid-element
+            h5 1/6
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and
+        .col-xs-2
+          .grid-element
+            h5 1/6
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and
+        .col-xs-2
+          .grid-element
+            h5 1/6
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and
+        .col-xs-2
+          .grid-element
+            h5 1/6
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and
+        .col-xs-2
+          .grid-element
+            h5 1/6
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and
+      .row.grid-system-row
+        .col-xs-8
+          .grid-element
+            h5 2/3
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page. It will tell you lots of interesting things about our company, its products and services, highly professional staff
+        .col-xs-4
+          .grid-element
+            h5 1/3
+            p.
+              Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating
+
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_footer-default
+

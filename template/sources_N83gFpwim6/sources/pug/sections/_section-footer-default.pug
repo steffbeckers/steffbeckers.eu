@@ -1,0 +1,71 @@
+include ../elements/_widget-post.pug
+include ../elements/_widget-form-subscribe.pug
+include ../elements/_widget-list-social.pug
+
+// Default footer
+footer.section-relative.section-top-66.section-bottom-34.page-footer.bg-gray-base.context-dark
+  .shell
+    .range.range-sm-center.text-lg-left
+      .cell-sm-8.cell-md-12
+        .range.range-xs-center
+          .cell-xs-7.text-xs-left.cell-md-4.cell-lg-3.cell-lg-push-4
+            h6.text-uppercase.text-spacing-60 Latest news
+
+            +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "05/14/2015", "Let’s Change the world", null, "text-picton-blue")
+            +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "05/14/2015", "The meaning of Web Design", null, "text-picton-blue")
+            +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "05/14/2015", "Get Started with TemplateMonster", null, "text-picton-blue")
+
+          .cell-xs-5.offset-top-41.offset-xs-top-0.text-xs-left.cell-md-3.cell-lg-2.cell-lg-push-3
+            h6.text-uppercase.text-spacing-60 Useful Links
+            .reveal-block
+              .reveal-inline-block
+                ul.list.list-marked
+                  li
+                    a(href=cfg.nav.pages.submenu.aboutUs.href)= cfg.nav.pages.submenu.aboutUs.title
+                  li
+                    a(href=cfg.nav.pages.submenu.contactUs.href)= cfg.nav.pages.submenu.contactUs.title
+                  li
+                    a(href=cfg.nav.pages.submenu.services.href)= cfg.nav.pages.submenu.services.title
+                  li
+                    a(href=cfg.nav.pages.submenu.pricing.href)= cfg.nav.pages.submenu.pricing.title
+                  li
+                    a(href=cfg.nav.pages.submenu.clients.href)= cfg.nav.pages.submenu.clients.title
+
+          .cell-xs-12.offset-top-41.cell-md-5.offset-md-top-0.text-md-left.cell-lg-4.cell-lg-push-2
+            h6.text-uppercase.text-spacing-60 Newsletter
+
+            p Keep up with our always upcoming  product features  and technologies. Enter your e-mail and subscribe to  our newsletter.
+
+            .offset-top-30
+              +widget-form-subscribe("Type your E-Mail", "form-subscribe-footer")
+
+          .cell-xs-12.offset-top-66.cell-lg-3.cell-lg-push-1.offset-lg-top-0
+            // Footer brand
+            .footer-brand
+              a(href=cfg.nav.home.href)
+                !=cfg.brand.logoInverse
+            p.text-darker.offset-top-4 Feel the power of future
+
+            +widget-list-social([
+              {
+                "icon": "fa fa-facebook",
+                "href": "#"
+              },
+              {
+                "icon": "fa fa-twitter",
+                "href": "#"
+              },
+              {
+                "icon": "fa fa-google-plus",
+                "href": "#"
+              },
+              {
+                "icon": "fa fa-linkedin",
+                "href": "#"
+              }
+            ])
+
+  .shell.offset-top-50
+    p.small.text-darker
+      | #{cfg.brand.name} &copy; #[span(id="copyright-year")] . #[a(href="privacy.html") Privacy Policy]
+      // {%FOOTER_LINK}

@@ -1,0 +1,122 @@
+//
+// Twitter Feed
+// --------------------------------------------------
+
+.twitter {
+  .twitter-date {
+    &:before {
+      content: '\f099';
+      margin-right: 6px;
+
+      font-family: "FontAwesome";
+      font-size: 18px;
+      color: $brand-picton-blue;
+    }
+  }
+
+  .twitter-name > a {
+    color: $brand-picton-blue;
+    margin-top: 8px;
+    margin-bottom: 0;
+
+    &:before {
+      content: '- ';
+    }
+  }
+
+  .twitter-text {
+    margin-top: 4px;
+
+    a {
+      color: $brand-picton-blue;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .twitter-sm + .twitter-sm {
+    margin-top: 18px;
+  }
+}
+
+
+//
+// Boxed Twitter Feed
+// --------------------------------------------------
+
+.twitter .rd-twitter {
+  display: block;
+  opacity: 0;
+  border-radius: $border-radius-base;
+  background: $white;
+  transition: .3s all ease;
+
+  // Twitter Unit
+  .twitter-unit {
+    padding: 25px 20px 0;
+  }
+
+  // Tweet
+  &-tweet {
+    padding: 0 15px 20px;
+
+    a {
+      color: $brand-iceberg;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Box Twitter Image Wrap
+  &-img-wrap {
+    max-height: 250px;
+    overflow: hidden;
+
+    .rd-twitter-media {
+      width: 100%;
+    }
+  }
+
+  // Box Twitter Time Wrap
+  &-time-wrap {
+    padding: 25px;
+  }
+
+  // Meta Info
+  &-meta {
+    * {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .twitter-unit {
+      padding: 20px;
+
+      .unit-body {
+        padding-left: 20px;
+      }
+    }
+
+    &-tweet {
+      padding: 0 25px 25px;
+    }
+
+    &-meta {
+      * {
+        max-width: 140px;
+      }
+    }
+  }
+
+  &.rd-twitter-compact {
+    .rd-twitter-time-wrap {
+      padding-top: 0;
+    }
+  }
+}

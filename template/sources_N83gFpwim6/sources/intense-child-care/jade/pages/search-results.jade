@@ -1,0 +1,59 @@
+extends  ../_skeleton
+//- Includes
+include ../elements/_ui-rd-parallax
+include ../elements/_widget-form-search
+
+//- Title
+block title
+  title Search Results
+
+//- Page
+block page
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    "",
+    cfg.nav
+    )
+
+  // Page Content
+  main.page-content
+    // Breadcrumbs
+    section.context-dark
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/bg-01-1920x718.jpg",
+        "htmlSpeed": "0"
+      })
+        .bg-overlay-info
+          .shell.section-34.section-sm-66.text-md-left
+            div.veil.reveal-sm-block.reveal-md-inline-block
+              h1.text-bold
+                span.big Search results
+            div.pull-md-right.offset-sm-top-10.offset-md-top-41
+              ul.p.list-inline.list-inline-dashed
+                li.text-safety-orange
+                  a(href= cfg.nav.home.href) Home
+                li Search results
+
+    section.shell.section-top-98
+
+      +widget-form-search("input-sm", "form-label-sm", "search-results")
+
+      .rd-search-results.offset-top-66
+
+    section.shell-wide.offset-top-66
+      hr.hr.bg-gray
+
+  // Page Footers
+  include ../sections/_section-footer-default

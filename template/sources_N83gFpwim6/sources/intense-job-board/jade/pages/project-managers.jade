@@ -1,0 +1,165 @@
+extends  ../_skeleton
+
+//- Includes
+
+
+block title
+  title= cfg.nav.allPages.submenu.projectManagers.title
+
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    // - RD Navbar
+    +rd-navbar-floated(
+    'rd-navbar-dark rd-navbar-dark-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.allPages,
+    cfg.nav
+    )
+    .context-dark
+      +breadcrumb-modern("Project Managers", {
+        0: {
+          "type": "link",
+          "title": cfg.nav.home.title,
+          "href": cfg.nav.home.href
+        },
+        1: {
+          "type": "link",
+          "title": "Job Page",
+          "href": "#"
+        },
+        2: {
+          "type": "link",
+          "title": "Houshold",
+          "href": "#"
+        },
+        3: {
+          "type": "link",
+          "title": cfg.nav.allPages.submenu.projectManagers.title,
+          "href": cfg.nav.allPages.submenu.projectManagers.href
+        }
+      }, "images/background-02-1920x870.jpg")
+
+  // Page Contents
+  main.page-content
+
+    // Find The Right Expert
+    section.section-98.section-sm-110
+      .shell.text-md-left
+        .range.range-xs-justify
+          .cell-md-2.cell-md-push-6
+            .pull-md-right
+              a(href=cfg.nav.allPages.submenu.yourCareerStartsHere.href)
+                img.img-responsive.center-block.img-semi-transparent-inverse(src="images/job-01-90x73.png" width="90" height="73" alt="")
+
+          .cell-md-5.cell-lg-4.offset-top-14.offset-md-top-0
+            .pull-md-left
+              div
+                h1 HouseHold
+              .offset-top-10
+                div.reveal-xs-inline-block
+                  h6 Job Categories:
+                div.reveal-xs-inline-block
+                  .offset-top-10.offset-xs-top-0.inset-xs-left-20
+                    span.icon.icon-xxs.fa.fa-tag.text-dark
+                    p.reveal-inline-block.offset-top-0 Project
+                    span.icon.icon-xxs.fa.fa-tag.text-dark.inset-left-10
+                    p.reveal-inline-block.offset-top-0 Managers
+
+        .offset-top-14
+          hr.hr.bg-gray
+
+          .range.range-xs-center.range-md-left.offset-top-0
+            .cell-sm-9.text-xs-left
+              .range.range-xs-center.range-md-left.offset-top-0
+                .cell-xs-6.cell-md-4
+                  .p.unit.unit-xs.unit-spacing-xs.unit-xs-horizontal
+                    .unit-left
+                      span.icon.icon-xxs.fa.fa-calendar.text-primary
+                    .unit-body
+                      div
+                        p.text-bold Date Posted:
+                      p.text-muted.offset-top-4 Posted 7 months ago
+
+                .cell-xs-6.cell-md-4.offset-top-41.offset-xs-top-0
+                  .p.unit.unit-xs.unit-spacing-xs.unit-xs-horizontal
+                    .unit-left
+                      span.icon.icon-xxs.fa.fa-clock-o.text-primary
+                    .unit-body
+                      div
+                        p.text-bold Employment Type
+                      p.text-muted.offset-top-4 Full Time
+
+                .cell-xs-6.cell-md-4.offset-top-41.offset-xs-top-20.offset-md-top-0
+                  .p.unit.unit-xs.unit-spacing-xs.unit-xs-horizontal
+                    .unit-left
+                      span.icon.icon-xxs.fa.fa-link.text-primary
+                    .unit-body
+                      div
+                        p.text-bold Website
+                      a.text-muted(href="#") Demolink.org
+
+                .cell-xs-6.cell-md-4.offset-top-41.offset-xs-top-20
+                  .p.unit.unit-xs.unit-spacing-xs.unit-xs-horizontal
+                    .unit-left
+                      span.icon.icon-xxs.fa.fa-map-marker.text-primary
+                    .unit-body
+                      div
+                        p.text-bold Location:
+                      p.text-muted.offset-top-4 Aurora, Colorado
+
+                .cell-xs-6.cell-md-4.offset-top-41.offset-xs-top-20
+                  .p.unit.unit-xs.unit-spacing-xs.unit-xs-horizontal
+                    .unit-left
+                      span.icon.icon-xxs.fa.fa-money.text-primary
+                    .unit-body
+                      div
+                        p.text-bold Salary:
+                      p.text-muted.offset-top-4 $35000 - 38000
+
+                .cell-xs-6.cell-md-4.offset-top-41.offset-xs-top-20
+                  .p.unit.unit-xs.unit-spacing-xs.unit-xs-horizontal
+                    .unit-left
+                      span.icon.icon-xxs.fa.fa-phone.text-primary
+                    .unit-body
+                      div
+                        p.text-bold Phone:
+                      a.text-muted(href="callto:#") (800) 1234567
+
+          hr.hr.bg-gray
+
+          h6 Description:
+          p Project managers ensure that a project is completed on time and within budget, that the project's objectives are met and that everyone is doing their job properly. Projects are usually separate to usual day-to-day business activities and require a group of people to work together to achieve a set of specific objectives. Project managers oversee the project to ensure the desired result is achieved, the most efficient resources are used and the different interests involved are satisfied.
+
+          hr.hr.bg-gray
+
+          h6 Primary Areas of Accountability:
+
+          .range.range-xs-center.range-sm-left.range-left
+            .cell-sm-8.cell-lg-4
+              ul.list-marked
+                li Agreeing project objectives;
+                li.offset-top-10 Overseeing the accounting, costing and billing;
+                li.offset-top-10 Carrying out risk assessment;
+                li.offset-top-10 Monitoring sub-contractors;
+
+            .cell-sm-8.cell-lg-4.offset-top-10.offset-lg-top-0
+              ul.list-marked
+                li Representing the clients;
+                li.offset-top-10 Using IT systems to keep track of progress;
+                li.offset-top-10 Making sure the quality standards are met;
+                li.offset-top-10 Providing advice on the management of projects;
+
+          .group.offset-top-66
+            a.btn.btn-waikawa(href="#") Apply with facebook
+            a.btn.btn-primary(href="#") Apply for a job
+
+  // Page Footers
+  include ../sections/_section-footer

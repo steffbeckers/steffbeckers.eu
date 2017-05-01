@@ -1,0 +1,376 @@
+//
+// RD Calendar
+// --------------------------------------------------
+
+.rd-calendar {
+  position: relative;
+  box-shadow: $shadow-area-md;
+  max-width: 270px;
+  margin-left: auto;
+  margin-right: auto;
+  background: $white;
+}
+
+.rdc-today_month, .rdc-fullyear {
+  display: inline-block;
+  font-size: 24px;
+  color: $white;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+// Panel
+.rdc-panel {
+  text-align: center;
+  position: relative;
+  padding: 18px 30px;
+  background: $brand-primary;
+}
+
+// Controls
+.rdc-next, .rdc-prev, .rdc-events_close {
+  font: 400 24px/38px $icon-font-material-design;
+  cursor: pointer;
+  transition: .3s all ease;
+  opacity: .8;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.rdc-next, .rdc-prev {
+  color: $white;
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+.rdc-next {
+  right: 13px;
+  &:before {
+    content: '\f238';
+  }
+}
+
+.rdc-prev {
+  left: 13px;
+  &:before {
+    content: '\f237';
+  }
+}
+
+.rdc-events_close {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  line-height: 20px;
+  font-size: 18px;
+  &:before {
+    content: '\f24c';
+  }
+}
+
+// Events
+.rdc-events {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  top: 40px;
+  padding: 10px 20px 15px;
+  transition: .3s;
+  visibility: hidden;
+  opacity: 0;
+  @include transform(translateY(30px));
+  background: $white;
+  border-radius: $border-radius-small;
+  box-shadow: $shadow-area-sm;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 3px solid $brand-picton-blue;
+  z-index: 1;
+
+  > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    > li + li {
+      margin-top: 5px;
+    }
+  }
+
+  .rd-calendar.show-events & {
+    opacity: 1;
+    @include transform(translateY(0));
+    visibility: visible;
+  }
+}
+
+.rdc-event {
+  & + .rdc-event {
+    border-top: 1px solid $gray-light;
+    padding-top: 5px;
+  }
+}
+
+// Table
+.rdc-table {
+  position: relative;
+  width: 100%;
+  table {
+    border-spacing: 10px;
+    border-collapse: separate;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  td {
+    position: relative;
+  }
+}
+
+.rdc-table_day {
+  color: $gray-dark;
+  padding: 5px 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.rdc-month {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $white;
+}
+
+.rdc-table_events,
+.rdc-table_events-count {
+  display: none;
+}
+
+.rdc-table_date {
+  transition: .3s;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 700;
+  color: $gray-darker;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.rdc-table_today {
+  background-color: $brand-primary;
+  color: $white;
+}
+
+.rdc-table_has-events {
+  cursor: pointer;
+  transition: .3s all ease;
+
+  .rdc-table_date {
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      height: 4px;
+      line-height: 4px;
+      border-radius: 50%;
+      background: $brand-picton-blue;
+      transition: .3s;
+      @include transform(translate(-50%, 0));
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $white;
+
+      &:after {
+        bottom: 50%;
+        @include transform(translate(-50%, 50%) scale(6));
+      }
+    }
+
+    .rdc-table_today {
+      background: $brand-picton-blue;
+    }
+  }
+}
+
+.rdc-table_event {
+  display: none;
+
+  &:hover {
+    color: $white;
+    background-color: $brand-picton-blue;
+  }
+}
+
+.rdc-events {
+  .rdc-event-wrap {
+    background: transparent;
+    .post-title {
+      h6 {
+        color: $gray-darker;
+      }
+    }
+  }
+}
+
+// RD Event Calendar Fullwidth
+// --------------------------------------------------
+
+.rd-calendar-fullwidth {
+  .rd-calendar {
+    // Panel
+    .rdc-panel {
+      max-width: 370px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .rdc-events{
+      max-height: 90%;
+      overflow-y: auto;
+    }
+    @media (min-width: $screen-lg-min) {
+
+      background: transparent;
+      max-width: none;
+
+      box-shadow: none;
+      .rdc-month, .rdc-fullyear, .rdc-next, .rdc-prev {
+        color: $gray-darker;
+      }
+
+      .rdc-panel {
+        background: transparent;
+      }
+
+      // Table
+      .rdc-table {
+        table {
+          width: 100%;
+        }
+        td {
+          border-radius: $border-radius-base;
+          padding-bottom: 9%;
+          background: $white;
+          box-shadow: $shadow-area-md;
+        }
+      }
+
+      .rdc-table_day {
+        color: $gray-dark;
+        font-size: 22px;
+        padding-left: 15px;
+      }
+
+      .rdc-table_today {
+        border-radius: 50%;
+        border: 2px solid $gray-darker;
+        background-color: transparent;
+        color: $gray-darker;
+      }
+
+      .rdc-table_date {
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+        font-size: 22px;
+        font-weight: 700;
+        left: 10px;
+        top: 10px;
+      }
+
+      .rdc-table_events,
+      .rdc-table_event {
+        display: block;
+      }
+      .rdc-events {
+        max-width: 320px;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%))
+      }
+      .rdc-events_close {
+        top: 3px;
+        right: 1px;
+      }
+      .widget-event {
+        padding: 5px;
+        text-align: left;
+      }
+
+      .rdc-table_has-events {
+
+        .rdc-table_today {
+          border-color: $white;
+        }
+        .widget-event {
+          bottom: 10px;
+          position: absolute;
+          left: 15px;
+          .post-title {
+            h6 {
+              font-size: 16px;
+              a:hover {
+                color: $white;
+              }
+            }
+          }
+          time,
+          .icon {
+            color: $white;
+          }
+        }
+
+        .rdc-event-wrap {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+        }
+
+        .rdc-table_date {
+          color: $white;
+          &:after {
+            display: none;
+          }
+        }
+
+        &:hover {
+          box-shadow: none;
+        }
+      }
+    }
+    @media (min-width: $screen-xl-min) {
+      // Table
+      .rdc-table {
+        table {
+          border-spacing: 20px;
+        }
+        td {
+          padding-bottom: 7%;
+        }
+      }
+
+      .rdc-table_has-events {
+        .widget-event {
+          bottom: 20px;
+          left: 20px;
+        }
+      }
+    }
+  }
+}

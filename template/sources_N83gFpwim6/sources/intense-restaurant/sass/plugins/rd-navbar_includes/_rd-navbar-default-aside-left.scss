@@ -1,0 +1,52 @@
+//
+// RD Navbar Default Aside Left
+// --------------------------------------------------
+
+%rd-navbar-default-aside-left{
+  .rd-navbar-nav-wrap{
+    @include rd-navbar-sidebar(280px, "left");
+    padding: $rd-navbar-fixed-height 10px 0;
+    &.active{
+      @include transform(translateX(0));
+    }
+  }
+
+  .rd-navbar-mobile-scroll{
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .rd-navbar-mobile-brand {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .form-search-wrap{
+    margin-top: 30px;
+  }
+
+}
+
+//
+// Dark Theme
+// --------------------------------------------------
+%rd-navbar-default-aside-left-dark{
+
+  .rd-navbar-nav-wrap {
+    background: $gray-base;
+    color: $white;
+  }
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+%rd-navbar-default-aside-left-light{
+
+  .rd-navbar-nav-wrap {
+    background: $white;
+    color: $gray-base;
+  }
+}

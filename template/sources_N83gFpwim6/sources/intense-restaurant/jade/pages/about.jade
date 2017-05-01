@@ -1,0 +1,149 @@
+extends  ../_skeleton
+
+include ../elements/_ui-rd-parallax
+
+//-Title
+block title
+  title= cfg.nav.about.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.about,
+    cfg.nav
+    )
+
+  // Page Contents
+  main.page-content
+    // Section Intro
+    section.context-dark
+      .rd-parallax(data-on="false" data-md-on="true")
+        .rd-parallax-layer(data-speed="0.45", data-type="media", data-url="images/intro-01-1920x955.jpg")
+        .rd-parallax-layer(data-speed="0.3", data-type='html' data-fade="true")
+          .shell
+            .section-110.range.range-xs-center.range-xs-middle
+              .cell-md-8
+                img(src='images/intro-logo-175x173.png' alt="" width=175 height=173)
+
+                h1.font-accent
+                  span.big= cfg.nav.about.title
+
+                ul.list-inline.list-inline-dashed.p
+                  li
+                    a(href=cfg.nav.home.href)= cfg.nav.home.title
+                  li
+                    = cfg.nav.about.title
+
+    // Section About us
+    section.section-98.section-sm-110
+      .shell
+        .range.range-lg-center
+          .cell-lg-10
+            h1
+              span.reveal-block.font-accent.big Who We Are
+            hr.divider.bg-mantis.offset-top-30
+
+            img.img-responsive.center-block.shadow-drop-xl.offset-top-66(src="images/image-04-570x321.jpg" alt="" width=570 height=321)
+
+            p.offset-top-50 At our restaurant, you can find representatives of the most popular cuisines on a worldwide scale. Whether you want a usual or exotic dish, don’t hesitate to leaf through our diverse menu and order what you like. We use only healthy ingredients, thus making our meals suitable for people who keep an eye on their ration or follow a diet. Are you a diner with special dietary needs? Then, you must pay a visit to our top-notch restaurant and try our wholesome food.
+
+    // Section Our Awards
+    section.context-dark
+      +rd-parallax({
+        "backgroundSpeed": "0.35",
+        "attrType": "media",
+        "src": "images/image-05-1920x575.jpg",
+        "htmlSpeed": "0"
+      })
+        .shell.section-98.section-sm-110
+          .range
+            .cell-md-4.text-md-left
+              h1
+                span.reveal-block.font-accent.big The Awards
+                span.reveal-block.offset-top-4.h3.text-light.text-uppercase We are Proud of
+              hr.divider.hr-md-left-0.bg-mantis.offset-top-30
+              p This year our Restaurant has been acknowledged as the Best National Restaurant of 2015. We are extremely happy and proud of this recognition granted by 300+ industry experts.
+              p Such a prestigious award widens our list of prizes that we’ve earned over the last decade.
+            .cell-md-8.offset-top-66.offset-md-top-0
+              .row
+                .col-xs-4
+                  img.img-responsive.center-block(src="images/image-06-170x326.png" alt="" width=170 height=326)
+                .col-xs-4
+                  img.img-responsive.center-block(src="images/image-07-170x326.png" alt="" width=170 height=326)
+                .col-xs-4
+                  img.img-responsive.center-block(src="images/image-08-170x326.png" alt="" width=170 height=326)
+
+    // Section Best Goods
+    section(style="background: url(images/image-11-1920x675.png) no-repeat center center")
+      .shell.section-top-98.section-md-bottom-0.section-md-top-66
+        .range.range-md-reverse
+          .cell-md-5.text-md-left.section-md-top-50
+            h1
+              span.reveal-block.font-accent.big Best Food
+              span.reveal-block.offset-top-4.h3.text-light.text-uppercase From our chief cook
+            hr.divider.hr-md-left-0.bg-mantis.offset-top-30
+            p The work is always in a full swing in our kitchen! Everyone here is on fire when it comes to cooking. The best cooks all over the world are gathered here together to create something really special to impress you deeply.
+            p The latest in cooking fashion, best recipes and fresh goods, this is the formula of our success.
+
+            img.img-responsive.offset-to-30(src="images/image-10-229x82.png" alt="" width=229 height=82)
+
+          .cell-md-7.cell-md-bottom.veil.reveal-sm-flex
+            img.img-responsive(src="images/image-09-669x610.png" alt="" width=669 height=610)
+
+    // Testimonials
+    section.bg-gray-darkest.section-98.section-110.context-dark
+      .shell
+        h1
+          span.reveal-block.font-accent.big Testimonials
+          span.reveal-block.offset-top-4.h3.text-light.text-uppercase What people say
+        hr.divider.bg-mantis.offset-top-30
+
+        .owl-carousel.owl-carousel-default.owl.offset-top-50.veil-owl-nav.veil-md-owl-dots.reveal-md-owl-nav(data-items="1" data-nav="true" data-nav-class=["owl-prev mdi mdi-chevron-left", "owl-next mdi mdi-chevron-right"] data-dots="true")
+          div
+            blockquote.quote.inset-left-7p.inset-right-7p
+              .icon.mdi.mdi-comment-text-outline
+
+              p.offset-top-30
+                q I will never stop visiting this place. It is just a hideaway for me. It is located in a quiet district and I like to come here after work. I enjoy my meals and think of my global plans. Everything is perfect here.
+
+              h6.text-uppercase
+                cite.text-normal.text-light - John Doe, Visitor
+          div
+            blockquote.quote.inset-left-7p.inset-right-7p
+              .icon.mdi.mdi-comment-text-outline
+
+              p.offset-top-30
+                q I had my birthday party here this weekend. I have heard so many good reviews of this restaurant. It did not disappoint. The food was spectacular. Fresh and delicious. Everyone was very pleased.
+
+              h6.text-uppercase
+                cite.text-normal.text-light - July Mao, Visitor
+          div
+            blockquote.quote.inset-left-7p.inset-right-7p
+              .icon.mdi.mdi-comment-text-outline
+
+              p.offset-top-30
+                q This place was fun and the food was good. The diversity of your menu impressed so much. All the dishes tasted great. Thank you! Would definitely recommend to all my friends.
+
+              h6.text-uppercase
+                cite.text-normal.text-light - Alex Ross, Visitor
+
+
+
+
+
+
+
+  // Page Footer
+  include ../sections/_section-footer-variant-2

@@ -1,0 +1,153 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-post-classic
+include ../elements/_ui-pagination-bootstrap
+include ../elements/_widget-rd-calendar
+
+//-Title
+block title
+  title= cfg.nav.schedule.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-floated(
+    'rd-navbar-dark',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.schedule,
+    cfg.nav
+    )
+    .context-dark
+      +breadcrumb-modern("Schedule", {
+        0: {
+          "type": "link",
+          "title": cfg.nav.home.title,
+          "href": cfg.nav.home.href
+        },
+        1: {
+          "type": "link",
+          "title": cfg.nav.schedule.title,
+          "href": cfg.nav.schedule.href
+        }
+      }, "images/background-04-1920x750.jpg")
+
+
+  // Page Contents
+  main.page-content
+
+    // Choose a convenient time workout
+    section
+      .shell-wide.section-98.section-sm-110
+        h1.text-darker Choose a convenient workout time
+        hr.divider.bg-red
+        p On this page, you can select the date and time for your workout. Just choose a suitable month and day of the week.
+        .offset-top-41
+          .rd-calendar-fullwidth
+            +widget-rd-calendar([
+              {
+                "date": "05/06/2016",
+                "time": "10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-mandy"
+              },
+              {
+                "date": "05/07/2016",
+                "time": "8:00 am, 9:00 am, 10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-ocean-green"
+              },
+              {
+                "date": "05/08/2016",
+                "time": "",
+                "title": "Not Appointment",
+                "link": "#",
+                "bg": "bg-mandy"
+              },
+              {
+                "date": "05/13/2016",
+                "time": "10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-jaffa"
+              },
+              {
+                "date": "05/17/2016",
+                "time": "8:00 am, 9:00 am, 10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-havelock-blue"
+              },
+              {
+                "date": "05/28/2016",
+                "time": "",
+                "title": "Not Appointment",
+                "link": "#",
+                "bg": "bg-ocean-green"
+              },
+              {
+                "date": "06/06/2016",
+                "time": "10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-mandy"
+              },
+              {
+                "date": "06/07/2016",
+                "time": "8:00 am, 9:00 am, 10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-ocean-green"
+              },
+              {
+                "date": "06/08/2016",
+                "time": "",
+                "title": "Not Appointment",
+                "link": "#",
+                "bg": "bg-mandy"
+              },
+              {
+                "date": "06/13/2016",
+                "time": "10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-havelock-blue"
+              },
+              {
+                "date": "06/17/2016",
+                "time": "8:00 am, 9:00 am, 10:00 am, 11:00 am, 12:00 am, 01:00 pm",
+                "title": "",
+                "link": "#",
+                "bg": "bg-jaffa"
+              },
+              {
+                "date": "06/28/2016",
+                "time": "",
+                "title": "Not Appointment",
+                "link": "#",
+                "bg": "bg-havelock-blue"
+              }
+            ])
+
+      // First Workout - Free
+      section.section-66.bg-lilac
+        .shell
+          h2.text-darker Have a Question?
+          p If you are unsure what workout or training course is better for you or would like to discuss the perfect day for it, email us.
+          a.btn.btn-primary.btn-icon.btn-icon-left.offset-top-20.text-darker(href=cfg.nav.contacts.href)
+            span.icon.mdi.mdi-email-outline
+            | Send us a letter
+
+  // Page Footer
+  include ../sections/_section-footer

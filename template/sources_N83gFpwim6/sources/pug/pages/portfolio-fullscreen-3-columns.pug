@@ -1,0 +1,27 @@
+extends  ../_skeleton
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-rd-navbar-sidebar-fixed
+//-Title
+block title
+  title= cfg.nav.portfolio.title
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-sidebar-fixed(
+    'rd-navbar-dark',
+    {
+      "data-auto-height": "true",
+      "data-lg-stick-up": 'false',
+      "data-lg-hover-on": "false",
+      "data-body-class": "body-inset-left"
+    },
+    cfg.brand.logoInverse,
+    cfg.nav.features,
+    cfg.nav
+    )
+  // Page Contents
+  main.page-content
+    include ../sections/_section-portfolio-fullscreen

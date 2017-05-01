@@ -1,0 +1,61 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+
+//- Title
+block title
+  title= cfg.nav.shop.submenu.singleProduct.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.shop,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.shop.submenu.singleProduct.title,
+  cfg.nav.shop.submenu.singleProduct.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.shop.title,
+      "href": cfg.nav.shop.href
+    },
+    2: {
+      "title": cfg.nav.shop.submenu.singleProduct.title,
+      "href": cfg.nav.shop.submenu.singleProduct.href
+    },
+    3: {
+      "title": cfg.nav.shop.submenu.singleProduct.submenu.rightSidebar.title,
+      "href": cfg.nav.shop.submenu.singleProduct.submenu.rightSidebar.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    .shell-wide
+      .range
+        .cell-lg-10.cell-xlg-8.inset-md-left-30
+          include ../sections/_section-shop-single-product-right-sidebar
+        .cell-lg-2.cell-xlg-2.cell-xlg-preffix-1.offset-top-66.offset-lg-top-0
+          include ../sections/_section-shop-sidebar-2
+
+
+  // Page Footers
+  include ../sections/_section-footer-default

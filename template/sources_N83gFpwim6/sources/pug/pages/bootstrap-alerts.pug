@@ -1,0 +1,126 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-alerts-bootstrap
+
+//-Title
+block title
+  title= cfg.nav.components.submenu.bootstrapcomponents.submenu.alerts.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.components,
+    cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.bootstrapcomponents.submenu.alerts.title,
+  "icon-lg " + cfg.nav.components.submenu.bootstrapcomponents.submenu.alerts.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.bootstrapcomponents.submenu.alerts.title,
+      "href": cfg.nav.components.submenu.bootstrapcomponents.submenu.alerts.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-98.section-sm-124
+    // Alerts
+    section
+      .shell
+        h1 Alerts
+        p Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+        hr.divider.bg-mantis
+
+        // Examples
+        .range.range-xs-center.offset-top-66
+          .cell-md-6
+            h3 Examples
+            p Wrap any text and an optional dismiss button in .alert and one of the four contextual classes (e.g.,
+              code .alert-success
+              = ') '
+              | for basic alert messages.
+
+            .alert.alert-success(role='alert')
+              strong Well done!
+              |  You successfully read this important alert message.
+
+            .alert.alert-info(role='alert')
+              strong Heads up!
+              |  This alert needs your attention, but it's not super important.
+
+            .alert.alert-warning(role='alert')
+              strong Warning!
+              |  Better check yourself, you're not looking too good.
+
+            .alert.alert-danger(role='alert')
+              strong Oh snap!
+              |  Change a few things up and try submitting again.
+
+        // Dismissible alerts
+        .range.range-xs-center.offset-top-66
+          .cell-md-6
+            h3 Dismissible alerts
+            p Build on any alert by adding an optional
+              code .alert-dismissible
+              | and close button.
+
+            +alerts-bootstrap('alert-success','Well done! You successfully read this important alert message.', 'mdi mdi-close')
+            +alerts-bootstrap('alert-info',"Heads up! This alert needs your attention, but it's not super important", 'mdi mdi-close')
+            +alerts-bootstrap('alert-warning',"Warning! Better check yourself, you're not looking too good.", 'mdi mdi-close')
+            +alerts-bootstrap('alert-danger','Oh snap! Change a few things up and try submitting again.', 'mdi mdi-close')
+
+        // Links in alerts
+        .range.range-xs-center.offset-top-66
+          .cell-md-6
+            h3 Links in alerts
+            p Use the
+              code .alert-link
+              | utility class to quickly provide matching colored links within any alert.
+
+            .alert.alert-success(role='alert')
+              strong Well done!
+              |  You successfully read
+              a.alert-link(href='#') this important alert message
+              | .
+
+            .alert.alert-info(role='alert')
+              strong Heads up!
+              |  This
+              a.alert-link(href='#') alert needs your attention
+              | , but it's not super important.
+
+            .alert.alert-warning(role='alert')
+              strong Warning!
+              |  Better check yourself, you're
+              a.alert-link(href='#') not looking too good
+              | .
+
+            .alert.alert-danger(role='alert')
+              strong Oh snap!
+              a.alert-link(href='#') Change a few things up
+              |  and try submitting again.
+
+  // Page Footers
+  include ../sections/_section-footer-default

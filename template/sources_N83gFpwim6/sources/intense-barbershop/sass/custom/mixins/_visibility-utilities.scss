@@ -1,0 +1,43 @@
+// Visibility Utilities
+
+@mixin make-visible( $type: block, $resolution: null){
+  @if ($resolution == null) {
+    $resolution: ''
+  } @else {
+    $resolution: str_insert($resolution, '-', str_length($resolution) + 1);
+  }
+
+  @if ($type == flex) {
+    .reveal-#{$resolution}#{$type}{
+      display: -ms-flexbox !important;
+      display: -webkit-flex !important;
+      display: flex !important;
+    }
+  }
+
+  @if ($type == inline-flex) {
+    .reveal-#{$resolution}#{$type} {
+      display: -webkit-inline-flex !important;
+      display: -ms-inline-flexbox !important;
+      display: inline-flex !important;
+    }
+  }
+
+  @else {
+    .reveal-#{$resolution}#{$type}{
+      display: $type !important;
+    }
+  }
+}
+
+@mixin make-hidden($resolution: null){
+  @if ($resolution == null) {
+    $resolution: ''
+  } @else {
+    $resolution: str_insert($resolution, '-', 0);
+  }
+
+  .veil#{$resolution}{
+    display: none !important;
+  }
+}

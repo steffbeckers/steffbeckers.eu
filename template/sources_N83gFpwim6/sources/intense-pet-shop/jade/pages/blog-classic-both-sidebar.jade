@@ -1,0 +1,402 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_widget-flickrfeed
+include ../elements/_widget-twitter
+
+block title
+	title Classic Blog Both Sidebar
+
+block page
+	// Page Header
+	header.page-header.slider-menu-position
+		+rd-navbar-default({
+			"style": "",
+			"logo": cfg.brand.logo,
+			"logoFixed": cfg.brand.logoSmall,
+			"activeLink": 6,
+			"attr": {
+				"data-layout": "rd-navbar-fixed",
+				"data-sm-layout": "rd-navbar-fixed",
+				"data-md-layout": "rd-navbar-fullwidth",
+				"data-lg-layout": "rd-navbar-static"
+			}
+		})
+
+		+breadcrumb("Blog", {
+			0: {
+				"type": "link",
+				"title": cfg.nav.home.title,
+				"href": cfg.nav.home.href
+			},
+			1: {
+				"type": "link",
+				"title": cfg.nav.news.title,
+				"href": cfg.nav.news.href
+			},
+			2: {
+				"type": "link",
+				"title": "Classic Blog",
+				"href": "blog-classic-both-sidebar.html"
+			}
+		}, "images/backgrounds/background-02-1920x900.jpg")
+
+	// Page Content
+	main.page-content.section-75.section-md-top-90.section-md-bottom-95
+
+		// Blog Classic Both Sidebar
+		section
+			.shell
+				h1 Blog
+
+				.range.range-xs-center.offset-top-50
+					.cell-sm-10.cell-lg-6.cell-lg-push-2
+						// Post Classic
+						article.post-classic.text-left
+							.post-classic-img-wrap
+								a(href='blog-single-post.html')
+									img.img-responsive.center-block(src="images/blog/post-24-570x381.jpg" width="570" height="381" alt="")
+							.post-classic-body.offset-top-30
+								.unit.unit-sm.unit-sm-horizontal.unit-sm-inverse
+									.unit-body
+										// Post Meta
+										.post-meta
+											p.text-spacing-0 July 25, 2016
+										// Post Title
+										.post-title
+											p.offset-top-5.font-accent.text-bold.text-spacing-50.text-uppercase
+												a.text-mine-shaft(href='blog-single-post.html') Finding lost property
+										// Post Body
+										.post-body.offset-top-15.offset-md-top-25
+											p.text-spacing-0 After an outing, you decide to catch a cab. You get home only to discover that you lost something really important in your taxi. Most people won’t bother to try to find the item. We recommend using this little guide of recovering lost property...  #[a(href="blog-single-post.html").text-extra-small.text-bold.text-turquoise.text-uppercase More]
+										.offset-top-20.offset-md-top-30
+											// List inline marked
+											ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-silver-chalice.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-sm-left-4
+												li
+													a.text-turquoise(href="#") How to
+												li
+													a.text-turquoise(href="#") Lost property
+												li
+													a.text-turquoise(href="#") Taxi
+									.unit-right
+										.unit.unit-horizontal.unit-middle.unit-sm-vertical.unit-spacing-xs
+											.unit-left
+												img.img-circle(src='images/users/user-sandra-green-70x70.jpg', alt=' ', width='70', height='70')
+											.unit-body.text-center.offset-top-4
+												p.text-extra-small.text-spacing-0.text-bold
+													cite.text-normal
+														a.text-turquoise(href="single-member.html") Sandra #[br.veil.reveal-sm-inline-block] Green
+
+						.offset-top-30
+							.hr.bg-gray-lighter
+
+
+						.offset-top-35
+							// Post Classic
+							article.post-classic.text-left
+								.post-classic-img-wrap
+									a(href='blog-single-post.html')
+										img.img-responsive.center-block(src="images/blog/post-27-570x381.jpg" width="570" height="381" alt="")
+								.post-classic-body.offset-top-30
+									.unit.unit-sm.unit-sm-horizontal.unit-sm-inverse
+										.unit-body
+											// Post Meta
+											.post-meta
+												p.text-spacing-0 July 20, 2016
+											// Post Title
+											.post-title
+												p.offset-top-5.font-accent.text-bold.text-spacing-50.text-uppercase
+													a.text-mine-shaft(href='blog-single-post.html') how to select a taxi service
+											// Post Body
+											.post-body.offset-top-15.offset-md-top-25
+												p.text-spacing-0 A taxi is an essential component of the public transportation system. Whether you are calling a taxi to your home or office on a regular basis, or are visiting a strange city and need a cab to move around, you can benefit from using a taxi. First, not all taxis are the same. They may all look similar on the surface, but there is a range...  #[a(href="blog-single-post.html").text-extra-small.text-bold.text-turquoise.text-uppercase.text-spacing-50 Read More]
+											.offset-top-20.offset-md-top-30
+												// List inline marked
+												ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-silver-chalice.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-sm-left-4
+													li
+														a.text-turquoise(href="#") How to
+													li
+														a.text-turquoise(href="#") Taxi
+													li
+														a.text-turquoise(href="#") Services
+										.unit-right
+											.unit.unit-horizontal.unit-middle.unit-sm-vertical.unit-spacing-xs
+												.unit-left
+													img.img-circle(src='images/users/user-john-smith-70x70.jpg', alt=' ', width='70', height='70')
+												.unit-body.text-center.offset-top-4
+													p.text-extra-small.text-spacing-0.text-bold
+														cite.text-normal
+															a.text-turquoise(href="single-member.html") Tom #[br.veil.reveal-sm-inline-block] Jefferson
+
+							.offset-top-30
+								.hr.bg-gray-lighter
+
+
+							.offset-top-35
+								// Post Classic
+								article.post-classic.text-left
+									.post-classic-img-wrap
+										a(href='blog-single-post.html')
+											img.img-responsive.center-block(src="images/blog/post-30-570x381.jpg" width="570" height="381" alt="")
+									.post-classic-body.offset-top-30
+										.unit.unit-sm.unit-sm-horizontal.unit-sm-inverse
+											.unit-body
+												// Post Meta
+												.post-meta
+													p.text-spacing-0 July 10, 2016
+												// Post Title
+												.post-title
+													p.offset-top-5.font-accent.text-bold.text-spacing-50.text-uppercase
+														a.text-mine-shaft(href='blog-single-post.html') City-Taxi update: new Gadgets
+												// Post Body
+												.post-body.offset-top-15.offset-md-top-25
+													p.text-spacing-0 We are glad to introduce an update to all our taxis. Because technologies develop as time goes by, our  taxis also deserve something new. We decided that installing tablets for our clients’ convenience will be the best option, and here’s why and what they will include. The newly proposed tablets would have a credit card reader to collect the fare and...  #[a(href="blog-single-post.html").text-extra-small.text-bold.text-turquoise.text-uppercase.text-spacing-50 Read More]
+												.offset-top-20.offset-md-top-30
+													// List inline marked
+													ul.list-inline.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-silver-chalice.list-marked-silver-chalice.font-accent.text-bold.text-spacing-inverse-25.inset-sm-left-4
+														li
+															a.text-turquoise(href="#") Innovations
+														li
+															a.text-turquoise(href="#") Taxi
+														li
+															a.text-turquoise(href="#") Industry news
+											.unit-right
+												.unit.unit-horizontal.unit-middle.unit-sm-vertical.unit-spacing-xs
+													.unit-left
+														img.img-circle(src='images/users/user-jane-sanders-70x70.jpg', alt=' ', width='70', height='70')
+													.unit-body.text-center.offset-top-4
+														p.text-extra-small.text-spacing-0.text-bold
+															cite.text-normal
+																a.text-turquoise(href="single-member.html") Jane #[br.veil.reveal-sm-inline-block] Sanders
+
+								.offset-top-30
+									.hr.bg-gray-lighter
+
+						.offset-top-50
+							// Classic Pagination
+							nav
+								ul.list-marked.list-marked-type-2.list-marked-type-2-dot-1.list-marked-silver-chalice.pagination-classic
+									li.text-regular
+										a.icon.icon-sm.icon-primary.material-icons-ico.material-icons-chevron_left(href='#')
+									li.active
+										a(href='#') 01
+									li
+										a(href='#') 02
+									li
+										a(href='#') 03
+									li
+										a(href='#') 04
+									li
+										a(href='#') 05
+									li.text-regular
+										a.icon.icon-sm.icon-primary.material-icons-ico.material-icons-chevron_right(href='#')
+
+					.cell-sm-10.cell-lg-3.cell-lg-push-1.text-sm-left.offset-top-64.offset-lg-top-0
+						p.font-accent.text-bold.text-spacing-50.text-mine-shaft.text-uppercase search
+
+						.offset-top-30
+							// RD Search Form
+							form.form-search.blog-form-search.rd-search(action='search-results.html', method='GET')
+								.form-group
+									input.form-search-input.form-control.null(type='text', name='s', autocomplete='off')
+								button.form-search-submit(type='submit')
+									span.icon.icon-sm.material-icons-ico.material-icons-search
+
+
+						.offset-top-35
+							.hr.bg-gray-lighter
+
+
+						.offset-top-55
+							p.font-accent.text-bold.text-spacing-50.text-mine-shaft.text-uppercase flickr
+
+						.offset-top-30
+							+widget-flickrfeed("tm61233", {"data-image_q": "src"}, {
+								"style": "group group-xs widget-flickrfeed-lg",
+								"dataSize": "1050x700",
+								"img": {
+									"width": 85,
+									"height": 85
+								}
+							}, 6)
+
+						.offset-top-35
+							.hr.bg-gray-lighter
+
+						.offset-top-55
+							p.font-accent.text-bold.text-spacing-50.text-mine-shaft.text-uppercase twitter feed
+
+						.offset-top-20
+							+widget-twitter({
+								"dataTwitterUsername": "templatemonster"
+							})
+
+						.offset-top-35
+							.hr.bg-gray-lighter
+
+
+					.cell-sm-10.cell-lg-3.cell-lg-push-3.text-sm-left.offset-top-44.offset-lg-top-0
+						p.font-accent.text-bold.text-spacing-50.text-mine-shaft.text-uppercase recent posts
+
+						.offset-top-25
+							// Unit
+							.unit.unit-middle.unit-horizontal.unit-spacing-xs.text-left
+								.unit-left
+									img.img-circle(src='images/users/user-sandra-green-70x70.jpg', alt=' ', width='70', height='70')
+								.unit-body
+									div
+										p.text-extra-small.text-bold July 25, 2016
+									.offset-top-5
+										p.font-accent.text-extra-small.text-spacing-25.text-uppercase.text-bold
+											a.text-turquoise(href="blog-single-post.html") Finding lost property
+
+						.offset-top-25
+							.hr.bg-gray-lighter
+
+						.offset-top-30
+							// Unit
+							.unit.unit-middle.unit-horizontal.unit-spacing-xs.text-left
+								.unit-left
+									img.img-circle(src='images/users/user-john-smith-70x70.jpg', alt=' ', width='70', height='70')
+								.unit-body
+									div
+										p.text-extra-small.text-bold July 20, 2016
+									.offset-top-5
+										p.font-accent.text-extra-small.text-spacing-25.text-uppercase.text-bold
+											a.text-turquoise(href="blog-single-post.html") how to select a taxi service
+
+							.offset-top-25
+								.hr.bg-gray-lighter
+
+							.offset-top-30
+								// Unit
+								.unit.unit-middle.unit-horizontal.unit-spacing-xs.text-left
+									.unit-left
+										img.img-circle(src='images/users/user-jane-sanders-70x70.jpg', alt=' ', width='70', height='70')
+									.unit-body
+										div
+											p.text-extra-small.text-bold July 10, 2016
+										.offset-top-5
+											p.font-accent.text-extra-small.text-spacing-25.text-uppercase.text-bold
+												a.text-turquoise(href="blog-single-post.html") city-taxi update: new gadgets
+
+							.offset-top-25
+								.hr.bg-gray-lighter
+
+						.offset-top-55
+							p.font-accent.text-bold.text-spacing-50.text-mine-shaft.text-uppercase popular posts
+
+							.offset-top-25
+								// Unit
+								.unit.unit-middle.unit-horizontal.unit-spacing-xs.text-left
+									.unit-left
+										img.img-circle(src='images/users/user-sandra-green-70x70.jpg', alt=' ', width='70', height='70')
+									.unit-body
+										div
+											p.text-extra-small.text-bold July 25, 2016
+										.offset-top-5
+											p.font-accent.text-extra-small.text-spacing-25.text-uppercase.text-bold
+												a.text-turquoise(href="blog-single-post.html") Finding lost property
+
+							.offset-top-25
+								.hr.bg-gray-lighter
+
+							.offset-top-30
+								// Unit
+								.unit.unit-middle.unit-horizontal.unit-spacing-xs.text-left
+									.unit-left
+										img.img-circle(src='images/users/user-john-smith-70x70.jpg', alt=' ', width='70', height='70')
+									.unit-body
+										div
+											p.text-extra-small.text-bold July 20, 2016
+										.offset-top-5
+											p.font-accent.text-extra-small.text-spacing-25.text-uppercase.text-bold
+												a.text-turquoise(href="blog-single-post.html") how to select a taxi service
+
+								.offset-top-25
+									.hr.bg-gray-lighter
+
+								.offset-top-30
+									// Unit
+									.unit.unit-middle.unit-horizontal.unit-spacing-xs.text-left
+										.unit-left
+											img.img-circle(src='images/users/user-jane-sanders-70x70.jpg', alt=' ', width='70', height='70')
+										.unit-body
+											div
+												p.text-extra-small.text-bold July 10, 2016
+											.offset-top-5
+												p.font-accent.text-extra-small.text-spacing-25.text-uppercase.text-bold
+													a.text-turquoise(href="blog-single-post.html") city-taxi update: new gadgets
+
+								.offset-top-25
+									.hr.bg-gray-lighter
+
+
+						.range.range-xs-center.offset-top-55
+							.cell-sm-3.cell-md-4.cell-lg-12
+								p.font-accent.text-bold.text-spacing-50.text-mine-shaft.text-uppercase categories
+								.offset-top-25
+									ul.list-marked.text-extra-small.text-bold.p.text-left.font-accent
+										li
+											a.text-primary(href='#') Taxi
+										li.offset-top-10
+											a.text-primary(href='#') News
+										li.offset-top-10
+											a.text-primary(href='#') Innovations
+										li.offset-top-10
+											a.text-primary(href='#') Luxury
+										li.offset-top-10
+											a.text-primary(href='#') Business
+										li.offset-top-10
+											a.text-primary(href='#') Lost Property
+
+								.veil-sm.reveal-lg-block.offset-top-30.offset-sm-top-0.offset-lg-top-30
+									.hr.bg-gray-lighter
+
+							.cell-sm-3.cell-md-4.cell-lg-12.offset-lg-top-55
+								p.font-accent.text-bold.text-spacing-50.text-mine-shaft.text-uppercase archive
+								.offset-top-25
+									ul.list-marked.text-extra-small.text-bold.p.text-left.font-accent
+										li
+											a.text-primary(href='#') July 2016
+										li.offset-top-10
+											a.text-primary(href='#') June 2016
+										li.offset-top-10
+											a.text-primary(href='#') May 2016
+										li.offset-top-10
+											a.text-primary(href='#') April 2016
+										li.offset-top-10
+											a.text-primary(href='#') March 2016
+										li.offset-top-10
+											a.text-primary(href='#') February 2016
+
+								.veil-sm.reveal-lg-block.offset-top-30.offset-sm-top-0.offset-lg-top-30
+									.hr.bg-gray-lighter
+
+							.cell-sm-6.cell-md-4.cell-lg-12.offset-lg-top-55
+								p.font-accent.text-bold.text-spacing-50.text-mine-shaft.text-uppercase tags
+								.offset-top-20
+									// List inline marked
+									ul.list-inline.list-tags.font-accent.text-bold.text-spacing-inverse-25.text-left
+										li
+											a.text-turquoise(href="#") Lost property
+										li
+											a.text-turquoise(href="#") Taxi
+										li
+											a.text-turquoise(href="#") Private driver
+										li
+											a.text-turquoise(href="#") Shuttle
+										li
+											a.text-turquoise(href="#") Services
+										li
+											a.text-turquoise(href="#") Sightseeing
+										li
+											a.text-turquoise(href="#") How To
+										li
+											a.text-turquoise(href="#") Industry news
+										li
+											a.text-turquoise(href="#") Innovations
+
+
+	// Page Footer
+	include ../sections/_footer-default

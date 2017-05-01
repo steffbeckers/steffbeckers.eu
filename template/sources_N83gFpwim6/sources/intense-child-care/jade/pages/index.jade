@@ -1,0 +1,280 @@
+extends  ../_skeleton
+
+//- Includes
+include  ../elements/_ui-rd-parallax
+include  ../elements/_ui-box-icon-type-2
+include  ../elements/_ui-thumbnail-terry
+include  ../elements/_ui-testimonials-type-2
+include  ../elements/_ui-thumbnail-rayen
+include  ../elements/_ui-rd-map
+//-Title
+block title
+  title= cfg.brand.name
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-top-panel(
+    'rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.home,
+    cfg.nav
+    )
+
+  // Page Content
+  main.page-content
+    // Kids Are The Best Explorers In The World
+    +rd-parallax({
+      "backgroundSpeed": "0.35",
+      "attrType": "media",
+      "src": "images/bg-01-1920x718.jpg",
+      "htmlSpeed": "0"
+    })
+      section.section-85.section-md-bottom-0.context-dark
+        .shell
+          h1.text-bold
+            span.big Kids Are The Best Explorers In The World
+          .range.offset-top-0.range-xs-center
+            .cell-md-7
+              img.img-responsive.veil.reveal-md-inline-block(src="images/home-01-563x398.png" width=563 height=398 alt="")
+            .cell-xs-10.cell-md-5.text-md-left.offset-top-50
+              +svg-divider("bg-white", "71", "13")
+              p Since 2001, Intense has been providing top-quality, AMI Certified Montessori Education to Elementary, Primary, and Toddler aged children in the area.
+              a(href="#").btn.btn-safety-orange Learn More
+
+    // Welcome to Intense
+    section.section-98.section-sm-124
+      .shell
+        .range.offset-top-0.range-xs-center
+          .cell-xs-10.cell-md-6.cell-md-push-2
+            img.img-responsive.reveal-inline-block(src="images/home-02-570x320.jpg" width=570 height=320 alt="")
+          .cell-xs-10.cell-md-6.text-md-left.inset-md-right-80.cell-md-push-1.offset-top-50.offset-md-top-0
+            h1.text-bold.text-primary Welcome to Intense
+            .offset-top-30.offset-md-top-50
+              p At Intense, our mission is to provide excellence in preschool, kindergarten, before and after school programs and summer camp for families living in the greater local area. Here you’ll find exceptional teachers, curriculum and learning environments that encourage children to learn, play and explore in a safe and nurturing environment.
+            .offset-top-20.offset-md-top-30
+              a(href= cfg.nav.faq.href).btn.btn-safety-orange learn more
+
+    // Why People Choose Us
+    section.section-98.section-md-124.bg-lightest
+      .shell
+        h1.text-primary.text-bold Why People Choose Us
+        +svg-divider("bg-primary", "71", "13")
+        .range.range-xs-center.offset-top-66
+          .cell-xs-10.cell-sm-7.cell-md-4
+            +box-icon-type-2("icon-lg icon-outlined mdi mdi-account-multiple text-safety-orange", "qualified teachers", "font-default text-uppercase text-bold offset-md-top-20", "We employ only highly skilled teachers with more than 5 years of experience in teaching children.")
+          .cell-xs-10.cell-sm-7.cell-md-4.offset-top-50.offset-md-top-0
+            +box-icon-type-2("icon-lg icon-outlined mdi mdi-palette text-safety-orange", "hobby groups", "font-default text-uppercase text-bold offset-md-top-20", "The groups where your children will be educated are created according to your child’s interests.")
+          .cell-xs-10.cell-sm-7.cell-md-4.offset-top-50.offset-md-top-0
+            +box-icon-type-2("icon-lg icon-outlined mdi mdi-school text-safety-orange", "various programs", "font-default text-uppercase text-bold offset-md-top-20", "We have a variety of programs to offer your children regardless of their age and level of knowledge.")
+
+    // Programs
+    section.section-98.section-md-124
+      .shell
+        h1.text-primary.text-bold Programs
+        +svg-divider("bg-primary", "71", "13")
+        .range.range-xs-center
+          .cell.xs-10.cell-sm-8
+              p The educational child care programs in our center were designed to offer a comprehensive path to prepare your child for elementary school. Intense features developmentally appropriate programs with specialized curriculum for a variety of ages. Find the right path for your child here.
+        .range.range-xs-center.offset-top-66
+          .cell-xs-10.cell-sm-6.cell-md-3
+            +thumbnail-terry({
+              "type": "thumbnail",
+              "title": "Infants",
+              "description": "",
+              "thumb": {"src": "images/home-03-270x360.jpg", "width": 270, "height": 360, "alt": ""},
+              "target": {"href": "#"},
+              "btnLink": "single-program.html",
+              "btnClass": "btn-safety-orange",
+              "btnText": "learn more"
+            })
+          .cell-xs-10.cell-sm-6.cell-md-3.offset-top-50.offset-sm-top-0
+            +thumbnail-terry({
+              "type": "thumbnail",
+              "title": "Toddlers",
+              "description": "",
+              "thumb": {"src": "images/home-04-270x360.jpg", "width": 270, "height": 360, "alt": ""},
+              "target": {"href": "#"},
+              "btnLink": "single-program.html",
+              "btnClass": "btn-safety-orange",
+              "btnText": "learn more"
+            })
+          .cell-xs-10.cell-sm-6.cell-md-3.offset-top-50.offset-md-top-0
+            +thumbnail-terry({
+              "type": "thumbnail",
+              "title": "Early Preschool",
+              "description": "",
+              "thumb": {"src": "images/home-05-270x360.jpg", "width": 270, "height": 360, "alt": ""},
+              "target": {"href": "#"},
+              "btnLink": "single-program.html",
+              "btnClass": "btn-safety-orange",
+              "btnText": "learn more"
+            })
+          .cell-xs-10.cell-sm-6.cell-md-3.offset-top-50.offset-md-top-0
+            +thumbnail-terry({
+              "type": "thumbnail",
+              "title": "Preschool",
+              "description": "",
+              "thumb": {"src": "images/home-06-270x360.jpg", "width": 270, "height": 360, "alt": ""},
+              "target": {"href": "#"},
+              "btnLink": "single-program.html",
+              "btnClass": "btn-safety-orange",
+              "btnText": "learn more"
+            })
+
+    // Testimonials
+    +rd-parallax({
+      "backgroundSpeed": "0.35",
+      "attrType": "media",
+      "src": "images/bg-02-1920x748.jpg",
+      "htmlSpeed": "0"
+    })
+      section.section-98.section-md-124.context-dark
+        .shell
+          h1.text-bold Testimonials
+          +svg-divider("bg-white", "71", "13")
+          .range.range-xs-center.offset-top-66
+            .cell-xs-10.cell-sm-7.cell-md-4
+              +testimonials-type-2(
+              {
+                "width": 80,
+                "height": 80,
+                "src": "images/user-alex-ross-80x80.jpg",
+                "alt": ""
+              },
+              "Alex Ross",
+              "Designer at Comix Publishing",
+              "My younger son returns very happy with all activities happening at your school every day. Thank you!"
+              )
+            .cell-xs-10.cell-sm-7.cell-md-4.offset-top-50.offset-md-top-0
+              +testimonials-type-2(
+              {
+                "width": 80,
+                "height": 80,
+                "src": "images/user-alisa-milano-80x80.jpg",
+                "alt": ""
+              },
+              "Alice McMillan",
+              "Sales manager at Brix Ltd.",
+              "I am glad that my son is being taught in your school. You have the most qualified teachers in the area!"
+              )
+            .cell-xs-10.cell-sm-7.cell-md-4.offset-top-50.offset-md-top-0
+              +testimonials-type-2(
+              {
+                "width": 80,
+                "height": 80,
+                "src": "images/user-john-more-80x80.jpg",
+                "alt": ""
+              },
+              "John Moore",
+              "Driver at CIS Logistics",
+              "My daughter is very satisfied with lessons of English and Math – they give her additional impact for development."
+              )
+    // Gallery
+    section
+      .range.range-condensed(data-photo-swipe-gallery="gallery")
+        .cell-xs-6.cell-md-1-5
+          +thumbnail-rayen({
+            "type": "thumbnail",
+            "thumb": {"src": "images/home-07-384x256.jpg", "width": 384, "height": 256, "alt": ""},
+            "target": {"src": "images/home-07_original-1200x774.jpg", "width": 1200, "height": 774, "alt": ""}
+          }, "icon-md fa-search-plus")
+        .cell-xs-6.cell-md-1-5
+          +thumbnail-rayen({
+            "type": "thumbnail",
+            "thumb": {"src": "images/home-08-384x256.jpg", "width": 384, "height": 256, "alt": ""},
+            "target": {"src": "images/home-08_original-1200x1126.jpg", "width": 1200, "height": 1126, "alt": ""}
+          }, "icon-md fa-search-plus")
+        .cell-xs-6.cell-md-1-5
+          +thumbnail-rayen({
+            "type": "thumbnail",
+            "thumb": {"src": "images/home-09-384x256.jpg", "width": 384, "height": 256, "alt": ""},
+            "target": {"src": "images/home-09_original-1200x801.jpg", "width": 1200, "height": 801, "alt": ""}
+          }, "icon-md fa-search-plus")
+        .cell-xs-6.cell-md-1-5
+          +thumbnail-rayen({
+            "type": "thumbnail",
+            "thumb": {"src": "images/home-10-384x256.jpg", "width": 384, "height": 256, "alt": ""},
+            "target": {"src": "images/home-10_original-1200x801.jpg", "width": 1200, "height": 801, "alt": ""}
+          }, "icon-md fa-search-plus")
+        .cell-xs-6.cell-md-1-5
+          +thumbnail-rayen({
+            "type": "thumbnail",
+            "thumb": {"src": "images/home-11-384x256.jpg", "width": 384, "height": 256, "alt": ""},
+            "target": {"src": "images/home-11_original-1200x801.jpg", "width": 1200, "height": 801, "alt": ""}
+          }, "icon-md fa-search-plus")
+
+    // Map
+    +rd-map({
+      "zoom": "14",
+      "dataX": "-73.9874068",
+      "dataY": "40.643180",
+      "dataStyles": [{
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [{"color": "#e9e9e9"}, {"lightness": 17}]
+      }, {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [{"color": "#f5f5f5"}, {"lightness": 20}]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [{"color": "#ffffff"}, {"lightness": 17}]
+      }, {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [{"color": "#ffffff"}, {"lightness": 29}, {"weight": 0.2}]
+      }, {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [{"color": "#ffffff"}, {"lightness": 18}]
+      }, {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [{"color": "#ffffff"}, {"lightness": 16}]
+      }, {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [{"color": "#f5f5f5"}, {"lightness": 21}]
+      }, {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [{"color": "#dedede"}, {"lightness": 21}]
+      }, {
+        "elementType": "labels.text.stroke",
+        "stylers": [{"visibility": "on"}, {"color": "#ffffff"}, {"lightness": 16}]
+      }, {
+        "elementType": "labels.text.fill",
+        "stylers": [{"saturation": 36}, {"color": "#333333"}, {"lightness": 40}]
+      }, {"elementType": "labels.icon", "stylers": [{"visibility": "off"}]}, {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [{"color": "#f2f2f2"}, {"lightness": 19}]
+      }, {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [{"color": "#fefefe"}, {"lightness": 20}]
+      }, {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [{"color": "#fefefe"}, {"lightness": 17}, {"weight": 1.2}]
+      }]
+    },[{
+      "dataX": "-73.9874068",
+      "dataY": "40.643180",
+      "markerDesc": "9870 St Vincent Place, Glasgow, DC 45 Fr 45"
+    }])
+  // Page Footer
+  include ../sections/_section-footer-default
+
+

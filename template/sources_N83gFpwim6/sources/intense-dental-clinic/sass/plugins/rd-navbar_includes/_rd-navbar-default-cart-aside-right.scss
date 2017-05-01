@@ -1,0 +1,37 @@
+//
+// RD Navbar Default Aside Right
+// --------------------------------------------------
+
+%rd-navbar-default-cart-aside-right{
+  .rd-navbar-cart-dropdown{
+    @include rd-navbar-sidebar($rd-navbar-aside-right-cart-dropdown-width, "right");
+    padding: $rd-navbar-aside-right-cart-dropdown-padding;
+    max-height: 100%;
+    overflow-y: auto;
+    &.active{
+      @include transform(translateX(0));
+    }
+  }
+}
+
+//
+// Dark Theme
+// --------------------------------------------------
+
+%rd-navbar-default-cart-aside-right-dark{
+  .rd-navbar-cart-dropdown {
+    color: $rd-navbar-dark-aside-right-cart-dropdown-color;
+    background: $rd-navbar-dark-aside-right-cart-dropdown-background;
+  }
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+
+%rd-navbar-default-cart-aside-right-light{
+  .rd-navbar-cart-dropdown {
+    color: $rd-navbar-light-aside-right-cart-dropdown-color;
+    background: $rd-navbar-light-aside-right-cart-dropdown-background;
+  }
+}

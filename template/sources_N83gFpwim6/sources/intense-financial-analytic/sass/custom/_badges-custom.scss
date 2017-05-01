@@ -1,0 +1,16 @@
+//
+// Badges custom
+// --------------------------------------------------
+
+.badge {
+  padding: $badge-padding;
+  font-size: $badge-font-size;
+  line-height: $badge-line-height;
+
+  .nav-pills > li > a > &{
+
+    margin-left: $badge-pills-offset-left;
+    margin-bottom: $badge-pills-offset-bottom;
+  }
+}
+

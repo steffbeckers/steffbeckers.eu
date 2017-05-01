@@ -1,0 +1,395 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-button-ansi
+include ../elements/_ui-button-aqil
+include ../elements/_ui-button-naira
+include ../elements/_ui-button-nuka
+include ../elements/_ui-button-polat
+include ../elements/_ui-button-rayen
+include ../elements/_ui-button-santos-svg
+include ../elements/_ui-breadcrumb-classic
+include ../elements/_ui-alerts-classic
+
+//- Title
+block title
+  title= cfg.nav.components.submenu.toolkitComponents.submenu.buttons.title
+
+//- Page
+block page
+  // Page Header
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+      'rd-navbar-default rd-navbar-light',
+      {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fixed',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      },
+      cfg.brand.logo,
+      cfg.nav.components,
+      cfg.nav
+    )
+
+  +breadcrumb-classic(
+  cfg.nav.components.submenu.toolkitComponents.submenu.buttons.title,
+  "icon-lg " + cfg.nav.components.submenu.toolkitComponents.submenu.buttons.icon,
+  {
+    0: {
+      "title": cfg.nav.home.title,
+      "href": cfg.nav.home.href
+    },
+    1: {
+      "title": cfg.nav.components.title,
+      "href": cfg.nav.components.href
+    },
+    2: {
+      "title": cfg.nav.components.submenu.toolkitComponents.submenu.buttons.title,
+      "href": cfg.nav.components.submenu.toolkitComponents.submenu.buttons.href
+    }
+  })
+
+  // Page Content
+  main.page-content.section-md-110.section-98
+
+    // Section Button Styles
+    section
+      .shell
+        h2 Button Styles
+        p Use any of the available button classes to quickly create a styled button.
+        hr.divider.divider-md.bg-mantis
+      // Section
+      section.rd-parallax.offset-top-34.context-dark(data-on="false" data-md-on="true")
+        .rd-parallax-layer(data-speed="0.2" data-type="media" data-url="images/backgrounds/background-18-1920x615.jpg")
+        .rd-parallax-layer(data-speed="0", data-type='html')
+          .shell
+            .section-66.section-md-98
+              .group
+                button(type="button").btn.btn-default default
+                button(type="button").btn.btn-primary primary
+                button(type="button").btn.btn-deluge deluge
+                button(type="button").btn.btn-success success
+                button(type="button").btn.btn-warning warning
+                button(type="button").btn.btn-danger danger
+                button(type="button").btn.btn-info info
+                button(type="button").btn.btn-link link
+
+      // Section Button Styles
+      section.offset-top-66
+        .shell
+          .group
+            button(type="button").btn.btn-default default
+            button(type="button").btn.btn-primary primary
+            button(type="button").btn.btn-deluge deluge
+            button(type="button").btn.btn-success success
+            button(type="button").btn.btn-warning warning
+            button(type="button").btn.btn-danger danger
+            button(type="button").btn.btn-info info
+            button(type="button").btn.btn-link link
+
+      .text-left.shell.offset-top-66.code-btn-1
+
+    // Section Button Sizes
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h2 Button Sizes
+        p
+          ="Want a larger or smaller ones? Add "
+          code .btn-lg
+          = ", "
+          code .btn-sm
+          = ", "
+          code .btn-xs
+          = " classes for additional sizes"
+        hr.divider.divider-md.bg-mantis
+
+        .group
+          button.btn.btn-lg.btn-deluge Deluge
+          button.btn.btn-deluge Deluge
+          button.btn.btn-sm.btn-deluge Deluge
+          button.btn.btn-xs.btn-deluge Deluge
+
+        .text-left.offset-top-66.code-btn-2
+
+    // Section Button Shapes
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h2 Button Shapes
+        p
+          ="Want a different shape? Add "
+          code .btn-rect
+          = ", "
+          code .btn-ellipse
+          = " class to your buttons"
+        hr.divider.divider-md.bg-mantis
+
+        .group.offset-top-50
+          button.btn.btn-rect.btn-deluge Deluge
+          button.btn.btn-deluge Deluge
+          button.btn.btn-ellipse.btn-deluge Deluge
+
+        .text-left.offset-top-66.code-btn-3
+
+
+    // Section Button Blocks
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h2 Button Blocks
+        p
+          ="Create buttons that fits the entire parent width by adding "
+          code .btn-block
+          = " class to it."
+        hr.divider.divider-md.bg-mantis
+        .range.offset-top-34.range-xs-center
+          .cell-md-4.cell-sm-5
+            .well.shadow-drop-lg.img-rounded
+              //.source-code(data-output="code-btn-4")
+              // Default Block Style
+              button.btn.btn-block.btn-default Default block
+              // Primary Block Style
+              button.btn.btn-block.btn-primary Primary block
+              // Deluge Block Style
+              button.btn.btn-block.btn-deluge Deluge block
+
+        .text-left.offset-top-66.code-btn-4
+
+    // Section Anchor Buttons
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h2 Anchor Buttons
+        p
+          ="Create anchor buttons by adding your button classes to an "
+          code &lt;a&gt;
+          = " tag"
+        hr.divider.divider-md.bg-mantis
+        .group.offset-top-34
+          a(href="#" role="button").btn.btn-primary Primary
+          a(href="#" role="button").btn.btn-deluge Deluge
+
+        .text-left.offset-top-66.code-btn-5
+
+    // Section Active Buttons
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h2 Active Buttons
+        p
+          ="Add "
+          code &lt;.active&gt;
+          = " class to your button to mark it as active."
+        hr.divider.divider-md.bg-mantis
+        .group.offset-top-34
+          a(href="#" role="button").btn.btn-primary.active Primary
+          a(href="#" role="button").btn.btn-deluge.active Deluge
+
+        .text-left.offset-top-66.code-btn-6
+
+    // Section Disabled Buttons
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h2 Disabled Buttons
+        p
+          ="Make your buttons look unclickable by adding "
+          code .disabled
+          = " class to anchor elements"
+          br
+          ="or "
+          code disabled
+          = " attribute to button elements"
+        hr.divider.divider-md.bg-mantis
+        .group.offset-top-34
+          button(type="button" disabled).btn.btn-primary Primary
+          button(type="button" disabled).btn.btn-deluge Deluge
+
+        .text-left.offset-top-66.code-btn-7
+
+        .offset-top-34
+          +alerts-classic('alert-classic-warning', 'Link Functionality not impacted', 'This class will chage the appearnce of anchor element only. Use a custom Java Script to disable links here.', null, 'alert-classic-lg', null, null)
+
+    // Section Button Groups
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h2 Button Groups
+        p
+          ="Wrap the series of buttons in "
+          code .btn-group
+        hr.divider.divider-md.bg-mantis
+
+        //.source-code(data-output="code-btn-8")
+        // Button Group
+        .btn-group(role="group" aria-label="button")
+          a(href="#" role="button").btn.btn-primary Primary
+          a(href="#" role="button").btn.btn-deluge Deluge
+
+        .text-left.offset-top-66.code-btn-8
+
+    // Section Button Toolbars
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h2 Button Toolbars
+        p
+          ="Combine sets of "
+          code .btn-group
+          =" into a "
+          code .btn-toolbar
+          =" for more complex components"
+        hr.divider.divider-md.bg-mantis
+        .reveal-inline-block
+          //.source-code(data-output="code-btn-9")
+          // Button toolbar
+          .btn-toolbar(role="toolbar")
+            // Button Group
+            .btn-group(role="group" aria-label="button")
+              a(href="#" role="button").btn.btn-primary.btn-icon
+                span.icon.mdi.mdi-format-indent-decrease
+              a(href="#" role="button").btn.btn-deluge.btn-icon
+                span.icon.mdi.mdi-format-italic
+            // Button Group
+            .btn-group(role="group" aria-label="button")
+              a(href="#" role="button").btn.btn-primary.btn-icon
+                span.icon.mdi.mdi-format-list-numbers
+              a(href="#" role="button").btn.btn-deluge.btn-icon
+                span.icon.mdi.mdi-format-line-spacing
+
+        .text-left.offset-top-66.code-btn-9
+
+    // Section Button With Left Icon
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h2 Button With Left Icon
+        p Combine icons with your buttons for more complex components
+        hr.divider.divider-md.bg-mantis
+        .group.offset-top-34
+          button.btn.btn-lg.btn-default.btn-icon.btn-icon-left
+            span.icon.mdi.mdi-emoticon
+            | Buy intense now
+          button.btn.btn-primary.btn-icon.btn-icon-left
+            span.icon.mdi.mdi-emoticon
+            | Buy intense now
+          button.btn.btn-sm.btn-deluge.btn-icon.btn-icon-left
+            span.icon.mdi.mdi-emoticon
+            | Buy intense now
+          button.btn.btn-xs.btn-link.btn-icon.btn-icon-left
+            span.icon.mdi.mdi-emoticon
+            | Buy intense now
+
+        .text-left.offset-top-66.code-btn-10
+
+    // Section Button With Right Icons
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h2 Button With Right Icon
+        p Combine icons with your buttons for more complex components
+        hr.divider.divider-md.bg-mantis
+        .group.offset-top-34
+          button.btn.btn-lg.btn-default.btn-icon.btn-icon-right
+            span.icon.mdi.mdi-emoticon
+            | Buy intense now
+          button.btn.btn-primary.btn-icon.btn-icon-right
+            span.icon.mdi.mdi-emoticon
+            | Buy intense now
+          button.btn.btn-sm.btn-deluge.btn-icon.btn-icon-right
+            span.icon.mdi.mdi-emoticon
+            | Buy intense now
+          button.btn.btn-xs.btn-link.btn-icon.btn-icon-right
+            span.icon.mdi.mdi-emoticon
+            | Buy intense now
+
+
+        .text-left.offset-top-66.code-btn-11
+
+    // Section Custom Button Effects
+    section.offset-top-98.offset-md-top-110
+      .shell
+        h2 Custom Button Effects
+        p
+          ="Make unique animations for your buttons with our custom effects"
+        hr.divider.divider-md.bg-mantis
+        // Section
+        section.offset-top-66
+          h3 Ansi Effect
+          .group.offset-top-34
+            // Buttons Ansi Effect
+            +button-ansi("btn-default", "default")
+            +button-ansi("btn-primary", "Primary")
+            +button-ansi("btn-deluge", "deluge")
+            +button-ansi("btn-success", "success")
+            +button-ansi("btn-warning", "warning")
+            +button-ansi("btn-danger", "danger")
+            +button-ansi("btn-info", "info")
+
+          .text-left.offset-top-34.code-btn-12
+
+        // Aqil Effect
+        section.offset-top-66
+          h3 Aqil Effect
+          .offset-top-34
+            // Buttons Aqil Effect
+            .group
+              +button-aqil("btn-aqil-effect-mod-1 btn-default", "default")
+              +button-aqil("btn-aqil-effect-mod-1 btn-primary", "Primary")
+              +button-aqil("btn-aqil-effect-mod-1 btn-deluge", "deluge")
+              +button-aqil("btn-aqil-effect-mod-1 btn-success", "success")
+              +button-aqil("btn-aqil-effect-mod-2 btn-warning", "warning")
+              +button-aqil("btn-aqil-effect-mod-2 btn-danger", "danger")
+              +button-aqil("btn-aqil-effect-mod-2 btn-info", "info")
+
+        // Rayen Effect
+        section.offset-top-66
+          h3 Rayen Effect
+          .group.offset-top-34
+            // Buttons Rayen Effect
+            +button-rayen("btn-default", "default")
+            +button-rayen("btn-primary", "Primary")
+            +button-rayen("btn-deluge", "deluge")
+            +button-rayen("btn-success", "success")
+            +button-rayen("btn-warning", "warning")
+            +button-rayen("btn-danger", "danger")
+            +button-rayen("btn-info", "info")
+
+        // Nuka Effect
+        section.offset-top-66
+          h3 Nuka Effect
+          .group.offset-top-34
+            // Buttons Nuka Effect
+            +button-nuka("btn-default", "default")
+            +button-nuka("btn-primary", "Primary")
+            +button-nuka("btn-deluge", "deluge")
+            +button-nuka("btn-success", "success")
+            +button-nuka("btn-warning", "warning")
+            +button-nuka("btn-danger", "danger")
+            +button-nuka("btn-info", "info")
+
+
+        // Naira Effect
+        section.offset-top-66
+          h3 Naira Effect
+          .offset-top-34
+            // Buttons Naira Effect
+            .group
+              +button-naira("btn-naira-effect-up btn-default", "default", "mdi-package-up")
+              +button-naira("btn-naira-effect-up btn-primary", "Primary", "mdi-package-up")
+              +button-naira("btn-naira-effect-up btn-deluge", "deluge", "mdi-package-up")
+              +button-naira("btn-success", "success", "mdi-download")
+              +button-naira("btn-warning", "warning", "mdi-download")
+              +button-naira("btn-danger", "danger", "mdi-download")
+              +button-naira("btn-info", "info", "mdi-download")
+
+        // Polat Effect
+        section.offset-top-66
+          h3 Polat Effect
+          .offset-top-34
+              //.source-code(data-output="code-btn-17")
+              // Buttons Polat Effect
+              .group-sm
+                +button-polat("btn-polat-effect-up btn-default", "Add to card", "mdi-cart-outline")
+                +button-polat("btn-polat-effect-up btn-primary", "Add to card", "mdi-cart-outline")
+                +button-polat("btn-polat-effect-up btn-deluge", "Add to card", "mdi-cart-outline")
+                +button-polat("btn-polat-effect-left btn-warning", "Settings", "mdi-settings")
+                +button-polat("btn-polat-effect-left btn-danger", "Settings", "mdi-settings")
+                +button-polat("btn-polat-effect-left btn-info", "Settings", "mdi-settings")
+          .text-left.offset-top-34.code-btn-17
+
+  // Page Footer
+  include ../sections/_section-footer-default

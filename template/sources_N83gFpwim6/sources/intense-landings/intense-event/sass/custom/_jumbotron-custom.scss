@@ -1,0 +1,13 @@
+//
+// Custom Jumbotron
+// --------------------------------------------------
+
+.jumbotron {
+  padding-right: $jumbotron-padding-right;
+  padding-left: $jumbotron-padding-left;
+  border-radius: $jumbotron-heading-border-radius;
+
+  p {
+    font-weight: 400;
+  }
+}

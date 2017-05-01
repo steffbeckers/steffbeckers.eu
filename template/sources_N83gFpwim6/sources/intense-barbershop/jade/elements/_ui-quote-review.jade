@@ -1,0 +1,25 @@
+mixin quote-review(obj)
+  blockquote.quote-review
+    .quote-review-left
+      .quote-review-avatar
+        case obj.avatar.type
+          when "image"
+            +jpg(obj.avatar.data, 'quote-review-image')
+          when "letter"
+            span.quote-review-letter=obj.avatar.data
+
+    .quote-review-body
+      .quote-review-header
+        p.quote-review-title=obj.title
+        ul.quote-review-rating
+          - for (var i = 0; i < obj.rating; i++)
+            li.icon.icon-xs.icon-primary.fa.fa-star
+
+      .quote-review-meta
+        span By
+        span.quote-review-user=obj.cite
+        span on
+        time(datetime=obj.time[0])=obj.time[1]
+
+
+      p.quote-review-text: q=obj.text

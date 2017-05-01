@@ -1,0 +1,67 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-parallax
+include ../elements/_ui-post-modern
+include ../elements/_ui-pagination-bootstrap
+
+//-Title
+block title
+  title Single Advice
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-light',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logoInverse,
+    '',
+    cfg.nav
+    )
+
+    // Breadcrumbs
+    section
+      +rd-parallax({
+        "backgroundSpeed": "0.25",
+        "attrType": "media",
+        "src": "images/background-03-1920x447.jpg",
+        "htmlSpeed": "0",
+        "fade": "false"
+      })
+        .shell
+          .range
+            .range.range-xs-middle.range-xs-center.section-41.section-sm-50.section-md-66.context-dark
+              .cell-xs-12
+                div
+                  h1.text-capitalize
+                    span.big
+                      | Advice
+                .offset-top-10
+                  ul.list-inline.list-inline-dashed.text-italic.p
+                    li
+                      a(href="index.html") Home
+                    li
+                      a(href="advice.html") Advice
+                    li The Truth About Money
+
+
+  // Page Contents
+  main.page-content.section-98.section-sm-top-110.section-sm-bottom-124
+    .shell
+      .range.range-xs-center
+        .cell-xs-10.cell-sm-8.cell-md-8
+          .inset-md-right-20
+            include ../sections/_section-advice-single
+        .cell-xs-10.cell-md-4.offset-top-66.offset-md-top-0
+          include ../sections/_section-sidebar
+  // Page Footer
+  include ../sections/_section-footer-default

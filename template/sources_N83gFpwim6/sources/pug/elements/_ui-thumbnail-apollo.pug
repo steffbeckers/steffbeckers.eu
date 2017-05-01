@@ -1,0 +1,18 @@
+//-
+//- Apollo Thumbnail
+//--------------------------------------
+
+mixin thumbnail-apollo(options)
+  // Thumbnail Apollo
+  -var targetBlank = (options.targetBlank === true)? "_blank" : "_self"
+  a.thumbnail-apollo(href=options.target.href class= options.thumbnailStyle target=targetBlank)
+    figure
+      img(width=options.thumb.width, height=options.thumb.height, src=options.thumb.src, alt=options.thumb.alt)
+      figcaption(class= options.caption)
+        div
+          .thumbnail-apollo-title(class= options.titleStyle)= options.title
+        if options.description != null
+          p.small= options.description
+          span(class= options.iconClass)
+        else
+          span(class= options.iconClass)

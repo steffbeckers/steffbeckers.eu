@@ -1,0 +1,10 @@
+//- mapLocation - {map} Object
+//- markerLocations - mass of {location} Objects
+mixin rd-map(mapLocation, markerLocations)
+  // RD Google Map
+  .rd-google-map
+    #rd-google-map.rd-google-map__model(data-zoom= mapLocation.zoom, data-x= mapLocation.dataX, data-y= mapLocation.dataY, data-styles= mapLocation.dataStyles)
+    ul.rd-google-map__locations
+      each item in markerLocations
+        li(data-x= item.dataX, data-y= item.dataY)
+          p= item.markerDesc

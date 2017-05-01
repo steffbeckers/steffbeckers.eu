@@ -1,0 +1,81 @@
+//- Includes
+include ../elements/_ui-post-modern-timeline
+include ../elements/_ui-pager-bootstrap
+
+// Section Blog Modern
+section
+  .post-modern-timeline-date.text-sm-left
+    time(datetime="2016-01-01") 24 Feb
+
+  +post-modern-timeline("post-modern-timeline-left", cfg.nav.blog.submenu.classic.submenu.singlePost.href, "mdi mdi-pen", "5 Steps to Blog’s Success", [
+    {"title": "News", "href": cfg.nav.blog.submenu.classic.submenu.singlePost.href}],
+  null,
+  "Eugene Newman",
+  {
+    "width": 45,
+    "height": 45,
+    "src": "images/users/user-eugene-newman-60x60.jpg",
+    "alt": "Eugene Newman"
+  })
+    p Unfortunately people will not come to your blog just to see what you have published on it. To make sure that your blog becomes a successful one, you have to work on it to attract visitors interested in your content.
+
+  .post-modern-timeline-date.text-sm-left
+    time(datetime="2016-01-01") 21 Feb
+
+  +post-modern-timeline("post-modern-timeline-left", cfg.nav.blog.submenu.classic.submenu.singlePost.href, "mdi mdi-image", "Making Money Online with Your Computer Only", [
+    {"title": "Business", "href": cfg.nav.blog.submenu.classic.submenu.singlePost.href}],
+    {
+      "type": "thumbnail",
+      "thumb": { "src": "images/blog/post-05-570x321.jpg", "width": 570, "height": 321, "alt": "" }
+    },
+    "July Mao",
+    {
+      "width": 45,
+      "height": 45,
+      "src": "images/users/user-july-mao-60x60.jpg",
+      "alt": "July Mao"
+    })
+    p Making money online is a kind of everyone’s dream job. No investments are needed and you can do whatever you need to do when you are in the mood or have free time.Flexible work schedule is something you’ll hardly get working at the office. However, online business rarely starts to bring you money from the very first day. It takes some time as a rule. But once you understand the whole process (like what are your abilities, where to work, for whom to work and so on) you'll be earning money in no time.
+
+
+  +post-modern-timeline("post-modern-timeline-left", cfg.nav.blog.submenu.classic.submenu.singlePost.href, "mdi mdi-image", "Proper Color Solutions For The Office", [
+    {"title": "Music", "href": cfg.nav.blog.submenu.classic.submenu.singlePost.href}],
+    {
+      "type": "soundcloud",
+      "embed": '<iframe height="166" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/149065581&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>'
+    },
+    "John Doe",
+    {
+      "width": 45,
+      "height": 45,
+      "src": "images/users/user-john-doe-60x60.jpg",
+      "alt": "John Doe"
+    })
+
+  .post-modern-timeline-date.text-sm-left
+    time(datetime="2016-01-01") 19 Feb
+
+  +post-modern-timeline("post-modern-timeline-left", cfg.nav.blog.submenu.classic.submenu.singlePost.href, "mdi mdi-image", "Four Types of Verbal Communication.", [
+    {"title": "Music", "href": cfg.nav.blog.submenu.classic.submenu.singlePost.href}],
+    {
+      "type": "video",
+      "href": "//www.youtube.com/embed/-AhmuMqZB0s",
+      "ratio": "16by9"
+    },
+    "Bernard Show",
+    {
+      "width": 45,
+      "height": 45,
+      "src": "images/users/user-bernard-show-60x60.jpg",
+      "alt": "Bernard Show"
+    })
+
+
+footer.offset-top-66
+  //- Add timeline post offset
+  .post-modern-timeline-left
+    +pager-bootstrap(null,
+      {"title": "Older", "href": "#", "icon": "mdi mdi-arrow-left"},
+      {"title": "Newer", "href": "#", "icon": "mdi mdi-arrow-right"},
+      true
+    )

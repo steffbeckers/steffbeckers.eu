@@ -1,0 +1,26 @@
+mixin box-service(obj)
+  - var modClasses = ['']
+  - var price = obj.price.split('.')
+
+  case obj.type
+    when 'dark-inverse'
+      - var modClasses = ['box-service-dark', 'box-service-reverse']
+
+  article.box-service(class=modClasses)
+    .box-service-left
+      +png(obj.img, 'box-service-image')
+
+    .box-service-body
+      .box-service-header
+        p.box-service-title=obj.title
+        p.box-service-price
+          small $
+          =price[0]
+          | .
+          small=price[1]
+      .box-service-text
+        p=obj.text
+
+      a.btn.btn-sm.box-service-control(href=appointLink) Book Now
+
+

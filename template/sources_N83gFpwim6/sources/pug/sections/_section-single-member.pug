@@ -1,0 +1,16 @@
+//- Includes
+include ../elements/_ui-member-block-type-4
+
+// Portfolio Grid 3 columns
+section.rd-parallax(data-on="false" data-md-on="true")
+  .rd-parallax-layer(data-speed="0.45", data-type="media", data-url="images/backgrounds/background-05-1920x960.jpg" style="background-position: 72% center")
+  .rd-parallax-layer.bg-overlay-white(data-speed="0", data-type='html')
+    .shell.section-98
+      .range.range-xs-center
+        .cell-xs-8
+          +member-block-type-4(
+            "Eugene Newman",
+             { "src": "images/users/user-eugene-newman-140x140.jpg", "width": 140, "height": 140, "alt": "" },
+             cfg.nav.pages.submenu.teamMember.href,
+            "Founder, Lead Developer",
+            "Intense is an independent web design studio with a rich history. It started as a small family - owned business in Oakville, and has grown enough to successfully occupy two large buildings in two different cities.")

@@ -1,0 +1,19 @@
+extends  ../_skeleton
+
+block variables
+  - var activeIndex = 0
+  - var pageName = 'Header fullwidth'
+
+block title
+  title=pageName
+
+
+block page
+  //- Page Header
+  include ../sections/_header-fullwidth
+
+  include ../sections/_section-jumbotron-3
+  include ../sections/_section-placeholder
+
+  //- Page Footer
+  include ../sections/_footer-default

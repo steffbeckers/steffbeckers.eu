@@ -1,0 +1,283 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-section-header
+include ../elements/_ui-box-icon-unit
+include ../elements/_ui-thumbnail-fullwidth
+include ../elements/_ui-quote-card
+include ../elements/_ui-post-block
+
+block variables
+  - var activeIndex = 0
+  - var standardMenu = true
+  - var pageName = 'Home variant 2'
+
+
+block title
+  title=pageName
+
+block page
+  include ../sections/_header-transparent
+  include ../sections/_section-jumbotron-2
+
+  //- OUR SERVICES
+  section.section-lg.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-50
+        .cell-xs-12
+          +section-header('OUR SERVICES', "Barbershop offers world-class men's haircuts, beard grooming, and hot razor shaves. Here are just some of the services we are famous for.")
+
+        .cell-xs-12.text-center.text-sm-left
+          .range.range-sm-center.range-no-gutter.range-inner-bordered
+            .cell-sm-6
+              +box-icon-unit({
+                reverse: true,
+                img: 'icon-service-1-70x62',
+                header: 'TRADITIONAL HAIRCUTS',
+                text: 'One of the most popular services our barbers provide'
+              })
+
+            .cell-sm-6
+              +box-icon-unit({
+                img: 'icon-service-3-70x62',
+                header: 'BEARD trim',
+                text: 'Well-trimmed beard is a must-have element of every men’s image'
+              })
+
+            .cell-sm-6
+              +box-icon-unit({
+                reverse: true,
+                img: 'icon-service-2-70x62',
+                header: 'SHAVES',
+                text: 'Our shaving services will make you look really handsome'
+              })
+
+            .cell-sm-6
+              +box-icon-unit({
+                img: 'icon-service-4-70x62',
+                header: 'Mustache TRIM',
+                text: 'Mustaches also need to be trimmed regularly'
+              })
+  ='\n'
+
+  //- Barbershop Haircut services
+  section.section-xxl.bg-gray-base.bg-gray-dark-overlay.bg-image(style='background-image: url(images/bg-image-5.jpg)')
+    .shell
+      .range.range-sm-center.range-md-reverse
+        .cell-sm-10.cell-md-7.cell-lg-6
+          h2(style='max-width: 90%;').
+            grooming
+            products
+          p.big.
+            Our shop offers a wide variety of quality grooming products and accessories for personal use or as gifts. Let our retail specialists guide you to the perfect styling product or grooming accessory for your needs.
+
+          a.btn.btn-sm.btn-circle.btn-primary(href='shop.html') browse our SHOP
+
+        .cell-sm-8.cell-md-5.cell-lg-6
+          figure.image-wrap-1
+            +png('home-two-1-495x261')
+  ='\n'
+
+  //- Our BARBERS
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-75
+        .cell-xs-12
+          +section-header("Our BARBERS", "We employ only highly qualified barbers who are not just professionals, but also enjoy maintaining the atmosphere of a classic barbershop.")
+
+        .cell-xs-12
+          // Owl Carousel
+          .owl-carousel.owl-carousel-modern.owl-spacing-2(data-items='1', data-stage-padding='0', data-loop='true', data-margin='20', data-xs-margin='30', data-mouse-drag="false", data-nav='true', data-dots='true', data-animation-in='fadeIn', data-animation-out='fadeOut')
+            .item
+              +thumbnail-fullwidth({
+                img: 'barbers-8-400x480',
+                header: 'Harry Anderson',
+                text: "Last March, we welcomed Harry Anderson to the team. Harry came to us as a graduate of Academy DiCapelli where he recently graduated as a barber. When he's not cutting hair, Harry enjoys playing the drums, driving his VW, and reading sci-fi novels. We are glad that Harry is one of us now!",
+                data: [
+                  {header: 'HairCut', value: '70'},
+                  {header: 'Clipper cut', value: '70'},
+                  {header: 'hot towel shaving', value: '70'},
+                  {header: 'Beard services', value: '70'}
+                ]
+              })
+
+            .item
+              +thumbnail-fullwidth({
+                img: 'barbers-7-400x480',
+                header: 'Simon Wilson',
+                text: 'Simon Wilson founded Barbershop in 2003 at the age of 23. He decided to establish a place where the long standing traditions of American barbering could be saved. He kept Barbershop a true place for men, their fathers, and sons, rather than converting it to a unisex salon.',
+                data: [
+                  {header: 'haircut & shave', value: '70'},
+                  {header: 'Hair styling', value: '70'},
+                  {header: 'hot shaving', value: '70'},
+                  {header: 'straight razor shave', value: '70'}
+                ]
+              })
+
+            .item
+              +thumbnail-fullwidth({
+                img: 'barbers-9-400x480',
+                header: 'Matthew Phillips',
+                text: "With several years of experience in the industry, Matthew brings professionalism, dedication, and love to what he does. He is an important part of our team, just because his mustache trim skills are prominent. He is also a skilled barber, who often takes walk-ins.",
+                data: [
+                  {header: 'mustache trim', value: '70'},
+                  {header: 'traditional haircut', value: '70'},
+                  {header: 'shaving', value: '70'},
+                  {header: 'beard shaving', value: '70'}
+                ]
+              })
+  ='\n'
+
+  //- BARBERSHOP HAIRCUT SERVICES
+  section.section-xxl.bg-gray-base.bg-gray-dark-overlay.bg-image(style='background-image: url(images/bg-image-6.jpg)')
+    .shell
+      .range
+        .cell-sm-8.cell-md-7.cell-lg-6
+          h2(style='max-width: 90%;').
+            BARBERSHOP HAIRCUT SERVICES
+          p.big.
+            We take pride in each service we provide. Every effort is made to give you the best barber experience whatever your haircut or shaving style is. Feel free to browse our services list to learn more about the services we offer our clients and guests.
+
+          a.btn.btn-sm.btn-circle.btn-primary(href='services.html') View all services
+  ='\n'
+
+  //- TESTIMONIALS
+  section.section-xl.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-75
+        .cell-xs-12
+          +section-header("TESTIMONIALS", "These reviews that our clients have recently submitted are the best way to learn more about our barbershop’s level of service and customer support.")
+
+        .cell-xs-12
+          .row.isotope(data-isotope-layout='moduloColumns')
+            .col-xs-12.col-sm-6.col-md-4.isotope-item
+              +quote-card({
+                avatar: {
+                  type: 'image',
+                  data: 'testimonials-1-100x100'
+                },
+                cite: 'Matt Parker',
+                text: 'I have taken my 3 yr old son for his first men’s haircut and now I’m glad he has such a fantastic look. I recommend any of the barbers at Barbershop for service and pride in their work. I believe my son would never be allowed to leave the chair without a really handsome cut.',
+                rating: 5
+              })
+
+            .col-xs-12.col-sm-6.col-md-4.isotope-item
+              +quote-card({
+                avatar: {
+                  type: 'letter',
+                  data: 'J'
+                },
+                cite: 'John Miller',
+                text: 'These guys know what they are doing, give solid advice, and cut like pros. I’ll surely visit Barbershop again.',
+                rating: 4
+              })
+
+            .col-xs-12.col-sm-6.col-md-4.isotope-item
+              +quote-card({
+                avatar: {
+                  type: 'image',
+                  data: 'testimonials-3-100x100'
+                },
+                cite: 'Anthony Smith',
+                text: 'Polite, professional, charming and courteous team. The best haircut I have ever had! Simon was full of crack, was more than happy to suggest the best cut for me.',
+                rating: 5
+              })
+  ='\n'
+
+  //- latest blog posts
+  section.section-lg.bg-periglacial-blue.text-center
+    .shell
+      .range.range-sm-center.range-75
+        .cell-xs-12
+          +section-header('latest blog posts', "Barbershop is not only a place where you can get a first-class haircut. Our barbers also write interesting articles on everything concerning their sphere of interest.")
+
+        .cell-xs-12
+          .range.range-30
+            .cell-sm-6.cell-md-4
+              +post-block({
+                img: 'blog-3-370x250',
+                title: 'Visiting a Barber',
+                text: "A barber knows how to cut men’s hair. If you’re like most men these days, you’re probably going ",
+                meta: [
+                  24,
+                  132,
+                  ['2016-08-26', '26.08.2016']
+                ]
+              })
+
+            .cell-sm-6.cell-md-4
+              +post-block({
+                img: 'blog-4-370x250',
+                title: 'What Haircut Suits You',
+                text: "Different people have different face shapes. And not you, but your face shape decides will this",
+                meta: [
+                  24,
+                  132,
+                  ['2016-08-26', '26.08.2016']
+                ]
+              })
+
+            .cell-sm-6.cell-md-4
+              +post-block({
+                img: 'blog-5-370x250',
+                title: 'Top 7 Shaving Products',
+                text: "The right shaving cream can make the difference between a healthy skin and one plagued by ingrown hairs",
+                meta: [
+                  24,
+                  132,
+                  ['2016-08-26', '26.08.2016']
+                ]
+              })
+  ='\n'
+
+  //- Contact Us
+  section.box-wrap.box-wrap-md.bg-white
+    .box-wrap-map
+      //- RD Google Map
+      .rd-google-map(class="rd-google-map__model", data-zoom='14', data-x='-74.0150000', data-y='40.643180')
+        ul.map_locations
+
+    .box-wrap-content
+      .shell
+        .range
+          .cell-xs-12
+            .box-contacts.box-contacts-vertical.box-wrap-content-interactive
+              .box-contacts-col
+                .box-contacts-block
+                  h3 Address
+                  address 123 Street W, Seattle WA 99999
+
+                .box-contacts-block
+                  h3 Opening Hours
+                  .box-contacts-block-inner
+                    dl.box-contacts-terms-list
+                      dt Monday – Friday
+                      dd 9am - 6pm
+
+                    dl.box-contacts-terms-list
+                      dt Saturday
+                      dd 10am - 4pm
+
+              .box-contacts-col.box-contacts-right
+                .box-contacts-block
+                  h3 Get In Touch
+                  p(style='max-width: 350px;') If you have a question, leave your name and phone number, and we’ll contact you shortly.
+                  //- RD Mailform
+                  form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                    .form-group
+                      label.form-label-outside(for="contact-full-name") Full Name
+                      input#contact-full-name.form-control(type="text" name="name" data-constraints='@Required')
+
+                    .form-group
+                      label.form-label-outside(for="contact-phone") Telephone
+                      input#contact-phone.form-control(type="text" name="phone" data-constraints='@Required @Numeric')
+
+                    button(type="submit").btn.btn-sm.btn-primary.btn-block.btn-circle SEND REQUEST
+  ='\n'
+
+  //- Page Footer
+  include ../sections/_footer-variant-2
+
+block modal
+  include ../includes/_modal-single-barber
+

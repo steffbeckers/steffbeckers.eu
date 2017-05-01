@@ -1,0 +1,159 @@
+extends  ../_skeleton
+
+include ../elements/_ui-rd-parallax
+include ../elements/_ui-isotope
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-quote-simple
+include ../elements/_ui-box-comment
+
+//-Title
+block title
+  title= cfg.nav.events.submenu.singleEvent.title
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head.slider-menu-position
+    //- RD Navbar
+    +rd-navbar-default(
+    'rd-navbar-default rd-navbar-transparent',
+    {
+      "data-lg-auto-height": "true",
+      "data-md-layout": 'rd-navbar-fixed',
+      "data-lg-layout": 'rd-navbar-static',
+      "data-lg-stick-up": 'true'
+    },
+    cfg.brand.logo,
+    cfg.nav.events,
+    cfg.nav
+    )
+
+  // Page Contents
+  main.page-content
+    // Section Intro
+    section.context-dark
+      .rd-parallax(data-on="false" data-md-on="true")
+        .rd-parallax-layer(data-speed="0.45", data-type="media", data-url="images/image-06-1920x769.jpg")
+        .rd-parallax-layer(data-speed="0.3", data-type='html' data-fade="true")
+          .shell
+            .section-110.range.range-xs-center.range-xs-middle
+              .cell-md-8
+                img(src='images/intro-logo-175x173.png' alt="" width=175 height=173)
+
+                h1.font-accent
+                  span.big Pitae augue Vitae matt
+
+                ul.list-inline.list-inline-sm.post-meta
+                  li
+                    span.icon-xxs.mdi.mdi-calendar
+                    time(datetime="2016-01-01") March 8 2016
+                  li
+                    span.icon-xxs.mdi.mdi-clock
+                    time(datetime="2016-01-01") 8:00 AM
+
+                .group.offset-top-34
+                  .label-custom.label-danger.label-xl-custom upcoming event
+
+    section.section-98.section-sm-110
+      .shell
+        .range.range-md-reverse.text-left
+          .cell-md-9
+            p Celebrate this year's Lovers Day by visiting our cozy, romantic Restaurant! Each year we are introducing some new themed party for that occasion... And this time, the Valentine's Day will be set amid Parisian decor!
+
+            p So, with such sweet touches as little lit Eiffel Towers on the tables instead of candles, French paintings on the walls and a French live music.... This will be a very special Valentine's Day for you and your 2nd half!
+
+            +quote-simple("We're also offering a new, special menu for this day.")
+
+            p It will be consisting of our most popular dishes, as well as the best French cuisine dishes.
+
+            p So, French onion soup, mushroom sauces, meat with camembert cheese and many other French dishes will be served on this day.
+
+            p Our globally inspired and masterly cooked dishes are complemented with an extensive wine list. It embraces traditions of over 30 countries and comprises more than 3,000 wine selections of the utmost quality. Our large cellar with a capacity of 40,000+ bottles is controlled for optimal humidity and temperature, which provides the best conditions for wine storage. At our restaurant, we have options for any taste and wallet, with prices ranging from 50$ to 5,000$. If you find it challenging to choose the right wine from 3,000 varieties, our sommeliers will readily help you. From time to time, they travel around the world and pick the best from reputable, quality-oriented winemakers whose exclusive offerings aren’t available on the market.
+
+            p So hurry up, and call us to book a spot for you and your loved one!
+
+          .cell-md-3.offset-top-41.offset-md-top-0
+            img.img-responsive.center-block.img-circle(src="images/author-170x170.jpg" alt="" width=170 height=170)
+
+            p Sam and all the team can organize a memorable celebration of your special event, be it an anniversary, wedding or a corporate party. Contact us to learn more about our private rooms, menus, and any details you need to know.
+
+            p
+              span.icon.icon-xxs.mdi.mdi-arrow-top-right.text-primary.text-middle
+              = " "
+              a.text-middle(href="#") More about Sam Brown
+
+        .range.offset-top-66.text-left
+          .cell-md-9.cell-md-preffix-3
+            hr.hr
+
+            h4.offset-top-66.text-uppercase.text-spacing-120 comments
+
+            +box-comment(
+            "box-comment-boxed",
+            {
+              "width": 60,
+              "height": 60,
+              "src": "images/comment-01-48x48.jpg",
+              "alt": ""
+            },
+            "Feb 18, 9:14",
+            "Eugene Newman",
+            "Awesome!"
+            )
+              //- Reply 1
+              +box-comment(
+              "box-comment-boxed",
+              {
+                "width": 60,
+                "height": 60,
+                "src": "images/comment-02-48x48.jpg",
+                "alt": ""
+              },
+              "Feb 18, 10:13",
+              "Alex Ross",
+              "We'll be really happy to see you again, mr. Eugene."
+              )
+                //- Reply 2
+              +box-comment(
+              "box-comment-boxed",
+              {
+                "width": 60,
+                "height": 60,
+                "src": "images/comment-01-48x48.jpg",
+                "alt": ""
+              },
+              "Feb 18, 9:14",
+              "Eugene Newman",
+              "Oh, thank you :)"
+              )
+                //- Comment 2
+            +box-comment(
+            "box-comment-boxed",
+            {
+              "width": 60,
+              "height": 60,
+              "src": "images/comment-02-48x48.jpg",
+              "alt": ""
+            },
+            "Feb 17, 7:34",
+            "Alex Ross",
+            "And don't forget to take some of Valentine's gifts for your girlfriends."
+            )
+
+            h5.offset-top-34.text-uppercase.text-spacing-120 Leave a comment
+            form.rd-mailform.offset-top-10.text-left(data-form-output="form-contact-me", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+              .form-group
+                label.form-label.form-label-outside(for="comment-message") Message:
+                textarea#comment-message.form-control(data-constraints="@Required" style="height: 170px")
+              .group-sm.text-left.offset-top-30
+                button(type="submit").btn.btn-sm.btn-primary comment
+
+
+
+
+
+
+  // Page Footer
+  include ../sections/_section-footer-variant-2
+

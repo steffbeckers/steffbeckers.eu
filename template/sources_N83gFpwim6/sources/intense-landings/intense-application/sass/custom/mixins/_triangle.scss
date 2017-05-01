@@ -1,0 +1,34 @@
+// Triangle
+
+@mixin triangle($dir, $w, $h, $clr) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  @if $dir == top {
+    border-width: 0 ceil($w/2) $h ceil($w/2);
+    border-color: transparent transparent $clr transparent;
+  } @else if $dir == bottom {
+    border-width: $h ceil($w/2) 0 ceil($w/2);
+    border-color: $clr transparent transparent transparent;
+  } @else if $dir == left {
+    border-width: ceil($h/2) $w ceil($h/2) 0;
+    border-color: transparent $clr transparent transparent;
+  } @else if $dir == right {
+    border-width: ceil($h/2) 0 ceil($h/2) $w;
+    border-color: transparent transparent transparent $clr;
+  } @else if $dir == top_left {
+    border-width: $w $w 0 0;
+    border-color: $clr transparent transparent transparent;
+  } @else if $dir == top_right {
+    border-width: 0 $w $w 0;
+    border-color: transparent $clr transparent transparent;
+  } @else if $dir == bottom_right {
+    border-width: 0 0 $w $w;
+    border-color: transparent transparent $clr transparent;
+  } @else if $dir == bottom_left {
+    border-width: $w 0 0 $w;
+    border-color: transparent transparent transparent $clr;
+  }
+
+}

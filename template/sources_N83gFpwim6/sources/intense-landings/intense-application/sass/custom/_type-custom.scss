@@ -1,0 +1,642 @@
+//
+// Custom typography
+// --------------------------------------------------
+
+// Page header
+// -------------------------
+
+.page-header {
+  padding-bottom: 14px;
+}
+
+// Fonts
+// -------------------------
+
+.font-default {
+  font-family: $font-family-base;
+}
+
+.font-accent {
+  font-family: $font-family-accent;
+}
+
+// Basic Typography
+// -------------------------
+
+h1,
+.h1 {
+  margin-top: 26px;
+  margin-bottom: 21px;
+  font-size: 36px;
+  line-height: 1.5;
+
+  @media (min-width: $screen-sm-min) {
+    line-height: $font-lh-h1;
+    font-size: $font-size-h1;
+  }
+}
+
+h2,
+.h2 {
+  margin-top: 42px;
+  margin-bottom: 23px;
+  font-size: 32px;
+  line-height: 1.5;
+
+  @media (min-width: $screen-sm-min) {
+    line-height: $font-lh-h2;
+    font-size: $font-size-h2;
+  }
+}
+
+h3,
+.h3 {
+  margin-top: 27px;
+  margin-bottom: 18px;
+  font-size: 28px;
+  line-height: 1.5;
+
+  @media (min-width: $screen-sm-min) {
+    line-height: $font-lh-h3;
+    font-size: $font-size-h3;
+  }
+}
+
+h4,
+.h4 {
+  margin-top: 28px;
+  margin-bottom: 16px;
+  font-size: 24px;
+  line-height: 1.5;
+
+  * + .icon,
+  .icon + * {
+    padding-left: 8px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    line-height: $font-lh-h4;
+    font-size: $font-size-h4;
+  }
+}
+
+h5,
+.h5 {
+  margin-top: 29px;
+  margin-bottom: 19px;
+  font-size: 20px;
+  line-height: 1.5;
+
+  @media (min-width: $screen-sm-min) {
+    line-height: $font-lh-h5;
+    font-size: $font-size-h5;
+  }
+}
+
+h6,
+.h6 {
+  margin-top: 29px;
+  margin-bottom: 18px;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  * + .icon,
+  .icon + * {
+    padding-left: 8px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    line-height: $font-lh-h6;
+    font-size: $font-size-h6;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  a {
+    transition: .3s all ease;
+  }
+
+  a:hover {
+    color: $brand-picton-blue;
+  }
+}
+
+p,
+.p,
+.list {
+  margin-top: 18px;
+  margin-bottom: 18px;
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (min-width: $screen-xs) {
+  .big {
+    font-size: 112.25%;
+    line-height: 1.5;
+
+    h1 &,
+    .h1 & {
+      font-size: 142.22%;
+      line-height: 1.125;
+    }
+
+    h2 &,
+    .h2 & {
+      font-size: 147.36%;
+      line-height: 1.142857142857143;
+    }
+  }
+}
+
+blockquote small,
+blockquote .small,
+small,
+.small {
+  font-size: 93.75%;
+
+  &:before {
+    display: none;
+  }
+
+  h1 &,
+  .h1 & {
+    font-size: 75%;
+  }
+
+  h2 &,
+  .h2 & {
+    font-size: 63.15789473684211%;
+  }
+
+  h3 &,
+  .h3 & {
+    font-size: 73.33333333333333%;
+  }
+
+  h4 &,
+  .h4 & {
+    font-size: 75%;
+  }
+
+  h5 &,
+  .h5 & {
+    font-size: 72.72727272727273%;
+  }
+
+  h6 &,
+  .h6 & {
+    font-size: 94.11764705882353%;
+  }
+}
+
+sub {
+  bottom: -0.5em;
+}
+
+sub, sup {
+  font-size: 62%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+code, kbd, pre, samp {
+  font-family: Consolas, "Courier New", monospace;
+}
+
+code {
+  padding: 5px 7px;
+  font-size: 75%;
+  color: #E50A0A;
+  background-color: $gray-lightest;
+  border-radius: 2px;
+}
+
+pre {
+  padding: 16px 19px;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.13;
+  overflow-x: auto;
+
+  code {
+    font-size: 75%;
+    text-align: left;
+  }
+}
+
+mark, .mark {
+  background-color: #ABCC37;
+  padding: .1em;
+}
+
+.text-extra-small {
+  font-size: 13px;
+}
+
+.text-extra-big {
+  font-size: 100px;
+  line-height: .7;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 140px;
+  }
+  @media (min-width: $screen-md-min) {
+    font-size: 180px;
+  }
+  @media (min-width: $screen-lg-min) {
+    font-size: 220px
+  }
+}
+
+// Lists
+// -------------------------
+
+.list {
+  > li + li {
+    margin-top: 10px;
+  }
+}
+
+.list-numbered {
+  padding-left: 15px;
+  li {
+    padding-left: 10px;
+  }
+}
+
+// List inline
+//
+.list-inline {
+  margin-left: -5px;
+  margin-right: -5px;
+
+  > li {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.list-inline-sm {
+  margin-left: -10px;
+  margin-right: -10px;
+
+  > li {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.list-inline-md {
+  margin-left: -12px;
+  margin-right: -12px;
+
+  > li {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.list-inline-lg {
+  margin-left: -30px;
+  margin-right: -30px;
+
+  > li {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:before {
+      color: $gray;
+    }
+
+    & + li {
+      [class*='fa-']:before {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    li + li {
+      [class*='fa-']:before {
+        margin-left: 0;
+      }
+    }
+
+    [class*='fa-']:before {
+      padding-left: 15px;
+      padding-right: 10px;
+    }
+  }
+}
+
+.list-inline-primary {
+  > li > a {
+    transition: .3s;
+    &:hover {
+      color: $brand-primary;
+    }
+  }
+}
+
+.list-inline-white {
+  > li > a {
+    transition: .3s;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.list-inline-dashed {
+  > li {
+    padding-right: 0;
+    & + li {
+      &:before {
+        content: '/';
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+.list-vertical-right-line {
+  li {
+    padding: 20px;
+    transition: .3s all ease;
+
+    &:hover {
+      color: $white;
+      background: darken($brand-primary, 10%);
+    }
+    @media (min-width: $screen-lg-min) {
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    li {
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 1px;
+        height: 160px;
+        @include transform(translateY(-50%));
+        background: rgba($white, .4);
+      }
+    }
+  }
+}
+
+.list-inline-dashed-wide {
+  > li {
+    padding-right: 0;
+    & + li {
+      &:before {
+        content: '/';
+        padding-right: 20px;
+      }
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    > li {
+      & + li {
+        &:before {
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+.list-inline-squared {
+  > li {
+    position: relative;
+    & + li {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        margin-top: -3px;
+        left: -7px;
+        height: 6px;
+        border-left: 6px solid;
+      }
+    }
+  }
+
+  &.list-inline-mg {
+    & + li {
+      &:before {
+        left: -23px;
+      }
+    }
+  }
+
+  &.list-inline-lg {
+    & + li {
+      &:before {
+        left: -33px;
+      }
+    }
+  }
+}
+
+// List marked
+//
+
+.list-marked {
+  text-align: left;
+  @include list-unstyled;
+  li {
+    padding-left: 15px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 13px;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: $brand-primary;
+    }
+  }
+}
+
+// List index
+//
+.list-index {
+  @include list-unstyled;
+  counter-reset: li;
+  li {
+    .list-index-counter {
+      &:before {
+        content: counter(li, decimal-leading-zero);
+        counter-increment: li;
+      }
+    }
+  }
+}
+
+// List separeted
+//
+.list-separated {
+  li + li {
+    border-top: 1px solid $gray-lighter;
+    margin-top: 8px;
+    padding-top: 7px;
+  }
+}
+
+// Backgrounds
+// -------------------------
+
+.bg-fixed {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+// Contextual backgrounds
+//
+.bg-gray-base {
+  @include bg-variant-custom(#{$gray-base});
+}
+
+.bg-white {
+  @include bg-variant-custom(#{$white});
+}
+
+.bg-gray-lighter {
+  @include bg-variant-custom(#{$gray-lighter});
+}
+
+// Gradient background
+//
+
+.bg-macaroni {
+  @include bg-variant-custom(linear-gradient(90deg, $brand-primary 0%, $brand-macaroni 100%));
+}
+
+.bg-caribbean {
+  @include bg-variant-custom(linear-gradient(90deg, $brand-bondi-blue 0%, $brand-caribbean-green 100%));
+}
+
+// Overlay background
+//
+
+.bg-overlay-white {
+  background: rgba($white, .8);
+}
+
+.bg-overlay-gray-darkest {
+  background: rgba($gray-darkest, .65);
+}
+
+// Colors
+// -------------------------
+
+// Contextual colors
+//
+
+.page {
+  @include text-emphasis-variant('.text-primary', $brand-primary);
+  @include text-emphasis-variant('.text-macaroni', $brand-macaroni);
+  @include text-emphasis-variant('.text-darker', $gray-darker);
+}
+
+// Shadows
+// -------------------------
+
+.shadow-drop-ambient {
+  box-shadow: $shadow-area-ambient;
+}
+
+.shadow-drop-xxs {
+  box-shadow: $shadow-area-xxs;
+}
+
+.shadow-drop-xs {
+  box-shadow: $shadow-area-xs;
+}
+
+.shadow-drop-sm {
+  box-shadow: $shadow-area-sm;
+}
+
+.shadow-drop,
+.shadow-drop-md {
+  box-shadow: $shadow-area-md;
+}
+
+.shadow-drop-lg {
+  box-shadow: $shadow-area-lg;
+}
+
+.shadow-drop-xl {
+  box-shadow: $shadow-area-xl;
+}
+
+.shadow-variant-2 {
+  box-shadow: $shadow-area-variant-2;
+}
+
+// Borders
+// -------------------------
+
+.border-gray-light {
+  border-color: $gray-light;
+}
+
+.border-gainsboro {
+  border-color: $gray;
+}
+
+// Address
+// -------------------------
+
+.contact-info {
+  p {
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+
+  dl {
+    margin-bottom: 0;
+
+    dt, dd {
+      display: inline-block;
+      font-weight: 400;
+      font-size: 15px;
+    }
+
+    dt, dd a {
+      color: $gray-darker;
+    }
+
+    dd a:hover {
+      color: $brand-picton-blue;
+    }
+  }
+}

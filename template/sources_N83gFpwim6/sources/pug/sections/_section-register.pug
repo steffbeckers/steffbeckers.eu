@@ -1,0 +1,48 @@
+//- Includes
+include  ../elements/_ui-box-icon-type-4
+
+// Register
+section
+  .shell
+    .range
+      .section-110.section-cover.range.range-xs-center.range-xs-middle
+        .cell-xs-8.cell-sm-6.cell-md-4
+          .panel.section-34.section-sm-41.inset-left-20.inset-right-20.inset-sm-left-20.inset-sm-right-20.inset-lg-left-30.inset-lg-right-30.bg-white.shadow-drop-md
+
+            +box-icon-type-4("icon-lg icon-default mdi mdi-account-multiple-outline")
+              .offset-top-24.text-darker.big.text-bold Create your account
+              p.text-extra-small.text-dark.offset-top-4 All fields are required
+
+            // RD Mailform
+            form.text-left.offset-top-30(data-form-output="form-output-global", data-form-type='contact', method='post')
+
+              .form-group
+                .input-group.input-group-sm
+                  span.input-group-addon.input-group-addon-inverse
+                    span.input-group-icon.mdi.mdi-account-outline
+                  input#login-user-name.form-control(placeholder="User Name" type="text" name="user-name" data-constraints="@Required")
+
+              .form-group.offset-top-20
+                .input-group.input-group-sm
+                  span.input-group-addon.input-group-addon-inverse
+                    span.input-group-icon.mdi.mdi-email-outline
+                  input#login-email.form-control(placeholder="E-Mail" type="email" name="email" data-constraints="@Required @Email")
+
+              .form-group.offset-top-20
+                .input-group.input-group-sm
+                  span.input-group-addon.input-group-addon-inverse
+                    span.input-group-icon.mdi.mdi-lock-open-outline
+                  input#login-password.form-control(placeholder="Password" type="password" name="password" data-constraints="@Required")
+
+              .form-group.offset-top-20
+                .input-group.input-group-sm
+                  span.input-group-addon.input-group-addon-inverse
+                    span.input-group-icon.mdi.mdi-lock-outline
+                  input#login-repeat-password.form-control(placeholder="Repeat a password" type="password" name="repeat-password" data-constraints="@Required")
+
+              .form-group.offset-top-24
+                label.checkbox-inline
+                  input(name="login-radio", value="checkbox-1", type="checkbox" class="checkbox-custom")
+                  span.text-dark.text-extra-small I agree with the #[a.text-picton-blue(href="#") Terms of use].
+
+              button(type="submit").btn.btn-xs.btn-icon.btn-block.btn-primary.offset-top-20 Sign Up #[span.icon.mdi.mdi-arrow-right-bold-circle-outline]

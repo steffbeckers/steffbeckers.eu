@@ -1,0 +1,201 @@
+//
+// RD Timepicker
+// --------------------------------------------------
+
+.rd-timepicker {
+  position: absolute;
+  top: $rd-timepicker-background-position-top;
+  left: 47%;
+  width: 100%;
+  z-index: 10;
+  transform: translate(-50%, 30px);
+  margin-right: auto;
+  background: $rd-timepicker-background;
+  box-shadow: $rd-timepicker-shadow;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s all ease-out;
+  pointer-events: none;
+
+  &.rd-timepicker--active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0px);
+    pointer-events: all;
+    padding-bottom: 20px;
+  }
+
+  &:before {
+    top: -12px;
+    right: 20px;
+    content: '';
+    position: absolute;
+    border: 6px solid transparent;
+    border-bottom: $rd-timepicker-before-border;
+  }
+  &-panel {
+    background: $rd-timepicker-panel-background;
+    text-align: center;
+    position: relative;
+    height: $rd-timepicker-panel-height;
+    padding: $rd-timepicker-panel-padding;
+  }
+  &-time {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: $rd-timepicker-time-size;
+    line-height: $rd-timepicker-time-line-height;
+    color: $rd-timepicker-time-color;
+
+    &__hours, &__minutes {
+      cursor: pointer;
+      font-weight: $rd-timepicker-time-hours-weight;
+      color: $rd-timepicker-time-hours-color
+    }
+  }
+  .rd-timepicker-time--active {
+    color: $rd-timepicker-time-color;
+  }
+  &-meridiem {
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    &__item {
+      display: block;
+      line-height: $rd-timepicker-meridiem-item-line-height;
+      font-weight: $rd-timepicker-meridiem-item-weight;
+      font-size: $rd-timepicker-meridiem-item-size;
+      cursor: pointer;
+      color: $rd-timepicker-meridiem-item-color
+    }
+  }
+
+  &-wrapper {
+    position: relative;
+    width: $rd-timepicker-wrapper-width;
+    height: $rd-timepicker-wrapper-height;
+    margin: $rd-timepicker-wrapper-offset;
+    border-radius: 50%;
+    background: $rd-timepicker-wrapper-background;
+  }
+
+  &-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $rd-timepicker-center-width;
+    height: $rd-timepicker-center-height;
+    background: $rd-timepicker-center-background;
+    border-radius: 50%;
+  }
+  &-line {
+    position: absolute;
+    background-color: $brand-primary;
+    width: 2px;
+    height: 108px;
+    top: 128.5px;
+    left: 129.5px;
+    transform-origin: 1px 1px;
+    transform: rotate(180deg);
+  }
+
+  &-display {
+    color: $rd-timepicker-display-color;
+    opacity: 0;
+    transform: scale(1.2);
+    visibility: hidden;
+    transition: .4s ease;
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+    position: absolute;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &-inner {
+      li {
+        position: absolute;
+        text-align: center;
+        border-radius: 50%;
+        top: 111.5px;
+        left: 111.5px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        cursor: pointer;
+        overflow: hidden;
+        &.rd-timepicker-display__item--active {
+          background: $rd-timepicker-display-item-background;
+          color: $rd-timepicker-display-item-color;
+        }
+      }
+      @for $i from 1 through 12 {
+        @if $i > 3 {
+          > *:nth-of-type( #{$i} ) {
+            transform: rotate(#{(($i - 1) * 30) - 60}deg) translate(102.5px) rotate(-#{(($i - 1) * 30) - 60}deg);
+          }
+        } @else if $i == 1 {
+          > *:nth-of-type( #{$i} ) {
+            transform: rotate(#{(($i - 1) * 30) - 60}deg) translate(102.5px) rotate(#{(($i - 1) * 30) + 60}deg);
+          }
+        } @else if $i == 2 {
+          > *:nth-of-type( #{$i} ) {
+            transform: rotate(#{(($i - 1) * 30) - 60}deg) translate(102.5px) rotate(#{(($i - 1) * 30)}deg);
+          }
+        } @else if $i == 3 {
+          > *:nth-of-type( #{$i} ) {
+            transform: rotate(#{(($i - 1) * 30) - 60}deg) translate(102.5px) rotate(#{(($i - 1) * 30) - 60}deg);
+          }
+        }
+      }
+    }
+
+    &--active {
+      opacity: 1;
+      transform: scale(1);
+      visibility: visible;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    width: $rd-timepicker-md-width;
+    left: $rd-timepicker-md-position-left;
+
+    &-wrapper {
+      width: $rd-timepicker-wrapper-md-width;
+      height: $rd-timepicker-wrapper-md-height;
+    }
+
+    &-time {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: $rd-timepicker-time-md-size;
+      line-height: $rd-timepicker-time-md-line-height;
+    }
+
+    &-display {
+      &-inner {
+        li {
+          position: absolute;
+          text-align: center;
+          border-radius: 50%;
+          top: 119.5px;
+          left: 119.5px;
+        }
+      }
+    }
+
+    &-line {
+      top: 136.5px;
+      left: 138.5px;
+    }
+  }
+}

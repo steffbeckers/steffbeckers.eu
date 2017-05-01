@@ -1,0 +1,14 @@
+.page-header.page-header-perspective
+  .page-header-left
+    a.brand(href='index.html')
+      +png('logo-default-199x36')
+
+  .page-header-right
+    if (menuIncludeButton)
+      .booking-control
+        a.btn.btn-xs.btn-circle.btn-primary(href=appointLink) BOOK NOW
+
+    #perspective-open-menu(data-custom-toggle='.perspective-menu-toggle', data-custom-toggle-hide-on-blur='true')
+      span.perspective-menu-text Menu
+      button.perspective-menu-toggle
+        span

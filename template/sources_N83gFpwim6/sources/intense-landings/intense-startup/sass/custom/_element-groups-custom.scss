@@ -1,0 +1,25 @@
+// Element groups
+// --------------------------------------------------
+
+html .element-groups-xs-custom {
+  @include element-groups-custom(5px, 5px);
+}
+
+html .element-groups-sm-custom {
+  @include element-groups-custom(10px, 10px);
+}
+
+html .element-groups-custom{
+  @include element-groups-custom(15px, 15px);
+}
+
+html .element-groups-lg-custom {
+  @include element-groups-custom(20px, 20px);
+}
+
+html .element-groups-xl-custom {
+  @include element-groups-custom(30px, 30px);
+}
+
+
+

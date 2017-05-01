@@ -1,0 +1,763 @@
+- var fonts = "//fonts.googleapis.com/css?family=Montserrat:400,700%7CLato:400,700'"
+- var html_class = "wide wow-animation smoothscroll scrollTo"
+
+//- Includes
+include ../_config
+include ../_mixins
+include ../elements/_ui-rd-navbar-top-panel
+include ../mixins/_gallery-photoswipe
+include ../elements/_ui-box-icon-type-4
+include ../elements/_ui-rd-parallax
+include ../elements/_widget-post
+include ../elements/_widget-form-subscribe
+include ../elements/_widget-list-social
+include ../elements/_ui-counter-type-1
+include ../elements/_ui-thumbnail-classic
+include ../elements/_ui-isotope
+include ../elements/_ui-thumbnail-terry
+include ../elements/_ui-page-loader-variant-1
+include ../elements/_ui-testimonials-slider-4
+doctype html
+html(lang="en" class=html_class)
+  head
+    // Site Title
+    title= cfg.nav.home.submenu.skins.submenu.sunrise.title
+
+    meta(charset="utf-8")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+    block search-meta
+      meta(name="keywords" content="intense web design multipurpose template")
+      meta(name="date" content="Dec 26")
+
+    link(rel="icon" href="images/favicon.ico" type="image/x-icon")
+    // Stylesheets
+    link(rel="stylesheet" type="text/css" href=fonts)
+    link(rel="stylesheet" href="intense-real-estate/css/style.css")
+    = "\n\t\t"
+    <!--[if lt IE 10]>
+    div(style='background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;')
+      a(href="http://windows.microsoft.com/en-US/internet-explorer/")
+        img(src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.")
+    script(src="js/html5shiv.min.js")
+    = "\n\t\t"
+    <![endif]-->
+  body
+    // Page
+    div(class="page text-center")
+      +page-loader-1("<img class='img-responsive' width='330' height='67' src='images/childs/real-estate-logo-big-330x67.png' alt=''/>")
+      // Page Head
+      header.page-head
+        //- RD Navbar
+        +rd-navbar-top-panel(
+        'rd-navbar-light',
+        {
+          "data-lg-auto-height": "true",
+          "data-md-layout": 'rd-navbar-fixed',
+          "data-lg-layout": 'rd-navbar-static',
+          "data-lg-stick-up": 'true'
+        },
+        "<img class='img-responsive' width='232' height='34' src='images/childs/real-estate-logo-dark-232x34.png' alt=''/>",
+        cfg.nav.home,
+        cfg.nav
+        )
+
+        .bg-gray-base.rd-parallax(data-on="false" data-md-on="true")
+          .rd-parallax-layer(data-speed="0.45", data-type="media", data-url="images/backgrounds/background-10-1920x1062.jpg")
+          .rd-parallax-layer(data-speed="0.3", data-type='html' data-md-fade="true")
+            section.bg-overlay-gray-darkest.context-dark
+              .shell
+                .range
+                  .range.range-xs-middle.range-xs-center.section-cover.section-110
+                    .cell-xs-10.cell-sm-8.cell-md-6
+                      h1 Welcome to Intense
+                      p
+                        span.big The smartest and most flexible bootstrap template by TemplateMonster you've ever seen. Create exactly what you need with our powerful bootstrap toolkit.
+                      .offset-top-34
+                        .group
+                          a(href= cfg.buyLink).btn.btn-primary buy intense now
+                          a(href= "#" data-waypoint-to="#section-terry").btn.btn-default start a journey
+        #section-terry
+      // Page Contents
+      main.page-content
+
+        // Thumbnails terry
+        section.section-34
+          .shell-fluid
+            .range.range-xs-center
+              .cell-xs-8.cell-sm-6.cell-lg-3
+                +thumbnail-terry({
+                  "type": "thumbnail",
+                  "title": "Infrastructure Themes",
+                  "description": "12 properties",
+                  "thumb": {"src": "images/skins/skin-sunrise-01-442x280.jpg", "width": 442, "height": 280, "alt": ""},
+                  "target": {"href": "#"},
+                  "btnLink": "#",
+                  "btnClass": "btn-primary",
+                  "btnText": "view all"
+                })
+
+              .cell-xs-8.cell-sm-6.cell-lg-3.offset-top-30.offset-sm-top-0
+                +thumbnail-terry({
+                  "type": "thumbnail",
+                  "title": "Blog Themes",
+                  "description": "87 properties",
+                  "thumb": {"src": "images/skins/skin-sunrise-02-442x280.jpg", "width": 442, "height": 280, "alt": ""},
+                  "target": {"href": "#"},
+                  "btnLink": "#",
+                  "btnClass": "btn-primary",
+                  "btnText": "view all"
+                })
+
+              .cell-xs-8.cell-sm-6.cell-lg-3.offset-top-30.offset-lg-top-0
+                +thumbnail-terry({
+                  "type": "thumbnail",
+                  "title": "Portfolio Themes",
+                  "description": "54 properties",
+                  "thumb": {"src": "images/skins/skin-sunrise-03-442x280.jpg", "width": 442, "height": 280, "alt": ""},
+                  "target": {"href": "#"},
+                  "btnLink": "#",
+                  "btnClass": "btn-primary",
+                  "btnText": "view all"
+                })
+
+              .cell-xs-8.cell-sm-6.cell-lg-3.offset-top-30.offset-lg-top-0
+                +thumbnail-terry({
+                  "type": "thumbnail",
+                  "title": "Business Themes",
+                  "description": "19 properties",
+                  "thumb": {"src": "images/skins/skin-sunrise-04-442x280.jpg", "width": 442, "height": 280, "alt": ""},
+                  "target": {"href": "#"},
+                  "btnLink": "#",
+                  "btnClass": "btn-primary",
+                  "btnText": "view all"
+                })
+
+        // Intense Is The Most Flexible Bootstrap Theme
+        section.section-bottom-98.section-top-34.section-md-124
+          .shell
+            .range.range-xs-center
+              .cell-xs-10
+                h2.text-bold Intense Is The Most Flexible Bootstrap Theme on TemplateMonster
+                hr.divider.bg-saffron
+              .cell-xs-8.offset-top-50.offset-sm-top-66
+                p Join the 205,000+ Satified Customers Today at TemplateMonster.com. Created by the industry leaders Intense is a comprehensive set of tools which are super easy to pick up and run. It gives you a huge leg up to create your own beautiful site. Powerful options & tools, unlimited designs, responsive framework and amazing support are the reasons for our customers to fall in love.
+            .range.range-md-middle.offset-top-98
+              .cell-md-4.cell-md-push-1
+                img.center-block.img-responsive(src="images/moqups/moqup-home-mobile.png" alt="" width=247 height=470)
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.text-md-right.offset-top-34.offset-md-top-0
+                .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal
+                  .unit-body
+                    h4.offset-md-top-20 Social Integration
+                    p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                  .unit-right
+                    span.icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-message-text-outline
+                .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                  .unit-body
+                    h4.offset-md-top-20 All images Included
+                    p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                  .unit-right
+                    span.icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-image-filter
+                .unit.unit-spacing-sm.unit-inverse.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                  .unit-body
+                    h4.offset-md-top-20 2000+ <br class="veil reveal-md-inline veil-lg"> icons
+                    p The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                  .unit-right
+                    span.icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-emoticon-happy
+              .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.text-md-left.cell-md-push-1.offset-top-50.offset-md-top-0
+
+                .unit.unit-spacing-sm.unit-md.unit-md-horizontal
+                  .unit-left
+                    span.icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-cellphone-link
+                  .unit-body
+                    h4.offset-md-top-20 Responsive & Retina
+                    p.
+                      The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit.unit-spacing-sm.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                  .unit-left
+                    span.icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-television-guide
+                  .unit-body
+                    h4.offset-md-top-20 Extensive docs
+                    p.
+                      The information should be not only well-organized and easy to read. thus making the process enjoyable.
+                .unit.unit-spacing-sm.unit-md.unit-md-horizontal.offset-top-50.offset-md-top-30
+                  .unit-left
+                    span.icon.icon-circle.icon-lg.icon-bordered.icon-primary.mdi.mdi-play-box-outline
+                  .unit-body
+                    h4.offset-md-top-20 Video backgrounds
+                    p.
+                      The information should be not only well-organized and easy to read. thus making the process enjoyable.
+
+
+        // Take Full Control of Your Site
+        section
+          +rd-parallax({
+            "backgroundSpeed": "0.35",
+            "attrType": "media",
+            "src": "images/backgrounds/background-32-1920x1033.jpg",
+            "htmlSpeed": "0"
+          })
+            .bg-overlay-gray-darkest
+              .shell.section-98.section-md-124.context-dark
+                h2.text-bold.
+                  Take Full Control of Your Site
+                hr.divider.bg-saffron
+                .range.offset-top-66
+                  .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0
+                    +box-icon-type-4(" icon-carrot-filled mdi mdi-cube-outline")
+                      .offset-top-34
+                        h5.text-bold.text-spacing-60 EXTENDED TOOLKIT
+                      .offset-top-10
+                        p Intense provides a poweful and flexible exntended toolkit in addition to basic Bootsrap. If you’ve used Bootstrap itself, you’ll find this all super familiar and easy-to-use.
+                  .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-66.offset-md-top-0
+                    +box-icon-type-4("icon-carrot-filled mdi mdi-palette")
+                      .offset-top-34
+                        h5.text-bold.text-spacing-60 UNLIMITED SKINS & COLORS
+                      .offset-top-10
+                        p Theme components inherit much of their style from variables, exactly like Bootstrap. Change a few values and the theme adapts.
+
+                  .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-66.offset-md-top-0
+                    +box-icon-type-4("icon-carrot-filled mdi mdi-vector-arrange-above")
+                      .offset-top-34
+                        h5.text-bold.text-spacing-60 PARALLAX EFFECTS
+                      .offset-top-10
+                        p Everyone loves parallax scrolling effects, they are simply beautiful. Intense has advanced parallax options & controls based on flexible and easy-to-use RD Parallax plugin."
+                  .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-66
+                    +box-icon-type-4("icon-carrot-filled mdi mdi-share-variant")
+                      .offset-top-34
+                        h5.text-bold.text-spacing-60 SOCIAL INTEGRATION
+                      .offset-top-10
+                        p Intense has full set of social icons and styling options which allow you to share any content the way you wish.
+                  .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-66
+                    +box-icon-type-4("icon-carrot-filled mdi mdi-spellcheck")
+                      .offset-top-34
+                        h5.text-bold.text-spacing-60 MADE FOR SPEED
+                      .offset-top-10
+                        p We know how embarassing and time-consuming can be content loading, so we took care of pages optimization for your smooth expirience.
+                  .cell-sm-8.cell-sm-preffix-2.cell-md-4.cell-md-preffix-0.offset-top-66
+                    +box-icon-type-4("icon-carrot-filled mdi mdi-magnify")
+                      .offset-top-34
+                        h5.text-bold.text-spacing-60 SEO OPTIMIZED
+                      .offset-top-10
+                        p Intense was built with care allowing search engines to index the pages of your site correctly to achieve higher rankings in search results.
+
+        // Intense is exactly what you need
+        section.section-66.bg-saffron.context-dark
+          .shell
+            .range.range-xs-center.range-xs-middle
+              .cell-lg-7
+                h2.text-bold Intense is exactly what you need
+              .cell-lg-3
+                a(href= cfg.buyLink).btn.btn-default.btn-icon.btn-icon-left
+                  span.icon.mdi.mdi-cart-outline
+                  span buy intense now
+
+
+        // About the Service
+        section.section-98.section-sm-110
+          .shell
+            h2.text-bold About Us
+            hr.divider.bg-saffron
+            .range.range-xs-center.offset-top-34.offset-md-top-66
+              .cell-md-6
+                img(src="images/skins/skin-sunrise-05-570x310.jpg" width="570" height="310" alt="").img-responsive.reveal-inline-block
+
+              .cell-md-6.text-md-left.inset-md-left-50
+                p TemplateMonster is an A-size depot of website templates - more than 46,000 designs to choose from. Since coming up in May 2002, we've gone partners with Magento, Drupal, WordPress, PrestaShop, Joomla, WooCommerce, and many more. 1 million clients were served during this time. Web templates + installation + hosting + customization + Search Engine Optimization + copywriting — all these services you can always get at TemplateMonster.com. If you're thirsty for knowledge, TemplateMonster blog provides you with the most recent web design news, infographics, freebies, discounts & promos.
+
+
+        // Counters
+        section
+          +rd-parallax({
+            "backgroundSpeed": "0.35",
+            "attrType": "media",
+            "src": "images/backgrounds/background-33-1920x474.jpg",
+            "htmlSpeed": "0"
+          })
+            .section-66.section-sm-98.bg-overlay-gray-darkest.context-dark
+              .shell-wide
+                .range
+                  .cell-sm-6.cell-md-3.cell-md-preffix-0
+                    +counter-type-1("Templates", "text-bold text-carrot", {
+                      "dataTo": "58249",
+                      "dataSpeed": "3000",
+                      "attr": "text-uppercase text-spacing-60 font-default"
+                    }, "divider", "h1")
+                  .cell-sm-6.cell-md-3.offset-top-66.offset-sm-top-0
+                    +counter-type-1("Happy Clients", "text-bold text-carrot", {
+                      "dataTo": "246",
+                      "dataSpeed": "2500",
+                      "preffix": "K",
+                      "attr": "text-uppercase text-spacing-60 font-default"
+                    }, "divider", "h1")
+                  .cell-sm-6.cell-md-3.offset-top-66.offset-md-top-0
+                    +counter-type-1("Hours of Coding", "text-bold text-carrot", {
+                      "dataTo": "1200",
+                      "dataSpeed": "1500",
+                      "attr": "text-uppercase text-spacing-60 font-default"
+                    }, "divider", "h1")
+                  .cell-sm-6.cell-md-3.offset-top-66.offset-md-top-0
+                    +counter-type-1("Lines of Code", "text-bold text-carrot", {
+                      "dataTo": "834",
+                      "dataSpeed": "1300",
+                      "preffix": "K",
+                      "attr": "text-uppercase text-spacing-60 font-default"
+                    }, "divider", "h1")
+
+        // Our Team
+        section.section-98.section-md-124.bg-lighter
+          .shell
+            h2 Our Team
+            hr.divider.bg-saffron
+            .range.range-xs-center.offset-top-66
+              .cell-sm-6.cell-md-3
+                img.img-responsive.reveal-inline-block(src="images/users/user-ashley-mason-270x270.jpg" width=270 height=270 alt="")
+                .text-md-left.offset-top-20
+                  div
+                    h5.text-bold.text-primary
+                      a(href="team-member.html") Ashley Mason
+                address.contact-info.text-md-left
+                  ul.list-unstyled.p
+                    li.reveal-block
+                      span.icon.icon-xxs.mdi.mdi-phone.text-middle
+                      = " "
+                      a.reveal-inline-block.text-middle(href="callto:#") 1-800-7650-986
+                    li.reveal-block
+                      span.icon.icon-xxs.mdi.mdi-email-open.text-middle
+                      = " "
+                      a.reveal-inline-block.text-middle(href="mailto:#") ashley@demolink.org
+
+              .cell-sm-6.cell-md-3.offset-top-50.offset-sm-top-0
+                img.img-responsive.reveal-inline-block(src="images/users/user-russel-myers-270x270.jpg" width=270 height=270 alt="")
+                .text-md-left.offset-top-20
+                  div
+                    h5.text-bold.text-primary
+                      a(href="team-member.html") Russell Myers
+                address.contact-info.text-md-left
+                  ul.list-unstyled.p
+                    li.reveal-block
+                      span.icon.icon-xxs.mdi.mdi-phone.text-middle
+                      = " "
+                      a.reveal-inline-block.text-middle(href="callto:#") 1-800-7650-986
+                    li.reveal-block
+                      span.icon.icon-xxs.mdi.mdi-email-open.text-middle
+                      = " "
+                      a.reveal-inline-block.text-middle(href="mailto:#") russell@demolink.org
+
+              .cell-sm-6.cell-md-3.offset-top-50.offset-md-top-0
+                img.img-responsive.reveal-inline-block(src="images/users/user-shirley-vasques-270x270.jpg" width=270 height=270 alt="")
+                .text-md-left.offset-top-20
+                  div
+                    h5.text-bold.text-primary
+                      a(href="team-member.html") Shirley Vasquez
+                address.contact-info.text-md-left
+                  ul.list-unstyled.p
+                    li.reveal-block
+                      span.icon.icon-xxs.mdi.mdi-phone.text-middle
+                      = " "
+                      a.reveal-inline-block.text-middle(href="callto:#") 1-800-7650-986
+                    li.reveal-block
+                      span.icon.icon-xxs.mdi.mdi-email-open.text-middle
+                      = " "
+                      a.reveal-inline-block.text-middle(href="mailto:#") shirley@demolink.org
+
+              .cell-sm-6.cell-md-3.offset-top-50.offset-md-top-0
+                img.img-responsive.reveal-inline-block(src="images/users/user-terry-sandoval-270x270.jpg" width=270 height=270 alt="")
+                .text-md-left.offset-top-20
+                  div
+                    h5.text-bold.text-primary
+                      a(href="team-member.html") Terry Sandoval
+                address.contact-info.text-md-left
+                  ul.list-unstyled.p
+                    li
+                      span.icon.icon-xxs.mdi.mdi-phone.text-middle
+                      = " "
+                      a.reveal-inline-block.text-middle(href="callto:#") 1-800-7650-986
+                    li
+                      span.icon.icon-xxs.mdi.mdi-email-open.text-middle
+                      = " "
+                      a.reveal-inline-block.text-middle(href="mailto:#") terry@demolink.org
+            .offset-top-66
+              a(href= cfg.nav.pages.submenu.ourTeam.href).btn.btn-primary view all information
+
+        // Still Not Sure?
+        section.section-98.section-md-124
+          .shell-wide
+            h2.text-bold Still Not Sure?
+            .offset-top-41
+              +isotope(['All', 'Infrastructure', 'Portfolio', 'Blog', 'Agency', 'Creative'],{
+                "group": "gallery",
+                "layout": "fitRows",
+                "alignClass": "isotope-filters-horizontal"
+              }, "isotope-1")
+                // Isotope
+                .row
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.restaurant.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.restaurant.desc,
+                        "thumb": cfg.themes.restaurant.image,
+                        "target": {"href": cfg.themes.restaurant.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Portfolio')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.photographer.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.photographer.desc,
+                        "thumb": cfg.themes.photographer.image,
+                        "target": {"href": cfg.themes.photographer.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Blog')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.personalBlog.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.personalBlog.desc,
+                        "thumb": cfg.themes.personalBlog.image,
+                        "target": {"href": cfg.themes.personalBlog.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.realEstate.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.realEstate.desc,
+                        "thumb": cfg.themes.realEstate.image,
+                        "target": {"href": cfg.themes.realEstate.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.handmade.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.handmade.desc,
+                        "thumb": cfg.themes.handmade.image,
+                        "target": {"href": cfg.themes.handmade.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.dentalClinic.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.dentalClinic.desc,
+                        "thumb": cfg.themes.dentalClinic.image,
+                        "target": {"href": cfg.themes.dentalClinic.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.financialAdvisor.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.financialAdvisor.desc,
+                        "thumb": cfg.themes.financialAdvisor.image,
+                        "target": {"href": cfg.themes.financialAdvisor.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.gym.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.gym.desc,
+                        "thumb": cfg.themes.gym.image,
+                        "target": {"href": cfg.themes.gym.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Infrastructure')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.childCare.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.childCare.desc,
+                        "thumb": cfg.themes.childCare.image,
+                        "target": {"href": cfg.themes.childCare.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.jobBoard.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.jobBoard.desc,
+                        "thumb": cfg.themes.jobBoard.image,
+                        "target": {"href": cfg.themes.jobBoard.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.product.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.product.desc,
+                        "thumb": cfg.themes.product.image,
+                        "target": {"href": cfg.themes.product.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.app.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.app.desc,
+                        "thumb": cfg.themes.app.image,
+                        "target": {"href": cfg.themes.app.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.startup.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.startup.desc,
+                        "thumb": cfg.themes.startup.image,
+                        "target": {"href": cfg.themes.startup.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.book.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.book.desc,
+                        "thumb": cfg.themes.book.image,
+                        "target": {"href": cfg.themes.book.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.travel.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.travel.desc,
+                        "thumb": cfg.themes.travel.image,
+                        "target": {"href": cfg.themes.travel.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Creative')
+                      .shadow-variant-2
+                        +thumbnail-classic({
+                          "type": "thumbnail",
+                          "title": cfg.themes.event.title,
+                          "titleAttrs": "text-jungle-green",
+                          "description": cfg.themes.event.desc,
+                          "thumb": cfg.themes.event.image,
+                          "target": {"href": cfg.themes.event.href},
+                          "targetBlank": true
+                        })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.taxi.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.taxi.desc,
+                        "thumb": cfg.themes.taxi.image,
+                        "target": {"href": cfg.themes.taxi.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.barbershop.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.barbershop.desc,
+                        "thumb": cfg.themes.barbershop.image,
+                        "target": {"href": cfg.themes.barbershop.href},
+                        "targetBlank": true
+                      })
+
+                  .col-xs-12.col-sm-6.col-lg-4.isotope-item(data-filter='Agency')
+                    .shadow-variant-2
+                      +thumbnail-classic({
+                        "type": "thumbnail",
+                        "title": cfg.themes.petshop.title,
+                        "titleAttrs": "text-jungle-green",
+                        "description": cfg.themes.petshop.desc,
+                        "thumb": cfg.themes.petshop.image,
+                        "target": {"href": cfg.themes.petshop.href},
+                        "targetBlank": true
+                      })
+
+        //- Testimonials Slider
+        section.section-98.section-top-110.bg-lighter
+          .shell
+            h2.text-bold Testimonials
+            hr.divider.bg-saffron
+            .offset-top-50
+              +testimonials-slider-4([{
+                "image": {
+                  "width": 80,
+                  "height": 80,
+                  "src": "images/users/user-diana-russo-80x80.jpg",
+                  "alt": "Lisa Evans"
+                },
+                "title": "Lisa Evans",
+                "q": "Thank you for your prompt response and the help that you gave me. You always have a quick solution to any problem. What an excellent level of customer service!"
+              },
+                {
+                  "image": {
+                    "width": 80,
+                    "height": 80,
+                    "src": "images/users/user-john-doe-80x80.jpg",
+                    "alt": "Nicholas Lane"
+                  },
+                  "title": "Nicholas Lane",
+                  "q": "I just want to thank you for your help. I was so pleased and grateful. Keep up the excellent work. Your site provides the best support I have ever encountered."
+                },
+                {
+                  "image": {
+                    "width": 80,
+                    "height": 80,
+                    "src": "images/users/user-bernard-show-80x80.jpg",
+                    "alt": "Ethan Dean"
+                  },
+                  "title": "Ethan Dean",
+                  "q": "Thank you very much for your rapid response. It's no doubt that your company is worth admiring! I have experienced the fastest support ever.Thank you a thousand"
+                },
+                {
+                  "image": {
+                    "width": 80,
+                    "height": 80,
+                    "src": "images/users/user-alex-merphy-80x80.jpg",
+                    "alt": "Alex Merphy"
+                  },
+                  "title": "Alex Merphy",
+                  "q": "Thank you for your prompt response and the help that you gave me. You always have a quick solution to any problem. What an excellent level of customer service!"
+                },
+                {
+                  "image": {
+                    "width": 80,
+                    "height": 80,
+                    "src": "images/users/user-july-mao-80x80.jpg",
+                    "alt": "July Mao"
+                  },
+                  "title": "July Mao",
+                  "q": "I just want to thank you for your help. I was so pleased and grateful. Keep up the excellent work. Your site provides the best support I have ever encountered."
+                },
+                {
+                  "image": {
+                    "width": 80,
+                    "height": 80,
+                    "src": "images/users/user-amanda-smith-80x80.jpg",
+                    "alt": "Amanda Smith"
+                  },
+                  "title": "Amanda Smith",
+                  "q": "Thank you very much for your rapid response. It's no doubt that your company is worth admiring! I have experienced the fastest support ever.Thank you a thousand "
+                }])
+
+      // Page Footer
+      footer.section-relative.section-top-66.section-bottom-34.page-footer.bg-gray-base.context-dark
+        .shell
+          .range.range-sm-center.text-lg-left
+            .cell-sm-8.cell-md-12
+              .range.range-xs-center
+                .cell-xs-7.text-xs-left.cell-md-4.cell-lg-3.cell-lg-push-4
+                  h6.text-uppercase.text-spacing-60 Latest news
+
+                  +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "05/14/2015", "Let’s Change the world", null, "", "text-primary")
+                  +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "05/14/2015", "The meaning of Web Design", null, "", "text-primary")
+                  +widget-post(cfg.nav.blog.submenu.classic.submenu.singlePost.href, "05/14/2015", "Get Started with TemplateMonster", null, "", "text-primary")
+
+                .cell-xs-5.offset-top-41.offset-xs-top-0.text-xs-left.cell-md-3.cell-lg-2.cell-lg-push-3
+                  h6.text-uppercase.text-spacing-60 Useful Links
+                  .reveal-block
+                    .reveal-inline-block
+                      ul.list.list-marked
+                        li
+                          a(href=cfg.nav.pages.submenu.aboutUs.href)= cfg.nav.pages.submenu.aboutUs.title
+                        li
+                          a(href=cfg.nav.pages.submenu.contactUs.href)= cfg.nav.pages.submenu.contactUs.title
+                        li
+                          a(href=cfg.nav.pages.submenu.services.href)= cfg.nav.pages.submenu.services.title
+                        li
+                          a(href=cfg.nav.pages.submenu.pricing.href)= cfg.nav.pages.submenu.pricing.title
+                        li
+                          a(href=cfg.nav.pages.submenu.clients.href)= cfg.nav.pages.submenu.clients.title
+
+                .cell-xs-12.offset-top-41.cell-md-5.offset-md-top-0.text-md-left.cell-lg-4.cell-lg-push-2
+                  h6.text-uppercase.text-spacing-60 Newsletter
+
+                  p Keep up with our always upcoming  product features  and technologies. Enter your e-mail and subscribe to  our newsletter.
+
+                  .offset-top-30
+                    +widget-form-subscribe("Type your E-Mail", "form-subscribe-footer")
+
+                .cell-xs-12.offset-top-66.cell-lg-3.cell-lg-push-1.offset-lg-top-0
+                  // Footer brand
+                  .footer-brand
+                    a(href=cfg.nav.home.href)
+                      | !{"<img width='172' height='55' src='images/childs/real-estate-logo-light-172x55.png' alt=''/>"}
+                  .offset-top-20
+                    +widget-list-social([
+                      {
+                        "icon": "fa fa-facebook",
+                        "href": "#"
+                      },
+                      {
+                        "icon": "fa fa-twitter",
+                        "href": "#"
+                      },
+                      {
+                        "icon": "fa fa-google-plus",
+                        "href": "#"
+                      },
+                      {
+                        "icon": "fa fa-linkedin",
+                        "href": "#"
+                      }
+                    ])
+
+        .shell.offset-top-50
+          p.small.text-darker
+            | #{cfg.brand.name} &copy; #[span(id="copyright-year")] . #[a(href="privacy.html") Privacy Policy]
+            // {%FOOTER_LINK}
+
+    // Global Mailform Output
+    #form-output-global.snackbars
+    +gallery-photoswipe()
+    // Java script
+    script(src="js/core.min.js")
+    script(src="js/script.js")

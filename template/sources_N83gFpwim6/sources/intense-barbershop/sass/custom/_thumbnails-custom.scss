@@ -1,0 +1,335 @@
+//
+// Custom Thumbnails
+// --------------------------------------------------
+
+// Figure
+//
+.figure-default {
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  * + figcaption {
+    margin-top: 10px;
+  }
+}
+
+.figure-fullwidth {
+  img {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.figure-lighter {
+  figcaption {
+    color: $gray-lighter;
+  }
+}
+
+.thumbnail {
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+
+  .caption {
+    padding: 0;
+    color: $gray-base;
+  }
+}
+
+.img-thumbnail,
+.thumbnail {
+  box-shadow: none;
+}
+
+// Make thumbnails to fit entire container width
+.thumbnail-block {
+  display: block;
+
+  > img,
+  a > img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+// Thumbnail card
+//
+
+.thumbnail-card {
+  background: $white;
+  text-align: center;
+
+  // Offsets
+  * + .inline-list {
+    margin-top: 25px;
+  }
+}
+
+.thumbnail-card-body {
+  padding: 40px 30px;
+}
+
+.thumbnail-card-image {
+  height: auto;
+  width: 100%;
+}
+
+.thumbnail-card-header {
+  @include header-base-styles;
+  font-size: $font-size-h5;
+  line-height: $font-lh-h5;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.thumbnail-card-text {
+  color: $gray-light;
+}
+
+* + .thumbnail-card-text {
+  margin-top: 10px;
+}
+
+@media (min-width: $screen-sm-min) {
+  .thumbnail-card {
+    * + .inline-list {
+      margin-top: 40px;
+    }
+  }
+
+  .thumbnail-card-body {
+    padding: 40px 20px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .thumbnail-card-body {
+    padding: 40px 30px;
+  }
+}
+
+// Thumbnail fullwidth
+//
+.thumbnail-fullwidth {
+  width: 100%;
+  color: $gray-dark;
+  background: $white;
+  text-align: left;
+
+  * + .inline-list {
+    margin-top: 30px;
+  }
+}
+
+.thumbnail-fullwidth-left img {
+  height: auto;
+  width: 100%;
+}
+
+.thumbnail-fullwidth-body {
+  padding: 20px 20px 35px;
+}
+
+.thumbnail-fullwidth-header {
+  @include header-base-styles;
+  @include header-h3;
+}
+
+.thumbnail-fullwidth-text {
+  font-style: italic;
+  color: $gray-dark;
+}
+
+.thumbnail-fullwidth-list-bars {
+  position: relative;
+  @include transform(translateY(-20px));
+  margin-bottom: -20px;
+
+  > * {
+    margin-top: 20px;
+  }
+}
+
+.thumbnail-fullwidth-list-bars-item {
+  &-header {
+    font: 400 12px/18px $font-family-sec;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: $gray-base;
+  }
+}
+
+.thumbnail-fullwidth-list-bars-item-header + * {
+  margin-top: 7px;
+}
+
+* + .thumbnail-fullwidth-text {
+  margin-top: 10px;
+}
+
+* + .thumbnail-fullwidth-list-bars {
+  margin-top: 40px;
+}
+
+.thumbnail-fullwidth + .thumbnail-fullwidth {
+  margin-top: 30px;
+}
+
+@media (min-width: $screen-sm-min) {
+  .thumbnail-fullwidth {
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(stretch);
+
+    * + .inline-list {
+      margin-top: 40px;
+    }
+  }
+
+  .thumbnail-fullwidth-left {
+    position: relative;
+    @include flex-shrink(0);
+    width: 40%;
+    max-width: 400px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include transform(translate(-50%, -50%));
+      width: auto;
+      height: auto;
+      min-height: 100%;
+      min-width: 100%;
+    }
+  }
+
+  .thumbnail-fullwidth-body {
+    padding: 35px 50px;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .thumbnail-fullwidth-body {
+    padding: 80px 100px;
+  }
+}
+
+.thumbnail-card,
+.thumbnail-fullwidth {
+  transition: .33s all ease;
+  &:hover {
+    background: darken($white, 2%);
+  }
+}
+
+// Thumbnail option
+//
+.thumbnail-option {
+  background: $white;
+  text-align: center;
+}
+
+.thumbnail-option-left {
+  padding-top: 30px;
+}
+
+.thumbnail-option-body {
+  padding: 30px;
+}
+
+.thumbnail-option-title {
+  font: 400 14px/18px $font-family-sec;
+  color: $gray-base;
+  text-transform: uppercase;
+}
+
+.thumbnail-option-list {
+  @include spacing(2px);
+  font: 400 8px/12px $font-family-sec;
+  text-transform: uppercase;
+
+  > li {
+    display: inline-block;
+    width: 24px;
+    height: 13px;
+    padding: 2px;
+    color: $gray-light;
+    background: $conch;
+    text-align: center;
+  }
+
+  > li.active {
+    color: $white;
+    background: $brand-primary;
+  }
+}
+
+* + .thumbnail-option-list {
+  margin-top: 15px;
+}
+
+* + .thumbnail-option-panel {
+  margin-top: 30px;
+}
+
+@media (min-width: $screen-xs-min) {
+
+  .thumbnail-option {
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(stretch);
+    text-align: left;
+  }
+
+  .thumbnail-option-left {
+    position: relative;
+    @include flex-shrink(0);
+    width: 36%;
+    max-width: 170px;
+    padding: 0;
+    margin-left: -1px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include transform(translate(-50%, -50%));
+      width: auto;
+      height: auto;
+      min-height: 100%;
+      min-width: 101%;
+      will-change: transform;
+    }
+  }
+
+  .thumbnail-option-body {
+    padding: 35px 50px;
+  }
+
+}
+
+@media (min-width: $screen-md-min) {
+  .thumbnail-option-body {
+    padding: 35px 45px 40px 60px;
+  }
+}
+
+[class*='thumbnail'] {
+  [data-toggle='modal'] {
+    display: inline-block;
+    cursor: pointer;
+    transition: .33s all ease;
+
+    &:hover {
+      color: $brand-primary;
+    }
+  }
+}

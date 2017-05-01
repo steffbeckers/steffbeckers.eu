@@ -1,0 +1,78 @@
+//
+// RD Navbar Default Panel
+// --------------------------------------------------
+%rd-navbar-default-panel{
+  .rd-navbar-panel{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 16;
+  }
+
+  &, .rd-navbar-panel{
+    height: $rd-navbar-fixed-height;
+  }
+  .rd-navbar-toggle {
+    position: fixed;
+    z-index: 17;
+    top: 4px;
+    left: 4px;
+    @include toggle-lines-to-arrow(48px, 24px, $white);
+  }
+
+  .rd-navbar-cart {
+    position: fixed;
+    z-index: 17;
+    top: 4px;
+    right: 4px;
+    @include toggle-icons-via-rotation(48px, 24px, $white, '\f206', '\f69a');
+  }
+
+  @media (min-width: $screen-xs) {
+    .rd-navbar-brand {
+      display: block;
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      width: auto;
+    }
+    &.active {
+    }
+  }
+}
+
+//
+// Dark Theme
+// --------------------------------------------------
+%rd-navbar-default-panel-dark{
+  .rd-navbar-panel {
+    background: $gray-base;
+    box-shadow: nth($shadow-area-md, 1) nth($shadow-area-md, 2) nth($shadow-area-md, 3) nth($shadow-area-md, 4) #000;
+  }
+
+  .rd-navbar-cart {
+    color: $white;
+  }
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+%rd-navbar-default-panel-light{
+  .rd-navbar-panel {
+    background: $white;
+    box-shadow: nth($shadow-area-md, 1) nth($shadow-area-md, 2) nth($shadow-area-md, 3) nth($shadow-area-md, 4) #000;
+  }
+  .rd-navbar-toggle{
+    span{
+      &, &:before, &:after{
+        background: $gray-darkest;
+      }
+    }
+  }
+
+  .rd-navbar-cart {
+    color: $gray-darkest;
+  }
+}

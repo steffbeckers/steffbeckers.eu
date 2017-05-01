@@ -1,0 +1,172 @@
+//
+// Easy Responsive Tabs
+// --------------------------------------------------
+
+
+// Classic Tabs
+// --------------------------------------------------
+
+.responsive-tabs {
+  // Collapse Tab
+  .resp-accordion {
+    position: $accordion-arrow-icon-position;
+    padding: $accordion-accordion-inset;
+    overflow: hidden;
+    font-size: $accordion-size;
+    font-weight: $accordion-weight;
+    color: $accordion-color;
+    text-align: left;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    transition: color .2s ease-in;
+
+    &:hover {
+      cursor: pointer;
+      color: $accordion-color-hover;
+    }
+
+    .resp-arrow {
+      position: absolute;
+      top: $accordion-arrow-icon-position-top;
+      right: $accordion-arrow-icon-position-right;
+      bottom: $accordion-arrow-icon-position-bottom;
+      width: $accordion-arrow-icon-width;
+      font-family: $accordion-arrow-icon-family;
+      font-size: $accordion-arrow-icon-size;
+      font-weight: $accordion-arrow-icon-weight;
+      text-align: center;
+      transition: .2s;
+
+      &:before {
+        content: $accordion-arrow-icon;
+      }
+    }
+
+    // Active tab accordion
+    &.resp-tab-active {
+      color: $accordion-active-color;
+
+      .resp-arrow:before {
+        content: $accordion-arrow-icon-active;
+      }
+    }
+  }
+
+  // Accordion Content
+  .resp-tab-content {
+    padding: $accordion-content-inset;
+  }
+
+  // Tabs List
+  .resp-tabs-list {
+    display: none;
+    padding: 0;
+    margin-bottom: 0;
+
+    li {
+      position: relative;
+      display: inline-block;
+      padding: $accordion-list-inset;
+      font-size: $accordion-list-size;
+      font-weight: $accordion-list-weight;
+      color: $accordion-list-color;
+      list-style-type: none;
+      cursor: pointer;
+      transition: color .2s ease-in;
+
+      &.resp-tab-active,
+      &:hover {
+        color: $accordion-list-active-color;
+      }
+    }
+  }
+
+  // Tab Content
+  .resp-tab-content {
+    display: none;
+  }
+
+  // Turn accordion to Horizontal Tabs
+  @media (min-width: $screen-md-min) {
+    &[data-type="horizontal"] {
+      border-bottom: $accordion-md-border-bottom;
+
+      .resp-tab-content + .resp-accordion {
+        border-top: $accordion-md-border-top;
+      }
+
+      .resp-accordion {
+        display: none;
+      }
+
+      .resp-tabs-list {
+        display: block;
+      }
+    }
+  }
+
+}
+
+
+// Classic Tabs
+// --------------------------------------------------
+
+.responsive-tabs-classic {
+  border-bottom: $accordion-border;
+
+  .resp-tab-content + .resp-accordion {
+    border-top: $accordion-border;
+  }
+
+  @media (min-width: $screen-md-min) {
+    &[data-type="horizontal"] {
+      border-bottom: $accordion-tabs-list-border-bottom;
+
+      .resp-tab-content + .resp-accordion {
+        border-top: $accordion-tabs-list-border-top;
+      }
+
+      .resp-tabs-list {
+        li {
+          &:before {
+            position: $accordion-tabs-border-position;
+            left: $accordion-tabs-border-position-left;
+            bottom: $accordion-tabs-list-border-position-bottom;
+            width: $accordion-tabs-list-border-width;
+            height: $accordion-tabs-list-border-height;
+            background-color: $accordion-tabs-list-border-background;
+            content: '';
+            transform: translateX(-50%);
+          }
+
+          &.resp-tab-active {
+            &:before {
+              width: $accordion-tabs-list-border-active-width;
+            }
+          }
+        }
+
+        li + li {
+          margin-left: $accordion-tabs-list-offset-left;
+        }
+      }
+
+      // Tab Content
+      .resp-tab-content {
+        padding-top: $accordion-tabs-content-inset-top;
+      }
+    }
+  }
+
+  // Turn Horizontal Tabs to Vertical Tabs
+  @media (min-width: $screen-lg-min) {
+    // Style for horizontal tabs
+    &[data-type="horizontal"] {
+      .resp-tabs-list {
+        li + li {
+          margin-left: $accordion-horizontal-tabs-list-lg-left-offset;
+        }
+      }
+    }
+  }
+}
