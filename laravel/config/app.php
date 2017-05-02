@@ -14,6 +14,12 @@ return [
 
     'name' => 'Steff Beckers',
 
+    /* Custom */
+
+    'url-linkedin' => 'https://www.linkedin.com/in/steffbeckers',
+    'url-twitter' => 'https://twitter.com/steffbeckers',
+    'url-github' => 'https://github.com/steffbeckers',
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

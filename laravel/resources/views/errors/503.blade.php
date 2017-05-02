@@ -36,7 +36,7 @@
           <div class="one-page">
             <div class="one-page-header">
               <!--Navbar Brand-->
-              <div class="rd-navbar-brand"><a href="index.html"><img style='margin-top: -5px; margin-left: -15px;' width='200' src='images/steff/Logo_SteffBeckers_LongName_White.png' alt='Steff Beckers'/></a></div>
+              <div class="rd-navbar-brand"><a href="/"><img width='200' src='images/steff/Logo_SteffBeckers_LongName_White.png' alt='Steff Beckers'/></a></div>
             </div>
             <section>
               <div class="shell">

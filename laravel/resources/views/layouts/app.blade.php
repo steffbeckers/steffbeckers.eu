@@ -3,7 +3,7 @@
 <head>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Site Title-->
+    <!-- Site Title -->
     <title>{{ config('app.name', 'Steff Beckers') }}</title>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="keywords" content="Steff Beckers, Blog, CV, Portfolio">
     <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/png">
-    <!-- Stylesheets-->
+    <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:400,700%7CLato:300,300italic,400,700,900%7CYesteryear">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- Scripts -->
@@ -40,13 +40,13 @@
                                 <!-- RD Navbar Toggle-->
                                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar, .rd-navbar-nav-wrap"><span></span></button>
                                 <!--Navbar Brand-->
-                                <div class="rd-navbar-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;' width='138' height='31' src='images/intense/logo-dark.png' alt=''/></a></div>
+                                <div class="rd-navbar-brand"><a href="/"><img width="200" src="{{ asset('images/steff/Logo_SteffBeckers_LongName_200.png') }}" alt="Steff Beckers" /></a></div>
                             </div>
                             <div class="rd-navbar-menu-wrap">
                                 <div class="rd-navbar-nav-wrap">
                                     <div class="rd-navbar-mobile-scroll">
                                         <!--Navbar Brand Mobile-->
-                                        <div class="rd-navbar-mobile-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;' width='138' height='31' src='images/intense/logo-dark.png' alt=''/></a></div>
+                                        <div class="rd-navbar-mobile-brand"><a href="/"><img width="200" src="{{ asset('images/steff/Logo_SteffBeckers_LongName_200.png') }}" alt="Steff Beckers"/></a></div>
                                         <div class="form-search-wrap">
                                             <!-- RD Search Form-->
                                             <form class="form-search rd-search" action="search-results.html" method="GET">
@@ -65,7 +65,7 @@
                                 </div>
                                 <!--RD Navbar Search-->
                                 <div class="rd-navbar-search"><a class="rd-navbar-search-toggle mdi" data-rd-navbar-toggle=".rd-navbar-inner,.rd-navbar-search" href="#"><span></span></a>
-                                    <form class="rd-navbar-search-form search-form-icon-right rd-search" action="search-results.html" method="GET">
+                                    <form class="rd-navbar-search-form search-form-icon-right rd-search" action="search" method="GET">
                                         <div class="form-group">
                                             <label class="form-label" for="rd-navbar-search-form-input">Type and hit enter...</label>
                                             <input class="rd-navbar-search-form-input form-control form-control-gray-lightest" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off"/>
@@ -162,30 +162,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="cell-xs-12 offset-top-41 cell-md-5 offset-md-top-0 text-md-left cell-lg-4 cell-lg-push-2">
-                                    <h6 class="text-uppercase text-spacing-60">Newsletter</h6>
-                                    <p>Keep up with our always upcoming  product features  and technologies. Enter your e-mail and subscribe to  our newsletter.</p>
-                                    <div class="offset-top-30">
-                                        <form class="rd-mailform" data-form-output="form-subscribe-footer" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-                                            <div class="form-group">
-                                                <div class="input-group input-group-sm"><span class="input-group-addon"><span class="input-group-icon mdi mdi-email"></span></span>
-                                                    <input class="form-control" placeholder="Type your e-mail" type="email" name="email" data-constraints="@Required @Email"><span class="input-group-btn">
-                              <button class="btn btn-sm btn-primary" type="submit">Subscribe</button></span>
-                                                </div>
-                                            </div>
-                                            <div class="form-output" id="form-subscribe-footer"></div>
-                                        </form>
-                                    </div>
-                                </div>
                                 <div class="cell-xs-12 offset-top-66 cell-lg-3 cell-lg-push-1 offset-lg-top-0">
-                                    <!-- Footer brand-->
-                                    <div class="footer-brand"><a href="index.html"><img style='margin-top: -5px;margin-left: -15px;' width='138' height='31' src='images/intense/logo-light.png' alt=''/></a></div>
+                                    <!-- Footer brand -->
+                                    <div class="footer-brand"><a href="index.html"><img style="margin-top: -5px; margin-left: -15px;" width="200" src="{{ asset('images/steff/Logo_SteffBeckers_LongName_White_200.png') }}" alt="Steff Beckers" /></a></div>
                                     <p class="text-darker offset-top-4">Feel the power of future</p>
                                     <ul class="list-inline">
-                                        <li><a class="icon fa fa-facebook icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
-                                        <li><a class="icon fa fa-twitter icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
-                                        <li><a class="icon fa fa-google-plus icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
-                                        <li><a class="icon fa fa-linkedin icon-xxs icon-circle icon-darkest-filled" href="#"></a></li>
+                                        <li><a class="icon fa fa-linkedin icon-xxs icon-circle icon-darkest-filled" href="{{ config('app.url-linkedin', 'https://www.linkedin.com/in/steffbeckers') }}"></a></li>
+                                        <li><a class="icon fa fa-twitter icon-xxs icon-circle icon-darkest-filled" href="{{ config('app.url-twitter', 'https://twitter.com/steffbeckers') }}"></a></li>
+                                        <li><a class="icon fa fa-github icon-xxs icon-circle icon-darkest-filled" href="{{ config('app.url-github', 'https://github.com/steffbeckers') }}"></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -193,9 +177,7 @@
                     </div>
                 </div>
                 <div class="shell offset-top-50">
-                    <p class="small text-darker">&copy; <span id="copyright-year"></span> - Steff Beckers
-                        <!-- {%FOOTER_LINK}-->
-                    </p>
+                    <p class="small">&copy; <span id="copyright-year"></span> - <img class="sb-footer-icon" src="{{ asset('images/steff/icon_16px_w.png') }}" alt="SB" />Steff Beckers</p>
                 </div>
             </footer>
         </div>
