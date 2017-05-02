@@ -13,5 +13,5 @@
 
 Auth::routes();
 Route::get('/', function() {
-    return view('under-construction');
+    return view('about-me');
 });
