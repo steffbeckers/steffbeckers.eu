@@ -43,6 +43,7 @@
                 <div class="range">
                   <div class="range range-xs-center range-xs-middle section-110 section-cover">
                     <div class="cell-xs-12">
+                      <h3 class="text-center">Under Construction</h3>
                       <p class="offset-top-30 offset-sm-top-66">My website is under construction, I am working very hard to give you the best <br class="veil reveal-sm-inline-block"> experience on my new web site.</p>
 					            <p>You can contact me by mail on <a href="mailto:steff@steffbeckers.eu">steff@steffbeckers.eu</a><br class="veil reveal-sm-inline-block"> or get a quick glance at <a href="https://www.linkedin.com/in/steffbeckers/">my profile on LinkedIn</a>.</p>
                     </div>
