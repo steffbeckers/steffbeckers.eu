@@ -12,6 +12,9 @@
 */
 
 Auth::routes();
+
+Route::get('test1', 'AppController@test1');
+
 Route::get('/', function() {
     return view('about-me');
 });
