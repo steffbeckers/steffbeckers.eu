@@ -1,0 +1,37 @@
+//
+// Dropdowns Custom
+// --------------------------------------------------
+
+// Dropdown arrow/caret
+.caret {
+  margin-left: 5px;
+}
+
+// The dropdown wrapper (div)
+.dropup,
+.dropdown {
+  display: inline-block;
+}
+
+// The dropdown menu (ul)
+.dropdown-menu {
+  font-size: $dropdown-menu-size;
+  border: none;
+  border-radius: $dropdown-menu-border-radius;
+
+  // Links within the dropdown menu
+  > li > a {
+    font-weight: 400;
+    padding: $dropdown-menu-item-padding;
+  }
+
+  .divider {
+    width: 100%;
+  }
+}
+
+// Dropdown section headers
+.dropdown-header {
+  font-size: $dropdown-header-size;
+  padding: $dropdown-header-padding;
+}

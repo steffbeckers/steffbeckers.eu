@@ -1,0 +1,90 @@
+/*
+* Static Layout
+*/
+
+$navbar-static-nav-indent: 36px;
+
+$navbar-static-nav-color: $navbar-nav-color;
+$navbar-static-nav-background: $navbar-nav-background;
+$navbar-static-nav-hover-color: $navbar-nav-hover-color;
+$navbar-static-nav-hover-background: $navbar-nav-hover-background;
+$navbar-static-nav-active-color: $navbar-nav-active-color;
+$navbar-static-nav-active-background: $navbar-nav-active-background;
+
+
+.rd-navbar-static {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: block;
+  z-index: 10;
+  .rd-navbar-inner {
+    transition: .3s;
+  }
+
+  &:not(.transparent-theme) {
+    .rd-navbar-inner{
+      padding: 28px 2.8% 32px 3.55%;
+
+      transition: .3s;
+    }
+
+    &.rd-navbar--is-stuck{
+      .rd-navbar-inner{
+        padding-top: 11px;
+      }
+    }
+
+    .rd-navbar-shop{
+      top: 50%;
+    }
+
+    .rd-navbar-search-toggle{
+      top: 50%;
+    }
+  }
+
+  .rd-navbar-panel, .rd-navbar-nav-wrap {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .rd-navbar-panel {
+    text-align: left;
+    min-width: 180px;
+    max-width: 200px;
+  }
+
+  .rd-navbar-nav-wrap {
+    width: 100%;
+    text-align: right;
+  }
+
+  .rd-navbar-nav{
+    margin-bottom: 0;
+    margin-left: -$navbar-static-nav-indent;
+
+    > li {
+      display: inline-block;
+      & + li{
+        margin-left: $navbar-static-nav-indent;
+      }
+    }
+  }
+  &.rd-navbar--is-stuck {
+    .rd-navbar-search-form{
+      border-bottom: 0;
+    }
+  }
+
+  // RD Navbar States
+  .rd-navbar-static--visible{
+    display: block;
+  }
+
+  .rd-navbar-static--hidden{
+    display: none;
+  }
+}
+

@@ -1,0 +1,213 @@
+//
+// Box Comment
+// --------------------------------------------------
+
+// Base styles
+// -------------------------
+
+.box-comment {
+  &-meta {
+    margin-bottom: $box-comment-meta-offset-top;
+    font-size: $box-comment-meta-size;
+
+    a:hover {
+      color: $box-comment-meta-link-hover;
+    }
+
+    &-icon {
+      font-size: $box-comment-meta-icon-size;
+    }
+  }
+
+  &-title {
+    margin-top: $box-comment-title-offset-top;
+    font-size: $box-comment-title-size;
+    font-weight: $box-comment-title-weight;
+    text-transform: uppercase;
+  }
+
+  &-img {
+    width: $box-comment-img-width;
+    height: $box-comment-img-height;
+    border-radius: $box-comment-img-border-radius;
+  }
+
+  &-body {
+    font-size: $box-comment-body-size;
+  }
+
+  @media (min-width: $screen-xs-min) {
+    &-img {
+      width: $box-comment-img-xs-width;
+      height: $box-comment-img-xs-height;
+    }
+  }
+}
+
+// Classic Comments
+// -------------------------
+
+.box-comment-classic {
+  position: relative;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    left: $box-comment-classic-before-after-position-left;
+    background: $box-comment-classic-before-after-background;
+    width: $box-comment-classic-before-after-width;
+  }
+
+  &:before {
+    top: $box-comment-classic-before-position-top;
+    bottom: $box-comment-classic-before-position-bottom;
+  }
+
+  &:last-child:before {
+    display: none;
+  }
+
+  @media (max-width: $screen-xs-min) {
+    > .box-comment {
+      .box-comment-img {
+        width: $box-comment-classic-xs-width;
+        height: $box-comment-classic-xs-height;
+        margin-top: $box-comment-classic-xs-offset-top;
+        margin-left: $box-comment-classic-xs-offset-left;
+      }
+    }
+  }
+
+  @media (min-width: $screen-xs-min) {
+    &:after {
+      display: none;
+    }
+
+    & + .box-comment-classic:after,
+    .media + .box-comment-classic:after {
+      display: block;
+    }
+
+    .media + .box-comment-classic:after {
+      bottom: auto;
+      top: $box-comment-classic-xs-after-position-top;
+      right: $box-comment-classic-xs-after-position-right;
+      left: $box-comment-classic-xs-after-position-left;
+      height: $box-comment-classic-xs-after-height;
+      margin-right: $box-comment-classic-xs-after-offset-right;
+      width: $box-comment-classic-xs-after-width;
+    }
+
+    .box-comment-header {
+      margin-top: $box-comment-classic-xs-header-offset-top;
+    }
+
+    > .box-comment {
+      margin-left: $box-comment-classic-xs-box-inside-offset-left;
+    }
+
+    &:before {
+      top: $box-comment-classic-xs-before-offset-top;
+    }
+
+    &:before, &:after {
+      left: $box-comment-classic-xs-before-after-position-left;
+    }
+  }
+}
+
+.box-comment-classic + .box-comment-classic,
+.box-comment-classic > .box-comment {
+  margin-top: $box-comment-classic-offset-top;
+}
+
+// Boxed Comments
+// -------------------------
+
+.box-comment-boxed {
+  .box-comment-img{
+    margin-top: $box-comment-boxed-img-offset-top;
+    border: $box-comment-boxed-img-border;
+    background: $box-comment-boxed-img-background;
+    padding: $box-comment-boxed-img-padding;
+    margin-right: $box-comment-boxed-img-offset-right;
+  }
+
+  .box-comment-body{
+    margin-top: $box-comment-boxed-body-offset-top;
+  }
+
+  .media-body{
+    padding: $box-comment-boxed-media-body-padding;
+    border-radius: $box-comment-boxed-media-body-border-radius;
+    border: $box-comment-boxed-media-body-border;
+  }
+
+  @media (min-width: $screen-xs-min) {
+    .box-comment-img{
+      margin-right: $box-comment-boxed-img-xs-offset-right;
+      padding: $box-comment-boxed-img-xs-padding;
+    }
+    .media-body{
+      padding: $box-comment-boxed-media-body-xs-padding;
+    }
+  }
+  @media (min-width: $screen-lg-min) {
+    > .box-comment-boxed{
+      margin-left: $box-comment-boxed-lg-offset-left;
+    }
+    .box-comment-meta{
+      float: right;
+    }
+    > .box-comment-outboxed{
+      margin-left: $box-comment-outboxed-lg-offset-left;
+    }
+  }
+}
+
+.box-comment-boxed + .box-comment-boxed,
+.box-comment-boxed > .box-comment {
+  margin-top: $box-comment-boxed-offset-top;
+}
+
+// Outbox Comments
+// -------------------------
+
+.box-comment-outboxed {
+  .box-comment-body{
+    margin-top: $box-comment-outlined-body-offset-top;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    .box-comment-body{
+      margin-top: $box-comment-outlined-body-lg-offset-top;
+    }
+
+    .box-comment-img{
+      margin-top: $box-comment-outlined-img-lg-offset-top;
+    }
+
+    .media-body{
+      padding: $box-comment-outlined-media-body-lg-padding;
+      border-radius: $box-comment-outlined-media-body-lg-border-radius;
+      border: $box-comment-outlined-media-body-lg-border;
+    }
+
+    .box-comment-meta {
+      > li:first-child {
+        float: right;
+        margin-left: $box-comment-outlined-meta-first-child-lg-offset-left;
+      }
+    }
+
+    > .box-comment-outboxed{
+      margin-left: $box-comment-outlined-body-lg-offset-left;
+    }
+  }
+}
+
+.box-comment-outboxed + .box-comment-outboxed,
+.box-comment-outboxed > .box-comment {
+  margin-top: $box-comment-outlined-offset-top;
+}
+

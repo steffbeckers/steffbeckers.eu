@@ -1,0 +1,25 @@
+//
+// List groups
+// --------------------------------------------------
+
+// Individual list items
+//
+.list-group-item {
+  > .badge {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+// Contextual variants
+//
+// Add modifier classes to change text and background color on individual items.
+// Organizationally, this must come after the `:hover` states.
+
+@include list-group-item-variant(success, $state-success-bg, $white);
+@include list-group-item-variant(info, $state-info-bg, $white);
+@include list-group-item-variant(warning, $state-warning-bg, $white);
+@include list-group-item-variant(danger, $state-danger-bg, $white);
+
+
+

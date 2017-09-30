@@ -1,0 +1,171 @@
+//
+// RD Navbar Default
+// --------------------------------------------------
+
+.rd-navbar-top-panel {
+  @extend %rd-navbar-top-panel-top;
+  &.rd-navbar-fixed {
+    @extend %rd-navbar-default-panel;
+    @extend %rd-navbar-default-mobile-menu;
+    @extend %rd-navbar-default-aside-left;
+
+    .rd-navbar-brand {
+      display: none;
+    }
+
+    .rd-navbar-search {
+      display: none;
+    }
+
+    @media (min-width: $screen-xs) {
+      .rd-navbar-mobile-brand {
+        display: none;
+      }
+      .rd-navbar-brand {
+        display: block;
+        @include transform(translateX(-50%));
+      }
+    }
+  }
+
+  &.rd-navbar-static {
+    @extend %rd-navbar-transition;
+    .rd-navbar-mobile-brand {
+      display: none;
+    }
+
+    @extend %rd-navbar-default-menu-first-lvl;
+    @extend %rd-navbar-default-menu-dropdown;
+
+    .rd-navbar-dropdown {
+      margin-top: $rd-navbar-top-panel-dropdown-offset-top;
+    }
+
+    .rd-navbar-top-panel{
+      @include clearfix;
+      padding-bottom: $rd-navbar-top-panel-padding-bottom;
+      margin-bottom: $rd-navbar-top-panel-margin-bottom;
+    }
+
+    .rd-navbar-brand {
+      float: left;
+      margin-left: $rd-navbar-top-panel-brand-offset;
+    }
+
+    .rd-navbar-menu-wrap {
+      float: right;
+    }
+
+    .rd-navbar-panel .rd-navbar-toggle {
+      display: none;
+    }
+
+    .rd-navbar-inner {
+      @include clearfix;
+      transition: .3s all ease;
+      position: relative;
+      text-align: left;
+      padding: $rd-navbar-top-panel-inner-padding;
+      &.active {
+        .rd-navbar-panel {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+
+    .rd-navbar-megamenu {
+      left: 0;
+      right: 0;
+    }
+
+    .rd-navbar-nav-wrap, .rd-navbar-panel, .rd-navbar-cart-wrap {
+      transition: .3s all ease;
+    }
+
+    .rd-navbar-nav-wrap {
+      @include clearfix;
+      margin-top: 6px;
+      display: inline-block;
+    }
+
+    @media (min-width: $screen-lg) and (max-width: 1230px) {
+      .rd-navbar-nav > li:last-child > a > .rd-navbar-label {
+        margin-left: -30px;
+      }
+    }
+
+    &.rd-navbar--is-stuck {
+      margin-top: 0;
+      width: 100%;
+      padding: 0;
+      box-shadow: $rd-navbar-top-panel-stuck-shadow;
+      .rd-navbar-inner{
+        padding-bottom: 19px;
+      }
+
+      .rd-navbar-top-panel {
+        display: none;
+      }
+
+      .rd-navbar-nav > li > .rd-navbar-dropdown {
+        margin-top: $rd-navbar-floated-stuck-dropdown-offset-top;
+      }
+    }
+
+  }
+
+  // Themes
+
+  // Dark Them
+  // -------------------
+
+  &.rd-navbar-dark {
+    background: $rd-navbar-top-panel-dark-background;
+    @extend %rd-navbar-top-panel-top-dark;
+
+    // Mobile Fixed Layout Colors
+    &.rd-navbar-fixed {
+      @extend %rd-navbar-default-panel-dark;
+      @extend %rd-navbar-default-mobile-menu-dark;
+      @extend %rd-navbar-default-aside-left-dark;
+    }
+
+    // Desktop Static Layout Colors
+    &.rd-navbar-static {
+      @extend %rd-navbar-default-menu-first-lvl-dark;
+      @extend %rd-navbar-default-menu-dropdown-dark;
+
+      &.rd-navbar--is-stuck {
+        background: $rd-navbar-top-panel-dark-stuck-background;
+      }
+
+    }
+  }
+
+  // Light Theme
+  // -------------------
+
+  &.rd-navbar-light {
+    background: $rd-navbar-top-panel-light-background;
+
+    @extend %rd-navbar-top-panel-top-light;
+
+    // Mobile Fixed Layout Colors
+    &.rd-navbar-fixed {
+      @extend %rd-navbar-default-panel-light;
+      @extend %rd-navbar-default-mobile-menu-light;
+      @extend %rd-navbar-default-aside-left-light;
+    }
+
+    // Desktop Static Layout Colors
+    &.rd-navbar-static {
+      @extend %rd-navbar-default-menu-first-lvl-light;
+      @extend %rd-navbar-default-menu-dropdown-light;
+
+      &.rd-navbar--is-stuck {
+        background: $rd-navbar-top-panel-light-stuck-background;
+      }
+    }
+  }
+}

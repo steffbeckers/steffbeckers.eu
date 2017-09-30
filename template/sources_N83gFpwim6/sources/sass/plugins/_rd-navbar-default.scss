@@ -1,0 +1,235 @@
+//
+// RD Navbar Default
+// --------------------------------------------------
+
+.rd-navbar-default {
+  @extend %rd-navbar-default-cart;
+  @extend %rd-navbar-transition;
+
+  &.rd-navbar-fixed {
+    @extend %rd-navbar-default-panel;
+    @extend %rd-navbar-default-mobile-menu;
+    @extend %rd-navbar-default-cart-aside-right;
+    @extend %rd-navbar-default-aside-left;
+    @extend %rd-navbar-default-mobile-search;
+
+    .rd-navbar-brand {
+      display: none;
+    }
+
+    .rd-navbar-search {
+      display: none;
+    }
+
+    @media (min-width: $screen-xs) {
+      .rd-navbar-mobile-brand {
+        display: none;
+      }
+      .rd-navbar-brand {
+        display: block;
+        @include transform(translateX(-50%));
+      }
+    }
+  }
+
+  &.rd-navbar-static {
+    .rd-navbar-mobile-brand {
+      display: none;
+    }
+
+    @extend %rd-navbar-default-menu-first-lvl;
+    @extend %rd-navbar-default-menu-dropdown;
+    @extend %rd-navbar-default-search;
+    @extend %rd-navbar-default-desktop-cart;
+
+    .rd-navbar-brand {
+      float: left;
+
+      img {
+        vertical-align: baseline;
+      }
+    }
+
+    .rd-navbar-brand-slogan{
+      vertical-align: baseline;
+      font-size: $rd-navbar-default-slogan-size;
+      margin-left: $rd-navbar-default-slogan-offset-left;
+    }
+
+    .rd-navbar-menu-wrap {
+      float: right;
+    }
+
+    .rd-navbar-panel .rd-navbar-toggle, .form-search-wrap {
+      display: none;
+    }
+
+    .rd-navbar-inner {
+      @include clearfix;
+      transition: .3s all ease;
+      padding: $rd-navbar-default-inner-padding;
+      position: relative;
+      text-align: left;
+
+      &.active {
+        .rd-navbar-panel {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+
+    .rd-navbar-megamenu {
+      margin-top: $rd-navbar-default-megamenu-offset-top;
+    }
+
+    .rd-navbar-nav-wrap, .rd-navbar-panel, .rd-navbar-cart-wrap {
+      transition: .3s all ease;
+    }
+
+    .rd-navbar-nav-wrap {
+      @include clearfix;
+      margin-top: 6px;
+      display: inline-block;
+    }
+
+    // Cart
+    .rd-navbar-cart-wrap {
+      display: inline-block;
+      position: relative;
+      margin-left: $rd-navbar-default-cart-wrap-offset-left;
+    }
+
+    .rd-navbar-search-toggle, .rd-navbar-cart {
+      margin-top: 5px;
+    }
+
+    &.rd-navbar--is-stuck {
+      box-shadow: $rd-navbar-default-stuck-shadow;
+
+      .rd-navbar-nav > li > .rd-navbar-dropdown {
+        margin-top: $rd-navbar-default-stuck-dropdown-offset-top;
+      }
+
+      .rd-navbar-inner {
+        padding-top: $rd-navbar-default-stuck-inner-padding-top;
+        padding-bottom: $rd-navbar-default-stuck-inner-padding-bottom;
+      }
+      .rd-navbar-megamenu {
+        margin-top: 0;
+      }
+    }
+  }
+
+
+  // Themes
+  // --------------------------------------------------
+
+  // Light
+  // -------------------------
+
+  &.rd-navbar-transparent {
+    &.rd-navbar-static:not(.rd-navbar--is-stuck) {
+      .rd-navbar-search-form {
+        bottom: -23px;
+      }
+    }
+  }
+
+  // Light, Dark Theme
+  // -------------------------
+
+  &.rd-navbar-light, &.rd-navbar-dark {
+    &.rd-navbar-static {
+      .rd-navbar-inner {
+        padding: $rd-navbar-default-light-inner-padding;
+      }
+
+      &.rd-navbar--is-stuck {
+        .rd-navbar-inner {
+          padding-top: $rd-navbar-default-stuck-inner-padding-top;
+          padding-bottom: $rd-navbar-default-stuck-inner-padding-bottom;
+        }
+      }
+
+      .rd-navbar-megamenu {
+        margin-top: 0;
+      }
+    }
+  }
+
+  // Transparent, Dark Theme
+  // -------------------------
+
+  &.rd-navbar-transparent, &.rd-navbar-dark {
+    @extend %rd-navbar-default-cart-dark;
+
+    // Mobile Fixed Layout Colors
+    &.rd-navbar-fixed {
+      @extend %rd-navbar-default-panel-dark;
+      @extend %rd-navbar-default-mobile-menu-dark;
+      @extend %rd-navbar-default-cart-aside-right-dark;
+      @extend %rd-navbar-default-aside-left-dark;
+      @extend %rd-navbar-default-mobile-search-dark;
+    }
+
+    // Desktop Static Layout Colors
+    &.rd-navbar-static {
+      @extend %rd-navbar-default-menu-first-lvl-dark;
+      @extend %rd-navbar-default-menu-dropdown-dark;
+      @extend %rd-navbar-default-search-dark;
+
+      .rd-navbar-search-form-input, .rd-navbar-search-toggle, .rd-navbar-cart {
+        color: $rd-navbar-default-dark-inputs-color;
+      }
+
+      &.rd-navbar--is-stuck {
+        background: $rd-navbar-default-dark-stuck-background;
+      }
+    }
+  }
+
+  // Dark Theme
+  // -------------------------
+
+  &.rd-navbar-dark {
+    background: $rd-navbar-default-dark-stuck-background;
+  }
+
+  // Light Theme
+  // -------------------------
+
+  &.rd-navbar-light {
+    background: $rd-navbar-default-light-background;
+    @extend %rd-navbar-default-cart-light;
+
+    .rd-navbar-search-toggle, .rd-navbar-cart {
+      span {
+        color: $rd-navbar-default-light-toggles-color;
+      }
+    }
+
+    // Mobile Fixed Layout Colors
+    &.rd-navbar-fixed {
+      @extend %rd-navbar-default-panel-light;
+      @extend %rd-navbar-default-mobile-menu-light;
+      @extend %rd-navbar-default-cart-aside-right-light;
+      @extend %rd-navbar-default-aside-left-light;
+      @extend %rd-navbar-default-mobile-search-light;
+    }
+
+    // Desktop Static Layout Colors
+    &.rd-navbar-static {
+      @extend %rd-navbar-default-menu-first-lvl-light;
+      @extend %rd-navbar-default-menu-dropdown-light;
+      @extend %rd-navbar-default-search-light;
+
+      .rd-navbar-search-form-input, .rd-navbar-search-toggle, .rd-navbar-cart {
+        color: $rd-navbar-default-light-inputs-color;
+      }
+      &.rd-navbar--is-stuck {
+        background: $rd-navbar-default-light-stuck-background;
+      }
+    }
+  }
+}
