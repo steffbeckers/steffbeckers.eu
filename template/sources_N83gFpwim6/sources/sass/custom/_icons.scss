@@ -1,0 +1,383 @@
+//
+// Icons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.icon {
+  position: relative;
+  display: inline-block;
+  font-weight: $icon-default-weight;
+  font-size: $icon-default-size;
+  line-height: $icon-default-line-height;
+  font-style: normal;
+
+  &:before {
+    display: inline-block;
+    position: relative;
+  }
+}
+
+a.icon {
+  transition: .3s;
+}
+
+
+// Icon shapes
+// --------------------------------------------------
+
+.icon-rect,
+.icon-circle,
+.icon-rounded,
+.icon-outlined{
+  width: $icon-shapes-width;
+  height: $icon-shapes-height;
+  font-size: $icon-shapes-size;
+  line-height: $icon-shapes-line-height;
+  text-align: center;
+  border: $icon-shapes-border;
+}
+
+.icon-circle {
+  border-radius: $icon-circle-border-radius;
+}
+
+.icon-rounded {
+  border-radius: $icon-rounded-border-radius;
+}
+
+.icon-outlined {
+  position: relative;
+
+  &, &:after {
+    border-radius: 50%;
+  }
+
+  &:after {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    bottom: -7px;
+    left: -7px;
+    content: '';
+    border: $icon-outlined-border;
+  }
+}
+
+// Icon sizes
+// --------------------------------------------------
+
+.icon-xxs {
+  font-size: $icon-xxs-size;
+  line-height: $icon-xxs-line-height;
+
+  &.icon-rect,
+  &.icon-rounded,
+  &.icon-circle,
+  &.icon-outlined{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+  }
+}
+
+.icon-xs {
+  font-size: $icon-xs-size;
+  line-height: $icon-xs-line-height;
+
+  &.icon-rect,
+  &.icon-rounded,
+  &.icon-circle,
+  &.icon-outlined{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 21px;
+  }
+}
+
+.icon-sm {
+  font-size: $icon-sm-size;
+  line-height: $icon-sm-line-height;
+
+  &.icon-rect,
+  &.icon-rounded,
+  &.icon-circle,
+  &.icon-outlined{
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 26px;
+  }
+}
+
+.icon-lg {
+  font-size: $icon-lg-size;
+  line-height: $icon-lg-line-height;
+
+  &.icon-rect,
+  &.icon-rounded,
+  &.icon-circle,
+  &.icon-outlined{
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 36px;
+  }
+}
+
+.icon-xlg {
+  font-size: $icon-xlg-size;
+  line-height: $icon-xlg-line-height;
+
+  &.icon-rect,
+  &.icon-rounded,
+  &.icon-circle,
+  &.icon-outlined{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 48px;
+  }
+}
+
+// Icon Appearance
+// --------------------------------------------------
+
+.icon-default {
+  color: $icon-default-color;
+  border-color: $icon-default-border-color;
+}
+
+.icon-darker {
+  color: $icon-darker-color;
+  border-color: $icon-darker-border-color;
+}
+
+.icon-primary {
+  color: $icon-primary-color;
+  border-color: $icon-primary-border-color;
+}
+
+.icon-deluge {
+  color: $icon-deluge-color;
+  border-color: $icon-deluge-border-color;
+}
+
+.icon-picton-blue {
+  color: $icon-picton-blue-color;
+  border-color: $icon-picton-blue-border-color;
+}
+
+.icon-success {
+  color: $icon-success-color;
+  border-color: $icon-success-border-color;
+}
+
+.icon-warning {
+  color: $icon-warning-color;
+  border-color: $icon-warning-border-color;
+}
+
+.icon-danger {
+  color: $brand-danger;
+  border-color: $brand-danger;
+}
+
+.icon-info {
+  color: $brand-info;
+  border-color: $brand-info;
+}
+
+%icon-filled {
+  color: $white;
+  border: none;
+}
+
+.icon-darker-filled {
+  @extend %icon-filled;
+  background: $gray-darker;
+}
+
+.icon-darkest-filled {
+  @extend %icon-filled;
+  background: $gray-darkest;
+}
+
+.icon-shark-filled {
+  @extend %icon-filled;
+  @include bg-variant-custom(linear-gradient(45deg, $gray-base 0%, $gray-darker 100%));
+}
+
+.icon-mantis-filled {
+  @extend %icon-filled;
+  @include bg-variant-custom(linear-gradient(45deg, $brand-primary 0%, $brand-dollar-bill 100%));
+}
+
+.icon-pink-filled {
+  @extend %icon-filled;
+  @include bg-variant-custom(linear-gradient(45deg, $brand-deluge 0%, $brand-butterfly-bush 100%));
+}
+
+.icon-malibu-filled {
+  @extend %icon-filled;
+  @include bg-variant-custom(linear-gradient(45deg, $brand-picton-blue 0%, $brand-info 100%));
+}
+
+.icon-carrot-filled {
+  @extend %icon-filled;
+  @include bg-variant-custom(linear-gradient(45deg, $brand-warning 0%, $brand-neon-carrot 100%));
+}
+
+.icon-red-filled {
+  @extend %icon-filled;
+  @include bg-variant-custom(linear-gradient(45deg, $brand-danger 0%, $brand-ku-crimson 100%));
+}
+
+.icon-blue-gray-filled {
+  @extend %icon-filled;
+  @include bg-variant-custom(linear-gradient(45deg, $brand-deluge 0%, $brand-picton-blue 100%));
+}
+
+// Additional icon sizes for icon fonts
+// --------------------------------------------------
+
+.icon {
+  &.icon-xs {
+    &.mdi-monitor {
+      font-size: 28px;
+    }
+
+  }
+
+  &.icon-sm {
+    &.mdi-monitor {
+      font-size: 36px;
+    }
+    &.mdi-code-brackets,
+    &.mdi-clock,
+    &.mdi-vector-arrange-below {
+      font-size: 45px;
+    }
+
+  }
+
+  &.icon-lg{
+  }
+
+  &.icon-xl{
+  }
+}
+
+.icon-rect,
+.icon-circle,
+.icon-rounded,
+.icon-outlined{
+
+  &.mdi-vector-arrange-below,
+  &.mdi-share-variant,
+  &.mdi-magnify,
+  &.mdi-monitor{
+    font-size: 36px;
+  }
+  &.mdi-brush{
+    font-size: 38px;
+  }
+  &.mdi-cube-outline,
+  &.mdi-palette{
+    font-size: 40px;
+  }
+  &.mdi-format-bold,
+  &.mdi-spellcheck,
+  &.mdi-rocket,
+  &.mdi-xml{
+    font-size: 42px;
+  }
+
+  &.icon-xs{
+  }
+
+  &.icon-sm{
+  }
+
+  &.icon-lg{
+  }
+
+  &.icon-xl{
+  }
+}
+
+// Fonts List Icon
+// --------------------------------------------------
+
+a {
+  &.icon-rect,
+  &.icon-circle,
+  &.icon-outlined,
+  &.icon-rounded{
+    &.fa-facebook:hover{
+      color: $white;
+      background: #0956b5;
+    }
+
+    &.fa-twitter:hover{
+      color: $white;
+      background: #28d4f9;
+    }
+
+    &.fa-google-plus:hover{
+      color: $white;
+      background: #f96a23;
+    }
+
+    &.fa-linkedin:hover{
+      color: $white;
+      background: #0E7EB5;
+    }
+
+    &.fa-500px:hover{
+      color:$white;
+      background: #bebebe;
+    }
+
+    &.fa-behance:hover{
+      background: #64aae1;
+      color:$white;
+    }
+  }
+}
+
+// Fonts List Icon
+// --------------------------------------------------
+
+.fontawesome-icon-list {
+  text-align: left;
+  .icon-list-item {
+    i {
+      padding-right: 15px;
+      font-size: 22px;
+      line-height: 22px;
+      float: left;
+    }
+    padding: 15px 0 15px 20px;
+    font-size: 18px;
+    line-height: 18px;
+    border-radius: $border-radius-small;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      background: $brand-primary;
+      color: $white;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+
+      i {
+        @include transform (scale(1.5));
+      }
+    }
+  }
+}

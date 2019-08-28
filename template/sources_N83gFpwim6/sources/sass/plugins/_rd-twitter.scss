@@ -1,0 +1,124 @@
+//
+// Twitter Feed
+// --------------------------------------------------
+
+.twitter {
+  .twitter-date {
+    &:before {
+      margin-right: 6px;
+      font-family: "FontAwesome";
+      font-size: 18px;
+      content: '\f099';
+      color: $brand-picton-blue;
+    }
+    .icon{
+      font-size: 18px;
+      line-height: 18px;
+    }
+  }
+
+  .twitter-name > a {
+    margin-top: 8px;
+    margin-bottom: 0;
+    color: $twitter-name-color;
+
+    &:before {
+      content: '- ';
+    }
+  }
+
+  .twitter-text {
+    margin-top: 4px;
+
+    a {
+      color: $twitter-heshteg-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .twitter-sm + .twitter-sm {
+    margin-top: $twitter-sm-between-offset-top;
+  }
+}
+
+// Boxed Twitter Feed
+// -------------------------
+
+.twitter .rd-twitter {
+  display: block;
+  opacity: 0;
+  border-radius: $boxed-twitter-border-radius;
+  background: $boxed-twitter-background;
+  transition: .3s all ease;
+
+  // Twitter Unit
+  .twitter-unit {
+    padding: $boxed-twitter-author-padding;
+  }
+
+  // Tweet
+  &-tweet {
+    padding: $boxed-twitter-author-tweet;
+
+    a {
+      color: $boxed-twitter-author-tweet-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Box Twitter Image Wrap
+  &-img-wrap {
+    max-height: 250px;
+    overflow: hidden;
+
+    .rd-twitter-media {
+      width: 100%;
+    }
+  }
+
+  // Box Twitter Time Wrap
+  &-time-wrap {
+    padding: $boxed-twitter-time-padding;
+  }
+
+  // Meta Info
+  &-meta {
+    * {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .twitter-unit {
+      padding: $boxed-twitter-author-sm-padding;
+
+      .unit-body {
+        padding-left: 20px;
+      }
+    }
+
+    &-tweet {
+      padding: $boxed-twitter-author-sm-tweet;
+    }
+
+    &-meta {
+      * {
+        max-width: 140px;
+      }
+    }
+  }
+
+  &.rd-twitter-compact {
+    .rd-twitter-time-wrap {
+      padding-top: 0;
+    }
+  }
+}

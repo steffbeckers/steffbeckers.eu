@@ -16,8 +16,14 @@
                 <div class="cell-sm-9 cell-md-6">
                     <!-- Member Block Type-2-->
                     <div class="center-block"><img class="img-circle" src="{{ asset('images/steff/Steff-1-Crop-Site.png') }}" alt=""></div>
-                    <h4>Hello! My name is Steff Beckers, <br/> and I'm in love with web development</h4>
-                    <p>Info text</p>
+                    <h4>Hello! My name is Steff Beckers, developer with a passion for web development and big data.</h4>
+                    <p> 
+                        Motivated
+                        to expand knowledge and skills with the latest technologies and frameworks.
+                        Loves working on projects as a teamplayer in an agile environment.
+                        Focused on getting it right, and aware that small details can have a
+                        big impact.
+                    </p>
                     <ul class="list-inline list-inline-lg list-inline-dashed list-inline-dashed-wide list-inline-picton-blue">
                         <li class="big"><a class="text-bold text-uppercase fa-linkedin" href="{{ config('app.url-linkedin', 'https://www.linkedin.com/in/steffbeckers') }}"><span class="veil reveal-md-inline-block">LinkedIn</span></a></li>
                         <li class="big"><a class="text-bold text-uppercase fa-twitter" href="{{ config('app.url-twitter', 'https://twitter.com/steffbeckers') }}"><span class="veil reveal-md-inline-block">Twitter</span></a></li>

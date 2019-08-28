@@ -1,0 +1,274 @@
+//
+// RD Navbar Default
+// --------------------------------------------------
+
+.rd-navbar-logo-center {
+  @extend %rd-navbar-default-mobile-search;
+  @extend %rd-navbar-default-cart;
+  @extend %rd-navbar-logo-center-menu-first-lvl;
+
+  .rd-navbar-dropdown li {
+    > a.rd-navbar-product-remove{
+      display: inline-block;
+      padding: 0;
+      line-height: $rd-navbar-cart-product-remove-size;
+      color: $rd-navbar-dark-cart-product-remove-color;
+      &:hover{
+        color: $rd-navbar-dark-cart-product-remove-hover-color;
+        background: none;
+      }
+    }
+    .rd-navbar-product-title a{
+      padding: 0;
+      &:hover{
+        color: $brand-primary;
+      }
+    }
+  }
+
+  &.rd-navbar-fixed {
+    @extend %rd-navbar-default-panel;
+    @extend %rd-navbar-default-mobile-menu;
+    @extend %rd-navbar-default-aside-left;
+
+    .rd-navbar-brand {
+      display: none;
+    }
+
+    .rd-navbar-nav > li.cart .rd-navbar-dropdown{
+      padding-top: 15px;
+    }
+
+    .form-search-wrap{
+      display: none;
+      position: fixed;
+      left: 56px;
+      right: 56px;
+      z-index: 17;
+      top: 6px;
+      margin-top: 0;
+      .form-search-input{
+        height: 44px;
+      }
+      &.active{
+        display: block;
+      }
+    }
+
+
+      .rd-navbar-search-toggle{
+        position: fixed;
+        z-index: 17;
+        top: 4px;
+        right: 4px;
+        background: none;
+        border: none;
+        outline: none;
+        @include toggle-icons-via-rotation(48px, 28px, $rd-navbar-light-top-panel-toggle-icon-color,"\f43b", $rd-navbar-top-panel-toggle-icon-state-after);
+        &:focus, &:active{
+          outline: none;
+        }
+      }
+
+
+    @media (min-width: $screen-xs) {
+      .rd-navbar-mobile-brand {
+        display: none;
+      }
+      .rd-navbar-brand {
+        display: block;
+        @include transform(translateX(-50%));
+        z-index: 17;
+      }
+    }
+  }
+
+  &.rd-navbar-static {
+    @extend %rd-navbar-transition;
+    .rd-navbar-mobile-brand {
+      display: none;
+    }
+
+    @extend %rd-navbar-default-menu-dropdown;
+
+    .rd-navbar-dropdown, .rd-navbar-megamenu{
+      margin-top: $rd-navbar-logo-center-menu-dropdown-offset;
+    }
+
+    .rd-navbar-top-block{
+      padding: $rd-navbar-logo-center-top-block-padding;
+    }
+
+    .rd-navbar-search-toggle{
+      display: none;
+    }
+
+    .rd-navbar-menu-wrap {
+      padding: $rd-navbar-logo-center-menu-wrap-padding;
+    }
+
+    .rd-navbar-panel .rd-navbar-toggle {
+      display: none;
+    }
+
+    .rd-navbar-inner {
+      @include clearfix;
+      transition: .3s all ease;
+      position: relative;
+      text-align: left;
+      &.active {
+        .rd-navbar-panel {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+
+    .rd-navbar-nav-wrap{
+      text-align: center;
+    }
+
+    .rd-navbar-nav-wrap{
+      position: relative;
+    }
+
+    .rd-navbar-megamenu {
+      left: 0;
+      right: 0;
+    }
+
+    .rd-navbar-cart-dropdown{
+      padding: 13px 15px 15px;
+    }
+
+    .rd-navbar-nav-wrap, .rd-navbar-panel, .rd-navbar-cart-wrap {
+      transition: .3s all ease;
+    }
+    &.rd-navbar--is-stuck {
+      margin-top: 0;
+      width: 100%;
+      padding: 0;
+      box-shadow: $rd-navbar-logo-center-stuck-shadow;
+
+      .rd-navbar-top-block {
+        display: none;
+      }
+    }
+
+  }
+
+  // Themes
+
+  // Dark Them
+  // -------------------
+
+  &.rd-navbar-dark {
+    background: $rd-navbar-logo-center-dark-background;
+    @extend %rd-navbar-default-mobile-search-dark;
+    @extend %rd-navbar-default-cart-dark;
+    @extend %rd-navbar-logo-center-menu-first-lvl-dark;
+
+    .cart .rd-navbar-dropdown {
+      li {
+        > a.rd-navbar-product-remove{
+          color: $rd-navbar-dark-cart-product-remove-color;
+        }
+        &:hover > a.rd-navbar-product-remove{
+          background: none;
+          color: $rd-navbar-dark-cart-product-remove-color;
+          &:hover{
+            color: $white;
+            background: none;
+          }
+        }
+      }
+    }
+
+    // Mobile Fixed Layout Colors
+    &.rd-navbar-fixed {
+      @extend %rd-navbar-default-panel-dark;
+      @extend %rd-navbar-default-mobile-menu-dark;
+      @extend %rd-navbar-default-aside-left-dark;
+      .rd-navbar-search-toggle span{
+        color: $white;
+      }
+    }
+
+    // Desktop Static Layout Colors
+    &.rd-navbar-static {
+      @extend %rd-navbar-default-menu-dropdown-dark;
+
+      .rd-navbar-menu-wrap {
+        background: $rd-navbar-logo-center-dark-menu-background;
+      }
+
+      .rd-navbar-top-block p{
+        color: $rd-navbar-logo-center-dark-top-block-color;
+        span{
+          color: $rd-navbar-logo-center-dark-top-block-icon-color;
+        }
+      }
+
+      &.rd-navbar--is-stuck {
+        background: $rd-navbar-logo-center-dark-stuck-background;
+      }
+
+    }
+  }
+
+  // Light Theme
+  // -------------------
+
+  &.rd-navbar-light {
+    background: $rd-navbar-logo-center-light-background;
+    @extend %rd-navbar-default-mobile-search-light;
+    @extend %rd-navbar-default-cart-light;
+    @extend %rd-navbar-logo-center-menu-first-lvl-light;
+
+    .cart .rd-navbar-dropdown {
+      li {
+        > a.rd-navbar-product-remove{
+          color: $rd-navbar-dark-cart-product-remove-color;
+        }
+        &:hover > a.rd-navbar-product-remove{
+          background: none;
+          color: $rd-navbar-dark-cart-product-remove-color;
+          &:hover{
+            color: $gray-base;
+            background: none;
+          }
+        }
+      }
+      .btn{
+        color: $white;
+      }
+    }
+
+    // Mobile Fixed Layout Colors
+    &.rd-navbar-fixed {
+      @extend %rd-navbar-default-panel-light;
+      @extend %rd-navbar-default-mobile-menu-light;
+      @extend %rd-navbar-default-aside-left-light;
+    }
+
+    // Desktop Static Layout Colors
+    &.rd-navbar-static {
+      @extend %rd-navbar-default-menu-dropdown-light;
+
+      .rd-navbar-menu-wrap {
+        background: $rd-navbar-logo-center-light-menu-background;
+      }
+
+      .rd-navbar-top-block p{
+        color: $rd-navbar-logo-center-light-top-block-color;
+        span{
+          color: $rd-navbar-logo-center-light-top-block-icon-color;
+        }
+      }
+
+      &.rd-navbar--is-stuck {
+        background: $rd-navbar-logo-center-light-stuck-background;
+      }
+    }
+  }
+}

@@ -1,0 +1,285 @@
+//
+// Quotes
+// --------------------------------------------------
+
+
+// Base Styles
+// --------------------------------------------------
+
+.quote {
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+
+// Quote Classic
+// -------------------------
+
+.quote-classic {
+  text-align: left;
+  position: relative;
+
+  q {
+    quotes: none;
+  }
+
+  .quote-body {
+    padding: $quote-classic-body-padding;
+  }
+
+  .quote-meta {
+    margin-left: -20px;
+    margin-bottom: -40px;
+  }
+
+  .quote-desc {
+    font-size: $quote-classic-desc-size;
+    font-weight: $quote-classic-desc-weight;
+  }
+
+  .quote-author {
+    margin-bottom: 4px;
+  }
+
+  .quote-desc {
+    margin-top: 4px;
+  }
+
+  > *{
+    position: relative;
+    z-index: 1;
+  }
+
+  &:before {
+    position: absolute;
+    top: -8px;
+    left: -12px;
+    z-index: 0;
+    font-family: $quote-braces-font;
+    font-size: $quote-braces-size;
+    line-height: $quote-braces-line-height;
+    color: $quote-braces-color;
+    content: $quote-braces-icon;
+    @include transform(scaleX(-1));
+  }
+}
+
+
+// Quote Classic Boxed
+// -------------------------
+
+.quote-classic-boxed {
+  .quote-body {
+    padding: $quote-classic-boxed-body-padding;
+    margin-bottom: $quote-classic-boxed-body-offset-bottom;
+    border-radius: $quote-classic-boxed-body-border-radius;
+    border: $quote-classic-boxed-body-border;
+  }
+
+  .quote-meta {
+    margin-left: -4px;
+    margin-bottom: -40px;
+  }
+
+  .quote-author,
+  .quote-desc {
+    padding-left: 24px;
+  }
+
+  &:before {
+    top: 4px;
+    right: 4px;
+    left: auto;
+    @include transform(none)
+  }
+}
+
+// Quote Classic Boxed v2
+// -------------------------
+
+.quote-classic-boxed-2 {
+  .quote-body {
+    padding: $quote-classic-boxed-2-body-padding;
+    background: $quote-classic-boxed-2-body-background;
+    border-radius: $quote-classic-boxed-2-body-border-radius;
+    box-shadow: $quote-classic-boxed-2-body-box-shadow;
+  }
+
+  .quote-meta {
+    margin-left: 25px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .quote-author {
+    margin-top: 20px;
+  }
+
+  &:before {
+    top: 50px;
+    right: 15px;
+    left: auto;
+    z-index: 2;
+    font-family: $quote-braces-font;
+    font-size: $quote-braces-size;
+    line-height: $quote-braces-line-height;
+    color: $quote-classic-boxed-2-braces-icon-color;
+    content: $quote-braces-icon;
+    @include transform(none);
+  }
+}
+.ie-edge{
+  .quote-classic-boxed-2 {
+    .quote-body {
+      box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+// Quote Simple Slider
+// -------------------------
+
+.quote-simple-2 {
+  .quote-body {
+    margin-bottom: 0;
+  }
+
+  .quote-author {
+    margin-top: 12px;
+  }
+}
+
+// Quote Slider v2
+// -------------------------
+
+.quote-slider-2 {
+  .divider {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .quote-body {
+    margin-top: 24px;
+  }
+
+  .quote-author {
+    margin-top: 16px;
+    margin-bottom: 0;
+    color: $quote-slider-2-author-color;
+    text-transform: uppercase;
+  }
+
+  .quote-desc {
+    margin-top: -2px;
+  }
+}
+
+// Quote Slider v3
+// -------------------------
+
+.quote-slider-3 {
+  &:before {
+    margin-bottom: 20px;
+    font-family: $quote-braces-font;
+    font-size: $quote-braces-size;
+    line-height: $quote-braces-line-height;
+    color: $quote-slider-3-braces-icon-color;
+    content: $quote-braces-icon;
+    @include transform(scaleX(-1));
+  }
+
+  .quote-body {
+    margin-top: 14px;
+  }
+
+  .quote-author {
+    margin-top: 16px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  .quote-desc {
+    margin-top: -2px;
+  }
+}
+
+// Quote Slider v4
+// -------------------------
+.quote-slider-4{
+  will-change: transform;
+  q{
+    font-style: italic;
+    &:before, &:after{
+      display: none;
+    }
+  }
+  .quote-author{
+    position: relative;
+    &:before{
+      content: "—"
+    }
+  }
+}
+
+// Quote Outboxed
+// -------------------------
+
+.quote-outboxed {
+  &:before {
+    display: none;
+  }
+
+  .divider {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .quote-body {
+    position: relative;
+    padding: $quote-outboxed-body-padding;
+    background: $quote-outboxed-body-background;
+    border-radius: $quote-outboxed-body-border-radius;
+
+    &:before {
+      position: absolute;
+      top: 6px;
+      left: 8px;
+      font-family: $quote-braces-font;
+      font-size: $quote-braces-size;
+      line-height: $quote-braces-line-height;
+      color: $quote-outboxed-braces-icon-color;
+      content: $quote-braces-icon;
+      @include transform(scaleX(-1));
+      z-index: -1;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 35px;
+      @include triangle(bottom, 20px, 10px, $gray-lighter);
+    }
+  }
+
+  .quote-author {
+    margin: 0 0 6px;
+    text-transform: uppercase;
+  }
+
+  .quote-desc {
+    margin-top: -2px;
+  }
+
+  .quote-meta {
+    margin: 24px 0 0 3px;
+  }
+
+  &:before {
+    color: $gray;
+    top: 0;
+    left: 0;
+    z-index: 6;
+  }
+}

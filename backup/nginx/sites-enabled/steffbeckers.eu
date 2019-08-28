@@ -1,0 +1,36 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name steffbeckers.eu www.steffbeckers.eu;
+    return 301 https://www.steffbeckers.eu$request_uri;
+}
+
+server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+
+    root /var/www/steffbeckers.eu/public;
+
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name steffbeckers.eu www.steffbeckers.eu;
+
+    ssl_certificate /etc/letsencrypt/live/steffbeckers.eu/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/steffbeckers.eu/privkey.pem;
+    # Turn on OCSP stapling as recommended at 
+    # https://community.letsencrypt.org/t/integration-guide/13123 
+    # requires nginx version >= 1.3.7
+    ssl_stapling on;
+    ssl_stapling_verify on;
+
+    add_header Strict-Transport-Security "max-age=31536000";
+
+    # maintain the .well-known directory alias for renewals
+    location /.well-known {
+        alias /var/www/steffbeckers.eu/.well-known;
+    }
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

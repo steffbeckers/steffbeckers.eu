@@ -1,0 +1,88 @@
+//
+// RD Navbar Sidebar Fixed Panel
+// --------------------------------------------------
+
+%rd-navbar-sidebar-fixed-panel{
+
+  .rd-navbar-panel{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 16;
+    @include display-flex;
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    @include align-items(center);
+    padding: 4px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .rd-navbar-search-toggle{
+    @include toggle-icons-via-rotation($rd-navbar-sidebar-fixed-panel-search-toggle-icon-width, $rd-navbar-sidebar-fixed-panel-search-toggle-icon-size, $rd-navbar-sidebar-fixed-panel-search-toggle-icon-color, $rd-navbar-sidebar-fixed-panel-search-toggle-icon, $rd-navbar-sidebar-fixed-panel-search-toggle-icon-state-active);
+  }
+
+  .rd-navbar-toggle {
+    position: fixed;
+    z-index: 17;
+    left: 0;
+    top: 0;
+    @extend %rd-navbar-transition;
+  }
+
+
+  @media (min-width: $screen-lg) {
+    .rd-navbar-panel{
+      @include flex-direction(column);
+      width: $rd-navbar-sidebar-fixed-panel-width;
+      height: 100vh;
+      padding: 0;
+    }
+    .rd-navbar-toggle{
+      position: static;
+      padding: 0;
+      margin-top: 8px;
+      background: none;
+      border: none;
+      outline: none;
+    }
+    .rd-navbar-search{
+      padding-bottom: 8px;
+    }
+    .rd-navbar-brand {
+      @include transform(rotate(-90deg));
+    }
+  }
+}
+
+//
+// Dark Theme
+// ------------------------------------
+
+%rd-navbar-sidebar-fixed-panel-dark{
+  .rd-navbar-panel {
+    background: $rd-navbar-sidebar-fixed-dark-panel-background;
+  }
+  .rd-navbar-toggle {
+    @include toggle-lines-to-arrow($rd-navbar-sidebar-fixed-light-panel-toggle-width, $rd-navbar-sidebar-fixed-light-panel-toggle-size, $rd-navbar-sidebar-fixed-light-panel-toggle-color);
+  }
+}
+
+//
+// Light Theme
+// --------------------------------------------------
+
+%rd-navbar-sidebar-fixed-panel-light{
+  .rd-navbar-panel {
+    background: $rd-navbar-sidebar-fixed-light-panel-background;
+    box-shadow: $rd-navbar-sidebar-fixed-light-panel-shadow;
+  }
+  .rd-navbar-toggle {
+    @include toggle-lines-to-arrow($rd-navbar-sidebar-fixed-light-panel-toggle-width, $rd-navbar-sidebar-fixed-light-panel-toggle-size, $rd-navbar-sidebar-fixed-dark-panel-toggle-color);
+  }
+}
+
+
+
+
+
