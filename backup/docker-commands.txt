@@ -1,0 +1,141 @@
+### Registry
+docker run -d \
+--name registry \
+--restart always \
+registry
+
+### steffbeckers.eu
+docker run -d \
+--restart=unless-stopped \
+--name steffbeckers \
+-p 2368:2368 \
+-e url=https://steffbeckers.eu \
+-v /root/steffbeckers/content:/var/lib/ghost/content \
+ghost
+
+### aariXaFood
+docker stop aarixafood && docker rm aarixafood && \
+
+docker run -d \
+--name aarixafood \
+--restart unless-stopped \
+-e GMAIL_PASSWORD=PASSWORD_HERE \
+-e AARIXAFOOD_MONGODB_PASSWORD=PASSWORD_HERE \
+--link=mongodb:mongodb \
+aarixafood
+
+### MySnookerSkills
+docker stop mysnookerskills && docker rm mysnookerskills && \
+docker run -d \
+--name mysnookerskills \
+--restart unless-stopped \
+-e GMAIL_PASSWORD=PASSWORD_HERE \
+-e SNOOKER_MONGODB_PASSWORD=PASSWORD_HERE \
+--link=mongodb:mongodb \
+mysnookerskills
+
+### MongoDB
+docker run -d \
+--name mongodb \
+--restart unless-stopped \
+-p 27017:27017 \
+-e MONGO_INITDB_ROOT_USERNAME=root \
+-e MONGO_INITDB_ROOT_PASSWORD=PASSWORD_HERE \
+-v /root/mongodb:/data/db \
+mongo
+
+-- Mongo commands
+docker exec -it mongodb mongo -u root -p PASSWORD_HERE -authenticationDatabase admin
+db.createUser({user: 'steff', pwd: 'PASSWORD_HERE', roles: [{role: 'userAdminAnyDatabase', db: 'admin'}]});
+docker exec -it mongodb mongo -u steff -p PASSWORD_HERE -authenticationDatabase admin
+use aariXaFood
+db.createUser({user: 'aariXaFood', pwd: 'PASSWORD_HERE', roles: ['readWrite', 'dbAdmin']});
+use MySnookerSkills
+db.createUser({user: 'MySnookerSkills', pwd: 'PASSWORD_HERE', roles: ['readWrite', 'dbAdmin']});
+
+### MySQL
+docker run -d \
+--name mysql \
+--restart unless-stopped \
+-e MYSQL_ROOT_PASSWORD=PASSWORD_HERE \
+mariadb
+
+### phpMyAdmin
+docker run -d \
+--name phpmyadmin \
+--restart unless-stopped \
+-p 8080:80 \
+-e PMA_USER='steff' \
+-e PMA_PASSWORD='PASSWORD_HERE' \
+--link mysql:db \
+phpmyadmin/phpmyadmin
+
+### MSSQL
+-- Express
+docker run -d \
+--name mssql \
+--restart unless-stopped \
+-p 1433:1433 \
+-e 'ACCEPT_EULA=Y' \
+-e 'SA_PASSWORD=PASSWORD_HERE' \
+-e 'MSSQL_PID=Express' \
+microsoft/mssql-server-linux:2017-latest
+
+-- Developer
+docker run -d \
+--name mssql \
+--restart unless-stopped \
+-p 1433:1433 \
+-e 'ACCEPT_EULA=Y' \
+-e 'SA_PASSWORD=PASSWORD_HERE' \
+microsoft/mssql-server-linux:2017-latest
+
+### WordPress
+docker run -d \
+--name wordpress \
+--restart unless-stopped \
+-p 82:80 \
+--link mysql:mysql \
+wordpress
+
+### Ghost
+docker run -d --name ghost --restart unless-stopped -p 83:2368 ghost
+docker run --name ghost \
+-p 83:2368 \
+-e url=https://steffbeckers.eu \
+-v /root/ghost/content:/var/lib/ghost/content \
+--restart=unless-stopped \
+-d ghost
+
+### Elastic.co
+docker stop logstash && docker rm logstash && \
+docker stop kibana && docker rm kibana && \
+docker stop elasticsearch && docker rm elasticsearch && \
+
+docker run -d \
+--name elasticsearch \
+--restart unless-stopped \
+-e "discovery.type=single-node" \
+docker.elastic.co/elasticsearch/elasticsearch:6.3.0
+
+docker run -d \
+--name kibana \
+--restart unless-stopped \
+-e "ELASTICSEARCH_URL=http://elasticsearch:9200" \
+--link elasticsearch:elasticsearch \
+docker.elastic.co/kibana/kibana:6.3.0
+
+-- Optional
+docker run -d \
+--name logstash \
+--restart unless-stopped \
+--link elasticsearch:elasticsearch \
+docker.elastic.co/logstash/logstash:6.3.0
+
+--- Paid services
+docker run --name filebeat --restart unless-stopped -d docker.elastic.co/beats/filebeat:6.3.0
+docker run --name metricbeat --restart unless-stopped -d docker.elastic.co/beats/metricbeat:6.3.0
+docker run --name packetbeat --restart unless-stopped -d docker.elastic.co/beats/packetbeat:6.3.0
+docker run --name heartbeat --restart unless-stopped -d docker.elastic.co/beats/heartbeat:6.3.0
+docker run --name auditbeat --restart unless-stopped -d docker.elastic.co/beats/auditbeat:6.3.0
+docker run --name apm-server --restart unless-stopped -d  docker.elastic.co/apm/apm-server:6.3.0
