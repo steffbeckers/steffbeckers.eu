@@ -1,15 +1,30 @@
 <template>
   <div class="layout">
     <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
+      <section class="logo">
+        <g-link to="/">
+          <span class="logo__text">
+            <span class="logo__text--top"
+              ><span class="bold">Steff</span> Beckers_</span
+            >
+            <span class="logo__text--bottom">Developer</span>
+          </span>
+        </g-link>
+      </section>
       <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
+        <g-link class="nav__link" to="/">Hi!</g-link>
+        <g-link class="nav__link" to="/projects">Projects</g-link>
+        <g-link class="nav__link" to="/contact">Contact</g-link>
       </nav>
     </header>
-    <slot/>
+    <main class="main">
+      <slot />
+    </main>
+    <footer class="footer">
+      <span class="footer__copyright"
+        >Copyright © {{ new Date().getFullYear() }} - Steff Beckers</span
+      >
+    </footer>
   </div>
 </template>
 
@@ -23,14 +38,14 @@ query {
 
 <style>
 body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   line-height: 1.5;
 }
 
 .layout {
-  max-width: 760px;
+  max-width: 960px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
@@ -44,7 +59,22 @@ body {
   height: 80px;
 }
 
+.logo__text {
+  display: flex;
+  flex-direction: column;
+
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.logo__text--top {
+}
+
 .nav__link {
   margin-left: 20px;
+  text-decoration: none;
+}
+.nav__link:hover {
+  text-decoration: underline;
 }
 </style>

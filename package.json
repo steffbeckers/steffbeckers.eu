@@ -2,11 +2,14 @@
   "name": "steffbeckers.eu",
   "private": true,
   "scripts": {
-    "build": "gridsome build",
+    "start": "npm run develop",
     "develop": "gridsome develop",
+    "build": "gridsome build",
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "gridsome": "^0.7.0"
+    "gridsome": "^0.7.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0"
   }
 }

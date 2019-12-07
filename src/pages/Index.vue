@@ -1,33 +1,31 @@
 <template>
   <Layout>
-
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
-
+    <g-image
+      class="profile-picture"
+      src="~/assets/images/steff.jpg"
+      width="150"
+    />
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
+      Developer with a passion for web development and big data. Motivated to
+      expand knowledge and skills with the latest technologies and frameworks.
     </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
+    <p>
+      Loves working on projects as a teamplayer in an agile environment. Focused
+      on getting it right, and aware that small details can have a big impact.
     </p>
-
   </Layout>
 </template>
+
+<style>
+.profile-picture {
+  border-radius: 50%;
+}
+</style>
 
 <script>
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: "Hi! I am"
   }
-}
+};
 </script>
-
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
-</style>
