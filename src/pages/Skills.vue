@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1>Projects</h1>
+    <h1>Skills<span class="underscore">_</span></h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque
       omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum
@@ -13,7 +13,7 @@
 <script>
 export default {
   metaInfo: {
-    title: "Projects"
+    title: "Skills"
   }
 };
 </script>
