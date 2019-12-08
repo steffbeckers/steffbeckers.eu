@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1>Experience<span class="underscore">_</span></h1>
+    <h1>Work Experience<span class="underscore">_</span></h1>
     <section class="experience">
       <article class="job">
         <h2>Analyst Developer</h2>

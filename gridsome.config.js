@@ -6,5 +6,17 @@
 
 module.exports = {
   siteName: "Steff Beckers",
-  plugins: []
+  siteUrl: "https://steffbeckers.eu",
+  plugins: [
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        typeName: "BlogPost",
+        path: "content/blog/**/*.md"
+      }
+    }
+  ],
+  templates: {
+    BlogPost: "/blog/:year/:month/:day/:slug"
+  }
 };

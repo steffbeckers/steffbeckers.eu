@@ -14,6 +14,7 @@
         <g-link class="nav__link" to="/experience">Experience</g-link>
         <g-link class="nav__link" to="/portfolio">Portfolio</g-link>
         <g-link class="nav__link" to="/skills">Skills</g-link>
+        <g-link class="nav__link" to="/blog">Blog</g-link>
         <g-link class="nav__link" to="/contact">Contact</g-link>
       </nav>
     </header>
@@ -40,7 +41,7 @@ query {
 
 <style>
 body {
-  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lato", Roboto, "Helvetica Neue", Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.5;
@@ -68,6 +69,10 @@ body {
   z-index: 10;
 
   background: #ffffff;
+
+  /* background: transparent;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px); */
 }
 
 .logo__text {
