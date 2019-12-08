@@ -10,7 +10,7 @@
         </span>
       </section>
       <nav class="nav">
-        <g-link class="nav__link" to="/">Hi!</g-link>
+        <g-link class="nav__link root-link" to="/">Hi!</g-link>
         <g-link class="nav__link" to="/experience">Experience</g-link>
         <g-link class="nav__link" to="/portfolio">Portfolio</g-link>
         <g-link class="nav__link" to="/skills">Skills</g-link>
@@ -116,7 +116,8 @@ body {
   opacity: 1;
 }
 
-.nav__link.active--exact {
+.nav__link.active--exact,
+.nav__link.active:not(.root-link) {
   color: #53bceb;
 }
 

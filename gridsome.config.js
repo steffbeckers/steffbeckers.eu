@@ -6,6 +6,8 @@
 
 module.exports = {
   siteName: "Steff Beckers",
+  siteDescription:
+    "Personal website / Resume. Thoughts, stories and ideas. I write about Web Development and DevOps.",
   siteUrl: "https://steffbeckers.eu",
   plugins: [
     {
@@ -14,9 +16,37 @@ module.exports = {
         typeName: "BlogPost",
         path: "content/blog/**/*.md"
       }
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        typeName: "Project",
+        path: "content/projects/**/*.md",
+        refs: {
+          skills: {
+            typeName: "Skill"
+          }
+        }
+      }
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        typeName: "Skill",
+        path: "content/skills/**/*.md",
+        refs: {
+          projects: {
+            typeName: "Project"
+          }
+        }
+      }
     }
   ],
   templates: {
-    BlogPost: "/blog/:year/:month/:day/:slug"
+    BlogPost: "/blog/:slug",
+    Skill: "/skills/:slug"
+  },
+  permalinks: {
+    trailingSlash: false
   }
 };

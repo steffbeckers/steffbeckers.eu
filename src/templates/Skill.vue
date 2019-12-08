@@ -1,53 +1,30 @@
 <template>
   <Layout>
-    <div class="post-title">
-      <h1 class="post-title__text">
-        {{ $page.post.title }}
+    <div class="skill-title">
+      <h1 class="skill-title__text">
+        {{ $page.skill.title }}
       </h1>
-
-      <!-- <PostMeta :post="$page.post" /> -->
     </div>
-
-    <div class="post">
-      <!-- <div class="post__header">
-        <g-image alt="Cover image" v-if="$page.post.coverImage" :src="$page.post.coverImage" />
-      </div> -->
-
-      <div class="post__content" v-html="$page.post.content" />
-
-      <!-- <div class="post__footer">
-        <PostTags :post="$page.post" />
-      </div> -->
+    <div class="skill">
+      <div class="skill__content" v-html="$page.skill.content" />
     </div>
-
-    <div class="post-comments">
+    <div class="skill-comments">
       <!-- Add comment widgets here -->
     </div>
-
-    <!-- <Author class="post-author" /> -->
   </Layout>
 </template>
 
 <style lang="scss"></style>
 
 <script>
-// import PostMeta from '~/components/PostMeta'
-// import PostTags from '~/components/PostTags'
-// import Author from '~/components/Author.vue'
-
 export default {
-  // components: {
-  //   Author,
-  //   PostMeta,
-  //   PostTags
-  // },
   metaInfo() {
     return {
-      title: this.$page.post.title,
+      title: this.$page.skill.title,
       meta: [
         {
           name: "description",
-          content: this.$page.post.description
+          content: this.$page.skill.description
         }
       ]
     };
@@ -56,25 +33,23 @@ export default {
 </script>
 
 <page-query>
-query BlogPost ($path: String!) {
-  post: blogPost (path: $path) {
+query Skill ($path: String!) {
+  skill (path: $path) {
     title
-    path
-    date (format: "D. MMMM YYYY")
-    timeToRead
     description
+    rating
     content
   }
 }
 </page-query>
 
 <style lang="scss">
-.post-title {
+.skill-title {
   padding: calc(var(--space) / 2) 0 calc(var(--space) / 2);
   text-align: center;
 }
 
-.post {
+.skill {
   &__header {
     width: calc(100% + var(--space) * 2);
     margin-left: calc(var(--space) * -1);
@@ -111,15 +86,11 @@ query BlogPost ($path: String!) {
   }
 }
 
-.post-comments {
+.skill-comments {
   padding: calc(var(--space) / 2);
 
   &:empty {
     display: none;
   }
-}
-
-.post-author {
-  margin-top: calc(var(--space) / 2);
 }
 </style>
