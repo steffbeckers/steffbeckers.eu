@@ -36,6 +36,7 @@
 <style lang="scss">
 .post {
   margin-bottom: 20px;
+  border-bottom: 1px solid #eeeeee;
 
   h2 {
     margin-top: 0px;
@@ -47,6 +48,10 @@
     color: #53bceb;
     font-family: monospace;
   }
+}
+.post:last-of-type {
+  margin-bottom: 0px;
+  border-bottom: none;
 }
 </style>
 

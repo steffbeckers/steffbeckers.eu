@@ -1,6 +1,6 @@
 ---
-title: Angular
+title: SASS
 rating: 8
 tags: ["Web", "Front-end"]
-devicon: angularjs-plain
+devicon: sass-original
 ---

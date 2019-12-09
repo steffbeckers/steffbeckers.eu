@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1>Work Experience<span class="underscore">_</span></h1>
+    <h1>Work experience<span class="underscore">_</span></h1>
     <section class="experience">
       <article class="job">
         <h2>Analyst Developer</h2>
@@ -14,10 +14,9 @@
         <h2>Consultant for CTG on behalf of Bridgestone Europe</h2>
         <h3>October 2016 - June 2017 @ CTG / Bridgestone</h3>
         <p>
-          I have worked on a project for Bridgestone as CRM Developer,
-          customizing Dynamics 365 CRM with business logic. Like writing plugins
-          in C# and building custom UI components and apps with TypeScript,
-          Knockout.js and many more of the latest technologies.
+          I have worked on a project for Bridgestone as CRM Developer, customizing Dynamics 365 CRM with business logic.
+          Like writing plugins in C# and building custom UI components and apps with TypeScript, Knockout.js and many
+          more of the latest technologies.
         </p>
       </article>
     </section>
@@ -32,6 +31,7 @@
 
 .job {
   margin-bottom: 20px;
+  border-bottom: 1px solid #eeeeee;
 
   h2 {
     margin-top: 0px;
@@ -46,6 +46,7 @@
 }
 .job:last-of-type {
   margin-bottom: 0px;
+  border-bottom: none;
 }
 </style>
 

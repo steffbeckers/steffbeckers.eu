@@ -3,9 +3,7 @@
     <header class="header">
       <section class="logo">
         <span class="logo__text">
-          <span class="logo__text--top"
-            ><span class="bold">Steff</span> Beckers</span
-          >
+          <span class="logo__text--top"><span class="bold">Steff</span> Beckers</span>
           <span class="logo__text--bottom text-gradient">Developer</span>
         </span>
       </section>
@@ -13,7 +11,6 @@
         <g-link class="nav__link root-link" to="/">Hi!</g-link>
         <g-link class="nav__link" to="/experience">Experience</g-link>
         <g-link class="nav__link" to="/portfolio">Portfolio</g-link>
-        <g-link class="nav__link" to="/skills">Skills</g-link>
         <g-link class="nav__link" to="/blog">Blog</g-link>
         <g-link class="nav__link" to="/contact">Contact</g-link>
       </nav>
@@ -23,9 +20,7 @@
     </main>
     <footer class="footer">
       <span class="footer__copyright"
-        >&copy; {{ new Date().getFullYear() }} - Steff<span class="underscore"
-          >_</span
-        ></span
+        >&copy; {{ new Date().getFullYear() }} - Steff<span class="underscore">_</span></span
       >
     </footer>
   </div>
@@ -49,6 +44,8 @@ body {
 
 .layout {
   max-width: 960px;
+  /* TODO: Responsive */
+  min-width: 600px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;

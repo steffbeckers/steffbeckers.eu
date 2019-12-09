@@ -1,14 +1,14 @@
 <template>
   <Layout>
-    <div class="skill-title">
-      <h1 class="skill-title__text">
-        {{ $page.skill.title }}
+    <div class="project-title">
+      <h1 class="project-title__text">
+        {{ $page.project.title }}
       </h1>
     </div>
-    <div class="skill">
-      <div class="skill__content" v-html="$page.skill.content" />
+    <div class="project">
+      <div class="project__content" v-html="$page.project.content" />
     </div>
-    <div class="skill-comments">
+    <div class="project-comments">
       <!-- Add comment widgets here -->
     </div>
   </Layout>
@@ -20,11 +20,11 @@
 export default {
   metaInfo() {
     return {
-      title: this.$page.skill.title,
+      title: this.$page.project.title,
       meta: [
         {
           name: "description",
-          content: this.$page.skill.description
+          content: this.$page.project.description
         }
       ]
     };
@@ -33,23 +33,26 @@ export default {
 </script>
 
 <page-query>
-query Skill ($path: String!) {
-  skill (path: $path) {
+query Project ($path: String!) {
+  project (path: $path) {
     title
     description
-    rating
+    date
+    skills {
+      title
+    }
     content
   }
 }
 </page-query>
 
 <style lang="scss">
-.skill-title {
+.project-title {
   padding: calc(var(--space) / 2) 0 calc(var(--space) / 2);
   text-align: center;
 }
 
-.skill {
+.project {
   &__header {
     width: calc(100% + var(--space) * 2);
     margin-left: calc(var(--space) * -1);
@@ -86,7 +89,7 @@ query Skill ($path: String!) {
   }
 }
 
-.skill-comments {
+.project-comments {
   padding: calc(var(--space) / 2);
 
   &:empty {

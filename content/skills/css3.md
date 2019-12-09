@@ -1,6 +1,6 @@
 ---
-title: Angular
+title: CSS3
 rating: 8
 tags: ["Web", "Front-end"]
-devicon: angularjs-plain
+devicon: css3-original
 ---

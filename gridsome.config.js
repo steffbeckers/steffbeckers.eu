@@ -33,18 +33,13 @@ module.exports = {
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "Skill",
-        path: "content/skills/**/*.md",
-        refs: {
-          projects: {
-            typeName: "Project"
-          }
-        }
+        path: "content/skills/**/*.md"
       }
     }
   ],
   templates: {
     BlogPost: "/blog/:slug",
-    Skill: "/skills/:slug"
+    Project: "/portfolio/:slug"
   },
   permalinks: {
     trailingSlash: false

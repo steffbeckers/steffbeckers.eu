@@ -11,6 +11,14 @@ export default function(Vue, { router, head, isClient }) {
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css?family=Lato"
   });
+  head.link.push({
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css?family=Material+Icons"
+  });
+  head.link.push({
+    rel: "stylesheet",
+    href: "https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css"
+  });
 
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout);
