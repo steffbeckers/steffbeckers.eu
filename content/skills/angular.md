@@ -1,6 +1,0 @@
----
-title: Angular
-rating: 8
-tags: ["Web", "Front-end"]
-devicon: angularjs-plain
----

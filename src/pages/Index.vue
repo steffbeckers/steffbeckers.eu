@@ -49,7 +49,7 @@
         </p>
       </section>
       <section class="skills__overview">
-        <section class="skill__tags">
+        <!-- <section class="skill__tags">
           <span class="skill__tag">All</span>
           <span class="skill__tag">Web</span>
           <span class="skill__tag">Mobile</span>
@@ -59,7 +59,7 @@
           <span class="skill__tag">Infra & Cloud</span>
           <span class="skill__tag">Tools</span>
           <span class="skill__tag">Other</span>
-        </section>
+        </section> -->
         <section class="skill__list">
           <div class="skill" v-for="edge in $page.skills.edges" :key="edge.node.id">
             <g-image
