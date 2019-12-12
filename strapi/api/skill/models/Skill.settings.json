@@ -1,0 +1,40 @@
+{
+  "connection": "default",
+  "collectionName": "skills",
+  "info": {
+    "name": "skill",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "title": {
+      "unique": true,
+      "required": true,
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "last_used": {
+      "type": "date"
+    },
+    "tags": {
+      "collection": "tag",
+      "via": "skills",
+      "dominant": true
+    },
+    "devicon": {
+      "type": "string"
+    }
+  }
+}

@@ -69,7 +69,7 @@
               width="25"
               height="25"
             />
-            <span class="skill__title">{{ edge.node.title }}</span>
+            <span class="skill__title" :title="edge.node.description">{{ edge.node.title }}</span>
           </div>
         </section>
       </section>
@@ -86,7 +86,10 @@ query {
         title
         description
         rating
-        tags
+        tags {
+          title
+          description
+        }
         devicon
       }
     }
