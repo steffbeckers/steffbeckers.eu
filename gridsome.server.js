@@ -19,6 +19,15 @@ module.exports = function(api) {
     for (const skill of skillsData) {
       skills.addNode(skill);
     }
+
+    // Tags
+    const tags = addCollection("Tag");
+    const tagsResponse = await axios.get("http://localhost:1337/tags");
+    const tagsData = tagsResponse.data;
+
+    for (const tag of tagsData) {
+      tags.addNode(tag);
+    }
   });
 
   api.createPages(({ createPage }) => {

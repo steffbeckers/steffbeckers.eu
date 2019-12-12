@@ -44,32 +44,36 @@
       <section class="skills__text">
         <h1>Skills<span class="underscore">_</span></h1>
         <h3>I try to learn something new every single day</h3>
+        <section class="skill__tags">
+          <span class="skill__tag" :class="!selectedSkillTag ? 'selected' : ''" @click="selectedSkillTag = null"
+            >All</span
+          >
+          <span
+            class="skill__tag"
+            :class="selectedSkillTag === tag ? 'selected' : ''"
+            v-for="tag in tagsWithSkills"
+            :key="tag.node.id"
+            @click="selectSkillTag(tag)"
+            :title="tag.node.description"
+          >
+            {{ tag.node.title }}
+          </span>
+        </section>
         <p>
           The skills are sorted by relevance and knowledge.
         </p>
       </section>
       <section class="skills__overview">
-        <!-- <section class="skill__tags">
-          <span class="skill__tag">All</span>
-          <span class="skill__tag">Web</span>
-          <span class="skill__tag">Mobile</span>
-          <span class="skill__tag">Database</span>
-          <span class="skill__tag">Scripting</span>
-          <span class="skill__tag">DevOps</span>
-          <span class="skill__tag">Infra & Cloud</span>
-          <span class="skill__tag">Tools</span>
-          <span class="skill__tag">Other</span>
-        </section> -->
         <section class="skill__list">
-          <div class="skill" v-for="edge in $page.skills.edges" :key="edge.node.id">
+          <div class="skill" v-for="skill in filteredSkills" :key="skill.node.id">
             <g-image
-              v-if="edge.node.devicon != ''"
+              v-if="skill.node.devicon != ''"
               class="skill__devicon"
-              :src="'https://icongr.am/devicon/' + edge.node.devicon + '.svg?size=25'"
+              :src="'https://icongr.am/devicon/' + skill.node.devicon + '.svg?size=25'"
               width="25"
               height="25"
             />
-            <span class="skill__title" :title="edge.node.description">{{ edge.node.title }}</span>
+            <span class="skill__title" :title="skill.node.description">{{ skill.node.title }}</span>
           </div>
         </section>
       </section>
@@ -87,10 +91,27 @@ query {
         description
         rating
         tags {
+          id
           title
           description
         }
         devicon
+      }
+    }
+  }
+  tags: allTag(sortBy: "title") {
+    edges {
+      node {
+        id
+        title
+        description
+        skills {
+          id
+          title
+          description
+          rating
+          devicon
+        }
       }
     }
   }
@@ -190,9 +211,9 @@ query {
     display: flex;
     flex-direction: row;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
-    margin-bottom: 10px;
+    margin-top: 20px;
 
     .skill__tag {
       display: block;
@@ -204,7 +225,23 @@ query {
 
       font-weight: bold;
 
-      border: 1px solid #000000;
+      border: 2px solid #000000;
+
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+
+      cursor: pointer;
+    }
+
+    .skill__tag.selected {
+      color: #53bceb;
+      border: 2px solid #53bceb;
+    }
+
+    .skill__tag:hover {
+      color: #7dc363;
+      border: 2px solid #7dc363;
     }
   }
 
@@ -231,6 +268,37 @@ query {
 export default {
   metaInfo: {
     title: "Hi! I am"
+  },
+  data() {
+    return {
+      selectedSkillTag: null
+    };
+  },
+  computed: {
+    filteredSkills() {
+      let skillsToDisplay = this.$page.skills.edges;
+
+      // Tag selection
+      if (this.selectedSkillTag && this.selectedSkillTag.node && this.selectedSkillTag.node.skills) {
+        skillsToDisplay = this.selectedSkillTag.node.skills.map(s => {
+          return { node: s };
+        });
+      }
+
+      // TODO: Search
+
+      return skillsToDisplay || [];
+    },
+    tagsWithSkills() {
+      return this.$page.tags.edges.filter(e => {
+        return e.node && e.node.skills && e.node.skills.length > 0;
+      });
+    }
+  },
+  methods: {
+    selectSkillTag(tag) {
+      this.selectedSkillTag = tag;
+    }
   }
 };
 </script>
