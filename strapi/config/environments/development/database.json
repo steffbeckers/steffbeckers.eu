@@ -5,7 +5,7 @@
       "connector": "strapi-hook-bookshelf",
       "settings": {
         "client": "sqlite",
-        "filename": ".tmp/data.db"
+        "filename": "steffbeckers.db"
       },
       "options": {
         "useNullAsDefault": true

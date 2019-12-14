@@ -39,6 +39,7 @@
       <section class="hi__profile-picture">
         <g-image class="profile-picture__image" src="~/assets/images/steff.jpg" width="150" height="150" />
       </section>
+      <!-- <span class="closing-tag">/></span> -->
     </section>
     <section class="skills">
       <section class="skills__text">
@@ -59,9 +60,6 @@
             {{ tag.node.title }}
           </span>
         </section>
-        <p>
-          The skills are sorted by relevance and knowledge.
-        </p>
       </section>
       <section class="skills__overview">
         <section class="skill__list">
@@ -77,6 +75,7 @@
           </div>
         </section>
       </section>
+      <!-- <span class="closing-tag">-></span>-->
     </section>
   </Layout>
 </template>
@@ -127,8 +126,11 @@ query {
 
 .hi {
   display: flex;
+
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 40px;
+
+  // position: relative;
 
   .hi__text {
     margin-right: 40px;
@@ -176,6 +178,8 @@ query {
 
   padding-top: 30px;
   padding-bottom: 30px;
+
+  // position: relative;
 
   .skills__text {
     flex-basis: 33%;
