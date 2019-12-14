@@ -10,8 +10,9 @@
       <nav class="nav">
         <g-link class="nav__link root-link" to="/">Hi!</g-link>
         <g-link class="nav__link" to="/experience">Experience</g-link>
-        <g-link class="nav__link" to="/portfolio">Portfolio</g-link>
-        <g-link class="nav__link" to="/blog">Blog</g-link>
+        <!-- TODO -->
+        <!-- <g-link class="nav__link" to="/portfolio">Portfolio</g-link>
+        <g-link class="nav__link" to="/blog">Blog</g-link> -->
         <g-link class="nav__link" to="/contact">Contact</g-link>
       </nav>
     </header>

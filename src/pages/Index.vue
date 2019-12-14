@@ -34,7 +34,8 @@
             <span><a href="https://goo.gl/maps/KyGduB3qTaBZVPR46">3945 HAM</a></span>
           </div>
         </section>
-        <a class="hi__download-cv btn" href="/downloads/CV_SteffBeckers.pdf">Download CV</a>
+        <!-- TODO -->
+        <!-- <a class="hi__download-cv btn" href="/downloads/CV_SteffBeckers.pdf">Download CV</a> -->
       </section>
       <section class="hi__profile-picture">
         <g-image class="profile-picture__image" src="~/assets/images/steff.jpg" width="150" height="150" />
