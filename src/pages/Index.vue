@@ -46,33 +46,37 @@
       <section class="skills__text">
         <h1>Skills<span class="underscore">_</span></h1>
         <h3>I try to learn something new every single day</h3>
+        <section class="skill__search">
+          <input type="text" v-model="searchSkill" placeholder="Search" />
+          <span v-if="searchSkill" @click="searchSkill = null" class="close mdi mdi-close"></span>
+        </section>
         <section class="skill__tags">
-          <span class="skill__tag" :class="!selectedSkillTag ? 'selected' : ''" @click="selectedSkillTag = null"
+          <span class="skill__tag" :class="!selectedSkillTag ? 'selected' : ''" @click="selectedSkillTag = null; searchSkill = null"
             >All</span
           >
           <span
             class="skill__tag"
             :class="selectedSkillTag === tag ? 'selected' : ''"
             v-for="tag in tagsWithSkills"
-            :key="tag.node.id"
+            :key="tag.id"
             @click="selectSkillTag(tag)"
-            :title="tag.node.description"
+            :title="tag.description"
           >
-            {{ tag.node.title }}
+            {{ tag.title }}
           </span>
         </section>
       </section>
       <section class="skills__overview">
         <section class="skill__list">
-          <div class="skill" v-for="skill in filteredSkills" :key="skill.node.id">
+          <div class="skill" v-for="skill in filteredSkills" :key="skill.id">
             <g-image
-              v-if="skill.node.devicon != ''"
+              v-if="skill.devicon != ''"
               class="skill__devicon"
-              :src="'https://icongr.am/devicon/' + skill.node.devicon + '.svg?size=25'"
+              :src="'https://icongr.am/devicon/' + skill.devicon + '.svg?size=25'"
               width="25"
               height="25"
             />
-            <span class="skill__title" :title="skill.node.description">{{ skill.node.title }}</span>
+            <span class="skill__title" :title="skill.description">{{ skill.title }}</span>
           </div>
         </section>
       </section>
@@ -83,7 +87,7 @@
 
 <page-query>
 query {
-  skills: allSkill(sortBy: "rating", order: DESC) {
+  skillsByRatingQry: allSkill(sortBy: "rating", order: DESC) {
     edges {
       node {
         id
@@ -99,7 +103,7 @@ query {
       }
     }
   }
-  tags: allTag(sortBy: "title") {
+  tagsByTitleQry: allTag(sortBy: "title") {
     edges {
       node {
         id
@@ -212,6 +216,24 @@ query {
     }
   }
 
+  .skill__search {
+    display: block;
+    width: 100%;
+
+    position: relative;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    span.close {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+
+      padding: 5px;
+    }
+  }
+
   .skill__tags {
     display: flex;
     flex-direction: row;
@@ -270,39 +292,70 @@ query {
 </style>
 
 <script>
+const fuzzysort = require("fuzzysort");
+
 export default {
   metaInfo: {
     title: "Hi! I am"
   },
   data() {
     return {
+      searchSkill: null,
       selectedSkillTag: null
     };
   },
   computed: {
-    filteredSkills() {
-      let skillsToDisplay = this.$page.skills.edges;
+    skillsByRating() {
+      let query = this.$page.skillsByRatingQry;
 
-      // Tag selection
-      if (this.selectedSkillTag && this.selectedSkillTag.node && this.selectedSkillTag.node.skills) {
-        skillsToDisplay = this.selectedSkillTag.node.skills.map(s => {
-          return { node: s };
-        });
-      }
+      if (!query || !query.edges) { return []; }
 
-      // TODO: Search
+      return query.edges.map(e => e.node);
+    },
+    tagsByTitle() {
+      let query = this.$page.tagsByTitleQry;
 
-      return skillsToDisplay || [];
+      if (!query || !query.edges) { return []; }
+
+      return query.edges.map(e => e.node);
     },
     tagsWithSkills() {
-      return this.$page.tags.edges.filter(e => {
-        return e.node && e.node.skills && e.node.skills.length > 0;
+      return this.tagsByTitle.filter(t => {
+        return t.skills && t.skills.length > 0;
       });
+    },
+    filteredSkills() {
+      let skillsToDisplay = this.skillsByRating;
+
+      // Tag selection
+      if (this.selectedSkillTag && this.selectedSkillTag.skills) {
+        skillsToDisplay = this.selectedSkillTag.skills;
+      }
+
+      // Search
+      if (this.searchSkill && this.searchSkill.length > 0 && skillsToDisplay && skillsToDisplay.length > 0) {
+        let searchResult = fuzzysort.go(
+          this.searchSkill,
+          skillsToDisplay,
+          {
+            keys: ["title", "description"]
+          }
+        );
+
+        if (searchResult) {
+          skillsToDisplay = searchResult.map(out => out.obj);
+        }
+      }
+
+      return skillsToDisplay || [];
     }
   },
   methods: {
     selectSkillTag(tag) {
       this.selectedSkillTag = tag;
+
+      // Reset skill search
+      this.searchSkill = null;
     }
   }
 };

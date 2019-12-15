@@ -41,6 +41,15 @@ a:hover {
   -webkit-text-fill-color: transparent;
 }
 
+::selection {
+  color: #ffffff;
+  background: #7dc363; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  color: #ffffff;
+  background: #7dc363; /* Gecko Browsers */
+}
+
 .btn {
   display: inline-block;
   min-width: 150px;
@@ -65,4 +74,19 @@ a:hover {
   // background: -webkit-linear-gradient(0deg, #53bceb, #7dc363);
   background-color: #7dc363;
   color: #ffffff;
+}
+
+input[type="text"] {
+  border: 2px solid #000000;
+  width: calc(100% - 20px);
+  
+  padding: 5px 10px;
+
+  font-family: "Lato", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.1em;
+}
+
+span.close {
+  font-size: 1.1em;
+  cursor: pointer;
 }
