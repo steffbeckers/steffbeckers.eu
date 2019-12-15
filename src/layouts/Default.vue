@@ -15,7 +15,20 @@
         <g-link class="nav__link" to="/blog">Blog</g-link> -->
         <g-link class="nav__link" to="/contact">Contact</g-link>
       </nav>
+      <nav class="nav-mobile-toggle">
+        <span @click="showMobileNav = !showMobileNav" class="menu mdi mdi-menu"></span>
+      </nav>
     </header>
+    <transition name="fade">
+      <nav v-if="showMobileNav" class="nav-mobile">
+        <g-link class="nav__link root-link" to="/">Hi!</g-link>
+        <g-link class="nav__link" to="/experience">Experience</g-link>
+        <!-- TODO -->
+        <!-- <g-link class="nav__link" to="/portfolio">Portfolio</g-link>
+        <g-link class="nav__link" to="/blog">Blog</g-link> -->
+        <g-link class="nav__link" to="/contact">Contact</g-link>
+      </nav>
+    </transition>
     <main class="main">
       <slot />
     </main>
@@ -35,7 +48,7 @@ query {
 }
 </static-query>
 
-<style>
+<style lang="scss">
 body {
   font-family: "Lato", Roboto, "Helvetica Neue", Arial, sans-serif;
   margin: 0;
@@ -45,8 +58,6 @@ body {
 
 .layout {
   max-width: 960px;
-  /* TODO: Responsive */
-  min-width: 600px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
@@ -87,6 +98,60 @@ body {
 .logo__text--bottom {
   font-size: 26px;
   letter-spacing: 5.5px;
+}
+
+.nav {
+  display: flex;
+
+  .menu {
+    display: block;
+    font-size: 24px;
+    margin-top: 40px
+  }
+}
+
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+
+  position: fixed;
+  width: 100%;
+  top: 80px;
+  z-index: 50;
+
+  background: rgba($color: #ffffff, $alpha: 0.8);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+.nav-mobile-toggle {
+  display: none;
+  font-size: 28px;
+  padding: 20px;
+  padding-right: 0px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .nav__link {
+      margin-left: 0px;
+      font-size: 1.5em;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+  .nav-mobile-toggle {
+    display: flex;
+  }
 }
 
 .nav__link {
@@ -131,3 +196,13 @@ body {
   padding: 10px;
 }
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      showMobileNav: false
+    };
+  }
+}
+</script>

@@ -6,7 +6,6 @@
 
 module.exports = {
   siteName: "Steff Beckers",
-  siteDescription: "Personal website / Resume. Thoughts, stories and ideas. I write about Web Development and DevOps.",
   siteUrl: "https://steffbeckers.eu",
   plugins: [
     {

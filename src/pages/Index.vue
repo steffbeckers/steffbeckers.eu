@@ -291,6 +291,24 @@ query {
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .hi {
+    flex-direction: column-reverse;
+  }
+
+  .hi__text {
+    margin-top: 20px;
+  }
+
+  .skills {
+    flex-direction: column;
+
+    .skills__text {
+      margin-right: 0px;
+    }
+  }
+}
 </style>
 
 <script>
