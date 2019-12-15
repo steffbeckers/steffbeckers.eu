@@ -25,6 +25,9 @@
     "skills": {
       "collection": "skill",
       "via": "tags"
+    },
+    "sort_order": {
+      "type": "integer"
     }
   }
 }

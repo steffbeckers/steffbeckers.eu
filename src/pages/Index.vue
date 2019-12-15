@@ -87,13 +87,14 @@
 
 <page-query>
 query {
-  skillsByRatingQry: allSkill(sortBy: "rating", order: DESC) {
+  skillsBySortOrderQry: allSkill(sortBy: "sort_order", order: ASC) {
     edges {
       node {
         id
         title
         description
         rating
+        sort_order
         tags {
           id
           title
@@ -103,12 +104,13 @@ query {
       }
     }
   }
-  tagsByTitleQry: allTag(sortBy: "title") {
+  tagsBySortOrderQry: allTag(sortBy: "sort_order", order: ASC) {
     edges {
       node {
         id
         title
         description
+        sort_order
         skills {
           id
           title
@@ -305,27 +307,27 @@ export default {
     };
   },
   computed: {
-    skillsByRating() {
-      let query = this.$page.skillsByRatingQry;
+    skillsBySortOrder() {
+      let query = this.$page.skillsBySortOrderQry;
 
       if (!query || !query.edges) { return []; }
 
       return query.edges.map(e => e.node);
     },
-    tagsByTitle() {
-      let query = this.$page.tagsByTitleQry;
+    tagsBySortOrder() {
+      let query = this.$page.tagsBySortOrderQry;
 
       if (!query || !query.edges) { return []; }
 
       return query.edges.map(e => e.node);
     },
     tagsWithSkills() {
-      return this.tagsByTitle.filter(t => {
+      return this.tagsBySortOrder.filter(t => {
         return t.skills && t.skills.length > 0;
       });
     },
     filteredSkills() {
-      let skillsToDisplay = this.skillsByRating;
+      let skillsToDisplay = this.skillsBySortOrder;
 
       // Tag selection
       if (this.selectedSkillTag && this.selectedSkillTag.skills) {
