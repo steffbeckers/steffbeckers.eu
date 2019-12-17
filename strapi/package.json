@@ -1,8 +1,8 @@
 {
-  "name": "strapi",
+  "name": "steffbeckers.eu-strapi",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "Headless CMS for steffbeckers.eu",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -25,7 +25,7 @@
     "sqlite3": "latest"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Steff Beckers"
   },
   "strapi": {
     "uuid": "c304f5a0-31d5-4667-b7a3-6510da837757"

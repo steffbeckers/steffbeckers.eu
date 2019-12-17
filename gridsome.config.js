@@ -9,6 +9,12 @@ module.exports = {
   siteUrl: "https://steffbeckers.eu",
   plugins: [
     {
+      use: "@gridsome/plugin-google-analytics",
+      options: {
+        id: "UA-101766005-2"
+      }
+    },
+    {
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "BlogPost",
