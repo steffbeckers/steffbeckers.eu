@@ -22,12 +22,12 @@
     "description": {
       "type": "text"
     },
+    "sort_order": {
+      "type": "integer"
+    },
     "skills": {
       "collection": "skill",
       "via": "tags"
-    },
-    "sort_order": {
-      "type": "integer"
     }
   }
 }

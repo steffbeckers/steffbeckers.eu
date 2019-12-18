@@ -36,8 +36,14 @@
     },
     "tags": {
       "collection": "tag",
-      "dominant": true,
-      "via": "skills"
+      "via": "skills",
+      "dominant": true
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "keywords": {
+      "type": "text"
     }
   }
 }

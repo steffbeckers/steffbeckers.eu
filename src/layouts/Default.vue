@@ -75,7 +75,7 @@ body {
 
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20000;
 
   background: #ffffff;
 
@@ -106,7 +106,7 @@ body {
   .menu {
     display: block;
     font-size: 24px;
-    margin-top: 40px
+    margin-top: 40px;
   }
 }
 
@@ -204,5 +204,5 @@ export default {
       showMobileNav: false
     };
   }
-}
+};
 </script>

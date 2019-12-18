@@ -4,20 +4,25 @@
 // Import main css
 import "~/assets/styles/main.scss";
 
+// Custom components
+import VTooltip from "v-tooltip";
+
 import DefaultLayout from "~/layouts/Default.vue";
 
 export default function(Vue, { router, head, isClient }) {
+  // <head>
   head.meta.push({
-    name: 'description',
-    content: 'Developer with a passion for web development and DevOps. Motivated to expand knowledge and skills with the latest technologies and frameworks. Loves working on projects as a teamplayer in an agile environment. Focused on getting it right, and aware that small details can have a big impact.'
+    name: "description",
+    content:
+      "Developer with a passion for web development and DevOps. Motivated to expand knowledge and skills with the latest technologies and frameworks. Loves working on projects as a teamplayer in an agile environment. Focused on getting it right, and aware that small details can have a big impact."
   });
   head.meta.push({
-    name: 'keywords',
-    content: 'Steff, Beckers, CV, Portfolio, Projects, Skills, Work, Experience'
+    name: "keywords",
+    content: "Steff, Beckers, CV, Portfolio, Projects, Skills, Work, Experience"
   });
   head.meta.push({
-    name: 'author',
-    content: 'Steff Beckers'
+    name: "author",
+    content: "Steff Beckers"
   });
 
   head.link.push({
@@ -32,6 +37,10 @@ export default function(Vue, { router, head, isClient }) {
     rel: "stylesheet",
     href: "https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css"
   });
+  // </head>
+
+  // Custom components
+  Vue.use(VTooltip);
 
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout);

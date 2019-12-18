@@ -51,7 +51,13 @@
           <span v-if="searchSkill" @click="searchSkill = null" class="close mdi mdi-close"></span>
         </section>
         <section class="skill__tags">
-          <span class="skill__tag" :class="!selectedSkillTag ? 'selected' : ''" @click="selectedSkillTag = null; searchSkill = null"
+          <span
+            class="skill__tag"
+            :class="!selectedSkillTag ? 'selected' : ''"
+            @click="
+              selectedSkillTag = null;
+              searchSkill = null;
+            "
             >All</span
           >
           <span
@@ -68,15 +74,52 @@
       </section>
       <section class="skills__overview">
         <section class="skill__list">
-          <div class="skill" v-for="skill in filteredSkills" :key="skill.id">
-            <g-image
-              v-if="skill.devicon != ''"
-              class="skill__devicon"
-              :src="'https://icongr.am/devicon/' + skill.devicon + '.svg?size=25'"
-              width="25"
-              height="25"
-            />
-            <span class="skill__title" :title="skill.description">{{ skill.title }}</span>
+          <div v-for="skill in filteredSkills" :key="skill.id">
+            <div v-if="skill.content" style="cursor: pointer;">
+              <v-popover offset="16">
+                <div class="skill">
+                  <g-image
+                    v-if="skill.devicon != ''"
+                    class="skill__devicon"
+                    :src="'https://icongr.am/devicon/' + skill.devicon + '.svg?size=25'"
+                    width="25"
+                    height="25"
+                  />
+                  <span :title="skill.description">{{ skill.title }}</span>
+                </div>
+                <template slot="popover">
+                  <h1 style="display: flex; margin: 0px;">
+                    <g-image
+                      v-if="skill.devicon != ''"
+                      :src="'https://icongr.am/devicon/' + skill.devicon + '.svg?size=35'"
+                      width="35"
+                      height="35"
+                      style="margin-right: 10px;"
+                    />
+                    <span>{{ skill.title }}</span>
+                  </h1>
+                  <p v-if="skill.description" style="margin-top: 0px;">{{ skill.description }}</p>
+                  <vue-markdown>{{ skill.content }}</vue-markdown>
+                  <a
+                    v-close-popover
+                    class="bold"
+                    style="display: block; width: 100%; padding-top: 10px; text-align: center; cursor: pointer;"
+                  >
+                    <span>Close</span>
+                  </a>
+                </template>
+              </v-popover>
+            </div>
+            <div class="skill" v-else>
+              <g-image
+                v-if="skill.devicon != ''"
+                class="skill__devicon"
+                :src="'https://icongr.am/devicon/' + skill.devicon + '.svg?size=25'"
+                width="25"
+                height="25"
+              />
+              <span :title="skill.description">{{ skill.title }}</span>
+            </div>
           </div>
         </section>
       </section>
@@ -93,14 +136,16 @@ query {
         id
         title
         description
+        keywords
         rating
         sort_order
+        devicon
+        content
         tags {
           id
           title
           description
         }
-        devicon
       }
     }
   }
@@ -115,8 +160,11 @@ query {
           id
           title
           description
+          keywords
           rating
+          sort_order
           devicon
+          content
         }
       }
     }
@@ -312,6 +360,7 @@ query {
 </style>
 
 <script>
+import VueMarkdown from "vue-markdown";
 const fuzzysort = require("fuzzysort");
 
 export default {
@@ -328,14 +377,18 @@ export default {
     skillsBySortOrder() {
       let query = this.$page.skillsBySortOrderQry;
 
-      if (!query || !query.edges) { return []; }
+      if (!query || !query.edges) {
+        return [];
+      }
 
       return query.edges.map(e => e.node);
     },
     tagsBySortOrder() {
       let query = this.$page.tagsBySortOrderQry;
 
-      if (!query || !query.edges) { return []; }
+      if (!query || !query.edges) {
+        return [];
+      }
 
       return query.edges.map(e => e.node);
     },
@@ -354,13 +407,9 @@ export default {
 
       // Search
       if (this.searchSkill && this.searchSkill.length > 0 && skillsToDisplay && skillsToDisplay.length > 0) {
-        let searchResult = fuzzysort.go(
-          this.searchSkill,
-          skillsToDisplay,
-          {
-            keys: ["title", "description"]
-          }
-        );
+        let searchResult = fuzzysort.go(this.searchSkill, skillsToDisplay, {
+          keys: ["title", "description", "keywords"]
+        });
 
         if (searchResult) {
           skillsToDisplay = searchResult.map(out => out.obj);
@@ -377,6 +426,9 @@ export default {
       // Reset skill search
       this.searchSkill = null;
     }
+  },
+  components: {
+    VueMarkdown
   }
 };
 </script>
