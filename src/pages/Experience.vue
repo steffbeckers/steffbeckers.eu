@@ -22,6 +22,63 @@
           existing applications to new containers or virtual machines, but also monitoring and maintaining aariXa's
           infrastructure.
         </p>
+        <span class="bold">Mainly used skills</span>
+        <div class="used-skills" style="padding: 0px;">
+          <div class="skill">
+            <g-image
+              class="skill__icon"
+              src="https://icongr.am/devicon/angularjs-plain.svg?size=25"
+              width="25"
+              height="25"
+            />
+            <span>Angular</span>
+          </div>
+          <div class="skill">
+            <g-image
+              class="skill__icon"
+              src="https://icongr.am/devicon/typescript-original.svg?size=25"
+              width="25"
+              height="25"
+            />
+            <span>TypeScript</span>
+          </div>
+          <div class="skill">
+            <g-image
+              class="skill__icon"
+              :src="'https://icongr.am/devicon/csharp-original.svg?size=25'"
+              width="25"
+              height="25"
+            />
+            <span>C#</span>
+          </div>
+          <div class="skill">
+            <span>.NET Core</span>
+          </div>
+          <div class="skill">
+            <span>SQL Server</span>
+          </div>
+          <div class="skill">
+            <g-image
+              class="skill__icon"
+              :src="'https://icongr.am/devicon/docker-original.svg?size=25'"
+              width="25"
+              height="25"
+            />
+            <span>Docker</span>
+          </div>
+          <div class="skill">
+            <span>Azure</span>
+          </div>
+          <div class="skill">
+            <span>Windows Server</span>
+          </div>
+          <div class="skill">
+            <span>Ubuntu Server</span>
+          </div>
+          <div class="skill">
+            <span>Azure DevOps</span>
+          </div>
+        </div>
       </article>
       <article class="job">
         <a class="logo__link" href="https://be.ctg.com" target="_blank">
@@ -45,7 +102,7 @@
           more of the latest technologies.
         </p>
         <span class="bold">Mainly used skills</span>
-        <div class="skills">
+        <div class="used-skills" style="padding: 0px;">
           <div class="skill">
             <g-image class="skill__icon" src="~/assets/images/Dynamics_365.png" width="25" height="25" />
             <span>Dynamics 365 CRM</span>
@@ -53,7 +110,7 @@
           <div class="skill">
             <g-image
               class="skill__icon"
-              :src="'https://icongr.am/devicon/csharp-original.svg?size=25'"
+              src="https://icongr.am/devicon/csharp-original.svg?size=25"
               width="25"
               height="25"
             />
@@ -71,7 +128,7 @@
           <div class="skill">
             <g-image
               class="skill__icon"
-              :src="'https://icongr.am/devicon/html5-original.svg?size=25'"
+              src="https://icongr.am/devicon/html5-original.svg?size=25"
               width="25"
               height="25"
             />
@@ -80,7 +137,7 @@
           <div class="skill">
             <g-image
               class="skill__icon"
-              :src="'https://icongr.am/devicon/css3-original.svg?size=25'"
+              src="https://icongr.am/devicon/css3-original.svg?size=25"
               width="25"
               height="25"
             />
@@ -89,7 +146,7 @@
           <div class="skill">
             <g-image
               class="skill__icon"
-              :src="'https://icongr.am/devicon/sass-original.svg?size=25'"
+              src="https://icongr.am/devicon/sass-original.svg?size=25"
               width="25"
               height="25"
             />
@@ -98,13 +155,40 @@
         </div>
       </article>
     </section>
+    <h1>Certification<span class="underscore">_</span></h1>
+    <section class="certification">
+      <article class="exam">
+        <g-image
+          class="logo"
+          src="https://icongr.am/devicon/csharp-original.svg?size=40"
+          alt="Logo C#"
+          height="40"
+          fit="inside"
+        />
+        <h2>
+          <a href="https://www.microsoft.com/en-us/learning/exam-70-483.aspx" target="_blank">
+            Microsoft Exam 70-483 - Programming in C#
+          </a>
+        </h2>
+        <h3>September 21, 2018</h3>
+      </article>
+    </section>
     <h1>Education<span class="underscore">_</span></h1>
     <section class="education">
       <article class="course">
-        <a class="logo__link" href="https://www.pxl.be/toegepaste-informatica" target="_blank">
+        <a href="https://www.pxl.be/toegepaste-informatica" target="_blank">
           <g-image class="logo" src="~/assets/images/PXL_IT.png" alt="Logo PXL-IT" height="40" fit="inside" />
         </a>
-        <h2>Professional Bachelor’s Degree in Applied Computer Science</h2>
+        <h2>
+          <a href="https://www.pxl.be/applicatieontwikkeling" target="_blank">
+            Professional Bachelor’s Degree in Applied Computer Science
+          </a>
+        </h2>
+        <h3>September 2013 - June 2016</h3>
+        <p>
+          I studied Applied Computer Science at university college PXL, Hasselt.<br />
+          Specialization track: Application Development - Web &amp; Mobile
+        </p>
       </article>
     </section>
   </Layout>
@@ -114,6 +198,8 @@
 .experience {
   display: flex;
   flex-direction: column;
+
+  margin-bottom: 40px;
 }
 
 .job {
@@ -133,6 +219,33 @@
   }
 }
 .job:last-of-type {
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+
+.certification {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.exam {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eeeeee;
+
+  h2 {
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+  h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #53bceb;
+    font-family: monospace;
+  }
+}
+.exam:last-of-type {
   margin-bottom: 0px;
   border-bottom: none;
 }
@@ -163,9 +276,9 @@
   border-bottom: none;
 }
 
-.skills {
+.used-skills {
   display: flex;
-  padding: 0px;
+  flex-wrap: wrap;
   margin-top: 10px;
 
   .skill {

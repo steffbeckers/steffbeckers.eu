@@ -19,7 +19,6 @@
           <a class="mdi mdi-twitter" href="https://twitter.com/steffbeckers" target="_blank"></a>
         </span>
       </div>
-      <div></div>
       <div>
         <span class="info__title">Phone</span>
         <span><a href="tel:+32499765192">+32 499 765 192</a></span>
@@ -51,7 +50,7 @@
 
   .info__title {
     display: inline-block;
-    min-width: 100px;
+    min-width: 110px;
     font-weight: bold;
   }
 

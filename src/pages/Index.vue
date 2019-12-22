@@ -12,8 +12,8 @@
           Loves working on projects as a teamplayer in an agile environment. Focused on getting it right, and aware that
           small details can have a big impact.
         </p>
-        <a class="hi__download-cv btn" href="/downloads/CV_SteffBeckers.pdf" target="_blank">Download CV</a>
-        <g-link class="hi__contact btn btn--grey" to="/contact">Contact me</g-link>
+        <!-- <a class="hi__download-cv btn" href="/downloads/CV_SteffBeckers.pdf" target="_blank">Download CV</a> -->
+        <g-link class="hi__contact btn" to="/contact">Contact me</g-link>
       </section>
       <section class="hi__profile-picture">
         <g-image class="profile-picture__image" src="~/assets/images/Steff.jpg" width="150" height="150" />
@@ -181,13 +181,17 @@ query {
   }
 
   .hi__download-cv {
-    margin-top: 10px;
     margin-right: 20px;
+  }
+
+  .hi__contact {
+    margin-top: 10px;
   }
 }
 
 .skills {
   display: flex;
+  flex-wrap: nowrap;
 
   padding-top: 30px;
   padding-bottom: 30px;
