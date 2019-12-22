@@ -76,6 +76,12 @@ a:hover {
   color: #ffffff;
 }
 
+.btn--grey,
+.btn--gray {
+  color: #111111;
+  background-color: #efefef;
+}
+
 input[type="text"] {
   border: 2px solid #000000;
   width: calc(100% - 20px);

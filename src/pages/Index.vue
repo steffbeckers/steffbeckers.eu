@@ -12,33 +12,11 @@
           Loves working on projects as a teamplayer in an agile environment. Focused on getting it right, and aware that
           small details can have a big impact.
         </p>
-        <section class="hi__info">
-          <div>
-            <span class="info__title">Phone</span>
-            <span><a href="tel:+32499765192">+32 499 765 192</a></span>
-          </div>
-          <div>
-            <span class="info__title">Email</span>
-            <span><a href="mailto:steff@steffbeckers.eu">steff@steffbeckers.eu</a></span>
-          </div>
-          <div>
-            <span class="info__title">Social</span>
-            <span>
-              <a class="mdi mdi-linkedin-box" href="https://www.linkedin.com/in/steffbeckers" target="_blank"></a>
-              <a class="mdi mdi-facebook-box" href="https://www.facebook.com/BeckersSteff" target="_blank"></a>
-              <a class="mdi mdi-twitter" href="https://twitter.com/steffbeckers" target="_blank"></a>
-            </span>
-          </div>
-          <div>
-            <span class="info__title">Address</span>
-            <span><a href="https://goo.gl/maps/KyGduB3qTaBZVPR46">3945 HAM</a></span>
-          </div>
-        </section>
-        <!-- TODO -->
-        <!-- <a class="hi__download-cv btn" href="/downloads/CV_SteffBeckers.pdf">Download CV</a> -->
+        <a class="hi__download-cv btn" href="/downloads/CV_SteffBeckers.pdf" target="_blank">Download CV</a>
+        <g-link class="hi__contact btn btn--grey" to="/contact">Contact me</g-link>
       </section>
       <section class="hi__profile-picture">
-        <g-image class="profile-picture__image" src="~/assets/images/steff.jpg" width="150" height="150" />
+        <g-image class="profile-picture__image" src="~/assets/images/Steff.jpg" width="150" height="150" />
       </section>
       <!-- <span class="closing-tag">/></span> -->
     </section>
@@ -202,29 +180,9 @@ query {
     }
   }
 
-  .hi__info {
-    display: flex;
-    flex-direction: column;
-
-    div {
-      display: flex;
-      align-items: center;
-      padding: 5px 0px;
-    }
-
-    .info__title {
-      display: inline-block;
-      min-width: 100px;
-      font-weight: bold;
-    }
-
-    a.mdi {
-      padding-right: 10px;
-    }
-  }
-
   .hi__download-cv {
-    margin-top: 30px;
+    margin-top: 10px;
+    margin-right: 20px;
   }
 }
 
