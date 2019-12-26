@@ -63,7 +63,9 @@
                     width="25"
                     height="25"
                   />
-                  <span :title="skill.description">{{ skill.title }}</span>
+                  <span :title="skill.description">
+                    {{ skill.title }}
+                  </span>
                 </div>
                 <template slot="popover">
                   <h1 style="display: flex; margin: 0px;">
@@ -299,6 +301,25 @@ query {
     .skill__devicon {
       margin-right: 5px;
     }
+
+    .skill-rating-lt-5 {
+      font-size: 0.7em;
+      line-height: 1em;
+    }
+
+    .skill-rating-5-6 {
+      font-size: 0.9em;
+      line-height: 1em;
+    }
+
+    .skill-rating-7-8 {
+      font-size: 1.1em;
+    }
+
+    .skill-rating-gt-8 {
+      font-size: 1.3em;
+      line-height: 1em;
+    }
   }
 }
 
@@ -387,6 +408,21 @@ export default {
 
       // Reset skill search
       this.searchSkill = null;
+    },
+    getSkillClassesBasedOnRating(rating) {
+      if (!rating) {
+        return null;
+      }
+
+      if (rating < 5) {
+        return "skill-rating-lt-5";
+      } else if (rating === 5 || rating === 6) {
+        return "skill-rating-5-6";
+      } else if (rating === 7 || rating === 8) {
+        return "skill-rating-7-8";
+      } else if (rating > 8) {
+        return "skill-rating-gt-8";
+      }
     }
   },
   components: {
