@@ -22,7 +22,7 @@
     </section>
     <section class="skills">
       <section class="skills__text">
-        <h1>Skills<span class="underscore">_</span></h1>
+        <h1>Skills &amp; technologies<span class="underscore">_</span></h1>
         <h3>I try to learn something new every single day</h3>
         <section class="skill__search">
           <input type="text" v-model="searchSkill" placeholder="Search" />
