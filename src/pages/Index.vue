@@ -21,37 +21,39 @@
       <!-- <span class="closing-tag">/></span> -->
     </section>
     <section class="skills">
-      <section class="skills__text">
-        <h1>Skills &amp; technologies<span class="underscore">_</span></h1>
-        <h3>I try to learn something new every single day</h3>
+      <section class="skills__header">
+        <section class="skills__text">
+          <h1>Skills &amp; technologies<span class="underscore">_</span></h1>
+          <h3>I try to learn something new every single day</h3>
+        </section>
         <section class="skill__search">
           <input type="text" v-model="searchSkill" placeholder="Search" />
           <span v-if="searchSkill" @click="searchSkill = null" class="close mdi mdi-close"></span>
         </section>
-        <section class="skill__tags">
-          <span
-            class="skill__tag"
-            :class="!selectedSkillTag ? 'selected' : ''"
-            @click="
-              selectedSkillTag = null;
-              searchSkill = null;
-            "
-            >All</span
-          >
-          <span
-            class="skill__tag"
-            :class="selectedSkillTag === tag ? 'selected' : ''"
-            v-for="tag in tagsWithSkills"
-            :key="tag.id"
-            @click="selectSkillTag(tag)"
-            :title="tag.description"
-          >
-            {{ tag.title }}
-          </span>
-        </section>
       </section>
+      <!-- <section class="skill__tags">
+        <span
+          class="skill__tag"
+          :class="!selectedSkillTag ? 'selected' : ''"
+          @click="
+            selectedSkillTag = null;
+            searchSkill = null;
+          "
+          >All</span
+        >
+        <span
+          class="skill__tag"
+          :class="selectedSkillTag === tag ? 'selected' : ''"
+          v-for="tag in tagsWithSkills"
+          :key="tag.id"
+          @click="selectSkillTag(tag)"
+          :title="tag.description"
+        >
+          {{ tag.title }}
+        </span>
+      </section> -->
       <section class="skills__overview">
-        <section class="skill__list">
+        <section v-if="filteredSkills.length > 0" class="skill__list">
           <div v-for="skill in filteredSkills" :key="skill.id">
             <div v-if="skill.content" style="cursor: pointer;">
               <v-popover offset="16">
@@ -63,7 +65,7 @@
                     width="25"
                     height="25"
                   />
-                  <span :title="skill.description">
+                  <span class="bold" :title="skill.description">
                     {{ skill.title }}
                   </span>
                 </div>
@@ -102,6 +104,10 @@
             </div>
           </div>
         </section>
+        <p v-if="filteredSkills.length === 0 && searchSkill" style="margin-top: 0px; margin-bottom: 5px;">
+          No skills found. Try <span @click="searchSkill = 'Angular'">Angular</span>,
+          <span @click="searchSkill = 'Docker'">Docker</span>, ...
+        </p>
       </section>
       <!-- <span class="closing-tag">-></span>-->
     </section>
@@ -110,7 +116,7 @@
 
 <page-query>
 query {
-  skillsBySortOrderQry: allSkill(sortBy: "sort_order", order: ASC) {
+  skillsBySortOrderQry: allSkill(filter: { active: { eq: true }}, sortBy: "sort_order", order: ASC) {
     edges {
       node {
         id
@@ -193,15 +199,19 @@ query {
 
 .skills {
   display: flex;
-  flex-wrap: nowrap;
+  flex-direction: column;
 
   padding-top: 30px;
   padding-bottom: 30px;
 
   // position: relative;
 
+  .skills__header {
+    display: flex;
+  }
+
   .skills__text {
-    flex-basis: 33%;
+    flex-basis: 70%;
 
     margin-right: 40px;
 
@@ -219,10 +229,9 @@ query {
 
   .skills__overview {
     display: flex;
-    flex-basis: 66%;
     flex-direction: column;
 
-    margin-top: 10px;
+    margin-top: 20px;
 
     h4 {
       margin-top: 0px;
@@ -231,17 +240,19 @@ query {
   }
 
   .skill__search {
-    display: block;
-    width: 100%;
+    display: flex;
+    flex-basis: 30%;
 
     position: relative;
+
+    height: 35px;
 
     margin-top: 20px;
     margin-bottom: 20px;
 
     span.close {
       position: absolute;
-      right: 0px;
+      right: 5px;
       top: 0px;
 
       padding: 5px;
@@ -334,6 +345,10 @@ query {
 
   .skills {
     flex-direction: column;
+
+    .skills__header {
+      flex-direction: column;
+    }
 
     .skills__text {
       margin-right: 0px;
