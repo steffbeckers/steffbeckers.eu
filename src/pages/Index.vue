@@ -12,7 +12,7 @@
           Loves working on projects as a teamplayer in an agile environment. Focused on getting it right, and aware that
           small details can have a big impact.
         </p>
-        <!-- <a class="hi__download-cv btn" href="/downloads/CV_SteffBeckers.pdf" target="_blank">Download CV</a> -->
+        <a class="hi__download-cv btn" href="/downloads/CV_SteffBeckers.pdf" target="_blank">Download CV</a>
         <g-link class="hi__contact btn" to="/contact">Contact me</g-link>
       </section>
       <section class="hi__profile-picture">
@@ -363,12 +363,12 @@ const fuzzysort = require("fuzzysort");
 
 export default {
   metaInfo: {
-    title: "Hi! I am"
+    title: "Hi! I am",
   },
   data() {
     return {
       searchSkill: null,
-      selectedSkillTag: null
+      selectedSkillTag: null,
     };
   },
   computed: {
@@ -379,7 +379,7 @@ export default {
         return [];
       }
 
-      return query.edges.map(e => e.node);
+      return query.edges.map((e) => e.node);
     },
     tagsBySortOrder() {
       let query = this.$page.tagsBySortOrderQry;
@@ -388,10 +388,10 @@ export default {
         return [];
       }
 
-      return query.edges.map(e => e.node);
+      return query.edges.map((e) => e.node);
     },
     tagsWithSkills() {
-      return this.tagsBySortOrder.filter(t => {
+      return this.tagsBySortOrder.filter((t) => {
         return t.skills && t.skills.length > 0;
       });
     },
@@ -406,16 +406,16 @@ export default {
       // Search
       if (this.searchSkill && this.searchSkill.length > 0 && skillsToDisplay && skillsToDisplay.length > 0) {
         let searchResult = fuzzysort.go(this.searchSkill, skillsToDisplay, {
-          keys: ["title", "description", "keywords"]
+          keys: ["title", "description", "keywords"],
         });
 
         if (searchResult) {
-          skillsToDisplay = searchResult.map(out => out.obj);
+          skillsToDisplay = searchResult.map((out) => out.obj);
         }
       }
 
       return skillsToDisplay || [];
-    }
+    },
   },
   methods: {
     selectSkillTag(tag) {
@@ -438,10 +438,10 @@ export default {
       } else if (rating > 8) {
         return "skill-rating-gt-8";
       }
-    }
+    },
   },
   components: {
-    VueMarkdown
-  }
+    VueMarkdown,
+  },
 };
 </script>
