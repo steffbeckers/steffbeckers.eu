@@ -201,8 +201,8 @@ body {
 export default {
   data() {
     return {
-      showMobileNav: false
+      showMobileNav: false,
     };
-  }
+  },
 };
 </script>

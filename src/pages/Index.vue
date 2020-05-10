@@ -9,11 +9,15 @@
           latest technologies and frameworks.
         </p>
         <p>
-          Loves working on projects as a teamplayer in an agile environment. Focused on getting it right, and aware that
-          small details can have a big impact.
+          Loves working on projects as a team player in an agile environment. Focused on getting it right, and aware
+          that small details can have a big impact.
         </p>
-        <a class="hi__download-cv btn" href="/downloads/CV_SteffBeckers.pdf" target="_blank">Download CV</a>
+        <p>
+          Feel free to get in touch or download my CV.<br />
+          Last updated on 11/05/2020.
+        </p>
         <g-link class="hi__contact btn" to="/contact">Contact me</g-link>
+        <a class="hi__download-cv btn" href="/downloads/CV_SteffBeckers.pdf" target="_blank">Download CV</a>
       </section>
       <section class="hi__profile-picture">
         <g-image class="profile-picture__image" src="~/assets/images/Steff.jpg" width="150" height="150" />
@@ -189,7 +193,7 @@ query {
   }
 
   .hi__download-cv {
-    margin-right: 20px;
+    margin-left: 20px;
   }
 
   .hi__contact {
