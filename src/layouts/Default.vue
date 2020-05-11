@@ -54,13 +54,12 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
+  overflow-y: scroll;
 }
 
 .layout {
   max-width: 960px;
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .header {
@@ -69,8 +68,9 @@ body {
   align-items: center;
 
   margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 
-  width: 100%;
   height: 80px;
 
   position: sticky;
@@ -116,7 +116,7 @@ body {
 
   position: fixed;
   width: 100%;
-  top: 80px;
+  top: 77px;
   z-index: 50;
 
   background: rgba($color: #ffffff, $alpha: 0.8);
@@ -129,29 +129,6 @@ body {
   padding: 20px;
   padding-right: 0px;
   cursor: pointer;
-}
-
-@media only screen and (max-width: 600px) {
-  .nav {
-    display: none;
-  }
-
-  .nav-mobile {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-
-    .nav__link {
-      margin-left: 0px;
-      font-size: 1.5em;
-      width: 100%;
-      text-align: center;
-      padding: 10px;
-    }
-  }
-  .nav-mobile-toggle {
-    display: flex;
-  }
 }
 
 .nav__link {
@@ -184,6 +161,11 @@ body {
   color: #53bceb;
 }
 
+.main {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .footer {
   display: flex;
   align-items: center;
@@ -193,7 +175,31 @@ body {
   text-align: center;
 
   margin-top: 20px;
-  padding: 10px;
+  padding: 10px 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .nav__link {
+      margin-left: 0px;
+      font-size: 1.5em;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+
+  .nav-mobile-toggle {
+    display: flex;
+  }
 }
 </style>
 

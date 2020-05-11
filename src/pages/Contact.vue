@@ -8,17 +8,11 @@
       </div>
       <div>
         <span class="info__title">Address</span>
-        <span><a href="https://goo.gl/maps/KyGduB3qTaBZVPR46">3945 HAM</a></span>
+        <span
+          ><a href="https://goo.gl/maps/KyGduB3qTaBZVPR46">3945 HAM<br />Belgium</a></span
+        >
       </div>
       <div></div>
-      <div>
-        <span class="info__title">Social</span>
-        <span>
-          <a class="mdi mdi-linkedin-box" href="https://www.linkedin.com/in/steffbeckers" target="_blank"></a>
-          <a class="mdi mdi-facebook-box" href="https://www.facebook.com/BeckersSteff" target="_blank"></a>
-          <a class="mdi mdi-twitter" href="https://twitter.com/steffbeckers" target="_blank"></a>
-        </span>
-      </div>
       <div>
         <span class="info__title">Phone</span>
         <span><a href="tel:+32499765192">+32 499 765 192</a></span>
@@ -32,6 +26,15 @@
       <div>
         <span class="info__title">Email</span>
         <span><a href="mailto:steff@steffbeckers.eu">steff@steffbeckers.eu</a></span>
+      </div>
+      <div></div>
+      <div>
+        <span class="info__title">Social</span>
+        <span class="info__social-links">
+          <a class="mdi mdi-linkedin-box" href="https://www.linkedin.com/in/steffbeckers" target="_blank"></a>
+          <a class="mdi mdi-facebook-box" href="https://www.facebook.com/BeckersSteff" target="_blank"></a>
+          <a class="mdi mdi-twitter" href="https://twitter.com/steffbeckers" target="_blank"></a>
+        </span>
       </div>
     </section>
   </Layout>
@@ -54,6 +57,10 @@
     font-weight: bold;
   }
 
+  .info__social-links {
+    font-size: 24px;
+  }
+
   a.mdi {
     padding-right: 10px;
   }
@@ -63,7 +70,7 @@
 <script>
 export default {
   metaInfo: {
-    title: "Contact"
-  }
+    title: "Contact",
+  },
 };
 </script>

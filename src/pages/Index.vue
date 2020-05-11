@@ -16,8 +16,10 @@
           Feel free to get in touch or download my CV.<br />
           Last updated on 11/05/2020.
         </p>
-        <g-link class="hi__contact btn" to="/contact">Contact me</g-link>
-        <a class="hi__download-cv btn" href="/downloads/CV_SteffBeckers.pdf" target="_blank">Download CV</a>
+        <section class="hi__links">
+          <g-link class="hi__contact btn" to="/contact">Contact me</g-link>
+          <a class="hi__download-cv btn" href="/downloads/CV_SteffBeckers.pdf" target="_blank">Download CV</a>
+        </section>
       </section>
       <section class="hi__profile-picture">
         <g-image class="profile-picture__image" src="~/assets/images/Steff.jpg" width="150" height="150" />
@@ -192,12 +194,13 @@ query {
     }
   }
 
-  .hi__download-cv {
-    margin-left: 20px;
-  }
-
-  .hi__contact {
+  .hi__links {
+    display: flex;
     margin-top: 10px;
+
+    .hi__contact {
+      margin-right: 20px;
+    }
   }
 }
 
@@ -341,10 +344,21 @@ query {
 @media only screen and (max-width: 600px) {
   .hi {
     flex-direction: column-reverse;
-  }
 
-  .hi__text {
-    margin-top: 20px;
+    .hi__text {
+      margin-top: 20px;
+      margin-right: 0px;
+    }
+
+    .hi__links {
+      display: flex;
+      flex-direction: column;
+
+      .hi__contact {
+        margin-right: 0px;
+        margin-bottom: 20px;
+      }
+    }
   }
 
   .skills {
