@@ -304,6 +304,7 @@ export default {
       if (this.searchSkill) {
         const searchResult = fuzzysort.go(this.searchSkill, filteredSkills, {
           keys: ['name', 'description', 'keywords'],
+          threshold: -10000,
         })
 
         if (searchResult) {
