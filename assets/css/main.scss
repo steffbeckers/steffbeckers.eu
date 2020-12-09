@@ -82,13 +82,15 @@ a:hover {
   background-color: #efefef;
 }
 
-input[type="text"] {
+input[type='text'] {
   border: 2px solid #000000;
+  border-radius: 0px;
+
   width: calc(100% - 20px);
 
   padding: 5px 10px;
 
-  font-family: "Lato", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Lato', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 1.1em;
 }
 
@@ -128,7 +130,7 @@ span.close {
     border-color: black;
   }
 
-  &[x-placement^="top"] {
+  &[x-placement^='top'] {
     margin-bottom: 5px;
 
     .tooltip-arrow {
@@ -143,7 +145,7 @@ span.close {
     }
   }
 
-  &[x-placement^="bottom"] {
+  &[x-placement^='bottom'] {
     margin-top: 5px;
 
     .tooltip-arrow {
@@ -158,7 +160,7 @@ span.close {
     }
   }
 
-  &[x-placement^="right"] {
+  &[x-placement^='right'] {
     margin-left: 5px;
 
     .tooltip-arrow {
@@ -173,7 +175,7 @@ span.close {
     }
   }
 
-  &[x-placement^="left"] {
+  &[x-placement^='left'] {
     margin-right: 5px;
 
     .tooltip-arrow {
@@ -188,13 +190,13 @@ span.close {
     }
   }
 
-  &[aria-hidden="true"] {
+  &[aria-hidden='true'] {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.15s, visibility 0.15s;
   }
 
-  &[aria-hidden="false"] {
+  &[aria-hidden='false'] {
     visibility: visible;
     opacity: 1;
     transition: opacity 0.15s;

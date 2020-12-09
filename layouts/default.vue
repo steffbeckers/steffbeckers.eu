@@ -22,7 +22,11 @@
       </nav>
     </header>
     <transition name="fade">
-      <nav v-if="showMobileNav" class="nav-mobile">
+      <nav
+        v-if="showMobileNav"
+        class="nav-mobile"
+        @click="showMobileNav = false"
+      >
         <NuxtLink class="nav__link root-link" to="/">Hi!</NuxtLink>
         <NuxtLink class="nav__link" to="/experience">Experience</NuxtLink>
         <NuxtLink class="nav__link" to="/contact">Contact</NuxtLink>
