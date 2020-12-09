@@ -1,14 +1,16 @@
 <template>
   <div class="layout">
     <header class="header">
-      <section class="logo">
-        <span class="logo__text">
-          <span class="logo__text--top"
-            ><span class="bold">Steff</span> Beckers</span
-          >
-          <span class="logo__text--bottom text-gradient">Developer</span>
-        </span>
-      </section>
+      <NuxtLink to="/">
+        <section class="logo">
+          <span class="logo__text">
+            <span class="logo__text--top"
+              ><span class="bold">Steff</span> Beckers</span
+            >
+            <span class="logo__text--bottom text-gradient">Developer</span>
+          </span>
+        </section>
+      </NuxtLink>
       <nav class="nav">
         <NuxtLink class="nav__link root-link" to="/">Hi!</NuxtLink>
         <NuxtLink class="nav__link" to="/experience">Experience</NuxtLink>
@@ -173,7 +175,7 @@ body {
   font-size: 0.9em;
   text-align: center;
 
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 10px 20px;
 }
 
