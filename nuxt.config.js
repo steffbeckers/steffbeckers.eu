@@ -29,6 +29,15 @@ export default {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Lato',
       },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Material+Icons',
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css',
+      },
     ],
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
