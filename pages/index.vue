@@ -1,63 +1,329 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">steffbeckers.eu</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div>
+    <section class="hi">
+      <section class="hi__text">
+        <h1>Hi! I am Steff<span class="underscore">_</span></h1>
+        <h3>Full stack developer / DevOps enthusiast</h3>
+        <p>
+          Developer with a passion for web development and DevOps. Motivated to
+          expand knowledge and skills with the latest technologies and
+          frameworks.
+        </p>
+        <p>
+          Loves working on projects as a team player in an agile environment.
+          Focused on getting it right, and aware that small details can have a
+          big impact.
+        </p>
+        <p>
+          Feel free to get in touch or download my CV.<br />
+          Last updated on 11/05/2020.
+        </p>
+        <section class="hi__links">
+          <NuxtLink class="hi__contact btn" to="/contact">Contact me</NuxtLink>
+          <a
+            class="hi__download-cv btn"
+            href="/downloads/CV_SteffBeckers.pdf"
+            target="_blank"
+            >Download CV</a
+          >
+        </section>
+      </section>
+      <section class="hi__profile-picture">
+        <img
+          class="profile-picture__image"
+          src="~/assets/images/Steff.jpg"
+          width="150"
+          height="150"
+        />
+      </section>
+      <!-- <span class="closing-tag">/></span> -->
+    </section>
+    <section class="skills">
+      <section class="skills__header">
+        <section class="skills__text">
+          <h1>Skills &amp; technologies<span class="underscore">_</span></h1>
+          <h3>I try to learn something new every single day</h3>
+        </section>
+        <section class="skill__search">
+          <input v-model="searchSkill" type="text" placeholder="Search" />
+          <span
+            v-if="searchSkill"
+            class="close mdi mdi-close"
+            @click="searchSkill = ''"
+          ></span>
+        </section>
+      </section>
+      <section class="skills__overview">
+        <section class="skill__list">
+          <div v-for="skill in filteredSkills" :key="skill.name" class="skill">
+            <img
+              v-if="skill.devicon"
+              class="skill__devicon"
+              :src="
+                'https://icongr.am/devicon/' + skill.devicon + '.svg?size=25'
+              "
+              width="25"
+              height="25"
+            />
+            <span :title="skill.description">{{ skill.name }}</span>
+          </div>
+        </section>
+      </section>
+    </section>
   </div>
 </template>
 
-<script>
-export default {}
-</script>
+<style lang="scss">
+.profile-picture__image {
+  border-radius: 50%;
+  margin-top: 10px;
+}
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+.hi {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 40px;
+
+  // position: relative;
+
+  .hi__text {
+    margin-right: 40px;
+
+    h1 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    h3 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: #53bceb;
+      font-family: monospace;
+    }
+  }
+
+  .hi__links {
+    display: flex;
+    margin-top: 10px;
+
+    .hi__contact {
+      margin-right: 20px;
+    }
+  }
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.skills {
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  // position: relative;
+
+  .skills__header {
+    display: flex;
+  }
+
+  .skills__text {
+    flex-basis: 70%;
+
+    margin-right: 40px;
+
+    h1 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    h3 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: #53bceb;
+      font-family: monospace;
+    }
+  }
+
+  .skills__overview {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 20px;
+
+    h4 {
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .skill__search {
+    display: flex;
+    flex-basis: 30%;
+
+    position: relative;
+
+    height: 35px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    span.close {
+      position: absolute;
+      right: 5px;
+      top: 0px;
+
+      padding: 5px;
+    }
+  }
+
+  .skill__tags {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    margin-top: 20px;
+
+    .skill__tag {
+      display: block;
+
+      padding: 2px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-bottom: 10px;
+
+      font-weight: bold;
+
+      border: 2px solid #000000;
+
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+
+      cursor: pointer;
+    }
+
+    .skill__tag.selected {
+      color: #53bceb;
+      border: 2px solid #53bceb;
+    }
+
+    .skill__tag:hover {
+      color: #7dc363;
+      border: 2px solid #7dc363;
+    }
+  }
+
+  .skill__list {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+  }
+
+  .skill {
+    display: flex;
+
+    margin-bottom: 10px;
+    margin-right: 15px;
+
+    .skill__devicon {
+      margin-right: 5px;
+    }
+
+    .skill-rating-lt-5 {
+      font-size: 0.7em;
+      line-height: 1em;
+    }
+
+    .skill-rating-5-6 {
+      font-size: 0.9em;
+      line-height: 1em;
+    }
+
+    .skill-rating-7-8 {
+      font-size: 1.1em;
+    }
+
+    .skill-rating-gt-8 {
+      font-size: 1.3em;
+      line-height: 1em;
+    }
+  }
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+@media only screen and (max-width: 600px) {
+  .hi {
+    flex-direction: column-reverse;
 
-.links {
-  padding-top: 15px;
+    .hi__text {
+      margin-top: 20px;
+      margin-right: 0px;
+    }
+
+    .hi__links {
+      display: flex;
+      flex-direction: column;
+
+      .hi__contact {
+        margin-right: 0px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .skills {
+    flex-direction: column;
+
+    .skills__header {
+      flex-direction: column;
+    }
+
+    .skills__text {
+      margin-right: 0px;
+    }
+  }
 }
 </style>
+
+<script>
+import skills from '~/static/skills.json'
+const fuzzysort = require('fuzzysort')
+
+export default {
+  asyncData({ params }) {
+    return { skills }
+  },
+  data() {
+    return {
+      searchSkill: '',
+    }
+  },
+  computed: {
+    filteredSkills() {
+      let filteredSkills = this.skills
+
+      // Search
+      if (this.searchSkill) {
+        const searchResult = fuzzysort.go(this.searchSkill, filteredSkills, {
+          keys: ['name', 'description', 'keywords'],
+        })
+
+        if (searchResult) {
+          filteredSkills = searchResult.map((out) => out.obj)
+        }
+      }
+
+      return filteredSkills
+    },
+  },
+  head: {
+    title: 'Hi! I am - Steff Beckers',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Developer with a passion for web development and DevOps. Motivated to expand knowledge and skills with the latest technologies and frameworks. Loves working on projects as a team player in an agile environment. Focused on getting it right, and aware that small details can have a big impact.',
+      },
+    ],
+  },
+}
+</script>

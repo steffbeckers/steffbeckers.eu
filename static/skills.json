@@ -1,0 +1,96 @@
+[
+  {
+    "name": ".NET",
+    "description": "",
+    "devicon": "dot-net-original"
+  },
+  {
+    "name": "C#",
+    "description": "",
+    "devicon": "csharp-original"
+  },
+  {
+    "name": "Angular",
+    "description": "",
+    "devicon": "angularjs-plain",
+    "keywords": "ng"
+  },
+  {
+    "name": "JavaScript",
+    "description": "",
+    "devicon": "javascript-original"
+  },
+  {
+    "name": "HTML5",
+    "description": "",
+    "devicon": "html5-original"
+  },
+  {
+    "name": "TypeScript",
+    "description": "",
+    "devicon": "typescript-original"
+  },
+  {
+    "name": "CSS3",
+    "description": "",
+    "devicon": "css3-original"
+  },
+  {
+    "name": "Vue",
+    "description": "",
+    "devicon": "vuejs-original"
+  },
+  {
+    "name": "SQL Server",
+    "description": ""
+  },
+  { "name": "PWA", "description": "" },
+  { "name": "JWT", "description": "" },
+  { "name": "REST API", "description": "" },
+  { "name": "Docker", "description": "", "devicon": "docker-original" },
+  { "name": "Kubernetes", "description": "" },
+  { "name": "SSH", "description": "", "devicon": "ssh-original-wordmark" },
+  { "name": "Ubuntu", "description": "", "devicon": "" },
+  { "name": "GraphQL", "description": "" },
+  { "name": "Node.js", "description": "", "devicon": "" },
+  { "name": "Microservices", "description": "" },
+  { "name": "Azure", "description": "" },
+  { "name": "IIS", "description": "" },
+  { "name": "(Azure) Active Directory", "description": "" },
+  { "name": "Windows Server", "description": "", "devicon": "" },
+  { "name": "Nginx", "description": "", "devicon": "" },
+  { "name": "SQL", "description": "" },
+  { "name": "Web Hosting", "description": "" },
+  { "name": "Windows", "description": "", "devicon": "" },
+  { "name": "Design Patterns", "description": "" },
+  { "name": "Git", "description": "", "devicon": "" },
+  { "name": "Bootstrap", "description": "", "devicon": "" },
+  { "name": "Grafana", "description": "" },
+  { "name": "AWS", "description": "", "devicon": "" },
+  { "name": "CI/CD", "description": "" },
+  { "name": "Jenkins", "description": "" },
+  { "name": "Firebase", "description": "" },
+  { "name": "jQuery", "description": "", "devicon": "" },
+  { "name": "Dynamics 365 CRM", "description": "" },
+  { "name": "Nagios Core", "description": "" },
+  { "name": "GitHub", "description": "" },
+  { "name": "Azure DevOps", "description": "" },
+  { "name": "GitLab", "description": "", "devicon": "" },
+  { "name": "HTTPD Apache2", "description": "", "devicon": "" },
+  { "name": "DNS", "description": "" },
+  { "name": "MongoDB", "description": "", "devicon": "" },
+  { "name": "MySQL", "description": "", "devicon": "" },
+  { "name": "Microsoft Office", "description": "" },
+  { "name": "Ghost", "description": "" },
+  { "name": "Google Analytics", "description": "" },
+  { "name": "Strapi", "description": "" },
+  { "name": "WordPress", "description": "", "devicon": "" },
+  { "name": "Adobe Photoshop", "description": "", "devicon": "" },
+  { "name": "Adobe Indesign", "description": "" },
+  { "name": "Adobe Illustrator", "description": "", "devicon": "" },
+  { "name": "Powershell", "description": "" },
+  { "name": "Ionic", "description": "", "devicon": "" },
+  { "name": "Python", "description": "", "devicon": "" },
+  { "name": "AngularJS", "description": "", "devicon": "" },
+  { "name": "Bash", "description": "" }
+]

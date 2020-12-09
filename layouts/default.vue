@@ -1,55 +1,209 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class="layout">
+    <header class="header">
+      <section class="logo">
+        <span class="logo__text">
+          <span class="logo__text--top"
+            ><span class="bold">Steff</span> Beckers</span
+          >
+          <span class="logo__text--bottom text-gradient">Developer</span>
+        </span>
+      </section>
+      <nav class="nav">
+        <NuxtLink class="nav__link root-link" to="/">Hi!</NuxtLink>
+        <NuxtLink class="nav__link" to="/experience">Experience</NuxtLink>
+        <NuxtLink class="nav__link" to="/contact">Contact</NuxtLink>
+      </nav>
+      <nav class="nav-mobile-toggle">
+        <span
+          class="menu mdi mdi-menu"
+          @click="showMobileNav = !showMobileNav"
+        ></span>
+      </nav>
+    </header>
+    <transition name="fade">
+      <nav v-if="showMobileNav" class="nav-mobile">
+        <NuxtLink class="nav__link root-link" to="/">Hi!</NuxtLink>
+        <NuxtLink class="nav__link" to="/experience">Experience</NuxtLink>
+        <NuxtLink class="nav__link" to="/contact">Contact</NuxtLink>
+      </nav>
+    </transition>
+    <main class="main">
+      <Nuxt />
+    </main>
+    <footer class="footer">
+      <span class="footer__copyright"
+        >&copy; {{ new Date().getFullYear() }} - Steff<span class="underscore"
+          >_</span
+        ></span
+      >
+    </footer>
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+<style lang="scss">
+body {
+  font-family: 'Lato', Roboto, 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  overflow-y: scroll;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
+.layout {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  height: 80px;
+
+  position: sticky;
+  top: 0;
+  z-index: 20000;
+
+  background: #ffffff;
+
+  /* background: transparent;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px); */
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.logo__text--top {
+  font-size: 26px;
+}
+
+.logo__text--bottom {
+  font-size: 26px;
+  letter-spacing: 5.5px;
+}
+
+.nav {
+  display: flex;
+
+  .menu {
+    display: block;
+    font-size: 24px;
+    margin-top: 40px;
+  }
+}
+
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+
+  position: fixed;
+  width: 100%;
+  top: 77px;
+  z-index: 50;
+
+  background: rgba($color: #ffffff, $alpha: 0.8);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.nav-mobile-toggle {
+  display: none;
+  font-size: 28px;
+  padding: 20px;
+  padding-right: 0px;
+  cursor: pointer;
+}
+
+.nav__link {
+  margin-left: 20px;
+  color: #000000;
+  cursor: pointer;
+
   text-decoration: none;
-  padding: 10px 30px;
+  font-weight: bold;
+
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+.nav__link:hover {
+  color: #7dc363;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+.nav__link::after {
+  content: '_';
+  opacity: 0;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.nav__link:hover::after {
+  opacity: 1;
+}
+
+.nav__link.nuxt-link-exact-active,
+.nav__link.nuxt-link-active:not(.root-link) {
+  color: #53bceb;
+}
+
+.main {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.9em;
+  text-align: center;
+
+  margin-top: 20px;
+  padding: 10px 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .nav__link {
+      margin-left: 0px;
+      font-size: 1.5em;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+
+  .nav-mobile-toggle {
+    display: flex;
+  }
 }
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      showMobileNav: false,
+    }
+  },
+}
+</script>
