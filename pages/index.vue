@@ -58,10 +58,17 @@
           <div v-for="skill in filteredSkills" :key="skill.name" class="skill">
             <img
               v-if="skill.devicon"
-              class="skill__devicon"
+              class="skill__icon"
               :src="
                 'https://icongr.am/devicon/' + skill.devicon + '.svg?size=25'
               "
+              width="25"
+              height="25"
+            />
+            <img
+              v-if="skill.icon"
+              class="skill__icon"
+              :src="require(`@/assets/images/icons/${skill.icon}`)"
               width="25"
               height="25"
             />
@@ -186,7 +193,7 @@
     margin-bottom: 10px;
     margin-right: 15px;
 
-    .skill__devicon {
+    .skill__icon {
       margin-right: 5px;
     }
   }

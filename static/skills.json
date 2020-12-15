@@ -42,7 +42,8 @@
   },
   {
     "name": "SQL Server",
-    "description": ""
+    "description": "",
+    "icon": "mssql.png"
   },
   { "name": "PWA", "description": "" },
   { "name": "JWT", "description": "" },
@@ -80,7 +81,7 @@
     "description": "",
     "devicon": "jquery-original-wordmark"
   },
-  { "name": "Dynamics 365 CRM", "description": "" },
+  { "name": "Dynamics 365 CRM", "description": "", "icon": "dynamics.png" },
   { "name": "Nagios Core", "description": "" },
   { "name": "GitHub", "description": "" },
   { "name": "Azure DevOps", "description": "" },
