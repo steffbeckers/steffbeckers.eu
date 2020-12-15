@@ -122,7 +122,7 @@
           <div class="skill">
             <img
               class="skill__icon"
-              src="~/assets/images/Dynamics_365.png"
+              src="~/assets/images/icons/dynamics.png"
               width="25"
               height="25"
             />
