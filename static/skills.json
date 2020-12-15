@@ -42,7 +42,8 @@
   },
   {
     "name": "SQL Server",
-    "description": ""
+    "description": "",
+    "icon": "dynamics.png"
   },
   { "name": "PWA", "description": "" },
   { "name": "JWT", "description": "" },
