@@ -80,6 +80,52 @@
   </div>
 </template>
 
+<script>
+import skills from '~/static/skills.json'
+const fuzzysort = require('fuzzysort')
+
+export default {
+  asyncData({ params }) {
+    return { skills }
+  },
+  data() {
+    return {
+      searchSkill: '',
+    }
+  },
+  head: {
+    title: 'Hi! I am - Steff Beckers',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Developer with a passion for web development and DevOps. Motivated to expand knowledge and skills with the latest technologies and frameworks. Loves working on projects as a team player in an agile environment. Focused on getting it right, and aware that small details can have a big impact.',
+      },
+    ],
+  },
+  computed: {
+    filteredSkills() {
+      let filteredSkills = this.skills
+
+      // Search
+      if (this.searchSkill) {
+        const searchResult = fuzzysort.go(this.searchSkill, filteredSkills, {
+          keys: ['name', 'description', 'keywords'],
+          threshold: -10000,
+        })
+
+        if (searchResult) {
+          filteredSkills = searchResult.map((out) => out.obj)
+        }
+      }
+
+      return filteredSkills
+    },
+  },
+}
+</script>
+
 <style lang="scss">
 .profile-picture__image {
   border-radius: 50%;
@@ -232,49 +278,3 @@
   }
 }
 </style>
-
-<script>
-import skills from '~/static/skills.json'
-const fuzzysort = require('fuzzysort')
-
-export default {
-  asyncData({ params }) {
-    return { skills }
-  },
-  data() {
-    return {
-      searchSkill: '',
-    }
-  },
-  computed: {
-    filteredSkills() {
-      let filteredSkills = this.skills
-
-      // Search
-      if (this.searchSkill) {
-        const searchResult = fuzzysort.go(this.searchSkill, filteredSkills, {
-          keys: ['name', 'description', 'keywords'],
-          threshold: -10000,
-        })
-
-        if (searchResult) {
-          filteredSkills = searchResult.map((out) => out.obj)
-        }
-      }
-
-      return filteredSkills
-    },
-  },
-  head: {
-    title: 'Hi! I am - Steff Beckers',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          'Developer with a passion for web development and DevOps. Motivated to expand knowledge and skills with the latest technologies and frameworks. Loves working on projects as a team player in an agile environment. Focused on getting it right, and aware that small details can have a big impact.',
-      },
-    ],
-  },
-}
-</script>
