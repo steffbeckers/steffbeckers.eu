@@ -47,6 +47,16 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      showMobileNav: false,
+    }
+  },
+}
+</script>
+
 <style lang="scss">
 body {
   font-family: 'Lato', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -203,13 +213,3 @@ body {
   }
 }
 </style>
-
-<script>
-export default {
-  data() {
-    return {
-      showMobileNav: false,
-    }
-  },
-}
-</script>
