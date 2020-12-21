@@ -62,6 +62,26 @@
   </div>
 </template>
 
+<script>
+export default {
+  head: {
+    title: 'Contact - Steff Beckers',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Get in touch',
+      },
+      {
+        name: 'keywords',
+        content:
+          'Steff, Beckers, Contact, Name, Address, Phone, E-mail, +32 499 765 192, steff@steffbeckers.eu, Social, LinkedIn, Github, Facebook, Twitter, WhatsApp',
+      },
+    ],
+  },
+}
+</script>
+
 <style lang="scss">
 .contact__info {
   display: flex;
@@ -88,23 +108,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-  head: {
-    title: 'Contact - Steff Beckers',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'Get in touch',
-      },
-      {
-        name: 'keywords',
-        content:
-          'Steff, Beckers, Contact, Name, Address, Phone, E-mail, +32 499 765 192, steff@steffbeckers.eu, Social, LinkedIn, Github, Facebook, Twitter, WhatsApp',
-      },
-    ],
-  },
-}
-</script>

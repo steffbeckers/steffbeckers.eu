@@ -64,6 +64,12 @@
             <span>.NET Core</span>
           </div>
           <div class="skill">
+            <img
+              class="skill__icon"
+              :src="require(`@/assets/images/icons/mssql.png`)"
+              width="25"
+              height="25"
+            />
             <span>SQL Server</span>
           </div>
           <div class="skill">
@@ -225,6 +231,22 @@
   </div>
 </template>
 
+<script>
+export default {
+  head: {
+    title: 'Experience - Steff Beckers',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          "aariXa's development stack includes: Angular, .NET Core, MS SQL, Azure, Windows Server, ... so mainly focused on Microsoft technologies. I have been working on a new Cloud Native, realtime, multi-tenant web app hosted as microservices which run in Docker containers as an in-house developer.",
+      },
+    ],
+  },
+}
+</script>
+
 <style lang="scss">
 .experience {
   display: flex;
@@ -328,19 +350,3 @@
   margin-right: 20px;
 }
 </style>
-
-<script>
-export default {
-  head: {
-    title: 'Experience - Steff Beckers',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content:
-          "aariXa's development stack includes: Angular, .NET Core, MS SQL, Azure, Windows Server, ... so mainly focused on Microsoft technologies. I have been working on a new Cloud Native, realtime, multi-tenant web app hosted as microservices which run in Docker containers as an in-house developer.",
-      },
-    ],
-  },
-}
-</script>
