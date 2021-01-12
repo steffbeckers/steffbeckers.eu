@@ -15,7 +15,7 @@
     "@nuxtjs/axios": "^5.12.4",
     "@nuxtjs/pwa": "^3.3.3",
     "core-js": "^3.6.5",
-    "eslint-plugin-vue": "^7.3.0",
+    "eslint-plugin-vue": "^7.4.1",
     "fuzzysort": "^1.1.4",
     "moment": "^2.29.1",
     "nuxt": "^2.14.12",
