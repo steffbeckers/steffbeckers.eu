@@ -57,7 +57,7 @@
   { "name": "Node.js", "description": "", "devicon": "nodejs-original" },
   { "name": "Microservices", "description": "" },
   { "name": "Azure", "description": "", "icon": "azure.png" },
-  { "name": "IIS", "description": "" },
+  { "name": "IIS", "description": "", "icon": "microsoft.png" },
   { "name": "(Azure) Active Directory", "description": "" },
   {
     "name": "Windows Server",
