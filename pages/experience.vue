@@ -82,6 +82,12 @@
             <span>Docker</span>
           </div>
           <div class="skill">
+            <img
+              class="skill__icon"
+              :src="require(`@/assets/images/icons/azure.png`)"
+              width="25"
+              height="25"
+            />
             <span>Azure</span>
           </div>
           <div class="skill">
@@ -200,7 +206,7 @@
             Microsoft Exam 70-483 - Programming in C#
           </a>
         </h2>
-        <h3>September 21, 2018</h3>
+        <h3>September 21st, 2018</h3>
       </article>
     </section>
     <h1>Education<span class="underscore">_</span></h1>
