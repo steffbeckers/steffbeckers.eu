@@ -58,7 +58,11 @@
   { "name": "Microservices", "description": "" },
   { "name": "Azure", "description": "", "icon": "azure.png" },
   { "name": "IIS", "description": "", "icon": "microsoft.png" },
-  { "name": "(Azure) Active Directory", "description": "" },
+  {
+    "name": "(Azure) Active Directory",
+    "description": "",
+    "icon": "azure-active-directory.png"
+  },
   {
     "name": "Windows Server",
     "description": "",
