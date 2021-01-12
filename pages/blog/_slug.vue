@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="title">{{ post.title }}<span class="underscore">_</span></h1>
-    <h3 class="subtitle" v-if="post.subtitle">
+    <h3 v-if="post.subtitle" class="subtitle">
       {{ post.subtitle }}
       <span v-if="post.date">{{ post.date | formatDate }}</span>
     </h3>
