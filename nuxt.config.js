@@ -43,13 +43,15 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['~/assets/css/main.scss'],
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~plugins/filters.js'],
+  plugins: ['~plugins/filters.js', '~plugins/gtag.js'],
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    // https://google-analytics.nuxtjs.org
+    '@nuxtjs/google-analytics',
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -72,4 +74,7 @@ export default {
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+  googleAnalytics: {
+    id: 'UA-101766005-2',
+  },
 }

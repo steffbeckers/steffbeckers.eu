@@ -23,6 +23,18 @@ export default {
   mounted() {
     Prism.highlightAll()
   },
+  head() {
+    return {
+      title: this.post.title + ' - Steff Beckers',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.post.short_description,
+        },
+      ],
+    }
+  },
 }
 </script>
 

@@ -37,6 +37,11 @@ export default {
         name: 'description',
         content: "Steff's blog posts, DEV-scripts and other useful notes.",
       },
+      {
+        name: 'keywords',
+        content:
+          'Steff, Beckers, Blog, Development, DEV, Scripts, Notes, Code, Snippets, Web',
+      },
     ],
   },
 }
