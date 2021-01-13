@@ -75,7 +75,7 @@
   { "name": "Design Patterns", "description": "" },
   { "name": "Git", "description": "", "devicon": "git-original" },
   { "name": "Bootstrap", "description": "", "devicon": "bootstrap-plain" },
-  { "name": "Grafana", "description": "" },
+  { "name": "Grafana", "description": "", "icon": "grafana.png" },
   { "name": "AWS", "description": "", "devicon": "amazonwebservices-original" },
   { "name": "CI/CD", "description": "" },
   { "name": "Jenkins", "description": "" },
