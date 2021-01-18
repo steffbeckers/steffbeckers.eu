@@ -75,7 +75,7 @@ export default {
       {
         name: 'keywords',
         content:
-          'Steff, Beckers, Contact, Name, Address, Phone, E-mail, +32 499 765 192, steff@steffbeckers.eu, Social, LinkedIn, Github, Facebook, Twitter, WhatsApp',
+          'Steff, Beckers, Contact, Name, Address, Phone, E-mail, +32499765192, steff@steffbeckers.eu, Social, LinkedIn, Github, Facebook, Twitter, WhatsApp',
       },
     ],
   },

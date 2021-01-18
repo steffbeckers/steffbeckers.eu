@@ -32,6 +32,10 @@ export default {
           name: 'description',
           content: this.post.short_description,
         },
+        {
+          name: 'keywords',
+          content: this.post.keywords,
+        },
       ],
     }
   },

@@ -102,6 +102,11 @@ export default {
         content:
           'Developer with a passion for web development and DevOps. Motivated to expand knowledge and skills with the latest technologies and frameworks. Loves working on projects as a team player in an agile environment. Focused on getting it right, and aware that small details can have a big impact.',
       },
+      {
+        name: 'keywords',
+        content:
+          'Steff, Beckers, Developer, Personal website, Blog, Projects, Resume, CV, Contact',
+      },
     ],
   },
   computed: {

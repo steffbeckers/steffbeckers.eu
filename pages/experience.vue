@@ -248,6 +248,11 @@ export default {
         content:
           "aariXa's development stack includes: Angular, .NET Core, MS SQL, Azure, Windows Server, ... so mainly focused on Microsoft technologies. I have been working on a new Cloud Native, realtime, multi-tenant web app hosted as microservices which run in Docker containers as an in-house developer.",
       },
+      {
+        name: 'keywords',
+        content:
+          'Steff, Beckers, Experience, Work, aariXa, CTG, Certificates, Education, Hogeschool PXL, Applied Computer Science',
+      },
     ],
   },
 }
