@@ -16,6 +16,11 @@
     "keywords": "ng"
   },
   {
+    "name": "NgRx",
+    "description": "Angular state management",
+    "icon": "ngrx.png"
+  },
+  {
     "name": "JavaScript",
     "description": "",
     "devicon": "javascript-original"
@@ -41,37 +46,47 @@
     "devicon": "vuejs-original"
   },
   {
+    "name": "Nuxt.js",
+    "description": "Vue framework",
+    "icon": "nuxt.png"
+  },
+  {
     "name": "SQL Server",
     "description": "",
     "icon": "mssql.png"
   },
   { "name": "PWA", "description": "", "icon": "pwa.png" },
   { "name": "JWT", "description": "", "icon": "jwt.png" },
+  { "name": "SignalR", "description": "Realtime" },
   { "name": "REST API", "description": "", "icon": "api.png" },
   { "name": "Docker", "description": "", "devicon": "docker-original" },
   { "name": "Kubernetes", "description": "", "icon": "k8s.png" },
+  { "name": "MicroK8s", "description": "" },
   { "name": "SSH", "description": "", "devicon": "ssh-original-wordmark" },
   { "name": "GCP", "description": "", "devicon": "google-original" },
   { "name": "Ubuntu", "description": "", "devicon": "ubuntu-plain" },
+  { "name": "Nginx", "description": "", "devicon": "nginx-original" },
   { "name": "GraphQL", "description": "", "icon": "graphql.png" },
   { "name": "Node.js", "description": "", "devicon": "nodejs-original" },
   { "name": "Microservices", "description": "" },
   { "name": "Azure", "description": "", "icon": "azure.png" },
-  { "name": "IIS", "description": "", "icon": "microsoft.png" },
   {
     "name": "(Azure) Active Directory",
     "description": "",
     "icon": "azure-active-directory.png"
   },
+  { "name": "Azure DevOps", "description": "" },
   {
     "name": "Windows Server",
     "description": "",
     "devicon": "windows8-original"
   },
-  { "name": "Nginx", "description": "", "devicon": "nginx-original" },
+  { "name": "IIS", "description": "", "icon": "microsoft.png" },
   { "name": "SQL", "description": "" },
-  { "name": "Web Hosting", "description": "" },
   { "name": "Windows", "description": "", "devicon": "windows8-original" },
+  { "name": "Web Hosting", "description": "" },
+  { "name": "Python", "description": "", "devicon": "python-original" },
+  { "name": "Powershell", "description": "" },
   { "name": "Design Patterns", "description": "" },
   { "name": "Git", "description": "", "devicon": "git-original" },
   { "name": "Bootstrap", "description": "", "devicon": "bootstrap-plain" },
@@ -80,24 +95,24 @@
   { "name": "CI/CD", "description": "" },
   { "name": "Jenkins", "description": "" },
   { "name": "Firebase", "description": "" },
-  {
-    "name": "jQuery",
-    "description": "",
-    "devicon": "jquery-original-wordmark"
-  },
   { "name": "Dynamics 365 CRM", "description": "", "icon": "dynamics.png" },
   { "name": "Nagios Core", "description": "" },
   { "name": "GitHub", "description": "" },
-  { "name": "Azure DevOps", "description": "" },
   { "name": "GitLab", "description": "", "devicon": "gitlab-original" },
   { "name": "HTTPD Apache2", "description": "", "devicon": "apache-original" },
   { "name": "DNS", "description": "" },
   { "name": "MongoDB", "description": "", "devicon": "mongodb-original" },
   { "name": "MySQL", "description": "", "devicon": "mysql-original" },
-  { "name": "Microsoft Office", "description": "" },
   { "name": "Ghost", "description": "" },
   { "name": "Google Analytics", "description": "" },
+  { "name": "RabbitMQ", "description": "" },
+  { "name": "Apache Kafka", "description": "" },
   { "name": "Strapi", "description": "" },
+  {
+    "name": "jQuery",
+    "description": "",
+    "devicon": "jquery-original-wordmark"
+  },
   { "name": "WordPress", "description": "", "devicon": "wordpress-original" },
   { "name": "Adobe Photoshop", "description": "", "devicon": "photoshop-line" },
   { "name": "Adobe Indesign", "description": "" },
@@ -106,9 +121,7 @@
     "description": "",
     "devicon": "illustrator-line"
   },
-  { "name": "Powershell", "description": "" },
   { "name": "Ionic", "description": "", "devicon": "ionic-original" },
-  { "name": "Python", "description": "", "devicon": "python-original" },
   { "name": "AngularJS", "description": "", "devicon": "angularjs-original" },
   { "name": "Bash", "description": "" }
 ]
