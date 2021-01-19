@@ -1,8 +1,8 @@
 <template>
-  <div class="layout">
+  <div class="layout mx-auto">
     <header class="header">
       <NuxtLink to="/">
-        <section class="logo">
+        <section class="logo" @click="showMobileNav = false">
           <span class="logo__text">
             <span class="logo__text--top"
               ><span class="bold">Steff</span> Beckers</span
@@ -70,7 +70,6 @@ body {
 
 .layout {
   max-width: 960px;
-  margin: 0 auto;
 }
 
 .header {
@@ -144,6 +143,8 @@ body {
 }
 
 .nav__link {
+  font-size: 1.1rem;
+
   margin-left: 20px;
   color: #000000;
   cursor: pointer;

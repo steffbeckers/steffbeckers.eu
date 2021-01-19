@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-col space-y-8">
-    <div class="flex flex-row space-x-4 justify-between">
+    <div
+      class="flex flex-row space-x-4 justify-between sm:flex-col-reverse sm:space-x-0"
+    >
       <div class="flex flex-col space-y-4">
         <div class="flex flex-col">
           <h1>Hi! I am Steff<span class="underscore">_</span></h1>
@@ -22,30 +24,32 @@
             Last updated on 11/05/2020.
           </p>
         </div>
-        <div class="flex flex-row space-x-4">
-          <NuxtLink class="btn" to="/contact">Contact me</NuxtLink>
+        <div class="flex flex-row space-x-4 sm:flex-col sm:space-x-0">
+          <NuxtLink class="btn sm:mb-4" to="/contact">Contact me</NuxtLink>
           <a class="btn" href="/downloads/CV_SteffBeckers.pdf" target="_blank"
             >Download CV</a
           >
         </div>
       </div>
-      <div>
+      <div class="flex flex-shrink-0 items-start sm:mb-4">
         <img
           class="rounded-full"
           src="~/assets/images/Steff.jpg"
-          width="200"
-          height="200"
+          width="150"
+          height="150"
         />
       </div>
     </div>
     <hr />
     <div class="flex flex-col space-y-4">
-      <div class="flex flex-row justify-between items-center">
+      <div
+        class="flex flex-row justify-between space-x-4 items-center sm:flex-col sm:items-start sm:space-x-0 sm:space-y-4"
+      >
         <div class="flex flex-col">
           <h1>Skills &amp; technologies<span class="underscore">_</span></h1>
           <h3>I try to learn something new every single day</h3>
         </div>
-        <div>
+        <div class="flex">
           <input v-model="searchSkill" type="text" placeholder="Search" />
         </div>
       </div>

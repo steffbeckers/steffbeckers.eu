@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'Lato', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow-y: scroll;
+}
+
 h1 {
   font-size: 2rem;
   font-weight: bold;
