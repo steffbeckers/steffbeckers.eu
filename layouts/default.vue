@@ -14,6 +14,7 @@
       <nav class="nav">
         <NuxtLink class="nav__link root-link" to="/">Hi!</NuxtLink>
         <NuxtLink class="nav__link" to="/experience">Experience</NuxtLink>
+        <NuxtLink class="nav__link" to="/projects">Projects</NuxtLink>
         <NuxtLink class="nav__link" to="/blog">Blog</NuxtLink>
         <NuxtLink class="nav__link" to="/contact">Contact</NuxtLink>
       </nav>
@@ -32,6 +33,7 @@
       >
         <NuxtLink class="nav__link root-link" to="/">Hi!</NuxtLink>
         <NuxtLink class="nav__link" to="/experience">Experience</NuxtLink>
+        <NuxtLink class="nav__link" to="/projects">Projects</NuxtLink>
         <NuxtLink class="nav__link" to="/blog">Blog</NuxtLink>
         <NuxtLink class="nav__link" to="/contact">Contact</NuxtLink>
       </nav>

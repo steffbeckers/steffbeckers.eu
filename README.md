@@ -1,5 +1,7 @@
 # steffbeckers.eu
 
+Steff's personal portfolio website and blog
+
 ## Build Setup
 
 ```bash

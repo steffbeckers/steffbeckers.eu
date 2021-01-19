@@ -1,11 +1,10 @@
 <template>
   <div>
-    <h1 class="title">{{ post.title }}<span class="underscore">_</span></h1>
-    <h3 v-if="post.subtitle" class="subtitle">
-      {{ post.subtitle }}
-      <span v-if="post.date">{{ post.date | formatDate }}</span>
+    <h1 class="title">{{ project.title }}<span class="underscore">_</span></h1>
+    <h3 v-if="project.subtitle" class="subtitle">
+      {{ project.subtitle }}
     </h3>
-    <nuxt-content :document="post" />
+    <nuxt-content :document="project" />
   </div>
 </template>
 
@@ -15,23 +14,23 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.js'
 
 export default {
   async asyncData({ $content, params }) {
-    const post = await $content('blog', params.slug).fetch()
+    const project = await $content('projects', params.slug).fetch()
     return {
-      post,
+      project,
     }
   },
   head() {
     return {
-      title: this.post.title + ' - Steff Beckers',
+      title: this.project.title + ' - Steff Beckers',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.post.short_description,
+          content: this.project.short_description,
         },
         {
           name: 'keywords',
-          content: this.post.keywords,
+          content: this.project.keywords,
         },
       ],
     }
