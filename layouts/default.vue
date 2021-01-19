@@ -77,7 +77,7 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
 
