@@ -89,6 +89,7 @@
   { "name": "Powershell", "description": "" },
   { "name": "Design Patterns", "description": "" },
   { "name": "Git", "description": "", "devicon": "git-original" },
+  { "name": "Tailwind CSS", "description": "" },
   { "name": "Bootstrap", "description": "", "devicon": "bootstrap-plain" },
   { "name": "Grafana", "description": "", "icon": "grafana.png" },
   { "name": "AWS", "description": "", "devicon": "amazonwebservices-original" },

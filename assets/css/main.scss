@@ -1,5 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 h1 {
-  font-size: 2em;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+h3 {
+  color: #53bceb;
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 a {
@@ -10,29 +27,17 @@ a {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 a:hover {
   color: #7dc363;
 }
 
+// TODO: font-bold
 .bold {
   font-weight: bold;
 }
 
 .underscore {
   color: #53bceb;
-}
-
-.closing-tag {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-
-  color: #53bceb;
-  opacity: 0.2;
-  font-size: 72px;
-
-  user-select: none;
 }
 
 .text-gradient {
@@ -87,17 +92,10 @@ input[type='text'] {
   border-radius: none;
   outline: none;
 
-  width: calc(100% - 20px);
-
   padding: 5px 10px;
 
   font-family: 'Lato', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 1.1em;
-}
-
-span.close {
-  font-size: 1.1em;
-  cursor: pointer;
 }
 
 // Transitions
@@ -109,6 +107,7 @@ span.close {
   opacity: 0;
 }
 
+// Code blocks
 pre[class*='language-'].line-numbers {
   position: relative;
   padding-left: 3.8em;
