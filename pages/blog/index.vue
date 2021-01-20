@@ -4,7 +4,7 @@
       <h1>Blog<span class="underscore">_</span></h1>
       <h3>Tutorials, DEV-scripts and other useful notes</h3>
     </div>
-    <div class="flex flex-col" v-for="post in posts" :key="post.slug">
+    <div v-for="post in posts" :key="post.slug" class="flex flex-col">
       <NuxtLink :to="post.path">
         <div class="flex flex-col space-y-2">
           <div class="flex flex-col">
