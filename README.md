@@ -2,6 +2,8 @@
 
 Steff's personal portfolio website and blog
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3d2b626c-79e9-4f24-8587-8c7057661bc7/deploy-status)](https://app.netlify.com/sites/steffbeckers/deploys)
+
 ## Build Setup
 
 ```bash
