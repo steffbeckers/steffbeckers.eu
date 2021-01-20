@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col space-y-4">
-    <div class="flex flex-row justify-between">
+    <div class="flex flex-row justify-between space-x-4">
       <div class="flex flex-col">
         <h1>Blog<span class="underscore">_</span></h1>
         <h3>Tutorials, DEV-scripts and other useful notes</h3>

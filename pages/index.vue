@@ -25,7 +25,7 @@
           </p>
         </div>
         <div class="flex flex-row space-x-4 sm:flex-col sm:space-x-0">
-          <NuxtLink class="btn sm:mb-4" to="/contact">Contact me</NuxtLink>
+          <NuxtLink class="btn sm:mb-4" to="/contact">Get in touch</NuxtLink>
           <a class="btn" href="/downloads/CV_SteffBeckers.pdf" target="_blank"
             >Download CV</a
           >

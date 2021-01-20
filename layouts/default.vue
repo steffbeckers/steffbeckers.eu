@@ -185,7 +185,7 @@ export default {
   padding: 10px 20px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 667px) {
   .nav {
     display: none;
   }

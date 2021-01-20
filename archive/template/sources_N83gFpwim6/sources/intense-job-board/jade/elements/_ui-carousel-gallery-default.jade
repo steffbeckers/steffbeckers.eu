@@ -1,9 +1,0 @@
-// Classic Gallery Carousel
-//- thumbnails - {thumbnail} object array
-include ../elements/_ui-thumbnail-classic
-
-mixin carousel-gallery-default(thumbnails, settings)
-  // Owl Carousel
-  .owl-carousel.owl-carousel-default.veil-owl-dots&attributes(settings)
-    each thumbnail in thumbnails
-      +thumbnail-classic(thumbnail)

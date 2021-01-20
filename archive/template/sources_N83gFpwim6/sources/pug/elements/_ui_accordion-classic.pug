@@ -1,9 +1,0 @@
-//- nameList - amount of tabs
-mixin accordion-classic(nameList, tabsGroup)
-  // Classic Accordion
-  .responsive-tabs.responsive-tabs-classic(data-type="accordion")
-    ul.resp-tabs-list(data-group= tabsGroup || "tabs-group-default", class= tabsGroup || "tabs-group-default")
-      each item in nameList
-        li= item
-    .resp-tabs-container(data-group= tabsGroup || "tabs-group-default", class= tabsGroup || "tabs-group-default")
-      block
