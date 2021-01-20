@@ -12,8 +12,8 @@
   {
     "name": "Angular",
     "description": "",
-    "devicon": "angularjs-plain",
-    "keywords": "ng"
+    "keywords": "ng",
+    "devicon": "angularjs-plain"
   },
   {
     "name": "NgRx",
@@ -60,7 +60,12 @@
   { "name": "SignalR", "description": "Realtime" },
   { "name": "REST API", "description": "", "icon": "api.png" },
   { "name": "Docker", "description": "", "devicon": "docker-original" },
-  { "name": "Kubernetes", "description": "", "icon": "k8s.png" },
+  {
+    "name": "Kubernetes",
+    "description": "",
+    "keywords": "k8s",
+    "icon": "k8s.png"
+  },
   { "name": "MicroK8s", "description": "" },
   { "name": "SSH", "description": "", "devicon": "ssh-original-wordmark" },
   { "name": "GCP", "description": "", "devicon": "google-original" },

@@ -60,14 +60,6 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  font-family: 'Lato', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-  overflow-y: scroll;
-}
-
 .layout {
   max-width: 960px;
 }
@@ -88,10 +80,9 @@ body {
   z-index: 20000;
 
   background: #ffffff;
-
-  /* background: transparent;
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px); */
+  // background: rgba($color: #ffffff, $alpha: 0.8);
+  // -webkit-backdrop-filter: blur(4px);
+  // backdrop-filter: blur(4px);
 }
 
 .logo__text {

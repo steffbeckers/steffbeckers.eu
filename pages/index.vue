@@ -61,14 +61,12 @@
         >
           <img
             v-if="skill.devicon"
-            class="skill__icon"
             :src="'https://icongr.am/devicon/' + skill.devicon + '.svg?size=25'"
             width="25"
             height="25"
           />
           <img
             v-if="skill.icon"
-            class="skill__icon"
             :src="require(`@/assets/images/icons/${skill.icon}`)"
             width="25"
             height="25"
