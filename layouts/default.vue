@@ -1,8 +1,8 @@
 <template>
-  <div class="layout">
+  <div class="layout mx-auto">
     <header class="header">
       <NuxtLink to="/">
-        <section class="logo">
+        <section class="logo" @click="showMobileNav = false">
           <span class="logo__text">
             <span class="logo__text--top"
               ><span class="bold">Steff</span> Beckers</span
@@ -60,17 +60,8 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  font-family: 'Lato', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-  overflow-y: scroll;
-}
-
 .layout {
   max-width: 960px;
-  margin: 0 auto;
 }
 
 .header {
@@ -78,7 +69,7 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
 
@@ -89,10 +80,9 @@ body {
   z-index: 20000;
 
   background: #ffffff;
-
-  /* background: transparent;
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px); */
+  // background: rgba($color: #ffffff, $alpha: 0.8);
+  // -webkit-backdrop-filter: blur(4px);
+  // backdrop-filter: blur(4px);
 }
 
 .logo__text {
@@ -144,6 +134,8 @@ body {
 }
 
 .nav__link {
+  font-size: 1.1rem;
+
   margin-left: 20px;
   color: #000000;
   cursor: pointer;

@@ -50,6 +50,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    // https://tailwindcss.com/docs/guides/nuxtjs
+    '@nuxtjs/tailwindcss',
     // https://google-analytics.nuxtjs.org
     '@nuxtjs/google-analytics',
   ],
