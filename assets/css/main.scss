@@ -13,7 +13,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -22,6 +22,10 @@ h3 {
   font-family: monospace;
   font-size: 1.2rem;
   font-weight: bold;
+
+  a {
+    color: #53bceb;
+  }
 }
 
 h4 {
