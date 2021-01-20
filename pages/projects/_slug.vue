@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <h1 class="title">{{ project.title }}<span class="underscore">_</span></h1>
-    <h3 v-if="project.subtitle" class="subtitle">
-      {{ project.subtitle }}
-    </h3>
+  <div class="flex flex-col space-y-4">
+    <div class="flex flex-col">
+      <h1>{{ project.title }}<span class="underscore">_</span></h1>
+      <h3 v-if="project.subtitle" class="subtitle">
+        {{ project.subtitle }}
+      </h3>
+    </div>
     <nuxt-content :document="project" />
   </div>
 </template>
@@ -40,21 +42,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-.title {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.subtitle {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  color: #53bceb;
-  font-family: monospace;
-}
-
-.timestamps {
-  font-size: 13px;
-}
-</style>

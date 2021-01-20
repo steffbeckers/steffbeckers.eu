@@ -33,8 +33,8 @@
       </div>
       <div class="flex flex-shrink-0 items-start sm:mb-4">
         <img
-          class="rounded-full"
-          src="~/assets/images/Steff.jpg"
+          class="rounded-full shadow-md"
+          src="/images/Steff.jpg"
           width="150"
           height="150"
         />
@@ -67,7 +67,7 @@
           />
           <img
             v-if="skill.icon"
-            :src="require(`@/assets/images/icons/${skill.icon}`)"
+            :src="`/images/logos/${skill.icon}`"
             width="25"
             height="25"
           />

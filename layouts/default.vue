@@ -79,7 +79,7 @@ export default {
 
   position: sticky;
   top: 0;
-  z-index: 20000;
+  z-index: 2;
 
   background: #ffffff;
   // background: rgba($color: #ffffff, $alpha: 0.8);
