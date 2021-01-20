@@ -22,9 +22,6 @@ export default {
       post,
     }
   },
-  mounted() {
-    Prism.highlightAll()
-  },
   head() {
     return {
       title: this.post.title + ' - Steff Beckers',
@@ -40,6 +37,9 @@ export default {
         },
       ],
     }
+  },
+  mounted() {
+    Prism.highlightAll()
   },
 }
 </script>

@@ -55,9 +55,9 @@
       </div>
       <div class="flex flex-row flex-wrap">
         <div
-          class="mr-4 mb-2 flex flex-row space-x-2"
           v-for="skill in filteredSkills"
           :key="skill.name"
+          class="mr-4 mb-2 flex flex-row space-x-2"
         >
           <img
             v-if="skill.devicon"
