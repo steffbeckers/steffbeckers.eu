@@ -1,5 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Lato', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow-y: scroll;
+}
+
 h1 {
-  font-size: 2em;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+h3 {
+  color: #53bceb;
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  a {
+    color: #53bceb;
+  }
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 a {
@@ -10,29 +41,17 @@ a {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 a:hover {
   color: #7dc363;
 }
 
+// TODO: font-bold
 .bold {
   font-weight: bold;
 }
 
 .underscore {
   color: #53bceb;
-}
-
-.closing-tag {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-
-  color: #53bceb;
-  opacity: 0.2;
-  font-size: 72px;
-
-  user-select: none;
 }
 
 .text-gradient {
@@ -87,17 +106,10 @@ input[type='text'] {
   border-radius: none;
   outline: none;
 
-  width: calc(100% - 20px);
-
   padding: 5px 10px;
 
   font-family: 'Lato', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 1.1em;
-}
-
-span.close {
-  font-size: 1.1em;
-  cursor: pointer;
 }
 
 // Transitions
@@ -109,42 +121,55 @@ span.close {
   opacity: 0;
 }
 
-pre[class*='language-'].line-numbers {
-  position: relative;
-  padding-left: 3.8em;
-  counter-reset: linenumber;
-}
+// Content
+.nuxt-content {
+  p + p {
+    margin-top: 0.4rem;
+  }
 
-pre[class*='language-'].line-numbers > code {
-  position: relative;
-  white-space: inherit;
-}
+  h2 {
+    margin-top: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
 
-.line-numbers .line-numbers-rows {
-  position: absolute;
-  pointer-events: none;
-  top: 0;
-  font-size: 100%;
-  left: -3.8em;
-  width: 3em; /* works for line-numbers below 1000 lines */
-  letter-spacing: -1px;
-  border-right: 1px solid #999;
+  // Code blocks
+  pre[class*='language-'].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+  }
 
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+  pre[class*='language-'].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+  }
 
-.line-numbers-rows > span {
-  display: block;
-  counter-increment: linenumber;
-}
+  .line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 1px solid #999;
 
-.line-numbers-rows > span:before {
-  content: counter(linenumber);
-  color: #999;
-  display: block;
-  padding-right: 0.8em;
-  text-align: right;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .line-numbers-rows > span {
+    display: block;
+    counter-increment: linenumber;
+  }
+
+  .line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: #999;
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
+  }
 }

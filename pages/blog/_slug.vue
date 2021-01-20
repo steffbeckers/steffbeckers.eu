@@ -1,10 +1,12 @@
 <template>
-  <div>
-    <h1 class="title">{{ post.title }}<span class="underscore">_</span></h1>
-    <h3 v-if="post.subtitle" class="subtitle">
-      {{ post.subtitle }}
-      <span v-if="post.date">{{ post.date | formatDate }}</span>
-    </h3>
+  <div class="flex flex-col space-y-4">
+    <div class="flex flex-col">
+      <h1>{{ post.title }}<span class="underscore">_</span></h1>
+      <h3 v-if="post.subtitle" class="subtitle">
+        {{ post.subtitle }}
+        <span v-if="post.date">{{ post.date | formatDate }}</span>
+      </h3>
+    </div>
     <nuxt-content :document="post" />
   </div>
 </template>
@@ -41,21 +43,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-.title {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.subtitle {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  color: #53bceb;
-  font-family: monospace;
-}
-
-.timestamps {
-  font-size: 13px;
-}
-</style>
