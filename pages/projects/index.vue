@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col space-y-8">
-    <div class="flex flex-row justify-between">
+    <div class="flex flex-row justify-between space-x-4">
       <div class="flex flex-col">
         <h1>Projects<span class="underscore">_</span></h1>
         <h3>
@@ -20,7 +20,7 @@
     <div
       v-for="project in projects"
       :key="project.slug"
-      class="grid grid-cols-3 gap-4"
+      class="grid grid-cols-2 sm:grid-cols-1 gap-4"
     >
       <NuxtLink :to="project.path">
         <div class="flex flex-col space-y-2">

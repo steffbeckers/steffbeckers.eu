@@ -9,8 +9,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
-      sm: { max: '600px' },
-      md: { min: '768px', max: '1023px' },
+      sm: { max: '667px' },
+      md: { min: '668px', max: '1023px' },
       lg: { min: '1024px', max: '1279px' },
       xl: { min: '1280px' },
     },
