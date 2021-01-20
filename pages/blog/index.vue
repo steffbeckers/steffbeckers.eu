@@ -1,20 +1,23 @@
 <template>
-  <div>
-    <h1>Blog<span class="underscore">_</span></h1>
-    <section class="blog-posts">
-      <div v-for="post in posts" :key="post.slug">
-        <NuxtLink :to="post.path">
-          <article class="post">
+  <div class="flex flex-col space-y-4">
+    <div class="flex flex-col">
+      <h1>Blog<span class="underscore">_</span></h1>
+      <h3>Tutorials, DEV-scripts and other useful notes</h3>
+    </div>
+    <div class="flex flex-col" v-for="post in posts" :key="post.slug">
+      <NuxtLink :to="post.path">
+        <div class="flex flex-col space-y-2">
+          <div class="flex flex-col">
             <h2>{{ post.title }}</h2>
             <h3 v-if="post.subtitle">
               {{ post.subtitle }}
               <span v-if="post.date">{{ post.date | formatDate }}</span>
             </h3>
-            <p v-if="post.short_description">{{ post.short_description }}</p>
-          </article>
-        </NuxtLink>
-      </div>
-    </section>
+          </div>
+          <p v-if="post.short_description">{{ post.short_description }}</p>
+        </div>
+      </NuxtLink>
+    </div>
   </div>
 </template>
 
@@ -46,33 +49,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-.blog-posts {
-  display: flex;
-  flex-direction: column;
-
-  margin-bottom: 40px;
-}
-
-.post {
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eeeeee;
-
-  h2 {
-    margin-top: 10px;
-    margin-bottom: 0px;
-  }
-  h3 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: #53bceb;
-    font-family: monospace;
-  }
-}
-.post:last-of-type {
-  margin-bottom: 0px;
-  border-bottom: none;
-}
-</style>
