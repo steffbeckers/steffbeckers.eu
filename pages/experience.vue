@@ -10,7 +10,7 @@
           <a href="https://www.aarixa.be" target="_blank">
             <img
               class="logo mb-2"
-              src="~/assets/images/aariXa.png"
+              src="/images/logos/aariXa.png"
               alt="Logo aariXa"
             />
           </a>
@@ -67,11 +67,7 @@
               <span>.NET Core</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                :src="require(`@/assets/images/icons/mssql.png`)"
-                width="25"
-                height="25"
-              />
+              <img src="/images/logos/mssql.png" width="25" height="25" />
               <span>SQL Server</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
@@ -83,11 +79,7 @@
               <span>Docker</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                :src="require(`@/assets/images/icons/azure.png`)"
-                width="25"
-                height="25"
-              />
+              <img src="/images/logos/azure.png" width="25" height="25" />
               <span>Azure</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
@@ -109,14 +101,14 @@
             <a href="https://be.ctg.com" target="_blank">
               <img
                 class="logo mb-2"
-                src="~/assets/images/CTG.gif"
+                src="/images/logos/CTG.gif"
                 alt="Logo CTG"
               />
             </a>
             <a href="https://www.bridgestone.eu" target="_blank">
               <img
                 class="logo mb-2"
-                src="~/assets/images/Bridgestone.png"
+                src="/images/logos/Bridgestone.png"
                 alt="Logo Bridgestone"
               />
             </a>
@@ -136,11 +128,7 @@
           <h4>Mainly used skills</h4>
           <div class="flex flex-row flex-wrap">
             <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="~/assets/images/icons/dynamics.png"
-                width="25"
-                height="25"
-              />
+              <img src="/images/logos/dynamics.png" width="25" height="25" />
               <span>Dynamics 365 CRM</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
@@ -221,7 +209,7 @@
           <a href="https://www.pxl.be/toegepaste-informatica" target="_blank">
             <img
               class="logo mb-2"
-              src="~/assets/images/PXL_IT.png"
+              src="/images/logos/PXL_IT.png"
               alt="Logo PXL-IT"
             />
           </a>

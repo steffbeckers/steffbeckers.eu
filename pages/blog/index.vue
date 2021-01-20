@@ -1,8 +1,18 @@
 <template>
   <div class="flex flex-col space-y-4">
-    <div class="flex flex-col">
-      <h1>Blog<span class="underscore">_</span></h1>
-      <h3>Tutorials, DEV-scripts and other useful notes</h3>
+    <div class="flex flex-row justify-between">
+      <div class="flex flex-col">
+        <h1>Blog<span class="underscore">_</span></h1>
+        <h3>Tutorials, DEV-scripts and other useful notes</h3>
+      </div>
+      <div class="top-icons flex flex-row">
+        <!-- <a
+          class="mdi mdi-rss"
+          href="https://github.com/steffbeckers"
+          target="_blank"
+          title="RSS feed"
+        ></a> -->
+      </div>
     </div>
     <div v-for="post in posts" :key="post.slug" class="flex flex-col">
       <NuxtLink :to="post.path">
@@ -49,3 +59,11 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.top-icons {
+  a.mdi {
+    font-size: 46px;
+  }
+}
+</style>

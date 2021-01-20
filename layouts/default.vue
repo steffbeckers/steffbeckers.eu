@@ -14,6 +14,7 @@
       <nav class="nav">
         <NuxtLink class="nav__link root-link" to="/">Hi!</NuxtLink>
         <NuxtLink class="nav__link" to="/experience">Experience</NuxtLink>
+        <NuxtLink class="nav__link" to="/projects">Projects</NuxtLink>
         <NuxtLink class="nav__link" to="/blog">Blog</NuxtLink>
         <NuxtLink class="nav__link" to="/contact">Contact</NuxtLink>
       </nav>
@@ -32,6 +33,7 @@
       >
         <NuxtLink class="nav__link root-link" to="/">Hi!</NuxtLink>
         <NuxtLink class="nav__link" to="/experience">Experience</NuxtLink>
+        <NuxtLink class="nav__link" to="/projects">Projects</NuxtLink>
         <NuxtLink class="nav__link" to="/blog">Blog</NuxtLink>
         <NuxtLink class="nav__link" to="/contact">Contact</NuxtLink>
       </nav>
@@ -77,7 +79,7 @@ export default {
 
   position: sticky;
   top: 0;
-  z-index: 20000;
+  z-index: 2;
 
   background: #ffffff;
   // background: rgba($color: #ffffff, $alpha: 0.8);
