@@ -30,6 +30,7 @@ choco install autoclicker -y
 choco install autohotkey -y
 choco install azcopy10 -y
 choco install azure-cli -y
+choco install azure-data-studio -y
 choco install bitnami-xampp -y
 choco install cmder -y
 choco install chocolateygui -y
