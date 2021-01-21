@@ -1,0 +1,34 @@
+{
+  // For format details, see https://aka.ms/vscode-remote/devcontainer.json
+  "name": "Nuxt",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "..",
+    // Update 'VARIANT' to pick a Node version: 10, 12, 14
+    "args": { "VARIANT": "14" }
+  },
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/zsh"
+  },
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "octref.vetur",
+    "esbenp.prettier-vscode"
+    // "dariofuzinato.vue-peek",
+    // "formulahendry.auto-rename-tag",
+    // "christian-kohler.path-intellisense",
+    // "CoenraadS.bracket-pair-colorizer",
+    // "streetsidesoftware.code-spell-checker",
+    // "VisualStudioExptTeam.vscodeintellicode",
+    // "TabNine.tabnine-vscode",
+    // "mhutchie.git-graph"
+  ],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [3000],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "npm install"
+  // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+  // "remoteUser": "node"
+}
