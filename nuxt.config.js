@@ -43,7 +43,7 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: ['~/assets/css/main.scss'],
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~plugins/filters.js', '~plugins/gtag.js'],
+  plugins: ['~plugins/filters.js', '~plugins/gtag.js', '~/plugins/disqus'],
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)

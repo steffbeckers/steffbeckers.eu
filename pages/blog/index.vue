@@ -19,9 +19,15 @@
         <div class="flex flex-col space-y-2">
           <div class="flex flex-col">
             <h2>{{ post.title }}</h2>
-            <h3 v-if="post.subtitle">
-              {{ post.subtitle }}
-              <span v-if="post.date">{{ post.date | formatDate }}</span>
+            <h3>
+              <span>{{ post.date | formatDate }}</span>
+              <span>
+                / <span v-for="tag in post.tags" :key="tag">#{{ tag }} </span>
+              </span>
+              <span>
+                /
+                <DisqusCount :identifier="post.path" />
+              </span>
             </h3>
           </div>
           <p v-if="post.short_description">{{ post.short_description }}</p>
