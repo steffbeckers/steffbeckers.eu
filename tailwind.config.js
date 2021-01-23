@@ -6,7 +6,7 @@ module.exports = {
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // false, 'media' or 'class'
   theme: {
     screens: {
       sm: { max: '667px' },

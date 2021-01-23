@@ -54,6 +54,8 @@ export default {
     '@nuxtjs/tailwindcss',
     // https://google-analytics.nuxtjs.org
     '@nuxtjs/google-analytics',
+    // https://color-mode.nuxtjs.org/#setup
+    '@nuxtjs/color-mode',
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -76,7 +78,12 @@ export default {
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+  // Google Analytics
   googleAnalytics: {
     id: 'UA-101766005-2',
+  },
+  // Color mode
+  colorMode: {
+    classSuffix: '',
   },
 }
