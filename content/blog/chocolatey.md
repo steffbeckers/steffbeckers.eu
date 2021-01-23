@@ -4,6 +4,7 @@ subtitle: Productive chocolatey packages for developers.
 short_description: Chocolatey has the largest online registry of Windows packages. Chocolatey packages encapsulate everything required to manage a particular piece of software into one deployment artifact by wrapping installers, executables, zips, and/or scripts into a compiled package file.
 keywords: Chocolatey, DEV, Commands, PowerShell, Windows, Packages, Installers, Steff, Beckers, Blog
 date: '2021-01-11'
+tags: ['windows', 'tools', 'powershell']
 published: true
 ---
 
