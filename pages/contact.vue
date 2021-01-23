@@ -8,9 +8,7 @@
           <a href="https://www.linkedin.com/in/steffbeckers" target="_blank"
             >LinkedIn</a
           >, follow me on
-          <a href="https://www.linkedin.com/in/steffbeckers" target="_blank"
-            >GitHub</a
-          >
+          <a href="https://github.com/steffbeckers" target="_blank">GitHub</a>
           or just contact me by <a href="tel:+32499765192">phone</a> or
           <a href="mailto:steff@steffbeckers.eu">e-mail</a>
         </h3>
@@ -55,7 +53,7 @@
             ></a>
             <a
               class="mdi mdi-facebook"
-              href="https://www.facebook.com/BeckersSteff"
+              href="https://www.facebook.com/steffbeckers"
               target="_blank"
               title="Facebook"
             ></a>
