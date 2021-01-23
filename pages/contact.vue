@@ -5,12 +5,10 @@
         <h1>Get in touch<span class="underscore">_</span></h1>
         <h3>
           Add me on
-          <a href="https://www.linkedin.com/in/steffbeckers" target="_blank"
+          <a href="https://linkedin.com/in/steffbeckers" target="_blank"
             >LinkedIn</a
           >, follow me on
-          <a href="https://www.linkedin.com/in/steffbeckers" target="_blank"
-            >GitHub</a
-          >
+          <a href="https://github.com/steffbeckers" target="_blank">GitHub</a>
           or just contact me by <a href="tel:+32499765192">phone</a> or
           <a href="mailto:steff@steffbeckers.eu">e-mail</a>
         </h3>
@@ -43,7 +41,7 @@
           <div class="flex flex-row space-x-4">
             <a
               class="mdi mdi-linkedin"
-              href="https://www.linkedin.com/in/steffbeckers"
+              href="https://linkedin.com/in/steffbeckers"
               target="_blank"
               title="LinkedIn"
             ></a>
@@ -55,7 +53,7 @@
             ></a>
             <a
               class="mdi mdi-facebook"
-              href="https://www.facebook.com/BeckersSteff"
+              href="https://facebook.com/steffbeckers"
               target="_blank"
               title="Facebook"
             ></a>
