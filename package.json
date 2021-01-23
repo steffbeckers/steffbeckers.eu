@@ -20,6 +20,7 @@
     "moment": "^2.29.1",
     "nuxt": "^2.14.12",
     "prism-themes": "^1.5.0",
+    "vue-disqus": "^4.0.1",
     "vue-gtag": "^1.10.0"
   },
   "devDependencies": {
