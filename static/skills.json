@@ -14,7 +14,7 @@
     "name": "Angular",
     "description": "",
     "keywords": "ng",
-    "devicon": "angularjs-plain"
+    "icon": "angular.png"
   },
   {
     "name": "NgRx",

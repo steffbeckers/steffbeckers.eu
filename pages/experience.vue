@@ -47,11 +47,7 @@
           <h4>Mainly used skills</h4>
           <div class="flex flex-row flex-wrap">
             <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="https://icongr.am/devicon/angularjs-plain.svg?size=25"
-                width="25"
-                height="25"
-              />
+              <img src="/images/logos/angular.png" width="25" height="25" />
               <span>Angular</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
