@@ -31,6 +31,7 @@
           <img
             v-if="project.thumbnail"
             :src="project.thumbnail"
+            alt="Project thumbnail"
             class="shadow-md"
           />
           <div class="flex flex-col">
