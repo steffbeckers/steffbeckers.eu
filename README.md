@@ -12,15 +12,17 @@ https://steffbeckers.eu
 # install dependencies
 $ npm install
 
-# serve with hot reload at localhost:3000
+# dev mode with hot reload at localhost:3000
 $ npm start
 
-# build for production and launch server
+# build for production
 $ npm run build
-$ npm run serve
 
 # generate static project
 $ npm run generate
+
+# launch server to host generated site
+$ npm run serve
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
