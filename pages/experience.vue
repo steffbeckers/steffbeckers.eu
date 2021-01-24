@@ -9,8 +9,15 @@
         <div class="flex flex-col">
           <a href="https://www.aarixa.be" target="_blank">
             <img
+              v-if="$colorMode.value === 'light'"
               class="logo mb-2"
               src="/images/logos/aariXa.png"
+              alt="Logo aariXa"
+            />
+            <img
+              v-if="$colorMode.value === 'dark'"
+              class="logo mb-2"
+              src="/images/logos/aariXa-white.png"
               alt="Logo aariXa"
             />
           </a>
@@ -79,7 +86,18 @@
               <span>Docker</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img src="/images/logos/azure.png" width="25" height="25" />
+              <img
+                v-if="$colorMode.value === 'light'"
+                src="/images/logos/azure.png"
+                width="25"
+                height="25"
+              />
+              <img
+                v-if="$colorMode.value === 'dark'"
+                src="/images/logos/azure-white.png"
+                width="25"
+                height="25"
+              />
               <span>Azure</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
@@ -107,8 +125,15 @@
             </a>
             <a href="https://www.bridgestone.eu" target="_blank">
               <img
+                v-if="$colorMode.value === 'light'"
                 class="logo mb-2"
                 src="/images/logos/Bridgestone.png"
+                alt="Logo Bridgestone"
+              />
+              <img
+                v-if="$colorMode.value === 'dark'"
+                class="logo mb-2"
+                src="/images/logos/Bridgestone-white.png"
                 alt="Logo Bridgestone"
               />
             </a>
@@ -128,7 +153,18 @@
           <h4>Mainly used skills</h4>
           <div class="flex flex-row flex-wrap">
             <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img src="/images/logos/dynamics.png" width="25" height="25" />
+              <img
+                v-if="$colorMode.value === 'light'"
+                src="/images/logos/dynamics.png"
+                width="25"
+                height="25"
+              />
+              <img
+                v-if="$colorMode.value === 'dark'"
+                src="/images/logos/dynamics-white.png"
+                width="25"
+                height="25"
+              />
               <span>Dynamics 365 CRM</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
@@ -210,8 +246,15 @@
         <div class="flex flex-col">
           <a href="https://www.pxl.be/toegepaste-informatica" target="_blank">
             <img
+              v-if="$colorMode.value === 'light'"
               class="logo mb-2"
               src="/images/logos/PXL_IT.png"
+              alt="Logo PXL-IT"
+            />
+            <img
+              v-if="$colorMode.value === 'dark'"
+              class="logo mb-2"
+              src="/images/logos/PXL_IT-white.png"
               alt="Logo PXL-IT"
             />
           </a>
