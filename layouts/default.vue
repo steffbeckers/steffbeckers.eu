@@ -204,10 +204,10 @@ export default {
 
   position: fixed;
   width: 100%;
+  height: 100%;
   top: 77px;
-  height: calc(100vh - 77px);
   z-index: 50;
-  padding-bottom: 40px;
+  padding-bottom: 120px;
 
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
