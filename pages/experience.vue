@@ -9,8 +9,15 @@
         <div class="flex flex-col">
           <a href="https://www.aarixa.be" target="_blank">
             <img
+              v-if="$colorMode.value === 'light'"
               class="logo mb-2"
               src="/images/logos/aariXa.png"
+              alt="Logo aariXa"
+            />
+            <img
+              v-if="$colorMode.value === 'dark'"
+              class="logo mb-2"
+              src="/images/logos/aariXa-white.png"
               alt="Logo aariXa"
             />
           </a>
@@ -40,20 +47,8 @@
           <h4>Mainly used skills</h4>
           <div class="flex flex-row flex-wrap">
             <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="https://icongr.am/devicon/angularjs-plain.svg?size=25"
-                width="25"
-                height="25"
-              />
-              <span>Angular</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="https://icongr.am/devicon/typescript-original.svg?size=25"
-                width="25"
-                height="25"
-              />
-              <span>TypeScript</span>
+              <img src="/images/logos/net-core.png" width="25" height="25" />
+              <span>.NET</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
               <img
@@ -64,7 +59,16 @@
               <span>C#</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <span>.NET Core</span>
+              <img src="/images/logos/angular.png" width="25" height="25" />
+              <span>Angular</span>
+            </div>
+            <div class="mr-4 mb-2 flex flex-row space-x-2">
+              <img
+                src="https://icongr.am/devicon/typescript-original.svg?size=25"
+                width="25"
+                height="25"
+              />
+              <span>TypeScript</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
               <img src="/images/logos/mssql.png" width="25" height="25" />
@@ -83,12 +87,23 @@
               <span>Azure</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
+              <img
+                src="https://icongr.am/devicon/windows8-original.svg?size=25"
+                width="25"
+                height="25"
+              />
               <span>Windows Server</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
+              <img src="/images/logos/ubuntu.png" width="25" height="25" />
               <span>Ubuntu Server</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
+              <img
+                src="/images/logos/azure-devops.png"
+                width="25"
+                height="25"
+              />
               <span>Azure DevOps</span>
             </div>
           </div>
@@ -107,8 +122,15 @@
             </a>
             <a href="https://www.bridgestone.eu" target="_blank">
               <img
+                v-if="$colorMode.value === 'light'"
                 class="logo mb-2"
                 src="/images/logos/Bridgestone.png"
+                alt="Logo Bridgestone"
+              />
+              <img
+                v-if="$colorMode.value === 'dark'"
+                class="logo mb-2"
+                src="/images/logos/Bridgestone-white.png"
                 alt="Logo Bridgestone"
               />
             </a>
@@ -210,8 +232,15 @@
         <div class="flex flex-col">
           <a href="https://www.pxl.be/toegepaste-informatica" target="_blank">
             <img
+              v-if="$colorMode.value === 'light'"
               class="logo mb-2"
               src="/images/logos/PXL_IT.png"
+              alt="Logo PXL-IT"
+            />
+            <img
+              v-if="$colorMode.value === 'dark'"
+              class="logo mb-2"
+              src="/images/logos/PXL_IT-white.png"
               alt="Logo PXL-IT"
             />
           </a>

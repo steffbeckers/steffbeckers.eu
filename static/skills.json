@@ -1,20 +1,17 @@
 [
   {
     "name": ".NET",
-    "description": "",
-    "devicon": "dot-net-original"
+    "icon": "net-core.png"
   },
   {
     "name": "C#",
-    "description": "",
     "devicon": "csharp-original",
     "keywords": ".net"
   },
   {
     "name": "Angular",
-    "description": "",
     "keywords": "ng",
-    "devicon": "angularjs-plain"
+    "icon": "angular.png"
   },
   {
     "name": "NgRx",
@@ -23,27 +20,22 @@
   },
   {
     "name": "JavaScript",
-    "description": "",
     "devicon": "javascript-original"
   },
   {
     "name": "HTML5",
-    "description": "",
     "devicon": "html5-original"
   },
   {
     "name": "TypeScript",
-    "description": "",
     "devicon": "typescript-original"
   },
   {
     "name": "CSS3",
-    "description": "",
     "devicon": "css3-original"
   },
   {
     "name": "Vue",
-    "description": "",
     "devicon": "vuejs-original"
   },
   {
@@ -53,82 +45,86 @@
   },
   {
     "name": "SQL Server",
-    "description": "",
     "icon": "mssql.png"
   },
-  { "name": "PWA", "description": "", "icon": "pwa.png" },
-  { "name": "JWT", "description": "", "icon": "jwt.png" },
-  { "name": "SignalR", "description": "Realtime" },
-  { "name": "REST API", "description": "", "icon": "api.png" },
-  { "name": "Docker", "description": "", "devicon": "docker-original" },
+  { "name": "PWA", "icon": "pwa.png" },
+  { "name": "JWT", "icon": "jwt.png" },
+  { "name": "SignalR", "description": "Realtime", "icon": "signalr.png" },
+  { "name": "REST API", "icon": "api.png" },
+  { "name": "Docker", "devicon": "docker-original" },
   {
     "name": "Kubernetes",
-    "description": "",
     "keywords": "k8s",
     "icon": "k8s.png"
   },
-  { "name": "MicroK8s", "description": "" },
-  { "name": "SSH", "description": "", "devicon": "ssh-original-wordmark" },
-  { "name": "GCP", "description": "", "devicon": "google-original" },
-  { "name": "Ubuntu", "description": "", "devicon": "ubuntu-plain" },
-  { "name": "Nginx", "description": "", "devicon": "nginx-original" },
-  { "name": "GraphQL", "description": "", "icon": "graphql.png" },
-  { "name": "Node.js", "description": "", "devicon": "nodejs-original" },
-  { "name": "Microservices", "description": "" },
-  { "name": "Azure", "description": "", "icon": "azure.png" },
+  { "name": "MicroK8s", "icon": "microk8s.png" },
+  { "name": "SSH", "devicon": "ssh-original-wordmark" },
+  { "name": "GCP", "devicon": "google-original" },
+  { "name": "Ubuntu", "icon": "ubuntu.png" },
+  { "name": "Nginx", "devicon": "nginx-original" },
+  { "name": "GraphQL", "icon": "graphql.png" },
+  { "name": "Node.js", "devicon": "nodejs-original" },
+  {
+    "name": "Microservices",
+    "icon": "microservices.png",
+    "darkicon": "microservices-white.png"
+  },
+  {
+    "name": "Azure",
+    "icon": "azure.png"
+  },
   {
     "name": "(Azure) Active Directory",
-    "description": "",
     "icon": "azure-active-directory.png"
   },
-  { "name": "Azure DevOps", "description": "" },
+  { "name": "Azure DevOps", "icon": "azure-devops.png" },
   {
     "name": "Windows Server",
-    "description": "",
     "devicon": "windows8-original"
   },
-  { "name": "IIS", "description": "", "icon": "microsoft.png" },
-  { "name": "SQL", "description": "" },
-  { "name": "Windows", "description": "", "devicon": "windows8-original" },
-  { "name": "Web Hosting", "description": "" },
-  { "name": "Python", "description": "", "devicon": "python-original" },
-  { "name": "Powershell", "description": "" },
-  { "name": "Design Patterns", "description": "" },
-  { "name": "Git", "description": "", "devicon": "git-original" },
-  { "name": "Tailwind CSS", "description": "" },
-  { "name": "Bootstrap", "description": "", "devicon": "bootstrap-plain" },
-  { "name": "Grafana", "description": "", "icon": "grafana.png" },
-  { "name": "AWS", "description": "", "devicon": "amazonwebservices-original" },
-  { "name": "CI/CD", "description": "" },
-  { "name": "Jenkins", "description": "" },
-  { "name": "Firebase", "description": "" },
-  { "name": "Dynamics 365 CRM", "description": "", "icon": "dynamics.png" },
-  { "name": "Nagios Core", "description": "" },
-  { "name": "GitHub", "description": "" },
-  { "name": "GitLab", "description": "", "devicon": "gitlab-original" },
-  { "name": "HTTPD Apache2", "description": "", "devicon": "apache-original" },
-  { "name": "DNS", "description": "" },
-  { "name": "MongoDB", "description": "", "devicon": "mongodb-original" },
-  { "name": "MySQL", "description": "", "devicon": "mysql-original" },
-  { "name": "Ghost", "description": "" },
-  { "name": "Google Analytics", "description": "" },
-  { "name": "RabbitMQ", "description": "" },
-  { "name": "Apache Kafka", "description": "" },
-  { "name": "Strapi", "description": "" },
+  { "name": "IIS", "icon": "microsoft.png" },
+  { "name": "SQL", "icon": "mssql.png" },
+  { "name": "Windows", "devicon": "windows8-original" },
+  { "name": "Python", "devicon": "python-original" },
+  { "name": "Powershell", "icon": "powershell.png" },
+  { "name": "Git", "devicon": "git-original" },
+  { "name": "Tailwind CSS", "icon": "tailwindcss.png" },
+  { "name": "Bootstrap", "icon": "bootstrap.png" },
+  { "name": "Grafana", "icon": "grafana.png" },
+  { "name": "AWS", "devicon": "amazonwebservices-original" },
+  { "name": "Jenkins", "icon": "jenkins.png" },
+  { "name": "Firebase", "icon": "firebase.png" },
+  {
+    "name": "Dynamics 365 CRM",
+    "icon": "dynamics.png"
+  },
+  { "name": "Nagios Core", "icon": "nagios-core.png" },
+  { "name": "GitHub", "icon": "github.png" },
+  { "name": "GitLab", "devicon": "gitlab-original" },
+  { "name": "HTTPD Apache2", "devicon": "apache-original" },
+  { "name": "MongoDB", "devicon": "mongodb-original" },
+  { "name": "MySQL", "devicon": "mysql-original" },
+  { "name": "Ghost", "icon": "ghost.png" },
+  { "name": "Google Analytics", "icon": "google-analytics.svg" },
+  { "name": "RabbitMQ", "icon": "rabbitmq.png" },
+  { "name": "Apache Kafka", "icon": "apache-kafka.png" },
+  { "name": "Strapi", "icon": "strapi.svg" },
   {
     "name": "jQuery",
-    "description": "",
     "devicon": "jquery-original-wordmark"
   },
-  { "name": "WordPress", "description": "", "devicon": "wordpress-original" },
-  { "name": "Adobe Photoshop", "description": "", "devicon": "photoshop-line" },
-  { "name": "Adobe Indesign", "description": "" },
+  { "name": "WordPress", "devicon": "wordpress-original" },
+  { "name": "Adobe Photoshop", "icon": "photoshop.svg" },
+  { "name": "Adobe Indesign", "icon": "indesign.svg" },
   {
     "name": "Adobe Illustrator",
-    "description": "",
-    "devicon": "illustrator-line"
+    "icon": "illustrator.svg"
   },
-  { "name": "Ionic", "description": "", "devicon": "ionic-original" },
-  { "name": "AngularJS", "description": "", "devicon": "angularjs-original" },
-  { "name": "Bash", "description": "" }
+  { "name": "Ionic", "devicon": "ionic-original" },
+  { "name": "AngularJS", "devicon": "angularjs-original" },
+  {
+    "name": "Bash",
+    "icon": "bash.png",
+    "darkicon": "bash-white.png"
+  }
 ]

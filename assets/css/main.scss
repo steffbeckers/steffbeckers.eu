@@ -109,6 +109,10 @@ p {
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
+.dark hr {
+  border-top: 1px solid #1a2433;
+}
+
 .layout {
   header.header {
     background-color: var(--color-bg-primary);
