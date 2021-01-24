@@ -66,7 +66,13 @@
             height="25"
           />
           <img
-            v-if="skill.icon"
+            v-if="$colorMode.value === 'dark' && skill.darkicon"
+            :src="`/images/logos/${skill.darkicon}`"
+            width="25"
+            height="25"
+          />
+          <img
+            v-else-if="skill.icon"
             :src="`/images/logos/${skill.icon}`"
             width="25"
             height="25"

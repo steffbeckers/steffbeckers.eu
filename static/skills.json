@@ -75,7 +75,12 @@
   { "name": "GraphQL", "description": "", "icon": "graphql.png" },
   { "name": "Node.js", "description": "", "devicon": "nodejs-original" },
   { "name": "Microservices", "description": "" },
-  { "name": "Azure", "description": "", "icon": "azure.png" },
+  {
+    "name": "Azure",
+    "description": "",
+    "icon": "azure.png",
+    "darkicon": "azure-white.png"
+  },
   {
     "name": "(Azure) Active Directory",
     "description": "",
@@ -102,7 +107,12 @@
   { "name": "CI/CD", "description": "" },
   { "name": "Jenkins", "description": "" },
   { "name": "Firebase", "description": "" },
-  { "name": "Dynamics 365 CRM", "description": "", "icon": "dynamics.png" },
+  {
+    "name": "Dynamics 365 CRM",
+    "description": "",
+    "icon": "dynamics.png",
+    "darkicon": "dynamics-white.png"
+  },
   { "name": "Nagios Core", "description": "" },
   { "name": "GitHub", "description": "" },
   { "name": "GitLab", "description": "", "devicon": "gitlab-original" },
