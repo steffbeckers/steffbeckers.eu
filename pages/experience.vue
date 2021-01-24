@@ -179,6 +179,7 @@
     <div class="flex flex-col space-y-4">
       <div class="flex flex-col">
         <h1>Certification<span class="underscore">_</span></h1>
+        <h3>Verification of knowledge and skills</h3>
       </div>
       <div class="flex flex-col space-y-2">
         <div class="flex flex-col">
@@ -203,6 +204,7 @@
     <div class="flex flex-col space-y-4">
       <div class="flex flex-col">
         <h1>Education<span class="underscore">_</span></h1>
+        <h3>Hours of learning new technologies</h3>
       </div>
       <div class="flex flex-col space-y-2">
         <div class="flex flex-col">

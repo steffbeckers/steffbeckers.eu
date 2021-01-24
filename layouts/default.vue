@@ -12,23 +12,61 @@
         </section>
       </NuxtLink>
       <nav class="nav">
+        <!-- TODO: Remove duplicate code in mobile menu layout -->
         <NuxtLink class="nav__link root-link" to="/">Hi!</NuxtLink>
         <NuxtLink class="nav__link" to="/experience">Experience</NuxtLink>
         <NuxtLink class="nav__link" to="/projects">Projects</NuxtLink>
         <NuxtLink class="nav__link" to="/blog">Blog</NuxtLink>
         <NuxtLink class="nav__link" to="/contact">Contact</NuxtLink>
+        <div class="color-mode-switcher" @click="toggleColorMode()">
+          <svg
+            v-if="$colorMode.value === 'light'"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-sun"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg
+            v-if="$colorMode.value === 'dark'"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-moon"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </div>
       </nav>
-      <nav class="nav-mobile-toggle">
-        <span
-          class="menu mdi mdi-menu"
-          @click="showMobileNav = !showMobileNav"
-        ></span>
+      <nav @click="showMobileNav = !showMobileNav" class="nav-mobile-toggle">
+        <span class="menu mdi mdi-menu"></span>
       </nav>
     </header>
     <transition name="fade">
       <nav
         v-if="showMobileNav"
-        class="nav-mobile"
+        class="nav-mobile no-selection"
         @click="showMobileNav = false"
       >
         <NuxtLink class="nav__link root-link" to="/">Hi!</NuxtLink>
@@ -36,6 +74,46 @@
         <NuxtLink class="nav__link" to="/projects">Projects</NuxtLink>
         <NuxtLink class="nav__link" to="/blog">Blog</NuxtLink>
         <NuxtLink class="nav__link" to="/contact">Contact</NuxtLink>
+        <div class="color-mode-switcher" @click="toggleColorMode()">
+          <svg
+            v-if="$colorMode.value === 'light'"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-sun"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg
+            v-if="$colorMode.value === 'dark'"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-moon"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </div>
       </nav>
     </transition>
     <main class="main">
@@ -57,6 +135,12 @@ export default {
     return {
       showMobileNav: false,
     }
+  },
+  methods: {
+    toggleColorMode() {
+      this.$colorMode.preference =
+        this.$colorMode.value === 'light' ? 'dark' : 'light'
+    },
   },
 }
 </script>
@@ -80,11 +164,11 @@ export default {
   position: sticky;
   top: 0;
   z-index: 2;
+}
 
-  background: #ffffff;
-  // background: rgba($color: #ffffff, $alpha: 0.8);
-  // -webkit-backdrop-filter: blur(4px);
-  // backdrop-filter: blur(4px);
+.color-mode-switcher {
+  margin-left: 20px;
+  cursor: pointer;
 }
 
 .logo__text {
@@ -116,22 +200,33 @@ export default {
 .nav-mobile {
   display: none;
   flex-direction: column;
+  justify-content: flex-end;
 
   position: fixed;
   width: 100%;
   top: 77px;
+  height: calc(100vh - 77px);
   z-index: 50;
+  padding-bottom: 40px;
 
-  background: rgba($color: #ffffff, $alpha: 0.8);
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
+  text-shadow: 2px 2px 4px #ffffff;
+}
+.dark .nav-mobile {
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .nav-mobile-toggle {
-  display: none;
   font-size: 28px;
-  padding: 20px;
-  padding-right: 0px;
+
+  height: 80px;
+  width: 68px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
   cursor: pointer;
 }
 
@@ -139,7 +234,6 @@ export default {
   font-size: 1.1rem;
 
   margin-left: 20px;
-  color: #000000;
   cursor: pointer;
 
   text-decoration: none;
@@ -150,10 +244,6 @@ export default {
   transition: all 0.3s ease;
 }
 
-.nav__link:hover {
-  color: #7dc363;
-}
-
 .nav__link::after {
   content: '_';
   opacity: 0;
@@ -161,11 +251,6 @@ export default {
 
 .nav__link:hover::after {
   opacity: 1;
-}
-
-.nav__link.nuxt-link-exact-active,
-.nav__link.nuxt-link-active:not(.root-link) {
-  color: #53bceb;
 }
 
 .main {
@@ -185,7 +270,22 @@ export default {
   padding: 10px 20px;
 }
 
-@media only screen and (max-width: 667px) {
+@media only screen and (max-width: 710px) {
+  header.header {
+    padding-right: 0px;
+  }
+
+  .color-mode-switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 56px;
+
+    margin-left: 0px;
+  }
+
   .nav {
     display: none;
   }

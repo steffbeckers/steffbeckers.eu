@@ -1,40 +1,63 @@
+.light {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #edf2f7;
+  --color-text-primary: #2d3748;
+  --color-text-secondary: #4a5568;
+  --color-accent: #53bceb;
+  --color-accent2: #7dc363;
+}
+
+.dark {
+  --color-bg-primary: #2d3748;
+  --color-bg-secondary: #283141;
+  --color-text-primary: #f7fafc;
+  --color-text-secondary: #cad2db;
+  --color-accent: #53bceb;
+  --color-accent2: #7dc363;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   font-family: 'Lato', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-primary);
   overflow-y: scroll;
 }
 
 h1 {
+  color: var(--color-text-primary);
   font-size: 2rem;
   font-weight: bold;
 }
 
 h2 {
+  color: var(--color-text-primary);
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 h3 {
-  color: #53bceb;
+  color: var(--color-accent);
   font-family: monospace;
   font-size: 1.2rem;
   font-weight: bold;
 
   a {
-    color: #53bceb;
+    color: var(--color-accent);
   }
 }
 
 h4 {
+  color: var(--color-text-primary);
   font-size: 1rem;
   font-weight: bold;
 }
 
 a {
-  color: #000000;
+  color: var(--color-text-primary);
   text-decoration: none;
 
   -webkit-transition: all 0.3s ease;
@@ -42,7 +65,11 @@ a {
   transition: all 0.3s ease;
 }
 a:hover {
-  color: #7dc363;
+  color: var(--color-accent2);
+}
+
+p {
+  color: var(--color-text-secondary);
 }
 
 // TODO: font-bold
@@ -51,22 +78,67 @@ a:hover {
 }
 
 .underscore {
-  color: #53bceb;
+  color: var(--color-accent);
 }
 
 .text-gradient {
-  background: -webkit-linear-gradient(0deg, #53bceb, #7dc363);
+  background: -webkit-linear-gradient(
+    0deg,
+    var(--color-accent),
+    var(--color-accent2)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 ::selection {
-  color: #ffffff;
-  background: #7dc363; /* WebKit/Blink Browsers */
+  color: var(--color-text-primary);
+  background: var(--color-accent2); /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  color: #ffffff;
-  background: #7dc363; /* Gecko Browsers */
+  color: var(--color-text-primary);
+  background: var(--color-accent2); /* Gecko Browsers */
+}
+
+.no-selection {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.layout {
+  header.header {
+    background-color: var(--color-bg-primary);
+  }
+
+  .color-mode-switcher:hover {
+    svg {
+      stroke: var(--color-accent2);
+    }
+  }
+
+  .nav-mobile-toggle {
+    color: var(--color-text-primary);
+  }
+  .nav-mobile-toggle:hover {
+    color: var(--color-accent2);
+  }
+
+  .nav-mobile {
+    background-color: var(--color-bg-primary);
+    background-color: rgba($color: var(--color-bg-primary), $alpha: 0.8);
+  }
+
+  .nav__link:hover {
+    color: var(--color-accent2);
+  }
+  .nav__link.nuxt-link-exact-active,
+  .nav__link.nuxt-link-active:not(.root-link) {
+    color: var(--color-accent);
+  }
 }
 
 .btn {
@@ -74,7 +146,7 @@ a:hover {
   min-width: 150px;
   padding: 10px;
 
-  background-color: #53bceb;
+  background-color: var(--color-accent);
   border: none;
 
   color: #ffffff;
@@ -91,14 +163,8 @@ a:hover {
   -webkit-box-shadow: 10px 10px 20px rgba(37, 37, 37, 0.2);
   box-shadow: 10px 10px 20px rgba(37, 37, 37, 0.2);
   // background: -webkit-linear-gradient(0deg, #53bceb, #7dc363);
-  background-color: #7dc363;
   color: #ffffff;
-}
-
-.btn--grey,
-.btn--gray {
-  color: #111111;
-  background-color: #efefef;
+  background-color: var(--color-accent2);
 }
 
 input[type='text'] {
@@ -108,6 +174,7 @@ input[type='text'] {
 
   padding: 5px 10px;
 
+  color: #000000;
   font-family: 'Lato', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 1.1em;
 }

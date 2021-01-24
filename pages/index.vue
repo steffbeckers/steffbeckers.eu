@@ -73,6 +73,13 @@
           />
           <span :title="skill.description">{{ skill.name }}</span>
         </div>
+        <p v-if="filteredSkills && filteredSkills.length === 0">
+          No skills or technologies found with '{{ searchSkill }}' as search
+          term.
+          <span class="cursor-pointer" @click="searchSkill = ''"
+            >Clear search</span
+          >
+        </p>
       </div>
     </div>
   </div>

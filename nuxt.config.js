@@ -84,6 +84,9 @@ export default {
   },
   // Color mode
   colorMode: {
+    preference: 'system',
+    fallback: 'light',
     classSuffix: '',
+    storageKey: 'color-mode',
   },
 }
