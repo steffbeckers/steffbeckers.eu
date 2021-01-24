@@ -35,6 +35,7 @@
         <img
           class="rounded-full shadow-md"
           src="/images/Steff.jpg"
+          alt="Steff"
           width="150"
           height="150"
         />
@@ -62,18 +63,21 @@
           <img
             v-if="skill.devicon"
             :src="'https://icongr.am/devicon/' + skill.devicon + '.svg?size=25'"
+            alt="Skill icon"
             width="25"
             height="25"
           />
           <img
             v-if="$colorMode.value === 'dark' && skill.darkicon"
             :src="`/images/logos/${skill.darkicon}`"
+            alt="Skill icon"
             width="25"
             height="25"
           />
           <img
             v-else-if="skill.icon"
             :src="`/images/logos/${skill.icon}`"
+            alt="Skill icon"
             width="25"
             height="25"
           />
