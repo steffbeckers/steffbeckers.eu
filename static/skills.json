@@ -1,7 +1,7 @@
 [
   {
     "name": ".NET",
-    "devicon": "dot-net-original"
+    "icon": "net-core.png"
   },
   {
     "name": "C#",
@@ -71,14 +71,13 @@
   },
   {
     "name": "Azure",
-    "icon": "azure.png",
-    "darkicon": "azure-white.png"
+    "icon": "azure.png"
   },
   {
     "name": "(Azure) Active Directory",
     "icon": "azure-active-directory.png"
   },
-  { "name": "Azure DevOps", "icon": "azuredevops.png" },
+  { "name": "Azure DevOps", "icon": "azure-devops.png" },
   {
     "name": "Windows Server",
     "devicon": "windows8-original"
@@ -97,8 +96,7 @@
   { "name": "Firebase", "icon": "firebase.png" },
   {
     "name": "Dynamics 365 CRM",
-    "icon": "dynamics.png",
-    "darkicon": "dynamics-white.png"
+    "icon": "dynamics.png"
   },
   { "name": "Nagios Core", "icon": "nagios-core.png" },
   { "name": "GitHub", "icon": "github.png" },

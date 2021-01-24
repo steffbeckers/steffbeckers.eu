@@ -47,16 +47,8 @@
           <h4>Mainly used skills</h4>
           <div class="flex flex-row flex-wrap">
             <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img src="/images/logos/angular.png" width="25" height="25" />
-              <span>Angular</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="https://icongr.am/devicon/typescript-original.svg?size=25"
-                width="25"
-                height="25"
-              />
-              <span>TypeScript</span>
+              <img src="/images/logos/net-core.png" width="25" height="25" />
+              <span>.NET</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
               <img
@@ -67,7 +59,16 @@
               <span>C#</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <span>.NET Core</span>
+              <img src="/images/logos/angular.png" width="25" height="25" />
+              <span>Angular</span>
+            </div>
+            <div class="mr-4 mb-2 flex flex-row space-x-2">
+              <img
+                src="https://icongr.am/devicon/typescript-original.svg?size=25"
+                width="25"
+                height="25"
+              />
+              <span>TypeScript</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
               <img src="/images/logos/mssql.png" width="25" height="25" />
@@ -82,27 +83,27 @@
               <span>Docker</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                v-if="$colorMode.value === 'light'"
-                src="/images/logos/azure.png"
-                width="25"
-                height="25"
-              />
-              <img
-                v-if="$colorMode.value === 'dark'"
-                src="/images/logos/azure-white.png"
-                width="25"
-                height="25"
-              />
+              <img src="/images/logos/azure.png" width="25" height="25" />
               <span>Azure</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
+              <img
+                src="https://icongr.am/devicon/windows8-original.svg?size=25"
+                width="25"
+                height="25"
+              />
               <span>Windows Server</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
+              <img src="/images/logos/ubuntu.png" width="25" height="25" />
               <span>Ubuntu Server</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
+              <img
+                src="/images/logos/azure-devops.png"
+                width="25"
+                height="25"
+              />
               <span>Azure DevOps</span>
             </div>
           </div>
@@ -149,18 +150,7 @@
           <h4>Mainly used skills</h4>
           <div class="flex flex-row flex-wrap">
             <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                v-if="$colorMode.value === 'light'"
-                src="/images/logos/dynamics.png"
-                width="25"
-                height="25"
-              />
-              <img
-                v-if="$colorMode.value === 'dark'"
-                src="/images/logos/dynamics-white.png"
-                width="25"
-                height="25"
-              />
+              <img src="/images/logos/dynamics.png" width="25" height="25" />
               <span>Dynamics 365 CRM</span>
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
