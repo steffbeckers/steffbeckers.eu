@@ -1,0 +1,5 @@
+# Netlify
+# docs: https://www.netlify.com/docs/headers-and-basic-auth/#multi-key-header-rules
+/_nuxt/*
+  Cache-Control: max-age=365000000
+  Cache-Control: immutable
