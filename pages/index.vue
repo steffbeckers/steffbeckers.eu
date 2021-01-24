@@ -53,11 +53,11 @@
           <input v-model="searchSkill" type="text" placeholder="Search" />
         </div>
       </div>
-      <div class="flex flex-row flex-wrap">
+      <div class="flex flex-row flex-wrap justify-between -ml-2 -mr-2">
         <div
           v-for="skill in filteredSkills"
           :key="skill.name"
-          class="mr-4 mb-2 flex flex-row space-x-2"
+          class="ml-2 mr-2 mb-2 flex flex-row space-x-2"
         >
           <img
             v-if="skill.devicon"
