@@ -89,4 +89,14 @@ export default {
     classSuffix: '',
     storageKey: 'color-mode',
   },
+  // PWA
+  pwa: {
+    meta: {
+      theme_color: '#53bceb',
+    },
+    manifest: {
+      name: 'Steff Beckers',
+      short_name: 'Steff Beckers',
+    },
+  },
 }
