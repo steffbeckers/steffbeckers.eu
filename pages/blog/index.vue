@@ -14,7 +14,11 @@
         ></a> -->
       </div>
     </div>
-    <div v-for="post in posts" :key="post.slug" class="flex flex-col">
+    <div
+      v-for="(post, index) in posts"
+      :key="post.slug"
+      class="flex flex-col space-y-4"
+    >
       <NuxtLink :to="post.path">
         <div class="flex flex-col space-y-2">
           <div class="flex flex-col">
@@ -33,6 +37,7 @@
           <p v-if="post.short_description">{{ post.short_description }}</p>
         </div>
       </NuxtLink>
+      <hr v-if="posts.length - 1 !== index" />
     </div>
   </div>
 </template>
