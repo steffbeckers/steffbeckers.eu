@@ -1,6 +1,5 @@
 ---
 title: Chocolatey, the package manager for Windows
-subtitle: Productive chocolatey packages for developers.
 short_description: Chocolatey has the largest online registry of Windows packages. Chocolatey packages encapsulate everything required to manage a particular piece of software into one deployment artifact by wrapping installers, executables, zips, and/or scripts into a compiled package file.
 keywords: Chocolatey, DEV, Commands, PowerShell, Windows, Packages, Installers, Steff, Beckers, Blog
 date: '2021-01-11'
@@ -10,20 +9,29 @@ published: true
 
 Chocolatey has the largest online registry of Windows packages. Chocolatey packages encapsulate everything required to manage a particular piece of software into one deployment artifact by wrapping installers, executables, zips, and/or scripts into a compiled package file.
 
-## Links
+## Installation
 
 https://chocolatey.org/install
 
-https://chocolatey.org/packages
+## Useful commands
 
-## Commands
+Check for outdated installed packages:
 
 ```powershell
 choco outdated
+```
+
+Upgrade all installed packages at once:
+
+```powershell
 choco upgrade all -y
 ```
 
-## Apps
+## Packages
+
+https://chocolatey.org/packages
+
+Steff's Chocolatey DEV-list:
 
 ```powershell
 choco install 7zip.install -y
