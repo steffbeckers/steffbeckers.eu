@@ -34,7 +34,7 @@
       <div class="flex flex-shrink-0 items-start sm:mb-4">
         <img
           class="rounded-full shadow-md"
-          src="/images/Steff.jpg"
+          src="~/assets/images/Steff.jpg"
           alt="Steff"
           width="150"
           height="150"
@@ -69,14 +69,14 @@
           />
           <img
             v-if="$colorMode.value === 'dark' && skill.darkicon"
-            :src="`/images/logos/${skill.darkicon}`"
+            :src="require(`@/assets/images/logos/${skill.darkicon}`)"
             alt="Skill icon"
             width="25"
             height="25"
           />
           <img
             v-else-if="skill.icon"
-            :src="`/images/logos/${skill.icon}`"
+            :src="require(`@/assets/images/logos/${skill.icon}`)"
             alt="Skill icon"
             width="25"
             height="25"

@@ -11,13 +11,13 @@
             <img
               v-if="$colorMode.value === 'light'"
               class="logo mb-2"
-              src="/images/logos/aariXa.png"
+              src="~/assets/images/logos/aariXa.png"
               alt="Logo aariXa"
             />
             <img
               v-if="$colorMode.value === 'dark'"
               class="logo mb-2"
-              src="/images/logos/aariXa-white.png"
+              src="~/assets/images/logos/aariXa-white.png"
               alt="Logo aariXa"
             />
           </a>
@@ -48,7 +48,7 @@
           <div class="flex flex-row flex-wrap">
             <div class="mr-4 mb-2 flex flex-row space-x-2">
               <img
-                src="/images/logos/net-core.png"
+                src="~/assets/images/logos/net-core.png"
                 alt="Skill icon"
                 width="25"
                 height="25"
@@ -66,7 +66,7 @@
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
               <img
-                src="/images/logos/angular.png"
+                src="~/assets/images/logos/angular.png"
                 alt="Skill icon"
                 width="25"
                 height="25"
@@ -84,7 +84,7 @@
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
               <img
-                src="/images/logos/mssql.png"
+                src="~/assets/images/logos/mssql.png"
                 alt="Skill icon"
                 width="25"
                 height="25"
@@ -102,7 +102,7 @@
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
               <img
-                src="/images/logos/azure.png"
+                src="~/assets/images/logos/azure.png"
                 alt="Skill icon"
                 width="25"
                 height="25"
@@ -120,7 +120,7 @@
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
               <img
-                src="/images/logos/ubuntu.png"
+                src="~/assets/images/logos/ubuntu.png"
                 alt="Skill icon"
                 width="25"
                 height="25"
@@ -129,7 +129,7 @@
             </div>
             <div class="mr-4 mb-2 flex flex-row space-x-2">
               <img
-                src="/images/logos/azure-devops.png"
+                src="~/assets/images/logos/azure-devops.png"
                 alt="Skill icon"
                 width="25"
                 height="25"
@@ -146,7 +146,7 @@
             <a href="https://be.ctg.com" target="_blank">
               <img
                 class="logo mb-2"
-                src="/images/logos/CTG.gif"
+                src="~/assets/images/logos/CTG.gif"
                 alt="Logo CTG"
               />
             </a>
@@ -154,13 +154,13 @@
               <img
                 v-if="$colorMode.value === 'light'"
                 class="logo mb-2"
-                src="/images/logos/Bridgestone.png"
+                src="~/assets/images/logos/Bridgestone.png"
                 alt="Logo Bridgestone"
               />
               <img
                 v-if="$colorMode.value === 'dark'"
                 class="logo mb-2"
-                src="/images/logos/Bridgestone-white.png"
+                src="~/assets/images/logos/Bridgestone-white.png"
                 alt="Logo Bridgestone"
               />
             </a>
@@ -181,7 +181,7 @@
           <div class="flex flex-row flex-wrap">
             <div class="mr-4 mb-2 flex flex-row space-x-2">
               <img
-                src="/images/logos/dynamics.png"
+                src="~/assets/images/logos/dynamics.png"
                 alt="Skill icon"
                 width="25"
                 height="25"
@@ -274,13 +274,13 @@
             <img
               v-if="$colorMode.value === 'light'"
               class="logo mb-2"
-              src="/images/logos/PXL_IT.png"
+              src="~/assets/images/logos/PXL_IT.png"
               alt="Logo PXL-IT"
             />
             <img
               v-if="$colorMode.value === 'dark'"
               class="logo mb-2"
-              src="/images/logos/PXL_IT-white.png"
+              src="~/assets/images/logos/PXL_IT-white.png"
               alt="Logo PXL-IT"
             />
           </a>
