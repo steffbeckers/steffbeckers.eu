@@ -59,7 +59,7 @@
           </svg>
         </div>
       </nav>
-      <nav @click="showMobileNav = !showMobileNav" class="nav-mobile-toggle">
+      <nav class="nav-mobile-toggle" @click="showMobileNav = !showMobileNav">
         <span class="menu mdi mdi-menu"></span>
       </nav>
     </header>
