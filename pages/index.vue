@@ -50,7 +50,7 @@
           <h1>Skills &amp; technologies<span class="underscore">_</span></h1>
           <h3>I try to learn something new every single day</h3>
         </div>
-        <div class="flex">
+        <div class="w-1/5 flex flex-none">
           <input v-model="searchSkill" type="text" placeholder="Search" />
         </div>
       </div>
