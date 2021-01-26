@@ -65,6 +65,9 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    // https://sitemap.nuxtjs.org/guide/setup
+    // Notice: If you use other modules (eg. nuxt-i18n), always declare the sitemap module at end of array
+    '@nuxtjs/sitemap',
   ],
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
@@ -98,5 +101,9 @@ export default {
       name: 'Steff Beckers',
       short_name: 'Steff Beckers',
     },
+  },
+  // sitemap.xml
+  sitemap: {
+    hostname: 'https://steffbeckers.eu',
   },
 }

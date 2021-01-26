@@ -25,4 +25,4 @@ Open a PowerShell window as Administrator in the win-acme folder and run .\wacs.
 .\wacs.exe
 ```
 
-![win-acme Usage screenshot](/blog/win-acme/win-acme-usage.png)
+![win-acme Usage screenshot](/blog/win-acme/images/win-acme-usage.png)
