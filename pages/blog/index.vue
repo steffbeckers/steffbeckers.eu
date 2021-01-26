@@ -1,11 +1,13 @@
 <template>
-  <div class="flex flex-col space-y-4">
-    <div class="flex flex-row justify-between items-center space-x-4">
+  <div class="flex flex-col space-y-4 sm:space-y-0">
+    <div
+      class="flex flex-row sm:flex-col justify-between items-center sm:items-start space-x-4 sm:space-x-0 sm:space-y-4"
+    >
       <div class="flex flex-col">
         <h1>Blog<span class="underscore">_</span></h1>
         <h3>Tutorials, DEV-scripts and other useful notes</h3>
       </div>
-      <div class="w-1/5 flex flex-none">
+      <div class="w-48 sm:w-full flex flex-none">
         <input
           v-model="searchBlog"
           type="text"
@@ -14,8 +16,8 @@
         />
       </div>
     </div>
-    <div class="flex flex-row space-x-4">
-      <div class="flex flex-col space-y-4">
+    <div class="flex flex-row sm:flex-col space-x-4 sm:space-x-0 sm:space-y-4">
+      <div class="flex flex-col space-y-4 sm:mt-4">
         <p v-if="searchNotFound">
           No blog posts found with '{{ searchBlog }}' as search term.
           <span
@@ -58,7 +60,7 @@
           </NuxtLink>
         </div>
       </div>
-      <div class="w-1/5 flex flex-col flex-none space-y-2">
+      <div class="w-48 sm:w-full flex flex-col flex-none space-y-2">
         <h2>Tags</h2>
         <div class="flex flex-row flex-wrap">
           <div v-for="tag in tags" :key="tag" class="mr-4 mb-2 flex space-x-2">
