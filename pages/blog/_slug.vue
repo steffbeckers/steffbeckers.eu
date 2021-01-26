@@ -5,7 +5,10 @@
       <h3>
         <span>{{ post.date | formatDate }}</span>
         <span>
-          / <span v-for="tag in post.tags" :key="tag">#{{ tag }} </span>
+          /
+          <span v-for="tag in post.tags" :key="tag"
+            ><NuxtLink :to="`/blog/tags/${tag}`">#{{ tag }} </NuxtLink>
+          </span>
         </span>
         <span>
           / <DisqusCount tag="a" :url="post.path" :identifier="post.path" />
