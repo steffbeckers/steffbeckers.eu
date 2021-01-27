@@ -120,6 +120,12 @@ export default {
   // Loading bar on top
   loading: {
     color: '#7dc363',
+    failedColor: 'red',
     height: '2px',
+    throttle: 200,
+    duration: 5000,
+    continuous: false,
+    css: true,
+    rtl: false,
   },
 }
