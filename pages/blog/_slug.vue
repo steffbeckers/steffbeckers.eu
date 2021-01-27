@@ -41,7 +41,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.post.short_description,
+          content: this.post.description,
         },
         {
           name: 'keywords',

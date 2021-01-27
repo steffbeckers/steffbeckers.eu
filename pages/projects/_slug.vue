@@ -28,7 +28,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.project.short_description,
+          content: this.project.description,
         },
         {
           name: 'keywords',
