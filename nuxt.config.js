@@ -72,6 +72,8 @@ export default {
     // https://sitemap.nuxtjs.org/guide/setup
     // Notice: If you use other modules (eg. nuxt-i18n), always declare the sitemap module at end of array
     '@nuxtjs/sitemap',
+    // https://www.npmjs.com/package/nuxt-cookie-control
+    'nuxt-cookie-control',
   ],
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
@@ -161,5 +163,36 @@ export default {
     continuous: false,
     css: true,
     rtl: false,
+  },
+  // Cookies
+  // https://www.npmjs.com/package/nuxt-cookie-control
+  cookies: {
+    necessary: [
+      {
+        name: 'Default Cookies',
+        description: 'Used for cookie control.',
+        cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies'],
+      },
+    ],
+    optional: [
+      {
+        name: 'Google Analytics',
+        identifier: 'ga',
+        description:
+          'Google Analytics is a web analytics service offered by Google that tracks and reports website traffic.',
+        initialState: true,
+        //src: 'https://www.googletagmanager.com/gtag/js?id=<API-KEY>',
+        async: true,
+        cookies: ['_ga', '_gat', '_gid'],
+        // accepted: () => {
+        //   window.dataLayer = window.dataLayer || []
+        //   window.dataLayer.push({
+        //     'gtm.start': new Date().getTime(),
+        //     event: 'gtm.js',
+        //   })
+        // },
+        // declined: () => {},
+      },
+    ],
   },
 }

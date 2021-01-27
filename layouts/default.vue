@@ -126,6 +126,7 @@
         ></span
       >
     </footer>
+    <CookieControl />
   </div>
 </template>
 
