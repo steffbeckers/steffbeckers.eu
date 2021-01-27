@@ -41,8 +41,8 @@
               <span v-if="project.date">{{ project.date | formatDate }}</span>
             </h3>
           </div>
-          <p v-if="project.short_description">
-            {{ project.short_description }}
+          <p v-if="project.description">
+            {{ project.description }}
           </p>
         </div>
       </NuxtLink>

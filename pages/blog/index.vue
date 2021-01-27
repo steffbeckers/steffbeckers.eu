@@ -55,7 +55,7 @@
                   </span>
                 </h3>
               </div>
-              <p v-if="post.short_description">{{ post.short_description }}</p>
+              <p v-if="post.description">{{ post.description }}</p>
             </div>
           </NuxtLink>
         </div>

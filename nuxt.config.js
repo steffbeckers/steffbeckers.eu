@@ -73,6 +73,17 @@ export default {
   axios: {},
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {
+    apiPrefix: 'api',
+    // https://content.nuxtjs.org/configuration#fulltextsearchfields
+    fullTextSearchFields: [
+      'slug',
+      'title',
+      'subtitle',
+      'description',
+      'keywords',
+      'text',
+    ],
+    // https://content.nuxtjs.org/configuration#markdown
     markdown: {
       prism: {
         theme: 'prism-themes/themes/prism-vsc-dark-plus.css',
@@ -105,5 +116,10 @@ export default {
   // sitemap.xml
   sitemap: {
     hostname: 'https://steffbeckers.eu',
+  },
+  // Loading bar on top
+  loading: {
+    color: '#7dc363',
+    height: '2px',
   },
 }
