@@ -20,6 +20,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.1s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
 body {
   font-family: 'Lato', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: var(--color-text-secondary);
@@ -202,6 +211,10 @@ input[type='text'] {
   h2 {
     margin-top: 0.8rem;
     margin-bottom: 0.4rem;
+  }
+
+  h4 {
+    margin-top: 0.4rem;
   }
 
   // Code blocks
