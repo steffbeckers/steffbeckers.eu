@@ -114,8 +114,38 @@ export default {
     },
   },
   // sitemap.xml
+  // https://sitemap.nuxtjs.org/usage/sitemap
   sitemap: {
     hostname: 'https://steffbeckers.eu',
+    // https://www.sitemaps.org/protocol.html
+    routes: [
+      // Projects
+      {
+        url: '/projects',
+        lastmod: '2021-01-27T20:04:00.000Z',
+      },
+      {
+        url: '/projects/steffbeckers',
+        lastmod: '2021-01-27T20:04:00.000Z',
+      },
+      // Blog
+      {
+        url: '/blog',
+        lastmod: '2021-01-27T20:03:00.000Z',
+      },
+      {
+        url: '/blog/certbot',
+        lastmod: '2021-01-27T20:03:00.000Z',
+      },
+      {
+        url: '/blog/chocolatey',
+        lastmod: '2021-01-27T20:01:00.000Z',
+      },
+      {
+        url: '/blog/win-acme',
+        lastmod: '2021-01-27T20:00:00.000Z',
+      },
+    ],
   },
   // Loading bar on top
   loading: {
