@@ -1,13 +1,25 @@
 <template>
   <div class="flex flex-col space-y-4 sm:space-y-0">
     <div
-      class="flex flex-row sm:flex-col justify-between items-center sm:items-start space-x-4 sm:space-x-0 sm:space-y-4"
+      class="flex sm:flex-col items-center sm:items-start space-x-4 sm:space-x-0 sm:space-y-4"
     >
-      <div class="flex flex-col">
-        <h1>Blog<span class="underscore">_</span></h1>
-        <h3>Tutorials, DEV-scripts and other useful notes</h3>
+      <div
+        class="flex flex-grow sm:w-full justify-between items-center space-x-4"
+      >
+        <div class="flex flex-col">
+          <h1>Blog<span class="underscore">_</span></h1>
+          <h3>Tutorials, DEV-scripts and other useful notes</h3>
+        </div>
+        <div class="top-icons flex flex-row">
+          <a
+            class="mdi mdi-rss"
+            href="/blog.xml"
+            target="_blank"
+            title="RSS feed"
+          ></a>
+        </div>
       </div>
-      <div class="w-48 sm:w-full flex flex-none">
+      <div class="w-48 sm:w-full flex-none">
         <input
           v-model="searchBlog"
           type="text"
@@ -48,6 +60,10 @@
                         >#{{ tag }}
                       </NuxtLink>
                     </span>
+                  </span>
+                  <span>
+                    /
+                    {{ post.readingTime }}
                   </span>
                   <span>
                     /
