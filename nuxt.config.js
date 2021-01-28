@@ -72,6 +72,10 @@ export default {
     // https://sitemap.nuxtjs.org/guide/setup
     // Notice: If you use other modules (eg. nuxt-i18n), always declare the sitemap module at end of array
     '@nuxtjs/sitemap',
+    // https://github.com/nuxt-community/feed-module
+    // https://dev.to/lindakatcodes/building-an-rss-feed-in-nuxt-with-nuxt-content-2eh9
+    '@nuxtjs/feed',
+    '@nuxtjs/markdownit',
   ],
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
@@ -161,5 +165,57 @@ export default {
     continuous: false,
     css: true,
     rtl: false,
+  },
+  feed: [
+    {
+      path: '/blog.xml',
+      async create(feed) {
+        feed.options = {
+          title: 'Steff Beckers Blog',
+          description:
+            "Steff's blog posts, DEV-scripts and other useful notes.",
+          link: 'https://steffbeckers.eu/blog.xml',
+        }
+
+        // eslint-disable-next-line global-require
+        const { $content } = require('@nuxt/content')
+        const posts = await $content('blog').fetch()
+        posts.forEach((post) => {
+          const url = `https://steffbeckers.eu/blog/${post.slug}`
+          feed.addItem({
+            title: post.title,
+            id: url,
+            link: url,
+            description: post.description,
+            content: post.bodyText,
+          })
+        })
+
+        feed.addCategory('Development')
+        feed.addCategory('DevOps')
+
+        feed.addContributor({
+          name: 'Steff Beckers',
+          email: 'steff@steffbeckers.eu',
+          link: 'https://steffbeckers.eu',
+        })
+      },
+      cacheTime: 1000 * 60 * 15,
+      type: 'rss2',
+    },
+  ],
+  hooks: {
+    'content:file:beforeInsert': (document) => {
+      // eslint-disable-next-line
+      const md = require('markdown-it')()
+      if (document.extension === '.md') {
+        // eslint-disable-next-line global-require
+        const { text } = require('reading-time')(document.text)
+        document.readingTime = text
+
+        const mdToHtml = md.render(document.text)
+        document.bodyText = mdToHtml
+      }
+    },
   },
 }

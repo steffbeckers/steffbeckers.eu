@@ -38,6 +38,10 @@
               </span>
               <span>
                 /
+                {{ post.readingTime }}
+              </span>
+              <span>
+                /
                 <DisqusCount :identifier="post.path" />
               </span>
             </h3>
