@@ -82,7 +82,7 @@
           </div>
         </div>
         <div class="flex flex-1">
-          <form class="w-full" method="post" netlify>
+          <form class="w-full" name="Contact" method="post" netlify>
             <div class="flex flex-col space-y-2">
               <h2>Send me a message</h2>
               <div class="flex flex-row space-x-4">
