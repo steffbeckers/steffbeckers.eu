@@ -154,8 +154,7 @@ p {
   }
 }
 
-.btn {
-  display: inline-block;
+button {
   min-width: 150px;
   padding: 10px;
 
@@ -172,7 +171,7 @@ p {
   transition: all 0.3s ease;
 }
 
-.btn:hover {
+button:hover {
   -webkit-box-shadow: 10px 10px 20px rgba(37, 37, 37, 0.2);
   box-shadow: 10px 10px 20px rgba(37, 37, 37, 0.2);
   // background: -webkit-linear-gradient(0deg, #53bceb, #7dc363);
@@ -180,7 +179,8 @@ p {
   background-color: var(--color-accent2);
 }
 
-input[type='text'] {
+input[type='text'],
+textarea {
   border: 2px solid #000000;
   border-radius: none;
   outline: none;
