@@ -82,7 +82,13 @@
           </div>
         </div>
         <div class="flex flex-1">
-          <form class="w-full" name="Contact" method="POST" data-netlify="true">
+          <form
+            class="w-full"
+            name="Contact"
+            method="POST"
+            action="/contact?sent=true"
+            data-netlify="true"
+          >
             <input type="hidden" name="form-name" value="Contact" />
             <div class="flex flex-col space-y-2">
               <h2>Send me a message</h2>
