@@ -120,11 +120,24 @@
       <Nuxt />
     </main>
     <footer class="footer">
-      <span class="footer__copyright"
-        >&copy; {{ new Date().getFullYear() }} - Steff<span class="underscore"
-          >_</span
-        ></span
-      >
+      <div class="footer__items">
+        <div class="footer__copyright">
+          &copy; {{ new Date().getFullYear() }} -
+          <a href="https://github.com/steffbeckers" target="_blank"
+            >Steff Beckers</a
+          ><span class="underscore">_</span>
+        </div>
+        <div class="ml-2 mr-2">/</div>
+        <div class="footer__last-update">
+          <a
+            href="https://app.netlify.com/sites/steffbeckers/deploys"
+            target="_blank"
+          >
+            Last updated on {{ lastUpdatedOn | formatDateTime
+            }}<span class="underscore">_</span>
+          </a>
+        </div>
+      </div>
     </footer>
   </div>
 </template>
@@ -134,6 +147,7 @@ export default {
   data() {
     return {
       showMobileNav: false,
+      lastUpdatedOn: process.env.lastUpdatedOn,
     }
   },
   methods: {
@@ -147,11 +161,15 @@ export default {
 
 <style lang="scss">
 .layout {
+  display: flex;
+  flex-direction: column;
+
   max-width: 960px;
 }
 
 .header {
   display: flex;
+  flex-shrink: 0;
   justify-content: space-between;
   align-items: center;
 
@@ -259,15 +277,17 @@ export default {
 }
 
 .footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   font-size: 0.9em;
-  text-align: center;
 
-  margin-top: 10px;
-  padding: 10px 20px;
+  padding: 30px 20px 10px 20px;
+
+  .footer__items {
+    display: flex;
+    width: 100%;
+
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 710px) {

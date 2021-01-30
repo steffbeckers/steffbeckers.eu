@@ -14,7 +14,7 @@
         </h3>
       </div>
       <div
-        class="flex flex-row space-x-4 sm:flex-col sm:space-x-0 sm:space-y-4"
+        class="flex flex-row space-x-4 sm:flex-col sm:space-x-0 sm:space-y-6"
       >
         <div class="flex flex-col flex-1 space-y-4">
           <h2>Personal information</h2>
@@ -74,6 +74,11 @@
                 title="WhatsApp"
               ></a>
             </div>
+          </div>
+          <div class="flex flex-row">
+            <a href="/downloads/CV_SteffBeckers.pdf" target="_blank">
+              <button class="sm:w-full">Download CV</button>
+            </a>
           </div>
         </div>
         <div class="flex flex-1">

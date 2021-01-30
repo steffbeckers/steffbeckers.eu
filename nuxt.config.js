@@ -5,6 +5,9 @@ export default {
   generate: {
     fallback: true,
   },
+  env: {
+    lastUpdatedOn: new Date(),
+  },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'Steff Beckers',
