@@ -120,14 +120,13 @@
       <Nuxt />
     </main>
     <footer class="footer">
-      <div class="footer__items">
+      <div class="footer__items sm:flex-col">
         <div class="footer__copyright">
-          &copy; {{ new Date().getFullYear() }} -
-          <a href="https://github.com/steffbeckers" target="_blank"
-            >Steff Beckers</a
+          <a href="https://github.com/steffbeckers" target="_blank">
+            &copy; {{ new Date().getFullYear() }} - Steff Beckers</a
           ><span class="underscore">_</span>
         </div>
-        <div class="ml-2 mr-2">/</div>
+        <div class="sm:hidden ml-2 mr-2">/</div>
         <div class="footer__last-update">
           <a
             href="https://app.netlify.com/sites/steffbeckers/deploys"

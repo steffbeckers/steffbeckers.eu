@@ -14,7 +14,7 @@
         </h3>
       </div>
       <div
-        class="flex flex-row space-x-4 sm:flex-col sm:space-x-0 sm:space-y-6"
+        class="flex flex-row space-x-4 sm:flex-col sm:space-x-0 sm:space-y-4"
       >
         <div class="flex flex-col flex-1 space-y-4">
           <h2>Personal information</h2>
@@ -75,14 +75,15 @@
               ></a>
             </div>
           </div>
-          <div class="flex flex-row">
+          <div class="flex flex-row sm:flex-col">
             <a href="/downloads/CV_SteffBeckers.pdf" target="_blank">
               <button class="sm:w-full">Download CV</button>
             </a>
           </div>
         </div>
         <div class="flex flex-1">
-          <form class="w-full" name="contact" method="POST" data-netlify="true">
+          <form class="w-full" name="Contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="Contact" />
             <div class="flex flex-col space-y-2">
               <h2>Send me a message</h2>
               <div class="flex flex-row space-x-4">
