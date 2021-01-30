@@ -52,7 +52,7 @@
               <div class="flex flex-col">
                 <h2>{{ post.title }}</h2>
                 <h3>
-                  <span>{{ post.date | formatDate }}</span>
+                  <span>{{ post.date | formatDateTime }}</span>
                   <span>
                     /
                     <span v-for="tag in post.tags" :key="tag"

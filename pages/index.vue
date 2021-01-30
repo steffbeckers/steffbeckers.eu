@@ -25,10 +25,12 @@
           </p>
         </div>
         <div class="flex flex-row space-x-4 sm:flex-col sm:space-x-0">
-          <NuxtLink class="btn sm:mb-4" to="/contact">Get in touch</NuxtLink>
-          <a class="btn" href="/downloads/CV_SteffBeckers.pdf" target="_blank"
-            >Download CV</a
-          >
+          <NuxtLink to="/contact" class="sm:mb-4">
+            <button class="sm:w-full">Get in touch</button>
+          </NuxtLink>
+          <a href="/downloads/CV_SteffBeckers.pdf" target="_blank">
+            <button class="sm:w-full">Download CV</button>
+          </a>
         </div>
       </div>
       <div class="flex flex-shrink-0 items-start sm:mb-4">

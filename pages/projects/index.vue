@@ -38,7 +38,6 @@
             <h2>{{ project.title }}</h2>
             <h3 v-if="project.subtitle">
               {{ project.subtitle }}
-              <span v-if="project.date">{{ project.date | formatDate }}</span>
             </h3>
           </div>
           <p v-if="project.description">

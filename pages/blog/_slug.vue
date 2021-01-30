@@ -3,7 +3,7 @@
     <div class="flex flex-col">
       <h1>{{ post.title }}<span class="underscore">_</span></h1>
       <h3>
-        <span>{{ post.date | formatDate }}</span>
+        <span>{{ post.date | formatDateTime }}</span>
         <span>
           /
           <span v-for="tag in post.tags" :key="tag"
