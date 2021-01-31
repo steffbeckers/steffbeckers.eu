@@ -59,7 +59,7 @@ export default {
       let filteredSkills = this.skillsList
 
       // Search
-      if (this.searchTerm) {
+      if (this.searchTerm && this.searchTerm.length > 2) {
         const searchResult = fuzzysort.go(this.searchTerm, filteredSkills, {
           keys: ['name', 'description', 'keywords'],
           threshold: -10000,

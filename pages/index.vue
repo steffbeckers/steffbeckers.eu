@@ -53,7 +53,13 @@
           <h3>I try to learn something new every single day</h3>
         </div>
         <div class="w-48 sm:w-full flex flex-none">
-          <input v-model="skillsSearchTerm" type="text" placeholder="Search" />
+          <!-- <input v-model="skillsSearchTerm" type="text" placeholder="Search" /> -->
+          <input
+            type="text"
+            placeholder="Search"
+            :value="skillsSearchTerm"
+            @input="(e) => (skillsSearchTerm = e.target.value)"
+          />
         </div>
       </div>
       <skills-list
