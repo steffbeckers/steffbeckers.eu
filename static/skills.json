@@ -70,10 +70,15 @@
   },
   { "name": "SignalR", "description": "Realtime", "icon": "signalr.png" },
   { "name": "REST API", "icon": "api.png" },
-  { "name": "Docker", "devicon": "docker-original" },
+  {
+    "name": "Docker",
+    "description": "Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly.",
+    "url": "https://www.docker.com",
+    "devicon": "docker-original"
+  },
   {
     "name": "Kubernetes",
-    "keywords": "k8s",
+    "keywords": "K8s, Docker",
     "icon": "k8s.png"
   },
   { "name": "MicroK8s", "icon": "microk8s.png" },

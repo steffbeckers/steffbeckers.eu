@@ -20,22 +20,33 @@
         </div>
       </div>
       <div class="w-48 sm:w-full flex-none">
-        <input
-          v-model="searchBlog"
+        <!-- <input
+          v-model="blogSearchTerm"
           type="text"
           placeholder="Search"
           @keyup="search()"
+        /> -->
+        <input
+          type="text"
+          placeholder="Search"
+          :value="blogSearchTerm"
+          @input="
+            (e) => {
+              blogSearchTerm = e.target.value
+              search()
+            }
+          "
         />
       </div>
     </div>
     <div class="flex flex-row sm:flex-col space-x-4 sm:space-x-0 sm:space-y-4">
       <div class="flex flex-col space-y-4 sm:mt-4">
         <p v-if="searchNotFound">
-          No blog posts found with '{{ searchBlog }}' as search term.
+          No blog posts found with '{{ blogSearchTerm }}' as search term.
           <span
             class="cursor-pointer"
             @click="
-              searchBlog = ''
+              blogSearchTerm = ''
               searchNotFound = ''
             "
             >Clear search</span
@@ -102,7 +113,7 @@ export default {
   },
   data() {
     return {
-      searchBlog: '',
+      blogSearchTerm: '',
       searchNotFound: false,
       tags: [],
     }
@@ -131,10 +142,10 @@ export default {
   },
   methods: {
     async search() {
-      if (this.searchBlog) {
+      if (this.blogSearchTerm && this.blogSearchTerm.length > 2) {
         this.filteredPosts = await this.$content('blog')
           .where({ published: true })
-          .search(this.searchBlog)
+          .search(this.blogSearchTerm)
           .sortBy('date', 'desc')
           .fetch()
 
