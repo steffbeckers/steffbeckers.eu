@@ -92,7 +92,7 @@
             <input type="hidden" name="form-name" value="Contact" />
             <div class="flex flex-col space-y-2">
               <h2>Send me a message</h2>
-              <p class="sent-message p-4 pt-3 pb-3" v-if="showSentMessage">
+              <p v-if="showSentMessage" class="sent-message p-4 pt-3 pb-3">
                 Hi {{ sentBy }}, thank you for your message. I'll try to respond
                 as soon as possible.
               </p>
@@ -100,10 +100,10 @@
                 <div class="flex flex-1 flex-col space-y-1">
                   <label for="firstName">First name *</label>
                   <input
+                    v-model="firstName"
                     type="text"
                     name="firstName"
                     placeholder="First name"
-                    v-model="firstName"
                     required="true"
                   />
                 </div>

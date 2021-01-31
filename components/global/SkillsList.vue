@@ -47,7 +47,6 @@
 const fuzzysort = require('fuzzysort')
 
 export default {
-  name: 'skills-list',
   props: ['skills', 'searchTerm'],
   data() {
     return {
@@ -59,7 +58,7 @@ export default {
       let filteredSkills = this.skillsList
 
       // Search
-      if (this.searchTerm && this.searchTerm.length > 2) {
+      if (this.searchTerm) {
         const searchResult = fuzzysort.go(this.searchTerm, filteredSkills, {
           keys: ['name', 'description', 'keywords'],
           threshold: -10000,
@@ -76,7 +75,7 @@ export default {
   async mounted() {
     const skillsJson = await fetch('/skills.json').then((res) => res.json())
 
-    for (const skill of this.skills) {
+    for (let skill of this.skills) {
       const skillJson = skillsJson.find((x) => x.name === skill.name)
       if (skillJson) {
         skill = skillJson

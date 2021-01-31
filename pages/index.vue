@@ -64,7 +64,7 @@
       </div>
       <skills-list
         :skills="skills"
-        :searchTerm="skillsSearchTerm"
+        :search-term="skillsSearchTerm"
       ></skills-list>
     </div>
   </div>
@@ -72,7 +72,6 @@
 
 <script>
 import skills from '~/static/skills.json'
-const fuzzysort = require('fuzzysort')
 
 export default {
   asyncData() {
