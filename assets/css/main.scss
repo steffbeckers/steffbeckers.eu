@@ -81,6 +81,11 @@ p {
   color: var(--color-text-secondary);
 }
 
+p.sent-message {
+  color: #ffffff;
+  background-color: var(--color-accent2);
+}
+
 // TODO: font-bold
 .bold {
   font-weight: bold;

@@ -86,12 +86,16 @@
             class="w-full"
             name="Contact"
             method="POST"
-            action="/contact?sent=true"
+            :action="'/contact?sent-by=' + firstName"
             data-netlify="true"
           >
             <input type="hidden" name="form-name" value="Contact" />
             <div class="flex flex-col space-y-2">
               <h2>Send me a message</h2>
+              <p class="sent-message p-4 pt-3 pb-3" v-if="showSentMessage">
+                Hi {{ sentBy }}, thank you for your message. I'll try to respond
+                as soon as possible.
+              </p>
               <div class="flex flex-row space-x-4">
                 <div class="flex flex-1 flex-col space-y-1">
                   <label for="firstName">First name *</label>
@@ -99,6 +103,7 @@
                     type="text"
                     name="firstName"
                     placeholder="First name"
+                    v-model="firstName"
                     required="true"
                   />
                 </div>
@@ -145,6 +150,13 @@
 
 <script>
 export default {
+  data() {
+    return {
+      firstName: '',
+      showSentMessage: false,
+      sentBy: null,
+    }
+  },
   head: {
     title: 'Contact - Steff Beckers',
     meta: [
@@ -159,6 +171,15 @@ export default {
           'Steff, Beckers, Contact, Name, Address, Phone, E-mail, +32499765192, steff@steffbeckers.eu, Social, LinkedIn, Github, Facebook, Twitter, WhatsApp',
       },
     ],
+  },
+  mounted() {
+    // On message sent
+    const sentBy = this.$route.query['sent-by']
+    if (sentBy) {
+      this.sentBy = sentBy
+      this.showSentMessage = true
+      this.$router.replace({ query: null })
+    }
   },
 }
 </script>
