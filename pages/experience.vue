@@ -45,98 +45,44 @@
         </div>
         <div class="flex flex-col space-y-2">
           <h4>Mainly used skills and technologies</h4>
-          <div class="flex flex-row flex-wrap">
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="~/assets/images/logos/net-core.png"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>.NET</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                :src="'https://icongr.am/devicon/csharp-original.svg?size=25'"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>C#</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="~/assets/images/logos/angular.png"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>Angular</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="https://icongr.am/devicon/typescript-original.svg?size=25"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>TypeScript</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="~/assets/images/logos/mssql.png"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>SQL Server</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                :src="'https://icongr.am/devicon/docker-original.svg?size=25'"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>Docker</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="~/assets/images/logos/azure.png"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>Azure</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="https://icongr.am/devicon/windows8-original.svg?size=25"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>Windows Server</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="~/assets/images/logos/ubuntu.png"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>Ubuntu Server</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="~/assets/images/logos/azure-devops.png"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>Azure DevOps</span>
-            </div>
-          </div>
+          <skills-list
+            :skills="[
+              {
+                name: '.NET',
+              },
+              {
+                name: 'C#',
+              },
+              {
+                name: 'Angular',
+              },
+              {
+                name: 'TypeScript',
+              },
+              {
+                name: 'SQL Server',
+              },
+              {
+                name: 'Docker',
+              },
+              {
+                name: 'Microservices',
+              },
+              {
+                name: 'Azure',
+              },
+              {
+                name: 'Windows Server',
+              },
+              {
+                name: 'Ubuntu Server',
+                icon: 'ubuntu.png',
+              },
+              {
+                name: 'Azure DevOps',
+              },
+            ]"
+          ></skills-list>
         </div>
       </div>
       <hr />
@@ -178,62 +124,29 @@
         </div>
         <div class="flex flex-col space-y-2">
           <h4>Mainly used skills and technologies</h4>
-          <div class="flex flex-row flex-wrap">
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="~/assets/images/logos/dynamics.png"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>Dynamics 365 CRM</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="https://icongr.am/devicon/csharp-original.svg?size=25"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>C#</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="https://icongr.am/devicon/typescript-original.svg?size=25"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>TypeScript</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="https://icongr.am/devicon/html5-original.svg?size=25"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>HTML5</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="https://icongr.am/devicon/css3-original.svg?size=25"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>CSS3</span>
-            </div>
-            <div class="mr-4 mb-2 flex flex-row space-x-2">
-              <img
-                src="https://icongr.am/devicon/sass-original.svg?size=25"
-                alt="Skill icon"
-                width="25"
-                height="25"
-              />
-              <span>SASS</span>
-            </div>
-          </div>
+          <skills-list
+            :skills="[
+              {
+                name: 'Dynamics 365 CRM',
+              },
+              {
+                name: 'C#',
+              },
+              {
+                name: 'TypeScript',
+              },
+              {
+                name: 'HTML5',
+              },
+              {
+                name: 'CSS3',
+              },
+              {
+                name: 'SASS',
+                devicon: 'sass-original',
+              },
+            ]"
+          ></skills-list>
         </div>
       </div>
     </div>

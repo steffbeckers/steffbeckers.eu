@@ -53,46 +53,13 @@
           <h3>I try to learn something new every single day</h3>
         </div>
         <div class="w-48 sm:w-full flex flex-none">
-          <input v-model="searchSkill" type="text" placeholder="Search" />
+          <input v-model="skillsSearchTerm" type="text" placeholder="Search" />
         </div>
       </div>
-      <div class="flex flex-row flex-wrap">
-        <div
-          v-for="skill in filteredSkills"
-          :key="skill.name"
-          class="mr-4 mb-2 flex flex-row space-x-2"
-        >
-          <img
-            v-if="skill.devicon"
-            :src="'https://icongr.am/devicon/' + skill.devicon + '.svg?size=25'"
-            alt="Skill icon"
-            width="25"
-            height="25"
-          />
-          <img
-            v-if="$colorMode.value === 'dark' && skill.darkicon"
-            :src="require(`@/assets/images/logos/${skill.darkicon}`)"
-            alt="Skill icon"
-            width="25"
-            height="25"
-          />
-          <img
-            v-else-if="skill.icon"
-            :src="require(`@/assets/images/logos/${skill.icon}`)"
-            alt="Skill icon"
-            width="25"
-            height="25"
-          />
-          <span :title="skill.description">{{ skill.name }}</span>
-        </div>
-        <p v-if="filteredSkills && filteredSkills.length === 0">
-          No skills or technologies found with '{{ searchSkill }}' as search
-          term.
-          <span class="cursor-pointer" @click="searchSkill = ''"
-            >Clear search</span
-          >
-        </p>
-      </div>
+      <skills-list
+        :skills="skills"
+        :searchTerm="skillsSearchTerm"
+      ></skills-list>
     </div>
   </div>
 </template>
@@ -102,12 +69,12 @@ import skills from '~/static/skills.json'
 const fuzzysort = require('fuzzysort')
 
 export default {
-  asyncData({ params }) {
+  asyncData() {
     return { skills }
   },
   data() {
     return {
-      searchSkill: '',
+      skillsSearchTerm: '',
     }
   },
   head: {
@@ -125,25 +92,6 @@ export default {
           'Steff, Beckers, Developer, Personal website, Blog, Projects, Resume, CV, Contact',
       },
     ],
-  },
-  computed: {
-    filteredSkills() {
-      let filteredSkills = this.skills
-
-      // Search
-      if (this.searchSkill) {
-        const searchResult = fuzzysort.go(this.searchSkill, filteredSkills, {
-          keys: ['name', 'description', 'keywords'],
-          threshold: -10000,
-        })
-
-        if (searchResult) {
-          filteredSkills = searchResult.map((out) => out.obj)
-        }
-      }
-
-      return filteredSkills
-    },
   },
 }
 </script>

@@ -1,54 +1,73 @@
 [
   {
     "name": ".NET",
+    "description": ".NET is a free, cross-platform, open source developer platform for building many different types of applications.",
+    "keywords": "C#",
+    "url": "https://dotnet.microsoft.com",
     "icon": "net-core.png"
   },
   {
     "name": "C#",
-    "devicon": "csharp-original",
-    "keywords": ".net"
+    "description": "A programming language on computer science is a language that is used to write software programs. C# is a programming language developed and launched by Microsoft in 2001.",
+    "keywords": ".NET",
+    "url": "https://docs.microsoft.com/en-us/dotnet/csharp",
+    "devicon": "csharp-original"
   },
   {
     "name": "Angular",
+    "description": "Angular is an application design framework and development platform for creating efficient and sophisticated single-page apps.",
     "keywords": "ng",
+    "url": "https://angular.io",
     "icon": "angular.png"
   },
   {
     "name": "NgRx",
-    "description": "Angular state management",
+    "description": "NgRx is a framework for building reactive applications in Angular.",
+    "url": "https://ngrx.io",
     "icon": "ngrx.png"
   },
   {
     "name": "JavaScript",
+    "description": "JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. While it is most well-known as the scripting language for Web pages, many non-browser environments also use it, such as Node.js, Apache CouchDB and Adobe Acrobat.",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     "devicon": "javascript-original"
   },
   {
     "name": "HTML5",
+    "description": "HTML5 is the latest evolution of the standard that defines HTML (HyperText Markup Language).",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
     "devicon": "html5-original"
   },
   {
     "name": "TypeScript",
+    "description": "TypeScript is an open-source language which builds on JavaScript, one of the world’s most used tools, by adding static type definitions.",
+    "url": "https://www.typescriptlang.org",
     "devicon": "typescript-original"
   },
   {
     "name": "CSS3",
+    "description": "CSS3 is the latest evolution of the Cascading Style Sheets language and aims at extending CSS2.1.",
+    "url": "https://developer.mozilla.org/en-US/docs/Archive/CSS3",
     "devicon": "css3-original"
   },
   {
     "name": "Vue",
+    "description": "Vue is an open-source model–view–viewmodel front end JavaScript framework for building user interfaces and single-page applications.",
+    "url": "https://vuejs.org",
     "devicon": "vuejs-original"
   },
   {
     "name": "Nuxt.js",
-    "description": "Vue framework",
+    "description": "Nuxt.js is a higher-level framework that builds on top of Vue. It simplifies the development of universal or single page Vue apps.",
+    "url": "https://nuxtjs.org",
     "icon": "nuxt.png"
   },
   {
     "name": "SQL Server",
+    "description": "Microsoft SQL Server is a relational database management system developed by Microsoft.",
+    "url": "https://www.microsoft.com/en-us/sql-server/sql-server-2019",
     "icon": "mssql.png"
   },
-  { "name": "PWA", "icon": "pwa.png" },
-  { "name": "JWT", "icon": "jwt.png" },
   { "name": "SignalR", "description": "Realtime", "icon": "signalr.png" },
   { "name": "REST API", "icon": "api.png" },
   { "name": "Docker", "devicon": "docker-original" },
@@ -58,6 +77,8 @@
     "icon": "k8s.png"
   },
   { "name": "MicroK8s", "icon": "microk8s.png" },
+  { "name": "JWT", "icon": "jwt.png" },
+  { "name": "PWA", "icon": "pwa.png" },
   { "name": "SSH", "devicon": "ssh-original-wordmark" },
   { "name": "GCP", "devicon": "google-original" },
   { "name": "Ubuntu", "icon": "ubuntu.png" },
@@ -71,7 +92,8 @@
   },
   {
     "name": "Azure",
-    "icon": "azure.png"
+    "icon": "azure.png",
+    "darkicon": "azure-white.png"
   },
   {
     "name": "(Azure) Active Directory",
@@ -96,7 +118,8 @@
   { "name": "Firebase", "icon": "firebase.png" },
   {
     "name": "Dynamics 365 CRM",
-    "icon": "dynamics.png"
+    "icon": "dynamics.png",
+    "darkicon": "dynamics-white.png"
   },
   { "name": "Nagios Core", "icon": "nagios-core.png" },
   { "name": "GitHub", "icon": "github.png" },
