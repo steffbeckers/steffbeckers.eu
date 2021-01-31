@@ -44,7 +44,7 @@
           </p>
         </div>
         <div class="flex flex-col space-y-2">
-          <h4>Mainly used skills</h4>
+          <h4>Mainly used skills and technologies</h4>
           <div class="flex flex-row flex-wrap">
             <div class="mr-4 mb-2 flex flex-row space-x-2">
               <img
@@ -177,7 +177,7 @@
           </p>
         </div>
         <div class="flex flex-col space-y-2">
-          <h4>Mainly used skills</h4>
+          <h4>Mainly used skills and technologies</h4>
           <div class="flex flex-row flex-wrap">
             <div class="mr-4 mb-2 flex flex-row space-x-2">
               <img
