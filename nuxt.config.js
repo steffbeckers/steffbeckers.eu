@@ -137,7 +137,7 @@ export default {
       },
       {
         url: '/projects/steffbeckers',
-        lastmod: '2021-01-27T20:04:00.000Z',
+        lastmod: '2021-01-31T11:20:00.000Z',
       },
       // Blog
       {
