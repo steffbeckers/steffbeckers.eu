@@ -49,41 +49,30 @@
             :skills="[
               {
                 name: '.NET',
-                icon: 'net-core.png',
               },
               {
                 name: 'C#',
-                devicon: 'csharp-original',
               },
               {
                 name: 'Angular',
-                icon: 'angular.png',
               },
               {
                 name: 'TypeScript',
-                devicon: 'typescript-original',
               },
               {
                 name: 'SQL Server',
-                icon: 'mssql.png',
               },
               {
                 name: 'Docker',
-                devicon: 'docker-original',
               },
               {
                 name: 'Microservices',
-                icon: 'microservices.png',
-                darkicon: 'microservices-white.png',
               },
               {
                 name: 'Azure',
-                icon: 'azure.png',
-                darkicon: 'azure-white.png',
               },
               {
                 name: 'Windows Server',
-                devicon: 'windows8-original',
               },
               {
                 name: 'Ubuntu Server',
@@ -91,7 +80,6 @@
               },
               {
                 name: 'Azure DevOps',
-                icon: 'azure-devops.png',
               },
             ]"
           ></skills-list>
@@ -140,24 +128,18 @@
             :skills="[
               {
                 name: 'Dynamics 365 CRM',
-                icon: 'dynamics.png',
-                darkicon: 'dynamics-white.png',
               },
               {
                 name: 'C#',
-                devicon: 'csharp-original',
               },
               {
                 name: 'TypeScript',
-                devicon: 'typescript-original',
               },
               {
                 name: 'HTML5',
-                devicon: 'html5-original',
               },
               {
                 name: 'CSS3',
-                devicon: 'css3-original',
               },
               {
                 name: 'SASS',
