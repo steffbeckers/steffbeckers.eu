@@ -36,11 +36,13 @@
   },
   {
     "name": "Vue",
+    "url": "https://vuejs.org",
     "devicon": "vuejs-original"
   },
   {
     "name": "Nuxt.js",
     "description": "Vue framework",
+    "url": "https://nuxtjs.org",
     "icon": "nuxt.png"
   },
   {
@@ -71,7 +73,8 @@
   },
   {
     "name": "Azure",
-    "icon": "azure.png"
+    "icon": "azure.png",
+    "darkicon": "azure-white.png"
   },
   {
     "name": "(Azure) Active Directory",
@@ -96,7 +99,8 @@
   { "name": "Firebase", "icon": "firebase.png" },
   {
     "name": "Dynamics 365 CRM",
-    "icon": "dynamics.png"
+    "icon": "dynamics.png",
+    "darkicon": "dynamics-white.png"
   },
   { "name": "Nagios Core", "icon": "nagios-core.png" },
   { "name": "GitHub", "icon": "github.png" },

@@ -56,43 +56,13 @@
           <input v-model="searchSkill" type="text" placeholder="Search" />
         </div>
       </div>
-      <div class="flex flex-row flex-wrap">
-        <div
-          v-for="skill in filteredSkills"
-          :key="skill.name"
-          class="mr-4 mb-2 flex flex-row space-x-2"
+      <skills-list :skills="filteredSkills"></skills-list>
+      <p v-if="filteredSkills && filteredSkills.length === 0">
+        No skills or technologies found with '{{ searchSkill }}' as search term.
+        <span class="cursor-pointer" @click="searchSkill = ''"
+          >Clear search</span
         >
-          <img
-            v-if="skill.devicon"
-            :src="'https://icongr.am/devicon/' + skill.devicon + '.svg?size=25'"
-            alt="Skill icon"
-            width="25"
-            height="25"
-          />
-          <img
-            v-if="$colorMode.value === 'dark' && skill.darkicon"
-            :src="require(`@/assets/images/logos/${skill.darkicon}`)"
-            alt="Skill icon"
-            width="25"
-            height="25"
-          />
-          <img
-            v-else-if="skill.icon"
-            :src="require(`@/assets/images/logos/${skill.icon}`)"
-            alt="Skill icon"
-            width="25"
-            height="25"
-          />
-          <span :title="skill.description">{{ skill.name }}</span>
-        </div>
-        <p v-if="filteredSkills && filteredSkills.length === 0">
-          No skills or technologies found with '{{ searchSkill }}' as search
-          term.
-          <span class="cursor-pointer" @click="searchSkill = ''"
-            >Clear search</span
-          >
-        </p>
-      </div>
+      </p>
     </div>
   </div>
 </template>
