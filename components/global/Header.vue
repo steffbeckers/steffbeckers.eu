@@ -1,25 +1,15 @@
 <template>
-  <div class="header flex flex-row justify-between">
+  <div class="header flex flex-row items-center justify-between">
     <Logo />
     <Navigation />
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      showMobileNav: false,
-    }
-  },
-}
-</script>
-
 <style lang="scss" scoped>
 .header {
   background-color: var(--color-bg-primary);
 
-  height: 80px;
+  min-height: 80px;
 
   padding-left: 20px;
   padding-right: 20px;
