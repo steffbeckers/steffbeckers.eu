@@ -3,14 +3,14 @@
     <div class="flex flex-row justify-between space-x-4">
       <div class="flex flex-col">
         <h1>Projects<span class="underscore">_</span></h1>
-        <h3>
+        <div class="subtitle">
           Overview of the projects,
           <a
             href="https://github.com/steffbeckers?tab=repositories"
             target="_blank"
             >Git repositories</a
           >, technologies I've been working on
-        </h3>
+        </div>
       </div>
       <div class="top-icons flex flex-row">
         <a
@@ -36,9 +36,9 @@
           />
           <div class="flex flex-col">
             <h2>{{ project.title }}</h2>
-            <h3 v-if="project.subtitle">
+            <div class="subtitle" v-if="project.subtitle">
               {{ project.subtitle }}
-            </h3>
+            </div>
           </div>
           <p v-if="project.description">
             {{ project.description }}
