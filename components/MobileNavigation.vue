@@ -1,6 +1,6 @@
 <template>
   <div class="mobile-navigation">
-    <transition name="mobile-navigation">
+    <transition name="fade">
       <div v-if="showNavigation">
         <div
           class="links shadow-inner flex flex-col items-stretch space-y-4"
