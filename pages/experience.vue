@@ -3,7 +3,7 @@
     <div class="flex flex-col space-y-4">
       <div class="flex flex-col">
         <h1>Work experience<span class="underscore">_</span></h1>
-        <h3>Many lines of code and coffee</h3>
+        <div class="subtitle">Many lines of code and coffee</div>
       </div>
       <div class="flex flex-col space-y-2">
         <div class="flex flex-col">
@@ -22,7 +22,7 @@
             />
           </a>
           <h2>Analyst Developer</h2>
-          <h3>July 2017 - Present</h3>
+          <div class="subtitle">July 2017 - Present</div>
         </div>
         <div class="flex flex-col space-y-2">
           <p>
@@ -44,7 +44,7 @@
           </p>
         </div>
         <div class="flex flex-col space-y-2">
-          <h4>Mainly used skills and technologies</h4>
+          <h3>Mainly used skills and technologies</h3>
           <skills-list
             :skills="[
               {
@@ -112,7 +112,7 @@
             </a>
           </div>
           <h2>Consultant for CTG on behalf of Bridgestone Europe</h2>
-          <h3>October 2016 - June 2017</h3>
+          <div class="subtitle">October 2016 - June 2017</div>
         </div>
         <div class="flex flex-col space-y-2">
           <p>
@@ -123,8 +123,8 @@
           </p>
         </div>
         <div class="flex flex-col space-y-2">
-          <h4>Mainly used skills and technologies</h4>
-          <skills-list
+          <h3>Mainly used skills and technologies</h3>
+          <SkillsList
             :skills="[
               {
                 name: 'Dynamics 365 CRM',
@@ -146,7 +146,7 @@
                 devicon: 'sass-original',
               },
             ]"
-          ></skills-list>
+          />
         </div>
       </div>
     </div>
@@ -154,7 +154,7 @@
     <div class="flex flex-col space-y-4">
       <div class="flex flex-col">
         <h1>Certification<span class="underscore">_</span></h1>
-        <h3>Verification of knowledge and skills</h3>
+        <div class="subtitle">Verification of knowledge and skills</div>
       </div>
       <div class="flex flex-col space-y-2">
         <div class="flex flex-col">
@@ -171,7 +171,7 @@
           >
             <h2>Microsoft Exam 70-483 - Programming in C#</h2>
           </a>
-          <h3>September 21st, 2018</h3>
+          <div class="subtitle">September 21st, 2018</div>
         </div>
       </div>
     </div>
@@ -179,7 +179,7 @@
     <div class="flex flex-col space-y-4">
       <div class="flex flex-col">
         <h1>Education<span class="underscore">_</span></h1>
-        <h3>Hours of learning new technologies</h3>
+        <div class="subtitle">Hours of learning new technologies</div>
       </div>
       <div class="flex flex-col space-y-2">
         <div class="flex flex-col">
@@ -200,7 +200,7 @@
           <a href="https://www.pxl.be/applicatieontwikkeling" target="_blank">
             <h2>Professional Bachelor's Degree in Applied Computer Science</h2>
           </a>
-          <h3>September 2013 - June 2016</h3>
+          <div class="subtitle">September 2013 - June 2016</div>
         </div>
         <div class="flex flex-col space-y-2">
           <p>

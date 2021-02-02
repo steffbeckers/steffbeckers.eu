@@ -2,7 +2,7 @@
   <div class="flex flex-col space-y-4">
     <div class="flex flex-col">
       <h1>{{ post.title }}<span class="underscore">_</span></h1>
-      <h3>
+      <div class="subtitle">
         <span>{{ post.date | formatDateTime }}</span>
         <span>
           /
@@ -17,7 +17,7 @@
         <span>
           / <DisqusCount tag="a" :url="post.path" :identifier="post.path" />
         </span>
-      </h3>
+      </div>
     </div>
     <nuxt-content :document="post" />
     <div class="flex flex-col space-y-2">

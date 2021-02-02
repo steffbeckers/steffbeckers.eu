@@ -16,10 +16,6 @@
   --color-accent2: #7dc363;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.1s;
@@ -29,6 +25,22 @@
   opacity: 0;
 }
 
+.mobile-navigation-enter-active,
+.mobile-navigation-leave-active {
+  transition: opacity 0.2s;
+}
+.mobile-navigation-enter,
+.mobile-navigation-leave-to {
+  opacity: 0;
+}
+
+html,
+body,
+#__nuxt,
+#__layout {
+  height: 100%;
+}
+
 body {
   font-family: 'Lato', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: var(--color-text-secondary);
@@ -36,19 +48,35 @@ body {
   overflow-y: scroll;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   color: var(--color-text-primary);
-  font-size: 2rem;
   font-weight: bold;
+
+  a {
+    color: var(--color-text-primary);
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h1 + .subtitle {
+  margin-top: 5px;
 }
 
 h2 {
-  color: var(--color-text-primary);
   font-size: 1.5rem;
-  font-weight: bold;
 }
 
 h3 {
+  font-size: 1rem;
+}
+
+.subtitle {
   color: var(--color-accent);
   font-family: monospace;
   font-size: 1.2rem;
@@ -57,12 +85,6 @@ h3 {
   a {
     color: var(--color-accent);
   }
-}
-
-h4 {
-  color: var(--color-text-primary);
-  font-size: 1rem;
-  font-weight: bold;
 }
 
 a {
@@ -77,6 +99,11 @@ a:hover {
   color: var(--color-accent2);
 }
 
+.nuxt-link-exact-active,
+.nuxt-link-active:not(.root-link) {
+  color: var(--color-accent);
+}
+
 p {
   color: var(--color-text-secondary);
 }
@@ -84,11 +111,6 @@ p {
 p.sent-message {
   color: #ffffff;
   background-color: var(--color-accent2);
-}
-
-// TODO: font-bold
-.bold {
-  font-weight: bold;
 }
 
 .underscore {
@@ -125,38 +147,6 @@ p.sent-message {
 
 .dark hr {
   border-top: 1px solid #1a2433;
-}
-
-.layout {
-  header.header {
-    background-color: var(--color-bg-primary);
-  }
-
-  .color-mode-switcher:hover {
-    svg {
-      stroke: var(--color-accent2);
-    }
-  }
-
-  .nav-mobile-toggle {
-    color: var(--color-text-primary);
-  }
-  .nav-mobile-toggle:hover {
-    color: var(--color-accent2);
-  }
-
-  .nav-mobile {
-    background-color: var(--color-bg-primary);
-    background-color: rgba($color: var(--color-bg-primary), $alpha: 0.8);
-  }
-
-  .nav__link:hover {
-    color: var(--color-accent2);
-  }
-  .nav__link.nuxt-link-exact-active,
-  .nav__link.nuxt-link-active:not(.root-link) {
-    color: var(--color-accent);
-  }
 }
 
 button {
@@ -218,7 +208,7 @@ textarea {
     margin-bottom: 0.4rem;
   }
 
-  h4 {
+  h3 {
     margin-top: 0.4rem;
   }
 

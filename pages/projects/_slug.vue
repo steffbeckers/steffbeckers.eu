@@ -2,9 +2,9 @@
   <div class="flex flex-col space-y-4">
     <div class="flex flex-col">
       <h1>{{ project.title }}<span class="underscore">_</span></h1>
-      <h3 v-if="project.subtitle" class="subtitle">
+      <div v-if="project.subtitle" class="subtitle">
         {{ project.subtitle }}
-      </h3>
+      </div>
     </div>
     <nuxt-content :document="project" />
   </div>
