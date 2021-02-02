@@ -41,9 +41,9 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "fibers": "^5.0.0",
-    "postcss": "^8.2.4",
+    "postcss": "^7.0.35",
     "prettier": "^2.1.2",
-    "sass": "^1.32.5",
+    "sass": "^1.32.6",
     "sass-loader": "^10.1.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
   }

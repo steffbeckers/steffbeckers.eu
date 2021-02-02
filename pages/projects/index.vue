@@ -36,7 +36,7 @@
           />
           <div class="flex flex-col">
             <h2>{{ project.title }}</h2>
-            <div class="subtitle" v-if="project.subtitle">
+            <div v-if="project.subtitle" class="subtitle">
               {{ project.subtitle }}
             </div>
           </div>

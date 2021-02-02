@@ -5,6 +5,18 @@
   </div>
 </template>
 
+<script>
+import Logo from './Logo'
+import Navigation from './Navigation'
+
+export default {
+  components: {
+    Logo,
+    Navigation,
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 .header {
   background-color: var(--color-bg-primary);

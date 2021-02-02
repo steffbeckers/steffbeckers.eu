@@ -51,3 +51,12 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.color-mode-switcher {
+  cursor: pointer;
+}
+.color-mode-switcher:hover svg {
+  stroke: var(--color-accent2);
+}
+</style>

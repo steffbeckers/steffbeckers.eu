@@ -55,7 +55,6 @@
           </div>
         </div>
         <div class="w-48 sm:w-full flex flex-none">
-          <!-- <input v-model="skillsSearchTerm" type="text" placeholder="Search" /> -->
           <input
             type="text"
             placeholder="Search"
@@ -64,10 +63,7 @@
           />
         </div>
       </div>
-      <skills-list
-        :skills="skills"
-        :search-term="skillsSearchTerm"
-      ></skills-list>
+      <SkillsList :skills="skills" :search-term="skillsSearchTerm" />
     </div>
   </div>
 </template>

@@ -22,12 +22,6 @@
         </div>
       </div>
       <div class="w-48 sm:w-full flex-none">
-        <!-- <input
-          v-model="blogSearchTerm"
-          type="text"
-          placeholder="Search"
-          @keyup="search()"
-        /> -->
         <input
           type="text"
           placeholder="Search"

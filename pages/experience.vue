@@ -124,7 +124,7 @@
         </div>
         <div class="flex flex-col space-y-2">
           <h3>Mainly used skills and technologies</h3>
-          <skills-list
+          <SkillsList
             :skills="[
               {
                 name: 'Dynamics 365 CRM',
@@ -146,7 +146,7 @@
                 devicon: 'sass-original',
               },
             ]"
-          ></skills-list>
+          />
         </div>
       </div>
     </div>
