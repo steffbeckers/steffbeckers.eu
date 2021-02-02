@@ -1,6 +1,6 @@
 <template>
   <div
-    class="footer mt-auto flex flex-row sm:flex-col pt-10 pb-2 justify-center sm:items-center"
+    class="footer mt-auto flex flex-row sm:flex-col pt-20 pb-2 justify-center sm:items-center"
   >
     <div class="copyright">
       <a href="https://github.com/steffbeckers" target="_blank">
@@ -33,6 +33,8 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
+  font-size: 0.9rem;
+
   padding-left: 20px;
   padding-right: 20px;
 }

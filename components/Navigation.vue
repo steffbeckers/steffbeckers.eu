@@ -1,11 +1,21 @@
 <template>
-  <div class="navigation flex flex-row space-x-4">
-    <NuxtLink class="root-link" to="/">Hi!</NuxtLink>
-    <NuxtLink to="/experience">Experience</NuxtLink>
-    <NuxtLink to="/projects">Projects</NuxtLink>
-    <NuxtLink to="/blog">Blog</NuxtLink>
-    <NuxtLink to="/contact">Contact</NuxtLink>
-    <ColorModeSwitcher />
+  <div class="navigation">
+    <div class="desktop flex flex-row space-x-4 items-center sm:hidden">
+      <NuxtLink class="root-link" to="/">Hi!</NuxtLink>
+      <NuxtLink to="/experience">Experience</NuxtLink>
+      <NuxtLink to="/projects">Projects</NuxtLink>
+      <NuxtLink to="/blog">Blog</NuxtLink>
+      <NuxtLink to="/contact">Contact</NuxtLink>
+      <ColorModeSwitcher />
+    </div>
+    <div v-if="showMobileNav" class="mobile flex flex-col">
+      <NuxtLink class="root-link" to="/">Hi!</NuxtLink>
+      <NuxtLink to="/experience">Experience</NuxtLink>
+      <NuxtLink to="/projects">Projects</NuxtLink>
+      <NuxtLink to="/blog">Blog</NuxtLink>
+      <NuxtLink to="/contact">Contact</NuxtLink>
+      <ColorModeSwitcher />
+    </div>
   </div>
 </template>
 
@@ -40,6 +50,11 @@ export default {
   }
   a:hover::after {
     opacity: 1;
+  }
+
+  .hamburger {
+    font-size: 32px;
+    padding: 16px;
   }
 }
 </style>

@@ -80,8 +80,9 @@ a:hover {
   color: var(--color-accent2);
 }
 
-.nuxt-link-active {
-  color: var(--color-accent2);
+.nuxt-link-exact-active,
+.nuxt-link-active:not(.root-link) {
+  color: var(--color-accent);
 }
 
 p {

@@ -1,5 +1,5 @@
 <template>
-  <div class="header flex flex-row items-center justify-between">
+  <div class="header flex flex-row items-center justify-between space-x-4">
     <Logo />
     <Navigation />
   </div>
@@ -23,6 +23,7 @@ export default {
 
   min-height: 80px;
 
+  margin-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
 
