@@ -6,7 +6,7 @@
       <div class="flex flex-col space-y-4">
         <div class="flex flex-col">
           <h1>Hi! I am Steff<span class="underscore">_</span></h1>
-          <h3>Full stack developer / DevOps enthusiast</h3>
+          <div class="subtitle">Full stack developer / DevOps enthusiast</div>
         </div>
         <div class="flex flex-col space-y-2">
           <p>
@@ -50,10 +50,11 @@
       >
         <div class="flex flex-col">
           <h1>Skills &amp; technologies<span class="underscore">_</span></h1>
-          <h3>I try to learn something new every single day</h3>
+          <div class="subtitle">
+            I try to learn something new every single day
+          </div>
         </div>
         <div class="w-48 sm:w-full flex flex-none">
-          <!-- <input v-model="skillsSearchTerm" type="text" placeholder="Search" /> -->
           <input
             type="text"
             placeholder="Search"
@@ -62,10 +63,7 @@
           />
         </div>
       </div>
-      <skills-list
-        :skills="skills"
-        :search-term="skillsSearchTerm"
-      ></skills-list>
+      <SkillsList :skills="skills" :search-term="skillsSearchTerm" />
     </div>
   </div>
 </template>

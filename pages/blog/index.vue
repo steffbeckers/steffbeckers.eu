@@ -8,7 +8,9 @@
       >
         <div class="flex flex-col">
           <h1>Blog<span class="underscore">_</span></h1>
-          <h3>Tutorials, DEV-scripts and other useful notes</h3>
+          <div class="subtitle">
+            Tutorials, DEV-scripts and other useful notes
+          </div>
         </div>
         <div class="top-icons flex flex-row">
           <a
@@ -20,12 +22,6 @@
         </div>
       </div>
       <div class="w-48 sm:w-full flex-none">
-        <!-- <input
-          v-model="blogSearchTerm"
-          type="text"
-          placeholder="Search"
-          @keyup="search()"
-        /> -->
         <input
           type="text"
           placeholder="Search"
@@ -62,7 +58,7 @@
             <div class="flex flex-col space-y-2">
               <div class="flex flex-col">
                 <h2>{{ post.title }}</h2>
-                <h3>
+                <div class="subtitle">
                   <span>{{ post.date | formatDateTime }}</span>
                   <span>
                     /
@@ -80,7 +76,7 @@
                     /
                     <DisqusCount :identifier="post.path" />
                   </span>
-                </h3>
+                </div>
               </div>
               <p v-if="post.description">{{ post.description }}</p>
             </div>

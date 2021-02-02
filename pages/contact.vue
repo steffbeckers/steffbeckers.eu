@@ -3,7 +3,7 @@
     <div class="flex flex-col space-y-4">
       <div class="flex flex-col">
         <h1>Get in touch<span class="underscore">_</span></h1>
-        <h3>
+        <div class="subtitle">
           Add me on
           <a href="https://linkedin.com/in/steffbeckers" target="_blank"
             >LinkedIn</a
@@ -11,7 +11,7 @@
           <a href="https://github.com/steffbeckers" target="_blank">GitHub</a>
           or just contact me by <a href="tel:+32499765192">phone</a> or
           <a href="mailto:steff@steffbeckers.eu">e-mail</a>
-        </h3>
+        </div>
       </div>
       <div
         class="flex flex-row space-x-4 sm:flex-col sm:space-x-0 sm:space-y-4"
@@ -19,11 +19,11 @@
         <div class="flex flex-col flex-1 space-y-4">
           <h2>Personal information</h2>
           <div class="flex flex-row">
-            <h4 class="info-title">Name</h4>
+            <h3 class="info-title">Name</h3>
             <div>Steff Beckers</div>
           </div>
           <div class="flex flex-row">
-            <h4 class="info-title">Address</h4>
+            <h3 class="info-title">Address</h3>
             <div>
               <a href="https://goo.gl/maps/KyGduB3qTaBZVPR46"
                 >3945 HAM<br />Belgium</a
@@ -31,17 +31,17 @@
             </div>
           </div>
           <div class="flex flex-row">
-            <h4 class="info-title">Phone</h4>
+            <h3 class="info-title">Phone</h3>
             <div><a href="tel:+32499765192">+32 499 765 192</a></div>
           </div>
           <div class="flex flex-row">
-            <h4 class="info-title">E-mail</h4>
+            <h3 class="info-title">E-mail</h3>
             <div>
               <a href="mailto:steff@steffbeckers.eu">steff@steffbeckers.eu</a>
             </div>
           </div>
           <div class="flex flex-row">
-            <h4 class="info-title">Social</h4>
+            <h3 class="info-title">Social</h3>
             <div class="flex flex-row space-x-4">
               <a
                 class="mdi mdi-linkedin"
