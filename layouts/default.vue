@@ -5,17 +5,20 @@
       <Nuxt />
     </div>
     <Footer />
+    <MobileNavigation class="hidden sm:flex" />
   </div>
 </template>
 
 <script>
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import MobileNavigation from '../components/MobileNavigation'
 
 export default {
   components: {
     Header,
     Footer,
+    MobileNavigation,
   },
 }
 </script>

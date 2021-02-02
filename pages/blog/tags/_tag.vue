@@ -2,10 +2,7 @@
   <div class="flex flex-col space-y-4">
     <div class="flex flex-row justify-between space-x-4">
       <div class="flex flex-col">
-        <h1>
-          <NuxtLink to="/blog">Blog</NuxtLink>; #{{ tag
-          }}<span class="underscore">_</span>
-        </h1>
+        <h1>Blog; #{{ tag }}<span class="underscore">_</span></h1>
         <div class="subtitle">
           Tutorials, DEV-scripts and other useful notes
         </div>

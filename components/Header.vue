@@ -1,7 +1,7 @@
 <template>
   <div class="header flex flex-row items-center justify-between space-x-4">
     <Logo />
-    <Navigation />
+    <Navigation class="sm:hidden" />
   </div>
 </template>
 

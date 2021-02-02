@@ -25,6 +25,15 @@
   opacity: 0;
 }
 
+.mobile-navigation-enter-active,
+.mobile-navigation-leave-active {
+  transition: opacity 0.2s;
+}
+.mobile-navigation-enter,
+.mobile-navigation-leave-to {
+  opacity: 0;
+}
+
 html,
 body,
 #__nuxt,
@@ -39,22 +48,32 @@ body {
   overflow-y: scroll;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   color: var(--color-text-primary);
-  font-size: 2rem;
   font-weight: bold;
+
+  a {
+    color: var(--color-text-primary);
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h1 + .subtitle {
+  margin-top: 5px;
 }
 
 h2 {
-  color: var(--color-text-primary);
   font-size: 1.5rem;
-  font-weight: bold;
 }
 
 h3 {
-  color: var(--color-text-primary);
   font-size: 1rem;
-  font-weight: bold;
 }
 
 .subtitle {
