@@ -21,12 +21,12 @@
         ></a>
       </div>
     </div>
-    <div
-      v-for="project in projects"
-      :key="project.slug"
-      class="grid grid-cols-2 sm:grid-cols-1 gap-4"
-    >
-      <NuxtLink :to="project.path">
+    <div class="grid grid-cols-2 sm:grid-cols-1 gap-4">
+      <NuxtLink
+        v-for="project in projects"
+        :key="project.slug"
+        :to="project.path"
+      >
         <div class="flex flex-col space-y-2">
           <img
             v-if="project.thumbnail"

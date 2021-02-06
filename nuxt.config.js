@@ -136,6 +136,10 @@ export default {
         lastmod: '2021-01-27T20:04:00.000Z',
       },
       {
+        url: '/projects/code-generator',
+        lastmod: '2021-02-06T19:44:00.000Z',
+      },
+      {
         url: '/projects/steffbeckers',
         lastmod: '2021-01-31T11:20:00.000Z',
       },

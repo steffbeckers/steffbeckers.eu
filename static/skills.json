@@ -115,7 +115,11 @@
   { "name": "Python", "devicon": "python-original" },
   { "name": "Powershell", "icon": "powershell.png" },
   { "name": "Git", "devicon": "git-original" },
-  { "name": "Tailwind CSS", "icon": "tailwindcss.png" },
+  {
+    "name": "Tailwind CSS",
+    "url": "https://tailwindcss.com",
+    "icon": "tailwindcss.png"
+  },
   { "name": "Bootstrap", "icon": "bootstrap.png" },
   { "name": "Grafana", "icon": "grafana.png" },
   { "name": "AWS", "devicon": "amazonwebservices-original" },
