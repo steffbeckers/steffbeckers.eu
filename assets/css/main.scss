@@ -16,24 +16,6 @@
   --color-accent2: #7dc363;
 }
 
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.1s;
-}
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
-
-.mobile-navigation-enter-active,
-.mobile-navigation-leave-active {
-  transition: opacity 0.2s;
-}
-.mobile-navigation-enter,
-.mobile-navigation-leave-to {
-  opacity: 0;
-}
-
 html,
 body,
 #__nuxt,
@@ -189,11 +171,21 @@ textarea {
 }
 
 // Transitions
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.1s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s;
+  transition: opacity 0.2s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 

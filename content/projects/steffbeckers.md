@@ -6,23 +6,14 @@ keywords: Steff, Beckers, Personal, Portfolio, Resume, CV, Website, Blog, steffb
 github: https://github.com/steffbeckers/steffbeckers.eu
 skills:
   [
-    { name: 'Vue', devicon: 'vuejs-original', url: 'https://vuejs.org' },
-    {
-      name: 'Nuxt.js',
-      description: 'Vue framework',
-      url: 'https://nuxtjs.org',
-      icon: 'nuxt.png',
-    },
+    { name: 'Vue' },
+    { name: 'Nuxt.js' },
     { name: 'Nuxt Content', url: 'https://content.nuxtjs.org' },
-    {
-      name: 'Tailwind CSS',
-      url: 'https://tailwindcss.com',
-      icon: 'tailwindcss.png',
-    },
+    { name: 'Tailwind CSS' },
   ]
 thumbnail: /projects/steffbeckers/images/screenshot.png
 published: true
-sort_order: 1000
+sort_order: 2000
 ---
 
 A place where I showcase my projects, write down some dev notes and scripts in the blog. Who am I? Which skills and experience do I have? Happens to be this website as well.
