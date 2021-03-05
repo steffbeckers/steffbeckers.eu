@@ -21,7 +21,7 @@
           </p>
           <p>
             Feel free to get in touch or download my CV.<br />
-            Last updated on 11/05/2020.
+            Last updated on 05/03/2021.
           </p>
         </div>
         <div class="flex flex-row space-x-4 sm:flex-col sm:space-x-0">
