@@ -157,6 +157,10 @@ export default {
         lastmod: '2021-01-27T20:01:00.000Z',
       },
       {
+        url: '/blog/iis-express-localhost-ssl-certificate-reset',
+        lastmod: '2021-03-26T21:48:00.000Z',
+      },
+      {
         url: '/blog/win-acme',
         lastmod: '2021-01-27T20:00:00.000Z',
       },
