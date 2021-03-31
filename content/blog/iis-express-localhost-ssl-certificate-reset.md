@@ -104,3 +104,35 @@ Navigate/browse to the web page to test if the SSL certificate is fixed.
 https://localhost:44321/swagger
 
 ![Test Web API swagger UI screenshot](/blog/iis-express-localhost-ssl-certificate-reset/images/web-api-swagger.png)
+
+## Edit 31/03/2021
+
+Also check out this GitHub Gist:
+
+https://gist.github.com/camieleggermont/5b2971a96e80a658863106b21c479988
+
+This powershell script generates a new certificate, removes the old certificate assignments from the IISExpress ssl ports and adds the newly generated one. The certificate is also copied over to the Trusted Root Certificate Authorities.
+
+```powershell
+$cert = New-SelfSignedCertificate -DnsName "localhost", "localhost" -CertStoreLocation "cert:\LocalMachine\My" -NotAfter (Get-Date).AddYears(5)
+$thumb = $cert.GetCertHashString()
+
+For ($i=44300; $i -le 44399; $i++) {
+    netsh http delete sslcert ipport=0.0.0.0:$i
+}
+
+For ($i=44300; $i -le 44399; $i++) {
+    netsh http add sslcert ipport=0.0.0.0:$i certhash=$thumb appid=`{214124cd-d05b-4309-9af9-9caa44b2b74a`}
+}
+
+$StoreScope = 'LocalMachine'
+$StoreName = 'root'
+
+$Store = New-Object  -TypeName System.Security.Cryptography.X509Certificates.X509Store  -ArgumentList $StoreName, $StoreScope
+$Store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite)
+$Store.Add($cert)
+
+$Store.Close()
+```
+
+This can help to reset all SSL certificates within the IIS Express port range 44300-44399. Make sure to open a powershell prompt as Administrator (elevated permissions).
