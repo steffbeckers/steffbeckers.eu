@@ -1,35 +1,60 @@
 [
   {
     "name": "Today's Best Developer Blogs on Any Tech Stack",
-    "url": "https://bloggingfordevs.com/trends/"
+    "url": "https://bloggingfordevs.com/trends/",
+    "keywords": "2021, Best, Blogs, Dev",
+    "tags": ["blogs"]
+  },
+  {
+    "name": "keybr.com",
+    "description": "Free typing practice online",
+    "url": "https://www.keybr.com/",
+    "tags": ["tools"]
   },
   {
     "name": "This powershell script generates a new certificate, removes the old certificate assignments from the IISExpress ssl ports and adds the newly generated one. The certificate is also copied over to the Trusted Root Certificate Authorities.",
-    "url": "https://gist.github.com/camieleggermont/5b2971a96e80a658863106b21c479988"
+    "url": "https://gist.github.com/camieleggermont/5b2971a96e80a658863106b21c479988",
+    "tags": ["dev"]
   },
   {
     "name": "Installing Ansible — Ansible Documentation",
-    "url": "https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html?extIdCarryOver=true&sc_cid=701f2000001OH7YAAW#installing-ansible-on-ubuntu"
+    "url": "https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html?extIdCarryOver=true&sc_cid=701f2000001OH7YAAW#installing-ansible-on-ubuntu",
+    "tags": ["ops"]
   },
   {
     "name": "How To Use the takeUntil RxJS Operator to Manage Subscriptions Declaratively | DigitalOcean",
-    "url": "https://www.digitalocean.com/community/tutorials/angular-takeuntil-rxjs-unsubscribe"
+    "url": "https://www.digitalocean.com/community/tutorials/angular-takeuntil-rxjs-unsubscribe",
+    "tags": ["dev"]
   },
   {
     "name": "Cloud-Native learning resources for .NET developers | .NET Blog",
-    "url": "https://devblogs.microsoft.com/dotnet/cloud-native-learning-resources-for-net-developers/"
+    "url": "https://devblogs.microsoft.com/dotnet/cloud-native-learning-resources-for-net-developers/",
+    "tags": ["dev"]
   },
   {
     "name": "Refactoring and Design Patterns",
-    "url": "https://refactoring.guru/"
+    "url": "https://refactoring.guru/",
+    "tags": ["dev"]
   },
   {
     "name": "DDD - ABP Framework",
-    "url": "https://docs.abp.io/en/abp/latest/Domain-Driven-Design-Implementation-Guide"
+    "url": "https://docs.abp.io/en/abp/latest/Domain-Driven-Design-Implementation-Guide",
+    "tags": ["dev"]
+  },
+  {
+    "name": "ABP.io Docs",
+    "url": "https://docs.abp.io/",
+    "tags": ["dev"]
+  },
+  {
+    "name": "ABP.io",
+    "url": "https://abp.io/",
+    "tags": ["dev"]
   },
   {
     "name": "https - How do I restore a missing IIS Express SSL Certificate? - Stack Overflow",
-    "url": "https://stackoverflow.com/a/38220369"
+    "url": "https://stackoverflow.com/a/38220369",
+    "tags": ["dev"]
   },
   {
     "name": "Something to be aware of with Duende IdentityServer pricing : dotnet",
@@ -1141,10 +1166,6 @@
   {
     "name": "Parcel",
     "url": "https://parceljs.org/"
-  },
-  {
-    "name": "Het isj nie moeilijk, het isj gemakkelijk!",
-    "url": "https://www.youtube.com/watch?v=gI8FgxHiTQw&feature=youtu.be&t=34"
   },
   {
     "name": "Component | Element",

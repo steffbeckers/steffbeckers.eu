@@ -90,12 +90,27 @@
             <NuxtLink :to="`/blog/tags/${tag}`">#{{ tag }}</NuxtLink>
           </div>
         </div>
+        <h2>Last 5 <NuxtLink to="/bookmarks">bookmarks</NuxtLink></h2>
+        <div class="flex flex-col space-y-2">
+          <a
+            v-for="bookmark in lastBookmarks"
+            :key="bookmark.url"
+            :href="bookmark.url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ bookmark.name }}
+          </a>
+          <NuxtLink to="/bookmarks">All bookmarks</NuxtLink>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import bookmarks from '~/static/bookmarks.json'
+
 export default {
   async asyncData({ $content }) {
     const posts = await $content('blog')
@@ -105,6 +120,7 @@ export default {
     return {
       posts,
       filteredPosts: posts,
+      bookmarks,
     }
   },
   data() {
@@ -112,6 +128,7 @@ export default {
       blogSearchTerm: '',
       searchNotFound: false,
       tags: [],
+      lastBookmarks: [],
     }
   },
   head: {
@@ -135,6 +152,7 @@ export default {
       tags.push(post.tags)
     })
     this.tags = [...new Set([].concat(...tags))]
+    this.lastBookmarks = this.bookmarks.slice(0, 5)
   },
   methods: {
     async search() {
