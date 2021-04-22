@@ -1,5 +1,25 @@
 [
   {
+    "name": "GOTO 2020 • The Power of Event-Driven Systems without Burning your Hands or Budgets • Allard Buijze - YouTube",
+    "url": "https://www.youtube.com/watch?v=Fso2OyguRuQ"
+  },
+  {
+    "name": "NGINX Docs | HTTP Load Balancing",
+    "url": "https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/"
+  },
+  {
+    "name": "ASP.NET Core SignalR production hosting and scaling | Microsoft Docs",
+    "url": "https://docs.microsoft.com/en-us/aspnet/core/signalr/scale?view=aspnetcore-5.0"
+  },
+  {
+    "name": "LinuxServer",
+    "url": "https://www.linuxserver.io/"
+  },
+  {
+    "name": "asciinema - Record and share your terminal sessions, the right way",
+    "url": "https://asciinema.org/"
+  },
+  {
     "name": "Today's Best Developer Blogs on Any Tech Stack",
     "url": "https://bloggingfordevs.com/trends/",
     "keywords": "2021, Best, Blogs, Dev",
