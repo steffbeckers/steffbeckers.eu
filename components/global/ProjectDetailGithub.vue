@@ -1,6 +1,12 @@
 <template>
   <div>
-    <p>https://github.com/{{ githubProject }}</p>
+    <a
+      v-if="githubProject"
+      :href="'https://github.com/' + githubProject"
+      target="_blank"
+    >
+      https://github.com/{{ githubProject }}
+    </a>
     <p v-if="repo">Last updated: {{ repo.updated_at | formatDateTime }}</p>
   </div>
 </template>
