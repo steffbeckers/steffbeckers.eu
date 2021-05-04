@@ -1,5 +1,33 @@
 [
   {
+    "name": "Event-Sourcing as a DDD pattern. About Event-sourcing and how to combine… | by Eliran Natan | The Startup | Medium",
+    "url": "https://medium.com/swlh/event-sourcing-as-a-ddd-pattern-fea6de35fcca"
+  },
+  {
+    "name": "Your Distributed Monoliths are secretly plotting against you | by João Vazao Vasques | Medium",
+    "url": "https://medium.com/@joaovasques/your-distributed-monoliths-are-secretly-plotting-against-you-4c1b20324a31"
+  },
+  {
+    "name": "GOTO 2020 • The Power of Event-Driven Systems without Burning your Hands or Budgets • Allard Buijze - YouTube",
+    "url": "https://www.youtube.com/watch?v=Fso2OyguRuQ"
+  },
+  {
+    "name": "NGINX Docs | HTTP Load Balancing",
+    "url": "https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/"
+  },
+  {
+    "name": "ASP.NET Core SignalR production hosting and scaling | Microsoft Docs",
+    "url": "https://docs.microsoft.com/en-us/aspnet/core/signalr/scale?view=aspnetcore-5.0"
+  },
+  {
+    "name": "LinuxServer",
+    "url": "https://www.linuxserver.io/"
+  },
+  {
+    "name": "asciinema - Record and share your terminal sessions, the right way",
+    "url": "https://asciinema.org/"
+  },
+  {
     "name": "Today's Best Developer Blogs on Any Tech Stack",
     "url": "https://bloggingfordevs.com/trends/",
     "keywords": "2021, Best, Blogs, Dev",
