@@ -19,6 +19,7 @@
     "core-js": "^3.11.2",
     "eslint-plugin-vue": "^7.9.0",
     "fuzzysort": "^1.1.4",
+    "highlight.js": "^10.7.2",
     "moment": "^2.29.1",
     "nuxt": "^2.15.2",
     "prism-themes": "^1.7.0",
