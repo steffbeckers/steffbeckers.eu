@@ -1,3 +1,8 @@
+import highlightjs from 'highlight.js'
+
+const wrap = (code, lang) =>
+  `<pre><code class="hljs ${lang}">${code}</code></pre>`
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -48,7 +53,7 @@ export default {
     ],
   },
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ['~/assets/css/main.scss'],
+  css: ['highlight.js/styles/vs2015.css', '~/assets/css/main.scss'],
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: ['~plugins/filters.js', '~plugins/gtag.js', '~/plugins/disqus'],
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -96,8 +101,14 @@ export default {
     ],
     // https://content.nuxtjs.org/configuration#markdown
     markdown: {
-      prism: {
-        theme: 'prism-themes/themes/prism-vsc-dark-plus.css',
+      // prism: {
+      //   theme: 'prism-themes/themes/prism-vsc-dark-plus.css',
+      // },
+      highlighter(rawCode, lang) {
+        if (!lang) {
+          return wrap(highlightjs.highlightAuto(rawCode).value, lang)
+        }
+        return wrap(highlightjs.highlight(lang, rawCode).value, lang)
       },
     },
   },
