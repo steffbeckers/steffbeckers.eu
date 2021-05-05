@@ -48,6 +48,7 @@ choco install chocolateygui -y
 #choco install databasenet -y # NOT USING ANYMORE
 choco install dotnetcore-sdk -y
 choco install fiddler -y
+choco install figma -y
 choco install filezilla -y
 choco install firacode -y
 choco install firefox -y
