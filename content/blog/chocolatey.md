@@ -42,6 +42,7 @@ choco install autohotkey -y
 choco install azcopy10 -y
 choco install azure-cli -y
 choco install azure-data-studio -y
+choco install microsoftazurestorageexplorer -y
 choco install bitnami-xampp -y
 choco install cmder -y
 choco install chocolateygui -y
@@ -87,6 +88,7 @@ choco install qdir -y
 choco install sharex -y
 choco install skype -y
 choco install slack -y
+choco install soapui -y
 choco install spacesniffer -y
 choco install sqlitebrowser -y
 choco install sysinternals -y
