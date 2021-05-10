@@ -45,7 +45,7 @@
     "postcss": "^8.2.13",
     "prettier": "^2.1.2",
     "sass": "^1.32.12",
-    "sass-loader": "^10.1.1",
+    "sass-loader": "^11.1.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2"
   }
 }
