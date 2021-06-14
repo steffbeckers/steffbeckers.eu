@@ -1,4 +1,4 @@
-import highlightjs from 'highlight.js'
+import highlightjs from 'highlight.js';
 
 const wrap = (code, lang) =>
   `<pre><code class="hljs ${lang}">${code}</code></pre>`
