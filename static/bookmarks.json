@@ -1,5 +1,33 @@
 [
     {
+        "name": "Azure.Messaging.ServiceBus - Azure/azure-sdk-for-net",
+        "url": "https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus"
+    },
+    {
+        "name": "A pattern language for microservices",
+        "url": "https://microservices.io/patterns/"
+    },
+    {
+        "name": "OpenZipkin · A distributed tracing system",
+        "url": "https://zipkin.io/"
+    },
+    {
+        "name": "Saga distributed transactions - Azure Design Patterns | Microsoft Docs",
+        "url": "https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/saga/saga"
+    },
+    {
+        "name": "MassTransit",
+        "url": "https://masstransit-project.com/"
+    },
+    {
+        "name": "Azure Arc overview - Azure Arc | Microsoft Docs",
+        "url": "https://docs.microsoft.com/en-us/azure/azure-arc/overview"
+    },
+    {
+        "name": "Domain analysis for microservices - Azure Architecture Center | Microsoft Docs",
+        "url": "https://docs.microsoft.com/en-us/azure/architecture/microservices/model/domain-analysis"
+    },
+    {
         "name": "VS Code Extensions for HTML | CSS-Tricks",
         "url": "https://css-tricks.com/vs-code-extensions-for-html/",
         "tags": [
