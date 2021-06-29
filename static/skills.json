@@ -75,7 +75,7 @@
     "url": "https://www.microsoft.com/en-us/sql-server/sql-server-2019",
     "icon": "mssql.png"
   },
-  { "name": "SignalR", "description": "Realtime", "icon": "signalr.png" },
+  { "name": "SignalR", "description": "Realtime websocket connections in .NET", "icon": "signalr.png" },
   { "name": "REST API", "icon": "api.png" },
   {
     "name": "Docker",
