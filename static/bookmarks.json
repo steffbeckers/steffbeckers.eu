@@ -1,5 +1,121 @@
 [
     {
+        "name": "Eager loading with ProjectTo and Computed properties · Issue #2321 · AutoMapper/AutoMapper",
+        "url": "https://github.com/AutoMapper/AutoMapper/issues/2321"
+    },
+    {
+        "name": "Projecting computed properties with LINQ and AutoMapper · Los Techies",
+        "url": "https://lostechies.com/jimmybogard/2014/05/07/projecting-computed-properties-with-linq-and-automapper/"
+    },
+    {
+        "name": "Queryable Extensions — AutoMapper documentation",
+        "url": "https://docs.automapper.org/en/stable/Queryable-Extensions.html"
+    },
+    {
+        "name": "UDP Peer-To-Peer Messaging With Python - YouTube",
+        "url": "https://www.youtube.com/watch?v=IbzGL_tjmv4"
+    },
+    {
+        "name": "REST API Naming Conventions and Best Practices",
+        "url": "https://restfulapi.net/resource-naming/"
+    },
+    {
+        "name": "REST API Design Best Practices for Sub and Nested Resources | Moesif Blog",
+        "url": "https://www.moesif.com/blog/technical/api-design/REST-API-Design-Best-Practices-for-Sub-and-Nested-Resources/"
+    },
+    {
+        "name": "How to auto start and keep an ASP.NET core web application running on IIS – taithienbo",
+        "url": "https://www.taithienbo.com/how-to-auto-start-and-keep-an-asp-net-core-web-application-and-keep-it-running-on-iis/"
+    },
+    {
+        "name": "keepassxreboot/keepassxc: KeePassXC is a cross-platform community-driven port of the Windows application “Keepass Password Safe”.",
+        "url": "https://github.com/keepassxreboot/keepassxc"
+    },
+    {
+        "name": "Share a secret - One Time",
+        "url": "https://onetimesecret.com/"
+    },
+    {
+        "name": "Designing Web APIs: Building APIs That Developers Love - Brenda Jin, Saurabh Sahni, Amir Shevat - Google Books",
+        "url": "https://books.google.be/books/about/Designing_Web_APIs.html?id=Dg1rDwAAQBAJ&printsec=frontcover&source=kp_read_button&hl=en&redir_esc=y"
+    },
+    {
+        "name": "Best practices for REST API design - Stack Overflow Blog",
+        "url": "https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/"
+    },
+    {
+        "name": "RAML",
+        "url": "https://raml.org/"
+    },
+    {
+        "name": "Stoplight",
+        "url": "https://stoplight.io"
+    },
+    {
+        "name": "Astro",
+        "url": "https://astro.build/"
+    },
+    {
+        "name": "wt Command does not open windows terminal · Issue #3481 · microsoft/terminal",
+        "url": "https://github.com/microsoft/terminal/issues/3481"
+    },
+    {
+        "name": "Using an ASP.NET Core IHostedService to run Azure Service Bus subscriptions and consumers | Software Engineering",
+        "url": "https://damienbod.com/2021/07/20/using-an-asp-net-core-ihostedservice-to-run-azure-service-bus-subscriptions-and-consumers/"
+    },
+    {
+        "name": "Get started with Azure Service Bus topics and subscriptions - Azure Service Bus | Microsoft Docs",
+        "url": "https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions#receive-messages-from-a-subscription"
+    },
+    {
+        "name": "AutoMapper Flattened Object Mapping | C# Online Compiler | .NET Fiddle",
+        "url": "https://dotnetfiddle.net/i55UFK"
+    },
+    {
+        "name": "8 Tips and Tricks for Writing the Best Queries in LINQ to Entities | Syncfusion Blogs",
+        "url": "https://www.syncfusion.com/blogs/post/8-tips-writing-best-linq-to-entities-queries.aspx"
+    },
+    {
+        "name": "How to have a productive programming day - Code with Jason",
+        "url": "https://www.codewithjason.com/productive-programming-day/"
+    },
+    {
+        "name": "Effective Aggregate Design by Vaughn Vernon",
+        "url": "https://www.dddcommunity.org/library/vernon_2011/"
+    },
+    {
+        "name": "GitHub Copilot · Your AI pair programmer",
+        "url": "https://copilot.github.com/"
+    },
+    {
+        "name": "SubMain / GhostDoc - Painless Help Documentation",
+        "url": "https://submain.com/GhostDoc/"
+    },
+    {
+        "name": "apideck-libraries/portman: Port OpenApi Specs to Postman Collection, inject test suite, and run via Newman 👨🏽‍🚀",
+        "url": "https://github.com/apideck-libraries/portman"
+    },
+    {
+        "name": "OpenAPI.Tools",
+        "url": "https://openapi.tools/#testing"
+    },
+    {
+        "name": "DDD_COMMUNITY_ESSAY_AGGREGATES_PART_1",
+        "url": "https://www.dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_1.pdf"
+    },
+    {
+        "name": "Netty: Home",
+        "url": "https://netty.io/"
+    },
+    {
+        "name": "Azure Service Bus Explorer",
+        "url": "https://github.com/paolosalvatori/ServiceBusExplorer/releases"
+    },
+    {
+        "name": "c# - EF Core: Correct way to query data multiple levels deep in related one-to-many entities - Stack Overflow",
+        "url": "https://stackoverflow.com/questions/65606752/ef-core-correct-way-to-query-data-multiple-levels-deep-in-related-one-to-many-e"
+    },
+    {
         "name": "Azure.Messaging.ServiceBus - Azure/azure-sdk-for-net",
         "url": "https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus"
     },
