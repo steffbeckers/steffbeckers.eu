@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   app: {
     head: {
+      htmlAttrs: {
+        lang: "en",
+      },
       link: [
         {
           rel: "icon",
@@ -9,6 +12,24 @@ export default defineNuxtConfig({
           href: "/favicon.png",
         },
       ],
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Developer with a passion for web development and DevOps. Motivated to expand knowledge and skills with the latest technologies and frameworks. Loves working on projects as a teamplayer in an agile environment. Focused on getting it right, and aware that small details can have a big impact.",
+        },
+        {
+          name: "keywords",
+          content:
+            "Steff, Beckers, CV, Website, Portfolio, Projects, Work, Experience, IT, Development, Developer, Web, .NET, Angular, Vue",
+        },
+        {
+          name: "author",
+          content: "Steff Beckers",
+        },
+      ],
+      title: "Steff Beckers",
     },
   },
   // https://color-mode.nuxtjs.org/#configuration

@@ -1,7 +1,8 @@
 <template>
-  <div>Steff Beckers</div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
   <CookieControl></CookieControl>
-  <NuxtPage />
 </template>
 
 <style lang="postcss">
