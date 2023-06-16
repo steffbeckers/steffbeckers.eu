@@ -23,7 +23,6 @@ export default defineNuxtConfig({
     "@dargmuesli/nuxt-cookie-control",
     "@nuxt/content",
     "@nuxtjs/color-mode",
-    "@nuxtjs/eslint-module",
     "@nuxtjs/tailwindcss",
   ],
 });
