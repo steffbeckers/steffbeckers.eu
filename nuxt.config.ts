@@ -10,5 +10,5 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-  modules: ["@nuxt/content", "@nuxtjs/color-mode", "@nuxtjs/tailwindcss"],
+  modules: ["@nuxt/content", "@nuxtjs/color-mode", "@nuxtjs/eslint-module", "@nuxtjs/tailwindcss"],
 });
