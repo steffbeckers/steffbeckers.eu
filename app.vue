@@ -1,6 +1,7 @@
 <template>
   <div>Steff Beckers</div>
   <CookieControl></CookieControl>
+  <NuxtPage />
 </template>
 
 <style lang="postcss">
