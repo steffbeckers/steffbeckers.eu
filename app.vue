@@ -1,5 +1,6 @@
 <template>
   <div>Steff Beckers</div>
+  <CookieControl></CookieControl>
 </template>
 
 <style lang="postcss">

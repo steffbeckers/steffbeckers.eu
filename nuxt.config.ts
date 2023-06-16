@@ -10,5 +10,11 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-  modules: ["@nuxt/content", "@nuxtjs/color-mode", "@nuxtjs/eslint-module", "@nuxtjs/tailwindcss"],
+  modules: [
+    "@dargmuesli/nuxt-cookie-control",
+    "@nuxt/content",
+    "@nuxtjs/color-mode",
+    "@nuxtjs/eslint-module",
+    "@nuxtjs/tailwindcss",
+  ],
 });
