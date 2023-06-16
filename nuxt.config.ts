@@ -1,10 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // https://color-mode.nuxtjs.org/#configuration
   colorMode: {
     classSuffix: "",
   },
+  // https://content.nuxtjs.org/api/configuration
+  content: {},
+  // https://devtools.nuxtjs.org/guide#module-options
   devtools: {
     enabled: true,
   },
-  modules: ["@nuxtjs/color-mode", "@nuxtjs/tailwindcss"],
+  modules: ["@nuxt/content", "@nuxtjs/color-mode", "@nuxtjs/tailwindcss"],
 });
