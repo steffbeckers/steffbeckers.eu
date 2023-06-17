@@ -8,7 +8,7 @@
       height="150"
     />
     <div>
-      <h1 class="text-2xl">Hi! I am Steff</h1>
+      <h1 class="text-3xl">Hi! I am Steff</h1>
       <h2 class="text-lg text-cyan-500 font-mono font-bold">
         Full stack .NET/Angular developer - DevOps enthusiast
       </h2>
@@ -28,7 +28,9 @@
       </p>
     </div>
     <div class="flex flex-row gap-4">
-      <Button>Get in touch</Button>
+      <NuxtLink to="/contact">
+        <Button>Get in touch</Button>
+      </NuxtLink>
       <a href="/downloads/CV_SteffBeckers.pdf" target="_blank">
         <Button>Download CV</Button>
       </a>
