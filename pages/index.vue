@@ -2,7 +2,7 @@
   <main class="flex flex-col gap-4">
     <img
       class="rounded-full shadow-md"
-      src="~/assets/images/Steff.jpg"
+      src="~/assets/images/steff.jpg"
       alt="Steff"
       width="150"
       height="150"
