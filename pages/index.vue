@@ -15,21 +15,26 @@
     </div>
     <div class="flex flex-col gap-2">
       <p>
-        Developer with a passion for web development and DevOps. Motivated to expand knowledge and
-        skills with the latest technologies and frameworks.
+        Developer with a passion for web development and DevOps.<br />
+        Motivated to expand knowledge and skills with the latest technologies and frameworks.
       </p>
       <p>
-        Loves working on projects as a team player in an agile environment. Focused on getting it
-        right, and aware that small details can have a big impact.
+        Loves working on projects as a team player in an agile environment.<br />
+        Focused on getting it right, and aware that small details can have a big impact.
       </p>
-      <p>Feel free to get in touch or download my CV. Last updated on 04/05/2021.</p>
+      <p>
+        Feel free to get in touch or download my CV.<br />
+        Last updated on 04/05/2021.
+      </p>
     </div>
     <div class="flex flex-row gap-4">
       <Button>Get in touch</Button>
-      <Button>Download CV</Button>
+      <a href="/downloads/CV_SteffBeckers.pdf" target="_blank">
+        <Button>Download CV</Button>
+      </a>
     </div>
     <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel aut maiores pariatur cum
+      <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel aut maiores pariatur cum
       voluptate voluptates neque rerum autem facere, impedit odio ea harum laborum! Aspernatur
       laborum voluptas aliquam provident enim? Voluptatibus aliquam, ex accusamus atque cum
       dignissimos sit quisquam ab eaque tenetur minima, obcaecati dolore non repellat quae quidem
@@ -282,6 +287,7 @@
       quod, earum nam unde. Vel necessitatibus impedit quidem, libero blanditiis velit illum tempora
       perspiciatis quae possimus nesciunt nam, dolore eum! Provident necessitatibus minima,
       similique molestiae repellat dolor eveniet cum accusantium laudantium vero mollitia deleniti.
+      -->
     </p>
   </main>
 </template>

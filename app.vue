@@ -12,6 +12,10 @@ body,
   @apply h-full;
 }
 
+#__nuxt {
+  isolation: isolate;
+}
+
 body {
   @apply bg-white dark:bg-gray-700 dark:text-gray-200;
 }

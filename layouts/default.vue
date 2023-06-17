@@ -1,12 +1,15 @@
 <template>
   <div class="flex flex-col h-full overflow-y-hidden">
     <Header></Header>
-    <div class="flex flex-row justify-between h-full">
-      <Sidenav>Sidenav</Sidenav>
-      <section id="content" class="flex flex-row gap-4 mx-right p-4 h-full overflow-y-scroll">
+    <section class="flex flex-grow flex-row overflow-y-scroll">
+      <div class="flex flex-grow justify-end">
+        <Sidenav></Sidenav>
+      </div>
+      <section id="content" class="flex-grow px-4 my-8">
         <slot />
       </section>
-    </div>
+      <div class="flex-grow"></div>
+    </section>
     <Footer></Footer>
   </div>
 </template>
