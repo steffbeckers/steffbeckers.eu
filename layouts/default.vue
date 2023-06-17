@@ -1,18 +1,18 @@
 <template>
-  <div class="layout">
-    <AppHeader></AppHeader>
-    <main class="flex flex-row gap-4">
-      <aside>Sidenav</aside>
-      <slot />
-    </main>
-    <footer>Footer</footer>
+  <div class="flex flex-col h-full overflow-y-hidden">
+    <Header></Header>
+    <div class="flex flex-row justify-between h-full">
+      <Sidenav>Sidenav</Sidenav>
+      <section id="content" class="flex flex-row gap-4 mx-right p-4 h-full overflow-y-scroll">
+        <slot />
+      </section>
+    </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <style lang="postcss" scoped>
-.layout {
+#content {
   max-width: 1200px;
-  height: 100%;
-  @apply mx-auto px-4;
 }
 </style>

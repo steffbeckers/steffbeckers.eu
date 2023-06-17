@@ -56,5 +56,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxtjs/color-mode",
     "@nuxtjs/tailwindcss",
+    "nuxt-gtag",
+    "nuxt-icon",
   ],
 });
