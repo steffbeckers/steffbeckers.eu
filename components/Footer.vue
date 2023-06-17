@@ -1,7 +1,8 @@
 <template>
   <footer class="flex flex-row justify-between py-1 px-2">
     <div>&copy; {{ year }} - Steff Beckers</div>
-    <div>Last updated on</div>
+    <!-- TODO -->
+    <!-- <div>Last updated on</div> -->
   </footer>
 </template>
 
