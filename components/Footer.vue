@@ -1,8 +1,9 @@
 <template>
-  <footer class="flex flex-row justify-between py-1 px-2">
-    <div>&copy; {{ year }} - Steff Beckers</div>
-    <!-- TODO -->
-    <!-- <div>Last updated on</div> -->
+  <footer>
+    <div class="container mx-auto flex flex-row justify-between py-1 px-2">
+      <div>&copy; {{ year }} - Steff Beckers</div>
+      <div>Last updated on {{ config.public.lastUpdatedOn }}</div>
+    </div>
   </footer>
 </template>
 
@@ -13,5 +14,6 @@ footer {
 </style>
 
 <script setup>
+const config = useRuntimeConfig();
 const year = new Date().getFullYear();
 </script>

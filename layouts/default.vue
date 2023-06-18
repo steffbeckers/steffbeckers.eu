@@ -1,17 +1,11 @@
 <template>
   <div class="flex flex-col h-full overflow-y-hidden">
     <Header></Header>
-    <div id="content-wrapper" class="flex flex-grow overflow-y-scroll">
-      <section id="content" class="flex-grow px-4 mx-auto">
+    <section id="content" class="flex flex-grow overflow-y-scroll">
+      <div class="container mx-auto py-4 px-4">
         <slot />
-      </section>
-    </div>
+      </div>
+    </section>
     <Footer></Footer>
   </div>
 </template>
-
-<style lang="postcss" scoped>
-#content {
-  max-width: 1200px;
-}
-</style>

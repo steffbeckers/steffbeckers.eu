@@ -59,4 +59,9 @@ export default defineNuxtConfig({
     "nuxt-gtag",
     "nuxt-icon",
   ],
+  runtimeConfig: {
+    public: {
+      lastUpdatedOn: new Date(),
+    },
+  },
 });
