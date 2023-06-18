@@ -6,7 +6,17 @@
 </template>
 
 <style lang="postcss">
+html,
+body,
+#__nuxt {
+  @apply h-full;
+}
+
+#__nuxt {
+  isolation: isolate;
+}
+
 body {
-  @apply min-h-screen bg-white dark:bg-gray-700 dark:text-gray-200;
+  @apply bg-white dark:bg-gray-700 dark:text-gray-200;
 }
 </style>
