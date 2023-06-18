@@ -1,15 +1,11 @@
 <template>
   <div class="flex flex-col h-full overflow-y-hidden">
     <Header></Header>
-    <section class="flex flex-grow flex-row overflow-y-scroll">
-      <div class="flex flex-grow justify-end">
-        <Sidenav></Sidenav>
-      </div>
-      <section id="content" class="flex-grow px-4 my-8">
+    <div id="content-wrapper" class="flex flex-grow overflow-y-scroll">
+      <section id="content" class="flex-grow px-4 mx-auto">
         <slot />
       </section>
-      <div class="flex-grow"></div>
-    </section>
+    </div>
     <Footer></Footer>
   </div>
 </template>

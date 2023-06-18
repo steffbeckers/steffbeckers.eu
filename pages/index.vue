@@ -28,15 +28,15 @@
       </p>
     </div>
     <div class="flex flex-row gap-4">
-      <NuxtLink to="/contact">
-        <Button>Get in touch</Button>
-      </NuxtLink>
       <a href="/downloads/CV_SteffBeckers.pdf" target="_blank">
         <Button>Download CV</Button>
       </a>
+      <NuxtLink to="#contact">
+        <Button>Get in touch</Button>
+      </NuxtLink>
     </div>
     <p>
-      <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel aut maiores pariatur cum
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel aut maiores pariatur cum
       voluptate voluptates neque rerum autem facere, impedit odio ea harum laborum! Aspernatur
       laborum voluptas aliquam provident enim? Voluptatibus aliquam, ex accusamus atque cum
       dignissimos sit quisquam ab eaque tenetur minima, obcaecati dolore non repellat quae quidem

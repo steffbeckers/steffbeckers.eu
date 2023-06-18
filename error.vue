@@ -7,6 +7,9 @@
       <div>
         {{ error.message }}
       </div>
+      <NuxtLink to="/">
+        <Button>Back to home page</Button>
+      </NuxtLink>
     </div>
   </NuxtLayout>
 </template>
