@@ -4,9 +4,9 @@
       <div class="flex flex-row items-center sm:gap-8 gap-4">
         <NuxtLink to="/">
           <div class="flex flex-row items-center gap-4">
-            <!-- TODO: White logo on dark theme -->
+            <!-- TODO: svg + use colorMode.value -->
             <img src="~/assets/images/logo.png" alt="Logo" width="40" height="40" />
-            <div class="hidden sm:flex text-2xl whitespace-nowrap">
+            <div class="hidden sm:block text-2xl whitespace-nowrap">
               <span class="font-bold">STEFF</span> BECKERS
             </div>
           </div>
@@ -60,3 +60,7 @@ header {
   }
 }
 </style>
+
+<script setup>
+const colorMode = useColorMode();
+</script>
